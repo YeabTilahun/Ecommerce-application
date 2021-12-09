@@ -44,9 +44,7 @@ namespace Ecommerce_application
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SignIn signin = new SignIn();
-            signin.Show();
-            this.Hide();
+   
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,6 +69,14 @@ namespace Ecommerce_application
 
         private void SignUp_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            SignIn signin = new SignIn();
+            signin.Show();
+            this.Hide();
 
         }
     }

@@ -145,42 +145,42 @@ namespace Ecommerce_application
             this.dateTimePicker1.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
-            this.dateTimePicker1.TabIndex = 52;
+            this.dateTimePicker1.TabIndex = 3;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(191, 89);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 53;
+            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(191, 176);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 54;
+            this.textBox2.TabIndex = 4;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(191, 118);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 55;
+            this.textBox3.TabIndex = 2;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(191, 200);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 56;
+            this.textBox4.TabIndex = 5;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(191, 231);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 57;
+            this.textBox5.TabIndex = 6;
             // 
             // textBox6
             // 
@@ -188,19 +188,18 @@ namespace Ecommerce_application
             this.textBox6.Name = "textBox6";
             this.textBox6.PasswordChar = '*';
             this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 58;
+            this.textBox6.TabIndex = 7;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Admin",
             "Customer",
             "Merchant"});
             this.comboBox1.Location = new System.Drawing.Point(191, 313);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 59;
+            this.comboBox1.TabIndex = 9;
             // 
             // textBox7
             // 
@@ -208,7 +207,7 @@ namespace Ecommerce_application
             this.textBox7.Name = "textBox7";
             this.textBox7.PasswordChar = '*';
             this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 60;
+            this.textBox7.TabIndex = 8;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label9
@@ -228,7 +227,7 @@ namespace Ecommerce_application
             this.button1.Location = new System.Drawing.Point(107, 354);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 28);
-            this.button1.TabIndex = 63;
+            this.button1.TabIndex = 10;
             this.button1.Text = "Create";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -240,9 +239,10 @@ namespace Ecommerce_application
             this.button2.Location = new System.Drawing.Point(293, 354);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(78, 28);
-            this.button2.TabIndex = 64;
+            this.button2.TabIndex = 11;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button3
             // 
@@ -264,6 +264,7 @@ namespace Ecommerce_application
             // 
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -271,7 +272,7 @@ namespace Ecommerce_application
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(25, 25);
-            this.button4.TabIndex = 67;
+            this.button4.TabIndex = 12;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -279,13 +280,14 @@ namespace Ecommerce_application
             // 
             this.showPassBtn.BackColor = System.Drawing.Color.Brown;
             this.showPassBtn.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
+            this.showPassBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showPassBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.showPassBtn.Location = new System.Drawing.Point(465, -1);
             this.showPassBtn.Margin = new System.Windows.Forms.Padding(2);
             this.showPassBtn.Name = "showPassBtn";
             this.showPassBtn.Size = new System.Drawing.Size(25, 25);
-            this.showPassBtn.TabIndex = 66;
+            this.showPassBtn.TabIndex = 13;
             this.showPassBtn.UseVisualStyleBackColor = false;
             this.showPassBtn.Click += new System.EventHandler(this.showPassBtn_Click);
             // 
