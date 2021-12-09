@@ -44,10 +44,10 @@ namespace Ecommerce_application
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.showPassword = new System.Windows.Forms.Button();
+            this.hidePassword = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.hidePassword = new System.Windows.Forms.Button();
-            this.showPassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -234,6 +234,32 @@ namespace Ecommerce_application
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // showPassword
+            // 
+            this.showPassword.BackgroundImage = global::Ecommerce_application.Properties.Resources.eye;
+            this.showPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(222)))), ((int)(((byte)(211)))));
+            this.showPassword.Location = new System.Drawing.Point(223, 275);
+            this.showPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.showPassword.Name = "showPassword";
+            this.showPassword.Size = new System.Drawing.Size(25, 25);
+            this.showPassword.TabIndex = 46;
+            this.showPassword.UseVisualStyleBackColor = true;
+            this.showPassword.Click += new System.EventHandler(this.showPassword_Click);
+            // 
+            // hidePassword
+            // 
+            this.hidePassword.BackgroundImage = global::Ecommerce_application.Properties.Resources.invisible_eye;
+            this.hidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hidePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(222)))), ((int)(((byte)(211)))));
+            this.hidePassword.Location = new System.Drawing.Point(223, 275);
+            this.hidePassword.Margin = new System.Windows.Forms.Padding(2);
+            this.hidePassword.Name = "hidePassword";
+            this.hidePassword.Size = new System.Drawing.Size(25, 25);
+            this.hidePassword.TabIndex = 45;
+            this.hidePassword.UseVisualStyleBackColor = true;
+            this.hidePassword.Click += new System.EventHandler(this.hidePassword_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Ecommerce_application.Properties.Resources.password_icon;
@@ -255,32 +281,6 @@ namespace Ecommerce_application
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 43;
             this.pictureBox2.TabStop = false;
-            // 
-            // hidePassword
-            // 
-            this.hidePassword.BackgroundImage = global::Ecommerce_application.Properties.Resources.invisible_eye;
-            this.hidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hidePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(222)))), ((int)(((byte)(211)))));
-            this.hidePassword.Location = new System.Drawing.Point(223, 275);
-            this.hidePassword.Margin = new System.Windows.Forms.Padding(2);
-            this.hidePassword.Name = "hidePassword";
-            this.hidePassword.Size = new System.Drawing.Size(25, 25);
-            this.hidePassword.TabIndex = 45;
-            this.hidePassword.UseVisualStyleBackColor = true;
-            this.hidePassword.Click += new System.EventHandler(this.hidePassword_Click);
-            // 
-            // showPassword
-            // 
-            this.showPassword.BackgroundImage = global::Ecommerce_application.Properties.Resources.eye;
-            this.showPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(222)))), ((int)(((byte)(211)))));
-            this.showPassword.Location = new System.Drawing.Point(223, 275);
-            this.showPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.showPassword.Name = "showPassword";
-            this.showPassword.Size = new System.Drawing.Size(25, 25);
-            this.showPassword.TabIndex = 46;
-            this.showPassword.UseVisualStyleBackColor = true;
-            this.showPassword.Click += new System.EventHandler(this.showPassword_Click);
             // 
             // SignIn
             // 
