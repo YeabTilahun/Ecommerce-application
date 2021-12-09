@@ -263,8 +263,10 @@ namespace Ecommerce_application
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.Location = new System.Drawing.Point(436, -1);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
@@ -276,6 +278,7 @@ namespace Ecommerce_application
             // showPassBtn
             // 
             this.showPassBtn.BackColor = System.Drawing.Color.Brown;
+            this.showPassBtn.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
             this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showPassBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.showPassBtn.Location = new System.Drawing.Point(465, -1);
