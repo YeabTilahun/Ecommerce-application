@@ -1,7 +1,7 @@
 ﻿
 namespace Ecommerce_application
 {
-    partial class AdminMerchants
+    partial class AdminCustomers
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,11 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnUncheck = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMerchants = new System.Windows.Forms.Label();
-            this.showPassBtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdmins = new System.Windows.Forms.Button();
@@ -41,12 +42,50 @@ namespace Ecommerce_application
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnMerchants = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
-            this.btnUncheck = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnCheck = new System.Windows.Forms.Button();
+            this.showPassBtn = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnUncheck
+            // 
+            this.btnUncheck.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUncheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnUncheck.FlatAppearance.BorderSize = 0;
+            this.btnUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUncheck.Location = new System.Drawing.Point(352, 541);
+            this.btnUncheck.Name = "btnUncheck";
+            this.btnUncheck.Size = new System.Drawing.Size(136, 33);
+            this.btnUncheck.TabIndex = 30;
+            this.btnUncheck.Text = "Uncheck All";
+            this.btnUncheck.UseVisualStyleBackColor = false;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.DarkRed;
+            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Location = new System.Drawing.Point(842, 541);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(190, 33);
+            this.btnRemove.TabIndex = 29;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnCheck.FlatAppearance.BorderSize = 0;
+            this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheck.Location = new System.Drawing.Point(188, 541);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(136, 33);
+            this.btnCheck.TabIndex = 28;
+            this.btnCheck.Text = "Check All";
+            this.btnCheck.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -57,8 +96,7 @@ namespace Ecommerce_application
             this.panel2.Location = new System.Drawing.Point(-1, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1102, 24);
-            this.panel2.TabIndex = 21;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.TabIndex = 27;
             // 
             // lblMerchants
             // 
@@ -66,48 +104,16 @@ namespace Ecommerce_application
             this.lblMerchants.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMerchants.Location = new System.Drawing.Point(540, 0);
             this.lblMerchants.Name = "lblMerchants";
-            this.lblMerchants.Size = new System.Drawing.Size(93, 22);
+            this.lblMerchants.Size = new System.Drawing.Size(96, 22);
             this.lblMerchants.TabIndex = 16;
-            this.lblMerchants.Text = "Merchants";
-            // 
-            // showPassBtn
-            // 
-            this.showPassBtn.BackColor = System.Drawing.Color.Brown;
-            this.showPassBtn.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
-            this.showPassBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.showPassBtn.FlatAppearance.BorderSize = 0;
-            this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showPassBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.showPassBtn.Location = new System.Drawing.Point(1075, 1);
-            this.showPassBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.showPassBtn.Name = "showPassBtn";
-            this.showPassBtn.Size = new System.Drawing.Size(25, 25);
-            this.showPassBtn.TabIndex = 14;
-            this.showPassBtn.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.Location = new System.Drawing.Point(1046, -1);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(25, 25);
-            this.button4.TabIndex = 15;
-            this.button4.UseVisualStyleBackColor = false;
+            this.lblMerchants.Text = "Customers";
             // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(855, 52);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(177, 20);
-            this.txtSearch.TabIndex = 20;
+            this.txtSearch.TabIndex = 26;
             // 
             // panel1
             // 
@@ -121,7 +127,7 @@ namespace Ecommerce_application
             this.panel1.Location = new System.Drawing.Point(-1, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(160, 578);
-            this.panel1.TabIndex = 18;
+            this.panel1.TabIndex = 25;
             // 
             // btnAdmins
             // 
@@ -161,7 +167,7 @@ namespace Ecommerce_application
             // 
             // btnCustomers
             // 
-            this.btnCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(121)))), ((int)(((byte)(99)))));
+            this.btnCustomers.BackColor = System.Drawing.SystemColors.Control;
             this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomers.FlatAppearance.BorderSize = 0;
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -174,7 +180,7 @@ namespace Ecommerce_application
             // 
             // btnMerchants
             // 
-            this.btnMerchants.BackColor = System.Drawing.SystemColors.Control;
+            this.btnMerchants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(121)))), ((int)(((byte)(99)))));
             this.btnMerchants.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMerchants.FlatAppearance.BorderSize = 0;
             this.btnMerchants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -198,46 +204,39 @@ namespace Ecommerce_application
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = true;
             // 
-            // btnUncheck
+            // showPassBtn
             // 
-            this.btnUncheck.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnUncheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnUncheck.FlatAppearance.BorderSize = 0;
-            this.btnUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUncheck.Location = new System.Drawing.Point(352, 541);
-            this.btnUncheck.Name = "btnUncheck";
-            this.btnUncheck.Size = new System.Drawing.Size(136, 33);
-            this.btnUncheck.TabIndex = 24;
-            this.btnUncheck.Text = "Uncheck All";
-            this.btnUncheck.UseVisualStyleBackColor = false;
+            this.showPassBtn.BackColor = System.Drawing.Color.Brown;
+            this.showPassBtn.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
+            this.showPassBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.showPassBtn.FlatAppearance.BorderSize = 0;
+            this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showPassBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.showPassBtn.Location = new System.Drawing.Point(1075, 1);
+            this.showPassBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.showPassBtn.Name = "showPassBtn";
+            this.showPassBtn.Size = new System.Drawing.Size(25, 25);
+            this.showPassBtn.TabIndex = 14;
+            this.showPassBtn.UseVisualStyleBackColor = false;
             // 
-            // btnRemove
+            // button4
             // 
-            this.btnRemove.BackColor = System.Drawing.Color.DarkRed;
-            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnRemove.FlatAppearance.BorderSize = 0;
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Location = new System.Drawing.Point(842, 541);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(190, 33);
-            this.btnRemove.TabIndex = 23;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = false;
+            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Enabled = false;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.Location = new System.Drawing.Point(1046, -1);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(25, 25);
+            this.button4.TabIndex = 15;
+            this.button4.UseVisualStyleBackColor = false;
             // 
-            // btnCheck
-            // 
-            this.btnCheck.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnCheck.FlatAppearance.BorderSize = 0;
-            this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheck.Location = new System.Drawing.Point(188, 541);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(136, 33);
-            this.btnCheck.TabIndex = 22;
-            this.btnCheck.Text = "Check All";
-            this.btnCheck.UseVisualStyleBackColor = false;
-            // 
-            // AdminMerchants
+            // AdminCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -249,8 +248,8 @@ namespace Ecommerce_application
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdminMerchants";
-            this.Text = "AdminMerchants";
+            this.Name = "AdminCustomers";
+            this.Text = "AdminCustomers";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -261,6 +260,9 @@ namespace Ecommerce_application
 
         #endregion
 
+        private System.Windows.Forms.Button btnUncheck;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblMerchants;
         private System.Windows.Forms.Button showPassBtn;
@@ -273,8 +275,5 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnMerchants;
         private System.Windows.Forms.Button btnProducts;
-        private System.Windows.Forms.Button btnUncheck;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnCheck;
     }
 }

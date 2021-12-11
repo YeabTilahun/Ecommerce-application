@@ -1,7 +1,7 @@
 ﻿
 namespace Ecommerce_application
 {
-    partial class AdminProduct
+    partial class AdminProducts
     {
         /// <summary>
         /// Required designer variable.

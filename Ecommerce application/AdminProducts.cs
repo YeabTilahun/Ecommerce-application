@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ecommerce_application
 {
-    public partial class AdminProduct : Form
+    public partial class AdminProducts : Form
     {
-        public AdminProduct()
+        public AdminProducts()
         {
             InitializeComponent();
         }
