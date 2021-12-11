@@ -32,5 +32,19 @@ namespace Ecommerce_application
             Application.Exit();
         }
 
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            AdminProducts adminProducts = new AdminProducts();
+            pnlCard.Controls.Clear();
+            adminProducts.Dock = DockStyle.Fill;
+            pnlCard.Controls.Add(adminProducts.pnlProducts);
+            pnlCard.Show();
+            pnlCard.BringToFront();
+            btnProducts.BackColor = SystemColors.Control;
+            btnMerchants.BackColor = Color.FromArgb(66, 121, 99);
+            btnCustomers.BackColor = Color.FromArgb(66, 121, 99);
+            btnTransactions.BackColor = Color.FromArgb(66, 121, 99);
+            btnAdmins.BackColor = Color.FromArgb(66, 121, 99);
+        }
     }
 }

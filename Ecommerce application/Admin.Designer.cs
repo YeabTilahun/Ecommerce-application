@@ -129,7 +129,7 @@ namespace Ecommerce_application
             // 
             // btnProducts
             // 
-            this.btnProducts.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(121)))), ((int)(((byte)(99)))));
             this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -139,6 +139,7 @@ namespace Ecommerce_application
             this.btnProducts.TabIndex = 0;
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // pblTopNav
             // 
@@ -220,7 +221,8 @@ namespace Ecommerce_application
             // 
             // pnlCard
             // 
-            this.pnlCard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlCard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCard.Location = new System.Drawing.Point(160, 25);
             this.pnlCard.Name = "pnlCard";
