@@ -30,15 +30,16 @@ namespace Ecommerce_application
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdmins = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.btnTransactions = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnMerchants = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.btnAdmins = new System.Windows.Forms.Button();
             this.showPassBtn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,30 @@ namespace Ecommerce_application
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(163, 721);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAdmins
+            // 
+            this.btnAdmins.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmins.FlatAppearance.BorderSize = 0;
+            this.btnAdmins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmins.Location = new System.Drawing.Point(0, 587);
+            this.btnAdmins.Name = "btnAdmins";
+            this.btnAdmins.Size = new System.Drawing.Size(163, 44);
+            this.btnAdmins.TabIndex = 5;
+            this.btnAdmins.Text = "Admins";
+            this.btnAdmins.UseVisualStyleBackColor = true;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Location = new System.Drawing.Point(0, 648);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(163, 44);
+            this.btnRegister.TabIndex = 4;
+            this.btnRegister.Text = "Register Admins";
+            this.btnRegister.UseVisualStyleBackColor = true;
             // 
             // btnTransactions
             // 
@@ -115,30 +140,6 @@ namespace Ecommerce_application
             this.comboBox1.Size = new System.Drawing.Size(250, 21);
             this.comboBox1.TabIndex = 1;
             // 
-            // btnRegister
-            // 
-            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegister.FlatAppearance.BorderSize = 0;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Location = new System.Drawing.Point(0, 648);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(163, 44);
-            this.btnRegister.TabIndex = 4;
-            this.btnRegister.Text = "Register Admins";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            // 
-            // btnAdmins
-            // 
-            this.btnAdmins.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmins.FlatAppearance.BorderSize = 0;
-            this.btnAdmins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmins.Location = new System.Drawing.Point(0, 587);
-            this.btnAdmins.Name = "btnAdmins";
-            this.btnAdmins.Size = new System.Drawing.Size(163, 44);
-            this.btnAdmins.TabIndex = 5;
-            this.btnAdmins.Text = "Admins";
-            this.btnAdmins.UseVisualStyleBackColor = true;
-            // 
             // showPassBtn
             // 
             this.showPassBtn.BackColor = System.Drawing.Color.Brown;
@@ -169,12 +170,20 @@ namespace Ecommerce_application
             this.button4.TabIndex = 15;
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1000, 52);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(177, 20);
+            this.textBox1.TabIndex = 16;
+            // 
             // AdminProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.showPassBtn);
             this.Controls.Add(this.comboBox1);
@@ -185,6 +194,7 @@ namespace Ecommerce_application
             this.Load += new System.EventHandler(this.AdminProduct_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -200,5 +210,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button showPassBtn;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
