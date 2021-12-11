@@ -54,12 +54,13 @@ namespace Ecommerce_application
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Ivory;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(290, 322);
+            this.btnCancel.Location = new System.Drawing.Point(291, 322);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(78, 28);
+            this.btnCancel.Size = new System.Drawing.Size(91, 38);
             this.btnCancel.TabIndex = 72;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -67,12 +68,13 @@ namespace Ecommerce_application
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.Ivory;
+            this.btnRegister.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(104, 322);
+            this.btnRegister.Location = new System.Drawing.Point(93, 322);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(0);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(78, 28);
+            this.btnRegister.Size = new System.Drawing.Size(89, 38);
             this.btnRegister.TabIndex = 71;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;

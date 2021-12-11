@@ -159,6 +159,7 @@ namespace Ecommerce_application
             // 
             this.btnUncheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnUncheck.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUncheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUncheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnUncheck.FlatAppearance.BorderSize = 0;
             this.btnUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,6 +174,7 @@ namespace Ecommerce_application
             // 
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemove.BackColor = System.Drawing.Color.DarkRed;
+            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -187,6 +189,7 @@ namespace Ecommerce_application
             // 
             this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCheck.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnCheck.FlatAppearance.BorderSize = 0;
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -234,7 +237,7 @@ namespace Ecommerce_application
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             // 
             // AdminMerchants
