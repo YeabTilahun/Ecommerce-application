@@ -55,6 +55,12 @@
     <Compile Include="Merchant.Designer.cs">
       <DependentUpon>Merchant.cs</DependentUpon>
     </Compile>
+    <Compile Include="MerchantBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MerchantBuy.Designer.cs">
+      <DependentUpon>MerchantBuy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,6 +82,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Merchant.resx">
       <DependentUpon>Merchant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MerchantBuy.resx">
+      <DependentUpon>MerchantBuy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

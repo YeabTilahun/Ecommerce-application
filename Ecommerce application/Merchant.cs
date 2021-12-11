@@ -64,5 +64,12 @@ namespace Ecommerce_application
             string date = DateTime.Now.ToShortDateString();
             label3.Text = date;
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            MerchantBuy m = new MerchantBuy();
+            m.Show();
+            this.Hide();
+        }
     }
 }

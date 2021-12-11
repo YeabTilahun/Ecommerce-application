@@ -81,6 +81,7 @@ namespace Ecommerce_application
         {
             Merchant m = new Merchant();
             m.Show();
+            this.Hide();
         }
     }
 }
