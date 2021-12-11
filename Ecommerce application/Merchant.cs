@@ -43,9 +43,16 @@ namespace Ecommerce_application
             this.WindowState = FormWindowState.Minimized;
         }
 
+
+        //To display home page first every time merchat account looged in
         private void Merchant_Load(object sender, EventArgs e)
         {
-
+            MerchantHome m = new MerchantHome();
+            panelAdd.Controls.Clear();
+            m.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(m.panelHome);
+            panelAdd.Show();
+            panelAdd.BringToFront();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -53,16 +60,13 @@ namespace Ecommerce_application
 
         }
 
-        //To add date and time in the home page
+        //Useless but dont remove it
         private void timer1_Tick(object sender, EventArgs e)
         {
-            string time = DateTime.Now.ToShortTimeString();
-            label13.Text = time;
-            string date = DateTime.Now.ToShortDateString();
-            label12.Text = date;
+            
         }
 
-        //Calling Buy form 
+        //Useless but dont remove it
         private void button4_Click_1(object sender, EventArgs e)
         {
             MerchantBuy m = new MerchantBuy();
@@ -95,26 +99,21 @@ namespace Ecommerce_application
         private void button6_Click_1(object sender, EventArgs e)
         {
             MerchantBuy m = new MerchantBuy();
-           // MerchantSell n = new MerchantSell();
-           // panelAdd.Controls.Remove(n.panelSell);
+            panelAdd.Controls.Clear();
             m.Dock = DockStyle.Fill;
-            panelAdd2.Controls.Add(m.panelBuy);
-            panelHome.Hide();
-            //n.panelSell.Hide();
-            panelAdd2.Show();
-            panelAdd2.BringToFront();
+            panelAdd.Controls.Add(m.panelBuy);
+            panelAdd.Show();
+            panelAdd.BringToFront();
         }
 
         //To show Sell interface we created the object then we added the panel in sell form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button5_Click(object sender, EventArgs e)
         {
-            //MerchantBuy n = new MerchantBuy();
+           
             MerchantSell m = new MerchantSell();
-            //panelAdd.Controls.Remove(n.panelBuy);
+            panelAdd.Controls.Clear();
             m.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(m.panelSell);
-            panelHome.Hide();
-           //n.panelBuy.Hide();
             panelAdd.Show();
             panelAdd.BringToFront();
         }
@@ -124,10 +123,15 @@ namespace Ecommerce_application
 
         }
 
+        //To show Home interface we created the object then we added the panel in home form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button3_Click(object sender, EventArgs e)
         {
-            panelHome.Show();
-            panelHome.BringToFront();
+            MerchantHome m = new MerchantHome();
+            panelAdd.Controls.Clear();
+            m.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(m.panelHome);
+            panelAdd.Show();
+            panelAdd.BringToFront();
         }
 
         //Minimize button

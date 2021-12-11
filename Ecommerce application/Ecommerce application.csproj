@@ -97,6 +97,12 @@
     <Compile Include="MerchantBuy.Designer.cs">
       <DependentUpon>MerchantBuy.cs</DependentUpon>
     </Compile>
+    <Compile Include="MerchantHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MerchantHome.Designer.cs">
+      <DependentUpon>MerchantHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="MerchantSell.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MerchantBuy.resx">
       <DependentUpon>MerchantBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MerchantHome.resx">
+      <DependentUpon>MerchantHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MerchantSell.resx">
       <DependentUpon>MerchantSell.cs</DependentUpon>
