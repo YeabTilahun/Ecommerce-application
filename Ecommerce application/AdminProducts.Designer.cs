@@ -42,9 +42,9 @@ namespace Ecommerce_application
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUncheck = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
             this.showPassBtn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.btnCustomers = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -206,6 +206,20 @@ namespace Ecommerce_application
             this.btnUncheck.Text = "Uncheck All";
             this.btnUncheck.UseVisualStyleBackColor = false;
             // 
+            // btnCustomers
+            // 
+            this.btnCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(121)))), ((int)(((byte)(99)))));
+            this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomers.FlatAppearance.BorderSize = 0;
+            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomers.Location = new System.Drawing.Point(0, 169);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(160, 44);
+            this.btnCustomers.TabIndex = 6;
+            this.btnCustomers.Text = "Customers";
+            this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            // 
             // showPassBtn
             // 
             this.showPassBtn.BackColor = System.Drawing.Color.Brown;
@@ -214,7 +228,7 @@ namespace Ecommerce_application
             this.showPassBtn.FlatAppearance.BorderSize = 0;
             this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showPassBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.showPassBtn.Location = new System.Drawing.Point(1075, 1);
+            this.showPassBtn.Location = new System.Drawing.Point(1075, 0);
             this.showPassBtn.Margin = new System.Windows.Forms.Padding(2);
             this.showPassBtn.Name = "showPassBtn";
             this.showPassBtn.Size = new System.Drawing.Size(25, 25);
@@ -238,20 +252,6 @@ namespace Ecommerce_application
             this.button4.Size = new System.Drawing.Size(25, 25);
             this.button4.TabIndex = 15;
             this.button4.UseVisualStyleBackColor = false;
-            // 
-            // btnCustomers
-            // 
-            this.btnCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(121)))), ((int)(((byte)(99)))));
-            this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCustomers.FlatAppearance.BorderSize = 0;
-            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 169);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(160, 44);
-            this.btnCustomers.TabIndex = 6;
-            this.btnCustomers.Text = "Customers";
-            this.btnCustomers.UseVisualStyleBackColor = false;
-            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // AdminProducts
             // 
