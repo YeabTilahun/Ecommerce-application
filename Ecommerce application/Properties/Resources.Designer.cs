@@ -63,6 +63,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cart {
+            get {
+                object obj = ResourceManager.GetObject("cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cart__1_ {
             get {
                 object obj = ResourceManager.GetObject("cart (1)", resourceCulture);
@@ -166,6 +176,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap password_icon {
             get {
                 object obj = ResourceManager.GetObject("password-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sell {
+            get {
+                object obj = ResourceManager.GetObject("sell", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
