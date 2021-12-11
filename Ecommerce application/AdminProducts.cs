@@ -69,6 +69,29 @@ namespace Ecommerce_application
             this.Hide();
         }
 
-        
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

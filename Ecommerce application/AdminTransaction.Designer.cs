@@ -36,12 +36,13 @@ namespace Ecommerce_application
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnAdmins = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTransactions = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.showPassBtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnProducts
@@ -101,10 +102,11 @@ namespace Ecommerce_application
             // 
             // btnRegister
             // 
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Location = new System.Drawing.Point(0, 513);
+            this.btnRegister.Location = new System.Drawing.Point(0, 505);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(160, 44);
             this.btnRegister.TabIndex = 4;
@@ -113,10 +115,11 @@ namespace Ecommerce_application
             // 
             // btnAdmins
             // 
+            this.btnAdmins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAdmins.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdmins.FlatAppearance.BorderSize = 0;
             this.btnAdmins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmins.Location = new System.Drawing.Point(0, 463);
+            this.btnAdmins.Location = new System.Drawing.Point(0, 455);
             this.btnAdmins.Name = "btnAdmins";
             this.btnAdmins.Size = new System.Drawing.Size(160, 44);
             this.btnAdmins.TabIndex = 5;
@@ -126,6 +129,8 @@ namespace Ecommerce_application
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(121)))), ((int)(((byte)(99)))));
             this.panel1.Controls.Add(this.btnAdmins);
             this.panel1.Controls.Add(this.btnRegister);
@@ -133,78 +138,66 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.btnCustomers);
             this.panel1.Controls.Add(this.btnMerchants);
             this.panel1.Controls.Add(this.btnProducts);
-            this.panel1.Location = new System.Drawing.Point(-1, 22);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 578);
+            this.panel1.Size = new System.Drawing.Size(160, 569);
             this.panel1.TabIndex = 31;
             // 
-            // lblTransactions
+            // panel3
             // 
-            this.lblTransactions.AutoSize = true;
-            this.lblTransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactions.Location = new System.Drawing.Point(540, 0);
-            this.lblTransactions.Name = "lblTransactions";
-            this.lblTransactions.Size = new System.Drawing.Size(114, 22);
-            this.lblTransactions.TabIndex = 16;
-            this.lblTransactions.Text = "Transactions";
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.menuStrip1);
+            this.panel3.Location = new System.Drawing.Point(1034, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(38, 34);
+            this.panel3.TabIndex = 32;
             // 
-            // panel2
+            // menuStrip1
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.Controls.Add(this.lblTransactions);
-            this.panel2.Controls.Add(this.showPassBtn);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Location = new System.Drawing.Point(-1, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1102, 24);
-            this.panel2.TabIndex = 33;
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AccountMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(38, 32);
+            this.menuStrip1.Stretch = false;
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // showPassBtn
+            // AccountMenuItem
             // 
-            this.showPassBtn.BackColor = System.Drawing.Color.Brown;
-            this.showPassBtn.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
-            this.showPassBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.showPassBtn.FlatAppearance.BorderSize = 0;
-            this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showPassBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.showPassBtn.Location = new System.Drawing.Point(1075, 1);
-            this.showPassBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.showPassBtn.Name = "showPassBtn";
-            this.showPassBtn.Size = new System.Drawing.Size(25, 25);
-            this.showPassBtn.TabIndex = 14;
-            this.showPassBtn.UseVisualStyleBackColor = false;
-            this.showPassBtn.Click += new System.EventHandler(this.showPassBtn_Click);
+            this.AccountMenuItem.AutoSize = false;
+            this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logOutToolStripMenuItem});
+            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.user_icon;
+            this.AccountMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AccountMenuItem.Name = "AccountMenuItem";
+            this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
+            this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
-            // button4
+            // logOutToolStripMenuItem
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.Location = new System.Drawing.Point(1046, -1);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(25, 25);
-            this.button4.TabIndex = 15;
-            this.button4.UseVisualStyleBackColor = false;
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.logOutToolStripMenuItem.Text = "Log Out";
             // 
             // AdminTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 600);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1084, 561);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AdminTransaction";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminTransaction";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -218,9 +211,9 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnAdmins;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button showPassBtn;
-        private System.Windows.Forms.Label lblTransactions;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }
