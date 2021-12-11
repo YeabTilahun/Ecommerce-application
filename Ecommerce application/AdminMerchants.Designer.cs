@@ -1,7 +1,7 @@
 ﻿
 namespace Ecommerce_application
 {
-    partial class AdminProduct
+    partial class AdminMerchants
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,10 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblMerchants = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cmbCatagories = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdmins = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
@@ -36,15 +40,47 @@ namespace Ecommerce_application
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnMerchants = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
-            this.cmbCatagories = new System.Windows.Forms.ComboBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblProducts = new System.Windows.Forms.Label();
             this.showPassBtn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Controls.Add(this.lblMerchants);
+            this.panel2.Controls.Add(this.showPassBtn);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Location = new System.Drawing.Point(-1, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1102, 24);
+            this.panel2.TabIndex = 21;
+            // 
+            // lblMerchants
+            // 
+            this.lblMerchants.AutoSize = true;
+            this.lblMerchants.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMerchants.Location = new System.Drawing.Point(540, 0);
+            this.lblMerchants.Name = "lblMerchants";
+            this.lblMerchants.Size = new System.Drawing.Size(93, 22);
+            this.lblMerchants.TabIndex = 16;
+            this.lblMerchants.Text = "Merchants";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(855, 52);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(177, 20);
+            this.txtSearch.TabIndex = 20;
+            // 
+            // cmbCatagories
+            // 
+            this.cmbCatagories.FormattingEnabled = true;
+            this.cmbCatagories.Location = new System.Drawing.Point(188, 51);
+            this.cmbCatagories.Name = "cmbCatagories";
+            this.cmbCatagories.Size = new System.Drawing.Size(250, 21);
+            this.cmbCatagories.TabIndex = 19;
             // 
             // panel1
             // 
@@ -55,10 +91,10 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.btnCustomers);
             this.panel1.Controls.Add(this.btnMerchants);
             this.panel1.Controls.Add(this.btnProducts);
-            this.panel1.Location = new System.Drawing.Point(0, 22);
+            this.panel1.Location = new System.Drawing.Point(-1, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(160, 578);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 18;
             // 
             // btnAdmins
             // 
@@ -71,7 +107,6 @@ namespace Ecommerce_application
             this.btnAdmins.TabIndex = 5;
             this.btnAdmins.Text = "Admins";
             this.btnAdmins.UseVisualStyleBackColor = true;
-            this.btnAdmins.Click += new System.EventHandler(this.btnAdmins_Click);
             // 
             // btnRegister
             // 
@@ -84,7 +119,6 @@ namespace Ecommerce_application
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register Admins";
             this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnTransactions
             // 
@@ -97,7 +131,6 @@ namespace Ecommerce_application
             this.btnTransactions.TabIndex = 3;
             this.btnTransactions.Text = "Transactions";
             this.btnTransactions.UseVisualStyleBackColor = true;
-            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
             // 
             // btnCustomers
             // 
@@ -111,11 +144,10 @@ namespace Ecommerce_application
             this.btnCustomers.TabIndex = 2;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
-            this.btnCustomers.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnMerchants
             // 
-            this.btnMerchants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(121)))), ((int)(((byte)(99)))));
+            this.btnMerchants.BackColor = System.Drawing.SystemColors.Control;
             this.btnMerchants.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMerchants.FlatAppearance.BorderSize = 0;
             this.btnMerchants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -129,7 +161,6 @@ namespace Ecommerce_application
             // 
             // btnProducts
             // 
-            this.btnProducts.BackColor = System.Drawing.SystemColors.Control;
             this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -138,44 +169,7 @@ namespace Ecommerce_application
             this.btnProducts.Size = new System.Drawing.Size(160, 44);
             this.btnProducts.TabIndex = 0;
             this.btnProducts.Text = "Products";
-            this.btnProducts.UseVisualStyleBackColor = false;
-            // 
-            // cmbCatagories
-            // 
-            this.cmbCatagories.FormattingEnabled = true;
-            this.cmbCatagories.Location = new System.Drawing.Point(189, 51);
-            this.cmbCatagories.Name = "cmbCatagories";
-            this.cmbCatagories.Size = new System.Drawing.Size(250, 21);
-            this.cmbCatagories.TabIndex = 1;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(856, 52);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(177, 20);
-            this.txtSearch.TabIndex = 16;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.Controls.Add(this.lblProducts);
-            this.panel2.Controls.Add(this.showPassBtn);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1102, 24);
-            this.panel2.TabIndex = 17;
-            // 
-            // lblProducts
-            // 
-            this.lblProducts.AutoSize = true;
-            this.lblProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducts.Location = new System.Drawing.Point(540, 0);
-            this.lblProducts.Name = "lblProducts";
-            this.lblProducts.Size = new System.Drawing.Size(81, 22);
-            this.lblProducts.TabIndex = 16;
-            this.lblProducts.Text = "Products";
-            this.lblProducts.Click += new System.EventHandler(this.label1_Click);
+            this.btnProducts.UseVisualStyleBackColor = true;
             // 
             // showPassBtn
             // 
@@ -209,23 +203,21 @@ namespace Ecommerce_application
             this.button4.TabIndex = 15;
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // AdminProduct
+            // AdminMerchants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.cmbCatagories);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdminProduct";
-            this.Text = "AdminProduct";
-            this.Load += new System.EventHandler(this.AdminProduct_Load);
-            this.panel1.ResumeLayout(false);
+            this.Name = "AdminMerchants";
+            this.Text = "AdminMerchants";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,18 +225,18 @@ namespace Ecommerce_application
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnCustomers;
-        private System.Windows.Forms.Button btnMerchants;
-        private System.Windows.Forms.Button btnProducts;
-        private System.Windows.Forms.ComboBox cmbCatagories;
-        private System.Windows.Forms.Button btnTransactions;
-        private System.Windows.Forms.Button btnAdmins;
-        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblMerchants;
         private System.Windows.Forms.Button showPassBtn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblProducts;
+        private System.Windows.Forms.ComboBox cmbCatagories;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnAdmins;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnTransactions;
+        private System.Windows.Forms.Button btnCustomers;
+        private System.Windows.Forms.Button btnMerchants;
+        private System.Windows.Forms.Button btnProducts;
     }
 }
