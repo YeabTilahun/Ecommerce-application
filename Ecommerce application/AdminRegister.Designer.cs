@@ -328,6 +328,7 @@ namespace Ecommerce_application
             this.Name = "AdminRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.AdminRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
