@@ -26,5 +26,10 @@ namespace Ecommerce_application
         {
             this.Close();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

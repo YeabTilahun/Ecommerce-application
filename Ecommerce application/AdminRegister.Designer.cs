@@ -50,6 +50,8 @@ namespace Ecommerce_application
             this.label1 = new System.Windows.Forms.Label();
             this.txtRole = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.lblSex = new System.Windows.Forms.Label();
+            this.cmbSex = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -57,7 +59,7 @@ namespace Ecommerce_application
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(291, 322);
+            this.btnCancel.Location = new System.Drawing.Point(291, 345);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(91, 38);
@@ -71,7 +73,7 @@ namespace Ecommerce_application
             this.btnRegister.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(93, 322);
+            this.btnRegister.Location = new System.Drawing.Point(93, 345);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(0);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(89, 38);
@@ -83,7 +85,7 @@ namespace Ecommerce_application
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(98, 258);
+            this.label9.Location = new System.Drawing.Point(98, 281);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 14);
@@ -92,7 +94,7 @@ namespace Ecommerce_application
             // 
             // txtConfermPass
             // 
-            this.txtConfermPass.Location = new System.Drawing.Point(188, 255);
+            this.txtConfermPass.Location = new System.Drawing.Point(188, 275);
             this.txtConfermPass.Margin = new System.Windows.Forms.Padding(0);
             this.txtConfermPass.Name = "txtConfermPass";
             this.txtConfermPass.PasswordChar = '*';
@@ -101,7 +103,7 @@ namespace Ecommerce_application
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(188, 226);
+            this.txtPass.Location = new System.Drawing.Point(188, 246);
             this.txtPass.Margin = new System.Windows.Forms.Padding(0);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
@@ -110,7 +112,7 @@ namespace Ecommerce_application
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(188, 199);
+            this.txtUserName.Location = new System.Drawing.Point(188, 216);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(0);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(182, 20);
@@ -118,7 +120,7 @@ namespace Ecommerce_application
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(188, 171);
+            this.txtEmail.Location = new System.Drawing.Point(188, 188);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(0);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 20);
@@ -126,7 +128,7 @@ namespace Ecommerce_application
             // 
             // txtLName
             // 
-            this.txtLName.Location = new System.Drawing.Point(188, 86);
+            this.txtLName.Location = new System.Drawing.Point(188, 83);
             this.txtLName.Margin = new System.Windows.Forms.Padding(0);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(182, 20);
@@ -134,7 +136,7 @@ namespace Ecommerce_application
             // 
             // txtPhoneNum
             // 
-            this.txtPhoneNum.Location = new System.Drawing.Point(188, 144);
+            this.txtPhoneNum.Location = new System.Drawing.Point(188, 161);
             this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(0);
             this.txtPhoneNum.Name = "txtPhoneNum";
             this.txtPhoneNum.Size = new System.Drawing.Size(182, 20);
@@ -142,7 +144,7 @@ namespace Ecommerce_application
             // 
             // txtFName
             // 
-            this.txtFName.Location = new System.Drawing.Point(188, 57);
+            this.txtFName.Location = new System.Drawing.Point(188, 54);
             this.txtFName.Margin = new System.Windows.Forms.Padding(0);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(182, 20);
@@ -150,18 +152,18 @@ namespace Ecommerce_application
             // 
             // dtpBirthday
             // 
-            this.dtpBirthday.Location = new System.Drawing.Point(188, 113);
+            this.dtpBirthday.Location = new System.Drawing.Point(188, 136);
             this.dtpBirthday.Margin = new System.Windows.Forms.Padding(0);
             this.dtpBirthday.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
             this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Size = new System.Drawing.Size(180, 20);
+            this.dtpBirthday.Size = new System.Drawing.Size(182, 20);
             this.dtpBirthday.TabIndex = 64;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(98, 119);
+            this.label8.Location = new System.Drawing.Point(98, 142);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 14);
@@ -172,7 +174,7 @@ namespace Ecommerce_application
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(98, 229);
+            this.label7.Location = new System.Drawing.Point(98, 252);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 14);
@@ -183,7 +185,7 @@ namespace Ecommerce_application
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(98, 284);
+            this.label6.Location = new System.Drawing.Point(98, 307);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 14);
@@ -194,7 +196,7 @@ namespace Ecommerce_application
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(98, 171);
+            this.label5.Location = new System.Drawing.Point(98, 194);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 14);
@@ -205,7 +207,7 @@ namespace Ecommerce_application
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(98, 144);
+            this.label4.Location = new System.Drawing.Point(98, 167);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 14);
@@ -216,7 +218,7 @@ namespace Ecommerce_application
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(98, 199);
+            this.label3.Location = new System.Drawing.Point(98, 222);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 14);
@@ -248,7 +250,7 @@ namespace Ecommerce_application
             // 
             // txtRole
             // 
-            this.txtRole.Location = new System.Drawing.Point(188, 281);
+            this.txtRole.Location = new System.Drawing.Point(188, 301);
             this.txtRole.Margin = new System.Windows.Forms.Padding(0);
             this.txtRole.Name = "txtRole";
             this.txtRole.ReadOnly = true;
@@ -269,11 +271,36 @@ namespace Ecommerce_application
             this.label11.TabIndex = 84;
             this.label11.Text = "Registering an Admin";
             // 
+            // lblSex
+            // 
+            this.lblSex.AutoSize = true;
+            this.lblSex.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSex.Location = new System.Drawing.Point(98, 116);
+            this.lblSex.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSex.Name = "lblSex";
+            this.lblSex.Size = new System.Drawing.Size(26, 14);
+            this.lblSex.TabIndex = 85;
+            this.lblSex.Text = "Sex";
+            this.lblSex.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // cmbSex
+            // 
+            this.cmbSex.FormattingEnabled = true;
+            this.cmbSex.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbSex.Location = new System.Drawing.Point(188, 109);
+            this.cmbSex.Name = "cmbSex";
+            this.cmbSex.Size = new System.Drawing.Size(182, 21);
+            this.cmbSex.TabIndex = 86;
+            // 
             // AdminRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 381);
+            this.ClientSize = new System.Drawing.Size(484, 411);
+            this.Controls.Add(this.cmbSex);
+            this.Controls.Add(this.lblSex);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtRole);
             this.Controls.Add(this.btnCancel);
@@ -327,5 +354,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtRole;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblSex;
+        private System.Windows.Forms.ComboBox cmbSex;
     }
 }

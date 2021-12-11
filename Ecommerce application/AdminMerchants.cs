@@ -60,6 +60,21 @@ namespace Ecommerce_application
             AdminRegister adminRegister = new AdminRegister();
             adminRegister.Show();
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdminMerchants_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
