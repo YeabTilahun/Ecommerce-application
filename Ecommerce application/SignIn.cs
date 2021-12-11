@@ -76,5 +76,11 @@ namespace Ecommerce_application
                 textPassword.PasswordChar = '*';
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Merchant m = new Merchant();
+            m.Show();
+        }
     }
 }

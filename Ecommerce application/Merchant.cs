@@ -56,5 +56,13 @@ namespace Ecommerce_application
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string time = DateTime.Now.ToShortTimeString();
+            label2.Text = time;
+            string date = DateTime.Now.ToShortDateString();
+            label3.Text = date;
+        }
     }
 }

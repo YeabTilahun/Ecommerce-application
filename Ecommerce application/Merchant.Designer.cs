@@ -29,6 +29,7 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -37,8 +38,13 @@ namespace Ecommerce_application
             this.MinMer = new System.Windows.Forms.Button();
             this.CloseM = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -55,6 +61,7 @@ namespace Ecommerce_application
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(122)))), ((int)(((byte)(91)))));
+            this.panel4.Controls.Add(this.button6);
             this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button3);
@@ -71,7 +78,7 @@ namespace Ecommerce_application
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 27);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Sell";
+            this.button3.Text = "Home";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button4
@@ -89,7 +96,7 @@ namespace Ecommerce_application
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(0, 95);
+            this.button5.Location = new System.Drawing.Point(0, 138);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(50, 27);
             this.button5.TabIndex = 4;
@@ -129,15 +136,53 @@ namespace Ecommerce_application
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label2);
             this.panel5.Location = new System.Drawing.Point(50, 24);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(600, 489);
             this.panel5.TabIndex = 2;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(0, 92);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(50, 27);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Sell";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 55);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Time";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 18);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Date";
+            // 
             // Merchant
             // 
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(651, 512);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -148,6 +193,8 @@ namespace Ecommerce_application
             this.Load += new System.EventHandler(this.Merchant_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -170,5 +217,9 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label3;
     }
 }
