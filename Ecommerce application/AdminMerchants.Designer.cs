@@ -99,6 +99,7 @@ namespace Ecommerce_application
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register Admins";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnTransactions
             // 

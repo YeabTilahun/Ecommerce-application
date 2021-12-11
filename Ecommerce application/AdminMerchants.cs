@@ -54,6 +54,12 @@ namespace Ecommerce_application
             adminProducts.Show();
             this.Hide();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            AdminRegister adminRegister = new AdminRegister();
+            adminRegister.Show();
+        }
     }
 }
 
