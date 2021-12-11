@@ -26,5 +26,12 @@ namespace Ecommerce_application
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Merchant m = new Merchant();
+            m.Show();
+            this.Hide();
+        }
     }
 }
