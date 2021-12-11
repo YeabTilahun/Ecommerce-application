@@ -63,7 +63,7 @@ namespace Ecommerce_application
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(91, 38);
-            this.btnCancel.TabIndex = 72;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -77,7 +77,7 @@ namespace Ecommerce_application
             this.btnRegister.Margin = new System.Windows.Forms.Padding(0);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(89, 38);
-            this.btnRegister.TabIndex = 71;
+            this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
             // 
@@ -99,7 +99,7 @@ namespace Ecommerce_application
             this.txtConfermPass.Name = "txtConfermPass";
             this.txtConfermPass.PasswordChar = '*';
             this.txtConfermPass.Size = new System.Drawing.Size(182, 20);
-            this.txtConfermPass.TabIndex = 69;
+            this.txtConfermPass.TabIndex = 8;
             // 
             // txtPass
             // 
@@ -108,7 +108,7 @@ namespace Ecommerce_application
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(182, 20);
-            this.txtPass.TabIndex = 68;
+            this.txtPass.TabIndex = 7;
             // 
             // txtUserName
             // 
@@ -116,7 +116,7 @@ namespace Ecommerce_application
             this.txtUserName.Margin = new System.Windows.Forms.Padding(0);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(182, 20);
-            this.txtUserName.TabIndex = 67;
+            this.txtUserName.TabIndex = 6;
             // 
             // txtEmail
             // 
@@ -124,7 +124,7 @@ namespace Ecommerce_application
             this.txtEmail.Margin = new System.Windows.Forms.Padding(0);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 20);
-            this.txtEmail.TabIndex = 66;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtLName
             // 
@@ -132,7 +132,7 @@ namespace Ecommerce_application
             this.txtLName.Margin = new System.Windows.Forms.Padding(0);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(182, 20);
-            this.txtLName.TabIndex = 63;
+            this.txtLName.TabIndex = 1;
             this.txtLName.Leave += new System.EventHandler(this.txtLName_Leave);
             // 
             // txtPhoneNum
@@ -141,7 +141,7 @@ namespace Ecommerce_application
             this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(0);
             this.txtPhoneNum.Name = "txtPhoneNum";
             this.txtPhoneNum.Size = new System.Drawing.Size(182, 20);
-            this.txtPhoneNum.TabIndex = 65;
+            this.txtPhoneNum.TabIndex = 4;
             // 
             // txtFName
             // 
@@ -149,7 +149,7 @@ namespace Ecommerce_application
             this.txtFName.Margin = new System.Windows.Forms.Padding(0);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(182, 20);
-            this.txtFName.TabIndex = 62;
+            this.txtFName.TabIndex = 0;
             this.txtFName.Leave += new System.EventHandler(this.txtFName_Leave);
             // 
             // dtpBirthday
@@ -159,7 +159,7 @@ namespace Ecommerce_application
             this.dtpBirthday.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(182, 20);
-            this.dtpBirthday.TabIndex = 64;
+            this.dtpBirthday.TabIndex = 3;
             // 
             // label8
             // 
@@ -294,7 +294,7 @@ namespace Ecommerce_application
             this.cmbSex.Location = new System.Drawing.Point(188, 109);
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(182, 21);
-            this.cmbSex.TabIndex = 86;
+            this.cmbSex.TabIndex = 2;
             // 
             // AdminRegister
             // 

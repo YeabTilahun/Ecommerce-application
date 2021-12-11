@@ -55,13 +55,13 @@ namespace Ecommerce_application
             this.label7 = new System.Windows.Forms.Label();
             this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
@@ -360,21 +360,22 @@ namespace Ecommerce_application
             this.dataGridView1.Size = new System.Drawing.Size(870, 370);
             this.dataGridView1.TabIndex = 35;
             // 
-            // pictureBox1
+            // picBoxSearch
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(1039, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
+            this.picBoxSearch.Location = new System.Drawing.Point(1039, 64);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
+            this.picBoxSearch.TabIndex = 38;
+            this.picBoxSearch.TabStop = false;
             // 
             // AdminCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 561);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picBoxSearch);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.vScrollBar2);
             this.Controls.Add(this.dataGridView1);
@@ -395,7 +396,7 @@ namespace Ecommerce_application
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,6 +428,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.VScrollBar vScrollBar2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxSearch;
     }
 }
