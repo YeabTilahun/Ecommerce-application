@@ -81,6 +81,7 @@ namespace Ecommerce_application
             this.btnTransactions.TabIndex = 3;
             this.btnTransactions.Text = "Transactions";
             this.btnTransactions.UseVisualStyleBackColor = false;
+            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
             // 
             // btnCustomers
             // 
@@ -94,6 +95,7 @@ namespace Ecommerce_application
             this.btnCustomers.TabIndex = 2;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnMerchants
             // 
@@ -108,6 +110,7 @@ namespace Ecommerce_application
             this.btnMerchants.TabIndex = 1;
             this.btnMerchants.Text = "Merchants";
             this.btnMerchants.UseVisualStyleBackColor = false;
+            this.btnMerchants.Click += new System.EventHandler(this.btnMerchants_Click);
             // 
             // btnProducts
             // 
@@ -120,6 +123,7 @@ namespace Ecommerce_application
             this.btnProducts.TabIndex = 0;
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = true;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // panel1
             // 
@@ -159,6 +163,7 @@ namespace Ecommerce_application
             this.showPassBtn.Size = new System.Drawing.Size(25, 25);
             this.showPassBtn.TabIndex = 14;
             this.showPassBtn.UseVisualStyleBackColor = false;
+            this.showPassBtn.Click += new System.EventHandler(this.showPassBtn_Click);
             // 
             // button4
             // 

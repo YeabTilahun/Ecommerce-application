@@ -21,20 +21,25 @@ namespace Ecommerce_application
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCustomers_Click(object sender, EventArgs e)
         {
-
+            AdminCustomers adminCustomers = new AdminCustomers();
+            adminCustomers.Show();
+            this.Hide();
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
-
+            AdminTransaction adminTransaction = new AdminTransaction();
+            adminTransaction.Show();
+            this.Hide();
         }
 
         private void btnAdmins_Click(object sender, EventArgs e)
         {
-
+            AdminAdmins adminAdmins = new AdminAdmins();
+            adminAdmins.Show();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -51,5 +56,19 @@ namespace Ecommerce_application
         {
 
         }
+
+        private void showPassBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMerchants_Click(object sender, EventArgs e)
+        {
+            AdminMerchants adminMerchants = new AdminMerchants();
+            adminMerchants.Show();
+            this.Hide();
+        }
+
+        
     }
 }

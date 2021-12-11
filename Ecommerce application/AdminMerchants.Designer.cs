@@ -31,8 +31,6 @@ namespace Ecommerce_application
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMerchants = new System.Windows.Forms.Label();
-            this.showPassBtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdmins = new System.Windows.Forms.Button();
@@ -44,6 +42,8 @@ namespace Ecommerce_application
             this.btnUncheck = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
+            this.showPassBtn = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,38 +69,6 @@ namespace Ecommerce_application
             this.lblMerchants.Size = new System.Drawing.Size(93, 22);
             this.lblMerchants.TabIndex = 16;
             this.lblMerchants.Text = "Merchants";
-            // 
-            // showPassBtn
-            // 
-            this.showPassBtn.BackColor = System.Drawing.Color.Brown;
-            this.showPassBtn.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
-            this.showPassBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.showPassBtn.FlatAppearance.BorderSize = 0;
-            this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showPassBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.showPassBtn.Location = new System.Drawing.Point(1075, 1);
-            this.showPassBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.showPassBtn.Name = "showPassBtn";
-            this.showPassBtn.Size = new System.Drawing.Size(25, 25);
-            this.showPassBtn.TabIndex = 14;
-            this.showPassBtn.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.Location = new System.Drawing.Point(1046, -1);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(25, 25);
-            this.button4.TabIndex = 15;
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // txtSearch
             // 
@@ -134,6 +102,7 @@ namespace Ecommerce_application
             this.btnAdmins.TabIndex = 5;
             this.btnAdmins.Text = "Admins";
             this.btnAdmins.UseVisualStyleBackColor = true;
+            this.btnAdmins.Click += new System.EventHandler(this.btnAdmins_Click);
             // 
             // btnRegister
             // 
@@ -158,6 +127,7 @@ namespace Ecommerce_application
             this.btnTransactions.TabIndex = 3;
             this.btnTransactions.Text = "Transactions";
             this.btnTransactions.UseVisualStyleBackColor = true;
+            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
             // 
             // btnCustomers
             // 
@@ -171,6 +141,7 @@ namespace Ecommerce_application
             this.btnCustomers.TabIndex = 2;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnMerchants
             // 
@@ -197,6 +168,7 @@ namespace Ecommerce_application
             this.btnProducts.TabIndex = 0;
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = true;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnUncheck
             // 
@@ -236,6 +208,39 @@ namespace Ecommerce_application
             this.btnCheck.TabIndex = 22;
             this.btnCheck.Text = "Check All";
             this.btnCheck.UseVisualStyleBackColor = false;
+            // 
+            // showPassBtn
+            // 
+            this.showPassBtn.BackColor = System.Drawing.Color.Brown;
+            this.showPassBtn.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
+            this.showPassBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.showPassBtn.FlatAppearance.BorderSize = 0;
+            this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showPassBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.showPassBtn.Location = new System.Drawing.Point(1075, 1);
+            this.showPassBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.showPassBtn.Name = "showPassBtn";
+            this.showPassBtn.Size = new System.Drawing.Size(25, 25);
+            this.showPassBtn.TabIndex = 14;
+            this.showPassBtn.UseVisualStyleBackColor = false;
+            this.showPassBtn.Click += new System.EventHandler(this.showPassBtn_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Enabled = false;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.Location = new System.Drawing.Point(1046, -1);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(25, 25);
+            this.button4.TabIndex = 15;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // AdminMerchants
             // 
