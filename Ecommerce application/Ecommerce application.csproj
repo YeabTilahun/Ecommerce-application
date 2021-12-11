@@ -49,11 +49,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminProduct.cs">
+    <Compile Include="AdminAdmins.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminProduct.Designer.cs">
-      <DependentUpon>AdminProduct.cs</DependentUpon>
+    <Compile Include="AdminAdmins.Designer.cs">
+      <DependentUpon>AdminAdmins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminCustomers.Designer.cs">
+      <DependentUpon>AdminCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMerchants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMerchants.Designer.cs">
+      <DependentUpon>AdminMerchants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminProducts.Designer.cs">
+      <DependentUpon>AdminProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminRegister.Designer.cs">
+      <DependentUpon>AdminRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTransaction.Designer.cs">
+      <DependentUpon>AdminTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="Merchant.cs">
       <SubType>Form</SubType>
@@ -92,8 +122,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdminProduct.resx">
-      <DependentUpon>AdminProduct.cs</DependentUpon>
+    <EmbeddedResource Include="AdminAdmins.resx">
+      <DependentUpon>AdminAdmins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminCustomers.resx">
+      <DependentUpon>AdminCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMerchants.resx">
+      <DependentUpon>AdminMerchants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminProducts.resx">
+      <DependentUpon>AdminProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRegister.resx">
+      <DependentUpon>AdminRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTransaction.resx">
+      <DependentUpon>AdminTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Merchant.resx">
       <DependentUpon>Merchant.cs</DependentUpon>
