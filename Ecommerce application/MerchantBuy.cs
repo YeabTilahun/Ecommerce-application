@@ -33,5 +33,17 @@ namespace Ecommerce_application
             m.Show();
             this.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MerchantSell m = new MerchantSell();
+            m.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

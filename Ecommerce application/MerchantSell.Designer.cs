@@ -29,19 +29,20 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantSell));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.MinMer = new System.Windows.Forms.Button();
-            this.CloseM = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.MinMer = new System.Windows.Forms.Button();
+            this.CloseM = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,40 +56,11 @@ namespace Ecommerce_application
             this.panel3.Size = new System.Drawing.Size(73, 23);
             this.panel3.TabIndex = 6;
             // 
-            // MinMer
-            // 
-            this.MinMer.BackColor = System.Drawing.Color.Transparent;
-            this.MinMer.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
-            this.MinMer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MinMer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinMer.ForeColor = System.Drawing.SystemColors.Control;
-            this.MinMer.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MinMer.Location = new System.Drawing.Point(8, -1);
-            this.MinMer.Margin = new System.Windows.Forms.Padding(2);
-            this.MinMer.Name = "MinMer";
-            this.MinMer.Size = new System.Drawing.Size(25, 25);
-            this.MinMer.TabIndex = 13;
-            this.MinMer.UseVisualStyleBackColor = false;
-            this.MinMer.Click += new System.EventHandler(this.MinMer_Click);
-            // 
-            // CloseM
-            // 
-            this.CloseM.BackColor = System.Drawing.Color.Transparent;
-            this.CloseM.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
-            this.CloseM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.CloseM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseM.ForeColor = System.Drawing.SystemColors.Control;
-            this.CloseM.Location = new System.Drawing.Point(46, 0);
-            this.CloseM.Margin = new System.Windows.Forms.Padding(2);
-            this.CloseM.Name = "CloseM";
-            this.CloseM.Size = new System.Drawing.Size(25, 25);
-            this.CloseM.TabIndex = 14;
-            this.CloseM.UseVisualStyleBackColor = false;
-            this.CloseM.Click += new System.EventHandler(this.CloseM_Click);
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.label1);
             this.panel5.Location = new System.Drawing.Point(50, 22);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(600, 489);
@@ -138,6 +110,7 @@ namespace Ecommerce_application
             this.button4.TabIndex = 3;
             this.button4.Text = "Buy";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -149,10 +122,55 @@ namespace Ecommerce_application
             this.button3.TabIndex = 2;
             this.button3.Text = "Home";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // timer1
+            // MinMer
             // 
-            this.timer1.Enabled = true;
+            this.MinMer.BackColor = System.Drawing.Color.Transparent;
+            this.MinMer.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
+            this.MinMer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MinMer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinMer.ForeColor = System.Drawing.SystemColors.Control;
+            this.MinMer.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MinMer.Location = new System.Drawing.Point(8, -1);
+            this.MinMer.Margin = new System.Windows.Forms.Padding(2);
+            this.MinMer.Name = "MinMer";
+            this.MinMer.Size = new System.Drawing.Size(25, 25);
+            this.MinMer.TabIndex = 13;
+            this.MinMer.UseVisualStyleBackColor = false;
+            this.MinMer.Click += new System.EventHandler(this.MinMer_Click);
+            // 
+            // CloseM
+            // 
+            this.CloseM.BackColor = System.Drawing.Color.Transparent;
+            this.CloseM.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
+            this.CloseM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.CloseM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseM.ForeColor = System.Drawing.SystemColors.Control;
+            this.CloseM.Location = new System.Drawing.Point(46, 0);
+            this.CloseM.Margin = new System.Windows.Forms.Padding(2);
+            this.CloseM.Name = "CloseM";
+            this.CloseM.Size = new System.Drawing.Size(25, 25);
+            this.CloseM.TabIndex = 14;
+            this.CloseM.UseVisualStyleBackColor = false;
+            this.CloseM.Click += new System.EventHandler(this.CloseM_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 403);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Product Name";
             // 
             // MerchantSell
             // 
@@ -165,8 +183,11 @@ namespace Ecommerce_application
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MerchantSell";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MerchantSell";
             this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -183,6 +204,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
