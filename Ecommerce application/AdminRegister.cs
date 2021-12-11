@@ -41,5 +41,10 @@ namespace Ecommerce_application
         {
             txtLName.Text = txtLName.Text.Substring(0, 1).ToUpper() + txtLName.Text.Substring(1).ToLower();
         }
+
+        private void AdminRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
