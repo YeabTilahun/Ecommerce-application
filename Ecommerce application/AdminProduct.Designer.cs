@@ -42,6 +42,9 @@ namespace Ecommerce_application
             this.lblProducts = new System.Windows.Forms.Label();
             this.showPassBtn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUncheck = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -209,12 +212,54 @@ namespace Ecommerce_application
             this.button4.TabIndex = 15;
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // btnCheck
+            // 
+            this.btnCheck.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnCheck.FlatAppearance.BorderSize = 0;
+            this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheck.Location = new System.Drawing.Point(189, 541);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(136, 33);
+            this.btnCheck.TabIndex = 18;
+            this.btnCheck.Text = "Check All";
+            this.btnCheck.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Location = new System.Drawing.Point(843, 541);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(190, 33);
+            this.btnDelete.TabIndex = 19;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnUncheck
+            // 
+            this.btnUncheck.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUncheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnUncheck.FlatAppearance.BorderSize = 0;
+            this.btnUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUncheck.Location = new System.Drawing.Point(353, 541);
+            this.btnUncheck.Name = "btnUncheck";
+            this.btnUncheck.Size = new System.Drawing.Size(136, 33);
+            this.btnUncheck.TabIndex = 20;
+            this.btnUncheck.Text = "Uncheck All";
+            this.btnUncheck.UseVisualStyleBackColor = false;
+            // 
             // AdminProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.Controls.Add(this.btnUncheck);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.cmbCatagories);
@@ -246,5 +291,8 @@ namespace Ecommerce_application
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblProducts;
+        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUncheck;
     }
 }
