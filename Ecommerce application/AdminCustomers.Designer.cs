@@ -33,7 +33,7 @@ namespace Ecommerce_application
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblMerchants = new System.Windows.Forms.Label();
+            this.lblCustomers = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdmins = new System.Windows.Forms.Button();
@@ -90,7 +90,7 @@ namespace Ecommerce_application
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.Controls.Add(this.lblMerchants);
+            this.panel2.Controls.Add(this.lblCustomers);
             this.panel2.Controls.Add(this.showPassBtn);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Location = new System.Drawing.Point(-1, 0);
@@ -98,15 +98,15 @@ namespace Ecommerce_application
             this.panel2.Size = new System.Drawing.Size(1102, 24);
             this.panel2.TabIndex = 27;
             // 
-            // lblMerchants
+            // lblCustomers
             // 
-            this.lblMerchants.AutoSize = true;
-            this.lblMerchants.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMerchants.Location = new System.Drawing.Point(540, 0);
-            this.lblMerchants.Name = "lblMerchants";
-            this.lblMerchants.Size = new System.Drawing.Size(96, 22);
-            this.lblMerchants.TabIndex = 16;
-            this.lblMerchants.Text = "Customers";
+            this.lblCustomers.AutoSize = true;
+            this.lblCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomers.Location = new System.Drawing.Point(540, 0);
+            this.lblCustomers.Name = "lblCustomers";
+            this.lblCustomers.Size = new System.Drawing.Size(96, 22);
+            this.lblCustomers.TabIndex = 16;
+            this.lblCustomers.Text = "Customers";
             // 
             // txtSearch
             // 
@@ -264,7 +264,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblMerchants;
+        private System.Windows.Forms.Label lblCustomers;
         private System.Windows.Forms.Button showPassBtn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtSearch;
