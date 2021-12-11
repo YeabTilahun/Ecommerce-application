@@ -69,6 +69,7 @@ namespace Ecommerce_application
             this.MinMer.Size = new System.Drawing.Size(25, 25);
             this.MinMer.TabIndex = 13;
             this.MinMer.UseVisualStyleBackColor = false;
+            this.MinMer.Click += new System.EventHandler(this.MinMer_Click);
             // 
             // CloseM
             // 
@@ -83,6 +84,7 @@ namespace Ecommerce_application
             this.CloseM.Size = new System.Drawing.Size(25, 25);
             this.CloseM.TabIndex = 14;
             this.CloseM.UseVisualStyleBackColor = false;
+            this.CloseM.Click += new System.EventHandler(this.CloseM_Click);
             // 
             // panel5
             // 
