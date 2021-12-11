@@ -133,6 +133,7 @@ namespace Ecommerce_application
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(182, 20);
             this.txtLName.TabIndex = 63;
+            this.txtLName.Leave += new System.EventHandler(this.txtLName_Leave);
             // 
             // txtPhoneNum
             // 
@@ -149,6 +150,7 @@ namespace Ecommerce_application
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(182, 20);
             this.txtFName.TabIndex = 62;
+            this.txtFName.Leave += new System.EventHandler(this.txtFName_Leave);
             // 
             // dtpBirthday
             // 
