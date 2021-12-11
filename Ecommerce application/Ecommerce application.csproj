@@ -49,11 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="AdminProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminProduct.Designer.cs">
       <DependentUpon>AdminProduct.cs</DependentUpon>
+=======
+    <Compile Include="Merchant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Merchant.Designer.cs">
+      <DependentUpon>Merchant.cs</DependentUpon>
+>>>>>>> 7920e95bbd832e3e6248ef4948e4bdaa13f5dd69
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,8 +82,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="AdminProduct.resx">
       <DependentUpon>AdminProduct.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Merchant.resx">
+      <DependentUpon>Merchant.cs</DependentUpon>
+>>>>>>> 7920e95bbd832e3e6248ef4948e4bdaa13f5dd69
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -129,6 +142,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\icon.jpg" />
+    <None Include="Resources\cart %281%29.png" />
+    <None Include="Resources\icon jpeg.jpg" />
+    <None Include="Resources\logout %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
