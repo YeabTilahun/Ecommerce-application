@@ -29,7 +29,12 @@ namespace Ecommerce_application
 
         private void CustomerPage_Load(object sender, EventArgs e)
         {
-
+            CustomerPage c = new CustomerPage();
+            panelAdd.Controls.Clear();
+            c.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(c.panelAdd);
+            panelAdd.Show();
+            panelAdd.BringToFront();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,27 +64,68 @@ namespace Ecommerce_application
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            CustomerBuy c = new CustomerBuy();
-            panelCustomerHome.Controls.Clear();
-            c.Dock = DockStyle.Fill;
-            panelCustomerHome.Controls.Add(c.panelCustomerBuy);
-            panelCustomerHome.Show();
-            panelCustomerHome.BringToFront();
+          
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            CustomerCart c = new CustomerCart();
-            panelCustomerHome.Controls.Clear();
-            c.Dock = DockStyle.Fill;
-            panelCustomerHome.Controls.Add(c.panelCustomerCart);
-            panelCustomerHome.Show();
-            panelCustomerHome.BringToFront();
+            
         }
 
         private void button5_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_3(object sender, EventArgs e)
+        {
+            CustomerBuy c = new CustomerBuy();
+            panelAdd.Controls.Clear();
+            c.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(c.panelCustomerBuy);
+            panelAdd.Show();
+            panelAdd.BringToFront();
+        }
+
+        private void button3_Click_3(object sender, EventArgs e)
+        {
+            CustomerCart c = new CustomerCart();
+            panelAdd.Controls.Clear();
+            c.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(c.panelCustomerCart);
+            panelAdd.Show();
+            panelAdd.BringToFront();
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+
+            CustomerPage c = new CustomerPage();
+            panelAdd.Controls.Clear();
+            c.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(c.panelAdd);
+            panelAdd.Show();
+            panelAdd.BringToFront();
+        }
+
+        private void CloseM_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -87,7 +87,7 @@ namespace Ecommerce_application
             CustomerPage c = new CustomerPage();
             panelCustomerBuy.Controls.Clear();
             c.Dock = DockStyle.Fill;
-            panelCustomerBuy.Controls.Add(c.panelCustomerHome);
+            panelCustomerBuy.Controls.Add(c.panelAdd);
             panelCustomerBuy.Show();
             panelCustomerBuy.BringToFront();
         }
@@ -114,12 +114,6 @@ namespace Ecommerce_application
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            CustomerPage c = new CustomerPage();
-            panelCustomerBuy.Controls.Clear();
-            c.Dock = DockStyle.Fill;
-            panelCustomerBuy.Controls.Add(c.panelCustomerHome);
-            panelCustomerBuy.Show();
-            panelCustomerBuy.BringToFront();
         }
 
         private void button6_Click_1(object sender, EventArgs e)
@@ -135,11 +129,7 @@ namespace Ecommerce_application
         private void button8_Click_1(object sender, EventArgs e)
         {
             CustomerCart c = new CustomerCart();
-            panelCustomerBuy.Controls.Clear();
-            c.Dock = DockStyle.Fill;
-            panelCustomerBuy.Controls.Add(c.panelCustomerCart);
-            panelCustomerBuy.Show();
-            panelCustomerBuy.BringToFront();
+            
         }
     }
 }

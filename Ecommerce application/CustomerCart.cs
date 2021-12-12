@@ -32,7 +32,7 @@ namespace Ecommerce_application
             CustomerPage c = new CustomerPage();
             panelCustomerCart.Controls.Clear();
             c.Dock = DockStyle.Fill;
-            panelCustomerCart.Controls.Add(c.panelCustomerHome);
+            panelCustomerCart.Controls.Add(c.panelAdd);
             panelCustomerCart.Show();
             panelCustomerCart.BringToFront();
         }
