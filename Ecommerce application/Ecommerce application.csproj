@@ -91,6 +91,24 @@
     <Compile Include="AdminTransaction.Designer.cs">
       <DependentUpon>AdminTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerBuy.Designer.cs">
+      <DependentUpon>CustomerBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerCart.Designer.cs">
+      <DependentUpon>CustomerCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPage.Designer.cs">
+      <DependentUpon>CustomerPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Merchant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +172,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminTransaction.resx">
       <DependentUpon>AdminTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerBuy.resx">
+      <DependentUpon>CustomerBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerCart.resx">
+      <DependentUpon>CustomerCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPage.resx">
+      <DependentUpon>CustomerPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Merchant.resx">
       <DependentUpon>Merchant.cs</DependentUpon>
@@ -219,6 +246,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\Adobe_Post_20211212_1430010.86500353574497661.png" />
+    <None Include="Resources\Adobe_Post_20211212_1430010.8650035357449766.png" />
+    <None Include="Resources\wlecome.gif" />
+    <None Include="Resources\search-button.png" />
+    <None Include="Resources\window-maximize.png" />
+    <None Include="Resources\a6e049d77fe5bfc90a4999bba3b335ee.png" />
+    <None Include="Resources\maximize-concept-vector-linear-icon-isolated-transparent-back-background-transparency-outline-style-130087407.jpg" />
     <None Include="Resources\cart.png" />
     <None Include="Resources\sell.png" />
     <None Include="Resources\icon.jpg" />
