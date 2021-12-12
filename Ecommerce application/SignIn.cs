@@ -44,7 +44,7 @@ namespace Ecommerce_application
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Application.Run(new SignUp());
+            Application.Run(new Admin());
             SignUp signUp = new SignUp();
             signUp.Show();
             this.Hide();
@@ -79,8 +79,13 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //merchant
             Merchant m = new Merchant();
             m.Show();
+            this.Hide();
+            //
+            CustomerPage c = new CustomerPage();
+            c.Show();
             this.Hide();
         }
     }
