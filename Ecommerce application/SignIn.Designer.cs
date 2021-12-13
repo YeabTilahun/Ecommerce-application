@@ -33,8 +33,6 @@ namespace Ecommerce_application
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.textUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -93,43 +91,25 @@ namespace Ecommerce_application
             this.label5.Text = " Ecommerce";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(205)))), ((int)(((byte)(147)))));
-            this.label4.Location = new System.Drawing.Point(48, 269);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Password";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(205)))), ((int)(((byte)(147)))));
-            this.label3.Location = new System.Drawing.Point(46, 198);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Username";
-            // 
             // textUsername
             // 
             this.textUsername.BackColor = System.Drawing.SystemColors.Control;
             this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(65)))), ((int)(((byte)(59)))));
+            this.textUsername.ForeColor = System.Drawing.Color.LightGray;
             this.textUsername.Location = new System.Drawing.Point(49, 213);
             this.textUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textUsername.Multiline = true;
             this.textUsername.Name = "textUsername";
             this.textUsername.Size = new System.Drawing.Size(198, 19);
             this.textUsername.TabIndex = 29;
+            this.textUsername.Text = "User name";
+            this.textUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textUsername_MouseClick);
+            this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
+            this.textUsername.Enter += new System.EventHandler(this.textUsername_Enter);
+            this.textUsername.Leave += new System.EventHandler(this.textUsername_Leave);
+            this.textUsername.MouseLeave += new System.EventHandler(this.textUsername_MouseLeave);
+            this.textUsername.MouseHover += new System.EventHandler(this.textUsername_MouseHover);
             // 
             // label2
             // 
@@ -165,14 +145,16 @@ namespace Ecommerce_application
             this.textPassword.BackColor = System.Drawing.SystemColors.Control;
             this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(65)))), ((int)(((byte)(59)))));
+            this.textPassword.ForeColor = System.Drawing.Color.LightGray;
             this.textPassword.Location = new System.Drawing.Point(49, 284);
             this.textPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textPassword.Multiline = true;
             this.textPassword.Name = "textPassword";
-            this.textPassword.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(198, 27);
             this.textPassword.TabIndex = 30;
+            this.textPassword.Text = "Password";
+            this.textPassword.Enter += new System.EventHandler(this.textPassword_Enter);
+            this.textPassword.Leave += new System.EventHandler(this.textPassword_Leave);
             // 
             // label1
             // 
@@ -300,8 +282,6 @@ namespace Ecommerce_application
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.textUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
@@ -324,8 +304,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;

@@ -57,7 +57,7 @@ namespace Ecommerce_application
 
         private void showPassword_Click(object sender, EventArgs e)
         {
-            
+
             if (textPassword.PasswordChar == '*')
             {
                 hidePassword.BringToFront();
@@ -87,6 +87,62 @@ namespace Ecommerce_application
             CustomerPage c = new CustomerPage();
             c.Show();
             this.Hide();
+        }
+
+
+        private void textUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool firsttime = true;
+        private void textUsername_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void textUsername_MouseLeave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textUsername_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textUsername_Leave(object sender, EventArgs e)
+        {
+            if (textUsername.Text == "")
+            {
+                textUsername.Text = "User name";
+                textUsername.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void textUsername_Enter(object sender, EventArgs e)
+        {
+            if (textUsername.Text == "User name")
+            textUsername.Text = "";
+            textUsername.ForeColor = Color.Black;
+        }
+
+        private void textPassword_Enter(object sender, EventArgs e)
+        {
+            if (textPassword.Text == "Password")
+            textPassword.Text = "";
+            textPassword.PasswordChar = '*';
+            textPassword.ForeColor = Color.Black;
+        }
+
+        private void textPassword_Leave(object sender, EventArgs e)
+        {
+            if (textPassword.Text == "")
+            {
+                textPassword.Text = "Password";
+                textPassword.PasswordChar = '\0';
+                textPassword.ForeColor = Color.LightGray;
+            }
         }
     }
 }
