@@ -117,5 +117,20 @@ namespace Ecommerce_application
             AdminRegister adminRegister = new AdminRegister();
             adminRegister.Show();
         }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (res == DialogResult.Yes)
+            {
+                this.Close();
+                SignIn signIn = new SignIn();
+                signIn.Show();
+            }
+            if (res == DialogResult.No)
+            {
+
+            }
+        }
     }
 }

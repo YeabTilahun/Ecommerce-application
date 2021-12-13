@@ -70,5 +70,10 @@ namespace Ecommerce_application
 
             }
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

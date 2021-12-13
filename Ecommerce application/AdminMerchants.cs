@@ -90,6 +90,11 @@ namespace Ecommerce_application
 
             }
         }
+
+        private void pnlMerchant_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

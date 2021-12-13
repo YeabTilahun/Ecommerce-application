@@ -114,5 +114,10 @@ namespace Ecommerce_application
 
             }
         }
+
+        private void vScrollBar2_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }
