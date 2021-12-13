@@ -42,10 +42,6 @@ namespace Ecommerce_application
             this.label7 = new System.Windows.Forms.Label();
             this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUncheck = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
@@ -54,8 +50,6 @@ namespace Ecommerce_application
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMerchant
@@ -68,21 +62,21 @@ namespace Ecommerce_application
             this.pnlMerchant.Controls.Add(this.panel2);
             this.pnlMerchant.Controls.Add(this.vScrollBar2);
             this.pnlMerchant.Controls.Add(this.dataGridView1);
-            this.pnlMerchant.Controls.Add(this.panel3);
             this.pnlMerchant.Controls.Add(this.btnUncheck);
             this.pnlMerchant.Controls.Add(this.btnRemove);
             this.pnlMerchant.Controls.Add(this.btnCheck);
             this.pnlMerchant.Controls.Add(this.txtSearch);
             this.pnlMerchant.Location = new System.Drawing.Point(0, 0);
             this.pnlMerchant.Name = "pnlMerchant";
-            this.pnlMerchant.Size = new System.Drawing.Size(940, 575);
+            this.pnlMerchant.Size = new System.Drawing.Size(940, 530);
             this.pnlMerchant.TabIndex = 18;
+            this.pnlMerchant.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMerchant_Paint);
             // 
             // picBoxSearch
             // 
             this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(908, 66);
+            this.picBoxSearch.Location = new System.Drawing.Point(910, 12);
             this.picBoxSearch.Name = "picBoxSearch";
             this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
             this.picBoxSearch.TabIndex = 38;
@@ -100,7 +94,7 @@ namespace Ecommerce_application
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(12, 112);
+            this.panel2.Location = new System.Drawing.Point(14, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(916, 24);
             this.panel2.TabIndex = 37;
@@ -172,9 +166,9 @@ namespace Ecommerce_application
             // 
             this.vScrollBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.vScrollBar2.Location = new System.Drawing.Point(910, 131);
+            this.vScrollBar2.Location = new System.Drawing.Point(912, 65);
             this.vScrollBar2.Name = "vScrollBar2";
-            this.vScrollBar2.Size = new System.Drawing.Size(18, 380);
+            this.vScrollBar2.Size = new System.Drawing.Size(18, 391);
             this.vScrollBar2.TabIndex = 36;
             // 
             // dataGridView1
@@ -187,52 +181,11 @@ namespace Ecommerce_application
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 131);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 65);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(915, 380);
+            this.dataGridView1.Size = new System.Drawing.Size(915, 391);
             this.dataGridView1.TabIndex = 35;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.menuStrip1);
-            this.panel3.Location = new System.Drawing.Point(890, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(38, 34);
-            this.panel3.TabIndex = 34;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AccountMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(38, 32);
-            this.menuStrip1.Stretch = false;
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // AccountMenuItem
-            // 
-            this.AccountMenuItem.AutoSize = false;
-            this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logOutToolStripMenuItem});
-            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.user_icon;
-            this.AccountMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.AccountMenuItem.Name = "AccountMenuItem";
-            this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
-            this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logOutToolStripMenuItem.Text = "Log Out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // btnUncheck
             // 
@@ -242,7 +195,7 @@ namespace Ecommerce_application
             this.btnUncheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnUncheck.FlatAppearance.BorderSize = 0;
             this.btnUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUncheck.Location = new System.Drawing.Point(177, 530);
+            this.btnUncheck.Location = new System.Drawing.Point(179, 485);
             this.btnUncheck.Name = "btnUncheck";
             this.btnUncheck.Size = new System.Drawing.Size(136, 33);
             this.btnUncheck.TabIndex = 33;
@@ -257,7 +210,7 @@ namespace Ecommerce_application
             this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Location = new System.Drawing.Point(738, 530);
+            this.btnRemove.Location = new System.Drawing.Point(740, 485);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(190, 33);
             this.btnRemove.TabIndex = 32;
@@ -272,7 +225,7 @@ namespace Ecommerce_application
             this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnCheck.FlatAppearance.BorderSize = 0;
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheck.Location = new System.Drawing.Point(13, 530);
+            this.btnCheck.Location = new System.Drawing.Point(15, 485);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(136, 33);
             this.btnCheck.TabIndex = 31;
@@ -282,7 +235,7 @@ namespace Ecommerce_application
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(725, 66);
+            this.txtSearch.Location = new System.Drawing.Point(724, 12);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(177, 20);
             this.txtSearch.TabIndex = 30;
@@ -292,7 +245,7 @@ namespace Ecommerce_application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 575);
+            this.ClientSize = new System.Drawing.Size(940, 530);
             this.Controls.Add(this.pnlMerchant);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMerchants";
@@ -305,9 +258,6 @@ namespace Ecommerce_application
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -324,10 +274,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.VScrollBar vScrollBar2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.Button btnUncheck;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnCheck;

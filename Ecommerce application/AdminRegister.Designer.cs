@@ -287,6 +287,7 @@ namespace Ecommerce_application
             // 
             // cmbSex
             // 
+            this.cmbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSex.FormattingEnabled = true;
             this.cmbSex.Items.AddRange(new object[] {
             "Male",

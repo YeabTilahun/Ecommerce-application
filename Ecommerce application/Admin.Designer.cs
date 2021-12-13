@@ -42,8 +42,16 @@ namespace Ecommerce_application
             this.CloseM = new System.Windows.Forms.Button();
             this.lblNav = new System.Windows.Forms.Label();
             this.pnlCard = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSideNav.SuspendLayout();
             this.pblTopNav.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSideNav
@@ -229,25 +237,80 @@ namespace Ecommerce_application
             this.pnlCard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlCard.Location = new System.Drawing.Point(160, 25);
+            this.pnlCard.Location = new System.Drawing.Point(158, 67);
             this.pnlCard.Name = "pnlCard";
-            this.pnlCard.Size = new System.Drawing.Size(940, 575);
+            this.pnlCard.Size = new System.Drawing.Size(940, 530);
             this.pnlCard.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Location = new System.Drawing.Point(158, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(940, 45);
+            this.panel1.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.menuStrip1);
+            this.panel3.Location = new System.Drawing.Point(899, 8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(38, 34);
+            this.panel3.TabIndex = 35;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AccountMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(38, 32);
+            this.menuStrip1.Stretch = false;
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // AccountMenuItem
+            // 
+            this.AccountMenuItem.AutoSize = false;
+            this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logOutToolStripMenuItem});
+            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.user_icon;
+            this.AccountMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AccountMenuItem.Name = "AccountMenuItem";
+            this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
+            this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlCard);
             this.Controls.Add(this.pblTopNav);
             this.Controls.Add(this.pnlSideNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.pnlSideNav.ResumeLayout(false);
             this.pblTopNav.ResumeLayout(false);
             this.pblTopNav.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -267,5 +330,10 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button CloseM;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }
