@@ -191,7 +191,7 @@ namespace Ecommerce_application
                 SignIn signIn = new SignIn();
                 signIn.Show();
             }
-            if (res == DialogResult.Cancel)
+            if (res == DialogResult.No)
             {
                
             }

@@ -183,39 +183,39 @@ namespace Ecommerce_application
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Wheat;
-            this.panel5.Location = new System.Drawing.Point(111, 33);
+            this.panel5.Location = new System.Drawing.Point(111, 34);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 35);
+            this.panel5.Size = new System.Drawing.Size(10, 33);
             this.panel5.TabIndex = 0;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Wheat;
-            this.panel6.Location = new System.Drawing.Point(111, 197);
+            this.panel6.Location = new System.Drawing.Point(111, 198);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 35);
+            this.panel6.Size = new System.Drawing.Size(10, 33);
             this.panel6.TabIndex = 28;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Wheat;
-            this.panel7.Location = new System.Drawing.Point(111, 143);
+            this.panel7.Location = new System.Drawing.Point(111, 144);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 35);
+            this.panel7.Size = new System.Drawing.Size(10, 29);
             this.panel7.TabIndex = 1;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Wheat;
-            this.panel8.Location = new System.Drawing.Point(111, 90);
+            this.panel8.Location = new System.Drawing.Point(111, 91);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 35);
+            this.panel8.Size = new System.Drawing.Size(10, 33);
             this.panel8.TabIndex = 1;
             // 
             // Merchant
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(930, 576);
+            this.ClientSize = new System.Drawing.Size(928, 575);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.panel3);
