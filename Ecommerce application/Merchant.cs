@@ -207,5 +207,6 @@ namespace Ecommerce_application
             panel7.Hide();
 
         }
+
     }
 }

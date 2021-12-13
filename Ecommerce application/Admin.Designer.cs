@@ -138,7 +138,7 @@ namespace Ecommerce_application
             this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducts.Location = new System.Drawing.Point(0, 51);
+            this.btnProducts.Location = new System.Drawing.Point(0, 60);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(160, 44);
             this.btnProducts.TabIndex = 0;
