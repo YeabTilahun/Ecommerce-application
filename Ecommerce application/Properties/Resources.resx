@@ -121,8 +121,8 @@
   <data name="close-tab3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close-tab3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimize (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Adobe_Post_20211212_14300101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Adobe_Post_20211212_1430010.86500353574497661.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close-tab2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close-tab2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,14 +148,14 @@
   <data name="invisible-eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\invisible-eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon jpeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon jpeg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wlecome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wlecome.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimize (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,19 +166,25 @@
   <data name="window-maximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\window-maximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wlecome" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wlecome.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon jpeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon jpeg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Adobe_Post_20211212_1430010.8650035357449766" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Adobe_Post_20211212_1430010.8650035357449766.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maximize-concept-vector-linear-icon-isolated-transparent-back-background-transparency-outline-style-130087407" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maximize-concept-vector-linear-icon-isolated-transparent-back-background-transparency-outline-style-130087407.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Adobe_Post_20211212_14300101" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Adobe_Post_20211212_1430010.86500353574497661.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maximize-size-option" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maximize-size-option.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a6e049d77fe5bfc90a4999bba3b335ee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a6e049d77fe5bfc90a4999bba3b335ee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

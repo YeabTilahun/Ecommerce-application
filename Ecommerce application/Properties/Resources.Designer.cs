@@ -73,6 +73,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap a6e049d77fe5bfc90a4999bba3b335ee1 {
+            get {
+                object obj = ResourceManager.GetObject("a6e049d77fe5bfc90a4999bba3b335ee1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Adobe_Post_20211212_1430010_8650035357449766 {
             get {
                 object obj = ResourceManager.GetObject("Adobe_Post_20211212_1430010.8650035357449766", resourceCulture);
@@ -187,6 +197,16 @@ namespace Ecommerce_application.Properties {
             get {
                 object obj = ResourceManager.GetObject("maximize-concept-vector-linear-icon-isolated-transparent-back-background-transpar" +
                         "ency-outline-style-130087407", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maximize_size_option {
+            get {
+                object obj = ResourceManager.GetObject("maximize-size-option", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

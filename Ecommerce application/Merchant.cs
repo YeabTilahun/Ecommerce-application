@@ -145,5 +145,36 @@ namespace Ecommerce_application
         {
             Application.Exit();
         }
+
+        private void button9_MouseEnter(object sender, EventArgs e)
+        {
+            button9.BackColor = Color.Brown;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button9_MouseLeave(object sender, EventArgs e)
+        {
+            button9.BackColor = Color.Transparent;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (res == DialogResult.Yes)
+            {
+                this.Close();
+                SignIn signIn = new SignIn();
+                signIn.Show();
+            }
+            if (res == DialogResult.Cancel)
+            {
+               
+            }
+           
+        }
     }
 }

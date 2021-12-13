@@ -125,6 +125,11 @@ namespace Ecommerce_application
 
         private void button7_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             this.WindowState = FormWindowState.Minimized;
         }
     }

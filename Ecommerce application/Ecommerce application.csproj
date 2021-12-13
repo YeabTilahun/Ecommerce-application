@@ -246,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\maximize-size-option.png" />
     <None Include="Resources\Adobe_Post_20211212_1430010.86500353574497661.png" />
     <None Include="Resources\Adobe_Post_20211212_1430010.8650035357449766.png" />
     <None Include="Resources\wlecome.gif" />
