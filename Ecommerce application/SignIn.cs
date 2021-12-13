@@ -44,7 +44,7 @@ namespace Ecommerce_application
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Run(new Admin());
+            //Application.Run(new Admin());
             SignUp signUp = new SignUp();
             signUp.Show();
             this.Hide();

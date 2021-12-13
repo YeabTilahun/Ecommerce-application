@@ -53,6 +53,11 @@ namespace Ecommerce_application
             panelAdd.Controls.Add(m.panelHome);
             panelAdd.Show();
             panelAdd.BringToFront();
+            //hiding panels 
+            panel5.Show();
+            panel6.Hide();
+            panel7.Hide();
+            panel8.Hide();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -104,6 +109,11 @@ namespace Ecommerce_application
             panelAdd.Controls.Add(m.panelBuy);
             panelAdd.Show();
             panelAdd.BringToFront();
+            //hide other panels next to the buttons and show panel next to buy
+            panel8.Show();
+            panel5.Hide();
+            panel6.Hide();
+            panel7.Hide();
         }
 
         //To show Sell interface we created the object then we added the panel in sell form in to panel in merchant and YES the acess modifer for the panel is internal
@@ -116,6 +126,11 @@ namespace Ecommerce_application
             panelAdd.Controls.Add(m.panelSell);
             panelAdd.Show();
             panelAdd.BringToFront();
+            //hide other panels next to the buttons and show panel next to buy
+            panel7.Show();
+            panel8.Hide();
+            panel5.Hide();
+            panel6.Hide();
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -132,6 +147,12 @@ namespace Ecommerce_application
             panelAdd.Controls.Add(m.panelHome);
             panelAdd.Show();
             panelAdd.BringToFront();
+            //show panel5
+            panel5.Show();
+            //hide others
+            panel6.Hide();
+            panel7.Hide();
+            panel8.Hide();
         }
 
         //Minimize button
@@ -175,6 +196,16 @@ namespace Ecommerce_application
                
             }
            
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            //hide other panels next to the buttons and show panel next to buy
+            panel6.Show();
+            panel8.Hide();
+            panel5.Hide();
+            panel7.Hide();
+
         }
     }
 }
