@@ -123,6 +123,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chooseStuff {
+            get {
+                object obj = ResourceManager.GetObject("chooseStuff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_tab2 {
             get {
                 object obj = ResourceManager.GetObject("close-tab2", resourceCulture);
@@ -193,6 +203,26 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Maximize_20px {
+            get {
+                object obj = ResourceManager.GetObject("Maximize 20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maximize_24 {
+            get {
+                object obj = ResourceManager.GetObject("maximize_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximize_concept_vector_linear_icon_isolated_transparent_back_background_transparency_outline_style_130087407 {
             get {
                 object obj = ResourceManager.GetObject("maximize-concept-vector-linear-icon-isolated-transparent-back-background-transpar" +
@@ -237,6 +267,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap password_icon {
             get {
                 object obj = ResourceManager.GetObject("password-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restore {
+            get {
+                object obj = ResourceManager.GetObject("Restore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

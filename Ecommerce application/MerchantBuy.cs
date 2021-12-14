@@ -45,5 +45,31 @@ namespace Ecommerce_application
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Search items here";
+                textBox1.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Search items here")
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+        }
     }
 }

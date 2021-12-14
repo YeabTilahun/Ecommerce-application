@@ -17,33 +17,6 @@ namespace Ecommerce_application
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //Useless but dont remove it it will disrupt the design page i dont know why probably its a bug
-        private void CloseM_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void MinMer_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-
         //To display home page first every time merchat account looged in
         private void Merchant_Load(object sender, EventArgs e)
         {
@@ -58,46 +31,6 @@ namespace Ecommerce_application
             panel6.Hide();
             panel7.Hide();
             panel8.Hide();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //Useless but dont remove it
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-        }
-
-        //Useless but dont remove it
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            MerchantBuy m = new MerchantBuy();
-            m.Show();
-            this.Hide();
-        }
-
-        //Useless but dont remove it
-        private void button6_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnProducts_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint_1(object sender, PaintEventArgs e)
-        {
-
         }
 
         //To show Buy interface we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
@@ -133,11 +66,6 @@ namespace Ecommerce_application
             panel6.Hide();
         }
 
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //To show Home interface we created the object then we added the panel in home form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button3_Click(object sender, EventArgs e)
         {
@@ -153,18 +81,6 @@ namespace Ecommerce_application
             panel6.Hide();
             panel7.Hide();
             panel8.Hide();
-        }
-
-        //Minimize button
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        //Close button
-        private void CloseM_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void button9_MouseEnter(object sender, EventArgs e)
@@ -208,5 +124,49 @@ namespace Ecommerce_application
 
         }
 
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        //To make the form movable by holding the panel in the top
+        private bool mouseDown;
+        private Point lastLocation;
+        private void panel4_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panel4_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void panel4_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        // Maximize and Restore window
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+           // button10.Hide();
+            button11.BringToFront();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            ///button11.Hide();
+            button10.BringToFront();
+        }
     }
 }

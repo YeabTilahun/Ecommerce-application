@@ -33,6 +33,10 @@ namespace Ecommerce_application
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Merchant));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -40,12 +44,10 @@ namespace Ecommerce_application
             this.button3 = new System.Windows.Forms.Button();
             this.panelAdd = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -53,10 +55,11 @@ namespace Ecommerce_application
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(121)))), ((int)(((byte)(99)))));
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel8);
@@ -71,10 +74,42 @@ namespace Ecommerce_application
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(115, 552);
             this.panel3.TabIndex = 0;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Wheat;
+            this.panel7.Location = new System.Drawing.Point(111, 144);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(10, 29);
+            this.panel7.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Wheat;
+            this.panel8.Location = new System.Drawing.Point(111, 91);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(10, 33);
+            this.panel8.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Wheat;
+            this.panel6.Location = new System.Drawing.Point(111, 198);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(10, 33);
+            this.panel6.TabIndex = 28;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Wheat;
+            this.panel5.Location = new System.Drawing.Point(111, 34);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 33);
+            this.panel5.TabIndex = 0;
             // 
             // button8
             // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button8.BackColor = System.Drawing.Color.Transparent;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Image = global::Ecommerce_application.Properties.Resources.logout__1_;
@@ -138,6 +173,9 @@ namespace Ecommerce_application
             // 
             // panelAdd
             // 
+            this.panelAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAdd.Location = new System.Drawing.Point(116, 28);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Size = new System.Drawing.Size(812, 545);
@@ -145,20 +183,56 @@ namespace Ecommerce_application
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel4.Controls.Add(this.button11);
+            this.panel4.Controls.Add(this.button10);
             this.panel4.Controls.Add(this.button9);
             this.panel4.Controls.Add(this.button7);
             this.panel4.Location = new System.Drawing.Point(-1, 1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(932, 30);
             this.panel4.TabIndex = 18;
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
+            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseMove);
+            this.panel4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseUp);
+            // 
+            // button11
+            // 
+            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button11.BackColor = System.Drawing.Color.Transparent;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
+            this.button11.Location = new System.Drawing.Point(853, 0);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(39, 25);
+            this.button11.TabIndex = 30;
+            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button10
+            // 
+            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Image = global::Ecommerce_application.Properties.Resources.Restore;
+            this.button10.Location = new System.Drawing.Point(853, 0);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(39, 25);
+            this.button10.TabIndex = 29;
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
+            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button9.BackColor = System.Drawing.Color.Transparent;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Image = global::Ecommerce_application.Properties.Resources.close_tab3;
-            this.button9.Location = new System.Drawing.Point(893, 0);
+            this.button9.Location = new System.Drawing.Point(892, 0);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(39, 25);
             this.button9.TabIndex = 29;
@@ -170,47 +244,17 @@ namespace Ecommerce_application
             // 
             // button7
             // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button7.BackColor = System.Drawing.Color.Transparent;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = global::Ecommerce_application.Properties.Resources.minimize;
-            this.button7.Location = new System.Drawing.Point(850, 0);
+            this.button7.Location = new System.Drawing.Point(813, 0);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(39, 25);
             this.button7.TabIndex = 28;
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Wheat;
-            this.panel5.Location = new System.Drawing.Point(111, 34);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 33);
-            this.panel5.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Wheat;
-            this.panel6.Location = new System.Drawing.Point(111, 198);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 33);
-            this.panel6.TabIndex = 28;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Wheat;
-            this.panel7.Location = new System.Drawing.Point(111, 144);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 29);
-            this.panel7.TabIndex = 1;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Wheat;
-            this.panel8.Location = new System.Drawing.Point(111, 91);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 33);
-            this.panel8.TabIndex = 1;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // Merchant
             // 
@@ -256,5 +300,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }

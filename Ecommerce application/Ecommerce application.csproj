@@ -246,6 +246,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\Restore.png" />
+    <None Include="Resources\Maximize 20px.png" />
+    <None Include="Resources\maximize_24.png" />
+    <None Include="Resources\chooseStuff.gif" />
     <None Include="Resources\maximize-size-option.png" />
     <None Include="Resources\Adobe_Post_20211212_1430010.86500353574497661.png" />
     <None Include="Resources\Adobe_Post_20211212_1430010.8650035357449766.png" />
