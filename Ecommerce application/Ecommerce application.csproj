@@ -121,6 +121,12 @@
     <Compile Include="MerchantBuy.Designer.cs">
       <DependentUpon>MerchantBuy.cs</DependentUpon>
     </Compile>
+    <Compile Include="MerchantCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MerchantCart.Designer.cs">
+      <DependentUpon>MerchantCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="MerchantHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     <EmbeddedResource Include="MerchantBuy.resx">
       <DependentUpon>MerchantBuy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MerchantCart.resx">
+      <DependentUpon>MerchantCart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MerchantHome.resx">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +255,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\Cart GIF.gif" />
     <None Include="Resources\Restore.png" />
     <None Include="Resources\Maximize 20px.png" />
     <None Include="Resources\maximize_24.png" />

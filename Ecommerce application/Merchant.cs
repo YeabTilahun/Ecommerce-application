@@ -116,6 +116,12 @@ namespace Ecommerce_application
 
         private void button4_Click_2(object sender, EventArgs e)
         {
+            MerchantCart m = new MerchantCart();
+            panelAdd.Controls.Clear();
+            m.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(m.panelCart);
+            panelAdd.Show();
+            panelAdd.BringToFront();
             //hide other panels next to the buttons and show panel next to buy
             panel6.Show();
             panel8.Hide();

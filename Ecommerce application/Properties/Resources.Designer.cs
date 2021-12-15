@@ -123,6 +123,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cart_GIF {
+            get {
+                object obj = ResourceManager.GetObject("Cart GIF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chooseStuff {
             get {
                 object obj = ResourceManager.GetObject("chooseStuff", resourceCulture);
