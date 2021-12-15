@@ -30,5 +30,10 @@ namespace Ecommerce_application
             string date = DateTime.Now.ToShortDateString();
             label12.Text = date;
         }
+
+        private void panelHome_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
