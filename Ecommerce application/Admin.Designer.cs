@@ -37,17 +37,17 @@ namespace Ecommerce_application
             this.btnMerchants = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.pblTopNav = new System.Windows.Forms.Panel();
+            this.btnMaximized = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.CloseM = new System.Windows.Forms.Button();
             this.lblNav = new System.Windows.Forms.Label();
+            this.btnRestore = new System.Windows.Forms.Button();
             this.pnlCard = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMaximized = new System.Windows.Forms.Button();
-            this.btnRestore = new System.Windows.Forms.Button();
             this.pnlSideNav.SuspendLayout();
             this.pblTopNav.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -173,6 +173,20 @@ namespace Ecommerce_application
             this.pblTopNav.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pblTopNav_MouseMove);
             this.pblTopNav.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pblTopNav_MouseUp);
             // 
+            // btnMaximized
+            // 
+            this.btnMaximized.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnMaximized.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximized.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximized.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
+            this.btnMaximized.Location = new System.Drawing.Point(1035, 0);
+            this.btnMaximized.Name = "btnMaximized";
+            this.btnMaximized.Size = new System.Drawing.Size(30, 25);
+            this.btnMaximized.TabIndex = 31;
+            this.btnMaximized.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaximized.UseVisualStyleBackColor = false;
+            this.btnMaximized.Click += new System.EventHandler(this.btnMaximized_Click);
+            // 
             // btnMinimize
             // 
             this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -215,6 +229,20 @@ namespace Ecommerce_application
             this.lblNav.Size = new System.Drawing.Size(64, 20);
             this.lblNav.TabIndex = 0;
             this.lblNav.Text = "Product";
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRestore.BackColor = System.Drawing.Color.Transparent;
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.Image = global::Ecommerce_application.Properties.Resources.Restore;
+            this.btnRestore.Location = new System.Drawing.Point(1035, 0);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(30, 25);
+            this.btnRestore.TabIndex = 30;
+            this.btnRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestore.UseVisualStyleBackColor = false;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // pnlCard
             // 
@@ -276,34 +304,6 @@ namespace Ecommerce_application
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
-            // 
-            // btnMaximized
-            // 
-            this.btnMaximized.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnMaximized.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximized.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximized.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
-            this.btnMaximized.Location = new System.Drawing.Point(1035, 0);
-            this.btnMaximized.Name = "btnMaximized";
-            this.btnMaximized.Size = new System.Drawing.Size(30, 25);
-            this.btnMaximized.TabIndex = 31;
-            this.btnMaximized.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaximized.UseVisualStyleBackColor = false;
-            this.btnMaximized.Click += new System.EventHandler(this.btnMaximized_Click);
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRestore.BackColor = System.Drawing.Color.Transparent;
-            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestore.Image = global::Ecommerce_application.Properties.Resources.Restore;
-            this.btnRestore.Location = new System.Drawing.Point(1035, 0);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(30, 25);
-            this.btnRestore.TabIndex = 30;
-            this.btnRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestore.UseVisualStyleBackColor = false;
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // Admin
             // 
