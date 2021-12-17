@@ -20,6 +20,15 @@ namespace Ecommerce_application
         private void btnMaximized_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            ///button11.Hide();
+            btnRestore.BringToFront();
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            // button10.Hide();
+            btnMaximized.BringToFront();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -123,14 +132,39 @@ namespace Ecommerce_application
             DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (res == DialogResult.Yes)
             {
+                this.Hide();
+                new SignIn().ShowDialog();
                 this.Close();
-                SignIn signIn = new SignIn();
-                signIn.Show();
-            }
-            if (res == DialogResult.No)
-            {
-
             }
         }
+
+
+        //To move the panel anywhere
+        private bool mouseDown;
+        private Point lastLocation;
+
+        private void pblTopNav_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void pblTopNav_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void pblTopNav_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        
     }
 }
