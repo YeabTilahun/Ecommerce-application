@@ -37,10 +37,11 @@ namespace Ecommerce_application
             this.btnMerchants = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.pblTopNav = new System.Windows.Forms.Panel();
+            this.btnMaximized = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
             this.CloseM = new System.Windows.Forms.Button();
             this.lblNav = new System.Windows.Forms.Label();
+            this.btnRestore = new System.Windows.Forms.Button();
             this.pnlCard = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -76,7 +77,7 @@ namespace Ecommerce_application
             this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomers.FlatAppearance.BorderSize = 0;
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 169);
+            this.btnCustomers.Location = new System.Drawing.Point(0, 160);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(160, 44);
             this.btnCustomers.TabIndex = 6;
@@ -117,7 +118,7 @@ namespace Ecommerce_application
             this.btnTransactions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransactions.FlatAppearance.BorderSize = 0;
             this.btnTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransactions.Location = new System.Drawing.Point(0, 232);
+            this.btnTransactions.Location = new System.Drawing.Point(0, 210);
             this.btnTransactions.Name = "btnTransactions";
             this.btnTransactions.Size = new System.Drawing.Size(160, 44);
             this.btnTransactions.TabIndex = 3;
@@ -158,50 +159,47 @@ namespace Ecommerce_application
             // 
             this.pblTopNav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pblTopNav.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pblTopNav.Controls.Add(this.btnMaximized);
             this.pblTopNav.Controls.Add(this.btnMinimize);
-            this.pblTopNav.Controls.Add(this.btnMaximize);
             this.pblTopNav.Controls.Add(this.CloseM);
             this.pblTopNav.Controls.Add(this.lblNav);
+            this.pblTopNav.Controls.Add(this.btnRestore);
             this.pblTopNav.Location = new System.Drawing.Point(0, 0);
             this.pblTopNav.Name = "pblTopNav";
             this.pblTopNav.Size = new System.Drawing.Size(1100, 25);
             this.pblTopNav.TabIndex = 2;
+            this.pblTopNav.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pblTopNav_MouseDown);
+            this.pblTopNav.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pblTopNav_MouseMove);
+            this.pblTopNav.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pblTopNav_MouseUp);
+            // 
+            // btnMaximized
+            // 
+            this.btnMaximized.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnMaximized.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximized.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximized.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
+            this.btnMaximized.Location = new System.Drawing.Point(1035, 0);
+            this.btnMaximized.Name = "btnMaximized";
+            this.btnMaximized.Size = new System.Drawing.Size(30, 25);
+            this.btnMaximized.TabIndex = 31;
+            this.btnMaximized.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaximized.UseVisualStyleBackColor = false;
+            this.btnMaximized.Click += new System.EventHandler(this.btnMaximized_Click);
             // 
             // btnMinimize
             // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.AutoSize = true;
-            this.btnMinimize.BackColor = System.Drawing.SystemColors.Control;
-            this.btnMinimize.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
-            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnMinimize.Location = new System.Drawing.Point(1017, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.Image = global::Ecommerce_application.Properties.Resources.minimize;
+            this.btnMinimize.Location = new System.Drawing.Point(1000, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimize.TabIndex = 21;
+            this.btnMinimize.Size = new System.Drawing.Size(30, 25);
+            this.btnMinimize.TabIndex = 29;
+            this.btnMinimize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.AutoSize = true;
-            this.btnMaximize.BackColor = System.Drawing.SystemColors.Control;
-            this.btnMaximize.BackgroundImage = global::Ecommerce_application.Properties.Resources.minimize;
-            this.btnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnMaximize.Location = new System.Drawing.Point(1046, 0);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(25, 25);
-            this.btnMaximize.TabIndex = 20;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximized_Click);
             // 
             // CloseM
             // 
@@ -210,13 +208,13 @@ namespace Ecommerce_application
             this.CloseM.BackColor = System.Drawing.Color.Brown;
             this.CloseM.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
             this.CloseM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.CloseM.FlatAppearance.BorderSize = 0;
+            this.CloseM.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.CloseM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseM.ForeColor = System.Drawing.SystemColors.Control;
-            this.CloseM.Location = new System.Drawing.Point(1075, 0);
+            this.CloseM.Location = new System.Drawing.Point(1070, 0);
             this.CloseM.Margin = new System.Windows.Forms.Padding(2);
             this.CloseM.Name = "CloseM";
-            this.CloseM.Size = new System.Drawing.Size(25, 25);
+            this.CloseM.Size = new System.Drawing.Size(30, 25);
             this.CloseM.TabIndex = 17;
             this.CloseM.UseVisualStyleBackColor = false;
             this.CloseM.Click += new System.EventHandler(this.CloseM_Click);
@@ -226,11 +224,25 @@ namespace Ecommerce_application
             this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNav.AutoSize = true;
             this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNav.Location = new System.Drawing.Point(598, 0);
+            this.lblNav.Location = new System.Drawing.Point(548, 0);
             this.lblNav.Name = "lblNav";
             this.lblNav.Size = new System.Drawing.Size(64, 20);
             this.lblNav.TabIndex = 0;
             this.lblNav.Text = "Product";
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRestore.BackColor = System.Drawing.Color.Transparent;
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.Image = global::Ecommerce_application.Properties.Resources.Restore;
+            this.btnRestore.Location = new System.Drawing.Point(1035, 0);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(30, 25);
+            this.btnRestore.TabIndex = 30;
+            this.btnRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestore.UseVisualStyleBackColor = false;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // pnlCard
             // 
@@ -244,6 +256,8 @@ namespace Ecommerce_application
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(158, 25);
             this.panel1.Name = "panel1";
@@ -287,7 +301,7 @@ namespace Ecommerce_application
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -328,12 +342,13 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label lblNav;
         private System.Windows.Forms.Panel pnlCard;
         private System.Windows.Forms.Button CloseM;
-        private System.Windows.Forms.Button btnMaximize;
-        private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Button btnMaximized;
+        private System.Windows.Forms.Button btnRestore;
     }
 }

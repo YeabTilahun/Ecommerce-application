@@ -178,5 +178,10 @@ namespace Ecommerce_application
             ///button11.Hide();
             button10.BringToFront();
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
