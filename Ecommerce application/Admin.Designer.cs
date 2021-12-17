@@ -77,7 +77,7 @@ namespace Ecommerce_application
             this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomers.FlatAppearance.BorderSize = 0;
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 169);
+            this.btnCustomers.Location = new System.Drawing.Point(0, 160);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(160, 44);
             this.btnCustomers.TabIndex = 6;
@@ -118,7 +118,7 @@ namespace Ecommerce_application
             this.btnTransactions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransactions.FlatAppearance.BorderSize = 0;
             this.btnTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransactions.Location = new System.Drawing.Point(0, 232);
+            this.btnTransactions.Location = new System.Drawing.Point(0, 210);
             this.btnTransactions.Name = "btnTransactions";
             this.btnTransactions.Size = new System.Drawing.Size(160, 44);
             this.btnTransactions.TabIndex = 3;
@@ -210,7 +210,7 @@ namespace Ecommerce_application
             this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNav.AutoSize = true;
             this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNav.Location = new System.Drawing.Point(598, 0);
+            this.lblNav.Location = new System.Drawing.Point(548, 0);
             this.lblNav.Name = "lblNav";
             this.lblNav.Size = new System.Drawing.Size(64, 20);
             this.lblNav.TabIndex = 0;
