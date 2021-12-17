@@ -48,6 +48,9 @@ namespace Ecommerce_application
             SignUp signUp = new SignUp();
             signUp.Show();
             this.Hide();
+            //Customer form
+            CustomerPage c = new CustomerPage();
+            c.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -82,10 +85,6 @@ namespace Ecommerce_application
             //merchant
             Merchant m = new Merchant();
             m.Show();
-            this.Hide();
-            //
-            CustomerPage c = new CustomerPage();
-            c.Show();
             this.Hide();
         }
 

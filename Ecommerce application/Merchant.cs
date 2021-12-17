@@ -93,6 +93,8 @@ namespace Ecommerce_application
         private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
+            SignIn c = new SignIn();
+            c.Show();
         }
 
         //when the mouse leaves the close button will be transparent

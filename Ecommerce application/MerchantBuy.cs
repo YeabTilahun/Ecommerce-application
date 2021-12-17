@@ -71,5 +71,18 @@ namespace Ecommerce_application
                 textBox1.Text = "";
                 textBox1.ForeColor = Color.Black;
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //Array is to hold different product ID that are selected in data grid view 
+            string [] id;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[1].Value))
+                {
+                    
+                }
+            }
+        }
     }
 }

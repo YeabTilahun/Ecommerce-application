@@ -127,6 +127,7 @@
     <Compile Include="MerchantCart.Designer.cs">
       <DependentUpon>MerchantCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="MerchantDatabase.cs" />
     <Compile Include="MerchantHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +140,7 @@
     <Compile Include="MerchantSell.Designer.cs">
       <DependentUpon>MerchantSell.cs</DependentUpon>
     </Compile>
+    <Compile Include="MerchantSellClass.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
