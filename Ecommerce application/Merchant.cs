@@ -83,21 +83,25 @@ namespace Ecommerce_application
             panel8.Hide();
         }
 
+        //close button to be red when mouse hovers 
         private void button9_MouseEnter(object sender, EventArgs e)
         {
             button9.BackColor = Color.Brown;
         }
 
+       
         private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //when the mouse leaves the close button will be transparent
         private void button9_MouseLeave(object sender, EventArgs e)
         {
             button9.BackColor = Color.Transparent;
         }
 
+        //Logout
         private void button8_Click(object sender, EventArgs e)
         {
             DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
