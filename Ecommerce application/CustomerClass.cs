@@ -28,11 +28,6 @@ namespace Ecommerce_application
             //this.Photo = photo;
         }
 
-        public void Add(string[] id)
-        {
-            MessageBox.Show("Added Succesfuly!");
-        }
-
         public void Update(string[] id)
         {
             MessageBox.Show("Updated Succesfully!");
@@ -43,7 +38,7 @@ namespace Ecommerce_application
             MessageBox.Show("Deleted Succesfully!");
         }
 
-        public void Cart(string[] id)
+        public void AddToCart(string[] id)
         {
             MessageBox.Show("The items you selected went to \"Cart\" go to cart to buy the items you selected!!");
         }

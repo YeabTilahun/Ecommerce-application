@@ -150,5 +150,20 @@ namespace Ecommerce_application
         {
             textBox1.Text = "Search the items here!";
         }
+
+        private void picBoxSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picBoxSearch_MouseEnter(object sender, EventArgs e)
+        {
+            picBoxSearch.BackColor = Color.DarkSeaGreen;
+        }
+
+        private void picBoxSearch_MouseLeave(object sender, EventArgs e)
+        {
+            picBoxSearch.BackColor = Color.Transparent;
+        }
     }
 }
