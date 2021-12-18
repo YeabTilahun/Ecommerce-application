@@ -43,82 +43,82 @@ namespace Ecommerce_application
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            lblNav.Text = "Products";
+            //lblNav.Text = "Products";
             AdminProducts adminProducts = new AdminProducts();
             pnlCard.Controls.Clear();
             adminProducts.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(adminProducts.pnlProducts);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = SystemColors.Control;
-            btnMerchants.BackColor = Color.FromArgb(66, 121, 99);
-            btnCustomers.BackColor = Color.FromArgb(66, 121, 99);
-            btnTransactions.BackColor = Color.FromArgb(66, 121, 99);
-            btnAdmins.BackColor = Color.FromArgb(66, 121, 99);
+            btnProducts.BackColor = SystemColors.ControlDark;
+            btnMerchants.BackColor = SystemColors.ControlLight;
+            btnCustomers.BackColor = SystemColors.ControlLight;
+            btnTransactions.BackColor = SystemColors.ControlLight;
+            btnAdmins.BackColor = SystemColors.ControlLight;
         }
 
         private void btnMerchants_Click(object sender, EventArgs e)
         {
-            lblNav.Text = "Merchants";
+            //lblNav.Text = "Merchants";
             AdminMerchants adminMerchants = new AdminMerchants();
             pnlCard.Controls.Clear();
             adminMerchants.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(adminMerchants.pnlMerchant);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = Color.FromArgb(66, 121, 99);
-            btnMerchants.BackColor = SystemColors.Control;
-            btnCustomers.BackColor = Color.FromArgb(66, 121, 99);
-            btnTransactions.BackColor = Color.FromArgb(66, 121, 99);
-            btnAdmins.BackColor = Color.FromArgb(66, 121, 99);
+            btnProducts.BackColor = SystemColors.ControlLight;
+            btnMerchants.BackColor = SystemColors.ControlDark;
+            btnCustomers.BackColor = SystemColors.ControlLight;
+            btnTransactions.BackColor = SystemColors.ControlLight;
+            btnAdmins.BackColor = SystemColors.ControlLight;
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            lblNav.Text = "Customers";
+            //lblNav.Text = "Customers";
             AdminCustomers admincustomers = new AdminCustomers();
             pnlCard.Controls.Clear();
             admincustomers.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(admincustomers.pnlCustomer);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = Color.FromArgb(66, 121, 99);
-            btnMerchants.BackColor = Color.FromArgb(66, 121, 99);
-            btnCustomers.BackColor = SystemColors.Control;
-            btnTransactions.BackColor = Color.FromArgb(66, 121, 99);
-            btnAdmins.BackColor = Color.FromArgb(66, 121, 99);
+            btnProducts.BackColor = SystemColors.ControlLight;
+            btnMerchants.BackColor = SystemColors.ControlLight;
+            btnCustomers.BackColor = SystemColors.ControlDark;
+            btnTransactions.BackColor = SystemColors.ControlLight;
+            btnAdmins.BackColor = SystemColors.ControlLight;
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
-            lblNav.Text = "Transactions";
+            //lblNav.Text = "Transactions";
             AdminTransaction adminTransaction = new AdminTransaction();
             pnlCard.Controls.Clear();
             adminTransaction.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(adminTransaction.pnlTransaction);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = Color.FromArgb(66, 121, 99);
-            btnMerchants.BackColor = Color.FromArgb(66, 121, 99);
-            btnCustomers.BackColor = Color.FromArgb(66, 121, 99);
-            btnTransactions.BackColor = SystemColors.Control;
-            btnAdmins.BackColor = Color.FromArgb(66, 121, 99);
+            btnProducts.BackColor = SystemColors.ControlLight;
+            btnMerchants.BackColor = SystemColors.ControlLight;
+            btnCustomers.BackColor = SystemColors.ControlLight;
+            btnTransactions.BackColor = SystemColors.ControlDark;
+            btnAdmins.BackColor = SystemColors.ControlLight;
         }
 
         private void btnAdmins_Click(object sender, EventArgs e)
         {
-            lblNav.Text = "Admins";
+            //lblNav.Text = "Admins";
             AdminAdmins adminAdmins = new AdminAdmins();
             pnlCard.Controls.Clear();
             adminAdmins.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(adminAdmins.pnlAdmin);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = Color.FromArgb(66, 121, 99);
-            btnMerchants.BackColor = Color.FromArgb(66, 121, 99);
-            btnCustomers.BackColor = Color.FromArgb(66, 121, 99);
-            btnTransactions.BackColor = Color.FromArgb(66, 121, 99);
-            btnAdmins.BackColor = SystemColors.Control;
+            btnProducts.BackColor = SystemColors.ControlLight;
+            btnMerchants.BackColor = SystemColors.ControlLight;
+            btnCustomers.BackColor = SystemColors.ControlLight;
+            btnTransactions.BackColor = SystemColors.ControlLight;
+            btnAdmins.BackColor = SystemColors.ControlDark;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -165,6 +165,54 @@ namespace Ecommerce_application
             mouseDown = false;
         }
 
-        
+        private void pnlCard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlSideNav_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblNav_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pblTopNav_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void AccountMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseM_MouseHover(object sender, EventArgs e)
+        {
+            CloseM.BackColor = Color.Brown;
+        }
+
+        private void CloseM_MouseLeave(object sender, EventArgs e)
+        {
+            CloseM.BackColor = Color.FromArgb(173, 235, 173);
+        }
     }
 }

@@ -37,7 +37,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -158,6 +164,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trial.Designer.cs">
+      <DependentUpon>Trial.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +225,10 @@
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trial.resx">
+      <DependentUpon>Trial.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -255,6 +271,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\round_account_circle_white_24dp.png" />
     <None Include="Resources\Cart GIF.gif" />
     <None Include="Resources\Restore.png" />
     <None Include="Resources\Maximize 20px.png" />
