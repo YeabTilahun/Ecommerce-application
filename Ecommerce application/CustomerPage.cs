@@ -132,5 +132,28 @@ namespace Ecommerce_application
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void panelAdd_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnMaximized_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnRestore.BringToFront();
+        }
+
+        private void btnRestore_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnMaximized.BringToFront();
+
+        }
     }
 }
