@@ -70,6 +70,7 @@ namespace Ecommerce_application
             this.button1.TabIndex = 23;
             this.button1.Text = "Remove";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAdd
             // 
@@ -83,6 +84,7 @@ namespace Ecommerce_application
             this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "Buy";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             this.btnAdd.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAdd_MouseClick);
             // 
             // dataGridView1

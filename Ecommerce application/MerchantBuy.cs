@@ -91,9 +91,9 @@ namespace Ecommerce_application
                 }
                 /* else
                      MessageBox.Show("Not checked!");*/
-                MerchantClass buy = new MerchantClass();
-               buy.SelectedProduct(id);
             }
+               MerchantClass buy = new MerchantClass();
+               buy.SelectedProduct(id);
         }
     }
 }

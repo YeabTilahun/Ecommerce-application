@@ -21,5 +21,25 @@ namespace Ecommerce_application
         {
             button1.Enabled = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //When the user clik remove checked rows will be removed
+            dataGridView1.AllowUserToAddRows = false;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                bool isCellCheked = (bool)dataGridView1.Rows[i].Cells[0].Value;
+                if (isCellCheked == true)
+                {
+                    dataGridView1.Rows.RemoveAt(i);
+                }
+               
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
