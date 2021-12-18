@@ -49,20 +49,24 @@ namespace Ecommerce_application
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRole = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.lblSex = new System.Windows.Forms.Label();
             this.cmbSex = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNav = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(291, 345);
+            this.btnCancel.Location = new System.Drawing.Point(260, 345);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(91, 38);
+            this.btnCancel.Size = new System.Drawing.Size(110, 28);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -72,14 +76,17 @@ namespace Ecommerce_application
             // 
             this.btnRegister.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(93, 345);
+            this.btnRegister.Location = new System.Drawing.Point(101, 345);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(0);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(89, 38);
+            this.btnRegister.Size = new System.Drawing.Size(110, 28);
             this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // label9
             // 
@@ -260,19 +267,6 @@ namespace Ecommerce_application
             this.txtRole.TabIndex = 82;
             this.txtRole.Text = "Admin";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(122)))), ((int)(((byte)(91)))));
-            this.label11.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(0, 0);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(215, 25);
-            this.label11.TabIndex = 84;
-            this.label11.Text = "Registering an Admin";
-            // 
             // lblSex
             // 
             this.lblSex.AutoSize = true;
@@ -297,14 +291,34 @@ namespace Ecommerce_application
             this.cmbSex.Size = new System.Drawing.Size(182, 21);
             this.cmbSex.TabIndex = 2;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
+            this.panel1.Controls.Add(this.lblNav);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(486, 30);
+            this.panel1.TabIndex = 86;
+            // 
+            // lblNav
+            // 
+            this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNav.Location = new System.Drawing.Point(145, 4);
+            this.lblNav.Name = "lblNav";
+            this.lblNav.Size = new System.Drawing.Size(197, 22);
+            this.lblNav.TabIndex = 1;
+            this.lblNav.Text = "Registering an Admin";
+            this.lblNav.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AdminRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 411);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbSex);
             this.Controls.Add(this.lblSex);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtRole);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
@@ -330,6 +344,7 @@ namespace Ecommerce_application
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             this.Load += new System.EventHandler(this.AdminRegister_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,8 +372,9 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtRole;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblSex;
         private System.Windows.Forms.ComboBox cmbSex;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblNav;
     }
 }

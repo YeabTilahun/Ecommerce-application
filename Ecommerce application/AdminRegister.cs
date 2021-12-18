@@ -48,5 +48,11 @@ namespace Ecommerce_application
         {
 
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            AdminRegisterClass admin = new AdminRegisterClass(txtFName.Text, txtLName.Text, cmbSex.Text, dtpBirthday.Text, txtPhoneNum.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, txtRole.Text);
+            admin.Save();
+        }
     }
 }
