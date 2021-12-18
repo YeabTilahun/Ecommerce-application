@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -70,6 +71,29 @@ namespace Ecommerce_application
             if (textBox1.Text == "Search items here")
                 textBox1.Text = "";
                 textBox1.ForeColor = Color.Black;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //Array is to hold different product ID that are selected in data grid view 
+            string[] id= new string[ConfigurationManager.ConnectionStrings.Count]; //This will initialize the array 
+            dataGridView1.AllowUserToAddRows = false;
+            for (int i=0; i < dataGridView1.Rows.Count; i++)
+            {
+                bool isCellCheked = (bool)dataGridView1.Rows[i].Cells[0].Value;
+                if (isCellCheked==true)
+                {
+                    //MessageBox.Show("Checked!");
+                    id = new String[0+1];
+                    //Retrive the selected id from data grid view to string array
+                    DataGridViewRow row = dataGridView1.Rows[i];
+                    id[i] = row.Cells[2].Value.ToString();
+                }
+                /* else
+                     MessageBox.Show("Not checked!");*/
+            }
+               MerchantClass buy = new MerchantClass();
+               buy.SelectedProduct(id);
         }
     }
 }

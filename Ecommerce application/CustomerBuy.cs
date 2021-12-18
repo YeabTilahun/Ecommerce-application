@@ -131,5 +131,24 @@ namespace Ecommerce_application
             CustomerCart c = new CustomerCart();
             
         }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+           /* if(textBox1.Text != "\0")
+            {
+                textBox1.Text = "";
+            }*/
+        }
+
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "\0")
+                textBox1.Text = "";
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            textBox1.Text = "Search the items here!";
+        }
     }
 }
