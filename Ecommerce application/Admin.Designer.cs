@@ -47,7 +47,7 @@ namespace Ecommerce_application
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlSideNav.SuspendLayout();
             this.pblTopNav.SuspendLayout();
@@ -172,7 +172,7 @@ namespace Ecommerce_application
             // 
             this.pblTopNav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pblTopNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(224)))), ((int)(((byte)(184)))));
+            this.pblTopNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
             this.pblTopNav.Controls.Add(this.btnMaximized);
             this.pblTopNav.Controls.Add(this.btnMinimize);
             this.pblTopNav.Controls.Add(this.CloseM);
@@ -190,7 +190,7 @@ namespace Ecommerce_application
             // btnMaximized
             // 
             this.btnMaximized.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnMaximized.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(235)))), ((int)(((byte)(173)))));
+            this.btnMaximized.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
             this.btnMaximized.FlatAppearance.BorderSize = 0;
             this.btnMaximized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximized.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,7 +206,7 @@ namespace Ecommerce_application
             // btnMinimize
             // 
             this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(235)))), ((int)(((byte)(173)))));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +223,7 @@ namespace Ecommerce_application
             // 
             this.CloseM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CloseM.AutoSize = true;
-            this.CloseM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(235)))), ((int)(((byte)(173)))));
+            this.CloseM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
             this.CloseM.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
             this.CloseM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CloseM.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
@@ -242,8 +242,7 @@ namespace Ecommerce_application
             // 
             // lblNav
             // 
-            this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNav.AutoSize = true;
+            this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNav.Location = new System.Drawing.Point(12, 7);
             this.lblNav.Name = "lblNav";
@@ -255,7 +254,7 @@ namespace Ecommerce_application
             // btnRestore
             // 
             this.btnRestore.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRestore.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
             this.btnRestore.FlatAppearance.BorderSize = 0;
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -326,20 +325,20 @@ namespace Ecommerce_application
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
-            // label1
+            // lblUserName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 15);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Your Name";
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(53, 12);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(69, 15);
+            this.lblUserName.TabIndex = 36;
+            this.lblUserName.Text = "Your Name";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblUserName);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
@@ -350,7 +349,7 @@ namespace Ecommerce_application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(224)))), ((int)(((byte)(184)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
             this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlCard);
@@ -392,7 +391,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximized;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panel1;
     }
 }

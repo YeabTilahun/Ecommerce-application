@@ -50,7 +50,7 @@ namespace Ecommerce_application
             pnlCard.Controls.Add(adminProducts.pnlProducts);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = SystemColors.ControlDark;
+            btnProducts.BackColor = SystemColors.ScrollBar;
             btnMerchants.BackColor = SystemColors.ControlLight;
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ControlLight;
@@ -67,7 +67,7 @@ namespace Ecommerce_application
             pnlCard.Show();
             pnlCard.BringToFront();
             btnProducts.BackColor = SystemColors.ControlLight;
-            btnMerchants.BackColor = SystemColors.ControlDark;
+            btnMerchants.BackColor = SystemColors.ScrollBar;
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ControlLight;
             btnAdmins.BackColor = SystemColors.ControlLight;
@@ -84,7 +84,7 @@ namespace Ecommerce_application
             pnlCard.BringToFront();
             btnProducts.BackColor = SystemColors.ControlLight;
             btnMerchants.BackColor = SystemColors.ControlLight;
-            btnCustomers.BackColor = SystemColors.ControlDark;
+            btnCustomers.BackColor = SystemColors.ScrollBar;
             btnTransactions.BackColor = SystemColors.ControlLight;
             btnAdmins.BackColor = SystemColors.ControlLight;
         }
@@ -101,7 +101,7 @@ namespace Ecommerce_application
             btnProducts.BackColor = SystemColors.ControlLight;
             btnMerchants.BackColor = SystemColors.ControlLight;
             btnCustomers.BackColor = SystemColors.ControlLight;
-            btnTransactions.BackColor = SystemColors.ControlDark;
+            btnTransactions.BackColor = SystemColors.ScrollBar;
             btnAdmins.BackColor = SystemColors.ControlLight;
         }
 
@@ -118,7 +118,7 @@ namespace Ecommerce_application
             btnMerchants.BackColor = SystemColors.ControlLight;
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ControlLight;
-            btnAdmins.BackColor = SystemColors.ControlDark;
+            btnAdmins.BackColor = SystemColors.ScrollBar;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
