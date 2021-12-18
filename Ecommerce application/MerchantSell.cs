@@ -93,7 +93,7 @@ namespace Ecommerce_application
         //When the user clicks add the products info will be copied to MerchantSellClass
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            MerchantSellClass sell = new MerchantSellClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
+            MerchantClass sell = new MerchantClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
             sell.Add();
             //update the grid view after merchant added product 
             dataGridView1.Refresh();
@@ -102,7 +102,7 @@ namespace Ecommerce_application
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string id = textBox1.Text;
-            MerchantSellClass sell = new MerchantSellClass();
+            MerchantClass sell = new MerchantClass();
             sell.Delete(id);
         }
 
@@ -119,7 +119,7 @@ namespace Ecommerce_application
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            MerchantSellClass sell = new MerchantSellClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
+            MerchantClass sell = new MerchantClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
             sell.Update();
 
             //Hide update button after click

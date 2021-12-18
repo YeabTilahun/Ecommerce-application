@@ -295,7 +295,7 @@ namespace Ecommerce_application
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 252);
+            this.label6.Location = new System.Drawing.Point(36, 255);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 5;
@@ -305,7 +305,7 @@ namespace Ecommerce_application
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 211);
+            this.label5.Location = new System.Drawing.Point(39, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 4;
@@ -315,7 +315,7 @@ namespace Ecommerce_application
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 180);
+            this.label4.Location = new System.Drawing.Point(39, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 3;
@@ -325,7 +325,7 @@ namespace Ecommerce_application
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 136);
+            this.label3.Location = new System.Drawing.Point(36, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 2;

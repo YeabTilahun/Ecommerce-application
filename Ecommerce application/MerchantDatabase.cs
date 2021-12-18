@@ -11,7 +11,7 @@ namespace Ecommerce_application
 {
     class MerchantDatabase
     {
-        public void AddProduct(MerchantSellClass sell)
+        public void AddProduct(MerchantClass sell)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace Ecommerce_application
 
         }
 
-        public void UpdateProduct(MerchantSellClass sell)
+        public void UpdateProduct(MerchantClass sell)
         {
             try
             {

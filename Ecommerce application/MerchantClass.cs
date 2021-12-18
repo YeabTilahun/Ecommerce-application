@@ -7,8 +7,10 @@ using System.Windows.Forms;
 
 namespace Ecommerce_application
 {
-    class MerchantSellClass
+    class MerchantClass
     {
+        //MerchantSell Layer 2
+
         //Declaring varibles to take value from the text box in MerchantSell
         public string id;
         public string productName;
@@ -18,12 +20,12 @@ namespace Ecommerce_application
         public string description;
 
         //creating multiple constractor to make life easy
-       public MerchantSellClass()
+       public MerchantClass()
         {
 
         }
 
-        public MerchantSellClass(string id, string pname, string price, string qty, string cat, string desc)
+        public MerchantClass(string id, string pname, string price, string qty, string cat, string desc)
         {
             this.id = id;
             this.productName = pname;
@@ -56,6 +58,13 @@ namespace Ecommerce_application
             MerchantDatabase sell = new MerchantDatabase();
             sell.Delete(id);
 
+        }
+
+        //MerchantBuy Layer 2
+        public void SelectedProduct(string [] id)
+        {
+            //this will add the selected items from buy in to the data grid view in the cart form
+            MessageBox.Show("Go to cart to finish the transaction!");
         }
 
     }
