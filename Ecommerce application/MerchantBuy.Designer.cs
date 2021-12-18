@@ -33,6 +33,9 @@ namespace Ecommerce_application
             this.panelBuy = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,9 +43,6 @@ namespace Ecommerce_application
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.panelBuy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,46 +94,6 @@ namespace Ecommerce_application
             this.dataGridView1.Size = new System.Drawing.Size(532, 446);
             this.dataGridView1.TabIndex = 87;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "ID";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 45;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Product Name";
-            this.Column3.Name = "Column3";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Price";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 33;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Qty";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 30;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Category";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Description ";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 200;
-            // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -176,6 +136,47 @@ namespace Ecommerce_application
             this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
             this.picBoxSearch.TabIndex = 89;
             this.picBoxSearch.TabStop = false;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column1.HeaderText = "Select";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 40;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "ID";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 45;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Product Name";
+            this.Column3.Name = "Column3";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Price";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 33;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Qty";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 30;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Category";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Description ";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 200;
             // 
             // MerchantBuy
             // 
