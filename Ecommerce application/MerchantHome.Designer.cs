@@ -63,12 +63,12 @@ namespace Ecommerce_application
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(149, 281);
+            this.label8.Location = new System.Drawing.Point(149, 301);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(496, 42);
+            this.label8.Size = new System.Drawing.Size(548, 42);
             this.label8.TabIndex = 11;
-            this.label8.Text = "Cart store the things you selected to buy in Buy section and there\r\nyou can compl" +
-    "ete the transaction \r\n";
+            this.label8.Text = "Cart tab store the things you selected to buy from Buy section and there\r\nyou can" +
+    " complete the transaction \r\n";
             // 
             // label9
             // 
@@ -77,10 +77,11 @@ namespace Ecommerce_application
             this.label9.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(149, 229);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(482, 42);
+            this.label9.Size = new System.Drawing.Size(482, 63);
             this.label9.TabIndex = 10;
             this.label9.Text = "If you want to buy products click Buy button and there you can \r\nbuy everything y" +
-    "ou want.\r\n";
+    "ou want by chosing from the table and when \r\nfinished press Add to Cart button.\r" +
+    "\n";
             // 
             // label10
             // 
@@ -89,10 +90,10 @@ namespace Ecommerce_application
             this.label10.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(149, 178);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(479, 42);
+            this.label10.Size = new System.Drawing.Size(508, 42);
             this.label10.TabIndex = 9;
-            this.label10.Text = "If you want to sell your product go to Sell then you can add the \r\nproducts you h" +
-    "ave.";
+            this.label10.Text = "If you want to sell your product go to Sell tab then you can add the \r\nproducts y" +
+    "ou have or can edit your products there.";
             // 
             // label11
             // 

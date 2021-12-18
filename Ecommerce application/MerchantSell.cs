@@ -73,7 +73,11 @@ namespace Ecommerce_application
 
         private void MerchantSell_Load(object sender, EventArgs e)
         {
-
+            //To hide update and to show edit when this form loads
+            //NOTICE THE NAME FOR UPDATE AND EDIT IS CHANGED btnEdit IS UPDATE AND btnUpd IS UPDATE
+            btnEdit.Hide();
+            btnUpd.Show();
+            btnUpd.BringToFront();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -85,5 +89,65 @@ namespace Ecommerce_application
         {
 
         }
+
+        //When the user clicks add the products info will be copied to MerchantSellClass
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MerchantSellClass sell = new MerchantSellClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
+            sell.Add();
+            //update the grid view after merchant added product 
+            dataGridView1.Refresh();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string id = textBox1.Text;
+            MerchantSellClass sell = new MerchantSellClass();
+            sell.Delete(id);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            //When the user press cancel all text fields and combobox will be cleard
+            textBox5.Clear();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            comboBox1.Text="";
+            textBox4.Clear();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            MerchantSellClass sell = new MerchantSellClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
+            sell.Update();
+
+            //Hide update button after click
+            //NOTICE THE NAME FOR UPDATE AND EDIT IS CHANGED btnEdit IS UPDATE AND btnUpd IS UPDATE
+            btnEdit.Hide();
+            btnUpd.Show();
+            btnUpd.BringToFront();
+        }
+
+        private void btnUpd_Click(object sender, EventArgs e)
+        {
+            //To hide edit and to show Update when this form loads
+            //NOTICE THE NAME FOR UPDATE AND EDIT IS CHANGED btnEdit IS UPDATE AND btnUpd IS UPDATE
+            btnEdit.Show();
+            btnUpd.Hide();
+            btnEdit.BringToFront();
+
+            //We need to show the product thats going to be edited from the data grid view in to textbox
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                //Means if the checkbox is selected
+                if (Convert.ToBoolean(row.Cells[1].Value))
+                {
+                    //Assign from the table to the textbox and combobox to be edited
+                }
+            }
+
+        }
+
     }
 }
