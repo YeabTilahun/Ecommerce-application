@@ -95,6 +95,65 @@ namespace Ecommerce_application
         {
 
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            string[] id = null; //This will initialize the array 
+            dgvMerchants.AllowUserToAddRows = false;
+            for (int i = 0; i < dgvMerchants.Rows.Count; i++)
+            {
+                bool isCellCheked = (bool)dgvMerchants.Rows[i].Cells[0].Value;
+                if (isCellCheked == true)
+                {
+                    //MessageBox.Show("Checked!");
+                    id = new String[0 + 1];
+                    //Retrive the selected id from data grid view to string array
+                    DataGridViewRow row = dgvMerchants.Rows[i];
+                    id[i] = row.Cells[2].Value.ToString();
+                }
+                /* else
+                     MessageBox.Show("Not checked!");*/
+            }
+            AdminClass Merchants = new AdminClass();
+            Merchants.DeleteProduct(id);
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Search Items Here";
+                txtSearch.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search Items Here")
+                txtSearch.Text = "";
+            txtSearch.ForeColor = Color.Black;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvMerchants.RowCount; i++)
+            {
+                dgvMerchants.Rows[i].Cells[0].Value = true;
+            }
+        }
+
+        private void btnUncheck_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvMerchants.RowCount; i++)
+            {
+                dgvMerchants.Rows[i].Cells[0].Value = false;
+            }
+        }
     }
 }
 

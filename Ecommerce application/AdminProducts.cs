@@ -145,10 +145,37 @@ namespace Ecommerce_application
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < dgvProducts.RowCount; i++)
+            {
+                dgvProducts.Rows[i].Cells[0].Value = true;
+            }
         }
 
         private void btnUncheck_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvProducts.RowCount; i++)
+            {
+                dgvProducts.Rows[i].Cells[0].Value = false;
+            }
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search Items Here")
+                txtSearch.Text = "";
+            txtSearch.ForeColor = Color.Black;
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Search Items Here";
+                txtSearch.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
         }

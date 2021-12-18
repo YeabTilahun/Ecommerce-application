@@ -80,7 +80,6 @@ namespace Ecommerce_application
             // 
             // dgvProducts
             // 
-            this.dgvProducts.AllowUserToDeleteRows = false;
             this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
@@ -96,7 +95,6 @@ namespace Ecommerce_application
             this.description});
             this.dgvProducts.Location = new System.Drawing.Point(12, 51);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.ReadOnly = true;
             this.dgvProducts.Size = new System.Drawing.Size(913, 439);
             this.dgvProducts.TabIndex = 33;
             // 
@@ -108,7 +106,7 @@ namespace Ecommerce_application
             this.btnUncheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnUncheck.FlatAppearance.BorderSize = 0;
             this.btnUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUncheck.ForeColor = System.Drawing.Color.White;
+            this.btnUncheck.ForeColor = System.Drawing.Color.Black;
             this.btnUncheck.Location = new System.Drawing.Point(128, 520);
             this.btnUncheck.Name = "btnUncheck";
             this.btnUncheck.Size = new System.Drawing.Size(110, 28);
@@ -125,7 +123,7 @@ namespace Ecommerce_application
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Location = new System.Drawing.Point(722, 520);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(110, 28);
@@ -142,7 +140,7 @@ namespace Ecommerce_application
             this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnCheck.FlatAppearance.BorderSize = 0;
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheck.ForeColor = System.Drawing.Color.White;
+            this.btnCheck.ForeColor = System.Drawing.Color.Black;
             this.btnCheck.Location = new System.Drawing.Point(12, 520);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(110, 28);
@@ -161,6 +159,9 @@ namespace Ecommerce_application
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(177, 20);
             this.txtSearch.TabIndex = 28;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // cmbCatagories
             // 

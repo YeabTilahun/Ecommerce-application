@@ -13,5 +13,15 @@ namespace Ecommerce_application
         {
             MessageBox.Show("Product Deleted!!!");
         }
+
+        public void DeleteMerchants(string[] id)
+        {
+            MessageBox.Show("Product Deleted!!!");
+        }
+
+        public void DeleteCustomers(string[] id)
+        {
+            MessageBox.Show("Product Deleted!!!");
+        }
     }
 }

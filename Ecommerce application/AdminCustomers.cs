@@ -70,5 +70,52 @@ namespace Ecommerce_application
 
             }
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            string[] id = null; //This will initialize the array 
+            dgvCustomers.AllowUserToAddRows = false;
+            for (int i = 0; i < dgvCustomers.Rows.Count; i++)
+            {
+                bool isCellCheked = (bool)dgvCustomers.Rows[i].Cells[0].Value;
+                if (isCellCheked == true)
+                {
+                    //MessageBox.Show("Checked!");
+                    id = new String[0 + 1];
+                    //Retrive the selected id from data grid view to string array
+                    DataGridViewRow row = dgvCustomers.Rows[i];
+                    id[i] = row.Cells[2].Value.ToString();
+                }
+                /* else
+                     MessageBox.Show("Not checked!");*/
+            }
+            AdminClass customer = new AdminClass();
+            customer.DeleteCustomers(id);
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUncheck_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
