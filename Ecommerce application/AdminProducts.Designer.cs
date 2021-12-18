@@ -32,16 +32,22 @@ namespace Ecommerce_application
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminProducts));
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.picBoxSearch = new System.Windows.Forms.PictureBox();
-            this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.btnUncheck = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbCatagories = new System.Windows.Forms.ComboBox();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProducts
@@ -51,8 +57,7 @@ namespace Ecommerce_application
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProducts.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnlProducts.Controls.Add(this.picBoxSearch);
-            this.pnlProducts.Controls.Add(this.vScrollBar2);
-            this.pnlProducts.Controls.Add(this.dataGridView1);
+            this.pnlProducts.Controls.Add(this.dgvProducts);
             this.pnlProducts.Controls.Add(this.btnUncheck);
             this.pnlProducts.Controls.Add(this.btnDelete);
             this.pnlProducts.Controls.Add(this.btnCheck);
@@ -73,31 +78,27 @@ namespace Ecommerce_application
             this.picBoxSearch.TabIndex = 36;
             this.picBoxSearch.TabStop = false;
             // 
-            // vScrollBar2
+            // dgvProducts
             // 
-            this.vScrollBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.vScrollBar2.Location = new System.Drawing.Point(907, 51);
-            this.vScrollBar2.Name = "vScrollBar2";
-            this.vScrollBar2.Size = new System.Drawing.Size(18, 439);
-            this.vScrollBar2.TabIndex = 34;
-            this.vScrollBar2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar2_Scroll);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(913, 439);
-            this.dataGridView1.TabIndex = 33;
+            this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.select,
+            this.id,
+            this.name,
+            this.price,
+            this.quantity,
+            this.category,
+            this.description});
+            this.dgvProducts.Location = new System.Drawing.Point(12, 51);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.Size = new System.Drawing.Size(913, 439);
+            this.dgvProducts.TabIndex = 33;
             // 
             // btnUncheck
             // 
@@ -114,6 +115,7 @@ namespace Ecommerce_application
             this.btnUncheck.TabIndex = 31;
             this.btnUncheck.Text = "Uncheck All";
             this.btnUncheck.UseVisualStyleBackColor = false;
+            this.btnUncheck.Click += new System.EventHandler(this.btnUncheck_Click);
             // 
             // btnDelete
             // 
@@ -130,6 +132,7 @@ namespace Ecommerce_application
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCheck
             // 
@@ -146,6 +149,7 @@ namespace Ecommerce_application
             this.btnCheck.TabIndex = 29;
             this.btnCheck.Text = "Check All";
             this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // txtSearch
             // 
@@ -169,6 +173,55 @@ namespace Ecommerce_application
             this.cmbCatagories.Size = new System.Drawing.Size(226, 21);
             this.cmbCatagories.TabIndex = 27;
             // 
+            // select
+            // 
+            this.select.HeaderText = "";
+            this.select.Name = "select";
+            this.select.ReadOnly = true;
+            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.select.Width = 30;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 150;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Width = 80;
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Qty";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            this.quantity.Width = 50;
+            // 
+            // category
+            // 
+            this.category.HeaderText = "Category";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
             // AdminProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,20 +237,26 @@ namespace Ecommerce_application
             this.pnlProducts.ResumeLayout(false);
             this.pnlProducts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.PictureBox picBoxSearch;
-        private System.Windows.Forms.VScrollBar vScrollBar2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Button btnUncheck;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cmbCatagories;
         public System.Windows.Forms.Panel pnlProducts;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
     }
 }

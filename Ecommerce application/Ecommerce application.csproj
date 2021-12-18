@@ -84,6 +84,7 @@
     <Compile Include="AdminAdmins.Designer.cs">
       <DependentUpon>AdminAdmins.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminClass.cs" />
     <Compile Include="AdminCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +109,7 @@
     <Compile Include="AdminRegister.Designer.cs">
       <DependentUpon>AdminRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminRegisterClass.cs" />
     <Compile Include="AdminTransaction.cs">
       <SubType>Form</SubType>
     </Compile>

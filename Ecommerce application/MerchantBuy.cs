@@ -95,5 +95,10 @@ namespace Ecommerce_application
                MerchantClass buy = new MerchantClass();
                buy.SelectedProduct(id);
         }
+
+        private void panelBuy_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

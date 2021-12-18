@@ -119,5 +119,38 @@ namespace Ecommerce_application
         {
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //Array is to hold different product ID that are selected in data grid view 
+            string[] id = null; //This will initialize the array 
+            dgvProducts.AllowUserToAddRows = false;
+            for (int i = 0; i < dgvProducts.Rows.Count; i++)
+            {
+                bool isCellCheked = (bool)dgvProducts.Rows[i].Cells[0].Value;
+                if (isCellCheked == true)
+                {
+                    //MessageBox.Show("Checked!");
+                    id = new String[0 + 1];
+                    //Retrive the selected id from data grid view to string array
+                    DataGridViewRow row = dgvProducts.Rows[i];
+                    id[i] = row.Cells[2].Value.ToString();
+                }
+                /* else
+                     MessageBox.Show("Not checked!");*/
+            }
+            AdminClass product = new AdminClass();
+            product.DeleteProduct(id);
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUncheck_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
