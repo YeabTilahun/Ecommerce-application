@@ -120,7 +120,9 @@ namespace Ecommerce_application
 
         private void CloseM_Click(object sender, EventArgs e)
         {
-            this.Close();
+                this.Close();
+                SignIn signIn = new SignIn();
+                signIn.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -154,6 +156,61 @@ namespace Ecommerce_application
             this.WindowState = FormWindowState.Normal;
             btnMaximized.BringToFront();
 
+        }
+
+        private void CloseM_MouseEnter(object sender, EventArgs e)
+        {
+            CloseM.BackColor = Color.Brown;
+        }
+
+        private void CloseM_MouseLeave(object sender, EventArgs e)
+        {
+            CloseM.BackColor = Color.Transparent;
+        }
+
+        private void btnMaximized_MouseEnter(object sender, EventArgs e)
+        {
+            btnMaximized.BackColor = Color.Gray;
+        }
+
+        private void btnRestore_MouseEnter(object sender, EventArgs e)
+        {
+            btnRestore.BackColor = Color.Gray;
+        }
+
+        private void btnRestore_MouseLeave(object sender, EventArgs e)
+        {
+            btnRestore.BackColor = Color.Transparent;
+        }
+
+        private void btnMaximized_MouseLeave(object sender, EventArgs e)
+        {
+            btnMaximized.BackColor = Color.Transparent;
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Gray;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Transparent;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure You Want to Logout?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (res == DialogResult.Yes)
+            {
+                this.Close();
+                SignIn signIn = new SignIn();
+                signIn.Show();
+            }
+            if (res == DialogResult.No)
+            {
+
+            }
         }
     }
 }
