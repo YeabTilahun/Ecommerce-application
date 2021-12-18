@@ -128,6 +128,7 @@
     <Compile Include="CustomerCart.Designer.cs">
       <DependentUpon>CustomerCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerClass.cs" />
     <Compile Include="CustomerPage.cs">
       <SubType>Form</SubType>
     </Compile>
