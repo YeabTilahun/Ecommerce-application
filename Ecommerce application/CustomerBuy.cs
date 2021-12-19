@@ -142,13 +142,53 @@ namespace Ecommerce_application
 
         private void textBox1_MouseEnter(object sender, EventArgs e)
         {
-            if (textBox1.Text != "\0")
-                textBox1.Text = "";
+            //if (textBox1.Text != "\0")
+             //   textBox1.Text = "";
         }
 
         private void textBox1_MouseLeave(object sender, EventArgs e)
         {
-            textBox1.Text = "Search the items here!";
+           // textBox1.Text = "Search the items here!";
+        }
+
+        private void picBoxSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picBoxSearch_MouseEnter(object sender, EventArgs e)
+        {
+            //picBoxSearch.BackColor = Color.DarkSeaGreen;
+        }
+
+        private void picBoxSearch_MouseLeave(object sender, EventArgs e)
+        {
+            //picBoxSearch.BackColor = Color.Transparent;
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Teal;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Transparent;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Teal;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Transparent;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }
