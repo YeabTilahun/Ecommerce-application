@@ -49,6 +49,8 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SignUpUser s = new SignUpUser(textBox1.Text, textBox3.Text, dateTimePicker1.Value, textBox2.Text, textBox4.Text, textBox5.Text, textBox6.Text, comboBox1.Text);
+            s.signUp();
 
         }
 

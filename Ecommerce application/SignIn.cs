@@ -82,6 +82,8 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SignInUser s = new SignInUser(textUsername.Text, textPassword.Text, comboBox1.Text);
+            s.saveUser();
             //merchant
             Merchant m = new Merchant();
             m.Show();
