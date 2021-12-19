@@ -203,6 +203,26 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_back_arrow_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-back-arrow-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_back_arrow_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-back-arrow-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_hand_up_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-hand-up-50", resourceCulture);

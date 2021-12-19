@@ -76,5 +76,24 @@ namespace Ecommerce_application
         {
 
         }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            dataGridView1.AllowUserToAddRows = false;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                bool isCellCheked = (bool)dataGridView1.Rows[i].Cells[0].Value;
+                if (isCellCheked == true)
+                {
+                    dataGridView1.Rows.RemoveAt(i);
+                }
+
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            MessageBox.Show("Items Bought!");
+        }
     }
 }

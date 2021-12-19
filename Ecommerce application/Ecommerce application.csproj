@@ -139,12 +139,6 @@
     <Compile Include="CustomerPage.Designer.cs">
       <DependentUpon>CustomerPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerTest.Designer.cs">
-      <DependentUpon>CustomerTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Merchant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,9 +222,6 @@
     <EmbeddedResource Include="CustomerPage.resx">
       <DependentUpon>CustomerPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerTest.resx">
-      <DependentUpon>CustomerTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Merchant.resx">
       <DependentUpon>Merchant.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +290,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\icons8-back-arrow-16.png" />
+    <None Include="Resources\icons8-back-arrow-64.png" />
     <None Include="Resources\icons8-hand-up-50.png" />
     <None Include="Resources\Cart GIF.gif" />
     <None Include="Resources\Restore.png" />
