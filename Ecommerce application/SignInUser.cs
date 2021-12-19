@@ -11,7 +11,7 @@ namespace Ecommerce_application
         public string username;
         public string Password;
         public string role;
-        public signInuser(string uname, string pass, string role)
+        public SignInUser(string uname, string pass, string role)
         {
             this.username = uname;
             this.Password = pass;
