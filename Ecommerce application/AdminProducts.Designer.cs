@@ -52,9 +52,6 @@ namespace Ecommerce_application
             // 
             // pnlProducts
             // 
-            this.pnlProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProducts.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnlProducts.Controls.Add(this.picBoxSearch);
             this.pnlProducts.Controls.Add(this.dgvProducts);
@@ -63,6 +60,7 @@ namespace Ecommerce_application
             this.pnlProducts.Controls.Add(this.btnCheck);
             this.pnlProducts.Controls.Add(this.txtSearch);
             this.pnlProducts.Controls.Add(this.cmbCatagories);
+            this.pnlProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProducts.Location = new System.Drawing.Point(0, 0);
             this.pnlProducts.Name = "pnlProducts";
             this.pnlProducts.Size = new System.Drawing.Size(937, 565);
@@ -80,7 +78,8 @@ namespace Ecommerce_application
             // 
             // dgvProducts
             // 
-            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;

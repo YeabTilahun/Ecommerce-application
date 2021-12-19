@@ -37,11 +37,9 @@ namespace Ecommerce_application
             // 
             // pnlAdmin
             // 
-            this.pnlAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAdmin.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnlAdmin.Controls.Add(this.dgvAdmins);
+            this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAdmin.Location = new System.Drawing.Point(0, 0);
             this.pnlAdmin.Name = "pnlAdmin";
             this.pnlAdmin.Size = new System.Drawing.Size(937, 565);

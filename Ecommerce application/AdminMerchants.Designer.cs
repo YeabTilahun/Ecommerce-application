@@ -44,9 +44,6 @@ namespace Ecommerce_application
             // 
             // pnlMerchant
             // 
-            this.pnlMerchant.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMerchant.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnlMerchant.Controls.Add(this.picBoxSearch);
             this.pnlMerchant.Controls.Add(this.dgvMerchants);
@@ -54,6 +51,7 @@ namespace Ecommerce_application
             this.pnlMerchant.Controls.Add(this.btnRemove);
             this.pnlMerchant.Controls.Add(this.btnCheck);
             this.pnlMerchant.Controls.Add(this.txtSearch);
+            this.pnlMerchant.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMerchant.Location = new System.Drawing.Point(0, 0);
             this.pnlMerchant.Name = "pnlMerchant";
             this.pnlMerchant.Size = new System.Drawing.Size(937, 565);
