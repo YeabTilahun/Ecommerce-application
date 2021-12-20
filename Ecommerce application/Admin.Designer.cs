@@ -172,7 +172,7 @@ namespace Ecommerce_application
             // 
             this.pblTopNav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pblTopNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
+            this.pblTopNav.BackColor = System.Drawing.Color.Transparent;
             this.pblTopNav.Controls.Add(this.btnMaximized);
             this.pblTopNav.Controls.Add(this.btnMinimize);
             this.pblTopNav.Controls.Add(this.CloseM);
@@ -190,7 +190,7 @@ namespace Ecommerce_application
             // btnMaximized
             // 
             this.btnMaximized.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnMaximized.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
+            this.btnMaximized.BackColor = System.Drawing.Color.Transparent;
             this.btnMaximized.FlatAppearance.BorderSize = 0;
             this.btnMaximized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximized.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,7 +206,7 @@ namespace Ecommerce_application
             // btnMinimize
             // 
             this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +223,7 @@ namespace Ecommerce_application
             // 
             this.CloseM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CloseM.AutoSize = true;
-            this.CloseM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
+            this.CloseM.BackColor = System.Drawing.Color.Transparent;
             this.CloseM.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
             this.CloseM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CloseM.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
@@ -254,7 +254,7 @@ namespace Ecommerce_application
             // btnRestore
             // 
             this.btnRestore.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
+            this.btnRestore.BackColor = System.Drawing.Color.Transparent;
             this.btnRestore.FlatAppearance.BorderSize = 0;
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

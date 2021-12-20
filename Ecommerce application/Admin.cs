@@ -212,7 +212,7 @@ namespace Ecommerce_application
 
         private void CloseM_MouseLeave(object sender, EventArgs e)
         {
-            CloseM.BackColor = Color.FromArgb(173, 235, 173);
+            CloseM.BackColor = Color.Transparent;
         }
     }
 }
