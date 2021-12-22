@@ -15,8 +15,17 @@ namespace Ecommerce_application
         public MerchantSell()
         {
             InitializeComponent();
+            LoadIntoCatagoryComboBox();
+
         }
 
+        private void LoadIntoCatagoryComboBox()
+        {
+            String[] itemsCatagory = {"Foods & Snacks", "Canned Goods", "Beverages and Drinks",
+                                    "Cleaning Products ","Home Appliances","Dairy & Groceries","Hygiene Products",
+                                    "Stationary Products","Others"};
+            comboBox1.Items.AddRange(itemsCatagory);
+        }
         private void CloseM_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -108,12 +117,13 @@ namespace Ecommerce_application
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+           // MerchantClass sell = new MerchantClass();
             //When the user press cancel all text fields and combobox will be cleard
             textBox5.Clear();
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
-            comboBox1.Text="";
+            comboBox1.Text=" ";
             textBox4.Clear();
         }
 
@@ -149,5 +159,9 @@ namespace Ecommerce_application
 
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

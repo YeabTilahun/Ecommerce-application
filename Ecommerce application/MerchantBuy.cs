@@ -87,7 +87,9 @@ namespace Ecommerce_application
                     id = new String[0+1];
                     //Retrive the selected id from data grid view to string array
                     DataGridViewRow row = dataGridView1.Rows[i];
-                    id[i] = row.Cells[2].Value.ToString();
+
+                    //This is throwing exeption called ...'Object reference not set to an instance of an object
+                    id[i] = row.Cells[2].Value.ToString(); 
                 }
                 /* else
                      MessageBox.Show("Not checked!");*/

@@ -46,7 +46,6 @@ namespace Ecommerce_application
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -56,6 +55,7 @@ namespace Ecommerce_application
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelSell.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,7 @@ namespace Ecommerce_application
             // panelSell
             // 
             this.panelSell.BackColor = System.Drawing.Color.White;
+            this.panelSell.Controls.Add(this.comboBox1);
             this.panelSell.Controls.Add(this.btnUpd);
             this.panelSell.Controls.Add(this.dataGridView1);
             this.panelSell.Controls.Add(this.textBox5);
@@ -72,7 +73,6 @@ namespace Ecommerce_application
             this.panelSell.Controls.Add(this.btnDelete);
             this.panelSell.Controls.Add(this.btnEdit);
             this.panelSell.Controls.Add(this.textBox4);
-            this.panelSell.Controls.Add(this.comboBox1);
             this.panelSell.Controls.Add(this.textBox3);
             this.panelSell.Controls.Add(this.textBox2);
             this.panelSell.Controls.Add(this.textBox1);
@@ -238,35 +238,6 @@ namespace Ecommerce_application
             this.textBox4.TabIndex = 10;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Alcohol",
-            "Bikes",
-            "Books",
-            "Cars",
-            "Cleaning supplies",
-            "Clothing",
-            "Electronics",
-            "Exercise Equipment",
-            "Furniture",
-            "Jewelry",
-            "Medicine",
-            "Musical Instruments",
-            "Other",
-            "Sporting goods",
-            "Tools and Home Care ",
-            "Toys & Games",
-            "Watches"});
-            this.comboBox1.Location = new System.Drawing.Point(118, 221);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 9;
-            // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Control;
@@ -351,6 +322,16 @@ namespace Ecommerce_application
             this.label1.Text = "Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(118, 221);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 90;
+            // 
             // MerchantSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,7 +361,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btnCancel;
@@ -397,5 +377,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button btnUpd;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
