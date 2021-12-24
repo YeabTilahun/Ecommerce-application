@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,8 @@ namespace Ecommerce_application
 
         private void LoadIntoCatagoryComboBox()
         {
-            String[] itemsCatagory = {"Foods & Snacks", "Canned Goods", "Beverages and Drinks",
-                                    "Cleaning Products ","Home Appliances","Dairy & Groceries","Hygiene Products",
-                                    "Stationary Products","Others"};
+            String[] itemsCatagory = {"Alcohol","Bikes","Books","Cars","Phone","Cleaning supplies","Clothing","Electronics","Exercise Equipment","Furniture"
+                    ,"Jewelry","Medicine","Musical Instruments","Sporting goods","Tools and Home Care","Toys & Games","Watches","Other"};
             comboBox1.Items.AddRange(itemsCatagory);
         }
         private void CloseM_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace Ecommerce_application
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string id = textBox1.Text;
+            string id = textBox5.Text;
             MerchantClass sell = new MerchantClass();
             sell.Delete(id);
         }
@@ -163,5 +163,42 @@ namespace Ecommerce_application
         {
 
         }
+
+        //when the user enters ID it will fill the textboxes with the apropriate value(product)
+        string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox5.Text != "")
+            {
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(constr))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("spFillProductSell", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@pid", textBox5.Text);
+                        SqlDataReader da = cmd.ExecuteReader();
+                        while (da.Read())
+                        {
+                            textBox5.Text = da.GetValue(0).ToString();
+                            textBox5.Text = da.GetValue(1).ToString();
+                            textBox1.Text = da.GetValue(2).ToString();
+                            textBox2.Text = da.GetValue(3).ToString();
+                            textBox3.Text = da.GetValue(4).ToString();
+                            //PROBLEM ON THE COMBOBOX THE VALUE WONT CHANGE!
+                            comboBox1.Text = da.GetValue(5).ToString();
+                            textBox4.Text = da.GetValue(6).ToString();
+
+                        }
+                        con.Close();
+                    }
+                }
+                
+                catch (SqlException ex){
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            }
+        }
     }
-}

@@ -37,8 +37,6 @@ namespace Ecommerce_application
 
         public void Add()
         {
-            MessageBox.Show(this.id + " " + this.productName + " " + this.price + " " + this.quantity + " " + this.category + " " + this.description + " ");
-            MessageBox.Show("New Product added Sucessfully!");
             MerchantDatabase sell = new MerchantDatabase();
             sell.AddProduct(this);
 
@@ -46,15 +44,12 @@ namespace Ecommerce_application
 
         public void Update()
         {
-            MessageBox.Show(this.id + " " + this.productName + " " + this.price + " " + this.quantity + " " + this.category + " " + this.description + " ");
-            MessageBox.Show("Product Updated Sucessfully!");
             MerchantDatabase sell = new MerchantDatabase();
             sell.UpdateProduct(this);
         }
 
         public void Delete(string id)
         {
-            MessageBox.Show("Product Deleted Sucessfully!");
             MerchantDatabase sell = new MerchantDatabase();
             sell.Delete(id);
 
