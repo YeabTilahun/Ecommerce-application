@@ -1,109 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ecommerce_application
 {
-    public partial class MerchantBuy : Form
+    public partial class MerchantBuy:Form
     {
         public MerchantBuy()
         {
             InitializeComponent();
+            //TO ADD THE CHECK BOX WHEN IT LOADS
+            AddCheckBox();
+            //TO LOAD THE DATA WHEN IT LOADS
             loading();
         }
 
-        private void CloseM_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void MinMer_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Merchant m = new Merchant();
-            m.Show();
-            this.Hide();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            MerchantSell m = new MerchantSell();
-            m.Show();
-            this.Hide();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "Search items here";
-                textBox1.ForeColor = Color.LightGray;
-            }
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "Search items here")
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            //Array is to hold different product ID that are selected in data grid view 
-            string[] id= new string[ConfigurationManager.ConnectionStrings.Count]; //This will initialize the array 
-            dataGridView1.AllowUserToAddRows = false;
-            for (int i=0; i < dataGridView1.Rows.Count; i++)
-            {
-                bool isCellCheked = (bool)dataGridView1.Rows[i].Cells[0].Value;
-                if (isCellCheked==true)
-                {
-                    //MessageBox.Show("Checked!");
-                    id = new String[0+1];
-                    //Retrive the selected id from data grid view to string array
-                    DataGridViewRow row = dataGridView1.Rows[i];
-
-                    //This is throwing exeption called ...'Object reference not set to an instance of an object
-                    id[i] = row.Cells[2].Value.ToString(); 
-                }
-                /* else
-                     MessageBox.Show("Not checked!");*/
-            }
-               MerchantClass buy = new MerchantClass();
-               buy.SelectedProduct(id);
-        }
-
-        private void panelBuy_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         void loading()
         {
             string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
@@ -121,14 +35,95 @@ namespace Ecommerce_application
                 con.Close();
             }
             //ARRANGING DGV COLUMNS
-            dataGridView1.Columns["productID"].DisplayIndex = 0;
-            dataGridView1.Columns["name"].DisplayIndex = 1;
-            dataGridView1.Columns["price"].DisplayIndex = 2;
-            dataGridView1.Columns["quantity"].DisplayIndex = 3;
-            dataGridView1.Columns["category"].DisplayIndex = 4;
-            dataGridView1.Columns["description"].DisplayIndex = 5;
+            dataGridView1.Columns["productID"].DisplayIndex = 1;
+            dataGridView1.Columns["name"].DisplayIndex = 2;
+            dataGridView1.Columns["price"].DisplayIndex = 3;
+            dataGridView1.Columns["quantity"].DisplayIndex = 4;
+            dataGridView1.Columns["category"].DisplayIndex = 5;
+            dataGridView1.Columns["description"].DisplayIndex = 6;
             //EXTENDING DESCRIPTION COLUMN
             dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[3].Width = 40;
+            dataGridView1.Columns[4].Width = 50;
+            dataGridView1.Columns[1].Width = 58;
+            dataGridView1.Columns[2].Width = 80;
+        }
+        //ADDING CHECKBOX TO DGV
+        void AddCheckBox()
+        {
+            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+            checkColumn.Name = "X";
+            checkColumn.HeaderText = "Select";
+            checkColumn.Width = 50;
+            checkColumn.FillWeight = 10;
+            checkColumn.TrueValue = 1;
+            checkColumn.FalseValue = 0;
+            checkColumn.ReadOnly = false;
+            dataGridView1.Columns.Add(checkColumn);
+            dataGridView1.Columns["X"].DisplayIndex = 0;
+        }
+
+
+
+        //WHEN SEARCH BOX TEXT CHANGED CALL SEARCH METHOD 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        //FOR SEARCH CALLS THE PROCEDURE AND DOES THE JOB BUT THEIR IS ERORR AFTER WE SEARCH THE DGV CONTENT WILL DISAPEAR
+        void search()
+        {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
+
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                SqlCommand sqlCmd = new SqlCommand("Exec spSearch @search", con);
+                sqlCmd.Parameters.AddWithValue("@search", textBox1.Text);
+                SqlDataReader reader = sqlCmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                dataGridView1.DataSource = dt;
+                con.Close();
+            }
+        }
+
+        //SEARCH BOX MOUSE LEAVE SHOW TEXT "search items here"
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Search items here";
+                textBox1.ForeColor = Color.LightGray;
+            }
+        }
+
+        //SEARCH BOX MOUSE ENTERS HIDE TEXT "search items here"
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Search items here")
+                textBox1.Text = "";
+            textBox1.ForeColor = Color.Black;
+        }
+
+        //ADDING SELECTED ITEMS TO CART DGV
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //NEEDS A LOT OF WORK  
+            string[] id = new string[ConfigurationManager.ConnectionStrings.Count]; //This will initialize the array 
+            MerchantCart a = new MerchantCart();
+            a.dataGridView1.AllowUserToAddRows = false;
+            int numRows = dataGridView1.Rows.Count;
+            a.dataGridView1.RowCount = numRows;
+            for (int i = 0; i < numRows; i++)
+            {
+                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["X"].Value) == true)
+                {
+                    //copy everything
+                    //DataGridView2.DataSource = DataGridView1.DataSource;
+                }
+            }
         }
     }
 }

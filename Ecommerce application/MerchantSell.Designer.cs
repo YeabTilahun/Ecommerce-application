@@ -31,6 +31,11 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantSell));
             this.panelSell = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnUpd = new System.Windows.Forms.Button();
@@ -44,10 +49,6 @@ namespace Ecommerce_application
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelSell.SuspendLayout();
@@ -57,6 +58,11 @@ namespace Ecommerce_application
             // panelSell
             // 
             this.panelSell.BackColor = System.Drawing.Color.White;
+            this.panelSell.Controls.Add(this.label7);
+            this.panelSell.Controls.Add(this.label6);
+            this.panelSell.Controls.Add(this.label5);
+            this.panelSell.Controls.Add(this.label4);
+            this.panelSell.Controls.Add(this.label3);
             this.panelSell.Controls.Add(this.dataGridView1);
             this.panelSell.Controls.Add(this.comboBox1);
             this.panelSell.Controls.Add(this.btnUpd);
@@ -70,17 +76,57 @@ namespace Ecommerce_application
             this.panelSell.Controls.Add(this.textBox3);
             this.panelSell.Controls.Add(this.textBox2);
             this.panelSell.Controls.Add(this.textBox1);
-            this.panelSell.Controls.Add(this.label6);
-            this.panelSell.Controls.Add(this.label5);
-            this.panelSell.Controls.Add(this.label4);
-            this.panelSell.Controls.Add(this.label3);
             this.panelSell.Controls.Add(this.label2);
             this.panelSell.Controls.Add(this.label1);
             this.panelSell.Location = new System.Drawing.Point(1, 1);
             this.panelSell.Name = "panelSell";
             this.panelSell.Size = new System.Drawing.Size(812, 545);
             this.panelSell.TabIndex = 8;
-            this.panelSell.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(100, 61);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 102;
+            this.label7.Text = "Name";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(258, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.TabIndex = 101;
+            this.label6.Text = "Price";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(397, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.TabIndex = 100;
+            this.label5.Text = "Qty";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(474, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 99;
+            this.label4.Text = "Category";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(369, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 98;
+            this.label3.Text = "Description";
             // 
             // dataGridView1
             // 
@@ -103,7 +149,7 @@ namespace Ecommerce_application
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(529, 57);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 21);
+            this.comboBox1.Size = new System.Drawing.Size(131, 21);
             this.comboBox1.TabIndex = 90;
             // 
             // btnUpd
@@ -123,7 +169,7 @@ namespace Ecommerce_application
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox5.Location = new System.Drawing.Point(36, 58);
+            this.textBox5.Location = new System.Drawing.Point(34, 58);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(60, 20);
             this.textBox5.TabIndex = 24;
@@ -200,9 +246,8 @@ namespace Ecommerce_application
             this.textBox4.Location = new System.Drawing.Point(435, 102);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(208, 71);
+            this.textBox4.Size = new System.Drawing.Size(225, 71);
             this.textBox4.TabIndex = 10;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
@@ -214,59 +259,18 @@ namespace Ecommerce_application
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.Location = new System.Drawing.Point(304, 58);
+            this.textBox2.Location = new System.Drawing.Point(291, 58);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(59, 20);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 92;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(150, 58);
+            this.textBox1.Location = new System.Drawing.Point(141, 57);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(111, 20);
             this.textBox1.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(369, 102);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Description";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(474, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Category";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(369, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Quantity";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(267, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Price";
             // 
             // label2
             // 
@@ -280,13 +284,10 @@ namespace Ecommerce_application
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 61);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 97;
             // 
             // MerchantSell
             // 
@@ -311,12 +312,8 @@ namespace Ecommerce_application
         internal System.Windows.Forms.Panel panelSell;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btnCancel;
@@ -328,5 +325,10 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnUpd;
         private System.Windows.Forms.ComboBox comboBox1;
         internal System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

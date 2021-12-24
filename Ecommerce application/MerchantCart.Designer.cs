@@ -31,16 +31,11 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantCart));
             this.panelCart = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.panelCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +52,43 @@ namespace Ecommerce_application
             this.panelCart.Name = "panelCart";
             this.panelCart.Size = new System.Drawing.Size(812, 545);
             this.panelCart.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Khaki;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(668, 465);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 25);
+            this.button2.TabIndex = 90;
+            this.button2.Text = "Download ";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(439, 27);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(299, 432);
+            this.textBox1.TabIndex = 89;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(292, 432);
+            this.dataGridView1.TabIndex = 88;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -87,75 +119,6 @@ namespace Ecommerce_application
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             this.btnAdd.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAdd_MouseClick);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column7,
-            this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(20, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(292, 432);
-            this.dataGridView1.TabIndex = 88;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column1.HeaderText = "Select";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 40;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "ID";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 45;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Product Name";
-            this.Column3.Name = "Column3";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Price";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 33;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Qty";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 30;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(439, 27);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(299, 432);
-            this.textBox1.TabIndex = 89;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Khaki;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(668, 465);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 25);
-            this.button2.TabIndex = 90;
-            this.button2.Text = "Download ";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // MerchantCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,11 +144,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        internal System.Windows.Forms.DataGridView dataGridView1;
     }
 }

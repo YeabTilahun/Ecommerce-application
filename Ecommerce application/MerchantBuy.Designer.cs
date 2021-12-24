@@ -31,15 +31,15 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantBuy));
             this.panelBuy = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.picBoxSearch = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelBuy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBuy
@@ -56,7 +56,19 @@ namespace Ecommerce_application
             this.panelBuy.Name = "panelBuy";
             this.panelBuy.Size = new System.Drawing.Size(812, 545);
             this.panelBuy.TabIndex = 0;
-            this.panelBuy.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBuy_Paint);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(203, 54);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(595, 441);
+            this.dataGridView1.TabIndex = 97;
             // 
             // pictureBox1
             // 
@@ -91,7 +103,7 @@ namespace Ecommerce_application
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::Ecommerce_application.Properties.Resources.cart__1_;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(674, 501);
+            this.button8.Location = new System.Drawing.Point(699, 501);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(99, 31);
             this.button8.TabIndex = 94;
@@ -111,20 +123,6 @@ namespace Ecommerce_application
             this.picBoxSearch.TabIndex = 89;
             this.picBoxSearch.TabStop = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(203, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(595, 441);
-            this.dataGridView1.TabIndex = 97;
-            // 
             // MerchantBuy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,9 +137,9 @@ namespace Ecommerce_application
             this.Text = "Ecommerce application";
             this.panelBuy.ResumeLayout(false);
             this.panelBuy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

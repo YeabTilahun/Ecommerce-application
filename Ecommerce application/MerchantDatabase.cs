@@ -16,9 +16,7 @@ namespace Ecommerce_application
           
 
         }
-        //
         string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-
         //giving productID by ourselves  BUT MID WILL BE UPDATED!!
         static  int mid = 1, pid = 1;
         public void AddProduct(MerchantClass sell)

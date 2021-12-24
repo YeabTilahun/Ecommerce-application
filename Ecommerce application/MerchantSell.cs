@@ -16,8 +16,12 @@ namespace Ecommerce_application
         public MerchantSell()
         {
             InitializeComponent();
+            //LOADING THE ITEMS FOR THE COMBOBOX WHEN THE CLASS LOADS
             LoadIntoCatagoryComboBox();
+            //LOADING THE DATA TO THE DGV WHEN THE CLASS LOADS
             loading();
+            //disable ID textbox
+            textBox5.Enabled = false;
         }
 
         private void LoadIntoCatagoryComboBox()
@@ -25,59 +29,6 @@ namespace Ecommerce_application
             String[] itemsCatagory = {"Alcohol","Bikes","Books","Cars","Phone","Cleaning supplies","Clothing","Electronics","Exercise Equipment","Furniture"
                     ,"Jewelry","Medicine","Musical Instruments","Sporting goods","Tools and Home Care","Toys & Games","Watches","Other"};
             comboBox1.Items.AddRange(itemsCatagory);
-        }
-        private void CloseM_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void MinMer_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MerchantBuy m = new MerchantBuy();
-            m.Show();
-            this.Hide();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Merchant m = new Merchant();
-            m.Show();
-            this.Hide();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void MerchantSell_Load(object sender, EventArgs e)
@@ -87,9 +38,9 @@ namespace Ecommerce_application
             btnEdit.Hide();
             btnUpd.Show();
             btnUpd.BringToFront();
-
-           
         }
+
+        //LOADING THE DATA TO THE DGV
         void loading()
         {
             string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
@@ -117,35 +68,55 @@ namespace Ecommerce_application
             dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //When the user clicks add the products info will be copied to MerchantSellClass
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            MerchantClass sell = new MerchantClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
-            sell.Add();
-            //update the grid view after merchant added product 
-            dataGridView1.Refresh();
+            if (textBox1.Text == "/0" && textBox2.Text == "/0" && textBox3.Text == "/0" && textBox4.Text == "/0" && comboBox1.Text == "/0")
+            {
+                MerchantClass sell = new MerchantClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
+                sell.Add();
+                //update the grid view after merchant added product 
+                loading();
+                //After product added texbox will be cleared
+                textBox5.Clear();
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                comboBox1.Text = " ";
+                textBox4.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Please fill the required fields!");
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //SELECTED VALUE PASSING FROM DGV
-            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-            string cellValue = Convert.ToString(selectedRow.Cells["productID"].Value);
+            try
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                string cellValue = Convert.ToString(selectedRow.Cells["productID"].Value);
+                string id = cellValue;
+                MerchantClass sell = new MerchantClass();
+                sell.Delete(id);
+                loading();
+            }
+            catch (ArgumentOutOfRangeException a)
+            {
+                MessageBox.Show("Please select row.");
+            }
 
-            string id = cellValue;
-            MerchantClass sell = new MerchantClass();
-            sell.Delete(id);
+            //After product deleted texbox will be cleared
+            textBox5.Clear();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            comboBox1.Text = " ";
+            textBox4.Clear();
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -166,10 +137,10 @@ namespace Ecommerce_application
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            textBox5.Enabled = false;
             MerchantClass sell = new MerchantClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
             sell.Update();
-            dataGridView1.Refresh();
-            dataGridView1.Update();
+            loading();
             //Hide update button after click
             //NOTICE THE NAME FOR UPDATE AND EDIT IS CHANGED btnEdit IS UPDATE AND btnUpd IS UPDATE
             btnEdit.Hide();
@@ -179,34 +150,24 @@ namespace Ecommerce_application
 
         private void btnUpd_Click(object sender, EventArgs e)
         {
+            textBox5.Enabled = false;
             //seleted ROW VALUE
-            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-            string cellValue = Convert.ToString(selectedRow.Cells["productID"].Value);
-                    textBox5.Text = cellValue;
-                    fill();
-
+            try {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                string cellValue = Convert.ToString(selectedRow.Cells["productID"].Value);
+                textBox5.Text = cellValue;
+                fill();
+            }
+            catch (ArgumentOutOfRangeException a)
+            {
+                MessageBox.Show("Please select row.");
+            }
             //To hide edit and to show Update when this form loads
             //NOTICE THE NAME FOR UPDATE AND EDIT IS CHANGED btnEdit IS UPDATE AND btnUpd IS UPDATE
             btnEdit.Show();
             btnUpd.Hide();
             btnEdit.BringToFront();
-
-            //We need to show the product thats going to be edited from the data grid view in to textbox
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                //Means if the checkbox is selected
-               /* if (Convert.ToBoolean(row.Cells[1].Value))
-                {
-                    //Assign from the table to the textbox and combobox to be edited
-                }*/
-            }
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         //when the user enters ID it will fill the textboxes with the apropriate value(product)
@@ -220,7 +181,7 @@ namespace Ecommerce_application
             }
             }
         
-        //TO CALL IT WHEN THE USER SELECT ROM DGV AND PRESS EDIT
+        //TO CALL IT WHEN THE USER SELECT ROW DGV AND PRESS EDIT
         public void fill()
         {
             try
@@ -252,11 +213,6 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void productBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
         }
     }
     }
