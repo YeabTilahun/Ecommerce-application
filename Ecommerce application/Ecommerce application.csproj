@@ -139,6 +139,11 @@
     <Compile Include="CustomerPage.Designer.cs">
       <DependentUpon>CustomerPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="EcommerceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EcommerceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Merchant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +176,11 @@
       <DependentUpon>MerchantSell.cs</DependentUpon>
     </Compile>
     <Compile Include="MerchantClass.cs" />
+    <Compile Include="ProductDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -247,7 +257,29 @@
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="EcommerceDataSet.xsc">
+      <DependentUpon>EcommerceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EcommerceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EcommerceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EcommerceDataSet.xss">
+      <DependentUpon>EcommerceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="ProductDataSet.xsc">
+      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProductDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProductDataSet.xss">
+      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -31,15 +31,9 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantSell));
             this.panelSell = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnUpd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -63,9 +57,9 @@ namespace Ecommerce_application
             // panelSell
             // 
             this.panelSell.BackColor = System.Drawing.Color.White;
+            this.panelSell.Controls.Add(this.dataGridView1);
             this.panelSell.Controls.Add(this.comboBox1);
             this.panelSell.Controls.Add(this.btnUpd);
-            this.panelSell.Controls.Add(this.dataGridView1);
             this.panelSell.Controls.Add(this.textBox5);
             this.panelSell.Controls.Add(this.label13);
             this.panelSell.Controls.Add(this.btnCancel);
@@ -82,20 +76,34 @@ namespace Ecommerce_application
             this.panelSell.Controls.Add(this.label3);
             this.panelSell.Controls.Add(this.label2);
             this.panelSell.Controls.Add(this.label1);
-            this.panelSell.Location = new System.Drawing.Point(0, 1);
+            this.panelSell.Location = new System.Drawing.Point(1, 1);
             this.panelSell.Name = "panelSell";
-            this.panelSell.Size = new System.Drawing.Size(813, 545);
+            this.panelSell.Size = new System.Drawing.Size(812, 545);
             this.panelSell.TabIndex = 8;
             this.panelSell.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(36, 210);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(734, 291);
+            this.dataGridView1.TabIndex = 91;
             // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 221);
+            this.comboBox1.Location = new System.Drawing.Point(529, 57);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(114, 21);
             this.comboBox1.TabIndex = 90;
             // 
             // btnUpd
@@ -104,7 +112,7 @@ namespace Ecommerce_application
             this.btnUpd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpd.FlatAppearance.BorderSize = 0;
             this.btnUpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpd.Location = new System.Drawing.Point(431, 488);
+            this.btnUpd.Location = new System.Drawing.Point(590, 507);
             this.btnUpd.Name = "btnUpd";
             this.btnUpd.Size = new System.Drawing.Size(70, 25);
             this.btnUpd.TabIndex = 89;
@@ -112,72 +120,19 @@ namespace Ecommerce_application
             this.btnUpd.UseVisualStyleBackColor = false;
             this.btnUpd.Click += new System.EventHandler(this.btnUpd_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column7,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(301, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(486, 418);
-            this.dataGridView1.TabIndex = 88;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "ID";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 45;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Product Name";
-            this.Column3.Name = "Column3";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Price";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 33;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Qty";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 30;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Category";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Description ";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 200;
-            // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox5.Location = new System.Drawing.Point(118, 55);
+            this.textBox5.Location = new System.Drawing.Point(36, 58);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 20);
+            this.textBox5.Size = new System.Drawing.Size(60, 20);
             this.textBox5.TabIndex = 24;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(36, 58);
+            this.label13.Location = new System.Drawing.Point(12, 61);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(18, 13);
             this.label13.TabIndex = 23;
@@ -189,7 +144,7 @@ namespace Ecommerce_application
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(169, 365);
+            this.btnCancel.Location = new System.Drawing.Point(700, 122);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(70, 25);
             this.btnCancel.TabIndex = 22;
@@ -203,7 +158,7 @@ namespace Ecommerce_application
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(66, 365);
+            this.btnAdd.Location = new System.Drawing.Point(700, 79);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 25);
             this.btnAdd.TabIndex = 21;
@@ -217,7 +172,7 @@ namespace Ecommerce_application
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(589, 488);
+            this.btnDelete.Location = new System.Drawing.Point(700, 507);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 25);
             this.btnDelete.TabIndex = 20;
@@ -231,7 +186,7 @@ namespace Ecommerce_application
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Location = new System.Drawing.Point(431, 488);
+            this.btnEdit.Location = new System.Drawing.Point(590, 507);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(70, 25);
             this.btnEdit.TabIndex = 19;
@@ -242,42 +197,42 @@ namespace Ecommerce_application
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox4.Location = new System.Drawing.Point(118, 252);
+            this.textBox4.Location = new System.Drawing.Point(435, 102);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(177, 92);
+            this.textBox4.Size = new System.Drawing.Size(208, 71);
             this.textBox4.TabIndex = 10;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox3.Location = new System.Drawing.Point(118, 177);
+            this.textBox3.Location = new System.Drawing.Point(421, 58);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.Size = new System.Drawing.Size(47, 20);
             this.textBox3.TabIndex = 8;
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.Location = new System.Drawing.Point(118, 136);
+            this.textBox2.Location = new System.Drawing.Point(304, 58);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
+            this.textBox2.Size = new System.Drawing.Size(59, 20);
             this.textBox2.TabIndex = 7;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(118, 97);
+            this.textBox1.Location = new System.Drawing.Point(150, 58);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.Size = new System.Drawing.Size(111, 20);
             this.textBox1.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 255);
+            this.label6.Location = new System.Drawing.Point(369, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 5;
@@ -287,7 +242,7 @@ namespace Ecommerce_application
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 224);
+            this.label5.Location = new System.Drawing.Point(474, 61);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 4;
@@ -297,7 +252,7 @@ namespace Ecommerce_application
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 180);
+            this.label4.Location = new System.Drawing.Point(369, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 3;
@@ -307,7 +262,7 @@ namespace Ecommerce_application
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 139);
+            this.label3.Location = new System.Drawing.Point(267, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 2;
@@ -326,7 +281,7 @@ namespace Ecommerce_application
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 100);
+            this.label1.Location = new System.Drawing.Point(115, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -370,14 +325,8 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button btnUpd;
         private System.Windows.Forms.ComboBox comboBox1;
+        internal System.Windows.Forms.DataGridView dataGridView1;
     }
 }

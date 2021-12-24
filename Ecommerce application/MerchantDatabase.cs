@@ -102,7 +102,10 @@ namespace Ecommerce_application
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
+                    {
                         MessageBox.Show("Product Updated Sucessfully!");
+       
+                    }
                     else
                         MessageBox.Show("Failed! Please try again");
                 }
@@ -111,6 +114,7 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
     }
 }

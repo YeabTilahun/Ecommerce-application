@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace Ecommerce_application
         public MerchantBuy()
         {
             InitializeComponent();
+            loading();
         }
 
         private void CloseM_Click(object sender, EventArgs e)
@@ -101,6 +103,32 @@ namespace Ecommerce_application
         private void panelBuy_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        void loading()
+        {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
+
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Close();
+                con.Open();
+                string query = "SELECT productID,name,price,quantity,description,category FROM product ";
+                SqlDataAdapter da = new SqlDataAdapter(query, constr);
+                SqlCommandBuilder q = new SqlCommandBuilder(da);
+                var ds = new DataSet();
+                da.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0];
+                con.Close();
+            }
+            //ARRANGING DGV COLUMNS
+            dataGridView1.Columns["productID"].DisplayIndex = 0;
+            dataGridView1.Columns["name"].DisplayIndex = 1;
+            dataGridView1.Columns["price"].DisplayIndex = 2;
+            dataGridView1.Columns["quantity"].DisplayIndex = 3;
+            dataGridView1.Columns["category"].DisplayIndex = 4;
+            dataGridView1.Columns["description"].DisplayIndex = 5;
+            //EXTENDING DESCRIPTION COLUMN
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }
