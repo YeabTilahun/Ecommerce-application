@@ -14,9 +14,12 @@ namespace Ecommerce_application
 {
     public partial class CustomerBuy : Form
     {
-        public CustomerBuy()
+        public CustomerBuy(string id, string name, string price, string qty, string description, string category)
         {
             InitializeComponent();
+
+           // dataGridView1.Rows.Add();
+            dataGridView1.Rows[0].Cells[0].Value =  id;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -222,9 +225,9 @@ namespace Ecommerce_application
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             SqlConnection con = new SqlConnection("Server =  LAPTOP-RS59N8IM; Database = E-Commerce; integrated security = true;");
-          //SqlDataAdapter ada = new SqlDataAdapter("SELECT productID, name, price, quantity, category, description FROM product", con);
+            SqlDataAdapter ada = new SqlDataAdapter("SELECT productID, name, price, quantity, category, description FROM product", con);
             DataTable dt = new DataTable();
-          //ada.Fill(dt);
+            ada.Fill(dt);
             dataGridView1.DataSource = dt;
         }
     }
