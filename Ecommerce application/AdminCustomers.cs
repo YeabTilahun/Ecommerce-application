@@ -73,21 +73,26 @@ namespace Ecommerce_application
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            string[] id = null; //This will initialize the array 
+            //Array is to hold different product ID that are selected in data grid view 
+            int counter = 0;
+            string[] id; //This will initialize the array 
             dgvCustomers.AllowUserToAddRows = false;
             for (int i = 0; i < dgvCustomers.Rows.Count; i++)
             {
-                bool isCellCheked = (bool)dgvCustomers.Rows[i].Cells[0].Value;
-                if (isCellCheked == true)
+                if ((bool)dgvCustomers.Rows[i].Cells[0].Value)
+                    counter++;
+            }
+            id = new string[counter];
+            counter = 0;
+            for (int i = 0; i < dgvCustomers.Rows.Count; i++)
+            {
+                if ((bool)dgvCustomers.Rows[i].Cells[0].Value)
                 {
-                    //MessageBox.Show("Checked!");
-                    id = new String[0 + 1];
                     //Retrive the selected id from data grid view to string array
                     DataGridViewRow row = dgvCustomers.Rows[i];
-                    id[i] = row.Cells[2].Value.ToString();
+                    id[counter] = row.Cells[2].Value.ToString();
+                    counter++;
                 }
-                /* else
-                     MessageBox.Show("Not checked!");*/
             }
             AdminClass customer = new AdminClass();
             customer.DeleteCustomers(id);
@@ -115,7 +120,8 @@ namespace Ecommerce_application
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
+            AdminClass ac = new AdminClass();
+            ac.GetCustomer(txtSearch.Text);
         }
     }
 }

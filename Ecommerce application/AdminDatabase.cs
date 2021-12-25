@@ -93,14 +93,22 @@ namespace Ecommerce_application
             {
                 using (SqlConnection con = new SqlConnection(constr))
                 {
+                    int rowAffected = 0;
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("spDeleteAdmin", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@adminID", id);
+                    for (int i = 0; i < id.Length; i++)
+                    {
+                        SqlCommand cmd = new SqlCommand("spDeleteAdmin", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@adminID", id[i]);
 
-                    int rowAffected = cmd.ExecuteNonQuery();
+                        rowAffected = cmd.ExecuteNonQuery();
+                    }
                     con.Close();
-                    if (rowAffected > 0)
+                    if (rowAffected > 0 && id.Length > 1)
+                    {
+                        MessageBox.Show("Admins Deleted Successfully");
+                    }
+                    else if(rowAffected > 0)
                     {
                         MessageBox.Show("Admin Deleted Successfully");
                     }
@@ -135,14 +143,22 @@ namespace Ecommerce_application
             {
                 using (SqlConnection con = new SqlConnection(constr))
                 {
+                    int rowAffected = 0;
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("spDeleteProduct", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@pid", id);
+                    for (int i = 0; i < id.Length; i++)
+                    {
+                        SqlCommand cmd = new SqlCommand("spDeleteProduct", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@pid", id[i]);
 
-                    int rowAffected = cmd.ExecuteNonQuery();
+                        rowAffected = cmd.ExecuteNonQuery();
+                    }
                     con.Close();
-                    if (rowAffected > 0)
+                    if (rowAffected > 0 && id.Length > 1)
+                    {
+                        MessageBox.Show("Products Deleted Successfully");
+                    }
+                    else if (rowAffected > 0)
                     {
                         MessageBox.Show("Product Deleted Successfully");
                     }
@@ -177,16 +193,24 @@ namespace Ecommerce_application
             {
                 using (SqlConnection con = new SqlConnection(constr))
                 {
+                    int rowAffected = 0;
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("spDeleteCustomer", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", id);
-
-                    int rowAffected = cmd.ExecuteNonQuery();
-                    con.Close();
-                    if (rowAffected > 0)
+                    for (int i = 0; i < id.Length; i++)
                     {
-                        MessageBox.Show("Customer Deleted Successfully");
+                        SqlCommand cmd = new SqlCommand("spDeleteCustomer", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", id[i]);
+
+                        rowAffected = cmd.ExecuteNonQuery();
+                    }
+                    con.Close();
+                    if (rowAffected > 0 && id.Length > 1)
+                    {
+                        MessageBox.Show("Customers Deleted Successfully");
+                    }
+                    else if (rowAffected > 0)
+                    {
+                        MessageBox.Show("customer Deleted Successfully");
                     }
                     else
                     {
@@ -219,14 +243,22 @@ namespace Ecommerce_application
             {
                 using (SqlConnection con = new SqlConnection(constr))
                 {
+                    int rowAffected = 0;
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("spDeleteMerchant", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", id);
+                    for (int i = 0; i < id.Length; i++)
+                    {
+                        SqlCommand cmd = new SqlCommand("spDeleteMerchant", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", id[i]);
 
-                    int rowAffected = cmd.ExecuteNonQuery();
+                        rowAffected = cmd.ExecuteNonQuery();
+                    }
                     con.Close();
-                    if (rowAffected > 0)
+                    if (rowAffected > 0 && id.Length > 1)
+                    {
+                        MessageBox.Show("Merchants Deleted Successfully");
+                    }
+                    else if (rowAffected > 0)
                     {
                         MessageBox.Show("Merchant Deleted Successfully");
                     }
@@ -251,6 +283,18 @@ namespace Ecommerce_application
             DataSet ds = new DataSet();
             da.Fill(ds, "tblMerchant");
             DataTable dt = ds.Tables["tblMerchant"];
+            return dt;
+
+        }
+
+        public DataTable GetTransaction()
+        {
+            SqlConnection con = new SqlConnection(constr);
+            SqlDataAdapter da = new SqlDataAdapter("spGetTransaction", con);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tblTransaction");
+            DataTable dt = ds.Tables["tblTransaction"];
             return dt;
 
         }
