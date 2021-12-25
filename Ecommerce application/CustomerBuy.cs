@@ -14,17 +14,16 @@ namespace Ecommerce_application
 {
     public partial class CustomerBuy : Form
     {
-        public CustomerBuy(string id, string name, string price, string qty, string description, string category)
+        public CustomerBuy()
         {
             InitializeComponent();
 
-           // dataGridView1.Rows.Add();
-            dataGridView1.Rows[0].Cells[0].Value =  id;
+           
         }
 
-        public CustomerBuy()
+        /*public CustomerBuy()
         {
-        }
+        }*/
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -179,7 +178,24 @@ namespace Ecommerce_application
 
         private void textBox1_TextChanged_2(object sender, EventArgs e)
         {
+            search();
+        }
 
+        void search()
+        {
+            string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; Integrated Security = True; ";
+
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                SqlCommand sqlCmd = new SqlCommand("Exec CustSearch @search", con);
+                sqlCmd.Parameters.AddWithValue("@search", textBox1.Text);
+                SqlDataReader reader = sqlCmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                dataGridView1.DataSource = dt;
+                con.Close();
+            }
         }
 
         private void button8_Click_2(object sender, EventArgs e)
@@ -228,11 +244,30 @@ namespace Ecommerce_application
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            SqlConnection con = new SqlConnection("Server =  LAPTOP-RS59N8IM; Database = E-Commerce; integrated security = true;");
-            SqlDataAdapter ada = new SqlDataAdapter("SELECT productID, name, price, quantity, category, description FROM product", con);
+            
+        }
+
+        private void panelCustomerTest_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; Integrated security = True; ";
+            SqlDataAdapter ada = new SqlDataAdapter("SELECT productID, name, price, quantity, category, description FROM dbo.product", constr);
             DataTable dt = new DataTable();
             ada.Fill(dt);
             dataGridView1.DataSource = dt;
+            /*foreach (DataRow item in dt.Rows)
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[1].Value = item[0].ToString();
+                dataGridView1.Rows[n].Cells[2].Value = item[1].ToString();
+                dataGridView1.Rows[n].Cells[3].Value = item[2].ToString(); dataGridView1.Rows[n].Cells[1].Value = item[0].ToString();
+                dataGridView1.Rows[n].Cells[4].Value = item[3].ToString();
+                dataGridView1.Rows[n].Cells[5].Value = item[4].ToString();
+            }*/
         }
     }
 }

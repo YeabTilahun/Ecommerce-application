@@ -36,17 +36,6 @@ namespace Ecommerce_application
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.ecommerceDataSet = new Ecommerce_application.EcommerceDataSet();
-            this.ecommerceDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableAdapter = new Ecommerce_application.EcommerceDataSetTableAdapters.productTableAdapter();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,13 +43,25 @@ namespace Ecommerce_application
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ecommerceDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ecommerceDataSet = new Ecommerce_application.EcommerceDataSet();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.productTableAdapter = new Ecommerce_application.EcommerceDataSetTableAdapters.productTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelCustomerBuy.SuspendLayout();
             this.panelCustomerTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ecommerceDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ecommerceDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecommerceDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecommerceDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCustomerBuy
@@ -80,6 +81,7 @@ namespace Ecommerce_application
             // panelCustomerTest
             // 
             this.panelCustomerTest.BackColor = System.Drawing.Color.White;
+            this.panelCustomerTest.Controls.Add(this.button1);
             this.panelCustomerTest.Controls.Add(this.label2);
             this.panelCustomerTest.Controls.Add(this.label1);
             this.panelCustomerTest.Controls.Add(this.dataGridView1);
@@ -95,6 +97,7 @@ namespace Ecommerce_application
             this.panelCustomerTest.Name = "panelCustomerTest";
             this.panelCustomerTest.Size = new System.Drawing.Size(812, 545);
             this.panelCustomerTest.TabIndex = 1;
+            this.panelCustomerTest.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCustomerTest_Paint);
             // 
             // label2
             // 
@@ -137,6 +140,62 @@ namespace Ecommerce_application
             this.dataGridView1.Size = new System.Drawing.Size(537, 286);
             this.dataGridView1.TabIndex = 94;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Select";
+            this.Column1.Name = "Column1";
+            // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "productID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "productID";
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "product";
+            this.productBindingSource.DataSource = this.ecommerceDataSetBindingSource;
+            // 
+            // ecommerceDataSetBindingSource
+            // 
+            this.ecommerceDataSetBindingSource.DataSource = this.ecommerceDataSet;
+            this.ecommerceDataSetBindingSource.Position = 0;
+            // 
+            // ecommerceDataSet
+            // 
+            this.ecommerceDataSet.DataSetName = "EcommerceDataSet";
+            this.ecommerceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox3
             // 
@@ -185,7 +244,7 @@ namespace Ecommerce_application
             this.button8.ForeColor = System.Drawing.Color.Black;
             this.button8.Image = global::Ecommerce_application.Properties.Resources.cart__1_;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(500, 478);
+            this.button8.Location = new System.Drawing.Point(685, 479);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(87, 29);
             this.button8.TabIndex = 101;
@@ -226,65 +285,23 @@ namespace Ecommerce_application
             this.textBox5.Size = new System.Drawing.Size(156, 20);
             this.textBox5.TabIndex = 100;
             // 
-            // ecommerceDataSet
-            // 
-            this.ecommerceDataSet.DataSetName = "EcommerceDataSet";
-            this.ecommerceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ecommerceDataSetBindingSource
-            // 
-            this.ecommerceDataSetBindingSource.DataSource = this.ecommerceDataSet;
-            this.ecommerceDataSetBindingSource.Position = 0;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "product";
-            this.productBindingSource.DataSource = this.ecommerceDataSetBindingSource;
-            // 
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // Column1
+            // button1
             // 
-            this.Column1.HeaderText = "Select";
-            this.Column1.Name = "Column1";
-            // 
-            // productIDDataGridViewTextBoxColumn
-            // 
-            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "productID";
-            this.productIDDataGridViewTextBoxColumn.HeaderText = "productID";
-            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "category";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(336, 479);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 104;
+            this.button1.Text = "Load ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // CustomerBuy
             // 
@@ -292,6 +309,7 @@ namespace Ecommerce_application
             this.ClientSize = new System.Drawing.Size(812, 545);
             this.Controls.Add(this.panelCustomerBuy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerBuy";
             this.Text = " ";
             this.Load += new System.EventHandler(this.CustomerBuy_Load);
@@ -299,10 +317,10 @@ namespace Ecommerce_application
             this.panelCustomerTest.ResumeLayout(false);
             this.panelCustomerTest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ecommerceDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ecommerceDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecommerceDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecommerceDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,5 +350,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

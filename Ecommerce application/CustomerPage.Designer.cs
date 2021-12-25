@@ -205,7 +205,6 @@ namespace Ecommerce_application
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAdd.BackColor = System.Drawing.Color.White;
-            this.panelAdd.BackgroundImage = global::Ecommerce_application.Properties.Resources.photo_2021_12_25_12_03_23;
             this.panelAdd.Location = new System.Drawing.Point(99, 28);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Size = new System.Drawing.Size(814, 537);
