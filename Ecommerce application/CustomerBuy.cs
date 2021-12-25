@@ -22,6 +22,10 @@ namespace Ecommerce_application
             dataGridView1.Rows[0].Cells[0].Value =  id;
         }
 
+        public CustomerBuy()
+        {
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

@@ -12,40 +12,38 @@ namespace Ecommerce_application
         //CustomerBuy layer2
         
         public string Id;
-        public string fname;
-        public string lname;
-        public string phone;
-        public string email;
-        public string userName;
-        public string pasword;
-        public string role;
         public string ProductName;
         public string Price;
         public string Quantity;
         public string Description;
-        //public byte Photo;
+        public string Category;
 
-        public CustomerClass(string id, string productname, string price, string quantity, string description)
+        public CustomerClass(string id, string productname, string price, string quantity, string description, string category)
         {
             this.Id = id;
             this.ProductName = productname;
             this.Price = price;
             this.Quantity = quantity;
             this.Description = description;
+            this.Category = category;
             //this.Photo = photo;
         }
 
-        public void Update(string[] id)
+        public void Update(string id)
         {
+            CustomerDatabase buy = new CustomerDatabase();
+            buy.UpdateProduct(this);
             MessageBox.Show("Updated Succesfully!");
         }
 
-        public void Delete(string[] id)
+        public void Delete(string id)
         {
+            CustomerDatabase buy = new CustomerDatabase();
+            buy.Delete(Id);
             MessageBox.Show("Deleted Succesfully!");
         }
 
-        public void AddToCart(string[] id)
+        public void AddToCart(string id)
         {
             MessageBox.Show("The items you selected went to \"Cart\" go to cart to buy the items you selected!!");
         }

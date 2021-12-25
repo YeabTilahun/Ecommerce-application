@@ -135,7 +135,7 @@ namespace Ecommerce_application
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(121)))), ((int)(((byte)(99)))));
             this.panel2.Controls.Add(this.btnMaximized);
             this.panel2.Controls.Add(this.CloseM);
             this.panel2.Controls.Add(this.btnRestore);
