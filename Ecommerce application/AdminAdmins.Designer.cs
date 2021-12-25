@@ -60,6 +60,7 @@ namespace Ecommerce_application
             this.dgvAdmins.ReadOnly = true;
             this.dgvAdmins.Size = new System.Drawing.Size(913, 529);
             this.dgvAdmins.TabIndex = 38;
+            this.dgvAdmins.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAdmins_RowHeaderMouseDoubleClick);
             // 
             // AdminAdmins
             // 

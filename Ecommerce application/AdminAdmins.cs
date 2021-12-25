@@ -70,5 +70,10 @@ namespace Ecommerce_application
 
             }
         }
+
+        private void dgvAdmins_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
     }
 }

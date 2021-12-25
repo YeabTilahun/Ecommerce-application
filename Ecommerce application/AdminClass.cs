@@ -28,6 +28,14 @@ namespace Ecommerce_application
             return dt;
         }
 
+        public string[] GetAdminProfile()
+        {
+            string[] profile;
+            AdminDatabase ad = new AdminDatabase();
+            profile = ad.GetAdminProfile();
+            return profile;
+        }
+
         public void DeleteProduct(string[] id)
         {
             AdminDatabase adminD = new AdminDatabase();
