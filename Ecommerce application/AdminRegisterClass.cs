@@ -9,6 +9,7 @@ namespace Ecommerce_application
 {
     class AdminRegisterClass
     {
+        public string adminID;
         public string firstName;
         public string lastName;
         public string sex;
@@ -46,13 +47,5 @@ namespace Ecommerce_application
         {
             MessageBox.Show("Admin Updated Successfully!!");
         }
-
-        public void Delete(string id)
-        {
-            MessageBox.Show("Admin Deleted Successfully!!");
-        }
     }
-
-
-
 }

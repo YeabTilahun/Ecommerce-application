@@ -91,6 +91,7 @@
     <Compile Include="AdminCustomers.Designer.cs">
       <DependentUpon>AdminCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminDatabase.cs" />
     <Compile Include="AdminMerchants.cs">
       <SubType>Form</SubType>
     </Compile>
