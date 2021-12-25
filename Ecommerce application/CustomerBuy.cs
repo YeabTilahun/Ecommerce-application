@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -135,10 +136,10 @@ namespace Ecommerce_application
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-           /* if(textBox1.Text != "\0")
+           if(textBox1.Text != "\0")
             {
                 textBox1.Text = "";
-            }*/
+            }
         }
 
         private void textBox1_MouseEnter(object sender, EventArgs e)
@@ -177,18 +178,27 @@ namespace Ecommerce_application
         private void button8_Click_2(object sender, EventArgs e)
         {
 
-            /*dataGridView1.AllowUserToAddRows = false;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                bool isCellCheked = (bool)dataGridView1.Rows[i].Cells[0].Value;
-                if (isCellCheked == true)
-                {
-                    dataGridView1.Rows.RemoveAt(i);
-                }
+            /* dataGridView1.AllowUserToAddRows = false;
+             for (int i = 0; i < dataGridView1.Rows.Count; i++)
+             {
+                 bool isCellCheked = (bool)dataGridView1.Rows[i].Cells[0].Value;
+                 if (isCellCheked == true)
+                 {
+                     dataGridView1.Rows.RemoveAt(i);
+                 }
 
-            }*/
+             }*/
+            //Addtocart();
             MessageBox.Show("Items Added to Cart");
 
+        }
+
+        //Adds the items selected in CustomerBuy data grid view to the CustomerCart data grid view When Add To Cart is clicked. 
+        private void Addtocart(string id, string qty, string price)
+        {
+            CustomerCart cart = new CustomerCart();
+            string[] add = { id, qty, price };
+            cart.dataGridView2.Rows.Add(add);
         }
 
         private void textBox1_MouseEnter_1(object sender, EventArgs e)
@@ -200,6 +210,22 @@ namespace Ecommerce_application
         private void textBox1_MouseLeave_1(object sender, EventArgs e)
         {
             textBox1.Text = "Search The Items Here!";
+        }
+
+        private void CustomerBuy_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'ecommerceDataSet.product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.ecommerceDataSet.product);
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Server =  LAPTOP-RS59N8IM; Database = E-Commerce; integrated security = true;");
+          //SqlDataAdapter ada = new SqlDataAdapter("SELECT productID, name, price, quantity, category, description FROM product", con);
+            DataTable dt = new DataTable();
+          //ada.Fill(dt);
+            dataGridView1.DataSource = dt;
         }
     }
 }

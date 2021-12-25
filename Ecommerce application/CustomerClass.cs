@@ -12,6 +12,13 @@ namespace Ecommerce_application
         //CustomerBuy layer2
         
         public string Id;
+        public string fname;
+        public string lname;
+        public string phone;
+        public string email;
+        public string userName;
+        public string pasword;
+        public string role;
         public string ProductName;
         public string Price;
         public string Quantity;

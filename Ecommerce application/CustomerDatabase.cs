@@ -16,7 +16,7 @@ namespace Ecommerce_application
             using (SqlConnection connect = new SqlConnection(connection))
             {
                 connect.Open();
-                string query = "INSERT INTO CustomerBuy VALUES ('" + Cc.Id + "', '" + Cc.ProductName + "','" + Cc.Price + "','" + Cc.Quantity + "','" + Cc.Description + "')";
+                string query = "INSERT INTO CustomerBuy VALUES ('" + Cc.Id + "', '" + Cc.ProductName + "','" + Cc.Price + "','" + Cc.Quantity + "')";
                 SqlCommand cmd = new SqlCommand(query, connect);
             }
         }
