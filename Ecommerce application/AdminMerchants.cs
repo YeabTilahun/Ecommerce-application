@@ -98,24 +98,29 @@ namespace Ecommerce_application
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            string[] id = null; //This will initialize the array 
+            //Array is to hold different product ID that are selected in data grid view 
+            int counter = 0;
+            string[] id; //This will initialize the array 
             dgvMerchants.AllowUserToAddRows = false;
             for (int i = 0; i < dgvMerchants.Rows.Count; i++)
             {
-                bool isCellCheked = (bool)dgvMerchants.Rows[i].Cells[0].Value;
-                if (isCellCheked == true)
+                if ((bool)dgvMerchants.Rows[i].Cells[0].Value)
+                    counter++;
+            }
+            id = new string[counter];
+            counter = 0;
+            for (int i = 0; i < dgvMerchants.Rows.Count; i++)
+            {
+                if ((bool)dgvMerchants.Rows[i].Cells[0].Value)
                 {
-                    //MessageBox.Show("Checked!");
-                    id = new String[0 + 1];
                     //Retrive the selected id from data grid view to string array
                     DataGridViewRow row = dgvMerchants.Rows[i];
-                    id[i] = row.Cells[2].Value.ToString();
+                    id[counter] = row.Cells[2].Value.ToString();
+                    counter++;
                 }
-                /* else
-                     MessageBox.Show("Not checked!");*/
             }
             AdminClass Merchants = new AdminClass();
-            Merchants.DeleteProduct(id);
+            Merchants.DeleteMerchants(id);
         }
 
         private void txtSearch_Leave(object sender, EventArgs e)
@@ -136,7 +141,9 @@ namespace Ecommerce_application
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetMerchant(txtSearch.Text);
+            dgvMerchants.DataSource = dt;
         }
 
         private void btnCheck_Click(object sender, EventArgs e)

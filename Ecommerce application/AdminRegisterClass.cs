@@ -9,6 +9,8 @@ namespace Ecommerce_application
 {
     class AdminRegisterClass
     {
+        public string[] id;
+        public string adminID;
         public string firstName;
         public string lastName;
         public string sex;
@@ -22,6 +24,25 @@ namespace Ecommerce_application
         public AdminRegisterClass()
         {
 
+        }
+
+        public AdminRegisterClass(string[] id)
+        {
+            this.id = id;
+        }
+
+        public AdminRegisterClass(string adminID, string firstName, string lastName, string sex, string birthday, string phoneNumber, string email, string userName, string password, string role)
+        {
+            this.adminID = adminID;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sex = sex;
+            this.birthday = birthday;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+            this.userName = userName;
+            this.password = password;
+            this.role = role;
         }
 
         public AdminRegisterClass(string firstName, string lastName, string sex, string birthday, string phoneNumber, string email, string userName, string password, string role)
@@ -39,20 +60,13 @@ namespace Ecommerce_application
 
         public void Save()
         {
-            MessageBox.Show("New Admin Added Successfully!!");
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.SaveAdmin(this);
         }
 
-        public void Update()
+        public void UpdateAdmin()
         {
             MessageBox.Show("Admin Updated Successfully!!");
         }
-
-        public void Delete(string id)
-        {
-            MessageBox.Show("Admin Deleted Successfully!!");
-        }
     }
-
-
-
 }

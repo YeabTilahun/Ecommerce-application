@@ -123,21 +123,25 @@ namespace Ecommerce_application
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //Array is to hold different product ID that are selected in data grid view 
-            string[] id = null; //This will initialize the array 
+            int counter = 0;
+            string[] id; //This will initialize the array 
             dgvProducts.AllowUserToAddRows = false;
+            for(int i = 0; i < dgvProducts.Rows.Count; i++)
+            {
+                if ((bool)dgvProducts.Rows[i].Cells[0].Value)
+                    counter++;
+            }
+            id = new string[counter];
+            counter = 0;
             for (int i = 0; i < dgvProducts.Rows.Count; i++)
             {
-                bool isCellCheked = (bool)dgvProducts.Rows[i].Cells[0].Value;
-                if (isCellCheked == true)
+                if ((bool)dgvProducts.Rows[i].Cells[0].Value)
                 {
-                    //MessageBox.Show("Checked!");
-                    id = new String[0 + 1];
                     //Retrive the selected id from data grid view to string array
                     DataGridViewRow row = dgvProducts.Rows[i];
-                    id[i] = row.Cells[2].Value.ToString();
+                    id[counter] = row.Cells[2].Value.ToString();
+                    counter++;
                 }
-                /* else
-                     MessageBox.Show("Not checked!");*/
             }
             AdminClass product = new AdminClass();
             product.DeleteProduct(id);
@@ -177,7 +181,31 @@ namespace Ecommerce_application
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetProduct(txtSearch.Text); ;
+            dgvProducts.DataSource = dt;
+        }
 
+        private void pnlProducts_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void picBoxSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCatagories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetProductByCategory(cmbCatagories.Text);
+            dgvProducts.DataSource = dt;
         }
     }
 }

@@ -78,7 +78,7 @@ namespace Ecommerce_application
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvTransaction;
         public System.Windows.Forms.Panel pnlTransaction;
+        public System.Windows.Forms.DataGridView dgvTransaction;
     }
 }

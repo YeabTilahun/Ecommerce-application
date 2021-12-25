@@ -78,6 +78,6 @@ namespace Ecommerce_application
 
         #endregion
         public System.Windows.Forms.Panel pnlAdmin;
-        private System.Windows.Forms.DataGridView dgvAdmins;
+        public System.Windows.Forms.DataGridView dgvAdmins;
     }
 }

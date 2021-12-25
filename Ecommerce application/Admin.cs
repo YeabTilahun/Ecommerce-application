@@ -55,6 +55,16 @@ namespace Ecommerce_application
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ControlLight;
             btnAdmins.BackColor = SystemColors.ControlLight;
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetProduct("");
+            adminProducts.dgvProducts.DataSource = dt;
+
+            string[] category = ac.GetCategory();
+            foreach(string cat in category)
+            {
+                adminProducts.cmbCatagories.Items.Add(cat);
+            }
         }
 
         private void btnMerchants_Click(object sender, EventArgs e)
@@ -71,15 +81,19 @@ namespace Ecommerce_application
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ControlLight;
             btnAdmins.BackColor = SystemColors.ControlLight;
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetMerchant("");
+            adminMerchants.dgvMerchants.DataSource = dt;
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
             //lblNav.Text = "Customers";
-            AdminCustomers admincustomers = new AdminCustomers();
+            AdminCustomers adminCustomers = new AdminCustomers();
             pnlCard.Controls.Clear();
-            admincustomers.Dock = DockStyle.Fill;
-            pnlCard.Controls.Add(admincustomers.pnlCustomer);
+            adminCustomers.Dock = DockStyle.Fill;
+            pnlCard.Controls.Add(adminCustomers.pnlCustomer);
             pnlCard.Show();
             pnlCard.BringToFront();
             btnProducts.BackColor = SystemColors.ControlLight;
@@ -87,6 +101,10 @@ namespace Ecommerce_application
             btnCustomers.BackColor = SystemColors.ScrollBar;
             btnTransactions.BackColor = SystemColors.ControlLight;
             btnAdmins.BackColor = SystemColors.ControlLight;
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetCustomer("");
+            adminCustomers.dgvCustomers.DataSource = dt;
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
@@ -103,6 +121,10 @@ namespace Ecommerce_application
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ScrollBar;
             btnAdmins.BackColor = SystemColors.ControlLight;
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetTransaction();
+            adminTransaction.dgvTransaction.DataSource = dt;
         }
 
         private void btnAdmins_Click(object sender, EventArgs e)
@@ -119,6 +141,10 @@ namespace Ecommerce_application
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ControlLight;
             btnAdmins.BackColor = SystemColors.ScrollBar;
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetAdmin("");
+            adminAdmins.dgvAdmins.DataSource = dt;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -137,7 +163,6 @@ namespace Ecommerce_application
                 this.Close();
             }
         }
-
 
         //To move the panel anywhere
         private bool mouseDown;

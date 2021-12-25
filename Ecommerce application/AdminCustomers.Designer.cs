@@ -166,11 +166,11 @@ namespace Ecommerce_application
 
         #endregion
         public System.Windows.Forms.Panel pnlCustomer;
-        private System.Windows.Forms.DataGridView dgvCustomers;
         private System.Windows.Forms.Button btnUncheck;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox picBoxSearch;
+        public System.Windows.Forms.DataGridView dgvCustomers;
     }
 }
