@@ -182,7 +182,8 @@ namespace Ecommerce_application
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            ac.GetProduct(txtSearch.Text);
+            DataTable dt = ac.GetProduct(txtSearch.Text); ;
+            dgvProducts.DataSource = dt;
         }
 
         private void pnlProducts_Paint(object sender, PaintEventArgs e)
@@ -202,7 +203,9 @@ namespace Ecommerce_application
 
         private void cmbCatagories_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetProductByCategory(cmbCatagories.Text);
+            dgvProducts.DataSource = dt;
         }
     }
 }

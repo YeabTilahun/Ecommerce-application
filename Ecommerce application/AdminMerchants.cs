@@ -142,7 +142,8 @@ namespace Ecommerce_application
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            ac.GetMerchant(txtSearch.Text);
+            DataTable dt = ac.GetMerchant(txtSearch.Text);
+            dgvMerchants.DataSource = dt;
         }
 
         private void btnCheck_Click(object sender, EventArgs e)

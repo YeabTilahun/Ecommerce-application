@@ -121,7 +121,9 @@ namespace Ecommerce_application
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            ac.GetCustomer(txtSearch.Text);
+            DataTable dt = ac.GetCustomer(txtSearch.Text);
+            dgvCustomers.DataSource = dt;
+            
         }
     }
 }

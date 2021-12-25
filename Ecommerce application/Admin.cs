@@ -59,6 +59,12 @@ namespace Ecommerce_application
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetProduct("");
             adminProducts.dgvProducts.DataSource = dt;
+
+            string[] category = ac.GetCategory();
+            foreach(string cat in category)
+            {
+                adminProducts.cmbCatagories.Items.Add(cat);
+            }
         }
 
         private void btnMerchants_Click(object sender, EventArgs e)

@@ -234,7 +234,6 @@ namespace Ecommerce_application
             da.Fill(ds, "tblCustomer");
             DataTable dt = ds.Tables["tblCustomer"];
             return dt;
-
         }
 
         public void DeleteMerchant(string[] id)
@@ -295,6 +294,36 @@ namespace Ecommerce_application
             DataSet ds = new DataSet();
             da.Fill(ds, "tblTransaction");
             DataTable dt = ds.Tables["tblTransaction"];
+            return dt;
+
+        }
+        public string[] GetCategory()
+        {
+            SqlConnection con = new SqlConnection(constr);
+            SqlDataAdapter da = new SqlDataAdapter("spGetCategory", con);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tblCategory");
+            DataTable dt = ds.Tables["tblCategory"];
+            string[] category = new string[dt.Rows.Count];
+            DataRow row;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                row = dt.Rows[i];
+                category[i] = row["category"].ToString();
+            }
+            return category;
+        }
+
+        public DataTable GetProductByCategory(string category)
+        {
+            SqlConnection con = new SqlConnection(constr);
+            SqlDataAdapter da = new SqlDataAdapter("spGetProductByCategory", con);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@category", category);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tblProduct");
+            DataTable dt = ds.Tables["tblProduct"];
             return dt;
 
         }

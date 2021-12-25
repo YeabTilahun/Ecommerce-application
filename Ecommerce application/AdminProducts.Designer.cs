@@ -242,7 +242,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ComboBox cmbCatagories;
         public System.Windows.Forms.Panel pnlProducts;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -252,5 +251,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.DataGridViewTextBoxColumn category;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         public System.Windows.Forms.DataGridView dgvProducts;
+        public System.Windows.Forms.ComboBox cmbCatagories;
     }
 }

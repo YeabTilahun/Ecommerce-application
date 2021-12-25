@@ -73,6 +73,20 @@ namespace Ecommerce_application
             DataTable dt = AdminD.GetTransaction();
             return dt;
         }
+        public string[] GetCategory()
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            string[] category;
+            category = AdminD.GetCategory();
+            return category;
+        }
+
+        public DataTable GetProductByCategory(string category)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetProductByCategory(category);
+            return dt;
+        }
 
     }
 }
