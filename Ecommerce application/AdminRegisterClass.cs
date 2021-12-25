@@ -9,7 +9,6 @@ namespace Ecommerce_application
 {
     class AdminRegisterClass
     {
-        public string[] id;
         public string adminID;
         public string firstName;
         public string lastName;
@@ -24,11 +23,6 @@ namespace Ecommerce_application
         public AdminRegisterClass()
         {
 
-        }
-
-        public AdminRegisterClass(string[] id)
-        {
-            this.id = id;
         }
 
         public AdminRegisterClass(string adminID, string firstName, string lastName, string sex, string birthday, string phoneNumber, string email, string userName, string password, string role)
@@ -66,7 +60,8 @@ namespace Ecommerce_application
 
         public void UpdateAdmin()
         {
-            MessageBox.Show("Admin Updated Successfully!!");
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.UpdateAdmin(this);
         }
     }
 }

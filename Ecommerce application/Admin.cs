@@ -12,9 +12,20 @@ namespace Ecommerce_application
 {
     public partial class Admin : Form
     {
+        public static string userName;
+        public static string password;
+        public static string role;
         public Admin()
         {
             InitializeComponent();
+        }
+        
+        public Admin(string userName, string password, string role)
+        {
+            InitializeComponent();
+            Admin.userName = userName;
+            Admin.password = password;
+            Admin.role = role;
         }
 
         private void btnMaximized_Click(object sender, EventArgs e)
@@ -238,6 +249,20 @@ namespace Ecommerce_application
         private void CloseM_MouseLeave(object sender, EventArgs e)
         {
             CloseM.BackColor = Color.Transparent;
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] profile;
+            AdminClass ac = new AdminClass();
+            profile = ac.GetAdminProfile();
+            AdminProfile a = new AdminProfile(profile[0], profile[1], profile[2], profile[3], profile[4], profile[5], profile[6], profile[7], profile[8], profile[9]);
+            a.Show();
         }
     }
 }

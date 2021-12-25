@@ -59,6 +59,7 @@ namespace Ecommerce_application
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateAdmin", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@adminID", ar.adminID);
                     cmd.Parameters.AddWithValue("@fname", ar.firstName);
                     cmd.Parameters.AddWithValue("@lname", ar.lastName);
                     cmd.Parameters.AddWithValue("@phone", ar.phoneNumber);
@@ -135,6 +136,31 @@ namespace Ecommerce_application
             DataTable dt = ds.Tables["tblAdmin"];
             return dt;
 
+        }
+
+        public string[] GetAdminProfile()
+        {
+            SqlConnection con = new SqlConnection(constr);
+            SqlDataAdapter da = new SqlDataAdapter("spGetAdminProfile", con);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@userName", Admin.userName);
+            da.SelectCommand.Parameters.AddWithValue("@password", Admin.password);
+            da.SelectCommand.Parameters.AddWithValue("@role", Admin.role);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tblProfile");
+            DataTable dt = ds.Tables["tblProfile"];
+            string[] profile = new string[dt.Columns.Count];
+            profile[0] = dt.Rows[0]["adminID"].ToString();
+            profile[1] = dt.Rows[0]["fname"].ToString();
+            profile[2] = dt.Rows[0]["lname"].ToString();
+            profile[3] = dt.Rows[0]["phone"].ToString();
+            profile[4] = dt.Rows[0]["birthday"].ToString();
+            profile[5] = dt.Rows[0]["sex"].ToString();
+            profile[6] = dt.Rows[0]["email"].ToString();
+            profile[7] = dt.Rows[0]["userName"].ToString();
+            profile[8] = dt.Rows[0]["password"].ToString();
+            profile[9] = dt.Rows[0]["role"].ToString();
+            return profile;
         }
 
         public void DeleteProduct(string[] id)

@@ -49,6 +49,7 @@ namespace Ecommerce_application
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUserName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSideNav.SuspendLayout();
             this.pblTopNav.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -309,6 +310,7 @@ namespace Ecommerce_application
             // 
             this.AccountMenuItem.AutoSize = false;
             this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.profileToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.account_circle_white_48dp;
             this.AccountMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -321,7 +323,7 @@ namespace Ecommerce_application
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -331,9 +333,9 @@ namespace Ecommerce_application
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.Location = new System.Drawing.Point(53, 12);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(69, 15);
+            this.lblUserName.Size = new System.Drawing.Size(0, 15);
             this.lblUserName.TabIndex = 36;
-            this.lblUserName.Text = "Your Name";
+            this.lblUserName.Text = Admin.userName;
             // 
             // panel1
             // 
@@ -344,6 +346,13 @@ namespace Ecommerce_application
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(160, 40);
             this.panel1.TabIndex = 4;
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profileToolStripMenuItem.Text = "Your Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // Admin
             // 
@@ -393,5 +402,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
     }
 }
