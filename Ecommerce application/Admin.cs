@@ -22,10 +22,10 @@ namespace Ecommerce_application
         
         public Admin(string userName, string password, string role)
         {
-            InitializeComponent();
             Admin.userName = userName;
             Admin.password = password;
             Admin.role = role;
+            InitializeComponent();
         }
 
         private void btnMaximized_Click(object sender, EventArgs e)
