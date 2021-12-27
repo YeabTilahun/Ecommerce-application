@@ -21,7 +21,7 @@ namespace Ecommerce_application
             //LOADING THE DATA TO THE DGV WHEN THE CLASS LOADS
             loading();
             //disable ID textbox
-            textBox5.Enabled = false;
+           // textBox5.Enabled = false;
         }
 
         private void LoadIntoCatagoryComboBox()
@@ -71,7 +71,15 @@ namespace Ecommerce_application
         //When the user clicks add the products info will be copied to MerchantSellClass
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "/0" && textBox2.Text == "/0" && textBox3.Text == "/0" && textBox4.Text == "/0" && comboBox1.Text == "/0")
+            if (textBox1.Text == null || textBox2.Text == null || textBox3.Text == null || textBox4.Text == null || comboBox1.Text == null)
+            {
+                MessageBox.Show("Please fill the required fields!");
+            }
+            else if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || comboBox1.Text == "")
+            {
+                MessageBox.Show("Please fill the required fields!");
+            }
+            else
             {
                 MerchantClass sell = new MerchantClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
                 sell.Add();
@@ -84,10 +92,6 @@ namespace Ecommerce_application
                 textBox3.Clear();
                 comboBox1.Text = " ";
                 textBox4.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Please fill the required fields!");
             }
         }
 
@@ -174,13 +178,15 @@ namespace Ecommerce_application
         string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
+                fill();
             if (textBox5.Text != "")
             {
                 //WHEN THE TEXT CHANGED IT WILL CALL FILL TO FILL THE TEXT BOXES
-                fill();
             }
             }
         
+        //ERORR
+
         //TO CALL IT WHEN THE USER SELECT ROW DGV AND PRESS EDIT
         public void fill()
         {
