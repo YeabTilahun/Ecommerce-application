@@ -58,5 +58,15 @@ namespace Ecommerce_application
         {
             Application.Exit();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
