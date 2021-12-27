@@ -259,6 +259,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Log in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log in.Designer.cs">
+      <DependentUpon>Log in.cs</DependentUpon>
+    </Compile>
     <Compile Include="Merchant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sign UP new.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sign UP new.Designer.cs">
+      <DependentUpon>Sign UP new.cs</DependentUpon>
     </Compile>
     <Compile Include="SignInUser.cs" />
     <Compile Include="SignUp.cs">
@@ -353,6 +365,9 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Log in.resx">
+      <DependentUpon>Log in.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Merchant.resx">
       <DependentUpon>Merchant.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +386,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sign UP new.resx">
+      <DependentUpon>Sign UP new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
