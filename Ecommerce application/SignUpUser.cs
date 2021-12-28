@@ -15,7 +15,9 @@ namespace Ecommerce_application
         public string password;
         public string role;
         public string phone;
-        public DateTime bithday;
+        public DateTime birthday;
+        public string sex;
+        public string id;
         public SignUpUser(string fname, string lname, DateTime bday, string pnum, string email, string uname, string pass, string role)
         {
             this.email = email;
@@ -25,11 +27,13 @@ namespace Ecommerce_application
             this.password = pass;
             this.role = role;
             this.phone = pnum;
-            this.bithday = bday;
+            this.birthday = bday;
         }
         public void signUp()
         {
             //object for the third layer
+            SignUppro s = new SignUppro();
+            s.signUpProccedure(this);
         }
     }
 }

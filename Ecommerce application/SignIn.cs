@@ -49,8 +49,8 @@ namespace Ecommerce_application
             signUp.Show();
             this.Hide();
             //Customer form
-            CustomerPage c = new CustomerPage();
-            c.Show();
+          //  CustomerPage c = new CustomerPage();
+           // c.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -83,6 +83,7 @@ namespace Ecommerce_application
         private void button1_Click(object sender, EventArgs e)
         {
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text, comboBox1.Text);
+            label7.Visible = false;
             s.saveUser();
             //merchant
             Merchant m = new Merchant();
@@ -147,6 +148,12 @@ namespace Ecommerce_application
                 textPassword.PasswordChar = '\0';
                 textPassword.ForeColor = Color.LightGray;
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

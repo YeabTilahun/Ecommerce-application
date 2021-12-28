@@ -62,6 +62,7 @@ namespace Ecommerce_application
             this.label7.Text = "! Invalid username or password";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Visible = false;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -182,10 +183,10 @@ namespace Ecommerce_application
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(13, 170);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 15);
+            this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 40;
             this.label9.Text = "Role";
             // 
@@ -303,8 +304,6 @@ namespace Ecommerce_application
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textUsername;
@@ -320,6 +319,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button hidePassword;
         private System.Windows.Forms.Button showPassword;
+        public System.Windows.Forms.Label label7;
     }
 }
 

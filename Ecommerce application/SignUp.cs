@@ -51,6 +51,10 @@ namespace Ecommerce_application
         {
             SignUpUser s = new SignUpUser(textBox1.Text, textBox3.Text, dateTimePicker1.Value, textBox2.Text, textBox4.Text, textBox5.Text, textBox6.Text, comboBox1.Text);
             s.signUp();
+            SignIn signin = new SignIn();
+            signin.Show();
+            this.Hide();
+
 
         }
 
