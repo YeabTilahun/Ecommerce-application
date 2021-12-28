@@ -259,11 +259,11 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Log in.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Log in.Designer.cs">
-      <DependentUpon>Log in.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Merchant.cs">
       <SubType>Form</SubType>
@@ -297,6 +297,20 @@
       <DependentUpon>MerchantSell.cs</DependentUpon>
     </Compile>
     <Compile Include="MerchantClass.cs" />
+    <Compile Include="Newcart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Newcart.Designer.cs">
+      <DependentUpon>Newcart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewHomeClass.cs" />
+    <Compile Include="NewHomeDatabase.cs" />
+    <Compile Include="NewSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSignUp.Designer.cs">
+      <DependentUpon>NewSignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -306,12 +320,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Sign UP new.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sign UP new.Designer.cs">
-      <DependentUpon>Sign UP new.cs</DependentUpon>
     </Compile>
     <Compile Include="SignInUser.cs" />
     <Compile Include="SignUp.cs">
@@ -329,6 +337,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUpUser.cs" />
+    <Compile Include="The Wait Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="The Wait Form.Designer.cs">
+      <DependentUpon>The Wait Form.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,8 +379,8 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Log in.resx">
-      <DependentUpon>Log in.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Merchant.resx">
       <DependentUpon>Merchant.cs</DependentUpon>
@@ -383,18 +397,24 @@
     <EmbeddedResource Include="MerchantSell.resx">
       <DependentUpon>MerchantSell.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Newcart.resx">
+      <DependentUpon>Newcart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSignUp.resx">
+      <DependentUpon>NewSignUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sign UP new.resx">
-      <DependentUpon>Sign UP new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="The Wait Form.resx">
+      <DependentUpon>The Wait Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="EcommerceDataSet.xsc">
       <DependentUpon>EcommerceDataSet.xsd</DependentUpon>

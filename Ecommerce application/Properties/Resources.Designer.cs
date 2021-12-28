@@ -103,6 +103,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Adobe_Post_20211212_1430010_86500353574497661 {
+            get {
+                object obj = ResourceManager.GetObject("Adobe_Post_20211212_1430010.86500353574497661", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Adobe_Post_20211212_14300101 {
             get {
                 object obj = ResourceManager.GetObject("Adobe_Post_20211212_14300101", resourceCulture);
@@ -166,6 +176,26 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap close_tab3 {
             get {
                 object obj = ResourceManager.GetObject("close-tab3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_tab31 {
+            get {
+                object obj = ResourceManager.GetObject("close-tab31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_tab32 {
+            get {
+                object obj = ResourceManager.GetObject("close-tab32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +303,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap maximize_241 {
+            get {
+                object obj = ResourceManager.GetObject("maximize_241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximize_concept_vector_linear_icon_isolated_transparent_back_background_transparency_outline_style_130087407 {
             get {
                 object obj = ResourceManager.GetObject("maximize-concept-vector-linear-icon-isolated-transparent-back-background-transpar" +
@@ -314,6 +354,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minimize1 {
+            get {
+                object obj = ResourceManager.GetObject("minimize1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap password_icon {
             get {
                 object obj = ResourceManager.GetObject("password-icon", resourceCulture);
@@ -337,6 +387,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap Restore {
             get {
                 object obj = ResourceManager.GetObject("Restore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restore1 {
+            get {
+                object obj = ResourceManager.GetObject("Restore1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
