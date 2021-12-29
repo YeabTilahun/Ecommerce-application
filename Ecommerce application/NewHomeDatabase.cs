@@ -11,11 +11,11 @@ namespace Ecommerce_application
 {
     class NewHomeDatabase
     {
-        string conStr = "Server = LAPTOP-RS59N8IM; database = cslab; integrated security = true;";
+        string conStr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
 
         public void SaveUser(NewHomeClass hc)
         {
-            string constr = "Server = LAPTOP-RS59N8IM; database = cslab; integrated security = true;";
+            string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
             using (SqlConnection con = new SqlConnection(constr))
             {
                 con.Open();
@@ -36,12 +36,12 @@ namespace Ecommerce_application
                 using (SqlConnection con = new SqlConnection(conStr))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("spInsertUser_for_Home", con);
+                    SqlCommand cmd = new SqlCommand("spInsertCustomer", con);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", hc.id);
-                    cmd.Parameters.AddWithValue("@firstname", hc.FirstName);
-                    cmd.Parameters.AddWithValue("@fathername", hc.LastName);
-                    cmd.Parameters.AddWithValue("@username", hc.Username);
+                    cmd.Parameters.AddWithValue("@fname", hc.FirstName);
+                    cmd.Parameters.AddWithValue("@lname", hc.LastName);
+                    cmd.Parameters.AddWithValue("@userName", hc.Username);
                     cmd.Parameters.AddWithValue("@password", hc.Password);
                     cmd.Parameters.AddWithValue("@phone", hc.Phone);
                     cmd.Parameters.AddWithValue("@email ", hc.Email);

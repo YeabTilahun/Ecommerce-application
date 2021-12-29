@@ -28,12 +28,15 @@ namespace Ecommerce_application
             string pwd = textpassword.Text;
             string cpwd = textconfirmpassword.Text;
             MemoryStream ms = new MemoryStream();
-           //picBoxAddphoto.BackgroundImage.Save(ms, picBoxAddphoto.BackgroundImage.RawFormat);
+           picBoxAddphoto.BackgroundImage.Save(ms, picBoxAddphoto.BackgroundImage.RawFormat);
             byte[] photo = ms.ToArray();
 
             if (pwd == cpwd)
             {
                 NewHomeClass hc = new NewHomeClass(textUserId.Text, textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, photo);
+                MemoryStream stream = new MemoryStream(hc.photo);
+                Image RetImage = Image.FromStream(stream);
+                picBoxAddphoto.Image = RetImage;
                 hc.SaveUser();
             }
             else
@@ -46,7 +49,7 @@ namespace Ecommerce_application
             op.Filter = "Choose Photo (*.Jpg; *.png; *.jpeg; *.bmp;) | " + "*.Jpg; *.png; *.jpeg; *.bmp;";
             if (op.ShowDialog() == DialogResult.OK)
             {
-               // picBoxAddphoto.BackgroundImage = Image.FromFile(op.FileName);
+               picBoxAddphoto.BackgroundImage = Image.FromFile(op.FileName);
             }
         }
 

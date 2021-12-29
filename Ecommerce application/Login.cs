@@ -16,5 +16,17 @@ namespace Ecommerce_application
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            NewSignUp nsu = new NewSignUp();
+            nsu.Show();
+            this.Hide();
+        }
     }
 }

@@ -66,5 +66,13 @@ namespace Ecommerce_application
         {
             Application.Exit();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           if(comboBox1.Text == "All")
+            {
+
+            }
+        }
     }
 }
