@@ -14,8 +14,6 @@ namespace Ecommerce_application
 {
     public partial class Home : Form
     {
-
-       // private SqlConnection cn;
         private SqlCommand cmd;
         private SqlDataReader dr;
         PictureBox pic = new PictureBox();
@@ -40,7 +38,7 @@ namespace Ecommerce_application
             try
             {
                 cn.Open();
-                cmd = new SqlCommand("Select photo From product", cn);
+                cmd = new SqlCommand("Select photo,description,price From product", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
