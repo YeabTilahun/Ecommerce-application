@@ -16,5 +16,69 @@ namespace Ecommerce_application
         {
             InitializeComponent();
         }
+
+        private string price;
+        [Category ("Custom props")]
+        public string Price
+        {
+            get 
+            { 
+                return price; 
+            }
+            set 
+            { 
+                price = value;
+                labelPrice.Text = value;
+            }
+        }
+
+
+        private string description;
+        [Category("Custom props")]
+        public string Description
+        {
+            get 
+            { 
+                return description; 
+            }
+            set 
+            { 
+                description = value;
+                labelDescription.Text = value;
+            }
+        }
+
+
+        private Image picture;
+        [Category("Custom props")]
+        public Image Picture
+        {
+            get 
+            { 
+               return picture; 
+            }
+
+            set 
+            { 
+               picture = value; 
+               pictureBox1.Image = value; 
+            }
+        }
+
+        /*private Button addToCart;
+
+        public Button AddToCart
+        {
+            get
+            {
+                return addToCart;
+            }
+
+            set
+            {
+                addToCart = value;
+                buttonAddToCart.Button = value;
+            }
+        }*/
     }
 }

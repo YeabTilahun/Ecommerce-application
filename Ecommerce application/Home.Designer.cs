@@ -29,6 +29,7 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -209,6 +210,7 @@ namespace Ecommerce_application
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);

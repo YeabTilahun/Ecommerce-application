@@ -43,8 +43,36 @@ namespace Ecommerce_application
             Application.Run(form);
             //Application.Run(Home);
         }
+
+        public void LoadItems()
+        {
+           /* SqlConnection msc = new SqlConnection("Server = LAPTOP-RS59N8IM;   database = Ecommerce; integrated security=true;");
+            SqlCommand cmd = new SqlCommand("select photo, description, price from product");
+            msc.Open();
+            cmd.Connection = msc;
+            SqlDataReader dr = cmd.ExecuteReader();*/
+
+            LoadProductDetail[] items = new LoadProductDetail[5];
+            for(int i = 0; i < items.Length; i++)
+            {
+                items[i] = new LoadProductDetail();
+                items[i].Price = ("a");
+                items[i].Description = ("select description from product");
+
+                //loading the files to flowcontrol panel
+                if(flowLayoutPanel1.Controls.Count > 0)
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                }
+                else
+                {
+                    flowLayoutPanel1.Controls.Add(items[i]);
+                }
+            }
+        }
         private void Home_Load(object sender, EventArgs e)
         {
+            LoadItems();
             ShowPic();
             ShowPrice();
             ShowDescription();
@@ -53,7 +81,7 @@ namespace Ecommerce_application
         //Displays the pictures to the floLayout from product table
         public void ShowPic()
         {
-            SqlConnection msc = new SqlConnection("Server = LAPTOP-RS59N8IM;   database = Ecommerce; integrated security=true;");
+           /* SqlConnection msc = new SqlConnection("Server = LAPTOP-RS59N8IM;   database = Ecommerce; integrated security=true;");
             SqlCommand cmd = new SqlCommand("select photo from product");
             msc.Open();
             cmd.Connection = msc;
@@ -74,13 +102,13 @@ namespace Ecommerce_application
                 flowLayoutPanel1.Controls.Add(pic);
             }
             dr.Close();
-            msc.Close();
+            msc.Close();*/
 
         }
 
         public void ShowPrice()
         {
-            SqlConnection msc = new SqlConnection("Server = LAPTOP-RS59N8IM;   database = Ecommerce; integrated security=true;");
+            /*SqlConnection msc = new SqlConnection("Server = LAPTOP-RS59N8IM;   database = Ecommerce; integrated security=true;");
             SqlCommand cmd = new SqlCommand("select price from product");
             msc.Open();
             cmd.Connection = msc;
@@ -100,11 +128,11 @@ namespace Ecommerce_application
             }
             dr.Close();
             msc.Close();
-
+*/
         }
         public void ShowDescription()
         {
-            SqlConnection msc = new SqlConnection("Server = LAPTOP-RS59N8IM;   database = Ecommerce; integrated security=true;");
+            /*SqlConnection msc = new SqlConnection("Server = LAPTOP-RS59N8IM;   database = Ecommerce; integrated security=true;");
             SqlCommand cmd = new SqlCommand("select description from product");
             msc.Open();
             cmd.Connection = msc;
@@ -123,7 +151,7 @@ namespace Ecommerce_application
                 flowLayoutPanel1.Controls.Add(description);
             }
             dr.Close();
-            msc.Close();
+            msc.Close();*/
 
         }
         private void button4_Click(object sender, EventArgs e)
