@@ -29,6 +29,7 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(The_Wait_Form));
             this.SuspendLayout();
             // 
             // The_Wait_Form
@@ -42,7 +43,7 @@ namespace Ecommerce_application
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "The_Wait_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "The_Wait_Form";
+            this.Text = resources.GetString("$this.Text");
             this.Load += new System.EventHandler(this.The_Wait_Form_Load);
             this.ResumeLayout(false);
 
