@@ -43,12 +43,12 @@ namespace Ecommerce_application
         //To show Buy interface we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button6_Click(object sender, EventArgs e)
         {
-                MerchantBuy m = new MerchantBuy();
-                panelAdd.Controls.Clear();
-                m.Dock = DockStyle.Fill;
-                panelAdd.Controls.Add(m.panelBuy);
-                panelAdd.Show();
-                panelAdd.BringToFront();
+            MerchantBuy m = new MerchantBuy();
+            panelAdd.Controls.Clear();
+            m.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(m.panelBuy);
+            panelAdd.Show();
+            panelAdd.BringToFront();
         }
 
         //To show Sell interface we created the object then we added the panel in sell form in to panel in merchant and YES the acess modifer for the panel is internal
@@ -194,6 +194,11 @@ namespace Ecommerce_application
         }
 
         private void panel4_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

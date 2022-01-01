@@ -79,7 +79,7 @@ namespace Ecommerce_application
 
         }*/
 
-        private void PopulateItem()
+        public void PopulateItem()
         {
             string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
             try

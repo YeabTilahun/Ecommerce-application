@@ -310,6 +310,12 @@
     <Compile Include="MerchantHome.Designer.cs">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="MerchantProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MerchantProfile.Designer.cs">
+      <DependentUpon>MerchantProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="MerchantSell.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -420,6 +426,9 @@
     <EmbeddedResource Include="MerchantHome.resx">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MerchantProfile.resx">
+      <DependentUpon>MerchantProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MerchantSell.resx">
       <DependentUpon>MerchantSell.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +527,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\outline_person_white_48dp.png" />
     <None Include="Resources\Asset 58.png" />
     <None Include="Resources\Asset 133.png" />
     <None Include="Resources\Asset 56.png" />

@@ -13,7 +13,7 @@ namespace Ecommerce_application
         public MerchantBuy()
         {
             InitializeComponent();
-            loadProducts();
+            PopulateProducts();
         }
 
         //WHEN SEARCH BOX TEXT CHANGED CALL SEARCH METHOD 
@@ -62,7 +62,7 @@ namespace Ecommerce_application
 
         private Label price;
         private Label name;
-        public void loadProducts()
+       /* public void loadProducts()
         {
             SqlConnection msc = new SqlConnection("Server=YEABS;   database=Ecommerce; integrated security=true;");
             SqlCommand cmd = new SqlCommand("select photo,price,name from product");
@@ -106,6 +106,51 @@ namespace Ecommerce_application
             }
             dr.Close();
             msc.Close();
+
+        }*/
+
+
+        public void PopulateProducts()
+        {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spLoad_data", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "product");
+                    DataTable dt = ds.Tables["product"];
+                    int a;
+                    MessageBox.Show(dt.Rows.Count.ToString());
+                    LoadItems[] b = new LoadItems[dt.Rows.Count];
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        b[i] = new LoadItems();
+                        b[i].Pic = (byte[])dt.Rows[i]["photo"];
+                        b[i].Name = dt.Rows[i]["name"].ToString();
+                        b[i].Description = dt.Rows[i]["description"].ToString();
+                        b[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
+
+                        if (panelBuy.Controls.Count < 0)
+                            panelBuy.Controls.Clear();
+                        else
+                            panelBuy.Controls.Add(b[i]);
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void panelBuy_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
