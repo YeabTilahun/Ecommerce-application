@@ -33,5 +33,15 @@ namespace Ecommerce_application.Properties {
                 return ((string)(this["EcommerceConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-RS59N8IM;Initial Catalog=Ecommerce;Integrated Security=True")]
+        public string EcommerceConnectionString1 {
+            get {
+                return ((string)(this["EcommerceConnectionString1"]));
+            }
+        }
     }
 }

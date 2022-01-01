@@ -256,17 +256,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EcommerceDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EcommerceDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EcommerceDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadProductDetail.cs">
+    <Compile Include="LoadItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LoadProductDetail.Designer.cs">
-      <DependentUpon>LoadProductDetail.cs</DependentUpon>
+    <Compile Include="LoadItems.Designer.cs">
+      <DependentUpon>LoadItems.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -388,8 +393,8 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadProductDetail.resx">
-      <DependentUpon>LoadProductDetail.cs</DependentUpon>
+    <EmbeddedResource Include="LoadItems.resx">
+      <DependentUpon>LoadItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -438,6 +443,17 @@
     </None>
     <None Include="EcommerceDataSet.xss">
       <DependentUpon>EcommerceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EcommerceDataSet1.xsc">
+      <DependentUpon>EcommerceDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EcommerceDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EcommerceDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EcommerceDataSet1.xss">
+      <DependentUpon>EcommerceDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="ProductDataSet.xsc">
