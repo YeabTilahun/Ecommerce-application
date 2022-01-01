@@ -193,6 +193,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Asset_16 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Asset_19 {
             get {
                 object obj = ResourceManager.GetObject("Asset 19", resourceCulture);
@@ -216,6 +226,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap Asset_42 {
             get {
                 object obj = ResourceManager.GetObject("Asset 42", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_48 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,6 +356,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap eye {
             get {
                 object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_342 {
+            get {
+                object obj = ResourceManager.GetObject("Group 342", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

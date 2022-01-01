@@ -33,13 +33,13 @@ namespace Ecommerce_application
             this.pblTopNav = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNav = new System.Windows.Forms.Label();
             this.pnlCard = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMaximized = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.CloseM = new System.Windows.Forms.Button();
@@ -107,6 +107,34 @@ namespace Ecommerce_application
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
+            // AccountMenuItem
+            // 
+            this.AccountMenuItem.AutoSize = false;
+            this.AccountMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.profileToolStripMenuItem,
+            this.logOutToolStripMenuItem});
+            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_342;
+            this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AccountMenuItem.Name = "AccountMenuItem";
+            this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
+            this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.AccountMenuItem.Click += new System.EventHandler(this.AccountMenuItem_Click);
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profileToolStripMenuItem.Text = "Your Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
             // lblNav
             // 
             this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -159,34 +187,6 @@ namespace Ecommerce_application
             this.btnProfile.Size = new System.Drawing.Size(99, 23);
             this.btnProfile.TabIndex = 36;
             this.btnProfile.UseVisualStyleBackColor = true;
-            // 
-            // AccountMenuItem
-            // 
-            this.AccountMenuItem.AutoSize = false;
-            this.AccountMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.profileToolStripMenuItem,
-            this.logOutToolStripMenuItem});
-            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_3421;
-            this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.AccountMenuItem.Name = "AccountMenuItem";
-            this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
-            this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.AccountMenuItem.Click += new System.EventHandler(this.AccountMenuItem_Click);
-            // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.profileToolStripMenuItem.Text = "Your Profile";
-            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.logOutToolStripMenuItem.Text = "Log Out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // btnMaximized
             // 
@@ -413,13 +413,13 @@ namespace Ecommerce_application
             // btnProducts
             // 
             this.btnProducts.BackColor = System.Drawing.Color.Transparent;
-            this.btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_112;
+            this.btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
             this.btnProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProducts.Image = global::Ecommerce_application.Properties.Resources.Asset_162;
+            this.btnProducts.Image = global::Ecommerce_application.Properties.Resources.Asset_16;
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProducts.Location = new System.Drawing.Point(6, 251);
             this.btnProducts.Name = "btnProducts";
