@@ -32,7 +32,6 @@ namespace Ecommerce_application
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textpassword = new System.Windows.Forms.TextBox();
             this.textconfirmpassword = new System.Windows.Forms.TextBox();
             this.textEmail = new System.Windows.Forms.TextBox();
@@ -52,15 +51,16 @@ namespace Ecommerce_application
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddpic = new System.Windows.Forms.Button();
             this.picBoxAddphoto = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.buttonAddpic);
             this.panel1.Controls.Add(this.textpassword);
             this.panel1.Controls.Add(this.textconfirmpassword);
@@ -105,16 +105,6 @@ namespace Ecommerce_application
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(418, 421);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(130, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "I agree to all the terms";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // textpassword
             // 
             this.textpassword.Location = new System.Drawing.Point(171, 370);
@@ -133,7 +123,7 @@ namespace Ecommerce_application
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(429, 242);
+            this.textEmail.Location = new System.Drawing.Point(429, 246);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(210, 20);
             this.textEmail.TabIndex = 2;
@@ -161,7 +151,7 @@ namespace Ecommerce_application
             // 
             // textUserId
             // 
-            this.textUserId.Location = new System.Drawing.Point(429, 58);
+            this.textUserId.Location = new System.Drawing.Point(429, 51);
             this.textUserId.Name = "textUserId";
             this.textUserId.Size = new System.Drawing.Size(210, 20);
             this.textUserId.TabIndex = 2;
@@ -207,7 +197,7 @@ namespace Ecommerce_application
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(309, 245);
+            this.label10.Location = new System.Drawing.Point(309, 249);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 13);
             this.label10.TabIndex = 1;
@@ -234,7 +224,7 @@ namespace Ecommerce_application
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(309, 137);
+            this.label2.Location = new System.Drawing.Point(305, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -243,7 +233,7 @@ namespace Ecommerce_application
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(309, 61);
+            this.label5.Location = new System.Drawing.Point(309, 54);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 13);
             this.label5.TabIndex = 1;
@@ -285,6 +275,16 @@ namespace Ecommerce_application
             this.picBoxAddphoto.TabIndex = 0;
             this.picBoxAddphoto.TabStop = false;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(446, 421);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(97, 13);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "agree to our policy ";
+            // 
             // NewSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,7 +314,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.PictureBox picBoxAddphoto;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textpassword;
         private System.Windows.Forms.TextBox textconfirmpassword;
         private System.Windows.Forms.Label label8;
@@ -325,5 +324,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

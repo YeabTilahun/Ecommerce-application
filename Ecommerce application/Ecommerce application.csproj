@@ -261,6 +261,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EcommerceDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ForgetPassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgetPassWord.Designer.cs">
+      <DependentUpon>ForgetPassWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +396,9 @@
     <EmbeddedResource Include="CustomerPage.resx">
       <DependentUpon>CustomerPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ForgetPassWord.resx">
+      <DependentUpon>ForgetPassWord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -509,16 +518,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
-    <None Include="Resources\Asset 161.png" />
-    <None Include="Resources\Asset 16.png" />
+    <None Include="Resources\Asset 58.png" />
     <None Include="Resources\Asset 133.png" />
-    <None Include="Resources\Asset 112.png" />
-    <None Include="Resources\Asset 481.png" />
-    <None Include="Resources\Asset 48.png" />
-    <None Include="Resources\Asset 119.png" />
-    <None Include="Resources\Group 3421.png" />
-    <None Include="Resources\Group 342.png" />
-    <None Include="Resources\Asset 491.png" />
     <None Include="Resources\Asset 56.png" />
     <None Include="Resources\Asset 54.png" />
     <None Include="Resources\Asset 1351.png" />
