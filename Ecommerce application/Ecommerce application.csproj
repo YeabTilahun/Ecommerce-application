@@ -261,6 +261,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EcommerceDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ForgetPassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgetPassWord.Designer.cs">
+      <DependentUpon>ForgetPassWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -389,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPage.resx">
       <DependentUpon>CustomerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgetPassWord.resx">
+      <DependentUpon>ForgetPassWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
