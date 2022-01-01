@@ -33,6 +33,7 @@ namespace Ecommerce_application
             this.labelPrice = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +45,8 @@ namespace Ecommerce_application
             this.labelDescription.Size = new System.Drawing.Size(63, 13);
             this.labelDescription.TabIndex = 1;
             this.labelDescription.Text = "Description:";
+            this.labelDescription.MouseEnter += new System.EventHandler(this.labelDescription_MouseEnter);
+            this.labelDescription.MouseLeave += new System.EventHandler(this.labelDescription_MouseLeave);
             // 
             // labelPrice
             // 
@@ -71,10 +74,20 @@ namespace Ecommerce_application
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(124, 156);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(35, 13);
+            this.labelName.TabIndex = 3;
+            this.labelName.Text = "Name";
+            // 
             // LoadItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelDescription);
@@ -93,5 +106,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelName;
     }
 }

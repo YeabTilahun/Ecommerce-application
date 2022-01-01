@@ -28,5 +28,10 @@ namespace Ecommerce_application
             nsu.Show();
             this.Hide();
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
