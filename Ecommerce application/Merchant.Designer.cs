@@ -72,7 +72,7 @@ namespace Ecommerce_application
             this.panel3.Controls.Add(this.button3);
             this.panel3.Location = new System.Drawing.Point(-1, 28);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(115, 552);
+            this.panel3.Size = new System.Drawing.Size(115, 596);
             this.panel3.TabIndex = 0;
             // 
             // panel7
@@ -114,7 +114,7 @@ namespace Ecommerce_application
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Image = global::Ecommerce_application.Properties.Resources.logout__1_;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(0, 514);
+            this.button8.Location = new System.Drawing.Point(0, 558);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(117, 35);
             this.button8.TabIndex = 27;
@@ -178,7 +178,7 @@ namespace Ecommerce_application
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAdd.Location = new System.Drawing.Point(116, 28);
             this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(812, 545);
+            this.panelAdd.Size = new System.Drawing.Size(935, 619);
             this.panelAdd.TabIndex = 1;
             // 
             // panel4
@@ -192,9 +192,8 @@ namespace Ecommerce_application
             this.panel4.Controls.Add(this.button7);
             this.panel4.Location = new System.Drawing.Point(-1, 1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(932, 30);
+            this.panel4.Size = new System.Drawing.Size(1056, 30);
             this.panel4.TabIndex = 18;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseMove);
             this.panel4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseUp);
@@ -205,7 +204,7 @@ namespace Ecommerce_application
             this.button11.BackColor = System.Drawing.Color.Transparent;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
-            this.button11.Location = new System.Drawing.Point(853, 0);
+            this.button11.Location = new System.Drawing.Point(977, 0);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(39, 25);
             this.button11.TabIndex = 30;
@@ -219,7 +218,7 @@ namespace Ecommerce_application
             this.button10.BackColor = System.Drawing.Color.Transparent;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.Image = global::Ecommerce_application.Properties.Resources.Restore;
-            this.button10.Location = new System.Drawing.Point(853, 0);
+            this.button10.Location = new System.Drawing.Point(977, 0);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(39, 25);
             this.button10.TabIndex = 29;
@@ -233,7 +232,7 @@ namespace Ecommerce_application
             this.button9.BackColor = System.Drawing.Color.Transparent;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Image = global::Ecommerce_application.Properties.Resources.close_tab3;
-            this.button9.Location = new System.Drawing.Point(892, 0);
+            this.button9.Location = new System.Drawing.Point(1016, 0);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(39, 25);
             this.button9.TabIndex = 29;
@@ -249,7 +248,7 @@ namespace Ecommerce_application
             this.button7.BackColor = System.Drawing.Color.Transparent;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = global::Ecommerce_application.Properties.Resources.minimize;
-            this.button7.Location = new System.Drawing.Point(813, 0);
+            this.button7.Location = new System.Drawing.Point(937, 0);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(39, 25);
             this.button7.TabIndex = 28;
@@ -260,7 +259,7 @@ namespace Ecommerce_application
             // Merchant
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(928, 575);
+            this.ClientSize = new System.Drawing.Size(1052, 619);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.panel3);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,27 +13,30 @@ namespace Ecommerce_application
         //MerchantSell Layer 2
 
         //Declaring varibles to take value from the text box in MerchantSell
-        public string id;
         public string productName;
         public string price;
         public string quantity;
         public string category;
         public string description;
-
+        public string stamp;
+        public string exDate;
+        public byte[] photo;
         //creating multiple constractor to make life easy
-       public MerchantClass()
+        public MerchantClass()
         {
 
         }
 
-        public MerchantClass(string id, string pname, string price, string qty, string cat, string desc)
+        public MerchantClass(string name, string price, string quantity, string category, string desc, string date, string stamp, byte[] photo)
         {
-            this.id = id;
-            this.productName = pname;
-            this.quantity = qty;
+            this.productName = name;
             this.price = price;
-            this.category = cat;
+            this.quantity = quantity;
+            this.category = category;
             this.description= desc;
+            this.exDate = date;
+            this.stamp = stamp;
+            this.photo = photo;
         }
 
         public void Add()
@@ -54,13 +58,12 @@ namespace Ecommerce_application
             sell.Delete(id);
 
         }
-
-        //MerchantBuy Layer 2
-        public void SelectedProduct(string [] id)
+        public DataTable getUser()
         {
-            //this will add the selected items from buy in to the data grid view in the cart form
-            MessageBox.Show("Go to cart to finish the transaction!");
-        }
+            MerchantDatabase dal = new MerchantDatabase();
+            DataTable dt = dal.getUser();
 
+            return dt;
+        }
     }
 }

@@ -28,13 +28,14 @@ namespace Ecommerce_application
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spInsertProduct", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@mid", mid);
-                    cmd.Parameters.AddWithValue("@pid", pid);
                     cmd.Parameters.AddWithValue("@name", sell.productName);
                     cmd.Parameters.AddWithValue("@price", sell.price);
                     cmd.Parameters.AddWithValue("@quantity", sell.quantity);
-                    cmd.Parameters.AddWithValue("@description", sell.description);
                     cmd.Parameters.AddWithValue("@category", sell.category);
+                    cmd.Parameters.AddWithValue("@description", sell.description);
+                    cmd.Parameters.AddWithValue("@expireDate", sell.exDate);
+                    cmd.Parameters.AddWithValue("@DateStamp", sell.stamp);
+                    cmd.Parameters.AddWithValue("@Photo", sell.photo);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
@@ -90,13 +91,14 @@ namespace Ecommerce_application
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateProduct", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@mid", mid);
-                    cmd.Parameters.AddWithValue("@pid", pid);
                     cmd.Parameters.AddWithValue("@name", sell.productName);
                     cmd.Parameters.AddWithValue("@price", sell.price);
-                    cmd.Parameters.AddWithValue("@quantity", sell.quantity);
-                    cmd.Parameters.AddWithValue("@description", sell.description);
+                    cmd.Parameters.AddWithValue("@quantity",sell.quantity);
                     cmd.Parameters.AddWithValue("@category", sell.category);
+                    cmd.Parameters.AddWithValue("@description", sell.description);
+                    cmd.Parameters.AddWithValue("@expireDate", sell.exDate);
+                    cmd.Parameters.AddWithValue("@DateStamp", sell.stamp);
+                    cmd.Parameters.AddWithValue("@Photo", sell.photo);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
@@ -112,6 +114,19 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        public DataTable getUser()
+        {
+            SqlConnection con = new SqlConnection(constr);
+            SqlDataAdapter da = new SqlDataAdapter("select photo,name,description from product", con);
+
+
+            DataSet ds = new DataSet();
+            da.Fill(ds, "product");
+            DataTable dt = ds.Tables["product"];
+            return dt;
 
         }
     }

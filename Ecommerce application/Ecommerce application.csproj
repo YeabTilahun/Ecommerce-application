@@ -346,6 +346,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\NoImage.png" />
     <None Include="Resources\photo_2021-12-25_12-03-23.jpg" />
     <None Include="Resources\icons8-back-arrow-16.png" />
     <None Include="Resources\icons8-back-arrow-64.png" />

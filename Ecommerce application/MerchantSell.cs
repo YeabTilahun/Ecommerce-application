@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,209 +17,109 @@ namespace Ecommerce_application
         public MerchantSell()
         {
             InitializeComponent();
-            //LOADING THE ITEMS FOR THE COMBOBOX WHEN THE CLASS LOADS
-            LoadIntoCatagoryComboBox();
-            //LOADING THE DATA TO THE DGV WHEN THE CLASS LOADS
-            loading();
-            //disable ID textbox
-           // textBox5.Enabled = false;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            dateTimePicker1.Value = new DateTime(1753,1,1,1,1,1);
+
+            //
+            dateTimePicker1.Hide();
+            label1.Hide();
+            textBox4.Location = new Point(117, 245);
+            label3.Location = new Point(31, 252);
         }
 
-        private void LoadIntoCatagoryComboBox()
+        //BROWSE IMAGE TO ADD IN TO PRODUCT
+        private void button1_Click(object sender, EventArgs e)
         {
-            String[] itemsCatagory = {"Alcohol","Bikes","Books","Cars","Phone","Cleaning supplies","Clothing","Electronics","Exercise Equipment","Furniture"
-                    ,"Jewelry","Medicine","Musical Instruments","Sporting goods","Tools and Home Care","Toys & Games","Watches","Other"};
-            comboBox1.Items.AddRange(itemsCatagory);
-        }
 
-        private void MerchantSell_Load(object sender, EventArgs e)
-        {
-            //To hide update and to show edit when this form loads
-            //NOTICE THE NAME FOR UPDATE AND EDIT IS CHANGED btnEdit IS UPDATE AND btnUpd IS UPDATE
-            btnEdit.Hide();
-            btnUpd.Show();
-            btnUpd.BringToFront();
-        }
-
-        //LOADING THE DATA TO THE DGV
-        void loading()
-        {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-           
-            using (SqlConnection con = new SqlConnection(constr))
+            OpenFileDialog op = new OpenFileDialog();
+            op.Filter = "Choose photo (*.jpg; *.png; *.bmp;) | " + "*.jpg; *.jpeg; *.bmp *.JFIF; *.png;";
+            if (op.ShowDialog() == DialogResult.OK)
             {
-                con.Close();
-                con.Open();
-                string query = "SELECT productID,name,price,quantity,description,category FROM product ";
-                SqlDataAdapter da = new SqlDataAdapter(query, constr);
-                SqlCommandBuilder q = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0];
-                con.Close();
+                pictureBox1.Image = Image.FromFile(op.FileName);
+                addPhoto.Hide();
             }
-            //ARRANGING DGV COLUMNS
-            dataGridView1.Columns["productID"].DisplayIndex = 0;
-            dataGridView1.Columns["name"].DisplayIndex = 1;
-            dataGridView1.Columns["price"].DisplayIndex = 2;
-            dataGridView1.Columns["quantity"].DisplayIndex = 3;
-            dataGridView1.Columns["category"].DisplayIndex = 4;
-            dataGridView1.Columns["description"].DisplayIndex = 5;
-            //EXTENDING DESCRIPTION COLUMN
-            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        //When the user clicks add the products info will be copied to MerchantSellClass
-        private void btnAdd_Click(object sender, EventArgs e)
+        //ADD PRODUCTS TO THE DATABASE
+        private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == null || textBox2.Text == null || textBox3.Text == null || textBox4.Text == null || comboBox1.Text == null)
+            //TAKE THE DATE FROM THE PICKER
+            string expDate = dateTimePicker1.Value.ToString("dd/MM/yyyy");
+            //FOR DATE STAMP
+            string now = DateTime.Now.ToShortDateString();
+
+            if (!textBox5.Text.Equals("")|| !comboBox1.Text.Equals(""))
+            {
+                //CONVERTING THE IMAGE TO BYTE
+                MemoryStream ms = new MemoryStream();
+                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                byte[] photo = ms.ToArray();
+                ms.SetLength(0);
+
+                //TRANSFERING THE DATA TO LAYER 2 (MERCHANTCLASS) FROM THE FEILDS
+                MerchantClass sell = new MerchantClass(textBox5.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text, expDate, now, photo);
+                sell.Add();
+
+                //AFTER PRODUCT ADDED SUCESSFULLY THE FIELDS WILL BE CLEARD
+                textBox5.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                comboBox1.Text = "";
+                textBox4.Clear();
+                pictureBox1.Image = null;
+                //INSTANTIATING MERCHANT WILL UPDATE THE PRODUCTS IN BUY AFTER NEW PRODUCT ADDED
+                Merchant m = new Merchant();
+            }
+
+            else
             {
                 MessageBox.Show("Please fill the required fields!");
+               
             }
-            else if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || comboBox1.Text == "")
+
+        }
+
+        //WHEN CANCEL PRESSED THE FIELDS WILL BE CLEARED
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox5.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            comboBox1.Text = "";
+            textBox4.Clear();
+            pictureBox1.Image = null;
+        }
+
+        //CLEAR BUTTON
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                      
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Cosmotics" || comboBox1.Text == "Medicine" || comboBox1.Text == "Cleaning supplies")
             {
-                MessageBox.Show("Please fill the required fields!");
+                dateTimePicker1.Value = new DateTime(2022, 1, 1, 1, 1, 1);
+                dateTimePicker1.Show();
+                label1.Show();
+                textBox4.Location = new Point(117, 282);
+                label3.Location = new Point(31, 285);
             }
             else
             {
-                MerchantClass sell = new MerchantClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
-                sell.Add();
-                //update the grid view after merchant added product 
-                loading();
-                //After product added texbox will be cleared
-                textBox5.Clear();
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
-                comboBox1.Text = " ";
-                textBox4.Clear();
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            //SELECTED VALUE PASSING FROM DGV
-            try
-            {
-                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-                string cellValue = Convert.ToString(selectedRow.Cells["productID"].Value);
-                string id = cellValue;
-                MerchantClass sell = new MerchantClass();
-                sell.Delete(id);
-                loading();
-            }
-            catch (ArgumentOutOfRangeException a)
-            {
-                MessageBox.Show("Please select row.");
-            }
-
-            //After product deleted texbox will be cleared
-            textBox5.Clear();
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            comboBox1.Text = " ";
-            textBox4.Clear();
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-           // MerchantClass sell = new MerchantClass();
-            //When the user press cancel all text fields and combobox will be cleard
-            textBox5.Clear();
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            comboBox1.Text=" ";
-            textBox4.Clear();
-            //arranging the button orders
-            btnEdit.Hide();
-            btnUpd.Show();
-            btnUpd.BringToFront();
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            textBox5.Enabled = false;
-            MerchantClass sell = new MerchantClass(textBox5.Text, textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
-            sell.Update();
-            loading();
-            //Hide update button after click
-            //NOTICE THE NAME FOR UPDATE AND EDIT IS CHANGED btnEdit IS UPDATE AND btnUpd IS UPDATE
-            btnEdit.Hide();
-            btnUpd.Show();
-            btnUpd.BringToFront();
-        }
-
-        private void btnUpd_Click(object sender, EventArgs e)
-        {
-            textBox5.Enabled = false;
-            //seleted ROW VALUE
-            try {
-                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-                string cellValue = Convert.ToString(selectedRow.Cells["productID"].Value);
-                textBox5.Text = cellValue;
-                fill();
-            }
-            catch (ArgumentOutOfRangeException a)
-            {
-                MessageBox.Show("Please select row.");
-            }
-            //To hide edit and to show Update when this form loads
-            //NOTICE THE NAME FOR UPDATE AND EDIT IS CHANGED btnEdit IS UPDATE AND btnUpd IS UPDATE
-            btnEdit.Show();
-            btnUpd.Hide();
-            btnEdit.BringToFront();
-        }
-
-        //when the user enters ID it will fill the textboxes with the apropriate value(product)
-        string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-                fill();
-            if (textBox5.Text != "")
-            {
-                //WHEN THE TEXT CHANGED IT WILL CALL FILL TO FILL THE TEXT BOXES
-            }
-            }
-        
-        //ERORR
-
-        //TO CALL IT WHEN THE USER SELECT ROW DGV AND PRESS EDIT
-        public void fill()
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(constr))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("spFillProductSell", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@pid", textBox5.Text);
-                    SqlDataReader da = cmd.ExecuteReader();
-                    while (da.Read())
-                    {
-                        textBox5.Text = da.GetValue(0).ToString();
-                        textBox5.Text = da.GetValue(1).ToString();
-                        textBox1.Text = da.GetValue(2).ToString();
-                        textBox2.Text = da.GetValue(3).ToString();
-                        textBox3.Text = da.GetValue(4).ToString();
-                        textBox4.Text = da.GetValue(5).ToString();
-                        //PROBLEM ON THE COMBOBOX THE VALUE WONT CHANGE!
-                        comboBox1.Text = da.GetValue(6).ToString();
-
-                    }
-                    con.Close();
-                }
-            }
-
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
+                dateTimePicker1.Hide();
+                label1.Hide();
+                textBox4.Location = new Point(117, 245);
+                label3.Location = new Point(31, 252);
             }
         }
     }
-    }
+}

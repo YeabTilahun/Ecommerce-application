@@ -16,14 +16,18 @@ namespace Ecommerce_application
         {
             InitializeComponent();
         }
-
+       
+        MerchantSell n = new MerchantSell();
+        MerchantHome k = new MerchantHome();
+        MerchantCart l = new MerchantCart();
+        
         //To display home page first every time merchat account looged in
         private void Merchant_Load(object sender, EventArgs e)
         {
-            MerchantHome m = new MerchantHome();
+          
             panelAdd.Controls.Clear();
-            m.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(m.panelHome);
+            k.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(k.panelHome);
             panelAdd.Show();
             panelAdd.BringToFront();
             //hiding panels 
@@ -37,6 +41,7 @@ namespace Ecommerce_application
         private void button6_Click_1(object sender, EventArgs e)
         {
             MerchantBuy m = new MerchantBuy();
+
             panelAdd.Controls.Clear();
             m.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(m.panelBuy);
@@ -53,10 +58,10 @@ namespace Ecommerce_application
         private void button5_Click(object sender, EventArgs e)
         {
            
-            MerchantSell m = new MerchantSell();
+            
             panelAdd.Controls.Clear();
-            m.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(m.panelSell);
+            n.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(n.panelSell);
             panelAdd.Show();
             panelAdd.BringToFront();
             //hide other panels next to the buttons and show panel next to buy
@@ -69,10 +74,10 @@ namespace Ecommerce_application
         //To show Home interface we created the object then we added the panel in home form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button3_Click(object sender, EventArgs e)
         {
-            MerchantHome m = new MerchantHome();
+            
             panelAdd.Controls.Clear();
-            m.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(m.panelHome);
+            k.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(k.panelHome);
             panelAdd.Show();
             panelAdd.BringToFront();
             //show panel5
@@ -122,10 +127,10 @@ namespace Ecommerce_application
 
         private void button4_Click_2(object sender, EventArgs e)
         {
-            MerchantCart m = new MerchantCart();
+            
             panelAdd.Controls.Clear();
-            m.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(m.panelCart);
+            l.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(l.panelCart);
             panelAdd.Show();
             panelAdd.BringToFront();
             //hide other panels next to the buttons and show panel next to buy
@@ -176,14 +181,12 @@ namespace Ecommerce_application
 
         private void button11_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            int a = Screen.PrimaryScreen.WorkingArea.Width;
+            int b = Screen.PrimaryScreen.WorkingArea.Height;
+            this.Size = new Size(a, b);
+            // this.WindowState = FormWindowState.Maximized;
             ///button11.Hide();
             button10.BringToFront();
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
