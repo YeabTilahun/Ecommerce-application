@@ -197,7 +197,8 @@ namespace Ecommerce_application
             this.addPhoto.AutoSize = true;
             this.addPhoto.BackColor = System.Drawing.SystemColors.Control;
             this.addPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPhoto.Location = new System.Drawing.Point(660, 263);
+            this.addPhoto.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.addPhoto.Location = new System.Drawing.Point(661, 310);
             this.addPhoto.Name = "addPhoto";
             this.addPhoto.Size = new System.Drawing.Size(99, 24);
             this.addPhoto.TabIndex = 125;
@@ -227,16 +228,17 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(885, 21);
+            this.panel1.Size = new System.Drawing.Size(902, 33);
             this.panel1.TabIndex = 124;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(6, 5);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.Size = new System.Drawing.Size(81, 16);
             this.label2.TabIndex = 125;
             this.label2.Text = "Add product";
             // 
@@ -244,10 +246,11 @@ namespace Ecommerce_application
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(717, 338);
+            this.button4.Location = new System.Drawing.Point(717, 356);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(96, 25);
             this.button4.TabIndex = 123;
@@ -259,6 +262,7 @@ namespace Ecommerce_application
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
@@ -274,6 +278,7 @@ namespace Ecommerce_application
             // 
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
@@ -289,10 +294,11 @@ namespace Ecommerce_application
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(585, 338);
+            this.button1.Location = new System.Drawing.Point(585, 356);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 25);
             this.button1.TabIndex = 116;
@@ -304,10 +310,10 @@ namespace Ecommerce_application
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_135;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(568, 124);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 177);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 212);
             this.pictureBox1.TabIndex = 115;
             this.pictureBox1.TabStop = false;
             // 

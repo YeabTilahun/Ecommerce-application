@@ -26,6 +26,7 @@ namespace Ecommerce_application
             Admin.password = password;
             Admin.role = role;
             InitializeComponent();
+            btnProfile.Text = Admin.userName;
         }
 
         private void btnMaximized_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace Ecommerce_application
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void CloseM_Click(object sender, EventArgs e)
@@ -263,6 +264,28 @@ namespace Ecommerce_application
             profile = ac.GetAdminProfile();
             AdminProfile a = new AdminProfile(profile[0], profile[1], profile[2], profile[3], profile[4], profile[5], profile[6], profile[7], profile[8], profile[9]);
             a.Show();
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            btnLogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnLogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnProducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnMerchants.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnMerchants.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnTransactions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnTransactions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnAdmins.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnAdmins.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
         }
     }
 }
