@@ -11,7 +11,7 @@ namespace Ecommerce_application
 {
     class AdminDatabase
     {
-        string constr = "Server = 192.168.1.100;   Database = Ecommerce; Uid=sa; Pwd=12345;";
+        string constr = "Server = DESKTOP-4370VSE;   Database = Ecommerce; integrated security=true";
 
         public void SaveAdmin(AdminRegisterClass ar)
         {

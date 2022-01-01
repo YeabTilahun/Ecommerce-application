@@ -509,6 +509,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\Asset 161.png" />
+    <None Include="Resources\Asset 16.png" />
+    <None Include="Resources\Asset 133.png" />
+    <None Include="Resources\Asset 112.png" />
+    <None Include="Resources\Asset 481.png" />
+    <None Include="Resources\Asset 48.png" />
+    <None Include="Resources\Asset 119.png" />
+    <None Include="Resources\Group 3421.png" />
+    <None Include="Resources\Group 342.png" />
+    <None Include="Resources\Asset 491.png" />
     <None Include="Resources\Asset 56.png" />
     <None Include="Resources\Asset 54.png" />
     <None Include="Resources\Asset 1351.png" />
