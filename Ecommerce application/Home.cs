@@ -38,9 +38,9 @@ namespace Ecommerce_application
 
         void Splash()
         {
-            SplashScreen.SplashForm form = new SplashScreen.SplashForm();
-            form.AppName = "";
-            Application.Run(form);
+           //SplashScreen.SplashForm form = new SplashScreen.SplashForm();
+            //form.AppName = "";
+            //Application.Run(form);
             //Application.Run(Home);
         }
 
