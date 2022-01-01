@@ -11,7 +11,7 @@ namespace Ecommerce_application
 {
     class CustomerDatabase
     {
-        string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; Integrated security = True; ";
+        string constr = "Server = 7.85.43.111;   Database = Ecommerce; Uid=sa; Pwd=12345; ";
         //giving productID by ourselves  BUT MID WILL BE UPDATED!!
         static int mid = 1, pid = 1;
 

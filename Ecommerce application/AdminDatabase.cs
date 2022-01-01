@@ -11,7 +11,7 @@ namespace Ecommerce_application
 {
     class AdminDatabase
     {
-        string constr = "Server = DESKTOP-4370VSE; database = Ecommerce; integrated security = true;";
+        string constr = "Server = 192.168.1.100;   Database = Ecommerce; Uid=sa; Pwd=12345;";
 
         public void SaveAdmin(AdminRegisterClass ar)
         {
@@ -31,7 +31,6 @@ namespace Ecommerce_application
                     cmd.Parameters.AddWithValue("@userName", ar.userName);
                     cmd.Parameters.AddWithValue("@password", ar.password);
                     cmd.Parameters.AddWithValue("@role", ar.role);
-
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)

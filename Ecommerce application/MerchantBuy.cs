@@ -3,67 +3,18 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Ecommerce_application
 {
-    public partial class MerchantBuy:Form
+    public partial class MerchantBuy : Form
     {
         public MerchantBuy()
         {
             InitializeComponent();
-            //TO ADD THE CHECK BOX WHEN IT LOADS
-            AddCheckBox();
-            //TO LOAD THE DATA WHEN IT LOADS
-            loading();
+            loadProducts();
         }
-
-        void loading()
-        {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                con.Close();
-                con.Open();
-                string query = "SELECT productID,name,price,quantity,description,category FROM product ";
-                SqlDataAdapter da = new SqlDataAdapter(query, constr);
-                SqlCommandBuilder q = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0];
-                con.Close();
-            }
-            //ARRANGING DGV COLUMNS
-            dataGridView1.Columns["productID"].DisplayIndex = 1;
-            dataGridView1.Columns["name"].DisplayIndex = 2;
-            dataGridView1.Columns["price"].DisplayIndex = 3;
-            dataGridView1.Columns["quantity"].DisplayIndex = 4;
-            dataGridView1.Columns["category"].DisplayIndex = 5;
-            dataGridView1.Columns["description"].DisplayIndex = 6;
-            //EXTENDING DESCRIPTION COLUMN
-            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[3].Width = 40;
-            dataGridView1.Columns[4].Width = 50;
-            dataGridView1.Columns[1].Width = 58;
-            dataGridView1.Columns[2].Width = 80;
-        }
-        //ADDING CHECKBOX TO DGV
-        void AddCheckBox()
-        {
-            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
-            checkColumn.Name = "X";
-            checkColumn.HeaderText = "Select";
-            checkColumn.Width = 50;
-            checkColumn.FillWeight = 10;
-            checkColumn.TrueValue = 1;
-            checkColumn.FalseValue = 0;
-            checkColumn.ReadOnly = false;
-            dataGridView1.Columns.Add(checkColumn);
-            dataGridView1.Columns["X"].DisplayIndex = 0;
-        }
-
-
 
         //WHEN SEARCH BOX TEXT CHANGED CALL SEARCH METHOD 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -84,7 +35,7 @@ namespace Ecommerce_application
                 SqlDataReader reader = sqlCmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(reader);
-                dataGridView1.DataSource = dt;
+                //dataGridView1.DataSource = dt;
                 con.Close();
             }
         }
@@ -107,23 +58,55 @@ namespace Ecommerce_application
             textBox1.ForeColor = Color.Black;
         }
 
-        //ADDING SELECTED ITEMS TO CART DGV
-        private void button8_Click(object sender, EventArgs e)
+        //load the products image from database
+
+        private Label price;
+        private Label name;
+        public void loadProducts()
         {
-            //NEEDS A LOT OF WORK  
-            string[] id = new string[ConfigurationManager.ConnectionStrings.Count]; //This will initialize the array 
-            MerchantCart a = new MerchantCart();
-            a.dataGridView1.AllowUserToAddRows = false;
-            int numRows = dataGridView1.Rows.Count;
-            a.dataGridView1.RowCount = numRows;
-            for (int i = 0; i < numRows; i++)
+            SqlConnection msc = new SqlConnection("Server=YEABS;   database=Ecommerce; integrated security=true;");
+            SqlCommand cmd = new SqlCommand("select photo,price,name from product");
+            msc.Open();
+            cmd.Connection = msc;
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
             {
-                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["X"].Value) == true)
-                {
-                    //copy everything
-                    //DataGridView2.DataSource = DataGridView1.DataSource;
-                }
+                long len = dr.GetBytes(0, 0, null, 0, 0);
+                byte[] array = new byte[System.Convert.ToInt32(len) + 1];
+                dr.GetBytes(0, 0, array, 0, System.Convert.ToInt32(len));
+                PictureBox pic = new PictureBox();
+                pic.Width = 179;
+                pic.Height = 157;
+
+
+                pic.BackgroundImageLayout = ImageLayout.Stretch;
+                MemoryStream ms = new MemoryStream(array);
+                Bitmap bit = new Bitmap(ms);
+                pic.BackgroundImage = bit;
+
+                price = new Label();
+                price.Text = dr["price"].ToString() + "$";
+                price.BackColor = ColorTranslator.FromHtml("#064663");
+                price.TextAlign = ContentAlignment.MiddleCenter;
+                price.Width = 40;
+                price.Height = 15;
+                pic.Controls.Add(price);
+
+                name = new Label();
+                name.Text = dr["name"].ToString();
+                name.BackColor = ColorTranslator.FromHtml("#DFD3C3");
+                name.TextAlign = ContentAlignment.BottomLeft;
+                name.Dock = DockStyle.Bottom;
+                name.Height = 20;
+                name.Font = new Font("Montserrat", 8);
+                pic.Controls.Add(name);
+
+                flowLayoutPanel1.Controls.Add(pic);
             }
+            dr.Close();
+            msc.Close();
+
         }
     }
 }

@@ -39,12 +39,6 @@ namespace Ecommerce_application
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbCatagories = new System.Windows.Forms.ComboBox();
             this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -80,19 +74,21 @@ namespace Ecommerce_application
             // 
             // dgvProducts
             // 
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.select,
-            this.id,
-            this.name,
-            this.price,
-            this.quantity,
-            this.category,
-            this.description});
+            this.select});
             this.dgvProducts.Location = new System.Drawing.Point(12, 51);
             this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvProducts.Size = new System.Drawing.Size(913, 439);
             this.dgvProducts.TabIndex = 33;
             this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
@@ -176,45 +172,12 @@ namespace Ecommerce_application
             // 
             // select
             // 
+            this.select.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.select.HeaderText = "";
             this.select.Name = "select";
-            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.select.Width = 30;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            this.name.Width = 150;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Price";
-            this.price.Name = "price";
-            this.price.Width = 80;
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "Qty";
-            this.quantity.Name = "quantity";
-            this.quantity.Width = 50;
-            // 
-            // category
-            // 
-            this.category.HeaderText = "Category";
-            this.category.Name = "category";
-            // 
-            // description
-            // 
-            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
             // 
             // AdminProducts
             // 
@@ -243,14 +206,8 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.TextBox txtSearch;
         public System.Windows.Forms.Panel pnlProducts;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
         public System.Windows.Forms.DataGridView dgvProducts;
         public System.Windows.Forms.ComboBox cmbCatagories;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
     }
 }
