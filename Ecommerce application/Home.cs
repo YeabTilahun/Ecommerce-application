@@ -47,6 +47,8 @@ namespace Ecommerce_application
         
         private void Home_Load(object sender, EventArgs e)
         {
+            buttonLogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonLogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             // LoadItems();
             //ShowPic();
             //ShowPrice();
@@ -279,12 +281,13 @@ namespace Ecommerce_application
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Home h = new Home();
+           Home h = new Home();
             flowLayoutPanel1.Controls.Clear();
             h.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Controls.Add(h.flowLayoutPanel1);
-            flowLayoutPanel1.Show();
-            flowLayoutPanel1.BringToFront();
+            //flowLayoutPanel1.Controls.Add(h.flowLayoutPanel1);
+            //flowLayoutPanel1.Show();
+            //flowLayoutPanel1.BringToFront();
+            PopulateItem();
         }
 
         private void button3_Click(object sender, EventArgs e)
