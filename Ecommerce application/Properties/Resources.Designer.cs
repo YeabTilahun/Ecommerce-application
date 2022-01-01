@@ -103,9 +103,89 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Adobe_Post_20211212_1430010_86500353574497661 {
+            get {
+                object obj = ResourceManager.GetObject("Adobe_Post_20211212_1430010.86500353574497661", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Adobe_Post_20211212_14300101 {
             get {
                 object obj = ResourceManager.GetObject("Adobe_Post_20211212_14300101", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_107 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 107", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_135 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 135", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_19 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_385 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 385", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_42 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 42", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_49 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 49", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_56 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 56", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +246,26 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap close_tab3 {
             get {
                 object obj = ResourceManager.GetObject("close-tab3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_tab31 {
+            get {
+                object obj = ResourceManager.GetObject("close-tab31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_tab32 {
+            get {
+                object obj = ResourceManager.GetObject("close-tab32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +343,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KKB_03 {
+            get {
+                object obj = ResourceManager.GetObject("KKB-03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout__1_ {
             get {
                 object obj = ResourceManager.GetObject("logout (1)", resourceCulture);
@@ -266,6 +376,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap maximize_24 {
             get {
                 object obj = ResourceManager.GetObject("maximize_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maximize_241 {
+            get {
+                object obj = ResourceManager.GetObject("maximize_241", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -314,19 +434,9 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NoImage {
+        internal static System.Drawing.Bitmap minimize1 {
             get {
-                object obj = ResourceManager.GetObject("NoImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap NoImage1 {
-            get {
-                object obj = ResourceManager.GetObject("NoImage1", resourceCulture);
+                object obj = ResourceManager.GetObject("minimize1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -357,6 +467,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap Restore {
             get {
                 object obj = ResourceManager.GetObject("Restore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restore1 {
+            get {
+                object obj = ResourceManager.GetObject("Restore1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
