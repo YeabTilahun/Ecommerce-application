@@ -373,6 +373,27 @@ namespace Ecommerce_application
             btnCustomers.Width = 150;
             btnTransactions.Width = 150;
             btnAdmins.Width = 150;
+
+            AdminHome adminHome = new AdminHome();
+            pnlCard.Controls.Clear();
+            adminHome.Dock = DockStyle.Fill;
+            pnlCard.Controls.Add(adminHome.pnlHome);
+            pnlCard.Show();
+            pnlCard.BringToFront();
+
+            AdminClass adminClass = new AdminClass();
+            double income = adminClass.GetMonthlyIncome();
+            adminHome.lblIncomeMonth.Text = "$" + income.ToString();
+            income = adminClass.GetYearlyIncome();
+            adminHome.lblIncomeYear.Text = "$" + income.ToString();
+            string[] product = adminClass.GetMonthlySold(0);
+            adminHome.lblName.Text = product[0];
+            adminHome.lblQuantity.Text = product[1];
+            adminHome.lblPrice.Text = "$" + product[2];
+            product = adminClass.GetMonthlySold(-1);
+            adminHome.lblName2.Text = product[0];
+            adminHome.lblQuantity2.Text = product[1];
+            adminHome.lblPrice2.Text = "$" + product[2];
         }
     }
 }
