@@ -197,12 +197,6 @@
       <DependentUpon>AdminCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminDatabase.cs" />
-    <Compile Include="AdminHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminHome.Designer.cs">
-      <DependentUpon>AdminHome.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminMerchants.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,11 +310,11 @@
     <Compile Include="MerchantHome.Designer.cs">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="MerchantProfile.cs">
+    <Compile Include="MerchantProfile1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MerchantProfile.Designer.cs">
-      <DependentUpon>MerchantProfile.cs</DependentUpon>
+    <Compile Include="MerchantProfile1.Designer.cs">
+      <DependentUpon>MerchantProfile1.cs</DependentUpon>
     </Compile>
     <Compile Include="MerchantSell.cs">
       <SubType>Form</SubType>
@@ -432,8 +426,8 @@
     <EmbeddedResource Include="MerchantHome.resx">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MerchantProfile.resx">
-      <DependentUpon>MerchantProfile.cs</DependentUpon>
+    <EmbeddedResource Include="MerchantProfile1.resx">
+      <DependentUpon>MerchantProfile1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MerchantSell.resx">
       <DependentUpon>MerchantSell.cs</DependentUpon>
@@ -533,13 +527,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
-    <None Include="Resources\Asset 483.png" />
-    <None Include="Resources\Group 3421.png" />
-    <None Include="Resources\Asset 162.png" />
-    <None Include="Resources\Group 342.png" />
-    <None Include="Resources\Asset 16.bmp" />
-    <Content Include="Resources\Asset 16.png" />
+    <None Include="Resources\Asset 350.png" />
+    <None Include="Resources\Asset 320.png" />
+    <None Include="Resources\Asset 252.png" />
+    <None Include="Resources\Asset 250.png" />
     <None Include="Resources\Asset 48.png" />
+    <None Include="Resources\white-lines.jpg" />
+    <None Include="Resources\Asset 481.png" />
     <None Include="Resources\outline_person_white_48dp.png" />
     <None Include="Resources\Asset 58.png" />
     <None Include="Resources\Asset 133.png" />

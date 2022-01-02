@@ -16,48 +16,6 @@ namespace Ecommerce_application
             PopulateProducts();
         }
 
-        //WHEN SEARCH BOX TEXT CHANGED CALL SEARCH METHOD 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            search();
-        }
-
-        //FOR SEARCH CALLS THE PROCEDURE AND DOES THE JOB BUT THEIR IS ERORR AFTER WE SEARCH THE DGV CONTENT WILL DISAPEAR
-        void search()
-        {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                con.Open();
-                SqlCommand sqlCmd = new SqlCommand("Exec spSearch @search", con);
-                sqlCmd.Parameters.AddWithValue("@search", textBox1.Text);
-                SqlDataReader reader = sqlCmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                //dataGridView1.DataSource = dt;
-                con.Close();
-            }
-        }
-
-        //SEARCH BOX MOUSE LEAVE SHOW TEXT "search items here"
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "Search items here";
-                textBox1.ForeColor = Color.LightGray;
-            }
-        }
-
-        //SEARCH BOX MOUSE ENTERS HIDE TEXT "search items here"
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "Search items here")
-                textBox1.Text = "";
-            textBox1.ForeColor = Color.Black;
-        }
-
         //load the products image from database
 
         private Label price;
@@ -150,6 +108,11 @@ namespace Ecommerce_application
         }
 
         private void panelBuy_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void picBoxSearch_Click(object sender, EventArgs e)
         {
 
         }

@@ -31,10 +31,6 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantBuy));
             this.panelBuy = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
-            this.panelBuy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBuy
@@ -42,38 +38,12 @@ namespace Ecommerce_application
             this.panelBuy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelBuy.Controls.Add(this.textBox1);
-            this.panelBuy.Controls.Add(this.picBoxSearch);
+            this.panelBuy.BackgroundImage = global::Ecommerce_application.Properties.Resources.white_lines;
             this.panelBuy.Location = new System.Drawing.Point(1, 1);
             this.panelBuy.Name = "panelBuy";
             this.panelBuy.Size = new System.Drawing.Size(932, 620);
             this.panelBuy.TabIndex = 0;
             this.panelBuy.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBuy_Paint);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(729, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 20);
-            this.textBox1.TabIndex = 88;
-            this.textBox1.Text = "Search items here";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
-            // 
-            // picBoxSearch
-            // 
-            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxSearch.BackColor = System.Drawing.Color.SlateBlue;
-            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(897, 11);
-            this.picBoxSearch.Name = "picBoxSearch";
-            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
-            this.picBoxSearch.TabIndex = 89;
-            this.picBoxSearch.TabStop = false;
             // 
             // MerchantBuy
             // 
@@ -87,9 +57,6 @@ namespace Ecommerce_application
             this.Name = "MerchantBuy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ecommerce application";
-            this.panelBuy.ResumeLayout(false);
-            this.panelBuy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,7 +64,5 @@ namespace Ecommerce_application
         #endregion
 
         internal System.Windows.Forms.Panel panelBuy;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox picBoxSearch;
     }
 }
