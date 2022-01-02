@@ -342,7 +342,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProductDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SignInUser.cs" />
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
@@ -523,6 +527,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\Asset 3421.png" />
+    <None Include="Resources\Group 342.png" />
     <None Include="Resources\Asset 162.png" />
     <None Include="Resources\Group 3421.png" />
     <None Include="Resources\Asset 350.png" />

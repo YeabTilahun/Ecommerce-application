@@ -35,7 +35,7 @@ namespace Ecommerce_application
                     LoadItems[] a = new LoadItems[dt.Rows.Count];
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        a[i].Pic = dataGridViewCart.CurrentRow.Cells[i].Value.ToString();
+                       // a[i].Pic = dataGridViewCart.CurrentRow.Cells[i].Value.ToString();
 
                     }
                 }

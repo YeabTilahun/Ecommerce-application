@@ -79,7 +79,7 @@ namespace Ecommerce_application
             this.panelSell.Name = "panelSell";
             this.panelSell.Size = new System.Drawing.Size(935, 619);
             this.panelSell.TabIndex = 1;
-            this.panelSell.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSell_Paint);
+            //this.panelSell.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSell_Paint);
             // 
             // addPhoto
             // 
