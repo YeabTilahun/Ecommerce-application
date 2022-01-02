@@ -159,8 +159,9 @@ namespace Ecommerce_application
             // 
             // logOutToolStripMenuItem
             // 
+            this.logOutToolStripMenuItem.Image = global::Ecommerce_application.Properties.Resources.logout__1_;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
