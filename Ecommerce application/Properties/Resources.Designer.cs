@@ -195,7 +195,17 @@ namespace Ecommerce_application.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Asset_16 {
             get {
-                object obj = ResourceManager.GetObject("Asset 16", resourceCulture);
+                object obj = ResourceManager.GetObject("Asset_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_162 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 162", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +233,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Asset_3851 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 3851", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Asset_42 {
             get {
                 object obj = ResourceManager.GetObject("Asset 42", resourceCulture);
@@ -243,9 +263,29 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Asset_481 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Asset_49 {
             get {
                 object obj = ResourceManager.GetObject("Asset 49", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_491 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 491", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -365,7 +405,17 @@ namespace Ecommerce_application.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Group_342 {
             get {
-                object obj = ResourceManager.GetObject("Group 342", resourceCulture);
+                object obj = ResourceManager.GetObject("Group_342", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_3421 {
+            get {
+                object obj = ResourceManager.GetObject("Group 3421", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -527,6 +577,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap minimize1 {
             get {
                 object obj = ResourceManager.GetObject("minimize1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_person_white_48dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_person_white_48dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
