@@ -121,5 +121,10 @@ namespace Ecommerce_application
                 label3.Location = new Point(31, 252);
             }
         }
+
+        private void panelSell_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
