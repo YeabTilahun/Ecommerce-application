@@ -56,7 +56,7 @@ namespace Ecommerce_application
             // panelSell
             // 
             this.panelSell.BackColor = System.Drawing.Color.White;
-            this.panelSell.BackgroundImage = global::Ecommerce_application.Properties.Resources.white_lines1;
+            //this.panelSell.BackgroundImage = global::Ecommerce_application.Properties.Resources.white_lines1;
             this.panelSell.Controls.Add(this.addPhoto);
             this.panelSell.Controls.Add(this.button4);
             this.panelSell.Controls.Add(this.dateTimePicker1);

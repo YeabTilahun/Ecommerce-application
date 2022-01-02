@@ -51,7 +51,7 @@ namespace Ecommerce_application
             this.panelHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelHome.BackgroundImage = global::Ecommerce_application.Properties.Resources.white_lines1;
+            //this.panelHome.BackgroundImage = global::Ecommerce_application.Properties.Resources.white_lines1;
             this.panelHome.Controls.Add(this.label8);
             this.panelHome.Controls.Add(this.label9);
             this.panelHome.Controls.Add(this.label10);

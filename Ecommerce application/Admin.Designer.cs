@@ -168,7 +168,7 @@ namespace Ecommerce_application
             this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.profileToolStripMenuItem,
             this.logOutToolStripMenuItem});
-            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_3421;
+            //this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_3421;
             this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AccountMenuItem.Name = "AccountMenuItem";
             this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
@@ -196,7 +196,7 @@ namespace Ecommerce_application
             this.btnMaximized.FlatAppearance.BorderSize = 0;
             this.btnMaximized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximized.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximized.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
+            //this.btnMaximized.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
             this.btnMaximized.Location = new System.Drawing.Point(875, 5);
             this.btnMaximized.Name = "btnMaximized";
             this.btnMaximized.Size = new System.Drawing.Size(30, 25);
@@ -212,7 +212,7 @@ namespace Ecommerce_application
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.Image = global::Ecommerce_application.Properties.Resources.minimize;
+            //this.btnMinimize.Image = global::Ecommerce_application.Properties.Resources.minimize;
             this.btnMinimize.Location = new System.Drawing.Point(840, 5);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 25);
@@ -226,7 +226,7 @@ namespace Ecommerce_application
             this.CloseM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CloseM.AutoSize = true;
             this.CloseM.BackColor = System.Drawing.Color.Transparent;
-            this.CloseM.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
+            //this.CloseM.BackgroundImage = global::Ecommerce_application.Properties.Resources.close_tab3;
             this.CloseM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CloseM.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.CloseM.FlatAppearance.BorderSize = 0;
@@ -249,7 +249,7 @@ namespace Ecommerce_application
             this.btnRestore.FlatAppearance.BorderSize = 0;
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestore.Image = global::Ecommerce_application.Properties.Resources.Restore;
+            //this.btnRestore.Image = global::Ecommerce_application.Properties.Resources.Restore;
             this.btnRestore.Location = new System.Drawing.Point(875, 5);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(30, 25);
@@ -263,7 +263,7 @@ namespace Ecommerce_application
             this.pnlSideNav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSideNav.BackColor = System.Drawing.Color.Transparent;
-            this.pnlSideNav.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_133;
+            //this.pnlSideNav.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_133;
             this.pnlSideNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlSideNav.Controls.Add(this.txtSearch);
             this.pnlSideNav.Controls.Add(this.btnLogo);
@@ -294,7 +294,7 @@ namespace Ecommerce_application
             // btnLogo
             // 
             this.btnLogo.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogo.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_19;
+            //this.btnLogo.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_19;
             this.btnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogo.FlatAppearance.BorderSize = 0;
@@ -399,7 +399,7 @@ namespace Ecommerce_application
             this.btnMerchants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMerchants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMerchants.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMerchants.Image = global::Ecommerce_application.Properties.Resources.Asset_162;
+            //this.btnMerchants.Image = global::Ecommerce_application.Properties.Resources.Asset_162;
             this.btnMerchants.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMerchants.Location = new System.Drawing.Point(6, 282);
             this.btnMerchants.Name = "btnMerchants";
@@ -414,7 +414,7 @@ namespace Ecommerce_application
             // btnProducts
             // 
             this.btnProducts.BackColor = System.Drawing.Color.Transparent;
-            this.btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_481;
+            //this.btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_481;
             this.btnProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducts.FlatAppearance.BorderSize = 0;

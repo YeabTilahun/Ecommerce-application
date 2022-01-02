@@ -342,11 +342,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProductDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="SignInUser.cs" />
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
@@ -440,7 +436,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
@@ -527,6 +523,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\Asset 162.png" />
+    <None Include="Resources\Group 3421.png" />
     <None Include="Resources\Asset 350.png" />
     <None Include="Resources\Asset 320.png" />
     <None Include="Resources\Asset 252.png" />

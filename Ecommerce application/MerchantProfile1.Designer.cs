@@ -56,7 +56,7 @@ namespace Ecommerce_application
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Ecommerce_application.Properties.Resources.white_lines;
+            //this.panel1.BackgroundImage = global::Ecommerce_application.Properties.Resources.white_lines;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
@@ -88,7 +88,7 @@ namespace Ecommerce_application
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_492;
+            this.button5.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_491;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -104,7 +104,7 @@ namespace Ecommerce_application
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_492;
+            this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_491;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -121,7 +121,7 @@ namespace Ecommerce_application
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_492;
+            this.button6.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_491;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
