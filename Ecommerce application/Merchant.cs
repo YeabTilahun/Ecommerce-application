@@ -16,7 +16,7 @@ namespace Ecommerce_application
         {
             InitializeComponent();
         }
-       
+
         MerchantSell n = new MerchantSell();
         MerchantHome k = new MerchantHome();
         MerchantCart l = new MerchantCart();
@@ -30,7 +30,7 @@ namespace Ecommerce_application
             panelAdd.Controls.Add(k.panelHome);
             panelAdd.Show();
             panelAdd.BringToFront();
-           
+
             //TO REMOVE HOVER PROPERTY FOR SOME BUTTONS
             button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -43,19 +43,19 @@ namespace Ecommerce_application
         //To show Buy interface we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button6_Click(object sender, EventArgs e)
         {
-                MerchantBuy m = new MerchantBuy();
-                panelAdd.Controls.Clear();
-                m.Dock = DockStyle.Fill;
-                panelAdd.Controls.Add(m.panelBuy);
-                panelAdd.Show();
-                panelAdd.BringToFront();
+            MerchantBuy m = new MerchantBuy();
+            panelAdd.Controls.Clear();
+            m.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(m.panelBuy);
+            panelAdd.Show();
+            panelAdd.BringToFront();
         }
 
         //To show Sell interface we created the object then we added the panel in sell form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button5_Click(object sender, EventArgs e)
         {
-           
-            
+
+
             panelAdd.Controls.Clear();
             n.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(n.panelSell);
@@ -79,7 +79,7 @@ namespace Ecommerce_application
             button9.BackColor = Color.Brown;
         }
 
-       
+
         private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -105,14 +105,14 @@ namespace Ecommerce_application
             }
             if (res == DialogResult.No)
             {
-               
+
             }
-           
+
         }
 
         private void button4_Click_2(object sender, EventArgs e)
         {
-            
+
             panelAdd.Controls.Clear();
             l.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(l.panelCart);
@@ -154,7 +154,7 @@ namespace Ecommerce_application
         private void button10_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-           // button10.Hide();
+            // button10.Hide();
             button11.BringToFront();
         }
 
@@ -197,5 +197,64 @@ namespace Ecommerce_application
         {
 
         }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            MerchantProfile1 a = new MerchantProfile1();
+            panelAdd.Controls.Add(a.panel1);
+        }
+
+        private void profileToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logOutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //change password
+        }
+
+      
+
+        //FOR SEARCH CALLS THE PROCEDURE AND DOES THE JOB BUT THEIR IS ERORR AFTER WE SEARCH THE DGV CONTENT WILL DISAPEAR
+        void search(){
+
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
+                textBox1.Text = "Search items here";
+                textBox1.ForeColor = Color.LightGray;
+        }
+
+        //SEARCH BOX MOUSE ENTERS HIDE TEXT "search items here"
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Search items here")
+                textBox1.Text = "";
+            textBox1.ForeColor = Color.Black;
+        }
+
+        //WHEN SEARCH BOX TEXT CHANGED CALL SEARCH METHOD
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            search();
+        }
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Search items here";
+                textBox1.ForeColor = Color.LightGray;
+            }
+        }
+
     }
 }
