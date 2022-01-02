@@ -287,5 +287,10 @@ namespace Ecommerce_application
             btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
         }
+
+        private void btnProducts_MouseHover(object sender, EventArgs e)
+        {
+
+        }
     }
 }
