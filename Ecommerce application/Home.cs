@@ -122,7 +122,19 @@ namespace Ecommerce_application
         }
 
 
-
+        public DataTable LoadToCart(string name, float price)
+        {
+            string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
+            SqlConnection con = new SqlConnection(constr);
+            SqlDataAdapter da = new SqlDataAdapter("spLoadToCart", con);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@name", name);
+            da.SelectCommand.Parameters.AddWithValue("@price", price);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tblProduct");
+            DataTable dt = ds.Tables["tblProduct"];
+            return dt;
+        }
 
 
         /* try

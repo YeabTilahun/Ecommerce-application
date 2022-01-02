@@ -29,11 +29,13 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +87,11 @@ namespace Ecommerce_application
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // LoadItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,5 +116,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

@@ -34,7 +34,7 @@ namespace Ecommerce_application
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonCart = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.buttonCart);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -104,19 +104,19 @@ namespace Ecommerce_application
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // buttonCart
             // 
-            this.button4.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Ecommerce_application.Properties.Resources.cart__1_;
-            this.button4.Location = new System.Drawing.Point(860, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 37);
-            this.button4.TabIndex = 0;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonCart.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
+            this.buttonCart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCart.FlatAppearance.BorderSize = 0;
+            this.buttonCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCart.Image = global::Ecommerce_application.Properties.Resources.cart__1_;
+            this.buttonCart.Location = new System.Drawing.Point(860, 12);
+            this.buttonCart.Name = "buttonCart";
+            this.buttonCart.Size = new System.Drawing.Size(108, 37);
+            this.buttonCart.TabIndex = 0;
+            this.buttonCart.UseVisualStyleBackColor = true;
+            this.buttonCart.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -225,7 +225,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
@@ -234,5 +233,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button buttonLogo;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.Button buttonCart;
     }
 }
