@@ -110,12 +110,13 @@ namespace Ecommerce_application
             // lblNav
             // 
             this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNav.AutoSize = true;
             this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNav.Location = new System.Drawing.Point(6, 6);
             this.lblNav.Name = "lblNav";
-            this.lblNav.Size = new System.Drawing.Size(197, 22);
+            this.lblNav.Size = new System.Drawing.Size(57, 22);
             this.lblNav.TabIndex = 0;
-            this.lblNav.Text = "Ecommerce Application";
+            this.lblNav.Text = "Home";
             this.lblNav.Click += new System.EventHandler(this.lblNav_Click);
             // 
             // pnlCard
@@ -177,14 +178,14 @@ namespace Ecommerce_application
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.profileToolStripMenuItem.Text = "Your Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -413,7 +414,7 @@ namespace Ecommerce_application
             // btnProducts
             // 
             this.btnProducts.BackColor = System.Drawing.Color.Transparent;
-            this.btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            this.btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_481;
             this.btnProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducts.FlatAppearance.BorderSize = 0;

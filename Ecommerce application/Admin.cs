@@ -55,7 +55,7 @@ namespace Ecommerce_application
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Products";
+            lblNav.Text = "Products";
             AdminProducts adminProducts = new AdminProducts();
             pnlCard.Controls.Clear();
             adminProducts.Dock = DockStyle.Fill;
@@ -81,7 +81,7 @@ namespace Ecommerce_application
 
         private void btnMerchants_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Merchants";
+            lblNav.Text = "Merchants";
             AdminMerchants adminMerchants = new AdminMerchants();
             pnlCard.Controls.Clear();
             adminMerchants.Dock = DockStyle.Fill;
@@ -101,7 +101,7 @@ namespace Ecommerce_application
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Customers";
+            lblNav.Text = "Customers";
             AdminCustomers adminCustomers = new AdminCustomers();
             pnlCard.Controls.Clear();
             adminCustomers.Dock = DockStyle.Fill;
@@ -121,7 +121,7 @@ namespace Ecommerce_application
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Transactions";
+            lblNav.Text = "Transactions";
             AdminTransaction adminTransaction = new AdminTransaction();
             pnlCard.Controls.Clear();
             adminTransaction.Dock = DockStyle.Fill;
@@ -141,7 +141,7 @@ namespace Ecommerce_application
 
         private void btnAdmins_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Admins";
+            lblNav.Text = "Admins";
             AdminAdmins adminAdmins = new AdminAdmins();
             pnlCard.Controls.Clear();
             adminAdmins.Dock = DockStyle.Fill;
