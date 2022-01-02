@@ -96,5 +96,26 @@ namespace Ecommerce_application
             return dt;
         }
 
+        public string[] GetMonthlySold(int month)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            string[] product;
+            product = AdminD.GetMonthlySold(month);
+            return product;
+        }
+
+        public double GetMonthlyIncome()
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            double income = AdminD.GetMonthlyIncome();
+            return income;
+        }
+
+        public double GetYearlyIncome()
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            double income = AdminD.GetYearlyIncome();
+            return income;
+        }
     }
 }
