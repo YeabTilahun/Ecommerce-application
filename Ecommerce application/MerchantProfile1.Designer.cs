@@ -94,7 +94,7 @@ namespace Ecommerce_application
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(523, 438);
+            this.button5.Location = new System.Drawing.Point(535, 465);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(64, 24);
             this.button5.TabIndex = 51;
@@ -110,7 +110,7 @@ namespace Ecommerce_application
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(523, 207);
+            this.button4.Location = new System.Drawing.Point(535, 234);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(64, 24);
             this.button4.TabIndex = 50;
@@ -136,7 +136,7 @@ namespace Ecommerce_application
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(593, 259);
+            this.pictureBox2.Location = new System.Drawing.Point(605, 286);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(250, 203);
             this.pictureBox2.TabIndex = 42;
@@ -144,7 +144,7 @@ namespace Ecommerce_application
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(593, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(605, 59);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(250, 203);
             this.pictureBox1.TabIndex = 41;

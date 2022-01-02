@@ -51,7 +51,8 @@ namespace Ecommerce_application
             this.panelHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            //this.panelHome.BackgroundImage = global::Ecommerce_application.Properties.Resources.white_lines1;
+            this.panelHome.BackgroundImage = global::Ecommerce_application.Properties.Resources.white_lines;
+            this.panelHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelHome.Controls.Add(this.label8);
             this.panelHome.Controls.Add(this.label9);
             this.panelHome.Controls.Add(this.label10);
@@ -62,7 +63,6 @@ namespace Ecommerce_application
             this.panelHome.Name = "panelHome";
             this.panelHome.Size = new System.Drawing.Size(933, 623);
             this.panelHome.TabIndex = 17;
-            this.panelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHome_Paint);
             // 
             // label8
             // 
@@ -139,7 +139,6 @@ namespace Ecommerce_application
             this.label13.Size = new System.Drawing.Size(88, 37);
             this.label13.TabIndex = 6;
             this.label13.Text = "Time";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // MerchantHome
             // 

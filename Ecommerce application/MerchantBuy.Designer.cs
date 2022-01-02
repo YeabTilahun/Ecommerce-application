@@ -30,19 +30,16 @@ namespace Ecommerce_application
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantBuy));
-            this.panelBuy = new System.Windows.Forms.Panel();
+            this.panelBuy = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // panelBuy
             // 
-            this.panelBuy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBuy.AutoScroll = true;
             this.panelBuy.Location = new System.Drawing.Point(1, 1);
             this.panelBuy.Name = "panelBuy";
-            this.panelBuy.Size = new System.Drawing.Size(932, 620);
+            this.panelBuy.Size = new System.Drawing.Size(933, 620);
             this.panelBuy.TabIndex = 0;
-            this.panelBuy.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBuy_Paint);
             // 
             // MerchantBuy
             // 
@@ -62,6 +59,6 @@ namespace Ecommerce_application
 
         #endregion
 
-        internal System.Windows.Forms.Panel panelBuy;
+        internal System.Windows.Forms.FlowLayoutPanel panelBuy;
     }
 }

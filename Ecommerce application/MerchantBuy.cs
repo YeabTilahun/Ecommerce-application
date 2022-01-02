@@ -13,54 +13,13 @@ namespace Ecommerce_application
         public MerchantBuy()
         {
             InitializeComponent();
-            loadProducts();
+            //  loadProducts();
+            PopulateItem();
         }
-
-        //WHEN SEARCH BOX TEXT CHANGED CALL SEARCH METHOD 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            //search();
-        }
-
-        //FOR SEARCH CALLS THE PROCEDURE AND DOES THE JOB BUT THEIR IS ERORR AFTER WE SEARCH THE DGV CONTENT WILL DISAPEAR
-        /*void search()
-        {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                con.Open();
-                SqlCommand sqlCmd = new SqlCommand("Exec spSearch @search", con);
-                sqlCmd.Parameters.AddWithValue("@search", textBox1.Text);
-                SqlDataReader reader = sqlCmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                //dataGridView1.DataSource = dt;
-                con.Close();
-            }
-        }
-
-        //SEARCH BOX MOUSE LEAVE SHOW TEXT "search items here"
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "Search items here";
-                textBox1.ForeColor = Color.LightGray;
-            }
-        }*/
-
-        //SEARCH BOX MOUSE ENTERS HIDE TEXT "search items here"
-        /*private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "Search items here")
-                textBox1.Text = "";
-            textBox1.ForeColor = Color.Black;
-        }*/
 
         //load the products image from database
 
-        private Label price;
+     /*   private Label price;
         private Label name;
         public void loadProducts()
         {
@@ -107,6 +66,48 @@ namespace Ecommerce_application
             dr.Close();
             msc.Close();
 
+        }*/
+
+        public void PopulateItem()
+        {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spLoad_data", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    DataTable dt = ds.Tables["tblProduct"];
+                    LoadItems[] a = new LoadItems[dt.Rows.Count];
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        a[i] = new LoadItems();
+                        /*SqlDataAdapter da1 = new SqlDataAdapter("spLoad_data", con);
+                        da1.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        da1.SelectCommand.Parameters.AddWithValue("@productid", dt.Rows[i]["productid"]);
+                        DataSet ds1 = new DataSet();
+                        da1.Fill(ds1, "tblproduct");
+                        DataTable dt1 = ds1.Tables["tblproduct"];*/
+                        a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                        a[i].Name = dt.Rows[i]["name"].ToString();
+                        a[i].Description = dt.Rows[i]["description"].ToString();
+                        a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
+
+                        if (panelBuy.Controls.Count < 0)
+                            panelBuy.Controls.Clear();
+                        else
+                            panelBuy.Controls.Add(a[i]);
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void panelBuy_Paint(object sender, PaintEventArgs e)
