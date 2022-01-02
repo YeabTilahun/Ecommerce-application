@@ -527,6 +527,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\Asset 162.png" />
+    <None Include="Resources\Group 342.png" />
+    <None Include="Resources\Asset 16.bmp" />
+    <Content Include="Resources\Asset 16.png" />
+    <None Include="Resources\Asset 48.png" />
     <None Include="Resources\outline_person_white_48dp.png" />
     <None Include="Resources\Asset 58.png" />
     <None Include="Resources\Asset 133.png" />
