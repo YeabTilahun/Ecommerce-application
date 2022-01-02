@@ -126,39 +126,55 @@ namespace Ecommerce_application
 
         public DataTable GetAdmin(string name)
         {
-            SqlConnection con = new SqlConnection(constr);
-            SqlDataAdapter da = new SqlDataAdapter("spGetAdmin", con);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            da.SelectCommand.Parameters.AddWithValue("@name", name);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tblAdmin");
-            DataTable dt = ds.Tables["tblAdmin"];
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetAdmin", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@name", name);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblAdmin");
+                dt = ds.Tables["tblAdmin"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return dt;
 
         }
 
         public string[] GetAdminProfile()
         {
-            SqlConnection con = new SqlConnection(constr);
-            SqlDataAdapter da = new SqlDataAdapter("spGetAdminProfile", con);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            da.SelectCommand.Parameters.AddWithValue("@userName", Admin.userName);
-            da.SelectCommand.Parameters.AddWithValue("@password", Admin.password);
-            da.SelectCommand.Parameters.AddWithValue("@role", Admin.role);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tblProfile");
-            DataTable dt = ds.Tables["tblProfile"];
-            string[] profile = new string[dt.Columns.Count];
-            profile[0] = dt.Rows[0]["adminID"].ToString();
-            profile[1] = dt.Rows[0]["fname"].ToString();
-            profile[2] = dt.Rows[0]["lname"].ToString();
-            profile[3] = dt.Rows[0]["phone"].ToString();
-            profile[4] = dt.Rows[0]["birthday"].ToString();
-            profile[5] = dt.Rows[0]["sex"].ToString();
-            profile[6] = dt.Rows[0]["email"].ToString();
-            profile[7] = dt.Rows[0]["userName"].ToString();
-            profile[8] = dt.Rows[0]["password"].ToString();
-            profile[9] = dt.Rows[0]["role"].ToString();
+            string[] profile = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetAdminProfile", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@userName", Admin.userName);
+                da.SelectCommand.Parameters.AddWithValue("@password", Admin.password);
+                da.SelectCommand.Parameters.AddWithValue("@role", Admin.role);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblProfile");
+                DataTable dt = ds.Tables["tblProfile"];
+                profile = new string[dt.Columns.Count];
+                profile[0] = dt.Rows[0]["adminID"].ToString();
+                profile[1] = dt.Rows[0]["fname"].ToString();
+                profile[2] = dt.Rows[0]["lname"].ToString();
+                profile[3] = dt.Rows[0]["phone"].ToString();
+                profile[4] = dt.Rows[0]["birthday"].ToString();
+                profile[5] = dt.Rows[0]["sex"].ToString();
+                profile[6] = dt.Rows[0]["email"].ToString();
+                profile[7] = dt.Rows[0]["userName"].ToString();
+                profile[8] = dt.Rows[0]["password"].ToString();
+                profile[9] = dt.Rows[0]["role"].ToString();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return profile;
         }
 
@@ -201,15 +217,22 @@ namespace Ecommerce_application
 
         public DataTable GetProduct(string name)
         {
-            SqlConnection con = new SqlConnection(constr);
-            SqlDataAdapter da = new SqlDataAdapter("spGetProduct", con);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            da.SelectCommand.Parameters.AddWithValue("@name", name);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tblProduct");
-            DataTable dt = ds.Tables["tblProduct"];
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetProduct", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@name", name);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblProduct");
+                dt = ds.Tables["tblProduct"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return dt;
-
         }
 
         public void DeleteCustomer(string[] id)
@@ -251,13 +274,21 @@ namespace Ecommerce_application
 
         public DataTable GetCustomer(string name)
         {
-            SqlConnection con = new SqlConnection(constr);
-            SqlDataAdapter da = new SqlDataAdapter("spGetCustomer", con);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            da.SelectCommand.Parameters.AddWithValue("@name", name);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tblCustomer");
-            DataTable dt = ds.Tables["tblCustomer"];
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetCustomer", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@name", name);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblCustomer");
+                dt = ds.Tables["tblCustomer"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return dt;
         }
 
@@ -300,55 +331,87 @@ namespace Ecommerce_application
 
         public DataTable GetMerchant(string name)
         {
-            SqlConnection con = new SqlConnection(constr);
-            SqlDataAdapter da = new SqlDataAdapter("spGetMerchant", con);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            da.SelectCommand.Parameters.AddWithValue("@name", name);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tblMerchant");
-            DataTable dt = ds.Tables["tblMerchant"];
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetMerchant", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@name", name);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblMerchant");
+                dt = ds.Tables["tblMerchant"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return dt;
 
         }
 
         public DataTable GetTransaction()
         {
-            SqlConnection con = new SqlConnection(constr);
-            SqlDataAdapter da = new SqlDataAdapter("spGetTransaction", con);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tblTransaction");
-            DataTable dt = ds.Tables["tblTransaction"];
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetTransaction", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblTransaction");
+                dt = ds.Tables["tblTransaction"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return dt;
 
         }
         public string[] GetCategory()
         {
-            SqlConnection con = new SqlConnection(constr);
-            SqlDataAdapter da = new SqlDataAdapter("spGetCategory", con);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tblCategory");
-            DataTable dt = ds.Tables["tblCategory"];
-            string[] category = new string[dt.Rows.Count];
-            DataRow row;
-            for (int i = 0; i < dt.Rows.Count; i++)
+            string[] category = null;
+            try
             {
-                row = dt.Rows[i];
-                category[i] = row["category"].ToString();
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetCategory", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblCategory");
+                DataTable dt = ds.Tables["tblCategory"];
+                category = new string[dt.Rows.Count];
+                DataRow row;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    row = dt.Rows[i];
+                    category[i] = row["category"].ToString();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             return category;
         }
 
         public DataTable GetProductByCategory(string category)
         {
-            SqlConnection con = new SqlConnection(constr);
-            SqlDataAdapter da = new SqlDataAdapter("spGetProductByCategory", con);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            da.SelectCommand.Parameters.AddWithValue("@category", category);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tblProduct");
-            DataTable dt = ds.Tables["tblProduct"];
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetProductByCategory", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@category", category);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblProduct");
+                dt = ds.Tables["tblProduct"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return dt;
 
         }

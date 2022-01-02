@@ -55,18 +55,28 @@ namespace Ecommerce_application
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Products";
+            lblNav.Text = "Products";
             AdminProducts adminProducts = new AdminProducts();
             pnlCard.Controls.Clear();
             adminProducts.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(adminProducts.pnlProducts);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = SystemColors.ScrollBar;
+            btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_481;
+            btnMerchants.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnCustomers.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnTransactions.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnAdmins.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnProducts.Width = 155;
+            btnMerchants.Width = 150;
+            btnCustomers.Width = 150;
+            btnTransactions.Width = 150;
+            btnAdmins.Width = 150;
+            /*btnProducts.BackColor = SystemColors.ScrollBar;
             btnMerchants.BackColor = SystemColors.ControlLight;
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ControlLight;
-            btnAdmins.BackColor = SystemColors.ControlLight;
+            btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetProduct("");
@@ -81,18 +91,28 @@ namespace Ecommerce_application
 
         private void btnMerchants_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Merchants";
+            lblNav.Text = "Merchants";
             AdminMerchants adminMerchants = new AdminMerchants();
             pnlCard.Controls.Clear();
             adminMerchants.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(adminMerchants.pnlMerchant);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = SystemColors.ControlLight;
+            btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnMerchants.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_481;
+            btnCustomers.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnTransactions.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnAdmins.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnProducts.Width = 150;
+            btnMerchants.Width = 155;
+            btnCustomers.Width = 150;
+            btnTransactions.Width = 150;
+            btnAdmins.Width = 150;
+            /*btnProducts.BackColor = SystemColors.ControlLight;
             btnMerchants.BackColor = SystemColors.ScrollBar;
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ControlLight;
-            btnAdmins.BackColor = SystemColors.ControlLight;
+            btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetMerchant("");
@@ -101,18 +121,28 @@ namespace Ecommerce_application
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Customers";
+            lblNav.Text = "Customers";
             AdminCustomers adminCustomers = new AdminCustomers();
             pnlCard.Controls.Clear();
             adminCustomers.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(adminCustomers.pnlCustomer);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = SystemColors.ControlLight;
+            btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnMerchants.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnCustomers.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_481;
+            btnTransactions.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnAdmins.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnProducts.Width = 150;
+            btnMerchants.Width = 150;
+            btnCustomers.Width = 155;
+            btnTransactions.Width = 150;
+            btnAdmins.Width = 150;
+            /*btnProducts.BackColor = SystemColors.ControlLight;
             btnMerchants.BackColor = SystemColors.ControlLight;
             btnCustomers.BackColor = SystemColors.ScrollBar;
             btnTransactions.BackColor = SystemColors.ControlLight;
-            btnAdmins.BackColor = SystemColors.ControlLight;
+            btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetCustomer("");
@@ -121,18 +151,28 @@ namespace Ecommerce_application
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Transactions";
+            lblNav.Text = "Transactions";
             AdminTransaction adminTransaction = new AdminTransaction();
             pnlCard.Controls.Clear();
             adminTransaction.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(adminTransaction.pnlTransaction);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = SystemColors.ControlLight;
+            btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnMerchants.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnCustomers.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnTransactions.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_481;
+            btnAdmins.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnProducts.Width = 150;
+            btnMerchants.Width = 150;
+            btnCustomers.Width = 150;
+            btnTransactions.Width = 155;
+            btnAdmins.Width = 150;
+            /*btnProducts.BackColor = SystemColors.ControlLight;
             btnMerchants.BackColor = SystemColors.ControlLight;
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ScrollBar;
-            btnAdmins.BackColor = SystemColors.ControlLight;
+            btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetTransaction();
@@ -141,18 +181,28 @@ namespace Ecommerce_application
 
         private void btnAdmins_Click(object sender, EventArgs e)
         {
-            //lblNav.Text = "Admins";
+            lblNav.Text = "Admins";
             AdminAdmins adminAdmins = new AdminAdmins();
             pnlCard.Controls.Clear();
             adminAdmins.Dock = DockStyle.Fill;
             pnlCard.Controls.Add(adminAdmins.pnlAdmin);
             pnlCard.Show();
             pnlCard.BringToFront();
-            btnProducts.BackColor = SystemColors.ControlLight;
+            btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnMerchants.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnCustomers.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnTransactions.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnAdmins.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_481;
+            btnProducts.Width = 150;
+            btnMerchants.Width = 150;
+            btnCustomers.Width = 150;
+            btnTransactions.Width = 150;
+            btnAdmins.Width = 155;
+            /*btnProducts.BackColor = SystemColors.ControlLight;
             btnMerchants.BackColor = SystemColors.ControlLight;
             btnCustomers.BackColor = SystemColors.ControlLight;
             btnTransactions.BackColor = SystemColors.ControlLight;
-            btnAdmins.BackColor = SystemColors.ScrollBar;
+            btnAdmins.BackColor = SystemColors.ScrollBar;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetAdmin("");
@@ -281,16 +331,33 @@ namespace Ecommerce_application
             btnAdmins.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             btnAdmins.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            btnProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+
+            AdminHome adminHome = new AdminHome();
+            pnlCard.Controls.Clear();
+            adminHome.Dock = DockStyle.Fill;
+            pnlCard.Controls.Add(adminHome.pnlHome);
+            pnlCard.Show();
+            pnlCard.BringToFront();
         }
 
-        private void btnProducts_MouseHover(object sender, EventArgs e)
+        private void btnLogo_Click(object sender, EventArgs e)
         {
-
+            lblNav.Text = "Home";
+            btnProducts.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnMerchants.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnCustomers.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnTransactions.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnAdmins.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
+            btnProducts.Width = 150;
+            btnMerchants.Width = 150;
+            btnCustomers.Width = 150;
+            btnTransactions.Width = 150;
+            btnAdmins.Width = 150;
         }
     }
 }

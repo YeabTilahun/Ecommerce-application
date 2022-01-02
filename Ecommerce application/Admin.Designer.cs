@@ -31,19 +31,19 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.pblTopNav = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lblNav = new System.Windows.Forms.Label();
-            this.pnlCard = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMaximized = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.CloseM = new System.Windows.Forms.Button();
+            this.lblNav = new System.Windows.Forms.Label();
             this.btnRestore = new System.Windows.Forms.Button();
+            this.pnlCard = new System.Windows.Forms.Panel();
             this.pnlSideNav = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnLogo = new System.Windows.Forms.Button();
@@ -81,57 +81,6 @@ namespace Ecommerce_application
             this.pblTopNav.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pblTopNav_MouseMove);
             this.pblTopNav.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pblTopNav_MouseUp);
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.menuStrip1);
-            this.panel3.Location = new System.Drawing.Point(536, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(38, 34);
-            this.panel3.TabIndex = 35;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AccountMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(38, 32);
-            this.menuStrip1.Stretch = false;
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // lblNav
-            // 
-            this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblNav.AutoSize = true;
-            this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNav.Location = new System.Drawing.Point(6, 6);
-            this.lblNav.Name = "lblNav";
-            this.lblNav.Size = new System.Drawing.Size(57, 22);
-            this.lblNav.TabIndex = 0;
-            this.lblNav.Text = "Home";
-            this.lblNav.Click += new System.EventHandler(this.lblNav_Click);
-            // 
-            // pnlCard
-            // 
-            this.pnlCard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlCard.AutoSize = true;
-            this.pnlCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlCard.Location = new System.Drawing.Point(160, 35);
-            this.pnlCard.Name = "pnlCard";
-            this.pnlCard.Size = new System.Drawing.Size(940, 642);
-            this.pnlCard.TabIndex = 3;
-            this.pnlCard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCard_Paint);
-            // 
             // btnSetting
             // 
             this.btnSetting.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
@@ -160,6 +109,32 @@ namespace Ecommerce_application
             this.btnProfile.Size = new System.Drawing.Size(99, 23);
             this.btnProfile.TabIndex = 36;
             this.btnProfile.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.menuStrip1);
+            this.panel3.Location = new System.Drawing.Point(536, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(38, 34);
+            this.panel3.TabIndex = 35;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AccountMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(38, 32);
+            this.menuStrip1.Stretch = false;
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // AccountMenuItem
             // 
@@ -242,6 +217,18 @@ namespace Ecommerce_application
             this.CloseM.MouseLeave += new System.EventHandler(this.CloseM_MouseLeave);
             this.CloseM.MouseHover += new System.EventHandler(this.CloseM_MouseHover);
             // 
+            // lblNav
+            // 
+            this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNav.AutoSize = true;
+            this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNav.Location = new System.Drawing.Point(6, 6);
+            this.lblNav.Name = "lblNav";
+            this.lblNav.Size = new System.Drawing.Size(57, 22);
+            this.lblNav.TabIndex = 0;
+            this.lblNav.Text = "Home";
+            this.lblNav.Click += new System.EventHandler(this.lblNav_Click);
+            // 
             // btnRestore
             // 
             this.btnRestore.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -257,6 +244,19 @@ namespace Ecommerce_application
             this.btnRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRestore.UseVisualStyleBackColor = false;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // pnlCard
+            // 
+            this.pnlCard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlCard.AutoSize = true;
+            this.pnlCard.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCard.Location = new System.Drawing.Point(160, 35);
+            this.pnlCard.Name = "pnlCard";
+            this.pnlCard.Size = new System.Drawing.Size(940, 642);
+            this.pnlCard.TabIndex = 3;
+            this.pnlCard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCard_Paint);
             // 
             // pnlSideNav
             // 
@@ -304,6 +304,7 @@ namespace Ecommerce_application
             this.btnLogo.Size = new System.Drawing.Size(136, 145);
             this.btnLogo.TabIndex = 7;
             this.btnLogo.UseVisualStyleBackColor = false;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
             // btnCustomers
             // 
@@ -431,7 +432,6 @@ namespace Ecommerce_application
             this.btnProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProducts.UseVisualStyleBackColor = false;
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
-            this.btnProducts.MouseHover += new System.EventHandler(this.btnProducts_MouseHover);
             // 
             // Admin
             // 
