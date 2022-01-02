@@ -89,7 +89,7 @@ namespace Ecommerce_application
             m.Show();
             this.Hide();
             Admin admin = new Admin(textUsername.Text, textPassword.Text, comboBox1.Text);
-            admin.Show();
+            //admin.Show();
 
         }
 

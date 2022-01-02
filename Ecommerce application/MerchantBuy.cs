@@ -108,5 +108,10 @@ namespace Ecommerce_application
             msc.Close();
 
         }
+
+        private void panelBuy_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
