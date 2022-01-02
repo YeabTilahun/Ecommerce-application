@@ -167,7 +167,7 @@ namespace Ecommerce_application
             this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.profileToolStripMenuItem,
             this.logOutToolStripMenuItem});
-            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_342;
+            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_3421;
             this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AccountMenuItem.Name = "AccountMenuItem";
             this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
