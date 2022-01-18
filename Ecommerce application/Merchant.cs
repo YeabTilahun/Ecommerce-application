@@ -13,9 +13,18 @@ namespace Ecommerce_application
 {
     public partial class Merchant : Form
     {
+        public static string name;
+        public Merchant(string userName)
+        {
+            Merchant.name = userName;
+            InitializeComponent();
+            label2.Text = Merchant.name;
+        }
+
+        //To make life easier
         public Merchant()
         {
-            InitializeComponent();
+          
         }
 
         MerchantSell n = new MerchantSell();
@@ -24,6 +33,9 @@ namespace Ecommerce_application
         //To display home page first every time merchat account looged in
         private void Merchant_Load(object sender, EventArgs e)
         {
+            //Disable search box
+            textBox1.Enabled = false;
+
             //Sth. wrong to display merchant home
             panelAdd.Controls.Clear();
             k.Dock = DockStyle.Fill;
@@ -31,19 +43,24 @@ namespace Ecommerce_application
             panelAdd.BringToFront();
             panelAdd.Show();
 
-            //TO REMOVE HOVER PROPERTY FOR SOME BUTTONS
+            //TO REMOVE HOVER PROPERTY FOR SIDE BUTTONS
             button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
         }
 
         //To show Buy interface we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button6_Click(object sender, EventArgs e)
         {
-            MerchantBuy m = new MerchantBuy();
+            //Enable search box
+            textBox1.Enabled = true;
+
+            MerchantBuy m = new MerchantBuy(1);
             panelAdd.Controls.Clear();
             m.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(m.panelBuy);
@@ -55,6 +72,9 @@ namespace Ecommerce_application
         //To show Sell interface we created the object then we added the panel in sell form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button5_Click(object sender, EventArgs e)
         {
+            //Disable search box
+            textBox1.Enabled = false;
+
             panelAdd.Controls.Clear();
             n.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(n.panelSell);
@@ -65,6 +85,9 @@ namespace Ecommerce_application
         //To show Home interface we created the object then we added the panel in home form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button12_Click(object sender, EventArgs e)
         {
+            //Disable search box
+            textBox1.Enabled = false;
+
             panelAdd.Controls.Clear();
             k.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(k.panelHome);
@@ -94,6 +117,9 @@ namespace Ecommerce_application
 
         private void button4_Click_2(object sender, EventArgs e)
         {
+
+            //Disable search box
+            textBox1.Enabled = false;
 
             panelAdd.Controls.Clear();
             l.Dock = DockStyle.Fill;
@@ -178,6 +204,9 @@ namespace Ecommerce_application
         //My profile
         private void profileToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            //Disable search box
+            textBox1.Enabled = false;
+
             MerchantProfile1 a = new MerchantProfile1();
             panelAdd.Controls.Clear();
             panelAdd.Controls.Add(a.panel1);
@@ -188,7 +217,16 @@ namespace Ecommerce_application
 
         private void logOutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            //Disable search box
+            textBox1.Enabled = false;
+
             //change password
+
+            MerchantChangePassword a = new MerchantChangePassword();
+            panelAdd.Controls.Clear();
+            panelAdd.Controls.Add(a.panel1);
+            panelAdd.Show();
+            panelAdd.BringToFront();
         }
 
       
@@ -231,6 +269,19 @@ namespace Ecommerce_application
                 textBox1.Text = "Search items here";
                 textBox1.ForeColor = Color.LightGray;
             }
+        }
+
+        //my product
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Disable search box
+            textBox1.Enabled = false;
+            MerchantBuy m = new MerchantBuy(2);
+            panelAdd.Controls.Clear();
+            m.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(m.panelBuy);
+            panelAdd.Show();
+            panelAdd.BringToFront();
         }
     }
 }

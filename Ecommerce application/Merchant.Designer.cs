@@ -33,14 +33,16 @@ namespace Ecommerce_application
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Merchant));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.panelAdd = new System.Windows.Forms.FlowLayoutPanel();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button13 = new System.Windows.Forms.Button();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -53,7 +55,7 @@ namespace Ecommerce_application
             this.button12 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.panelAdd = new System.Windows.Forms.FlowLayoutPanel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -70,6 +72,7 @@ namespace Ecommerce_application
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.button13);
             this.panel4.Controls.Add(this.lblUserName);
@@ -85,12 +88,22 @@ namespace Ecommerce_application
             this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseMove);
             this.panel4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseUp);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(696, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 15);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "user name";
+            // 
             // panel9
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.Controls.Add(this.menuStrip1);
-            this.panel9.Location = new System.Drawing.Point(641, 4);
+            this.panel9.Location = new System.Drawing.Point(640, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(53, 45);
             this.panel9.TabIndex = 37;
@@ -109,6 +122,22 @@ namespace Ecommerce_application
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(644, 25);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(0, 15);
+            this.lblUserName.TabIndex = 38;
+            // 
+            // panelAdd
+            // 
+            this.panelAdd.Location = new System.Drawing.Point(169, 56);
+            this.panelAdd.Name = "panelAdd";
+            this.panelAdd.Size = new System.Drawing.Size(930, 625);
+            this.panelAdd.TabIndex = 19;
+            // 
             // AccountMenuItem
             // 
             this.AccountMenuItem.AutoSize = false;
@@ -117,7 +146,7 @@ namespace Ecommerce_application
             this.profileToolStripMenuItem,
             this.logOutToolStripMenuItem,
             this.logoutToolStripMenuItem1});
-            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources._430127_profile_user_icon__1_;
+            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_3421;
             this.AccountMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AccountMenuItem.Name = "AccountMenuItem";
@@ -150,26 +179,16 @@ namespace Ecommerce_application
             // 
             // button13
             // 
-            this.button13.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
             this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = global::Ecommerce_application.Properties.Resources.cart__1_;
-            this.button13.Location = new System.Drawing.Point(700, 3);
+            this.button13.Image = global::Ecommerce_application.Properties.Resources.shopping_cart;
+            this.button13.Location = new System.Drawing.Point(768, 0);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(108, 37);
+            this.button13.Size = new System.Drawing.Size(41, 25);
             this.button13.TabIndex = 39;
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(645, 29);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(0, 15);
-            this.lblUserName.TabIndex = 38;
             // 
             // button11
             // 
@@ -234,6 +253,7 @@ namespace Ecommerce_application
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_133;
+            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.button6);
@@ -330,7 +350,7 @@ namespace Ecommerce_application
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(23, 340);
+            this.button4.Location = new System.Drawing.Point(25, 445);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(117, 38);
             this.button4.TabIndex = 4;
@@ -338,12 +358,21 @@ namespace Ecommerce_application
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click_2);
             // 
-            // panelAdd
+            // button3
             // 
-            this.panelAdd.Location = new System.Drawing.Point(169, 56);
-            this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(930, 625);
-            this.panelAdd.TabIndex = 19;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(0, 340);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(168, 35);
+            this.button3.TabIndex = 32;
+            this.button3.Text = "My products";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Merchant
             // 
@@ -403,5 +432,8 @@ namespace Ecommerce_application
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.FlowLayoutPanel panelAdd;
+        private System.Windows.Forms.Label userName;
+        internal System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button3;
     }
 }

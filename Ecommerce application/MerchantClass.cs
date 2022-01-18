@@ -21,13 +21,14 @@ namespace Ecommerce_application
         public string stamp;
         public string exDate;
         public byte[] photo;
+        public string user;
         //creating multiple constractor to make life easy
         public MerchantClass()
         {
 
         }
 
-        public MerchantClass(string name, string price, string quantity, string category, string desc, string date, string stamp, byte[] photo)
+        public MerchantClass(string name, string price, string quantity, string category, string desc, string date, string stamp, byte[] photo,string user)
         {
             this.productName = name;
             this.price = price;
@@ -37,6 +38,7 @@ namespace Ecommerce_application
             this.exDate = date;
             this.stamp = stamp;
             this.photo = photo;
+            this.user = user;
         }
 
         public void Add()
@@ -56,6 +58,14 @@ namespace Ecommerce_application
         {
             MerchantDatabase sell = new MerchantDatabase();
             sell.Delete(id);
+
+        }
+
+        //my product
+        public void Getproduct(string id)
+        {
+            MerchantDatabase sell = new MerchantDatabase();
+           // sell.Getproduct(user);
 
         }
         public DataTable getUser()

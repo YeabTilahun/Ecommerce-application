@@ -15,8 +15,6 @@ namespace Ecommerce_application
         public MerchantProfile1()
         {
             InitializeComponent();
-            button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

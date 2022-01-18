@@ -10,64 +10,76 @@ namespace Ecommerce_application
 {
     public partial class MerchantBuy : Form
     {
-        public MerchantBuy()
+        public MerchantBuy(int i)
         {
             InitializeComponent();
             //  loadProducts();
-            PopulateItem();
+            //PopulateItem();
+            choose(i);
         }
 
         //load the products image from database
 
-     /*   private Label price;
-        private Label name;
-        public void loadProducts()
-        {
-            SqlConnection msc = new SqlConnection("Server=YEABS;   database=Ecommerce; integrated security=true;");
-            SqlCommand cmd = new SqlCommand("select photo,price,name from product");
-            msc.Open();
-            cmd.Connection = msc;
-            SqlDataReader dr = cmd.ExecuteReader();
+        /*   private Label price;
+           private Label name;
+           public void loadProducts()
+           {
+               SqlConnection msc = new SqlConnection("Server=YEABS;   database=Ecommerce; integrated security=true;");
+               SqlCommand cmd = new SqlCommand("select photo,price,name from product");
+               msc.Open();
+               cmd.Connection = msc;
+               SqlDataReader dr = cmd.ExecuteReader();
 
-            while (dr.Read())
+               while (dr.Read())
+               {
+                   long len = dr.GetBytes(0, 0, null, 0, 0);
+                   byte[] array = new byte[System.Convert.ToInt32(len) + 1];
+                   dr.GetBytes(0, 0, array, 0, System.Convert.ToInt32(len));
+                   PictureBox pic = new PictureBox();
+                   pic.Width = 179;
+                   pic.Height = 157;
+
+
+                   pic.BackgroundImageLayout = ImageLayout.Stretch;
+                   MemoryStream ms = new MemoryStream(array);
+                   Bitmap bit = new Bitmap(ms);
+                   pic.BackgroundImage = bit;
+
+                   price = new Label();
+                   price.Text = dr["price"].ToString() + "$";
+                   price.BackColor = ColorTranslator.FromHtml("#064663");
+                   price.TextAlign = ContentAlignment.MiddleCenter;
+                   price.Width = 40;
+                   price.Height = 15;
+                   pic.Controls.Add(price);
+
+                   name = new Label();
+                   name.Text = dr["name"].ToString();
+                   name.BackColor = ColorTranslator.FromHtml("#DFD3C3");
+                   name.TextAlign = ContentAlignment.BottomLeft;
+                   name.Dock = DockStyle.Bottom;
+                   name.Height = 20;
+                   name.Font = new Font("Montserrat", 8);
+                   pic.Controls.Add(name);
+
+                   //flowLayoutPanel1.Controls.Add(pic);
+               }
+               dr.Close();
+               msc.Close();
+
+           }*/
+        public void choose(int i) {
+            if (i == 1)
             {
-                long len = dr.GetBytes(0, 0, null, 0, 0);
-                byte[] array = new byte[System.Convert.ToInt32(len) + 1];
-                dr.GetBytes(0, 0, array, 0, System.Convert.ToInt32(len));
-                PictureBox pic = new PictureBox();
-                pic.Width = 179;
-                pic.Height = 157;
-
-
-                pic.BackgroundImageLayout = ImageLayout.Stretch;
-                MemoryStream ms = new MemoryStream(array);
-                Bitmap bit = new Bitmap(ms);
-                pic.BackgroundImage = bit;
-
-                price = new Label();
-                price.Text = dr["price"].ToString() + "$";
-                price.BackColor = ColorTranslator.FromHtml("#064663");
-                price.TextAlign = ContentAlignment.MiddleCenter;
-                price.Width = 40;
-                price.Height = 15;
-                pic.Controls.Add(price);
-
-                name = new Label();
-                name.Text = dr["name"].ToString();
-                name.BackColor = ColorTranslator.FromHtml("#DFD3C3");
-                name.TextAlign = ContentAlignment.BottomLeft;
-                name.Dock = DockStyle.Bottom;
-                name.Height = 20;
-                name.Font = new Font("Montserrat", 8);
-                pic.Controls.Add(name);
-
-                //flowLayoutPanel1.Controls.Add(pic);
+                PopulateItem();
             }
-            dr.Close();
-            msc.Close();
+            if (i == 2)
+            {
+                Getproduct(Merchant.name);
+            }
 
-        }*/
 
+        }
         public void PopulateItem()
         {
             string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
@@ -109,8 +121,59 @@ namespace Ecommerce_application
                 MessageBox.Show(ex.Message);
             }
         }
+        string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+        public void Getproduct(String user)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    panelBuy.Controls.Clear();
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetMyProduct", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@name", user);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    DataTable dt = ds.Tables["tblProduct"];
+                    if (dt != null)
+                    {
+                        LoadItems[] a = new LoadItems[dt.Rows.Count];
+                      //  MessageBox.Show("yes");
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            a[i] = new LoadItems();
+                            a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                            a[i].Name = dt.Rows[i]["name"].ToString();
+                            a[i].Description = dt.Rows[i]["description"].ToString();
+                            a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
 
-        private void panelBuy_Paint(object sender, PaintEventArgs e)
+                           if (panelBuy.Controls.Count < 0)
+                              panelBuy.Controls.Clear();
+                           else
+                                panelBuy.Controls.Add(a[i]);
+
+                        }
+                    }
+                    else
+                    {
+                       /* Label show = new Label();
+                        show.Text = "You don't have any added products.";
+                        show.ForeColor = Color.DarkGray;
+                        show.Size = new Size(120, 25);
+                        panelBuy.Controls.Add(show);*/
+                        MessageBox.Show("Nope");
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void panelBuy_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

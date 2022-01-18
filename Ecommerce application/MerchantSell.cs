@@ -43,6 +43,8 @@ namespace Ecommerce_application
         //ADD PRODUCTS TO THE DATABASE
         private void button3_Click(object sender, EventArgs e)
         {
+            //accessing merchant to send the user name to database
+            string userName=Merchant.name;
             //TAKE THE DATE FROM THE PICKER
             string expDate = dateTimePicker1.Value.ToString("dd/MM/yyyy");
             //FOR DATE STAMP
@@ -57,7 +59,7 @@ namespace Ecommerce_application
                 ms.SetLength(0);
 
                 //TRANSFERING THE DATA TO LAYER 2 (MERCHANTCLASS) FROM THE FEILDS
-                MerchantClass sell = new MerchantClass(textBox5.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text, expDate, now, photo);
+                MerchantClass sell = new MerchantClass(textBox5.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text, expDate, now, photo, userName);
                 sell.Add();
 
                 //AFTER PRODUCT ADDED SUCESSFULLY THE FIELDS WILL BE CLEARD

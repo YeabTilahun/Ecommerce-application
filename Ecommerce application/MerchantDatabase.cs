@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Ecommerce_application
 {
@@ -17,8 +18,6 @@ namespace Ecommerce_application
 
         }
         string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-        //giving productID by ourselves  BUT MID WILL BE UPDATED!!
-        static  int mid = 1, pid = 1;
         public void AddProduct(MerchantClass sell)
         {
             try
@@ -36,13 +35,12 @@ namespace Ecommerce_application
                     cmd.Parameters.AddWithValue("@expireDate", sell.exDate);
                     cmd.Parameters.AddWithValue("@DateStamp", sell.stamp);
                     cmd.Parameters.AddWithValue("@Photo", sell.photo);
+                    cmd.Parameters.AddWithValue("@merchantName", sell.user);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
                     {
                         MessageBox.Show("New product added sucessfully");
-                        mid++;
-                        pid++;
                     }
                     else
                         MessageBox.Show("Adding product failed! Try again.");
@@ -81,6 +79,55 @@ namespace Ecommerce_application
             }
 
         }
+
+ /*       public void Getproduct(String user)
+        {
+            MyProduct c = new MyProduct();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetProduct", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@name", user);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    DataTable dt = ds.Tables["tblProduct"];
+                    if (dt != null)
+                    {
+                        LoadItems[] a = new LoadItems[dt.Rows.Count];
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            a[i] = new LoadItems();
+                            a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                            a[i].Name = dt.Rows[i]["name"].ToString();
+                            a[i].Description = dt.Rows[i]["description"].ToString();
+                            a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
+
+                            if (c.flowLayoutPanel1.Controls.Count < 0)
+                                c.flowLayoutPanel1.Controls.Clear();
+                            else
+                                c.flowLayoutPanel1.Controls.Add(a[i]);
+
+                        }
+                    }
+                    else
+                    {
+                        Label show = new Label();
+                        show.Text = "You don't have any added products.";
+                        show.ForeColor = Color.DarkGray;
+                        show.Size = new Size(120, 25);
+                        c.flowLayoutPanel1.Controls.Add(show);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }*/
 
         public void UpdateProduct(MerchantClass sell)
         {

@@ -85,7 +85,8 @@ namespace Ecommerce_application
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text, comboBox1.Text);
             s.saveUser();
             //merchant
-            Merchant m = new Merchant();
+            //if it is merchant user
+            Merchant m = new Merchant(textUsername.Text);
             m.Show();
             this.Hide();
             Admin admin = new Admin(textUsername.Text, textPassword.Text, comboBox1.Text);

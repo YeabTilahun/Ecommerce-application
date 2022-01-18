@@ -309,6 +309,12 @@
     <Compile Include="MerchantCart.Designer.cs">
       <DependentUpon>MerchantCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="MerchantChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MerchantChangePassword.Designer.cs">
+      <DependentUpon>MerchantChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="MerchantDatabase.cs" />
     <Compile Include="MerchantHome.cs">
       <SubType>Form</SubType>
@@ -432,6 +438,9 @@
     <EmbeddedResource Include="MerchantCart.resx">
       <DependentUpon>MerchantCart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MerchantChangePassword.resx">
+      <DependentUpon>MerchantChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MerchantHome.resx">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,6 +545,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\shopping-cart.png" />
+    <None Include="Resources\Asset 43.png" />
     <None Include="Resources\Rectangle 7381.png" />
     <None Include="Resources\Rectangle 738.png" />
     <None Include="Resources\Asset 483.png" />
