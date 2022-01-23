@@ -31,48 +31,43 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantProfile1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.profileImage = new System.Windows.Forms.PictureBox();
+            this.birthdayBox = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.phoneBox = new System.Windows.Forms.TextBox();
+            this.usernameBox = new System.Windows.Forms.TextBox();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.lnameBox = new System.Windows.Forms.TextBox();
+            this.fnameBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profileImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.profileImage);
+            this.panel1.Controls.Add(this.birthdayBox);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.phoneBox);
+            this.panel1.Controls.Add(this.usernameBox);
+            this.panel1.Controls.Add(this.emailBox);
+            this.panel1.Controls.Add(this.lnameBox);
+            this.panel1.Controls.Add(this.fnameBox);
             this.panel1.Location = new System.Drawing.Point(-4, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(937, 624);
@@ -81,22 +76,6 @@ namespace Ecommerce_application
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseUp);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(535, 432);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(64, 24);
-            this.button5.TabIndex = 51;
-            this.button5.Text = "Change";
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -107,7 +86,7 @@ namespace Ecommerce_application
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(535, 201);
+            this.button4.Location = new System.Drawing.Point(524, 275);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(64, 24);
             this.button4.TabIndex = 50;
@@ -130,29 +109,23 @@ namespace Ecommerce_application
             this.button6.TabIndex = 49;
             this.button6.Text = "Save";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // pictureBox2
+            // profileImage
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(605, 253);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(250, 203);
-            this.pictureBox2.TabIndex = 42;
-            this.pictureBox2.TabStop = false;
+            this.profileImage.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.profileImage.Location = new System.Drawing.Point(619, 53);
+            this.profileImage.Name = "profileImage";
+            this.profileImage.Size = new System.Drawing.Size(272, 246);
+            this.profileImage.TabIndex = 41;
+            this.profileImage.TabStop = false;
             // 
-            // pictureBox1
+            // birthdayBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(605, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 203);
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(180, 165);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
-            this.dateTimePicker1.TabIndex = 39;
+            this.birthdayBox.Location = new System.Drawing.Point(180, 165);
+            this.birthdayBox.Name = "birthdayBox";
+            this.birthdayBox.Size = new System.Drawing.Size(181, 20);
+            this.birthdayBox.TabIndex = 39;
             // 
             // label6
             // 
@@ -226,40 +199,40 @@ namespace Ecommerce_application
             this.label1.TabIndex = 33;
             this.label1.Text = "First Name";
             // 
-            // textBox5
+            // phoneBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(180, 337);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(185, 20);
-            this.textBox5.TabIndex = 32;
+            this.phoneBox.Location = new System.Drawing.Point(180, 337);
+            this.phoneBox.Name = "phoneBox";
+            this.phoneBox.Size = new System.Drawing.Size(185, 20);
+            this.phoneBox.TabIndex = 32;
             // 
-            // textBox4
+            // usernameBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(180, 279);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(185, 20);
-            this.textBox4.TabIndex = 31;
+            this.usernameBox.Location = new System.Drawing.Point(180, 279);
+            this.usernameBox.Name = "usernameBox";
+            this.usernameBox.Size = new System.Drawing.Size(185, 20);
+            this.usernameBox.TabIndex = 31;
             // 
-            // textBox3
+            // emailBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(180, 226);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 20);
-            this.textBox3.TabIndex = 30;
+            this.emailBox.Location = new System.Drawing.Point(180, 226);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(185, 20);
+            this.emailBox.TabIndex = 30;
             // 
-            // textBox2
+            // lnameBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(176, 107);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 20);
-            this.textBox2.TabIndex = 29;
+            this.lnameBox.Location = new System.Drawing.Point(176, 107);
+            this.lnameBox.Name = "lnameBox";
+            this.lnameBox.Size = new System.Drawing.Size(185, 20);
+            this.lnameBox.TabIndex = 29;
             // 
-            // textBox1
+            // fnameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 28;
+            this.fnameBox.Location = new System.Drawing.Point(176, 53);
+            this.fnameBox.Name = "fnameBox";
+            this.fnameBox.Size = new System.Drawing.Size(185, 20);
+            this.fnameBox.TabIndex = 28;
             // 
             // MerchantProfile1
             // 
@@ -274,8 +247,7 @@ namespace Ecommerce_application
             this.Text = "MerchantProfile1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profileImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,22 +255,20 @@ namespace Ecommerce_application
         #endregion
 
         internal System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        internal System.Windows.Forms.DateTimePicker birthdayBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        internal System.Windows.Forms.TextBox phoneBox;
+        internal System.Windows.Forms.TextBox usernameBox;
+        internal System.Windows.Forms.TextBox emailBox;
+        internal System.Windows.Forms.TextBox lnameBox;
+        internal System.Windows.Forms.TextBox fnameBox;
+        internal System.Windows.Forms.PictureBox profileImage;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
     }
 }

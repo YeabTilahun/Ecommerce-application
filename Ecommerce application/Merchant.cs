@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,9 @@ namespace Ecommerce_application
             //Disable search box
             textBox1.Enabled = false;
 
+            //load information about the user
+            loadMyProfile();
+
             //Sth. wrong to display merchant home
             panelAdd.Controls.Clear();
             k.Dock = DockStyle.Fill;
@@ -52,6 +56,41 @@ namespace Ecommerce_application
             button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+        }
+
+        //Fetch information about merchant from database and assign it to my profile page
+
+        public void loadMyProfile()
+        {
+            MerchantProfile1 m = new MerchantProfile1();
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Select fname,lname,birthday,email,userName,photo from merchant where merchantName=@user", con);
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
+                    SqlDataReader da = cmd.ExecuteReader();
+                    while (da.Read())
+                    {
+                        m.fnameBox.Text = da.GetValue(0).ToString();
+                        m.lnameBox.Text = da.GetValue(1).ToString();
+                        m.birthdayBox.Value = Convert.ToDateTime(da.GetValue(2).ToString());
+                        m.emailBox.Text = da.GetValue(3).ToString();
+                        m.usernameBox.Text = da.GetValue(4).ToString();
+
+                        byte[] photo = (byte[])da.GetValue(5);
+                        MemoryStream ms = new MemoryStream(photo);
+                        m.profileImage.Image = Image.FromStream(ms);
+                    }
+                    con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //To show Buy interface we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal

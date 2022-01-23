@@ -32,9 +32,9 @@ namespace Ecommerce_application
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantChangePassword));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ConfirmPassword = new System.Windows.Forms.TextBox();
+            this.NewTextbox = new System.Windows.Forms.TextBox();
+            this.oldTextbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,10 +43,11 @@ namespace Ecommerce_application
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.ConfirmPassword);
+            this.panel1.Controls.Add(this.NewTextbox);
+            this.panel1.Controls.Add(this.oldTextbox);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -72,26 +73,29 @@ namespace Ecommerce_application
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox3
+            // ConfirmPassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(201, 214);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(165, 20);
-            this.textBox3.TabIndex = 5;
+            this.ConfirmPassword.Location = new System.Drawing.Point(201, 214);
+            this.ConfirmPassword.Name = "ConfirmPassword";
+            this.ConfirmPassword.PasswordChar = '*';
+            this.ConfirmPassword.Size = new System.Drawing.Size(165, 20);
+            this.ConfirmPassword.TabIndex = 5;
             // 
-            // textBox2
+            // NewTextbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(201, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(165, 20);
-            this.textBox2.TabIndex = 4;
+            this.NewTextbox.Location = new System.Drawing.Point(201, 147);
+            this.NewTextbox.Name = "NewTextbox";
+            this.NewTextbox.PasswordChar = '*';
+            this.NewTextbox.Size = new System.Drawing.Size(165, 20);
+            this.NewTextbox.TabIndex = 4;
             // 
-            // textBox1
+            // oldTextbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 3;
+            this.oldTextbox.Location = new System.Drawing.Point(201, 85);
+            this.oldTextbox.Name = "oldTextbox";
+            this.oldTextbox.PasswordChar = '*';
+            this.oldTextbox.Size = new System.Drawing.Size(165, 20);
+            this.oldTextbox.TabIndex = 3;
             // 
             // label3
             // 
@@ -142,9 +146,9 @@ namespace Ecommerce_application
         #endregion
 
         internal System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ConfirmPassword;
+        private System.Windows.Forms.TextBox NewTextbox;
+        private System.Windows.Forms.TextBox oldTextbox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
