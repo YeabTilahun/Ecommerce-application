@@ -42,7 +42,9 @@ namespace Ecommerce_application
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(184, 65);
+            this.labelDescription.BackColor = System.Drawing.Color.Black;
+            this.labelDescription.ForeColor = System.Drawing.Color.White;
+            this.labelDescription.Location = new System.Drawing.Point(4, 118);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(63, 13);
             this.labelDescription.TabIndex = 1;
@@ -73,9 +75,11 @@ namespace Ecommerce_application
             // labelName
             // 
             this.labelName.AutoSize = true;
+            this.labelName.BackColor = System.Drawing.Color.Tan;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.Location = new System.Drawing.Point(4, 185);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(35, 13);
+            this.labelName.Size = new System.Drawing.Size(41, 15);
             this.labelName.TabIndex = 3;
             this.labelName.Text = "Name";
             // 

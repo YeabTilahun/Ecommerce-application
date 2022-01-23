@@ -72,10 +72,10 @@ namespace Ecommerce_application
         {
             
         }
-
+  
         private void button1_Click(object sender, EventArgs e)
         {
-             DataTable LoadToCart(string name, float price)
+            DataTable LoadToCart(string name, float price)
             {
                 string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
                 SqlConnection con = new SqlConnection(constr);
@@ -88,7 +88,6 @@ namespace Ecommerce_application
                 DataTable dt = ds.Tables["tblProduct"];
                 return dt;
             }
-
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)

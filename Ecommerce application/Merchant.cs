@@ -21,7 +21,6 @@ namespace Ecommerce_application
             InitializeComponent();
             label2.Text = Merchant.name;
         }
-
         //To make life easier
         public Merchant()
         {
@@ -62,6 +61,11 @@ namespace Ecommerce_application
 
             button3.FlatAppearance.MouseOverBackColor =Color.Transparent;
             button3.FlatAppearance.MouseDownBackColor =Color.Transparent;
+        }
+
+        public void count(int count)
+        {
+           
         }
 
         //check if the user is allowed to sell products
