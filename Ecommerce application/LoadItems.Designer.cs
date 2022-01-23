@@ -42,11 +42,12 @@ namespace Ecommerce_application
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(4, 157);
+            this.labelDescription.Location = new System.Drawing.Point(184, 65);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(63, 13);
             this.labelDescription.TabIndex = 1;
             this.labelDescription.Text = "Description:";
+            this.labelDescription.Visible = false;
             this.labelDescription.MouseEnter += new System.EventHandler(this.labelDescription_MouseEnter);
             this.labelDescription.MouseLeave += new System.EventHandler(this.labelDescription_MouseLeave);
             // 
@@ -61,7 +62,7 @@ namespace Ecommerce_application
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(103, 185);
+            this.button1.Location = new System.Drawing.Point(221, 180);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -72,7 +73,7 @@ namespace Ecommerce_application
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(124, 156);
+            this.labelName.Location = new System.Drawing.Point(4, 185);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(35, 13);
             this.labelName.TabIndex = 3;
@@ -86,6 +87,8 @@ namespace Ecommerce_application
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // notifyIcon1
             // 

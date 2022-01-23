@@ -68,7 +68,7 @@ namespace Ecommerce_application
             this.button4.Location = new System.Drawing.Point(570, 312);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(71, 28);
-            this.button4.TabIndex = 51;
+            this.button4.TabIndex = 4;
             this.button4.Text = "Save";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -79,7 +79,7 @@ namespace Ecommerce_application
             this.ConfirmPassword.Name = "ConfirmPassword";
             this.ConfirmPassword.PasswordChar = '*';
             this.ConfirmPassword.Size = new System.Drawing.Size(165, 20);
-            this.ConfirmPassword.TabIndex = 5;
+            this.ConfirmPassword.TabIndex = 3;
             // 
             // NewTextbox
             // 
@@ -87,7 +87,7 @@ namespace Ecommerce_application
             this.NewTextbox.Name = "NewTextbox";
             this.NewTextbox.PasswordChar = '*';
             this.NewTextbox.Size = new System.Drawing.Size(165, 20);
-            this.NewTextbox.TabIndex = 4;
+            this.NewTextbox.TabIndex = 2;
             // 
             // oldTextbox
             // 
@@ -95,7 +95,7 @@ namespace Ecommerce_application
             this.oldTextbox.Name = "oldTextbox";
             this.oldTextbox.PasswordChar = '*';
             this.oldTextbox.Size = new System.Drawing.Size(165, 20);
-            this.oldTextbox.TabIndex = 3;
+            this.oldTextbox.TabIndex = 1;
             // 
             // label3
             // 

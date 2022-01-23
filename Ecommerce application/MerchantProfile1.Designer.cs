@@ -89,7 +89,7 @@ namespace Ecommerce_application
             this.button4.Location = new System.Drawing.Point(524, 275);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(64, 24);
-            this.button4.TabIndex = 50;
+            this.button4.TabIndex = 7;
             this.button4.Text = "Change";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -106,7 +106,7 @@ namespace Ecommerce_application
             this.button6.Location = new System.Drawing.Point(34, 588);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(72, 24);
-            this.button6.TabIndex = 49;
+            this.button6.TabIndex = 8;
             this.button6.Text = "Save";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -125,7 +125,7 @@ namespace Ecommerce_application
             this.birthdayBox.Location = new System.Drawing.Point(180, 165);
             this.birthdayBox.Name = "birthdayBox";
             this.birthdayBox.Size = new System.Drawing.Size(181, 20);
-            this.birthdayBox.TabIndex = 39;
+            this.birthdayBox.TabIndex = 3;
             // 
             // label6
             // 
@@ -204,35 +204,35 @@ namespace Ecommerce_application
             this.phoneBox.Location = new System.Drawing.Point(180, 337);
             this.phoneBox.Name = "phoneBox";
             this.phoneBox.Size = new System.Drawing.Size(185, 20);
-            this.phoneBox.TabIndex = 32;
+            this.phoneBox.TabIndex = 6;
             // 
             // usernameBox
             // 
             this.usernameBox.Location = new System.Drawing.Point(180, 279);
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(185, 20);
-            this.usernameBox.TabIndex = 31;
+            this.usernameBox.TabIndex = 5;
             // 
             // emailBox
             // 
             this.emailBox.Location = new System.Drawing.Point(180, 226);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(185, 20);
-            this.emailBox.TabIndex = 30;
+            this.emailBox.TabIndex = 4;
             // 
             // lnameBox
             // 
             this.lnameBox.Location = new System.Drawing.Point(176, 107);
             this.lnameBox.Name = "lnameBox";
             this.lnameBox.Size = new System.Drawing.Size(185, 20);
-            this.lnameBox.TabIndex = 29;
+            this.lnameBox.TabIndex = 2;
             // 
             // fnameBox
             // 
             this.fnameBox.Location = new System.Drawing.Point(176, 53);
             this.fnameBox.Name = "fnameBox";
             this.fnameBox.Size = new System.Drawing.Size(185, 20);
-            this.fnameBox.TabIndex = 28;
+            this.fnameBox.TabIndex = 1;
             // 
             // MerchantProfile1
             // 

@@ -13,61 +13,9 @@ namespace Ecommerce_application
         public MerchantBuy(int i)
         {
             InitializeComponent();
-            //  loadProducts();
-            //PopulateItem();
             choose(i);
         }
 
-        //load the products image from database
-
-        /*   private Label price;
-           private Label name;
-           public void loadProducts()
-           {
-               SqlConnection msc = new SqlConnection("Server=YEABS;   database=Ecommerce; integrated security=true;");
-               SqlCommand cmd = new SqlCommand("select photo,price,name from product");
-               msc.Open();
-               cmd.Connection = msc;
-               SqlDataReader dr = cmd.ExecuteReader();
-
-               while (dr.Read())
-               {
-                   long len = dr.GetBytes(0, 0, null, 0, 0);
-                   byte[] array = new byte[System.Convert.ToInt32(len) + 1];
-                   dr.GetBytes(0, 0, array, 0, System.Convert.ToInt32(len));
-                   PictureBox pic = new PictureBox();
-                   pic.Width = 179;
-                   pic.Height = 157;
-
-
-                   pic.BackgroundImageLayout = ImageLayout.Stretch;
-                   MemoryStream ms = new MemoryStream(array);
-                   Bitmap bit = new Bitmap(ms);
-                   pic.BackgroundImage = bit;
-
-                   price = new Label();
-                   price.Text = dr["price"].ToString() + "$";
-                   price.BackColor = ColorTranslator.FromHtml("#064663");
-                   price.TextAlign = ContentAlignment.MiddleCenter;
-                   price.Width = 40;
-                   price.Height = 15;
-                   pic.Controls.Add(price);
-
-                   name = new Label();
-                   name.Text = dr["name"].ToString();
-                   name.BackColor = ColorTranslator.FromHtml("#DFD3C3");
-                   name.TextAlign = ContentAlignment.BottomLeft;
-                   name.Dock = DockStyle.Bottom;
-                   name.Height = 20;
-                   name.Font = new Font("Montserrat", 8);
-                   pic.Controls.Add(name);
-
-                   //flowLayoutPanel1.Controls.Add(pic);
-               }
-               dr.Close();
-               msc.Close();
-
-           }*/
         public void choose(int i) {
             if (i == 1)
             {
@@ -170,11 +118,6 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void panelBuy_Paint_1(object sender, PaintEventArgs e)
-        {
 
         }
     }

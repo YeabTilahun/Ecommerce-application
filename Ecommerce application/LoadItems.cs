@@ -90,5 +90,15 @@ namespace Ecommerce_application
             }
 
         }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            labelDescription.Visible = false;
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            labelDescription.Visible = true;
+        }
     }
 }
