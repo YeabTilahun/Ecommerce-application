@@ -64,6 +64,7 @@
             this.pnlHome.Controls.Add(this.panel4);
             this.pnlHome.Controls.Add(this.panel3);
             this.pnlHome.Controls.Add(this.panel2);
+            this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHome.Location = new System.Drawing.Point(0, 0);
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(940, 642);
@@ -71,6 +72,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_7381;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.lblIncomeMonth);
@@ -103,6 +105,7 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.Controls.Add(this.lblPrice2);
             this.panel4.Controls.Add(this.lblQuantity2);
@@ -178,6 +181,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.Controls.Add(this.lblPrice);
             this.panel3.Controls.Add(this.lblQuantity);
@@ -254,6 +258,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_7381;
             this.panel2.Controls.Add(this.lblIncomeYear);
             this.panel2.Controls.Add(this.label1);

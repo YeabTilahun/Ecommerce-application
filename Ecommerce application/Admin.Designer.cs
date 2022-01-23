@@ -83,6 +83,7 @@ namespace Ecommerce_application
             // 
             // btnSetting
             // 
+            this.btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSetting.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
             this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -98,6 +99,7 @@ namespace Ecommerce_application
             // 
             // btnProfile
             // 
+            this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProfile.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
             this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -109,6 +111,7 @@ namespace Ecommerce_application
             this.btnProfile.Size = new System.Drawing.Size(99, 23);
             this.btnProfile.TabIndex = 36;
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // panel3
             // 
@@ -161,7 +164,7 @@ namespace Ecommerce_application
             // 
             this.logOutToolStripMenuItem.Image = global::Ecommerce_application.Properties.Resources.logout__1_;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
