@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,6 @@ namespace Ecommerce_application
             InitializeComponent();
             label2.Text = Merchant.name;
         }
-
         //To make life easier
         public Merchant()
         {
@@ -36,6 +36,12 @@ namespace Ecommerce_application
             //Disable search box
             textBox1.Enabled = false;
 
+            //load information about the user
+            loadMyProfile();
+
+            //check if the user is allowed to sell products
+            check();
+
             //Sth. wrong to display merchant home
             panelAdd.Controls.Clear();
             k.Dock = DockStyle.Fill;
@@ -44,14 +50,95 @@ namespace Ecommerce_application
             panelAdd.Show();
 
             //TO REMOVE HOVER PROPERTY FOR SIDE BUTTONS
-            button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            button6.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button6.FlatAppearance.MouseDownBackColor = Color.Transparent;
+
+            button12.FlatAppearance.MouseOverBackColor =Color.Transparent;
+            button12.FlatAppearance.MouseDownBackColor =Color.Transparent;
+
+            button5.FlatAppearance.MouseOverBackColor =Color.Transparent;
+            button5.FlatAppearance.MouseDownBackColor =Color.Transparent;
+
+            button3.FlatAppearance.MouseOverBackColor =Color.Transparent;
+            button3.FlatAppearance.MouseDownBackColor =Color.Transparent;
+        }
+
+        public void count(int count)
+        {
+           
+        }
+
+        //check if the user is allowed to sell products
+        public void check()
+        {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Select status from merchant where merchantName=@user", con);
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
+                    SqlDataReader da = cmd.ExecuteReader();
+                    while (da.Read())
+                    {
+                        string check = da.GetValue(0).ToString();
+                        if (check == "Active" || check == "active")
+                        {
+                            button5.Enabled = true;
+                            button3.Enabled = true;
+                        }
+                        else if (check == "Inactive" || check == "inactive")
+                        {
+                            MessageBox.Show("Your Seller's Permit is under review so you can't add products to sell but you can buy products. Thank you for your patience!");
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Your Seller's Permit is rejected");
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Fetch information about merchant from database and assign it to my profile page
+
+        public void loadMyProfile()
+        {
+            MerchantProfile1 m = new MerchantProfile1();
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Select fname,lname,birthday,email,userName,photo from merchant where merchantName=@user", con);
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
+                    SqlDataReader da = cmd.ExecuteReader();
+                    while (da.Read())
+                    {
+                        m.fnameBox.Text = da.GetValue(0).ToString();
+                        m.lnameBox.Text = da.GetValue(1).ToString();
+                        m.birthdayBox.Value = Convert.ToDateTime(da.GetValue(2).ToString());
+                        m.emailBox.Text = da.GetValue(3).ToString();
+                        m.usernameBox.Text = da.GetValue(4).ToString();
+
+                        byte[] photo = (byte[])da.GetValue(5);
+                        MemoryStream ms = new MemoryStream(photo);
+                        m.profileImage.Image = Image.FromStream(ms);
+                    }
+                    con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //To show Buy interface we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
