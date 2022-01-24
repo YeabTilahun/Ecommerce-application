@@ -53,10 +53,12 @@ namespace Ecommerce_application
             this.btnTransactions = new System.Windows.Forms.Button();
             this.btnMerchants = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pblTopNav.SuspendLayout();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnlSideNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pblTopNav
@@ -269,6 +271,7 @@ namespace Ecommerce_application
             this.pnlSideNav.BackColor = System.Drawing.Color.Transparent;
             this.pnlSideNav.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_133;
             this.pnlSideNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlSideNav.Controls.Add(this.pictureBox1);
             this.pnlSideNav.Controls.Add(this.txtSearch);
             this.pnlSideNav.Controls.Add(this.btnLogo);
             this.pnlSideNav.Controls.Add(this.btnCustomers);
@@ -292,7 +295,7 @@ namespace Ecommerce_application
             this.txtSearch.Location = new System.Drawing.Point(6, 220);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(150, 25);
+            this.txtSearch.Size = new System.Drawing.Size(125, 25);
             this.txtSearch.TabIndex = 29;
             // 
             // btnLogo
@@ -437,6 +440,17 @@ namespace Ecommerce_application
             this.btnProducts.UseVisualStyleBackColor = false;
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.pictureBox1.Image = global::Ecommerce_application.Properties.Resources.Asset_89;
+            this.pictureBox1.Location = new System.Drawing.Point(130, 221);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,6 +472,7 @@ namespace Ecommerce_application
             this.menuStrip1.PerformLayout();
             this.pnlSideNav.ResumeLayout(false);
             this.pnlSideNav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,5 +503,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

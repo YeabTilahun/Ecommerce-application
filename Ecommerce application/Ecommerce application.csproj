@@ -285,6 +285,12 @@
     <Compile Include="LoadItems.Designer.cs">
       <DependentUpon>LoadItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadProduct.Designer.cs">
+      <DependentUpon>LoadProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoadItems.resx">
       <DependentUpon>LoadItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadProduct.resx">
+      <DependentUpon>LoadProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

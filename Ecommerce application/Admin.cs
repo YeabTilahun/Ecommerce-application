@@ -15,6 +15,9 @@ namespace Ecommerce_application
         public static string userName;
         public static string password;
         public static string role;
+        public Point oldLoc;
+        public Size oldSize;
+
         public Admin()
         {
             InitializeComponent();
@@ -31,15 +34,23 @@ namespace Ecommerce_application
 
         private void btnMaximized_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
             ///button11.Hide();
+            oldLoc = this.Location;
+            oldSize = this.Size;
+            int x = SystemInformation.WorkingArea.Width;
+            int y = SystemInformation.WorkingArea.Height;
+            this.Location = new Point(0, 0);
+            this.Size = new Size(x, y);
             btnRestore.BringToFront();
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            //this.WindowState = FormWindowState.Normal;
             // button10.Hide();
+            this.Location = oldLoc;
+            this.Size = oldSize;
             btnMaximized.BringToFront();
         }
 
@@ -79,10 +90,42 @@ namespace Ecommerce_application
             btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
-            DataTable dt = ac.GetProduct("");
+            DataTable dt = ac.GetProduct("","");
             adminProducts.dgvProducts.DataSource = dt;
+            
+            LoadProduct[] a = new LoadProduct[dt.Rows.Count];
+            for(int i = 0; i < dt.Rows.Count; i++)
+                a[i] = new LoadProduct();
+            if (this.Size == SystemInformation.WorkingArea.Size)
+            {
+                for(int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i].Width = adminProducts.flowLayoutPanel1.Width-3;
+                    a[i].description.MaximumSize = new Size(a[i].panel6.Location.X - a[i].panel5.Location.X - 22, 0);
+                }
+
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                a[i].PicProduct = (byte[])dt.Rows[i]["photo"];
+                a[i].ID = dt.Rows[i]["productid"].ToString();
+                a[i].Name = dt.Rows[i]["name"].ToString();
+                a[i].Price = dt.Rows[i]["price"].ToString();
+                a[i].Quantity = dt.Rows[i]["quantity"].ToString();
+                a[i].Category = dt.Rows[i]["category"].ToString();
+                a[i].Description = dt.Rows[i]["description"].ToString();
+                a[i].ExpireDate = dt.Rows[i]["expireDate"].ToString();
+                a[i].DateStamp = dt.Rows[i]["dateStamp"].ToString();
+
+                if (adminProducts.flowLayoutPanel1.Controls.Count < 0)
+                    adminProducts.flowLayoutPanel1.Controls.Clear();
+                else
+                    adminProducts.flowLayoutPanel1.Controls.Add(a[i]);
+            }
 
             string[] category = ac.GetCategory();
+            adminProducts.cmbCatagories.Items.Add("All");
+            adminProducts.cmbCatagories.Text = "All";
             foreach(string cat in category)
             {
                 adminProducts.cmbCatagories.Items.Add(cat);

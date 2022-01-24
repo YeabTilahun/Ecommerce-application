@@ -215,7 +215,7 @@ namespace Ecommerce_application
             }
         }
 
-        public DataTable GetProduct(string name)
+        public DataTable GetProduct(string name, string category)
         {
             DataTable dt = null;
             try
@@ -224,6 +224,7 @@ namespace Ecommerce_application
                 SqlDataAdapter da = new SqlDataAdapter("spGetProduct", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", name);
+                da.SelectCommand.Parameters.AddWithValue("@category", category);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblProduct");
                 dt = ds.Tables["tblProduct"];

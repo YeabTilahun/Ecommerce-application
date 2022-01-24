@@ -165,24 +165,28 @@ namespace Ecommerce_application
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Search Items Here")
+            /*if (txtSearch.Text == "Search Items Here")
                 txtSearch.Text = "";
-            txtSearch.ForeColor = Color.Black;
+            txtSearch.ForeColor = Color.Black;*/
         }
 
         private void txtSearch_Leave(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "")
+            /*if (txtSearch.Text == "")
             {
                 txtSearch.Text = "Search Items Here";
                 txtSearch.ForeColor = Color.LightGray;
-            }
+            }*/
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            DataTable dt = ac.GetProduct(txtSearch.Text); ;
+            DataTable dt;
+            if (cmbCatagories.Text.Equals("All"))
+                dt = ac.GetProduct(txtSearch.Text, "");
+            else
+                dt = ac.GetProduct(txtSearch.Text, cmbCatagories.Text);
             dgvProducts.DataSource = dt;
         }
 
@@ -204,7 +208,13 @@ namespace Ecommerce_application
         private void cmbCatagories_SelectedIndexChanged(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            DataTable dt = ac.GetProductByCategory(cmbCatagories.Text);
+            DataTable dt;
+            if (cmbCatagories.Text.Equals("All"))
+            {
+                dt = ac.GetProductByCategory("");               
+            }
+            else
+                dt = ac.GetProductByCategory(cmbCatagories.Text);
             dgvProducts.DataSource = dt;
         }
     }

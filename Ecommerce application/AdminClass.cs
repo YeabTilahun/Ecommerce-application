@@ -42,10 +42,10 @@ namespace Ecommerce_application
             adminD.DeleteProduct(id);
         }
 
-        public DataTable GetProduct(string name)
+        public DataTable GetProduct(string name, string category)
         {
             AdminDatabase AdminD = new AdminDatabase();
-            DataTable dt = AdminD.GetProduct(name);
+            DataTable dt = AdminD.GetProduct(name, category);
             return dt;
         }
 
