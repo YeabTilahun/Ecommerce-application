@@ -38,10 +38,10 @@ namespace Ecommerce_application
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnAll = new System.Windows.Forms.Button();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbCatagories = new System.Windows.Forms.ComboBox();
             this.btnLatest = new System.Windows.Forms.Button();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.pnlProducts.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -148,17 +148,6 @@ namespace Ecommerce_application
             this.btnAll.UseVisualStyleBackColor = true;
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
-            // picBoxSearch
-            // 
-            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(905, 13);
-            this.picBoxSearch.Name = "picBoxSearch";
-            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
-            this.picBoxSearch.TabIndex = 36;
-            this.picBoxSearch.TabStop = false;
-            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
-            // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -198,6 +187,17 @@ namespace Ecommerce_application
             this.btnLatest.Text = "Latest";
             this.btnLatest.UseVisualStyleBackColor = true;
             this.btnLatest.Click += new System.EventHandler(this.btnLatest_Click);
+            // 
+            // picBoxSearch
+            // 
+            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
+            this.picBoxSearch.Location = new System.Drawing.Point(905, 13);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
+            this.picBoxSearch.TabIndex = 36;
+            this.picBoxSearch.TabStop = false;
+            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
             // 
             // AdminProducts
             // 

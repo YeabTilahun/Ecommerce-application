@@ -279,6 +279,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadCustomerOrAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadCustomerOrAdmin.Designer.cs">
+      <DependentUpon>LoadCustomerOrAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -428,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadCustomerOrAdmin.resx">
+      <DependentUpon>LoadCustomerOrAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadItems.resx">
       <DependentUpon>LoadItems.cs</DependentUpon>

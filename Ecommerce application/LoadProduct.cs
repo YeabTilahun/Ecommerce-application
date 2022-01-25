@@ -18,6 +18,7 @@ namespace Ecommerce_application
             InitializeComponent();
         }
 
+        #region Properties
         private byte[] _image;
         private string _name;
         private string _id;
@@ -28,6 +29,7 @@ namespace Ecommerce_application
         private string _expireDate;
         private string _dateStamp;
 
+        [Category("Custom")]
         public byte[] PicProduct
         {
             get { return _image; }
@@ -126,6 +128,7 @@ namespace Ecommerce_application
                 dateStamp.Text = value;
             }
         }
+        #endregion
 
         private void panel8_Paint(object sender, PaintEventArgs e)
         {

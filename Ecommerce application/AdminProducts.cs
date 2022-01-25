@@ -35,7 +35,8 @@ namespace Ecommerce_application
             flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                a[i].PicProduct = (byte[])dt.Rows[i]["photo"];
+                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                    a[i].PicProduct = (byte[])dt.Rows[i]["photo"];
                 a[i].ID = dt.Rows[i]["productid"].ToString();
                 a[i].Name = dt.Rows[i]["name"].ToString();
                 a[i].Price = dt.Rows[i]["price"].ToString();

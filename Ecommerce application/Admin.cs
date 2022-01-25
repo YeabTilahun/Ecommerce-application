@@ -107,7 +107,8 @@ namespace Ecommerce_application
             }
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                a[i].PicProduct = (byte[])dt.Rows[i]["photo"];
+                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                    a[i].PicProduct = (byte[])dt.Rows[i]["photo"];
                 a[i].ID = dt.Rows[i]["productid"].ToString();
                 a[i].Name = dt.Rows[i]["name"].ToString();
                 a[i].Price = dt.Rows[i]["price"].ToString();
@@ -192,6 +193,35 @@ namespace Ecommerce_application
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetCustomer("");
             adminCustomers.dgvCustomers.DataSource = dt;
+
+            LoadCustomerOrAdmin[] a = new LoadCustomerOrAdmin[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+                a[i] = new LoadCustomerOrAdmin();
+            if (this.Size == SystemInformation.WorkingArea.Size)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i].Width = adminCustomers.flowLayoutPanel1.Width - 3;
+                }
+
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                    a[i].PicCustomerOrAdmin = (byte[])dt.Rows[i]["photo"];
+                a[i].FName = dt.Rows[i]["fname"].ToString();
+                a[i].LName = dt.Rows[i]["lname"].ToString();
+                a[i].Phone = dt.Rows[i]["phone"].ToString();
+                a[i].Email = dt.Rows[i]["email"].ToString();
+                a[i].BDay = dt.Rows[i]["birthday"].ToString();
+                a[i].Sex = dt.Rows[i]["sex"].ToString();
+                a[i].UName = dt.Rows[i]["userName"].ToString();
+
+                if (adminCustomers.flowLayoutPanel1.Controls.Count < 0)
+                    adminCustomers.flowLayoutPanel1.Controls.Clear();
+                else
+                    adminCustomers.flowLayoutPanel1.Controls.Add(a[i]);
+            }
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
@@ -252,6 +282,35 @@ namespace Ecommerce_application
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetAdmin("");
             adminAdmins.dgvAdmins.DataSource = dt;
+
+            LoadCustomerOrAdmin[] a = new LoadCustomerOrAdmin[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+                a[i] = new LoadCustomerOrAdmin();
+            if (this.Size == SystemInformation.WorkingArea.Size)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i].Width = adminAdmins.flowLayoutPanel1.Width - 3;
+                }
+
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                    a[i].PicCustomerOrAdmin = (byte[])dt.Rows[i]["photo"];
+                a[i].FName = dt.Rows[i]["fname"].ToString();
+                a[i].LName = dt.Rows[i]["lname"].ToString();
+                a[i].Phone = dt.Rows[i]["phone"].ToString();
+                a[i].Email = dt.Rows[i]["email"].ToString();
+                a[i].BDay = dt.Rows[i]["birthday"].ToString();
+                a[i].Sex = dt.Rows[i]["sex"].ToString();
+                a[i].UName = dt.Rows[i]["userName"].ToString();
+
+                if (adminAdmins.flowLayoutPanel1.Controls.Count < 0)
+                    adminAdmins.flowLayoutPanel1.Controls.Clear();
+                else
+                    adminAdmins.flowLayoutPanel1.Controls.Add(a[i]);
+            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
