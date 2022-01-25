@@ -236,6 +236,27 @@ namespace Ecommerce_application
             return dt;
         }
 
+        public DataTable GetLatestProduct(string name, string category)
+        {
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetLatestProduct", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@name", name);
+                da.SelectCommand.Parameters.AddWithValue("@category", category);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblProduct");
+                dt = ds.Tables["tblProduct"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
         public void DeleteCustomer(string[] id)
         {
             try
@@ -395,8 +416,34 @@ namespace Ecommerce_application
             }
             return category;
         }
+        
+        public string[] GetLatestCategory()
+        {
+            string[] category = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetLatestCategory", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblCategory");
+                DataTable dt = ds.Tables["tblCategory"];
+                category = new string[dt.Rows.Count];
+                DataRow row;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    row = dt.Rows[i];
+                    category[i] = row["category"].ToString();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return category;
+        }
 
-        public DataTable GetProductByCategory(string category)
+        /*public DataTable GetProductByCategory(string category)
         {
             DataTable dt = null;
             try
@@ -415,7 +462,7 @@ namespace Ecommerce_application
             }
             return dt;
 
-        }
+        }*/
 
         public string[] GetMonthlySold(int month)
         {

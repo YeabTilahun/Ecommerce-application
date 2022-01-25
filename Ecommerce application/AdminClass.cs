@@ -49,6 +49,13 @@ namespace Ecommerce_application
             return dt;
         }
 
+        public DataTable GetLatestProduct(string name, string category)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetLatestProduct(name, category);
+            return dt;
+        }
+
         public void DeleteMerchants(string[] id)
         {
             AdminDatabase adminD = new AdminDatabase();
@@ -89,12 +96,20 @@ namespace Ecommerce_application
             return category;
         }
 
-        public DataTable GetProductByCategory(string category)
+        public string[] GetLatestCategory()
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            string[] category;
+            category = AdminD.GetLatestCategory();
+            return category;
+        }
+
+        /*public DataTable GetProductByCategory(string category)
         {
             AdminDatabase AdminD = new AdminDatabase();
             DataTable dt = AdminD.GetProductByCategory(category);
             return dt;
-        }
+        }*/
 
         public string[] GetMonthlySold(int month)
         {

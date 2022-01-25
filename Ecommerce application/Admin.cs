@@ -130,6 +130,8 @@ namespace Ecommerce_application
             {
                 adminProducts.cmbCatagories.Items.Add(cat);
             }
+
+            
         }
 
         private void btnMerchants_Click(object sender, EventArgs e)

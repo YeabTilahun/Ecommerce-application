@@ -31,36 +31,68 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminProducts));
             this.pnlProducts = new System.Windows.Forms.Panel();
+            this.pnlLatest = new System.Windows.Forms.Panel();
+            this.pnlAll = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnAll = new System.Windows.Forms.Button();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbCatagories = new System.Windows.Forms.ComboBox();
             this.btnLatest = new System.Windows.Forms.Button();
-            this.btnAll = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlProducts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProducts
             // 
             this.pnlProducts.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlProducts.Controls.Add(this.pnlLatest);
+            this.pnlProducts.Controls.Add(this.pnlAll);
             this.pnlProducts.Controls.Add(this.panel1);
             this.pnlProducts.Controls.Add(this.btnAll);
-            this.pnlProducts.Controls.Add(this.btnLatest);
             this.pnlProducts.Controls.Add(this.picBoxSearch);
             this.pnlProducts.Controls.Add(this.txtSearch);
             this.pnlProducts.Controls.Add(this.cmbCatagories);
+            this.pnlProducts.Controls.Add(this.btnLatest);
             this.pnlProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProducts.Location = new System.Drawing.Point(0, 0);
             this.pnlProducts.Name = "pnlProducts";
             this.pnlProducts.Size = new System.Drawing.Size(937, 565);
             this.pnlProducts.TabIndex = 0;
             this.pnlProducts.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlProducts_Paint);
+            // 
+            // pnlLatest
+            // 
+            this.pnlLatest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
+            this.pnlLatest.Location = new System.Drawing.Point(472, 37);
+            this.pnlLatest.Name = "pnlLatest";
+            this.pnlLatest.Size = new System.Drawing.Size(81, 1);
+            this.pnlLatest.TabIndex = 42;
+            // 
+            // pnlAll
+            // 
+            this.pnlAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
+            this.pnlAll.Location = new System.Drawing.Point(388, 37);
+            this.pnlAll.Name = "pnlAll";
+            this.pnlAll.Size = new System.Drawing.Size(84, 1);
+            this.pnlAll.TabIndex = 41;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.dgvProducts);
+            this.panel1.Location = new System.Drawing.Point(12, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(915, 513);
+            this.panel1.TabIndex = 40;
             // 
             // flowLayoutPanel1
             // 
@@ -71,17 +103,6 @@ namespace Ecommerce_application
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(915, 513);
             this.flowLayoutPanel1.TabIndex = 37;
-            // 
-            // picBoxSearch
-            // 
-            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(905, 13);
-            this.picBoxSearch.Name = "picBoxSearch";
-            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
-            this.picBoxSearch.TabIndex = 36;
-            this.picBoxSearch.TabStop = false;
-            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
             // 
             // dgvProducts
             // 
@@ -114,6 +135,30 @@ namespace Ecommerce_application
             this.select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.select.Width = 30;
             // 
+            // btnAll
+            // 
+            this.btnAll.FlatAppearance.BorderSize = 0;
+            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.Location = new System.Drawing.Point(388, 6);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(84, 32);
+            this.btnAll.TabIndex = 39;
+            this.btnAll.Text = "All";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
+            // picBoxSearch
+            // 
+            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
+            this.picBoxSearch.Location = new System.Drawing.Point(905, 13);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
+            this.picBoxSearch.TabIndex = 36;
+            this.picBoxSearch.TabStop = false;
+            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
+            // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -139,6 +184,7 @@ namespace Ecommerce_application
             this.cmbCatagories.Size = new System.Drawing.Size(226, 21);
             this.cmbCatagories.TabIndex = 27;
             this.cmbCatagories.SelectedIndexChanged += new System.EventHandler(this.cmbCatagories_SelectedIndexChanged);
+            this.cmbCatagories.MouseHover += new System.EventHandler(this.cmbCatagories_MouseHover);
             // 
             // btnLatest
             // 
@@ -151,30 +197,7 @@ namespace Ecommerce_application
             this.btnLatest.TabIndex = 38;
             this.btnLatest.Text = "Latest";
             this.btnLatest.UseVisualStyleBackColor = true;
-            // 
-            // btnAll
-            // 
-            this.btnAll.FlatAppearance.BorderSize = 0;
-            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.Location = new System.Drawing.Point(388, 6);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(84, 32);
-            this.btnAll.TabIndex = 39;
-            this.btnAll.Text = "All";
-            this.btnAll.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.dgvProducts);
-            this.panel1.Location = new System.Drawing.Point(12, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 513);
-            this.panel1.TabIndex = 40;
+            this.btnLatest.Click += new System.EventHandler(this.btnLatest_Click);
             // 
             // AdminProducts
             // 
@@ -190,9 +213,9 @@ namespace Ecommerce_application
             this.Load += new System.EventHandler(this.AdminProduct_Load);
             this.pnlProducts.ResumeLayout(false);
             this.pnlProducts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,5 +231,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnAll;
         private System.Windows.Forms.Button btnLatest;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlAll;
+        private System.Windows.Forms.Panel pnlLatest;
     }
 }

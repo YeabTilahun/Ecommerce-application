@@ -121,9 +121,9 @@ namespace Ecommerce_application
             this.iD.AutoSize = true;
             this.iD.Location = new System.Drawing.Point(80, 16);
             this.iD.Name = "iD";
-            this.iD.Size = new System.Drawing.Size(35, 13);
+            this.iD.Size = new System.Drawing.Size(18, 13);
             this.iD.TabIndex = 6;
-            this.iD.Text = "label1";
+            this.iD.Text = "ID";
             // 
             // name
             // 
@@ -132,34 +132,34 @@ namespace Ecommerce_application
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(35, 13);
             this.name.TabIndex = 7;
-            this.name.Text = "label2";
+            this.name.Text = "Name";
             // 
             // price
             // 
             this.price.AutoSize = true;
             this.price.Location = new System.Drawing.Point(230, 16);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(35, 13);
+            this.price.Size = new System.Drawing.Size(31, 13);
             this.price.TabIndex = 8;
-            this.price.Text = "label3";
+            this.price.Text = "Price";
             // 
             // quantity
             // 
             this.quantity.AutoSize = true;
             this.quantity.Location = new System.Drawing.Point(310, 16);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(35, 13);
+            this.quantity.Size = new System.Drawing.Size(46, 13);
             this.quantity.TabIndex = 9;
-            this.quantity.Text = "label4";
+            this.quantity.Text = "Quantity";
             // 
             // category
             // 
             this.category.AutoSize = true;
             this.category.Location = new System.Drawing.Point(367, 16);
             this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(35, 13);
+            this.category.Size = new System.Drawing.Size(49, 13);
             this.category.TabIndex = 10;
-            this.category.Text = "label5";
+            this.category.Text = "Category";
             // 
             // description
             // 
@@ -170,9 +170,9 @@ namespace Ecommerce_application
             this.description.MaximumSize = new System.Drawing.Size(210, 0);
             this.description.Name = "description";
             this.description.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.description.Size = new System.Drawing.Size(35, 13);
+            this.description.Size = new System.Drawing.Size(60, 13);
             this.description.TabIndex = 11;
-            this.description.Text = "label6";
+            this.description.Text = "Description";
             // 
             // expireDate
             // 
@@ -180,9 +180,9 @@ namespace Ecommerce_application
             this.expireDate.AutoSize = true;
             this.expireDate.Location = new System.Drawing.Point(688, 16);
             this.expireDate.Name = "expireDate";
-            this.expireDate.Size = new System.Drawing.Size(35, 13);
+            this.expireDate.Size = new System.Drawing.Size(59, 13);
             this.expireDate.TabIndex = 12;
-            this.expireDate.Text = "label7";
+            this.expireDate.Text = "ExpireDate";
             // 
             // dateStamp
             // 
@@ -190,9 +190,9 @@ namespace Ecommerce_application
             this.dateStamp.AutoSize = true;
             this.dateStamp.Location = new System.Drawing.Point(795, 16);
             this.dateStamp.Name = "dateStamp";
-            this.dateStamp.Size = new System.Drawing.Size(35, 13);
+            this.dateStamp.Size = new System.Drawing.Size(60, 13);
             this.dateStamp.TabIndex = 13;
-            this.dateStamp.Text = "label8";
+            this.dateStamp.Text = "DateStamp";
             // 
             // panel8
             // 
