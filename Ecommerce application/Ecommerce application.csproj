@@ -563,6 +563,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\Rectangle 1411.png" />
+    <None Include="Resources\Asset 344.png" />
+    <None Include="Resources\Group 3422.png" />
+    <None Include="Resources\Asset 3751.png" />
+    <None Include="Resources\Asset 275.png" />
     <None Include="Resources\shopping-cart.png" />
     <None Include="Resources\Asset 43.png" />
     <None Include="Resources\Rectangle 7381.png" />

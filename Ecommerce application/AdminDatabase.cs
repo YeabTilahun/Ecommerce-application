@@ -145,9 +145,9 @@ namespace Ecommerce_application
 
         }
 
-        public string[] GetAdminProfile()
+        public DataTable GetAdminProfile()
         {
-            string[] profile = null;
+            DataTable dt = null;
             try
             {
                 SqlConnection con = new SqlConnection(constr);
@@ -155,27 +155,15 @@ namespace Ecommerce_application
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@userName", Admin.userName);
                 da.SelectCommand.Parameters.AddWithValue("@password", Admin.password);
-                da.SelectCommand.Parameters.AddWithValue("@role", Admin.role);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblProfile");
-                DataTable dt = ds.Tables["tblProfile"];
-                profile = new string[dt.Columns.Count];
-                profile[0] = dt.Rows[0]["adminID"].ToString();
-                profile[1] = dt.Rows[0]["fname"].ToString();
-                profile[2] = dt.Rows[0]["lname"].ToString();
-                profile[3] = dt.Rows[0]["phone"].ToString();
-                profile[4] = dt.Rows[0]["birthday"].ToString();
-                profile[5] = dt.Rows[0]["sex"].ToString();
-                profile[6] = dt.Rows[0]["email"].ToString();
-                profile[7] = dt.Rows[0]["userName"].ToString();
-                profile[8] = dt.Rows[0]["password"].ToString();
-                profile[9] = dt.Rows[0]["role"].ToString();
+                dt = ds.Tables["tblProfile"];
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            return profile;
+            return dt;
         }
 
         public void DeleteProduct(string[] id)

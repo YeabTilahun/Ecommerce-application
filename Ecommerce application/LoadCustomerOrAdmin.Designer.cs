@@ -37,7 +37,6 @@ namespace Ecommerce_application
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.picCustomerOrAdmin = new System.Windows.Forms.PictureBox();
             this.fName = new System.Windows.Forms.Label();
             this.lName = new System.Windows.Forms.Label();
             this.phone = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@ namespace Ecommerce_application
             this.bDay = new System.Windows.Forms.Label();
             this.sex = new System.Windows.Forms.Label();
             this.uName = new System.Windows.Forms.Label();
+            this.picCustomerOrAdmin = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomerOrAdmin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,17 +135,6 @@ namespace Ecommerce_application
             this.label7.TabIndex = 8;
             this.label7.Text = "User Name:";
             // 
-            // picCustomerOrAdmin
-            // 
-            this.picCustomerOrAdmin.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_108;
-            this.picCustomerOrAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCustomerOrAdmin.Location = new System.Drawing.Point(3, 3);
-            this.picCustomerOrAdmin.Margin = new System.Windows.Forms.Padding(0);
-            this.picCustomerOrAdmin.Name = "picCustomerOrAdmin";
-            this.picCustomerOrAdmin.Size = new System.Drawing.Size(110, 95);
-            this.picCustomerOrAdmin.TabIndex = 0;
-            this.picCustomerOrAdmin.TabStop = false;
-            // 
             // fName
             // 
             this.fName.AutoSize = true;
@@ -215,6 +204,17 @@ namespace Ecommerce_application
             this.uName.Size = new System.Drawing.Size(50, 15);
             this.uName.TabIndex = 15;
             this.uName.Text = "UName";
+            // 
+            // picCustomerOrAdmin
+            // 
+            this.picCustomerOrAdmin.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_275;
+            this.picCustomerOrAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCustomerOrAdmin.Location = new System.Drawing.Point(3, 3);
+            this.picCustomerOrAdmin.Margin = new System.Windows.Forms.Padding(0);
+            this.picCustomerOrAdmin.Name = "picCustomerOrAdmin";
+            this.picCustomerOrAdmin.Size = new System.Drawing.Size(110, 95);
+            this.picCustomerOrAdmin.TabIndex = 0;
+            this.picCustomerOrAdmin.TabStop = false;
             // 
             // LoadCustomerOrAdmin
             // 

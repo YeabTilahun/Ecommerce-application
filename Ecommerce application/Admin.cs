@@ -14,7 +14,6 @@ namespace Ecommerce_application
     {
         public static string userName;
         public static string password;
-        public static string role;
         public Point oldLoc;
         public Size oldSize;
 
@@ -23,11 +22,9 @@ namespace Ecommerce_application
             InitializeComponent();
         }
         
-        public Admin(string userName, string password, string role)
+        public Admin(string userName, string password)
         {
             Admin.userName = userName;
-            Admin.password = password;
-            Admin.role = role;
             InitializeComponent();
             btnProfile.Text = Admin.userName;
         }
@@ -413,10 +410,9 @@ namespace Ecommerce_application
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string[] profile;
             AdminClass ac = new AdminClass();
-            profile = ac.GetAdminProfile();
-            AdminProfile a = new AdminProfile(profile[0], profile[1], profile[2], profile[3], profile[4], profile[5], profile[6], profile[7], profile[8], profile[9]);
+            DataTable dt = ac.GetAdminProfile();
+            AdminProfile a = new AdminProfile(dt);
             a.Show();
         }
 

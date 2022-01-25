@@ -28,12 +28,11 @@ namespace Ecommerce_application
             return dt;
         }
 
-        public string[] GetAdminProfile()
+        public DataTable GetAdminProfile()
         {
-            string[] profile;
             AdminDatabase ad = new AdminDatabase();
-            profile = ad.GetAdminProfile();
-            return profile;
+            DataTable dt = ad.GetAdminProfile();
+            return dt;
         }
 
         public void DeleteProduct(string[] id)
