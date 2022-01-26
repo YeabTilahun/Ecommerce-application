@@ -312,8 +312,13 @@ namespace Ecommerce_application
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            AdminRegister adminRegister = new AdminRegister();
-            adminRegister.Show();
+            AdminSettingOrRegister adminSettingOrRegister = new AdminSettingOrRegister();
+            adminSettingOrRegister.lblNav.Text = "Registeration";
+            adminSettingOrRegister.txtPass.ReadOnly = false;
+            adminSettingOrRegister.btnUpdate.Hide();
+            adminSettingOrRegister.pnlConfirmPass.Show();
+            adminSettingOrRegister.Width = 400;
+            adminSettingOrRegister.Show();
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -494,6 +499,17 @@ namespace Ecommerce_application
             adminHome.lblName2.Text = product[0];
             adminHome.lblQuantity2.Text = product[1];
             adminHome.lblPrice2.Text = "$" + product[2];
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetAdminProfile();
+
+            AdminSettingOrRegister adminSettingOrRegister = new AdminSettingOrRegister(dt);
+            adminSettingOrRegister.btnRegister.Hide();
+            adminSettingOrRegister.Width = 400;
+            adminSettingOrRegister.Show();
         }
     }
 }

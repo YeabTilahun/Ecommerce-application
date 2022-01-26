@@ -221,13 +221,12 @@
     <Compile Include="AdminProfile.Designer.cs">
       <DependentUpon>AdminProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminRegister.cs">
+    <Compile Include="AdminSettingOrRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminRegister.Designer.cs">
-      <DependentUpon>AdminRegister.cs</DependentUpon>
+    <Compile Include="AdminSettingOrRegister.Designer.cs">
+      <DependentUpon>AdminSettingOrRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminRegisterClass.cs" />
     <Compile Include="AdminTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,8 +413,8 @@
     <EmbeddedResource Include="AdminProfile.resx">
       <DependentUpon>AdminProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminRegister.resx">
-      <DependentUpon>AdminRegister.cs</DependentUpon>
+    <EmbeddedResource Include="AdminSettingOrRegister.resx">
+      <DependentUpon>AdminSettingOrRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminTransaction.resx">
       <DependentUpon>AdminTransaction.cs</DependentUpon>

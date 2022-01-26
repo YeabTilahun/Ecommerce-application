@@ -13,7 +13,7 @@ namespace Ecommerce_application
     {
         string constr = "Server = DESKTOP-4370VSE;   Database = Ecommerce; integrated security=true";
 
-        public void SaveAdmin(AdminRegisterClass ar)
+        public void SaveAdmin(AdminClass ar)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace Ecommerce_application
             }
         }
 
-        public void UpdateAdmin(AdminRegisterClass ar)
+        public void UpdateAdmin(AdminClass ar)
         {
             try
             {
@@ -74,6 +74,36 @@ namespace Ecommerce_application
                     if (rowAffected > 0)
                     {
                         MessageBox.Show("Admin Inserted Successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed! Please Try Again");
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void ChangePassword(AdminClass ar)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spChangePassword", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@adminID", ar.adminID);
+                    cmd.Parameters.AddWithValue("@password", ar.password);
+
+                    int rowAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Password Changed Successfully");
                     }
                     else
                     {

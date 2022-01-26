@@ -12,6 +12,18 @@ namespace Ecommerce_application
     {
         string[] id;
 
+        public string adminID;
+        public string firstName;
+        public string lastName;
+        public string sex;
+        public string birthday;
+        public string phoneNumber;
+        public string email;
+        public string userName;
+        public string password;
+        public string role;
+        public byte[] photo;
+
         public AdminClass()
         {
 
@@ -21,6 +33,60 @@ namespace Ecommerce_application
         {
             this.id = id;
         }
+
+        public AdminClass(string adminID, string firstName, string lastName, string sex, string birthday, string phoneNumber, string email, string userName, string password, string role, byte[] photo)
+        {
+            this.adminID = adminID;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sex = sex;
+            this.birthday = birthday;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+            this.userName = userName;
+            this.password = password;
+            this.role = role;
+            this.photo = photo;
+        }
+
+        public AdminClass(string firstName, string lastName, string sex, string birthday, string phoneNumber, string email, string userName, string password, string role, byte[] photo)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sex = sex;
+            this.birthday = birthday;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+            this.userName = userName;
+            this.password = password;
+            this.role = role;
+            this.photo = photo;
+        }
+
+        public AdminClass(string adminID, string password)
+        {
+            this.adminID = adminID;
+            this.password = password;
+        }
+
+        public void Save()
+        {
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.SaveAdmin(this);
+        }
+
+        public void UpdateAdmin()
+        {
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.UpdateAdmin(this);
+        }
+
+        public void ChangePassword()
+        {
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.ChangePassword(this);
+        }
+
         public DataTable GetAdmin(string name)
         {
             AdminDatabase AdminD = new AdminDatabase();

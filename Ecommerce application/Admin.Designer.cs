@@ -95,6 +95,7 @@ namespace Ecommerce_application
             this.btnSetting.TabIndex = 37;
             this.btnSetting.Text = "Setting";
             this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnProfile
             // 

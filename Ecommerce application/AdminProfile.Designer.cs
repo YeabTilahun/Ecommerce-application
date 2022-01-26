@@ -61,6 +61,7 @@ namespace Ecommerce_application
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.lblNav = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -113,7 +114,6 @@ namespace Ecommerce_application
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.BorderSize = 0;
@@ -310,11 +310,10 @@ namespace Ecommerce_application
             // 
             // picAdmin
             // 
-            this.picAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picAdmin.BackColor = System.Drawing.Color.Transparent;
             this.picAdmin.BackgroundImage = global::Ecommerce_application.Properties.Resources.Group_3423;
             this.picAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picAdmin.Location = new System.Drawing.Point(130, 11);
+            this.picAdmin.Location = new System.Drawing.Point(130, 10);
             this.picAdmin.Margin = new System.Windows.Forms.Padding(0);
             this.picAdmin.Name = "picAdmin";
             this.picAdmin.Size = new System.Drawing.Size(155, 150);
@@ -323,7 +322,6 @@ namespace Ecommerce_application
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -359,7 +357,6 @@ namespace Ecommerce_application
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -372,7 +369,6 @@ namespace Ecommerce_application
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -385,7 +381,6 @@ namespace Ecommerce_application
             // 
             // panel4
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -398,7 +393,6 @@ namespace Ecommerce_application
             // 
             // panel5
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -411,7 +405,6 @@ namespace Ecommerce_application
             // 
             // panel6
             // 
-            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -424,7 +417,6 @@ namespace Ecommerce_application
             // 
             // panel7
             // 
-            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -437,7 +429,6 @@ namespace Ecommerce_application
             // 
             // panel8
             // 
-            this.panel8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -450,7 +441,6 @@ namespace Ecommerce_application
             // 
             // panel9
             // 
-            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel9.BackColor = System.Drawing.Color.Transparent;
             this.panel9.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -463,7 +453,6 @@ namespace Ecommerce_application
             // 
             // panel10
             // 
-            this.panel10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.BackgroundImage = global::Ecommerce_application.Properties.Resources.Rectangle_1411;
             this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -474,13 +463,26 @@ namespace Ecommerce_application
             this.panel10.Size = new System.Drawing.Size(370, 23);
             this.panel10.TabIndex = 113;
             // 
+            // lblNav
+            // 
+            this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNav.BackColor = System.Drawing.Color.Transparent;
+            this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNav.Location = new System.Drawing.Point(0, 0);
+            this.lblNav.Name = "lblNav";
+            this.lblNav.Size = new System.Drawing.Size(61, 22);
+            this.lblNav.TabIndex = 114;
+            this.lblNav.Text = "Profile";
+            this.lblNav.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AdminProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_3751;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(399, 531);
+            this.ClientSize = new System.Drawing.Size(400, 530);
+            this.Controls.Add(this.lblNav);
             this.Controls.Add(this.picAdmin);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panel1);
@@ -493,7 +495,10 @@ namespace Ecommerce_application
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel10);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -554,5 +559,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label lblNav;
     }
 }
