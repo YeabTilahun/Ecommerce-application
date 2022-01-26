@@ -17,7 +17,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using(SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spInsertAdmin", con);
@@ -138,7 +138,7 @@ namespace Ecommerce_application
                     {
                         MessageBox.Show("Admins Deleted Successfully");
                     }
-                    else if(rowAffected > 0)
+                    else if (rowAffected > 0)
                     {
                         MessageBox.Show("Admin Deleted Successfully");
                     }
@@ -227,7 +227,7 @@ namespace Ecommerce_application
                     }
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -434,7 +434,7 @@ namespace Ecommerce_application
             }
             return category;
         }
-        
+
         public string[] GetLatestCategory()
         {
             string[] category = null;
@@ -519,7 +519,7 @@ namespace Ecommerce_application
                     product[2] = "0";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -537,7 +537,7 @@ namespace Ecommerce_application
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblList");
                 DataTable dt = ds.Tables["tblList"];
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                     income = double.Parse(dt.Rows[0]["total"].ToString());
             }
             catch (Exception ex)
@@ -566,6 +566,251 @@ namespace Ecommerce_application
                 MessageBox.Show(ex.Message);
             }
             return income;
+        }
+
+        public string[] GetMonth()
+        {
+            SqlConnection con = new SqlConnection(constr);
+            DataSet ds = new DataSet();
+            DataTable dt = null;
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("spGetMonth", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.Fill(ds, "tblNum");
+                dt = ds.Tables["tblNum"];
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            string[] month = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                month[i] = dt.Rows[i]["month"].ToString();
+            }
+            return month;
+        }
+
+        public string[] GetCategoryTransaction()
+        {
+            SqlConnection con = new SqlConnection(constr);
+            DataSet ds = new DataSet();
+            DataTable dt = null;
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("spGetCategroyTransaction", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.Fill(ds, "tbltrans");
+                dt = ds.Tables["tbltrans"];
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            string[] category = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                category[i] = dt.Rows[i]["category"].ToString();
+            }
+            return category;
+        }
+
+        public DataSet GetYearlyReport(string category)
+        {
+            SqlConnection con = new SqlConnection(constr);
+            DataSet ds = new DataSet();
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("spGetYearlyReport", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@category", category);
+                da.Fill(ds);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ds;
+        }
+
+        public DataSet GetMonthlyReport(string category, int month)
+        {
+            SqlConnection con = new SqlConnection(constr);
+            DataSet ds = new DataSet();
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("spGetMonthlyReport", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@category", category);
+                da.SelectCommand.Parameters.AddWithValue("@month", month);
+                da.Fill(ds);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ds;
+        }
+
+        public DataSet GetWeeklyReport(string category)
+        {
+            SqlConnection con = new SqlConnection(constr);
+            DataSet ds = new DataSet();
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("spGetWeeklyReport", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@category", category);
+                da.Fill(ds);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ds;
+        }
+
+        public DataSet GetDailyReport(string category)
+        {
+            SqlConnection con = new SqlConnection(constr);
+            DataSet ds = new DataSet();
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("spGetDailyReport", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@category", category);
+                da.Fill(ds);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ds;
+        }
+
+        public DataTable GetProductImageAndName(string ID)
+        {
+            DataTable dt = null;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetProductImageAndName", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@id", ID);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProfile");
+                    dt = ds.Tables["tblProfile"];
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable GetProductYearlyReport(string category)
+        {
+            DataTable dt = null;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetProductYearlyReport", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@category", category);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    dt = ds.Tables["tblProduct"];
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable GetProductMonthlyReport(string category, int month)
+        {
+            DataTable dt = null;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetProductMonthlyReport", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@category", category);
+                    da.SelectCommand.Parameters.AddWithValue("@month", month);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    dt = ds.Tables["tblProduct"];
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable GetProductWeeklyReport(string category)
+        {
+            DataTable dt = null;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetProductWeeklyReport", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@category", category);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    dt = ds.Tables["tblProduct"];
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable GetProductDailyReport(string category)
+        {
+            DataTable dt = null;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetProductDailyReport", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@category", category);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    dt = ds.Tables["tblProduct"];
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
         }
     }
 }

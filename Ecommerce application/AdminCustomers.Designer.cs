@@ -31,15 +31,15 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminCustomers));
             this.pnlCustomer = new System.Windows.Forms.Panel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
-            this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dgvCustomers = new System.Windows.Forms.DataGridView();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlCustomer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCustomer
@@ -51,33 +51,26 @@ namespace Ecommerce_application
             this.pnlCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCustomer.Location = new System.Drawing.Point(0, 0);
             this.pnlCustomer.Name = "pnlCustomer";
-            this.pnlCustomer.Size = new System.Drawing.Size(937, 565);
+            this.pnlCustomer.Size = new System.Drawing.Size(940, 642);
             this.pnlCustomer.TabIndex = 25;
             // 
-            // txtSearch
+            // panel1
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearch.Location = new System.Drawing.Point(721, 14);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(177, 20);
-            this.txtSearch.TabIndex = 36;
-            this.txtSearch.Tag = "";
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.dgvCustomers);
+            this.panel1.Location = new System.Drawing.Point(12, 53);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(913, 577);
+            this.panel1.TabIndex = 42;
             // 
-            // picBoxSearch
+            // flowLayoutPanel1
             // 
-            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(905, 14);
-            this.picBoxSearch.Name = "picBoxSearch";
-            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
-            this.picBoxSearch.TabIndex = 41;
-            this.picBoxSearch.TabStop = false;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(913, 577);
+            this.flowLayoutPanel1.TabIndex = 41;
             // 
             // dgvCustomers
             // 
@@ -92,32 +85,40 @@ namespace Ecommerce_application
             this.dgvCustomers.Location = new System.Drawing.Point(0, 0);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.ReadOnly = true;
-            this.dgvCustomers.Size = new System.Drawing.Size(913, 500);
+            this.dgvCustomers.Size = new System.Drawing.Size(913, 577);
             this.dgvCustomers.TabIndex = 40;
             this.dgvCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellContentClick);
             // 
-            // panel1
+            // picBoxSearch
             // 
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.dgvCustomers);
-            this.panel1.Location = new System.Drawing.Point(12, 53);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(913, 500);
-            this.panel1.TabIndex = 42;
+            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
+            this.picBoxSearch.Location = new System.Drawing.Point(908, 14);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
+            this.picBoxSearch.TabIndex = 41;
+            this.picBoxSearch.TabStop = false;
             // 
-            // flowLayoutPanel1
+            // txtSearch
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(913, 500);
-            this.flowLayoutPanel1.TabIndex = 41;
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtSearch.Location = new System.Drawing.Point(724, 14);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(177, 20);
+            this.txtSearch.TabIndex = 36;
+            this.txtSearch.Tag = "";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // AdminCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 565);
+            this.ClientSize = new System.Drawing.Size(940, 642);
             this.Controls.Add(this.pnlCustomer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminCustomers";
@@ -125,9 +126,9 @@ namespace Ecommerce_application
             this.Text = "AdminCustomers";
             this.pnlCustomer.ResumeLayout(false);
             this.pnlCustomer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.ResumeLayout(false);
 
         }

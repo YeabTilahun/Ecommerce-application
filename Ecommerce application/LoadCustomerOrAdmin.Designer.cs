@@ -238,7 +238,7 @@ namespace Ecommerce_application
             this.Controls.Add(this.picCustomerOrAdmin);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "LoadCustomerOrAdmin";
-            this.Size = new System.Drawing.Size(910, 100);
+            this.Size = new System.Drawing.Size(895, 100);
             this.Load += new System.EventHandler(this.LoadCustomerOrAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picCustomerOrAdmin)).EndInit();
             this.ResumeLayout(false);

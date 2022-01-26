@@ -197,5 +197,82 @@ namespace Ecommerce_application
             double income = AdminD.GetYearlyIncome();
             return income;
         }
+
+        public string[] GetMonth()
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            string[] month = AdminD.GetMonth();
+            return month;
+        }
+
+        public string[] GetCategoryTransaction()
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            string[] category = AdminD.GetCategoryTransaction();
+            return category;
+        }
+
+        public DataSet GetYearlyReport(string category)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataSet ds = AdminD.GetYearlyReport(category);
+            return ds;
+        }
+
+        public DataSet GetMonthlyReport(string category, int month)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataSet ds = AdminD.GetMonthlyReport(category, month);
+            return ds;
+        }
+
+        public DataSet GetWeeklyReport(string category)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataSet ds = AdminD.GetWeeklyReport(category);
+            return ds;
+        }
+
+        public DataSet GetDailyReport(string category)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataSet ds = AdminD.GetDailyReport(category);
+            return ds;
+        }
+
+        public DataTable GetProductImageAndName(string ID)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetProductImageAndName(ID);
+            return dt;
+        }
+
+        public DataTable GetProductYearlyReport(string category)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetProductYearlyReport(category);
+            return dt;
+        }
+
+        public DataTable GetProductMonthlyReport(string category, int month)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetProductMonthlyReport(category, month);
+            return dt;
+        }
+
+        public DataTable GetProductWeeklyReport(string category)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetProductWeeklyReport(category);
+            return dt;
+        }
+
+        public DataTable GetProductDailyReport(string category)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetProductDailyReport(category);
+            return dt;
+        }
     }
 }

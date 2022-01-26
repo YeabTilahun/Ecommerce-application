@@ -36,7 +36,6 @@ namespace Ecommerce_application
             this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMaximized = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -144,7 +143,6 @@ namespace Ecommerce_application
             this.AccountMenuItem.AutoSize = false;
             this.AccountMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.profileToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_342;
             this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -152,13 +150,6 @@ namespace Ecommerce_application
             this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
             this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.AccountMenuItem.Click += new System.EventHandler(this.AccountMenuItem_Click);
-            // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.profileToolStripMenuItem.Text = "Your Profile";
-            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -469,7 +460,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximized;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.Button btnLogo;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnSetting;

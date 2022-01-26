@@ -248,7 +248,7 @@ namespace Ecommerce_application
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetTransaction();
-            adminTransaction.dgvTransaction.DataSource = dt;
+            //adminTransaction.dgvTransaction.DataSource = dt;
         }
 
         private void btnAdmins_Click(object sender, EventArgs e)

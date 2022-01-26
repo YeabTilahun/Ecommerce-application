@@ -38,10 +38,10 @@ namespace Ecommerce_application
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnAll = new System.Windows.Forms.Button();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbCatagories = new System.Windows.Forms.ComboBox();
             this.btnLatest = new System.Windows.Forms.Button();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.pnlProducts.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -62,7 +62,7 @@ namespace Ecommerce_application
             this.pnlProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProducts.Location = new System.Drawing.Point(0, 0);
             this.pnlProducts.Name = "pnlProducts";
-            this.pnlProducts.Size = new System.Drawing.Size(937, 565);
+            this.pnlProducts.Size = new System.Drawing.Size(940, 642);
             this.pnlProducts.TabIndex = 0;
             this.pnlProducts.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlProducts_Paint);
             // 
@@ -91,7 +91,7 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.dgvProducts);
             this.panel1.Location = new System.Drawing.Point(12, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 513);
+            this.panel1.Size = new System.Drawing.Size(918, 590);
             this.panel1.TabIndex = 40;
             // 
             // flowLayoutPanel1
@@ -101,7 +101,7 @@ namespace Ecommerce_application
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(915, 513);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(918, 590);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
             // dgvProducts
@@ -121,7 +121,7 @@ namespace Ecommerce_application
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvProducts.Size = new System.Drawing.Size(913, 512);
+            this.dgvProducts.Size = new System.Drawing.Size(916, 589);
             this.dgvProducts.TabIndex = 33;
             this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
             // 
@@ -148,13 +148,24 @@ namespace Ecommerce_application
             this.btnAll.UseVisualStyleBackColor = true;
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
+            // picBoxSearch
+            // 
+            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
+            this.picBoxSearch.Location = new System.Drawing.Point(908, 13);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
+            this.picBoxSearch.TabIndex = 36;
+            this.picBoxSearch.TabStop = false;
+            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
+            // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.Location = new System.Drawing.Point(722, 13);
+            this.txtSearch.Location = new System.Drawing.Point(725, 13);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(177, 20);
             this.txtSearch.TabIndex = 28;
@@ -188,23 +199,12 @@ namespace Ecommerce_application
             this.btnLatest.UseVisualStyleBackColor = true;
             this.btnLatest.Click += new System.EventHandler(this.btnLatest_Click);
             // 
-            // picBoxSearch
-            // 
-            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(905, 13);
-            this.picBoxSearch.Name = "picBoxSearch";
-            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
-            this.picBoxSearch.TabIndex = 36;
-            this.picBoxSearch.TabStop = false;
-            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
-            // 
             // AdminProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(937, 565);
+            this.ClientSize = new System.Drawing.Size(940, 642);
             this.Controls.Add(this.pnlProducts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminProducts";

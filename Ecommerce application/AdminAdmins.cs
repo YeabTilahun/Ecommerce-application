@@ -30,6 +30,8 @@ namespace Ecommerce_application
                 }
 
             }
+
+            flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (!Convert.IsDBNull(dt.Rows[i]["photo"]))

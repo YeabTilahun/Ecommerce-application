@@ -166,6 +166,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -283,6 +284,12 @@
     </Compile>
     <Compile Include="LoadCustomerOrAdmin.Designer.cs">
       <DependentUpon>LoadCustomerOrAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadItem.Designer.cs">
+      <DependentUpon>LoadItem.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadItems.cs">
       <SubType>UserControl</SubType>
@@ -436,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoadCustomerOrAdmin.resx">
       <DependentUpon>LoadCustomerOrAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadItem.resx">
+      <DependentUpon>LoadItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadItems.resx">
       <DependentUpon>LoadItems.cs</DependentUpon>
