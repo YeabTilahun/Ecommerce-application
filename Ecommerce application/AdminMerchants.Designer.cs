@@ -54,7 +54,7 @@ namespace Ecommerce_application
             this.pnlMerchant.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMerchant.Location = new System.Drawing.Point(0, 0);
             this.pnlMerchant.Name = "pnlMerchant";
-            this.pnlMerchant.Size = new System.Drawing.Size(937, 565);
+            this.pnlMerchant.Size = new System.Drawing.Size(940, 642);
             this.pnlMerchant.TabIndex = 18;
             this.pnlMerchant.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMerchant_Paint);
             // 
@@ -62,7 +62,7 @@ namespace Ecommerce_application
             // 
             this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(907, 12);
+            this.picBoxSearch.Location = new System.Drawing.Point(910, 12);
             this.picBoxSearch.Name = "picBoxSearch";
             this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
             this.picBoxSearch.TabIndex = 38;
@@ -81,7 +81,7 @@ namespace Ecommerce_application
             this.dgvMerchants.Location = new System.Drawing.Point(12, 51);
             this.dgvMerchants.Name = "dgvMerchants";
             this.dgvMerchants.ReadOnly = true;
-            this.dgvMerchants.Size = new System.Drawing.Size(913, 439);
+            this.dgvMerchants.Size = new System.Drawing.Size(916, 516);
             this.dgvMerchants.TabIndex = 35;
             // 
             // btnUncheck
@@ -92,7 +92,7 @@ namespace Ecommerce_application
             this.btnUncheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnUncheck.FlatAppearance.BorderSize = 0;
             this.btnUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUncheck.Location = new System.Drawing.Point(131, 520);
+            this.btnUncheck.Location = new System.Drawing.Point(131, 597);
             this.btnUncheck.Name = "btnUncheck";
             this.btnUncheck.Size = new System.Drawing.Size(110, 28);
             this.btnUncheck.TabIndex = 33;
@@ -108,7 +108,7 @@ namespace Ecommerce_application
             this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Location = new System.Drawing.Point(721, 520);
+            this.btnRemove.Location = new System.Drawing.Point(724, 597);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(110, 28);
             this.btnRemove.TabIndex = 32;
@@ -124,7 +124,7 @@ namespace Ecommerce_application
             this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnCheck.FlatAppearance.BorderSize = 0;
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheck.Location = new System.Drawing.Point(15, 520);
+            this.btnCheck.Location = new System.Drawing.Point(15, 597);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(110, 28);
             this.btnCheck.TabIndex = 31;
@@ -138,7 +138,7 @@ namespace Ecommerce_application
             this.txtSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearch.Location = new System.Drawing.Point(721, 12);
+            this.txtSearch.Location = new System.Drawing.Point(724, 12);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(177, 20);
             this.txtSearch.TabIndex = 30;
@@ -151,7 +151,7 @@ namespace Ecommerce_application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 565);
+            this.ClientSize = new System.Drawing.Size(940, 642);
             this.Controls.Add(this.pnlMerchant);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMerchants";

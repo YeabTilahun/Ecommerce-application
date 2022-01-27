@@ -36,7 +36,6 @@ namespace Ecommerce_application
             this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMaximized = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -45,7 +44,6 @@ namespace Ecommerce_application
             this.btnRestore = new System.Windows.Forms.Button();
             this.pnlCard = new System.Windows.Forms.Panel();
             this.pnlSideNav = new System.Windows.Forms.Panel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnLogo = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnAdmins = new System.Windows.Forms.Button();
@@ -96,6 +94,7 @@ namespace Ecommerce_application
             this.btnSetting.TabIndex = 37;
             this.btnSetting.Text = "Setting";
             this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnProfile
             // 
@@ -144,7 +143,6 @@ namespace Ecommerce_application
             this.AccountMenuItem.AutoSize = false;
             this.AccountMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.profileToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_342;
             this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -152,13 +150,6 @@ namespace Ecommerce_application
             this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
             this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.AccountMenuItem.Click += new System.EventHandler(this.AccountMenuItem_Click);
-            // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.profileToolStripMenuItem.Text = "Your Profile";
-            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -269,7 +260,6 @@ namespace Ecommerce_application
             this.pnlSideNav.BackColor = System.Drawing.Color.Transparent;
             this.pnlSideNav.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_133;
             this.pnlSideNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlSideNav.Controls.Add(this.txtSearch);
             this.pnlSideNav.Controls.Add(this.btnLogo);
             this.pnlSideNav.Controls.Add(this.btnCustomers);
             this.pnlSideNav.Controls.Add(this.btnAdmins);
@@ -282,18 +272,6 @@ namespace Ecommerce_application
             this.pnlSideNav.Size = new System.Drawing.Size(161, 679);
             this.pnlSideNav.TabIndex = 1;
             this.pnlSideNav.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSideNav_Paint);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtSearch.Location = new System.Drawing.Point(6, 220);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(150, 25);
-            this.txtSearch.TabIndex = 29;
             // 
             // btnLogo
             // 
@@ -320,7 +298,7 @@ namespace Ecommerce_application
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomers.Location = new System.Drawing.Point(6, 313);
+            this.btnCustomers.Location = new System.Drawing.Point(6, 300);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnCustomers.Size = new System.Drawing.Size(150, 25);
@@ -341,7 +319,7 @@ namespace Ecommerce_application
             this.btnAdmins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmins.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmins.Location = new System.Drawing.Point(6, 377);
+            this.btnAdmins.Location = new System.Drawing.Point(6, 364);
             this.btnAdmins.Name = "btnAdmins";
             this.btnAdmins.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnAdmins.Size = new System.Drawing.Size(150, 25);
@@ -362,7 +340,7 @@ namespace Ecommerce_application
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(6, 408);
+            this.btnRegister.Location = new System.Drawing.Point(6, 395);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnRegister.Size = new System.Drawing.Size(150, 25);
@@ -383,7 +361,7 @@ namespace Ecommerce_application
             this.btnTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransactions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTransactions.Location = new System.Drawing.Point(6, 344);
+            this.btnTransactions.Location = new System.Drawing.Point(6, 331);
             this.btnTransactions.Name = "btnTransactions";
             this.btnTransactions.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnTransactions.Size = new System.Drawing.Size(150, 25);
@@ -405,7 +383,7 @@ namespace Ecommerce_application
             this.btnMerchants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMerchants.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnMerchants.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMerchants.Location = new System.Drawing.Point(6, 282);
+            this.btnMerchants.Location = new System.Drawing.Point(6, 269);
             this.btnMerchants.Name = "btnMerchants";
             this.btnMerchants.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnMerchants.Size = new System.Drawing.Size(150, 25);
@@ -426,7 +404,7 @@ namespace Ecommerce_application
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(6, 251);
+            this.btnProducts.Location = new System.Drawing.Point(6, 238);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnProducts.Size = new System.Drawing.Size(150, 25);
@@ -457,7 +435,6 @@ namespace Ecommerce_application
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlSideNav.ResumeLayout(false);
-            this.pnlSideNav.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,10 +460,8 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximized;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.Button btnLogo;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnSetting;
-        private System.Windows.Forms.TextBox txtSearch;
     }
 }

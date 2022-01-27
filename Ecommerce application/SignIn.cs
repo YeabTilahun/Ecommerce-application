@@ -82,12 +82,6 @@ namespace Ecommerce_application
         {
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text);
             s.saveUser();
-            if (s.role == "Customer")
-            {
-                CustomerPage c = new Customerpage(textUsername.Text);
-                c.Show();
-                this.Hide();
-            }
             else if (s.role == "Merchant")
             {
                 Merchant m = new Merchant(textUsername.Text);
@@ -101,65 +95,11 @@ namespace Ecommerce_application
                 this.Hide();
             }
 
-            }
-
-
-        private void textUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private bool firsttime = true;
         private void textUsername_MouseClick(object sender, MouseEventArgs e)
-        {
-           
-        }
-
-        private void textUsername_MouseLeave(object sender, EventArgs e)
-        {
-           
-        }
-
         private void textUsername_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textUsername_Leave(object sender, EventArgs e)
-        {
-            if (textUsername.Text == "")
-            {
-                textUsername.Text = "User name";
                 textUsername.ForeColor = Color.LightGray;
-            }
-        }
 
-        private void textUsername_Enter(object sender, EventArgs e)
         {
-            if (textUsername.Text == "User name")
-            textUsername.Text = "";
-            textUsername.ForeColor = Color.Black;
-        }
-
-        private void textPassword_Enter(object sender, EventArgs e)
-        {
-            if (textPassword.Text == "Password")
-            textPassword.Text = "";
-            textPassword.PasswordChar = '*';
-            textPassword.ForeColor = Color.Black;
-        }
-
-        private void textPassword_Leave(object sender, EventArgs e)
-        {
-            if (textPassword.Text == "")
-            {
-                textPassword.Text = "Password";
-                textPassword.PasswordChar = '\0';
-                textPassword.ForeColor = Color.LightGray;
-            }
-        }
-
-        private void btnLogo_Click(object sender, EventArgs e)
         {
 
         }
