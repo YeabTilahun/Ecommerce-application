@@ -45,12 +45,10 @@ namespace Ecommerce_application
         private void button2_Click(object sender, EventArgs e)
         {
             //Application.Run(new Admin());
-            SignUp signUp = new SignUp();
+            NewSignUp signUp = new NewSignUp();
             signUp.Show();
             this.Hide();
-            //Customer form
-            CustomerPage c = new CustomerPage();
-            c.Show();
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -82,17 +80,28 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SignInUser s = new SignInUser(textUsername.Text, textPassword.Text, comboBox1.Text);
+            SignInUser s = new SignInUser(textUsername.Text, textPassword.Text);
             s.saveUser();
-            //merchant
-            //if it is merchant user
-            Merchant m = new Merchant(textUsername.Text);
-            m.Show();
-            this.Hide();
-            Admin admin = new Admin(textUsername.Text, textPassword.Text, comboBox1.Text);
-            //admin.Show();
+            if (s.role == "Customer")
+            {
+                CustomerPage c = new Customerpage(textUsername.Text);
+                c.Show();
+                this.Hide();
+            }
+            else if (s.role == "Merchant")
+            {
+                Merchant m = new Merchant(textUsername.Text);
+                m.Show();
+                this.Hide();
+            }
+            else
+            {
+                Admin admin = new Admin(textUsername.Text, textPassword.Text);
+                admin.Show();
+                this.Hide();
+            }
 
-        }
+            }
 
 
         private void textUsername_TextChanged(object sender, EventArgs e)
@@ -148,6 +157,24 @@ namespace Ecommerce_application
                 textPassword.PasswordChar = '\0';
                 textPassword.ForeColor = Color.LightGray;
             }
+        }
+
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Application.Run(new Admin());
+            NewSignUp signUp = new NewSignUp();
+            signUp.Show();
+            this.Hide();
         }
     }
 }
