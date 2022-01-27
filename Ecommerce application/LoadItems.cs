@@ -24,9 +24,9 @@ namespace Ecommerce_application
         private string price;
         private string description;
         private byte[] pic;
+        Merchant a = new Merchant();
 
 
-       
         [Category("Custom Props")]
         public string Name
         {
@@ -75,21 +75,35 @@ namespace Ecommerce_application
   
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable LoadToCart(string name, float price)
-            {
-                string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
-                SqlConnection con = new SqlConnection(constr);
-                SqlDataAdapter da = new SqlDataAdapter("spLoadToCart", con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@name", name);
-                da.SelectCommand.Parameters.AddWithValue("@price", price);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "tblProduct");
-                DataTable dt = ds.Tables["tblProduct"];
-                return dt;
-            }
+            /*            DataTable LoadToCart(string name, float price)
+                        {
+                            string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
+                            SqlConnection con = new SqlConnection(constr);
+                            SqlDataAdapter da = new SqlDataAdapter("spLoadToCart", con);
+                            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand.Parameters.AddWithValue("@name", name);
+                            da.SelectCommand.Parameters.AddWithValue("@price", price);
+                            DataSet ds = new DataSet();
+                            da.Fill(ds, "tblProduct");
+                            DataTable dt = ds.Tables["tblProduct"];
+                            return dt;
+                        }*/
+
+
+            Merchant.dataGridView1.Columns.Add("name", "Product Name");
+            Merchant.dataGridView1.Columns.Add("Price", "Price");
+            Merchant.dataGridView1.Rows.Add(name, price);
+            int new_total_price = int.Parse(price);
+            int prev_total_price =+ new_total_price;
+            Merchant.total.Text = Convert.ToString(prev_total_price);
+          
         }
 
+        //Even
+        public void Onclick(object sender,EventArgs e)
+        {
+
+        }
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             labelDescription.Visible = false;
@@ -98,6 +112,11 @@ namespace Ecommerce_application
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
             labelDescription.Visible = true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
