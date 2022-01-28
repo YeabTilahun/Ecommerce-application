@@ -86,7 +86,7 @@ namespace Ecommerce_application
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /*private void button1_Click(object sender, EventArgs e)
         {
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text);
             s.saveUser();
@@ -102,7 +102,7 @@ namespace Ecommerce_application
                 admin.Show();
                 this.Hide();
             }
-        }
+        }*/
         private void textUsername_MouseClick(object sender, MouseEventArgs e)
             {
             }
@@ -122,8 +122,6 @@ namespace Ecommerce_application
             NewSignUp signUp = new NewSignUp();
             signUp.Show();
             this.Hide();
-<<<<<<< HEAD
-<<<<<<< HEAD
         }
 
         private void textPassword_Leave(object sender, EventArgs e)
@@ -136,17 +134,11 @@ namespace Ecommerce_application
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        /*private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ForgotPassword f = new ForgotPassword();
             f.Show();
             this.Hide();
-        }
-=======
-        }
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
-=======
-        }
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
+        }*/
     }
 }

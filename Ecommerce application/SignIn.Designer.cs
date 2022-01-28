@@ -46,13 +46,7 @@ namespace Ecommerce_application
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btnLogo = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-=======
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
-=======
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -84,15 +78,9 @@ namespace Ecommerce_application
             this.textUsername.Size = new System.Drawing.Size(198, 19);
             this.textUsername.TabIndex = 29;
             this.textUsername.Text = "User name";
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.textUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textUsername_MouseClick);
             this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
             this.textUsername.MouseHover += new System.EventHandler(this.textUsername_MouseHover);
-=======
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
-=======
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
             // 
             // label2
             // 
@@ -141,13 +129,7 @@ namespace Ecommerce_application
             this.textPassword.Size = new System.Drawing.Size(198, 27);
             this.textPassword.TabIndex = 30;
             this.textPassword.Text = "Password";
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.textPassword.Leave += new System.EventHandler(this.textPassword_Leave);
-=======
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
-=======
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
             // 
             // label1
             // 
@@ -287,8 +269,6 @@ namespace Ecommerce_application
             this.btnLogo.Size = new System.Drawing.Size(136, 145);
             this.btnLogo.TabIndex = 36;
             this.btnLogo.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
             // 
             // linkLabel1
             // 
@@ -299,11 +279,7 @@ namespace Ecommerce_application
             this.linkLabel1.TabIndex = 48;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "forgot Password?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-=======
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
-=======
->>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
+            //this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // SignIn
             // 
