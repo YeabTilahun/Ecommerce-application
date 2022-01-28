@@ -114,7 +114,6 @@ namespace Ecommerce_application
         {
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetAdmin(txtSearch.Text);
-            //dgvCustomers.DataSource = dt;
             DisplayOnFlowChart(dt);
         }
     }

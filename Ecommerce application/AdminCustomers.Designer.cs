@@ -111,8 +111,6 @@ namespace Ecommerce_application
             this.txtSearch.TabIndex = 36;
             this.txtSearch.Tag = "";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // AdminCustomers
             // 

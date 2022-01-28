@@ -31,8 +31,6 @@ namespace Ecommerce_application
 
         private void btnMaximized_Click(object sender, EventArgs e)
         {
-            //this.WindowState = FormWindowState.Maximized;
-            ///button11.Hide();
             oldLoc = this.Location;
             oldSize = this.Size;
             int x = SystemInformation.WorkingArea.Width;
@@ -44,8 +42,6 @@ namespace Ecommerce_application
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            //this.WindowState = FormWindowState.Normal;
-            // button10.Hide();
             this.Location = oldLoc;
             this.Size = oldSize;
             btnMaximized.BringToFront();
@@ -80,11 +76,6 @@ namespace Ecommerce_application
             pnlCard.Controls.Add(adminProducts.pnlProducts);
             pnlCard.Show();
             pnlCard.BringToFront();
-            /*btnProducts.BackColor = SystemColors.ScrollBar;
-            btnMerchants.BackColor = SystemColors.ControlLight;
-            btnCustomers.BackColor = SystemColors.ControlLight;
-            btnTransactions.BackColor = SystemColors.ControlLight;
-            btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetProduct("","");
@@ -151,11 +142,6 @@ namespace Ecommerce_application
             pnlCard.Controls.Add(adminMerchants.pnlMerchant);
             pnlCard.Show();
             pnlCard.BringToFront();
-            /*btnProducts.BackColor = SystemColors.ControlLight;
-            btnMerchants.BackColor = SystemColors.ScrollBar;
-            btnCustomers.BackColor = SystemColors.ControlLight;
-            btnTransactions.BackColor = SystemColors.ControlLight;
-            btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetMerchant("");
@@ -213,11 +199,6 @@ namespace Ecommerce_application
             pnlCard.Controls.Add(adminCustomers.pnlCustomer);
             pnlCard.Show();
             pnlCard.BringToFront();
-            /*btnProducts.BackColor = SystemColors.ControlLight;
-            btnMerchants.BackColor = SystemColors.ControlLight;
-            btnCustomers.BackColor = SystemColors.ScrollBar;
-            btnTransactions.BackColor = SystemColors.ControlLight;
-            btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetCustomer("");
@@ -272,15 +253,9 @@ namespace Ecommerce_application
             pnlCard.Controls.Add(adminTransaction.pnlTransaction);
             pnlCard.Show();
             pnlCard.BringToFront();
-            /*btnProducts.BackColor = SystemColors.ControlLight;
-            btnMerchants.BackColor = SystemColors.ControlLight;
-            btnCustomers.BackColor = SystemColors.ControlLight;
-            btnTransactions.BackColor = SystemColors.ScrollBar;
-            btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetTransaction();
-            //adminTransaction.dgvTransaction.DataSource = dt;
         }
 
         private void btnAdmins_Click(object sender, EventArgs e)
@@ -302,11 +277,6 @@ namespace Ecommerce_application
             pnlCard.Controls.Add(adminAdmins.pnlAdmin);
             pnlCard.Show();
             pnlCard.BringToFront();
-            /*btnProducts.BackColor = SystemColors.ControlLight;
-            btnMerchants.BackColor = SystemColors.ControlLight;
-            btnCustomers.BackColor = SystemColors.ControlLight;
-            btnTransactions.BackColor = SystemColors.ControlLight;
-            btnAdmins.BackColor = SystemColors.ScrollBar;*/
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetAdmin("");

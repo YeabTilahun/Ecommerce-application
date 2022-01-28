@@ -31,22 +31,22 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMerchants));
             this.pnlMerchant = new System.Windows.Forms.Panel();
-            this.dgvMerchants = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
+            this.pnlProgress = new System.Windows.Forms.Panel();
+            this.pnlValid = new System.Windows.Forms.Panel();
+            this.pnlAll = new System.Windows.Forms.Panel();
+            this.btnProgress = new System.Windows.Forms.Button();
+            this.btnAll = new System.Windows.Forms.Button();
+            this.btnValid = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnValid = new System.Windows.Forms.Button();
-            this.btnAll = new System.Windows.Forms.Button();
-            this.btnProgress = new System.Windows.Forms.Button();
-            this.pnlProgress = new System.Windows.Forms.Panel();
-            this.pnlAll = new System.Windows.Forms.Panel();
-            this.pnlValid = new System.Windows.Forms.Panel();
+            this.dgvMerchants = new System.Windows.Forms.DataGridView();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlMerchant.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMerchants)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMerchants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMerchant
@@ -68,46 +68,68 @@ namespace Ecommerce_application
             this.pnlMerchant.TabIndex = 18;
             this.pnlMerchant.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMerchant_Paint);
             // 
-            // dgvMerchants
+            // pnlProgress
             // 
-            this.dgvMerchants.AllowUserToAddRows = false;
-            this.dgvMerchants.AllowUserToDeleteRows = false;
-            this.dgvMerchants.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMerchants.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.dgvMerchants.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMerchants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMerchants.Location = new System.Drawing.Point(3, 3);
-            this.dgvMerchants.Name = "dgvMerchants";
-            this.dgvMerchants.ReadOnly = true;
-            this.dgvMerchants.Size = new System.Drawing.Size(916, 0);
-            this.dgvMerchants.TabIndex = 35;
+            this.pnlProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
+            this.pnlProgress.Location = new System.Drawing.Point(501, 72);
+            this.pnlProgress.Name = "pnlProgress";
+            this.pnlProgress.Size = new System.Drawing.Size(84, 1);
+            this.pnlProgress.TabIndex = 43;
             // 
-            // txtSearch
+            // pnlValid
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearch.Location = new System.Drawing.Point(724, 25);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(177, 20);
-            this.txtSearch.TabIndex = 30;
-            this.txtSearch.Tag = "";
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            this.pnlValid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
+            this.pnlValid.Location = new System.Drawing.Point(344, 72);
+            this.pnlValid.Name = "pnlValid";
+            this.pnlValid.Size = new System.Drawing.Size(80, 1);
+            this.pnlValid.TabIndex = 42;
             // 
-            // picBoxSearch
+            // pnlAll
             // 
-            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(910, 25);
-            this.picBoxSearch.Name = "picBoxSearch";
-            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
-            this.picBoxSearch.TabIndex = 38;
-            this.picBoxSearch.TabStop = false;
+            this.pnlAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
+            this.pnlAll.Location = new System.Drawing.Point(424, 72);
+            this.pnlAll.Name = "pnlAll";
+            this.pnlAll.Size = new System.Drawing.Size(77, 1);
+            this.pnlAll.TabIndex = 42;
+            // 
+            // btnProgress
+            // 
+            this.btnProgress.FlatAppearance.BorderSize = 0;
+            this.btnProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProgress.Location = new System.Drawing.Point(501, 42);
+            this.btnProgress.Name = "btnProgress";
+            this.btnProgress.Size = new System.Drawing.Size(84, 32);
+            this.btnProgress.TabIndex = 42;
+            this.btnProgress.Text = "InProgress";
+            this.btnProgress.UseVisualStyleBackColor = true;
+            this.btnProgress.Click += new System.EventHandler(this.btnProgress_Click);
+            // 
+            // btnAll
+            // 
+            this.btnAll.FlatAppearance.BorderSize = 0;
+            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.Location = new System.Drawing.Point(424, 42);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(84, 32);
+            this.btnAll.TabIndex = 41;
+            this.btnAll.Text = "All";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
+            // btnValid
+            // 
+            this.btnValid.FlatAppearance.BorderSize = 0;
+            this.btnValid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValid.Location = new System.Drawing.Point(344, 42);
+            this.btnValid.Name = "btnValid";
+            this.btnValid.Size = new System.Drawing.Size(84, 32);
+            this.btnValid.TabIndex = 40;
+            this.btnValid.Text = "Valid";
+            this.btnValid.UseVisualStyleBackColor = true;
+            this.btnValid.Click += new System.EventHandler(this.btnValid_Click);
             // 
             // panel1
             // 
@@ -126,68 +148,44 @@ namespace Ecommerce_application
             this.flowLayoutPanel1.Size = new System.Drawing.Size(916, 554);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // btnValid
+            // dgvMerchants
             // 
-            this.btnValid.FlatAppearance.BorderSize = 0;
-            this.btnValid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValid.Location = new System.Drawing.Point(344, 42);
-            this.btnValid.Name = "btnValid";
-            this.btnValid.Size = new System.Drawing.Size(84, 32);
-            this.btnValid.TabIndex = 40;
-            this.btnValid.Text = "Valid";
-            this.btnValid.UseVisualStyleBackColor = true;
-            this.btnValid.Click += new System.EventHandler(this.btnValid_Click);
+            this.dgvMerchants.AllowUserToAddRows = false;
+            this.dgvMerchants.AllowUserToDeleteRows = false;
+            this.dgvMerchants.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMerchants.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.dgvMerchants.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMerchants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMerchants.Location = new System.Drawing.Point(3, 3);
+            this.dgvMerchants.Name = "dgvMerchants";
+            this.dgvMerchants.ReadOnly = true;
+            this.dgvMerchants.Size = new System.Drawing.Size(916, 0);
+            this.dgvMerchants.TabIndex = 35;
             // 
-            // btnAll
+            // picBoxSearch
             // 
-            this.btnAll.FlatAppearance.BorderSize = 0;
-            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.Location = new System.Drawing.Point(424, 42);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(84, 32);
-            this.btnAll.TabIndex = 41;
-            this.btnAll.Text = "All";
-            this.btnAll.UseVisualStyleBackColor = true;
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
+            this.picBoxSearch.Location = new System.Drawing.Point(910, 25);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
+            this.picBoxSearch.TabIndex = 38;
+            this.picBoxSearch.TabStop = false;
             // 
-            // btnProgress
+            // txtSearch
             // 
-            this.btnProgress.FlatAppearance.BorderSize = 0;
-            this.btnProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProgress.Location = new System.Drawing.Point(501, 42);
-            this.btnProgress.Name = "btnProgress";
-            this.btnProgress.Size = new System.Drawing.Size(84, 32);
-            this.btnProgress.TabIndex = 42;
-            this.btnProgress.Text = "InProgress";
-            this.btnProgress.UseVisualStyleBackColor = true;
-            this.btnProgress.Click += new System.EventHandler(this.btnProgress_Click);
-            // 
-            // pnlProgress
-            // 
-            this.pnlProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
-            this.pnlProgress.Location = new System.Drawing.Point(501, 72);
-            this.pnlProgress.Name = "pnlProgress";
-            this.pnlProgress.Size = new System.Drawing.Size(84, 1);
-            this.pnlProgress.TabIndex = 43;
-            // 
-            // pnlAll
-            // 
-            this.pnlAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
-            this.pnlAll.Location = new System.Drawing.Point(424, 72);
-            this.pnlAll.Name = "pnlAll";
-            this.pnlAll.Size = new System.Drawing.Size(77, 1);
-            this.pnlAll.TabIndex = 42;
-            // 
-            // pnlValid
-            // 
-            this.pnlValid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
-            this.pnlValid.Location = new System.Drawing.Point(344, 72);
-            this.pnlValid.Name = "pnlValid";
-            this.pnlValid.Size = new System.Drawing.Size(80, 1);
-            this.pnlValid.TabIndex = 42;
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtSearch.Location = new System.Drawing.Point(724, 25);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(177, 20);
+            this.txtSearch.TabIndex = 30;
+            this.txtSearch.Tag = "";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // AdminMerchants
             // 
@@ -202,10 +200,10 @@ namespace Ecommerce_application
             this.Load += new System.EventHandler(this.AdminMerchants_Load);
             this.pnlMerchant.ResumeLayout(false);
             this.pnlMerchant.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMerchants)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMerchants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
