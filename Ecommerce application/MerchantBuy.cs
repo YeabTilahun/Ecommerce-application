@@ -55,7 +55,7 @@ namespace Ecommerce_application
                         a[i].Pic = (byte[])dt.Rows[i]["photo"];
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
-                        a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
+                        a[i].Price = dt.Rows[i]["price"].ToString();
            
                         if (panelBuy.Controls.Count < 0)
                             panelBuy.Controls.Clear();
