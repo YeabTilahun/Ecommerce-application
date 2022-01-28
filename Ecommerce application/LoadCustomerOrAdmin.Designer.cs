@@ -35,7 +35,7 @@ namespace Ecommerce_application
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.fName = new System.Windows.Forms.Label();
             this.lName = new System.Windows.Forms.Label();
@@ -113,16 +113,16 @@ namespace Ecommerce_application
             this.label5.TabIndex = 6;
             this.label5.Text = "Birthday:";
             // 
-            // label6
+            // lblStatus
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(530, 42);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 15);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Sex:";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(530, 42);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(31, 15);
+            this.lblStatus.TabIndex = 7;
+            this.lblStatus.Text = "Sex:";
             // 
             // label7
             // 
@@ -228,7 +228,7 @@ namespace Ecommerce_application
             this.Controls.Add(this.lName);
             this.Controls.Add(this.fName);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -253,7 +253,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.PictureBox picCustomerOrAdmin;
         public System.Windows.Forms.Label fName;
@@ -263,5 +262,6 @@ namespace Ecommerce_application
         public System.Windows.Forms.Label bDay;
         public System.Windows.Forms.Label sex;
         public System.Windows.Forms.Label uName;
+        public System.Windows.Forms.Label lblStatus;
     }
 }

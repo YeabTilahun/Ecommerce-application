@@ -172,6 +172,7 @@ namespace Ecommerce_application
                 }
 
             }
+            adminMerchants.flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
@@ -181,7 +182,9 @@ namespace Ecommerce_application
                 a[i].Phone = dt.Rows[i]["phone"].ToString();
                 a[i].Email = dt.Rows[i]["email"].ToString();
                 a[i].BDay = dt.Rows[i]["birthday"].ToString();
-                a[i].Sex = dt.Rows[i]["sex"].ToString();
+                a[i].lblStatus.Text = "Status:";
+                a[i].sex.Location = new Point(570, 42);
+                a[i].Sex = dt.Rows[i]["status"].ToString();
                 a[i].UName = dt.Rows[i]["userName"].ToString();
 
                 if (adminMerchants.flowLayoutPanel1.Controls.Count < 0)

@@ -275,7 +275,7 @@ namespace Ecommerce_application
             return dt;
         }
 
-        public DataTable GetPermit(string UserName)
+        public DataTable GetPermit(string userName)
         {
             AdminDatabase AdminD = new AdminDatabase();
             DataTable dt = AdminD.GetPermit(userName);
@@ -306,6 +306,18 @@ namespace Ecommerce_application
         {
             AdminDatabase adminD = new AdminDatabase();
             adminD.DeleteMerchant(userName);
+        }
+
+        public void UpdateStatusActive(string userName)
+        {
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.UpdateStatus(userName, "Active");
+        }
+
+        public void UpdateStatusReject(string userName)
+        {
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.UpdateStatus(userName, "Rejected");
         }
     }
 }
