@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>ICON.ico</ApplicationIcon>
+    <ApplicationIcon>Ecommerce Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
@@ -237,7 +237,6 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ChangePassword.cs" />
     <Compile Include="CustomerBuy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,12 +272,6 @@
     </Compile>
     <Compile Include="ForgetPassWord.Designer.cs">
       <DependentUpon>ForgetPassWord.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ForgotPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ForgotPassword.Designer.cs">
-      <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -347,12 +340,6 @@
     <Compile Include="MerchantHome.Designer.cs">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="MerchantLoadProducts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MerchantLoadProducts.Designer.cs">
-      <DependentUpon>MerchantLoadProducts.cs</DependentUpon>
-    </Compile>
     <Compile Include="MerchantProfile1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,12 +367,6 @@
     <Compile Include="NewSignUp.Designer.cs">
       <DependentUpon>NewSignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PasswordReset.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PasswordReset.Designer.cs">
-      <DependentUpon>PasswordReset.cs</DependentUpon>
-    </Compile>
     <Compile Include="ProductDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -395,15 +376,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ResetPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ResetPassword.Designer.cs">
-      <DependentUpon>ResetPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="signInPro.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="SignInUser.cs" />
     <Compile Include="SignUp.cs">
@@ -427,11 +399,11 @@
     <Compile Include="The Wait Form.Designer.cs">
       <DependentUpon>The Wait Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Verfication.cs">
+    <Compile Include="ValidatingMerchant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Verfication.Designer.cs">
-      <DependentUpon>Verfication.cs</DependentUpon>
+    <Compile Include="ValidatingMerchant.Designer.cs">
+      <DependentUpon>ValidatingMerchant.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -472,9 +444,6 @@
     <EmbeddedResource Include="ForgetPassWord.resx">
       <DependentUpon>ForgetPassWord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgotPassword.resx">
-      <DependentUpon>ForgotPassword.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -508,9 +477,6 @@
     <EmbeddedResource Include="MerchantHome.resx">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MerchantLoadProducts.resx">
-      <DependentUpon>MerchantLoadProducts.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MerchantProfile1.resx">
       <DependentUpon>MerchantProfile1.cs</DependentUpon>
     </EmbeddedResource>
@@ -523,15 +489,9 @@
     <EmbeddedResource Include="NewSignUp.resx">
       <DependentUpon>NewSignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PasswordReset.resx">
-      <DependentUpon>PasswordReset.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ResetPassword.resx">
-      <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
@@ -542,8 +502,8 @@
     <EmbeddedResource Include="The Wait Form.resx">
       <DependentUpon>The Wait Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Verfication.resx">
-      <DependentUpon>Verfication.cs</DependentUpon>
+    <EmbeddedResource Include="ValidatingMerchant.resx">
+      <DependentUpon>ValidatingMerchant.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="EcommerceDataSet.xsc">
       <DependentUpon>EcommerceDataSet.xsd</DependentUpon>
@@ -621,7 +581,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
-    <Content Include="ICON.ico" />
     <None Include="Resources\Rectangle 1411.png" />
     <None Include="Resources\Asset 344.png" />
     <None Include="Resources\Group 3422.png" />

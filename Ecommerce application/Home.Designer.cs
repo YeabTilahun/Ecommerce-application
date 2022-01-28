@@ -174,7 +174,7 @@ namespace Ecommerce_application
             this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.buttonLogo.Location = new System.Drawing.Point(13, 3);
+            this.buttonLogo.Location = new System.Drawing.Point(13, 12);
             this.buttonLogo.Name = "buttonLogo";
             this.buttonLogo.Size = new System.Drawing.Size(136, 145);
             this.buttonLogo.TabIndex = 0;

@@ -38,13 +38,9 @@ namespace Ecommerce_application
                 Image RetImage = Image.FromStream(stream);
                 picBoxAddphoto.Image = RetImage;
                 hc.SaveUser();
-                SignIn s = new SignIn();
-                s.Show();
-                this.Hide();
             }
             else
-                MessageBox.Show("The password dont match!");
-
+                MessageBox.Show("They are Different");
         }
 
         private void button1_Click(object sender, EventArgs e)
