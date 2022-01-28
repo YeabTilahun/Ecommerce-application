@@ -14,32 +14,40 @@ namespace Ecommerce_application
     {
         public static string userName;
         public static string password;
-        public static string role;
+        public Point oldLoc;
+        public Size oldSize;
+
         public Admin()
         {
             InitializeComponent();
         }
         
-        public Admin(string userName, string password, string role)
+        public Admin(string userName, string password)
         {
             Admin.userName = userName;
-            Admin.password = password;
-            Admin.role = role;
             InitializeComponent();
             btnProfile.Text = Admin.userName;
         }
 
         private void btnMaximized_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
             ///button11.Hide();
+            oldLoc = this.Location;
+            oldSize = this.Size;
+            int x = SystemInformation.WorkingArea.Width;
+            int y = SystemInformation.WorkingArea.Height;
+            this.Location = new Point(0, 0);
+            this.Size = new Size(x, y);
             btnRestore.BringToFront();
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            //this.WindowState = FormWindowState.Normal;
             // button10.Hide();
+            this.Location = oldLoc;
+            this.Size = oldSize;
             btnMaximized.BringToFront();
         }
 
@@ -79,14 +87,49 @@ namespace Ecommerce_application
             btnAdmins.BackColor = SystemColors.ControlLight;*/
 
             AdminClass ac = new AdminClass();
-            DataTable dt = ac.GetProduct("");
+            DataTable dt = ac.GetProduct("","");
             adminProducts.dgvProducts.DataSource = dt;
+            
+            LoadProduct[] a = new LoadProduct[dt.Rows.Count];
+            for(int i = 0; i < dt.Rows.Count; i++)
+                a[i] = new LoadProduct();
+            if (this.Size == SystemInformation.WorkingArea.Size)
+            {
+                for(int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i].Width = adminProducts.flowLayoutPanel1.Width-3;
+                    a[i].description.MaximumSize = new Size(a[i].panel6.Location.X - a[i].panel5.Location.X - 22, 0);
+                }
+
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                    a[i].PicProduct = (byte[])dt.Rows[i]["photo"];
+                a[i].ID = dt.Rows[i]["productid"].ToString();
+                a[i].Name = dt.Rows[i]["name"].ToString();
+                a[i].Price = dt.Rows[i]["price"].ToString();
+                a[i].Quantity = dt.Rows[i]["quantity"].ToString();
+                a[i].Category = dt.Rows[i]["category"].ToString();
+                a[i].Description = dt.Rows[i]["description"].ToString();
+                a[i].ExpireDate = dt.Rows[i]["expireDate"].ToString();
+                a[i].DateStamp = dt.Rows[i]["dateStamp"].ToString();
+
+                if (adminProducts.flowLayoutPanel1.Controls.Count < 0)
+                    adminProducts.flowLayoutPanel1.Controls.Clear();
+                else
+                    adminProducts.flowLayoutPanel1.Controls.Add(a[i]);
+            }
 
             string[] category = ac.GetCategory();
+            adminProducts.cmbCatagories.Items.Add("All");
+            adminProducts.cmbCatagories.Text = "All";
             foreach(string cat in category)
             {
                 adminProducts.cmbCatagories.Items.Add(cat);
             }
+
+            
         }
 
         private void btnMerchants_Click(object sender, EventArgs e)
@@ -176,6 +219,35 @@ namespace Ecommerce_application
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetCustomer("");
             adminCustomers.dgvCustomers.DataSource = dt;
+
+            LoadCustomerOrAdmin[] a = new LoadCustomerOrAdmin[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+                a[i] = new LoadCustomerOrAdmin();
+            if (this.Size == SystemInformation.WorkingArea.Size)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i].Width = adminCustomers.flowLayoutPanel1.Width - 3;
+                }
+
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                    a[i].PicCustomerOrAdmin = (byte[])dt.Rows[i]["photo"];
+                a[i].FName = dt.Rows[i]["fname"].ToString();
+                a[i].LName = dt.Rows[i]["lname"].ToString();
+                a[i].Phone = dt.Rows[i]["phone"].ToString();
+                a[i].Email = dt.Rows[i]["email"].ToString();
+                a[i].BDay = dt.Rows[i]["birthday"].ToString();
+                a[i].Sex = dt.Rows[i]["sex"].ToString();
+                a[i].UName = dt.Rows[i]["userName"].ToString();
+
+                if (adminCustomers.flowLayoutPanel1.Controls.Count < 0)
+                    adminCustomers.flowLayoutPanel1.Controls.Clear();
+                else
+                    adminCustomers.flowLayoutPanel1.Controls.Add(a[i]);
+            }
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
@@ -205,7 +277,7 @@ namespace Ecommerce_application
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetTransaction();
-            adminTransaction.dgvTransaction.DataSource = dt;
+            //adminTransaction.dgvTransaction.DataSource = dt;
         }
 
         private void btnAdmins_Click(object sender, EventArgs e)
@@ -236,12 +308,46 @@ namespace Ecommerce_application
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetAdmin("");
             adminAdmins.dgvAdmins.DataSource = dt;
+
+            LoadCustomerOrAdmin[] a = new LoadCustomerOrAdmin[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+                a[i] = new LoadCustomerOrAdmin();
+            if (this.Size == SystemInformation.WorkingArea.Size)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i].Width = adminAdmins.flowLayoutPanel1.Width - 3;
+                }
+
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                    a[i].PicCustomerOrAdmin = (byte[])dt.Rows[i]["photo"];
+                a[i].FName = dt.Rows[i]["fname"].ToString();
+                a[i].LName = dt.Rows[i]["lname"].ToString();
+                a[i].Phone = dt.Rows[i]["phone"].ToString();
+                a[i].Email = dt.Rows[i]["email"].ToString();
+                a[i].BDay = dt.Rows[i]["birthday"].ToString();
+                a[i].Sex = dt.Rows[i]["sex"].ToString();
+                a[i].UName = dt.Rows[i]["userName"].ToString();
+
+                if (adminAdmins.flowLayoutPanel1.Controls.Count < 0)
+                    adminAdmins.flowLayoutPanel1.Controls.Clear();
+                else
+                    adminAdmins.flowLayoutPanel1.Controls.Add(a[i]);
+            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            AdminRegister adminRegister = new AdminRegister();
-            adminRegister.Show();
+            AdminSettingOrRegister adminSettingOrRegister = new AdminSettingOrRegister();
+            adminSettingOrRegister.lblNav.Text = "Registeration";
+            adminSettingOrRegister.txtPass.ReadOnly = false;
+            adminSettingOrRegister.btnUpdate.Hide();
+            adminSettingOrRegister.pnlConfirmPass.Show();
+            adminSettingOrRegister.Width = 400;
+            adminSettingOrRegister.Show();
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -338,10 +444,9 @@ namespace Ecommerce_application
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string[] profile;
             AdminClass ac = new AdminClass();
-            profile = ac.GetAdminProfile();
-            AdminProfile a = new AdminProfile(profile[0], profile[1], profile[2], profile[3], profile[4], profile[5], profile[6], profile[7], profile[8], profile[9]);
+            DataTable dt = ac.GetAdminProfile();
+            AdminProfile a = new AdminProfile(dt);
             a.Show();
         }
 
@@ -423,6 +528,17 @@ namespace Ecommerce_application
             adminHome.lblName2.Text = product[0];
             adminHome.lblQuantity2.Text = product[1];
             adminHome.lblPrice2.Text = "$" + product[2];
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetAdminProfile();
+
+            AdminSettingOrRegister adminSettingOrRegister = new AdminSettingOrRegister(dt);
+            adminSettingOrRegister.btnRegister.Hide();
+            adminSettingOrRegister.Width = 400;
+            adminSettingOrRegister.Show();
         }
     }
 }

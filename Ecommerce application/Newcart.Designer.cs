@@ -64,12 +64,16 @@ namespace Ecommerce_application
             this.button1.TabIndex = 1;
             this.button1.Text = "Remove";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridViewCart
             // 
+            this.dataGridViewCart.AllowUserToAddRows = false;
+            this.dataGridViewCart.AllowUserToDeleteRows = false;
             this.dataGridViewCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCart.Location = new System.Drawing.Point(40, 53);
             this.dataGridViewCart.Name = "dataGridViewCart";
+            this.dataGridViewCart.ReadOnly = true;
             this.dataGridViewCart.Size = new System.Drawing.Size(699, 278);
             this.dataGridViewCart.TabIndex = 0;
             this.dataGridViewCart.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewCart_RowHeaderMouseClick);

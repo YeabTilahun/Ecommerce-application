@@ -12,14 +12,50 @@ namespace Ecommerce_application
 {
     public partial class AdminProducts : Form
     {
+        private bool btnLatestClicked = false;
         public AdminProducts()
         {
             InitializeComponent();
         }
 
+        private void DisplayOnFlowChart(DataTable dt)
+        {
+            LoadProduct[] a = new LoadProduct[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+                a[i] = new LoadProduct();
+            if (this.Size == SystemInformation.WorkingArea.Size)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i].Width = flowLayoutPanel1.Width - 3;
+                    a[i].description.MaximumSize = new Size(a[i].panel6.Location.X - a[i].panel5.Location.X - 22, 0);
+                }
+
+            }
+            flowLayoutPanel1.Controls.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                    a[i].PicProduct = (byte[])dt.Rows[i]["photo"];
+                a[i].ID = dt.Rows[i]["productid"].ToString();
+                a[i].Name = dt.Rows[i]["name"].ToString();
+                a[i].Price = dt.Rows[i]["price"].ToString();
+                a[i].Quantity = dt.Rows[i]["quantity"].ToString();
+                a[i].Category = dt.Rows[i]["category"].ToString();
+                a[i].Description = dt.Rows[i]["description"].ToString();
+                a[i].ExpireDate = dt.Rows[i]["expireDate"].ToString();
+                a[i].DateStamp = dt.Rows[i]["dateStamp"].ToString();
+
+                if (flowLayoutPanel1.Controls.Count < 0)
+                    flowLayoutPanel1.Controls.Clear();
+                else
+                    flowLayoutPanel1.Controls.Add(a[i]);
+            }
+        }
+
         private void AdminProduct_Load(object sender, EventArgs e)
         {
-
+            
         }
         private void btnCustomers_Click(object sender, EventArgs e)
         {
@@ -54,7 +90,7 @@ namespace Ecommerce_application
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            AdminRegister adminRegister = new AdminRegister();
+            AdminSettingOrRegister adminRegister = new AdminSettingOrRegister();
             adminRegister.Show();
         }
 
@@ -120,7 +156,7 @@ namespace Ecommerce_application
 
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        /*private void btnDelete_Click(object sender, EventArgs e)
         {
             //Array is to hold different product ID that are selected in data grid view 
             int counter = 0;
@@ -145,9 +181,9 @@ namespace Ecommerce_application
             }
             AdminClass product = new AdminClass();
             product.DeleteProduct(id);
-        }
+        }*/
 
-        private void btnCheck_Click(object sender, EventArgs e)
+        /*private void btnCheck_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dgvProducts.RowCount; i++)
             {
@@ -161,34 +197,52 @@ namespace Ecommerce_application
             {
                 dgvProducts.Rows[i].Cells[0].Value = false;
             }
-        }
+        }*/
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Search Items Here")
+            /*if (txtSearch.Text == "Search Items Here")
                 txtSearch.Text = "";
-            txtSearch.ForeColor = Color.Black;
+            txtSearch.ForeColor = Color.Black;*/
         }
 
         private void txtSearch_Leave(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "")
+            /*if (txtSearch.Text == "")
             {
                 txtSearch.Text = "Search Items Here";
                 txtSearch.ForeColor = Color.LightGray;
-            }
+            }*/
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            DataTable dt = ac.GetProduct(txtSearch.Text); ;
-            dgvProducts.DataSource = dt;
+            DataTable dt;
+            if (btnLatestClicked)
+            {
+                if (cmbCatagories.Text.Equals("All"))
+                    dt = ac.GetLatestProduct(txtSearch.Text, "");
+                else
+                    dt = ac.GetLatestProduct(txtSearch.Text, cmbCatagories.Text);
+            }
+            else
+            {
+                if (cmbCatagories.Text.Equals("All"))
+                    dt = ac.GetProduct(txtSearch.Text, "");
+                else
+                    dt = ac.GetProduct(txtSearch.Text, cmbCatagories.Text);
+            }
+            //dgvProducts.DataSource = dt;
+            DisplayOnFlowChart(dt);
         }
 
         private void pnlProducts_Paint(object sender, PaintEventArgs e)
         {
-
+            btnAll.ForeColor = Color.FromArgb(0, 77, 153);
+            pnlAll.Show();
+            btnLatest.ForeColor = Color.Black;
+            pnlLatest.Hide();
         }
 
         private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -204,8 +258,82 @@ namespace Ecommerce_application
         private void cmbCatagories_SelectedIndexChanged(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            DataTable dt = ac.GetProductByCategory(cmbCatagories.Text);
-            dgvProducts.DataSource = dt;
+            DataTable dt;
+            if(btnLatestClicked)
+            {
+                if (cmbCatagories.Text.Equals("All"))
+                {
+                    dt = ac.GetLatestProduct("", ""); ;
+                }
+                else
+                    dt = ac.GetLatestProduct("", cmbCatagories.Text);
+            }
+            else
+            {
+                if (cmbCatagories.Text.Equals("All"))
+                {
+                    dt = ac.GetProduct("", ""); ;               
+                }
+                else
+                    dt = ac.GetProduct("", cmbCatagories.Text);
+            }
+
+            //dgvProducts.DataSource = dt;
+            DisplayOnFlowChart(dt);
+
+
+        }
+
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+            btnLatestClicked = false;
+            btnAll.ForeColor = Color.FromArgb(0, 77, 153);
+            pnlAll.Show();
+            btnLatest.ForeColor = Color.Black;
+            pnlLatest.Hide();
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetProduct("", "");
+            //dgvProducts.DataSource = dt;
+            DisplayOnFlowChart(dt);
+
+            string[] category = ac.GetCategory();
+            cmbCatagories.Items.Clear();
+            cmbCatagories.Items.Add("All");
+            cmbCatagories.Text = "All";
+            foreach (string cat in category)
+            {
+                cmbCatagories.Items.Add(cat);
+            }
+
+        }
+
+        private void btnLatest_Click(object sender, EventArgs e)
+        {
+            btnLatestClicked = true;
+            btnAll.ForeColor = Color.Black;
+            pnlAll.Hide();
+            btnLatest.ForeColor = Color.FromArgb(0, 77, 153);
+            pnlLatest.Show();
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetLatestProduct("", "");
+            //dgvProducts.DataSource = dt;
+            DisplayOnFlowChart(dt);
+
+            string[] category = ac.GetLatestCategory();
+            cmbCatagories.Items.Clear();
+            cmbCatagories.Items.Add("All");
+            cmbCatagories.Text = "All";
+            foreach (string cat in category)
+            {
+                cmbCatagories.Items.Add(cat);
+            }
+        }
+
+        private void cmbCatagories_MouseHover(object sender, EventArgs e)
+        {
+
         }
     }
 }
