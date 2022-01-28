@@ -89,21 +89,10 @@ namespace Ecommerce_application
                             return dt;
                         }*/
 
-            Merchant.dataGridView1.Columns.Add("name", "Product Name");
-            Merchant.dataGridView1.Columns.Add("Price", "Price");
-            Merchant.dataGridView1.Rows.Add(name, price);
-
-            //calculate total
-            double sum = 0;
-            for (int i = 0; i < Merchant.dataGridView1.Rows.Count; ++i)
-            {
-                sum += Convert.ToDouble(Merchant.dataGridView1.Rows[i].Cells[1].Value);
-            }
-            Merchant.total.Text = string.Format("${0}", sum.ToString());
+           
 
         }
 
-        //Even
         public void Onclick(object sender,EventArgs e)
         {
 
@@ -112,13 +101,32 @@ namespace Ecommerce_application
         {
             labelDescription.Visible = false;
         }
-
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
             labelDescription.Visible = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void labelDescription_Click(object sender, EventArgs e)
         {
 
         }

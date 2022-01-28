@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Ecommerce Icon.ico</ApplicationIcon>
+    <ApplicationIcon>ICON.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
@@ -340,6 +340,12 @@
     <Compile Include="MerchantHome.Designer.cs">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="MerchantLoadProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MerchantLoadProducts.Designer.cs">
+      <DependentUpon>MerchantLoadProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="MerchantProfile1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -477,6 +483,9 @@
     <EmbeddedResource Include="MerchantHome.resx">
       <DependentUpon>MerchantHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MerchantLoadProducts.resx">
+      <DependentUpon>MerchantLoadProducts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MerchantProfile1.resx">
       <DependentUpon>MerchantProfile1.cs</DependentUpon>
     </EmbeddedResource>
@@ -581,6 +590,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <Content Include="ICON.ico" />
     <None Include="Resources\Rectangle 1411.png" />
     <None Include="Resources\Asset 344.png" />
     <None Include="Resources\Group 3422.png" />
