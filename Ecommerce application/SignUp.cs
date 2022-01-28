@@ -123,16 +123,5 @@ namespace Ecommerce_application
         {
 
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            SignIn sign = new SignIn();
-            sign.Show();
-        }
     }
 }
