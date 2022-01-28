@@ -78,6 +78,14 @@ namespace Ecommerce_application
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //if it is merchant user
+            Merchant m = new Merchant(textUsername.Text);
+            m.Show();
+            this.Hide();
+        }
+
         /*private void button1_Click(object sender, EventArgs e)
         {
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text);
