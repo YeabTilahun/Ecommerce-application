@@ -933,5 +933,37 @@ namespace Ecommerce_application
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public void UpdateStatus(string userName, string status)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spUpdateStatus", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@userName", userName);
+                    cmd.Parameters.AddWithValue("@status", status);
+                    int rowAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        if(status.Equals("Active"))
+                            MessageBox.Show("Merchant status has been Active");
+                        else
+                            MessageBox.Show("Merchant status has been Rejected");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed! Please Try Again");
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

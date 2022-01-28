@@ -33,6 +33,7 @@ namespace Ecommerce_application
                 }
 
             }
+            flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
@@ -42,7 +43,9 @@ namespace Ecommerce_application
                 a[i].Phone = dt.Rows[i]["phone"].ToString();
                 a[i].Email = dt.Rows[i]["email"].ToString();
                 a[i].BDay = dt.Rows[i]["birthday"].ToString();
-                a[i].Sex = dt.Rows[i]["sex"].ToString();
+                a[i].lblStatus.Text = "Status:";
+                a[i].sex.Location = new Point(570,42);
+                a[i].Sex = dt.Rows[i]["status"].ToString();
                 a[i].UName = dt.Rows[i]["userName"].ToString();
 
                 if (flowLayoutPanel1.Controls.Count < 0)
@@ -54,6 +57,7 @@ namespace Ecommerce_application
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
+                    a[i].MouseHover += new EventHandler(a[i].HoverAll);
                     a[i].picCustomerOrAdmin.MouseHover += new EventHandler(a[i].HoverAll);
                     a[i].fName.MouseHover += new EventHandler(a[i].HoverAll);
                     a[i].lName.MouseHover += new EventHandler(a[i].HoverAll);
@@ -63,6 +67,7 @@ namespace Ecommerce_application
                     a[i].sex.MouseHover += new EventHandler(a[i].HoverAll);
                     a[i].uName.MouseHover += new EventHandler(a[i].HoverAll);
 
+                    a[i].Click += new EventHandler(a[i].AllClicked);
                     a[i].picCustomerOrAdmin.Click += new EventHandler(a[i].AllClicked);
                     a[i].fName.Click += new EventHandler(a[i].AllClicked);
                     a[i].lName.Click += new EventHandler(a[i].AllClicked);
@@ -71,6 +76,16 @@ namespace Ecommerce_application
                     a[i].bDay.Click += new EventHandler(a[i].AllClicked);
                     a[i].sex.Click += new EventHandler(a[i].AllClicked);
                     a[i].uName.Click += new EventHandler(a[i].AllClicked);
+
+                    a[i].MouseLeave += new EventHandler(a[i].LeaveAll);
+                    a[i].picCustomerOrAdmin.MouseLeave += new EventHandler(a[i].LeaveAll);
+                    a[i].fName.MouseLeave += new EventHandler(a[i].LeaveAll);
+                    a[i].lName.MouseLeave += new EventHandler(a[i].LeaveAll);
+                    a[i].phone.MouseLeave += new EventHandler(a[i].LeaveAll);
+                    a[i].email.MouseLeave += new EventHandler(a[i].LeaveAll);
+                    a[i].bDay.MouseLeave += new EventHandler(a[i].LeaveAll);
+                    a[i].sex.MouseLeave += new EventHandler(a[i].LeaveAll);
+                    a[i].uName.MouseLeave += new EventHandler(a[i].LeaveAll);
                 }
             }
         }
@@ -143,15 +158,16 @@ namespace Ecommerce_application
                 SignIn signIn = new SignIn();
                 signIn.Show();
             }
-            if (res == DialogResult.No)
-            {
-
-            }
         }
 
         private void pnlMerchant_Paint(object sender, PaintEventArgs e)
         {
-
+            btnValid.ForeColor = Color.Black;
+            pnlValid.Hide();
+            btnAll.ForeColor = Color.FromArgb(0, 77, 153);
+            pnlAll.Show();
+            btnProgress.ForeColor = Color.Black;
+            pnlProgress.Hide();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -183,18 +199,18 @@ namespace Ecommerce_application
 
         private void txtSearch_Leave(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "")
+            /*if (txtSearch.Text == "")
             {
                 txtSearch.Text = "Search Items Here";
                 txtSearch.ForeColor = Color.LightGray;
-            }
+            }*/
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Search Items Here")
+            /*if (txtSearch.Text == "Search Items Here")
                 txtSearch.Text = "";
-            txtSearch.ForeColor = Color.Black;
+            txtSearch.ForeColor = Color.Black;*/
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

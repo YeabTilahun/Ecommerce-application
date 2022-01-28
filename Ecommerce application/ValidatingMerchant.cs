@@ -26,7 +26,8 @@ namespace Ecommerce_application
             this.userName = userName;
             AdminClass ac = new AdminClass();
             dt = ac.GetPermit(userName);
-            MemoryStream ms = new MemoryStream((byte[])dt.Rows[0]["permit"]);
+            byte[] photo = (byte[])dt.Rows[0]["permit"];
+            MemoryStream ms = new MemoryStream(photo);
             picPermit.BackgroundImage = Image.FromStream(ms);
         }
 
@@ -39,13 +40,14 @@ namespace Ecommerce_application
         {
             AdminClass ac = new AdminClass();
             ac.AddToAll(dt.Rows[0]["userName"].ToString(), dt.Rows[0]["password"].ToString(), dt.Rows[0]["role"].ToString());
+            ac.UpdateStatusActive(dt.Rows[0]["userName"].ToString());
             this.Close();
         }
 
         private void btnDecline_Click(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            ac.DeleteMerchant(userName);
+            ac.UpdateStatusReject(userName);
             this.Close();
         }
     }

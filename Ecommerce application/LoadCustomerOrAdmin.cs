@@ -132,7 +132,12 @@ namespace Ecommerce_application
 
         public void HoverAll(object sender, EventArgs e)
         {
+            this.BackColor = Color.LightGray;
+        }
 
+        public void LeaveAll(object sender, EventArgs e)
+        {
+            this.BackColor = SystemColors.ControlLight;
         }
     }
 }
