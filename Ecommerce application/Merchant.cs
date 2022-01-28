@@ -24,7 +24,7 @@ namespace Ecommerce_application
         //To make life easier
         public Merchant()
         {
-          
+            InitializeComponent();
         }
 
         MerchantSell n = new MerchantSell();
