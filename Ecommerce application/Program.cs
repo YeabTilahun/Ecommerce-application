@@ -16,7 +16,7 @@ namespace Ecommerce_application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new Admin());
+            Application.Run(new Admin());
             Application.Run(new SignIn());
         }
     }
