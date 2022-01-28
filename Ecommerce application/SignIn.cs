@@ -86,11 +86,11 @@ namespace Ecommerce_application
             this.Hide();
         }
 
-        /*private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text);
             s.saveUser();
-            else if (s.role == "Merchant")
+            if (s.role == "Merchant")
             {
                 Merchant m = new Merchant(textUsername.Text);
                 m.Show();
@@ -102,13 +102,12 @@ namespace Ecommerce_application
                 admin.Show();
                 this.Hide();
             }
-
+        }
         private void textUsername_MouseClick(object sender, MouseEventArgs e)
+            {
+            }
         private void textUsername_MouseHover(object sender, EventArgs e)
-                textUsername.ForeColor = Color.LightGray;
-
-        {
-        {
+            {                 textUsername.ForeColor = Color.LightGray;
 
         }
 
@@ -123,6 +122,31 @@ namespace Ecommerce_application
             NewSignUp signUp = new NewSignUp();
             signUp.Show();
             this.Hide();
-        }*/
+<<<<<<< HEAD
+<<<<<<< HEAD
+        }
+
+        private void textPassword_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassword f = new ForgotPassword();
+            f.Show();
+            this.Hide();
+        }
+=======
+        }
+>>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
+=======
+        }
+>>>>>>> 25dd581c21823f70dc5808b760478a8b59fcee09
     }
 }
