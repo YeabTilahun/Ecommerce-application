@@ -45,10 +45,12 @@ namespace Ecommerce_application
         private void button2_Click(object sender, EventArgs e)
         {
             //Application.Run(new Admin());
-            NewSignUp signUp = new NewSignUp();
+            SignUp signUp = new SignUp();
             signUp.Show();
             this.Hide();
-            
+            //Customer form
+            CustomerPage c = new CustomerPage();
+            c.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -80,8 +82,9 @@ namespace Ecommerce_application
 
         /*private void button1_Click(object sender, EventArgs e)
         {
-            SignInUser s = new SignInUser(textUsername.Text, textPassword.Text);
+            SignInUser s = new SignInUser(textUsername.Text, textPassword.Text, comboBox1.Text);
             s.saveUser();
+<<<<<<< HEAD
             else if (s.role == "Merchant")
             {
                 Merchant m = new Merchant(textUsername.Text);
@@ -95,11 +98,31 @@ namespace Ecommerce_application
                 this.Hide();
             }
 
+=======
+            //merchant
+            //if it is merchant user
+            Merchant m = new Merchant(textUsername.Text);
+            m.Show();
+            this.Hide();
+            Admin admin = new Admin(textUsername.Text, textPassword.Text, comboBox1.Text);
+            //admin.Show();
+
+        }
+
+
+        private void textUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool firsttime = true;
+>>>>>>> parent of 56af73f (yonis change)
         private void textUsername_MouseClick(object sender, MouseEventArgs e)
         private void textUsername_MouseHover(object sender, EventArgs e)
                 textUsername.ForeColor = Color.LightGray;
 
         {
+<<<<<<< HEAD
         {
 
         }
@@ -116,5 +139,22 @@ namespace Ecommerce_application
             signUp.Show();
             this.Hide();
         }*/
+=======
+            if (textPassword.Text == "Password")
+            textPassword.Text = "";
+            textPassword.PasswordChar = '*';
+            textPassword.ForeColor = Color.Black;
+        }
+
+        private void textPassword_Leave(object sender, EventArgs e)
+        {
+            if (textPassword.Text == "")
+            {
+                textPassword.Text = "Password";
+                textPassword.PasswordChar = '\0';
+                textPassword.ForeColor = Color.LightGray;
+            }
+        }
+>>>>>>> parent of 56af73f (yonis change)
     }
 }
