@@ -29,25 +29,15 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
             this.labelDescription = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.labelPrice = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(296, 174);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // labelDescription
             // 
@@ -61,9 +51,17 @@ namespace Ecommerce_application
             this.labelDescription.TabIndex = 1;
             this.labelDescription.Text = "Description:";
             this.labelDescription.Visible = false;
-            this.labelDescription.Click += new System.EventHandler(this.labelDescription_Click);
             this.labelDescription.MouseEnter += new System.EventHandler(this.labelDescription_MouseEnter);
             this.labelDescription.MouseLeave += new System.EventHandler(this.labelDescription_MouseLeave);
+            // 
+            // labelPrice
+            // 
+            this.labelPrice.AutoSize = true;
+            this.labelPrice.Location = new System.Drawing.Point(4, 2);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(34, 13);
+            this.labelPrice.TabIndex = 1;
+            this.labelPrice.Text = "Price:";
             // 
             // button1
             // 
@@ -75,16 +73,6 @@ namespace Ecommerce_application
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // labelPrice
-            // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Location = new System.Drawing.Point(4, 2);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(34, 13);
-            this.labelPrice.TabIndex = 1;
-            this.labelPrice.Text = "Price:";
-            this.labelPrice.Click += new System.EventHandler(this.labelPrice_Click);
-            // 
             // labelName
             // 
             this.labelName.AutoSize = true;
@@ -95,7 +83,23 @@ namespace Ecommerce_application
             this.labelName.Size = new System.Drawing.Size(41, 15);
             this.labelName.TabIndex = 3;
             this.labelName.Text = "Name";
-            this.labelName.Click += new System.EventHandler(this.labelName_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(296, 174);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // LoadItems
             // 
@@ -118,8 +122,9 @@ namespace Ecommerce_application
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelDescription;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelPrice;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

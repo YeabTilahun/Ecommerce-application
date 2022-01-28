@@ -42,10 +42,10 @@ namespace Ecommerce_application
                     DataSet ds = new DataSet();
                     da.Fill(ds, "tblProduct");
                     DataTable dt = ds.Tables["tblProduct"];
-                    MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
+                    LoadItems[] a = new LoadItems[dt.Rows.Count];
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        a[i] = new MerchantLoadProducts();
+                        a[i] = new LoadItems();
                         /*SqlDataAdapter da1 = new SqlDataAdapter("spLoad_data", con);
                         da1.SelectCommand.CommandType = CommandType.StoredProcedure;
                         da1.SelectCommand.Parameters.AddWithValue("@productid", dt.Rows[i]["productid"]);
@@ -55,7 +55,7 @@ namespace Ecommerce_application
                         a[i].Pic = (byte[])dt.Rows[i]["photo"];
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
-                        a[i].Price = dt.Rows[i]["price"].ToString();
+                        a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
            
                         if (panelBuy.Controls.Count < 0)
                             panelBuy.Controls.Clear();
@@ -87,15 +87,15 @@ namespace Ecommerce_application
                     DataTable dt = ds.Tables["tblProduct"];
                     if (dt != null)
                     {
-                        MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
+                        LoadItems[] a = new LoadItems[dt.Rows.Count];
                       //  MessageBox.Show("yes");
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            a[i] = new MerchantLoadProducts();
+                            a[i] = new LoadItems();
                             a[i].Pic = (byte[])dt.Rows[i]["photo"];
                             a[i].Name = dt.Rows[i]["name"].ToString();
                             a[i].Description = dt.Rows[i]["description"].ToString();
-                            a[i].Price = dt.Rows[i]["price"].ToString();
+                            a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
 
 
                            if (panelBuy.Controls.Count < 0)

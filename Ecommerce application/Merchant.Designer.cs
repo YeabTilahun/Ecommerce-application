@@ -271,7 +271,7 @@ namespace Ecommerce_application
             this.panel3.Controls.Add(this.button4);
             this.panel3.Location = new System.Drawing.Point(0, -8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(168, 689);
+            this.panel3.Size = new System.Drawing.Size(168, 654);
             this.panel3.TabIndex = 0;
             // 
             // button3
@@ -384,15 +384,14 @@ namespace Ecommerce_application
             // 
             // dataGridView1
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
+            Merchant.dataGridView1.AllowUserToAddRows = false;
+            Merchant.dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new System.Drawing.Point(1099, 94);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             dataGridView1.Size = new System.Drawing.Size(220, 381);
             dataGridView1.TabIndex = 20;
             dataGridView1.Visible = false;
@@ -412,7 +411,7 @@ namespace Ecommerce_application
             // 
             total.AutoSize = true;
             total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            total.Location = new System.Drawing.Point(1247, 478);
+            total.Location = new System.Drawing.Point(1264, 478);
             total.Name = "total";
             total.Size = new System.Drawing.Size(0, 18);
             total.TabIndex = 42;

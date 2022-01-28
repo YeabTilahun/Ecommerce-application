@@ -103,7 +103,6 @@ namespace Ecommerce_application
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(918, 590);
             this.flowLayoutPanel1.TabIndex = 37;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // dgvProducts
             // 
