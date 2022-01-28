@@ -78,7 +78,7 @@ namespace Ecommerce_application
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /*private void button1_Click(object sender, EventArgs e)
         {
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text);
             s.saveUser();
@@ -115,6 +115,6 @@ namespace Ecommerce_application
             NewSignUp signUp = new NewSignUp();
             signUp.Show();
             this.Hide();
-        }
+        }*/
     }
 }

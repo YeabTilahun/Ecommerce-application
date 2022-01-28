@@ -123,5 +123,16 @@ namespace Ecommerce_application
         {
 
         }
+
+        public void AllClicked(object sender, EventArgs e)
+        {
+            ValidatingMerchant vm = new ValidatingMerchant(_uName);
+            vm.Show();
+        }
+
+        public void HoverAll(object sender, EventArgs e)
+        {
+
+        }
     }
 }

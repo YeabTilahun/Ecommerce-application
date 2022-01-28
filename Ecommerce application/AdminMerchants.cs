@@ -12,9 +12,67 @@ namespace Ecommerce_application
 {
     public partial class AdminMerchants : Form
     {
+        private bool btnAllClicked = false;
+        private bool btnValidClicked = false;
+        private bool btnProgressClicked = false;
         public AdminMerchants()
         {
             InitializeComponent();
+        }
+
+        public void DisplayMerchants(DataTable dt)
+        {
+            LoadCustomerOrAdmin[] a = new LoadCustomerOrAdmin[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+                a[i] = new LoadCustomerOrAdmin();
+            if (this.Size == SystemInformation.WorkingArea.Size)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i].Width = flowLayoutPanel1.Width - 3;
+                }
+
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                    a[i].PicCustomerOrAdmin = (byte[])dt.Rows[i]["photo"];
+                a[i].FName = dt.Rows[i]["fname"].ToString();
+                a[i].LName = dt.Rows[i]["lname"].ToString();
+                a[i].Phone = dt.Rows[i]["phone"].ToString();
+                a[i].Email = dt.Rows[i]["email"].ToString();
+                a[i].BDay = dt.Rows[i]["birthday"].ToString();
+                a[i].Sex = dt.Rows[i]["sex"].ToString();
+                a[i].UName = dt.Rows[i]["userName"].ToString();
+
+                if (flowLayoutPanel1.Controls.Count < 0)
+                    flowLayoutPanel1.Controls.Clear();
+                else
+                    flowLayoutPanel1.Controls.Add(a[i]);
+            }
+            if (btnProgressClicked)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i].picCustomerOrAdmin.MouseHover += new EventHandler(a[i].HoverAll);
+                    a[i].fName.MouseHover += new EventHandler(a[i].HoverAll);
+                    a[i].lName.MouseHover += new EventHandler(a[i].HoverAll);
+                    a[i].phone.MouseHover += new EventHandler(a[i].HoverAll);
+                    a[i].email.MouseHover += new EventHandler(a[i].HoverAll);
+                    a[i].bDay.MouseHover += new EventHandler(a[i].HoverAll);
+                    a[i].sex.MouseHover += new EventHandler(a[i].HoverAll);
+                    a[i].uName.MouseHover += new EventHandler(a[i].HoverAll);
+
+                    a[i].picCustomerOrAdmin.Click += new EventHandler(a[i].AllClicked);
+                    a[i].fName.Click += new EventHandler(a[i].AllClicked);
+                    a[i].lName.Click += new EventHandler(a[i].AllClicked);
+                    a[i].phone.Click += new EventHandler(a[i].AllClicked);
+                    a[i].email.Click += new EventHandler(a[i].AllClicked);
+                    a[i].bDay.Click += new EventHandler(a[i].AllClicked);
+                    a[i].sex.Click += new EventHandler(a[i].AllClicked);
+                    a[i].uName.Click += new EventHandler(a[i].AllClicked);
+                }
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -142,8 +200,21 @@ namespace Ecommerce_application
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            DataTable dt = ac.GetMerchant(txtSearch.Text);
-            dgvMerchants.DataSource = dt;
+            DataTable dt;
+            if (btnValidClicked)
+            {
+                dt = ac.GetValidMerchant(txtSearch.Text);
+            }
+            else if (btnAllClicked)
+            {
+                dt = ac.GetMerchant(txtSearch.Text);
+            }
+            else
+            {
+                dt = ac.GetProgressMerchant(txtSearch.Text);
+            }
+            //dgvMerchants.DataSource = dt;
+            DisplayMerchants(dt);
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -164,32 +235,57 @@ namespace Ecommerce_application
 
         private void btnValid_Click(object sender, EventArgs e)
         {
+            btnAllClicked = false;
+            btnValidClicked = true;
+            btnProgressClicked = false;
             btnValid.ForeColor = Color.FromArgb(0, 77, 153);
             pnlValid.Show();
             btnAll.ForeColor = Color.Black;
             pnlAll.Hide();
             btnProgress.ForeColor = Color.Black;
             pnlProgress.Hide();
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetValidMerchant("");
+            //dgvMerchants.DataSource = dt;
+            DisplayMerchants(dt);
         }
 
         private void btnAll_Click(object sender, EventArgs e)
         {
+            btnAllClicked = true;
+            btnValidClicked = false;
+            btnProgressClicked = false;
             btnValid.ForeColor = Color.Black;
             pnlValid.Hide();
             btnAll.ForeColor = Color.FromArgb(0, 77, 153);
             pnlAll.Show();
             btnProgress.ForeColor = Color.Black;
             pnlProgress.Hide();
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetMerchant("");
+            //dgvMerchants.DataSource = dt;
+            DisplayMerchants(dt);
+
         }
 
         private void btnProgress_Click(object sender, EventArgs e)
         {
+            btnAllClicked = false;
+            btnValidClicked = false;
+            btnProgressClicked = true;
             btnValid.ForeColor = Color.Black;
             pnlValid.Hide();
             btnAll.ForeColor = Color.Black;
             pnlAll.Hide();
             btnProgress.ForeColor = Color.FromArgb(0, 77, 153);
             pnlProgress.Show();
+
+            AdminClass ac = new AdminClass();
+            DataTable dt = ac.GetProgressMerchant("");
+            //dgvMerchants.DataSource = dt;
+            DisplayMerchants(dt);
         }
     }
 }

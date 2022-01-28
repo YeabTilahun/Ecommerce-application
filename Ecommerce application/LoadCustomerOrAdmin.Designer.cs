@@ -255,13 +255,13 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label fName;
-        private System.Windows.Forms.Label lName;
-        private System.Windows.Forms.Label phone;
-        private System.Windows.Forms.Label email;
-        private System.Windows.Forms.Label bDay;
-        private System.Windows.Forms.Label sex;
-        private System.Windows.Forms.Label uName;
         public System.Windows.Forms.PictureBox picCustomerOrAdmin;
+        public System.Windows.Forms.Label fName;
+        public System.Windows.Forms.Label lName;
+        public System.Windows.Forms.Label phone;
+        public System.Windows.Forms.Label email;
+        public System.Windows.Forms.Label bDay;
+        public System.Windows.Forms.Label sex;
+        public System.Windows.Forms.Label uName;
     }
 }

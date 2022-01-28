@@ -274,5 +274,38 @@ namespace Ecommerce_application
             DataTable dt = AdminD.GetProductDailyReport(category);
             return dt;
         }
+
+        public DataTable GetPermit(string UserName)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetPermit(userName);
+            return dt;
+        }
+
+        public DataTable GetValidMerchant(string name)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetValidMerchant(name);
+            return dt;
+        }
+
+        public DataTable GetProgressMerchant(string name)
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            DataTable dt = AdminD.GetProgressMerchant(name);
+            return dt;
+        }
+
+        public void AddToAll(string userName, string password, string role)
+        {
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.AddToAll(userName, password, role);
+        }
+
+        public void DeleteMerchant(string userName)
+        {
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.DeleteMerchant(userName);
+        }
     }
 }

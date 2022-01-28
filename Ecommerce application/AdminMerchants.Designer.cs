@@ -90,7 +90,7 @@ namespace Ecommerce_application
             this.txtSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearch.Location = new System.Drawing.Point(724, 12);
+            this.txtSearch.Location = new System.Drawing.Point(724, 25);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(177, 20);
             this.txtSearch.TabIndex = 30;
@@ -103,7 +103,7 @@ namespace Ecommerce_application
             // 
             this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(910, 12);
+            this.picBoxSearch.Location = new System.Drawing.Point(910, 25);
             this.picBoxSearch.Name = "picBoxSearch";
             this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
             this.picBoxSearch.TabIndex = 38;
@@ -178,7 +178,7 @@ namespace Ecommerce_application
             this.pnlAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
             this.pnlAll.Location = new System.Drawing.Point(424, 72);
             this.pnlAll.Name = "pnlAll";
-            this.pnlAll.Size = new System.Drawing.Size(84, 1);
+            this.pnlAll.Size = new System.Drawing.Size(77, 1);
             this.pnlAll.TabIndex = 42;
             // 
             // pnlValid
@@ -186,7 +186,7 @@ namespace Ecommerce_application
             this.pnlValid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
             this.pnlValid.Location = new System.Drawing.Point(344, 72);
             this.pnlValid.Name = "pnlValid";
-            this.pnlValid.Size = new System.Drawing.Size(84, 1);
+            this.pnlValid.Size = new System.Drawing.Size(80, 1);
             this.pnlValid.TabIndex = 42;
             // 
             // AdminMerchants
@@ -216,12 +216,12 @@ namespace Ecommerce_application
         public System.Windows.Forms.Panel pnlMerchant;
         public System.Windows.Forms.DataGridView dgvMerchants;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnProgress;
         private System.Windows.Forms.Button btnAll;
         private System.Windows.Forms.Button btnValid;
         private System.Windows.Forms.Panel pnlProgress;
         private System.Windows.Forms.Panel pnlAll;
         private System.Windows.Forms.Panel pnlValid;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

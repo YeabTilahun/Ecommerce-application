@@ -76,13 +76,13 @@ namespace Ecommerce_application
             this.textUsername.Name = "textUsername";
             this.textUsername.Size = new System.Drawing.Size(198, 19);
             this.textUsername.TabIndex = 29;
-            this.textUsername.Text = "User name";
+            this.textUsername.Text = "User name";/*
             this.textUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textUsername_MouseClick);
             this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
             this.textUsername.Enter += new System.EventHandler(this.textUsername_Enter);
             this.textUsername.Leave += new System.EventHandler(this.textUsername_Leave);
             this.textUsername.MouseLeave += new System.EventHandler(this.textUsername_MouseLeave);
-            this.textUsername.MouseHover += new System.EventHandler(this.textUsername_MouseHover);
+            this.textUsername.MouseHover += new System.EventHandler(this.textUsername_MouseHover);*/
             // 
             // label2
             // 
@@ -116,7 +116,7 @@ namespace Ecommerce_application
             this.button1.Text = "SIGN IN";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            //this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textPassword
             // 
@@ -130,9 +130,9 @@ namespace Ecommerce_application
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(198, 27);
             this.textPassword.TabIndex = 30;
-            this.textPassword.Text = "Password";
+            this.textPassword.Text = "Password";/*
             this.textPassword.Enter += new System.EventHandler(this.textPassword_Enter);
-            this.textPassword.Leave += new System.EventHandler(this.textPassword_Leave);
+            this.textPassword.Leave += new System.EventHandler(this.textPassword_Leave);*/
             // 
             // label1
             // 
@@ -231,7 +231,7 @@ namespace Ecommerce_application
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 445);
             this.panel1.TabIndex = 47;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnLogo
             // 
@@ -246,7 +246,7 @@ namespace Ecommerce_application
             this.btnLogo.Size = new System.Drawing.Size(136, 145);
             this.btnLogo.TabIndex = 36;
             this.btnLogo.UseVisualStyleBackColor = false;
-            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
+            //this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
             // button3
             // 
@@ -262,7 +262,7 @@ namespace Ecommerce_application
             this.button3.Text = "Signup";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            //this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // richTextBox1
             // 

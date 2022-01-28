@@ -812,5 +812,126 @@ namespace Ecommerce_application
             }
             return dt;
         }
+
+        public DataTable GetPermit(string userName)
+        {
+            DataTable dt = null;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetPermit", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@userName", userName);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblMerchant");
+                    dt = ds.Tables["tblMerchant"];
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable GetValidMerchant(string name)
+        {
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetValidMerchant", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@name", name);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblMerchant");
+                dt = ds.Tables["tblMerchant"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable GetProgressMerchant(string name)
+        {
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetProgressMerchant", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@name", name);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblMerchant");
+                dt = ds.Tables["tblMerchant"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        public void AddToAll(string userName, string password, string role)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spAddToAll", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@userName", userName);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@role", role);
+                    int rowAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Merchant Accepted");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed! Please Try Again");
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void DeleteMerchant(string userName)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spDeleteMerchant", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@userName", userName);
+                    int rowAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Merchant Declined");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed! Please Try Again");
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -47,6 +47,7 @@ namespace Ecommerce_application
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDecline
             // 
@@ -59,6 +60,7 @@ namespace Ecommerce_application
             this.btnDecline.TabIndex = 6;
             this.btnDecline.Text = "Decline";
             this.btnDecline.UseVisualStyleBackColor = false;
+            this.btnDecline.Click += new System.EventHandler(this.btnDecline_Click);
             // 
             // btnAccept
             // 
@@ -71,6 +73,7 @@ namespace Ecommerce_application
             this.btnAccept.TabIndex = 5;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = false;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // picPermit
             // 
@@ -108,6 +111,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDecline;
         private System.Windows.Forms.Button btnAccept;
-        private System.Windows.Forms.PictureBox picPermit;
+        public System.Windows.Forms.PictureBox picPermit;
     }
 }
