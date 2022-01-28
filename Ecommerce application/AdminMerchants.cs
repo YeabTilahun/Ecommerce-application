@@ -115,7 +115,7 @@ namespace Ecommerce_application
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            AdminSettingOrRegister adminRegister = new AdminSettingOrRegister();
+            AdminRegister adminRegister = new AdminRegister();
             adminRegister.Show();
         }
 

@@ -17,38 +17,6 @@ namespace Ecommerce_application
             InitializeComponent();
         }
 
-        private void DisplayOnFlowChart(DataTable dt)
-        {
-            LoadCustomerOrAdmin[] a = new LoadCustomerOrAdmin[dt.Rows.Count];
-            for (int i = 0; i < dt.Rows.Count; i++)
-                a[i] = new LoadCustomerOrAdmin();
-            if (this.Size == SystemInformation.WorkingArea.Size)
-            {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    a[i].Width = flowLayoutPanel1.Width - 3;
-                }
-
-            }
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
-                    a[i].PicCustomerOrAdmin = (byte[])dt.Rows[i]["photo"];
-                a[i].FName = dt.Rows[i]["fname"].ToString();
-                a[i].LName = dt.Rows[i]["lname"].ToString();
-                a[i].Phone = dt.Rows[i]["phone"].ToString();
-                a[i].Email = dt.Rows[i]["email"].ToString();
-                a[i].BDay = dt.Rows[i]["birthday"].ToString();
-                a[i].Sex = dt.Rows[i]["sex"].ToString();
-                a[i].UName = dt.Rows[i]["userName"].ToString();
-
-                if (flowLayoutPanel1.Controls.Count < 0)
-                    flowLayoutPanel1.Controls.Clear();
-                else
-                    flowLayoutPanel1.Controls.Add(a[i]);
-            }
-        }
-
         private void showPassBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -84,7 +52,7 @@ namespace Ecommerce_application
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            AdminSettingOrRegister adminRegister = new AdminSettingOrRegister();
+            AdminRegister adminRegister = new AdminRegister();
             adminRegister.Show();
         }
 
@@ -154,14 +122,8 @@ namespace Ecommerce_application
         {
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetCustomer(txtSearch.Text);
-            //dgvCustomers.DataSource = dt;
-            DisplayOnFlowChart(dt);
+            dgvCustomers.DataSource = dt;
             
-        }
-
-        private void dgvCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

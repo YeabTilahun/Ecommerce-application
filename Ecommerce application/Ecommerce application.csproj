@@ -166,7 +166,6 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -222,12 +221,13 @@
     <Compile Include="AdminProfile.Designer.cs">
       <DependentUpon>AdminProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminSettingOrRegister.cs">
+    <Compile Include="AdminRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminSettingOrRegister.Designer.cs">
-      <DependentUpon>AdminSettingOrRegister.cs</DependentUpon>
+    <Compile Include="AdminRegister.Designer.cs">
+      <DependentUpon>AdminRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminRegisterClass.cs" />
     <Compile Include="AdminTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,29 +279,11 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadCustomerOrAdmin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LoadCustomerOrAdmin.Designer.cs">
-      <DependentUpon>LoadCustomerOrAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoadItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LoadItem.Designer.cs">
-      <DependentUpon>LoadItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoadItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="LoadItems.Designer.cs">
       <DependentUpon>LoadItems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoadProduct.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LoadProduct.Designer.cs">
-      <DependentUpon>LoadProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -426,8 +408,8 @@
     <EmbeddedResource Include="AdminProfile.resx">
       <DependentUpon>AdminProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminSettingOrRegister.resx">
-      <DependentUpon>AdminSettingOrRegister.cs</DependentUpon>
+    <EmbeddedResource Include="AdminRegister.resx">
+      <DependentUpon>AdminRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminTransaction.resx">
       <DependentUpon>AdminTransaction.cs</DependentUpon>
@@ -447,17 +429,8 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadCustomerOrAdmin.resx">
-      <DependentUpon>LoadCustomerOrAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoadItem.resx">
-      <DependentUpon>LoadItem.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoadItems.resx">
       <DependentUpon>LoadItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoadProduct.resx">
-      <DependentUpon>LoadProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -581,11 +554,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
-    <None Include="Resources\Rectangle 1411.png" />
-    <None Include="Resources\Asset 344.png" />
-    <None Include="Resources\Group 3422.png" />
-    <None Include="Resources\Asset 3751.png" />
-    <None Include="Resources\Asset 275.png" />
     <None Include="Resources\shopping-cart.png" />
     <None Include="Resources\Asset 43.png" />
     <None Include="Resources\Rectangle 7381.png" />

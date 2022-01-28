@@ -13,11 +13,11 @@ namespace Ecommerce_application
     {
         string constr = "Server = DESKTOP-4370VSE;   Database = Ecommerce; integrated security=true";
 
-        public void SaveAdmin(AdminClass ar)
+        public void SaveAdmin(AdminRegisterClass ar)
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using(SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spInsertAdmin", con);
@@ -49,7 +49,7 @@ namespace Ecommerce_application
             }
         }
 
-        public void UpdateAdmin(AdminClass ar)
+        public void UpdateAdmin(AdminRegisterClass ar)
         {
             try
             {
@@ -87,36 +87,6 @@ namespace Ecommerce_application
             }
         }
 
-        public void ChangePassword(AdminClass ar)
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(constr))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("spChangePassword", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@adminID", ar.adminID);
-                    cmd.Parameters.AddWithValue("@password", ar.password);
-
-                    int rowAffected = cmd.ExecuteNonQuery();
-                    con.Close();
-                    if (rowAffected > 0)
-                    {
-                        MessageBox.Show("Password Changed Successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed! Please Try Again");
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         public void DeleteAdmin(string[] id)
         {
             try
@@ -138,7 +108,7 @@ namespace Ecommerce_application
                     {
                         MessageBox.Show("Admins Deleted Successfully");
                     }
-                    else if (rowAffected > 0)
+                    else if(rowAffected > 0)
                     {
                         MessageBox.Show("Admin Deleted Successfully");
                     }
@@ -175,9 +145,9 @@ namespace Ecommerce_application
 
         }
 
-        public DataTable GetAdminProfile()
+        public string[] GetAdminProfile()
         {
-            DataTable dt = null;
+            string[] profile = null;
             try
             {
                 SqlConnection con = new SqlConnection(constr);
@@ -185,15 +155,27 @@ namespace Ecommerce_application
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@userName", Admin.userName);
                 da.SelectCommand.Parameters.AddWithValue("@password", Admin.password);
+                da.SelectCommand.Parameters.AddWithValue("@role", Admin.role);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblProfile");
-                dt = ds.Tables["tblProfile"];
+                DataTable dt = ds.Tables["tblProfile"];
+                profile = new string[dt.Columns.Count];
+                profile[0] = dt.Rows[0]["adminID"].ToString();
+                profile[1] = dt.Rows[0]["fname"].ToString();
+                profile[2] = dt.Rows[0]["lname"].ToString();
+                profile[3] = dt.Rows[0]["phone"].ToString();
+                profile[4] = dt.Rows[0]["birthday"].ToString();
+                profile[5] = dt.Rows[0]["sex"].ToString();
+                profile[6] = dt.Rows[0]["email"].ToString();
+                profile[7] = dt.Rows[0]["userName"].ToString();
+                profile[8] = dt.Rows[0]["password"].ToString();
+                profile[9] = dt.Rows[0]["role"].ToString();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            return dt;
+            return profile;
         }
 
         public void DeleteProduct(string[] id)
@@ -227,13 +209,13 @@ namespace Ecommerce_application
                     }
                 }
             }
-            catch (SqlException ex)
+            catch(SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        public DataTable GetProduct(string name, string category)
+        public DataTable GetProduct(string name)
         {
             DataTable dt = null;
             try
@@ -242,28 +224,6 @@ namespace Ecommerce_application
                 SqlDataAdapter da = new SqlDataAdapter("spGetProduct", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", name);
-                da.SelectCommand.Parameters.AddWithValue("@category", category);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "tblProduct");
-                dt = ds.Tables["tblProduct"];
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return dt;
-        }
-
-        public DataTable GetLatestProduct(string name, string category)
-        {
-            DataTable dt = null;
-            try
-            {
-                SqlConnection con = new SqlConnection(constr);
-                SqlDataAdapter da = new SqlDataAdapter("spGetLatestProduct", con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@name", name);
-                da.SelectCommand.Parameters.AddWithValue("@category", category);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblProduct");
                 dt = ds.Tables["tblProduct"];
@@ -435,33 +395,7 @@ namespace Ecommerce_application
             return category;
         }
 
-        public string[] GetLatestCategory()
-        {
-            string[] category = null;
-            try
-            {
-                SqlConnection con = new SqlConnection(constr);
-                SqlDataAdapter da = new SqlDataAdapter("spGetLatestCategory", con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataSet ds = new DataSet();
-                da.Fill(ds, "tblCategory");
-                DataTable dt = ds.Tables["tblCategory"];
-                category = new string[dt.Rows.Count];
-                DataRow row;
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    row = dt.Rows[i];
-                    category[i] = row["category"].ToString();
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return category;
-        }
-
-        /*public DataTable GetProductByCategory(string category)
+        public DataTable GetProductByCategory(string category)
         {
             DataTable dt = null;
             try
@@ -480,7 +414,7 @@ namespace Ecommerce_application
             }
             return dt;
 
-        }*/
+        }
 
         public string[] GetMonthlySold(int month)
         {
@@ -519,7 +453,7 @@ namespace Ecommerce_application
                     product[2] = "0";
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -537,7 +471,7 @@ namespace Ecommerce_application
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblList");
                 DataTable dt = ds.Tables["tblList"];
-                if (dt.Rows.Count > 0)
+                if(dt.Rows.Count > 0)
                     income = double.Parse(dt.Rows[0]["total"].ToString());
             }
             catch (Exception ex)
@@ -567,6 +501,7 @@ namespace Ecommerce_application
             }
             return income;
         }
+<<<<<<< HEAD
 
         public string[] GetMonth()
         {
@@ -933,5 +868,7 @@ namespace Ecommerce_application
                 MessageBox.Show(ex.Message);
             }
         }
+=======
+>>>>>>> parent of 5d1ee64 (Merge branch 'master' of https://github.com/yeab-tilahun/Ecommerce-application)
     }
 }

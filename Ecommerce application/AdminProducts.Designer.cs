@@ -31,78 +31,46 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminProducts));
             this.pnlProducts = new System.Windows.Forms.Panel();
-            this.pnlLatest = new System.Windows.Forms.Panel();
-            this.pnlAll = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnAll = new System.Windows.Forms.Button();
             this.picBoxSearch = new System.Windows.Forms.PictureBox();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.btnUncheck = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbCatagories = new System.Windows.Forms.ComboBox();
-            this.btnLatest = new System.Windows.Forms.Button();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnlProducts.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProducts
             // 
             this.pnlProducts.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pnlProducts.Controls.Add(this.pnlLatest);
-            this.pnlProducts.Controls.Add(this.pnlAll);
-            this.pnlProducts.Controls.Add(this.panel1);
-            this.pnlProducts.Controls.Add(this.btnAll);
             this.pnlProducts.Controls.Add(this.picBoxSearch);
+            this.pnlProducts.Controls.Add(this.dgvProducts);
+            this.pnlProducts.Controls.Add(this.btnUncheck);
+            this.pnlProducts.Controls.Add(this.btnDelete);
+            this.pnlProducts.Controls.Add(this.btnCheck);
             this.pnlProducts.Controls.Add(this.txtSearch);
             this.pnlProducts.Controls.Add(this.cmbCatagories);
-            this.pnlProducts.Controls.Add(this.btnLatest);
             this.pnlProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProducts.Location = new System.Drawing.Point(0, 0);
             this.pnlProducts.Name = "pnlProducts";
-            this.pnlProducts.Size = new System.Drawing.Size(940, 642);
+            this.pnlProducts.Size = new System.Drawing.Size(937, 565);
             this.pnlProducts.TabIndex = 0;
             this.pnlProducts.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlProducts_Paint);
             // 
-            // pnlLatest
+            // picBoxSearch
             // 
-            this.pnlLatest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
-            this.pnlLatest.Location = new System.Drawing.Point(472, 37);
-            this.pnlLatest.Name = "pnlLatest";
-            this.pnlLatest.Size = new System.Drawing.Size(81, 1);
-            this.pnlLatest.TabIndex = 42;
-            // 
-            // pnlAll
-            // 
-            this.pnlAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
-            this.pnlAll.Location = new System.Drawing.Point(388, 37);
-            this.pnlAll.Name = "pnlAll";
-            this.pnlAll.Size = new System.Drawing.Size(84, 1);
-            this.pnlAll.TabIndex = 41;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.dgvProducts);
-            this.panel1.Location = new System.Drawing.Point(12, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(918, 590);
-            this.panel1.TabIndex = 40;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(918, 590);
-            this.flowLayoutPanel1.TabIndex = 37;
+            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
+            this.picBoxSearch.Location = new System.Drawing.Point(905, 13);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
+            this.picBoxSearch.TabIndex = 36;
+            this.picBoxSearch.TabStop = false;
+            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
             // 
             // dgvProducts
             // 
@@ -117,55 +85,72 @@ namespace Ecommerce_application
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.select});
-            this.dgvProducts.Location = new System.Drawing.Point(0, 0);
+            this.dgvProducts.Location = new System.Drawing.Point(12, 51);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvProducts.Size = new System.Drawing.Size(916, 589);
+            this.dgvProducts.Size = new System.Drawing.Size(913, 439);
             this.dgvProducts.TabIndex = 33;
             this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
             // 
-            // select
+            // btnUncheck
             // 
-            this.select.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.select.HeaderText = "";
-            this.select.Name = "select";
-            this.select.ReadOnly = true;
-            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.select.Width = 30;
+            this.btnUncheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUncheck.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUncheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUncheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnUncheck.FlatAppearance.BorderSize = 0;
+            this.btnUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUncheck.ForeColor = System.Drawing.Color.Black;
+            this.btnUncheck.Location = new System.Drawing.Point(128, 520);
+            this.btnUncheck.Name = "btnUncheck";
+            this.btnUncheck.Size = new System.Drawing.Size(110, 28);
+            this.btnUncheck.TabIndex = 31;
+            this.btnUncheck.Text = "Uncheck All";
+            this.btnUncheck.UseVisualStyleBackColor = false;
+            this.btnUncheck.Click += new System.EventHandler(this.btnUncheck_Click);
             // 
-            // btnAll
+            // btnDelete
             // 
-            this.btnAll.FlatAppearance.BorderSize = 0;
-            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.Location = new System.Drawing.Point(388, 6);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(84, 32);
-            this.btnAll.TabIndex = 39;
-            this.btnAll.Text = "All";
-            this.btnAll.UseVisualStyleBackColor = true;
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Location = new System.Drawing.Point(722, 520);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(110, 28);
+            this.btnDelete.TabIndex = 30;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // picBoxSearch
+            // btnCheck
             // 
-            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(908, 13);
-            this.picBoxSearch.Name = "picBoxSearch";
-            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
-            this.picBoxSearch.TabIndex = 36;
-            this.picBoxSearch.TabStop = false;
-            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
+            this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCheck.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnCheck.FlatAppearance.BorderSize = 0;
+            this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheck.ForeColor = System.Drawing.Color.Black;
+            this.btnCheck.Location = new System.Drawing.Point(12, 520);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(110, 28);
+            this.btnCheck.TabIndex = 29;
+            this.btnCheck.Text = "Check All";
+            this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.Location = new System.Drawing.Point(725, 13);
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtSearch.Location = new System.Drawing.Point(722, 13);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(177, 20);
             this.txtSearch.TabIndex = 28;
@@ -177,34 +162,29 @@ namespace Ecommerce_application
             // 
             this.cmbCatagories.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cmbCatagories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbCatagories.ForeColor = System.Drawing.Color.Black;
+            this.cmbCatagories.ForeColor = System.Drawing.SystemColors.Control;
             this.cmbCatagories.FormattingEnabled = true;
             this.cmbCatagories.Location = new System.Drawing.Point(12, 13);
             this.cmbCatagories.Name = "cmbCatagories";
             this.cmbCatagories.Size = new System.Drawing.Size(226, 21);
             this.cmbCatagories.TabIndex = 27;
             this.cmbCatagories.SelectedIndexChanged += new System.EventHandler(this.cmbCatagories_SelectedIndexChanged);
-            this.cmbCatagories.MouseHover += new System.EventHandler(this.cmbCatagories_MouseHover);
             // 
-            // btnLatest
+            // select
             // 
-            this.btnLatest.FlatAppearance.BorderSize = 0;
-            this.btnLatest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLatest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLatest.Location = new System.Drawing.Point(469, 6);
-            this.btnLatest.Name = "btnLatest";
-            this.btnLatest.Size = new System.Drawing.Size(84, 32);
-            this.btnLatest.TabIndex = 38;
-            this.btnLatest.Text = "Latest";
-            this.btnLatest.UseVisualStyleBackColor = true;
-            this.btnLatest.Click += new System.EventHandler(this.btnLatest_Click);
+            this.select.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.select.HeaderText = "";
+            this.select.Name = "select";
+            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.select.Width = 30;
             // 
             // AdminProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(940, 642);
+            this.ClientSize = new System.Drawing.Size(937, 565);
             this.Controls.Add(this.pnlProducts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminProducts";
@@ -213,25 +193,21 @@ namespace Ecommerce_application
             this.Load += new System.EventHandler(this.AdminProduct_Load);
             this.pnlProducts.ResumeLayout(false);
             this.pnlProducts.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.PictureBox picBoxSearch;
+        private System.Windows.Forms.Button btnUncheck;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.TextBox txtSearch;
         public System.Windows.Forms.Panel pnlProducts;
-        public System.Windows.Forms.ComboBox cmbCatagories;
         public System.Windows.Forms.DataGridView dgvProducts;
+        public System.Windows.Forms.ComboBox cmbCatagories;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnAll;
-        private System.Windows.Forms.Button btnLatest;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnlAll;
-        private System.Windows.Forms.Panel pnlLatest;
     }
 }

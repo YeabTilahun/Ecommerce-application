@@ -40,7 +40,6 @@ namespace Ecommerce_application
             this.panelBuy.Name = "panelBuy";
             this.panelBuy.Size = new System.Drawing.Size(933, 620);
             this.panelBuy.TabIndex = 0;
-            this.panelBuy.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBuy_Paint);
             // 
             // MerchantBuy
             // 

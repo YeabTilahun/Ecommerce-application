@@ -85,6 +85,15 @@ namespace Ecommerce_application
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text, comboBox1.Text);
             s.saveUser();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            if (s.role == "Customer")
+            {
+                CustomerPage c = new Customerpage(textUsername.Text);
+                c.Show();
+                this.Hide();
+            }
+>>>>>>> parent of 5d1ee64 (Merge branch 'master' of https://github.com/yeab-tilahun/Ecommerce-application)
             else if (s.role == "Merchant")
             {
                 Merchant m = new Merchant(textUsername.Text);
@@ -98,6 +107,7 @@ namespace Ecommerce_application
                 this.Hide();
             }
 
+<<<<<<< HEAD
 =======
             //merchant
             //if it is merchant user
@@ -108,6 +118,9 @@ namespace Ecommerce_application
             //admin.Show();
 
         }
+=======
+            }
+>>>>>>> parent of 5d1ee64 (Merge branch 'master' of https://github.com/yeab-tilahun/Ecommerce-application)
 
 
         private void textUsername_TextChanged(object sender, EventArgs e)
@@ -116,13 +129,64 @@ namespace Ecommerce_application
         }
 
         private bool firsttime = true;
+<<<<<<< HEAD
 >>>>>>> parent of 56af73f (yonis change)
+=======
+>>>>>>> parent of 5d1ee64 (Merge branch 'master' of https://github.com/yeab-tilahun/Ecommerce-application)
         private void textUsername_MouseClick(object sender, MouseEventArgs e)
-        private void textUsername_MouseHover(object sender, EventArgs e)
-                textUsername.ForeColor = Color.LightGray;
+        {
+           
+        }
 
+        private void textUsername_MouseLeave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textUsername_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textUsername_Leave(object sender, EventArgs e)
+        {
+            if (textUsername.Text == "")
+            {
+                textUsername.Text = "User name";
+                textUsername.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void textUsername_Enter(object sender, EventArgs e)
+        {
+            if (textUsername.Text == "User name")
+            textUsername.Text = "";
+            textUsername.ForeColor = Color.Black;
+        }
+
+        private void textPassword_Enter(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            if (textPassword.Text == "Password")
+            textPassword.Text = "";
+            textPassword.PasswordChar = '*';
+            textPassword.ForeColor = Color.Black;
+        }
+
+        private void textPassword_Leave(object sender, EventArgs e)
+        {
+            if (textPassword.Text == "")
+            {
+                textPassword.Text = "Password";
+                textPassword.PasswordChar = '\0';
+                textPassword.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void btnLogo_Click(object sender, EventArgs e)
+>>>>>>> parent of 5d1ee64 (Merge branch 'master' of https://github.com/yeab-tilahun/Ecommerce-application)
         {
 
         }

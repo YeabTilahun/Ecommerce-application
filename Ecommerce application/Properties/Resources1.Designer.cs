@@ -633,16 +633,6 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Asset_275 {
-            get {
-                object obj = ResourceManager.GetObject("Asset 275", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Asset_280 {
             get {
                 object obj = ResourceManager.GetObject("Asset 280", resourceCulture);
@@ -763,29 +753,9 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Asset_344 {
-            get {
-                object obj = ResourceManager.GetObject("Asset 344", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Asset_375 {
             get {
                 object obj = ResourceManager.GetObject("Asset 375", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Asset_3751 {
-            get {
-                object obj = ResourceManager.GetObject("Asset 3751", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1213,16 +1183,6 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_3423 {
-            get {
-                object obj = ResourceManager.GetObject("Group 3423", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icon {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
@@ -1407,16 +1367,6 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap photo_2021_12_25_12_03_23 {
             get {
                 object obj = ResourceManager.GetObject("photo_2021-12-25_12-03-23", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Rectangle_1411 {
-            get {
-                object obj = ResourceManager.GetObject("Rectangle 1411", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -40,12 +40,12 @@ namespace Ecommerce_application
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button13 = new System.Windows.Forms.Button();
             this.lblUserName = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.panelAdd = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -56,15 +56,11 @@ namespace Ecommerce_application
             this.button12 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            total = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -78,6 +74,7 @@ namespace Ecommerce_application
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.panel9);
+            this.panel4.Controls.Add(this.button13);
             this.panel4.Controls.Add(this.lblUserName);
             this.panel4.Controls.Add(this.button11);
             this.panel4.Controls.Add(this.button10);
@@ -95,7 +92,7 @@ namespace Ecommerce_application
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(712, 5);
+            this.label2.Location = new System.Drawing.Point(696, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 15);
             this.label2.TabIndex = 40;
@@ -164,6 +161,19 @@ namespace Ecommerce_application
             this.logoutToolStripMenuItem1.Text = "Logout";
             this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
+            // button13
+            // 
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Image = global::Ecommerce_application.Properties.Resources.shopping_cart;
+            this.button13.Location = new System.Drawing.Point(768, 0);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(41, 25);
+            this.button13.TabIndex = 6;
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
@@ -231,24 +241,6 @@ namespace Ecommerce_application
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
-            // button13
-            // 
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Image = global::Ecommerce_application.Properties.Resources.shopping_cart;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(1105, 60);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(88, 28);
-            this.button13.TabIndex = 6;
-            this.button13.Text = "My cart";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Visible = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
             // panelAdd
             // 
             this.panelAdd.Location = new System.Drawing.Point(169, 56);
@@ -271,7 +263,11 @@ namespace Ecommerce_application
             this.panel3.Controls.Add(this.button4);
             this.panel3.Location = new System.Drawing.Point(0, -8);
             this.panel3.Name = "panel3";
+<<<<<<< HEAD
             this.panel3.Size = new System.Drawing.Size(168, 689);
+=======
+            this.panel3.Size = new System.Drawing.Size(168, 690);
+>>>>>>> parent of 5d1ee64 (Merge branch 'master' of https://github.com/yeab-tilahun/Ecommerce-application)
             this.panel3.TabIndex = 0;
             // 
             // button3
@@ -279,6 +275,7 @@ namespace Ecommerce_application
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Enabled = false;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,6 +356,7 @@ namespace Ecommerce_application
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Enabled = false;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -382,6 +380,7 @@ namespace Ecommerce_application
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click_2);
             // 
+<<<<<<< HEAD
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
@@ -418,14 +417,12 @@ namespace Ecommerce_application
             total.TabIndex = 42;
             total.Visible = false;
             // 
+=======
+>>>>>>> parent of 5d1ee64 (Merge branch 'master' of https://github.com/yeab-tilahun/Ecommerce-application)
             // Merchant
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1100, 677);
-            this.Controls.Add(total);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(dataGridView1);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -443,9 +440,7 @@ namespace Ecommerce_application
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -472,6 +467,10 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -481,12 +480,5 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label userName;
         internal System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
-        internal System.Windows.Forms.Label label3;
-        public static System.Windows.Forms.Label total;
-        public static System.Windows.Forms.DataGridView dataGridView1;
     }
 }

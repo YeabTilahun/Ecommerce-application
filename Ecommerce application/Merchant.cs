@@ -30,27 +30,6 @@ namespace Ecommerce_application
         MerchantSell n = new MerchantSell();
         MerchantCart l = new MerchantCart();
         MerchantHome k = new MerchantHome();
-
-        public void buySize()
-        {
-            label3.Visible = true;
-            button13.Visible = true;
-            dataGridView1.Visible = true;
-            total.Visible = true;
-            this.Size = new Size(1317, 677);
-            label2.Location = new Point(934, 5);
-        }
-
-        public void resize()
-        {
-            label3.Visible = false;
-            button13.Visible = false;
-            dataGridView1.Visible = false;
-            total.Visible = false;
-            this.Size = new Size(1100,677);
-            label2.Location = new Point(712, 5);
-        }
-
         //To display home page first every time merchat account looged in
         private void Merchant_Load(object sender, EventArgs e)
         {
@@ -70,7 +49,7 @@ namespace Ecommerce_application
             panelAdd.BringToFront();
             panelAdd.Show();
 
-            //TO REMOVE HOVER PROPERTY FOR SIDE AND CART BUTTONS
+            //TO REMOVE HOVER PROPERTY FOR SIDE BUTTONS
             button6.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button6.FlatAppearance.MouseDownBackColor = Color.Transparent;
 
@@ -82,9 +61,6 @@ namespace Ecommerce_application
 
             button3.FlatAppearance.MouseOverBackColor =Color.Transparent;
             button3.FlatAppearance.MouseDownBackColor =Color.Transparent;
-
-            button13.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button13.FlatAppearance.MouseDownBackColor = Color.Transparent;
         }
 
         public void count(int count)
@@ -168,7 +144,6 @@ namespace Ecommerce_application
         //To show Buy interface we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button6_Click(object sender, EventArgs e)
         {
-            buySize();
             //Enable search box
             textBox1.Enabled = true;
 
@@ -184,7 +159,6 @@ namespace Ecommerce_application
         //To show Sell interface we created the object then we added the panel in sell form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button5_Click(object sender, EventArgs e)
         {
-            resize();
             //Disable search box
             textBox1.Enabled = false;
 
@@ -198,7 +172,6 @@ namespace Ecommerce_application
         //To show Home interface we created the object then we added the panel in home form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button12_Click(object sender, EventArgs e)
         {
-            resize();
             //Disable search box
             textBox1.Enabled = false;
 
@@ -231,7 +204,7 @@ namespace Ecommerce_application
 
         private void button4_Click_2(object sender, EventArgs e)
         {
-            resize();
+
             //Disable search box
             textBox1.Enabled = false;
 
@@ -276,7 +249,6 @@ namespace Ecommerce_application
         private void button10_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            this.Size = new Size(1100, 677);
             // button10.Hide();
             button11.BringToFront();
         }
@@ -292,12 +264,12 @@ namespace Ecommerce_application
         }
         private void button13_Click(object sender, EventArgs e)
         {
-/*            Newcart nc = new Newcart();
+            Newcart nc = new Newcart();
             panelAdd.Controls.Clear();
             nc.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(nc.panel1);
             panelAdd.Show();
-            panelAdd.BringToFront();*/
+            panelAdd.BringToFront();
         }
 
         //WHEN LOGOUT CLICKED FROM THE MENU
@@ -319,7 +291,6 @@ namespace Ecommerce_application
         //My profile
         private void profileToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            resize();
             //Disable search box
             textBox1.Enabled = false;
 
@@ -333,7 +304,6 @@ namespace Ecommerce_application
 
         private void logOutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            resize();
             //Disable search box
             textBox1.Enabled = false;
 
@@ -391,7 +361,6 @@ namespace Ecommerce_application
         //my product
         private void button3_Click(object sender, EventArgs e)
         {
-            resize();
             //Disable search box
             textBox1.Enabled = false;
             MerchantBuy m = new MerchantBuy(2);

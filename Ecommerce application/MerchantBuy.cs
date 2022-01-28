@@ -28,7 +28,6 @@ namespace Ecommerce_application
 
 
         }
-        string name, price;
         public void PopulateItem()
         {
             string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
@@ -55,8 +54,13 @@ namespace Ecommerce_application
                         a[i].Pic = (byte[])dt.Rows[i]["photo"];
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
+<<<<<<< HEAD
                         a[i].Price = dt.Rows[i]["price"].ToString();
            
+=======
+                        a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
+
+>>>>>>> parent of 5d1ee64 (Merge branch 'master' of https://github.com/yeab-tilahun/Ecommerce-application)
                         if (panelBuy.Controls.Count < 0)
                             panelBuy.Controls.Clear();
                         else
@@ -97,7 +101,6 @@ namespace Ecommerce_application
                             a[i].Description = dt.Rows[i]["description"].ToString();
                             a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
 
-
                            if (panelBuy.Controls.Count < 0)
                               panelBuy.Controls.Clear();
                            else
@@ -120,11 +123,6 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void panelBuy_Paint(object sender, PaintEventArgs e)
-        {
 
         }
     }
