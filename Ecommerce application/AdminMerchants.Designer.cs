@@ -70,6 +70,7 @@ namespace Ecommerce_application
             // 
             // pnlProgress
             // 
+            this.pnlProgress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
             this.pnlProgress.Location = new System.Drawing.Point(501, 72);
             this.pnlProgress.Name = "pnlProgress";
@@ -78,6 +79,7 @@ namespace Ecommerce_application
             // 
             // pnlValid
             // 
+            this.pnlValid.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlValid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
             this.pnlValid.Location = new System.Drawing.Point(344, 72);
             this.pnlValid.Name = "pnlValid";
@@ -86,6 +88,7 @@ namespace Ecommerce_application
             // 
             // pnlAll
             // 
+            this.pnlAll.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
             this.pnlAll.Location = new System.Drawing.Point(424, 72);
             this.pnlAll.Name = "pnlAll";
@@ -94,6 +97,7 @@ namespace Ecommerce_application
             // 
             // btnProgress
             // 
+            this.btnProgress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnProgress.FlatAppearance.BorderSize = 0;
             this.btnProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,6 +111,7 @@ namespace Ecommerce_application
             // 
             // btnAll
             // 
+            this.btnAll.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAll.FlatAppearance.BorderSize = 0;
             this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,6 +125,7 @@ namespace Ecommerce_application
             // 
             // btnValid
             // 
+            this.btnValid.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnValid.FlatAppearance.BorderSize = 0;
             this.btnValid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,6 +139,9 @@ namespace Ecommerce_application
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(12, 76);
             this.panel1.Name = "panel1";
@@ -141,8 +150,10 @@ namespace Ecommerce_application
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.dgvMerchants);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(916, 554);

@@ -42,15 +42,26 @@ namespace Ecommerce_application
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbCatagories = new System.Windows.Forms.ComboBox();
             this.btnLatest = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnlProducts.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProducts
             // 
             this.pnlProducts.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlProducts.Controls.Add(this.panel2);
             this.pnlProducts.Controls.Add(this.pnlLatest);
             this.pnlProducts.Controls.Add(this.pnlAll);
             this.pnlProducts.Controls.Add(this.panel1);
@@ -68,6 +79,7 @@ namespace Ecommerce_application
             // 
             // pnlLatest
             // 
+            this.pnlLatest.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlLatest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
             this.pnlLatest.Location = new System.Drawing.Point(472, 37);
             this.pnlLatest.Name = "pnlLatest";
@@ -76,6 +88,7 @@ namespace Ecommerce_application
             // 
             // pnlAll
             // 
+            this.pnlAll.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
             this.pnlAll.Location = new System.Drawing.Point(388, 37);
             this.pnlAll.Name = "pnlAll";
@@ -89,19 +102,21 @@ namespace Ecommerce_application
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.dgvProducts);
-            this.panel1.Location = new System.Drawing.Point(12, 40);
+            this.panel1.Location = new System.Drawing.Point(12, 68);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(918, 590);
+            this.panel1.Size = new System.Drawing.Size(918, 562);
             this.panel1.TabIndex = 40;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(918, 590);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(918, 562);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
             // dgvProducts
@@ -121,7 +136,7 @@ namespace Ecommerce_application
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvProducts.Size = new System.Drawing.Size(916, 589);
+            this.dgvProducts.Size = new System.Drawing.Size(916, 561);
             this.dgvProducts.TabIndex = 33;
             this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
             // 
@@ -137,6 +152,7 @@ namespace Ecommerce_application
             // 
             // btnAll
             // 
+            this.btnAll.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAll.FlatAppearance.BorderSize = 0;
             this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,6 +202,7 @@ namespace Ecommerce_application
             // 
             // btnLatest
             // 
+            this.btnLatest.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLatest.FlatAppearance.BorderSize = 0;
             this.btnLatest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLatest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,6 +213,105 @@ namespace Ecommerce_application
             this.btnLatest.Text = "Latest";
             this.btnLatest.UseVisualStyleBackColor = true;
             this.btnLatest.Click += new System.EventHandler(this.btnLatest_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblName);
+            this.panel2.Location = new System.Drawing.Point(12, 40);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(918, 22);
+            this.panel2.TabIndex = 38;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(795, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Date Stamp";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(688, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Expire Date";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(457, 3);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(76, 16);
+            this.lblName.TabIndex = 5;
+            this.lblName.Text = "Description";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(80, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(130, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "Name";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(230, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Price";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(304, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 16);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Quantity";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(373, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 16);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Category";
             // 
             // AdminProducts
             // 
@@ -214,6 +330,8 @@ namespace Ecommerce_application
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -231,5 +349,14 @@ namespace Ecommerce_application
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlAll;
         private System.Windows.Forms.Panel pnlLatest;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

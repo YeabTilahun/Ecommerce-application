@@ -23,7 +23,7 @@ namespace Ecommerce_application
             LoadProduct[] a = new LoadProduct[dt.Rows.Count];
             for (int i = 0; i < dt.Rows.Count; i++)
                 a[i] = new LoadProduct();
-            if (this.Size == SystemInformation.WorkingArea.Size)
+            if (this.Size.Width > 900)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {

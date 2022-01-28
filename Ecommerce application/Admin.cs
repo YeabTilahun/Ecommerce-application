@@ -95,6 +95,7 @@ namespace Ecommerce_application
             }
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                a[i].Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
                 if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
                     a[i].PicProduct = (byte[])dt.Rows[i]["photo"];
                 a[i].ID = dt.Rows[i]["productid"].ToString();
@@ -161,6 +162,7 @@ namespace Ecommerce_application
             adminMerchants.flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                a[i].Anchor = AnchorStyles.Top | AnchorStyles.Left| AnchorStyles.Right;
                 if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
                     a[i].PicCustomerOrAdmin = (byte[])dt.Rows[i]["photo"];
                 a[i].FName = dt.Rows[i]["fname"].ToString();
@@ -217,6 +219,7 @@ namespace Ecommerce_application
             }
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                a[i].Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
                 if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
                     a[i].PicCustomerOrAdmin = (byte[])dt.Rows[i]["photo"];
                 a[i].FName = dt.Rows[i]["fname"].ToString();
@@ -295,6 +298,7 @@ namespace Ecommerce_application
             }
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                a[i].Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
                 if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
                     a[i].PicCustomerOrAdmin = (byte[])dt.Rows[i]["photo"];
                 a[i].FName = dt.Rows[i]["fname"].ToString();
