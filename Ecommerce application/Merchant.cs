@@ -17,14 +17,14 @@ namespace Ecommerce_application
         public static string name;
         public Merchant(string userName)
         {
-            Merchant.name = userName;
             InitializeComponent();
+            Merchant.name = userName;
             label2.Text = Merchant.name;
         }
         //To make life easier
         public Merchant()
         {
-          
+            //InitializeComponent();
         }
 
         MerchantSell n = new MerchantSell();

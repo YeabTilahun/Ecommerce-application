@@ -72,7 +72,7 @@ namespace Ecommerce_application
         {
             
         }
-  
+
         private void button1_Click(object sender, EventArgs e)
         {
             /*            DataTable LoadToCart(string name, float price)
@@ -89,17 +89,10 @@ namespace Ecommerce_application
                             return dt;
                         }*/
 
+           
 
-            Merchant.dataGridView1.Columns.Add("name", "Product Name");
-            Merchant.dataGridView1.Columns.Add("Price", "Price");
-            Merchant.dataGridView1.Rows.Add(name, price);
-            int new_total_price = int.Parse(price);
-            int prev_total_price =+ new_total_price;
-            Merchant.total.Text = Convert.ToString(prev_total_price);
-          
         }
 
-        //Even
         public void Onclick(object sender,EventArgs e)
         {
 
@@ -108,13 +101,32 @@ namespace Ecommerce_application
         {
             labelDescription.Visible = false;
         }
-
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
             labelDescription.Visible = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void labelDescription_Click(object sender, EventArgs e)
         {
 
         }
