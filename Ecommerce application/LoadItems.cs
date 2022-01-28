@@ -72,7 +72,7 @@ namespace Ecommerce_application
         {
             
         }
-  
+
         private void button1_Click(object sender, EventArgs e)
         {
             /*            DataTable LoadToCart(string name, float price)
@@ -89,14 +89,18 @@ namespace Ecommerce_application
                             return dt;
                         }*/
 
-
             Merchant.dataGridView1.Columns.Add("name", "Product Name");
             Merchant.dataGridView1.Columns.Add("Price", "Price");
             Merchant.dataGridView1.Rows.Add(name, price);
-            int new_total_price = int.Parse(price);
-            int prev_total_price =+ new_total_price;
-            Merchant.total.Text = Convert.ToString(prev_total_price);
-          
+
+            //calculate total
+            double sum = 0;
+            for (int i = 0; i < Merchant.dataGridView1.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(Merchant.dataGridView1.Rows[i].Cells[1].Value);
+            }
+            Merchant.total.Text = string.Format("${0}", sum.ToString());
+
         }
 
         //Even
