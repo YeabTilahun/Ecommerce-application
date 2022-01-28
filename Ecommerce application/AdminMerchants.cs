@@ -161,6 +161,36 @@ namespace Ecommerce_application
                 dgvMerchants.Rows[i].Cells[0].Value = false;
             }
         }
+
+        private void btnValid_Click(object sender, EventArgs e)
+        {
+            btnValid.ForeColor = Color.FromArgb(0, 77, 153);
+            pnlValid.Show();
+            btnAll.ForeColor = Color.Black;
+            pnlAll.Hide();
+            btnProgress.ForeColor = Color.Black;
+            pnlProgress.Hide();
+        }
+
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+            btnValid.ForeColor = Color.Black;
+            pnlValid.Hide();
+            btnAll.ForeColor = Color.FromArgb(0, 77, 153);
+            pnlAll.Show();
+            btnProgress.ForeColor = Color.Black;
+            pnlProgress.Hide();
+        }
+
+        private void btnProgress_Click(object sender, EventArgs e)
+        {
+            btnValid.ForeColor = Color.Black;
+            pnlValid.Hide();
+            btnAll.ForeColor = Color.Black;
+            pnlAll.Hide();
+            btnProgress.ForeColor = Color.FromArgb(0, 77, 153);
+            pnlProgress.Show();
+        }
     }
 }
 

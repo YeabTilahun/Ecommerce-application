@@ -403,12 +403,6 @@
     <Compile Include="The Wait Form.Designer.cs">
       <DependentUpon>The Wait Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <Compile Include="ValidatingMerchant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -511,9 +505,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="The Wait Form.resx">
       <DependentUpon>The Wait Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ValidatingMerchant.resx">
       <DependentUpon>ValidatingMerchant.cs</DependentUpon>

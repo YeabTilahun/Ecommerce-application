@@ -31,25 +31,35 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMerchants));
             this.pnlMerchant = new System.Windows.Forms.Panel();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.dgvMerchants = new System.Windows.Forms.DataGridView();
-            this.btnUncheck = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnCheck = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnValid = new System.Windows.Forms.Button();
+            this.btnAll = new System.Windows.Forms.Button();
+            this.btnProgress = new System.Windows.Forms.Button();
+            this.pnlProgress = new System.Windows.Forms.Panel();
+            this.pnlAll = new System.Windows.Forms.Panel();
+            this.pnlValid = new System.Windows.Forms.Panel();
             this.pnlMerchant.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMerchants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMerchant
             // 
             this.pnlMerchant.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlMerchant.Controls.Add(this.pnlProgress);
+            this.pnlMerchant.Controls.Add(this.pnlValid);
+            this.pnlMerchant.Controls.Add(this.pnlAll);
+            this.pnlMerchant.Controls.Add(this.btnProgress);
+            this.pnlMerchant.Controls.Add(this.btnAll);
+            this.pnlMerchant.Controls.Add(this.btnValid);
+            this.pnlMerchant.Controls.Add(this.panel1);
             this.pnlMerchant.Controls.Add(this.picBoxSearch);
-            this.pnlMerchant.Controls.Add(this.dgvMerchants);
-            this.pnlMerchant.Controls.Add(this.btnUncheck);
-            this.pnlMerchant.Controls.Add(this.btnRemove);
-            this.pnlMerchant.Controls.Add(this.btnCheck);
             this.pnlMerchant.Controls.Add(this.txtSearch);
             this.pnlMerchant.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMerchant.Location = new System.Drawing.Point(0, 0);
@@ -57,16 +67,6 @@ namespace Ecommerce_application
             this.pnlMerchant.Size = new System.Drawing.Size(940, 642);
             this.pnlMerchant.TabIndex = 18;
             this.pnlMerchant.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMerchant_Paint);
-            // 
-            // picBoxSearch
-            // 
-            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
-            this.picBoxSearch.Location = new System.Drawing.Point(910, 12);
-            this.picBoxSearch.Name = "picBoxSearch";
-            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
-            this.picBoxSearch.TabIndex = 38;
-            this.picBoxSearch.TabStop = false;
             // 
             // dgvMerchants
             // 
@@ -78,59 +78,11 @@ namespace Ecommerce_application
             this.dgvMerchants.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvMerchants.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMerchants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMerchants.Location = new System.Drawing.Point(12, 51);
+            this.dgvMerchants.Location = new System.Drawing.Point(3, 3);
             this.dgvMerchants.Name = "dgvMerchants";
             this.dgvMerchants.ReadOnly = true;
-            this.dgvMerchants.Size = new System.Drawing.Size(916, 516);
+            this.dgvMerchants.Size = new System.Drawing.Size(916, 0);
             this.dgvMerchants.TabIndex = 35;
-            // 
-            // btnUncheck
-            // 
-            this.btnUncheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnUncheck.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnUncheck.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUncheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnUncheck.FlatAppearance.BorderSize = 0;
-            this.btnUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUncheck.Location = new System.Drawing.Point(131, 597);
-            this.btnUncheck.Name = "btnUncheck";
-            this.btnUncheck.Size = new System.Drawing.Size(110, 28);
-            this.btnUncheck.TabIndex = 33;
-            this.btnUncheck.Text = "Uncheck All";
-            this.btnUncheck.UseVisualStyleBackColor = false;
-            this.btnUncheck.Click += new System.EventHandler(this.btnUncheck_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemove.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnRemove.FlatAppearance.BorderSize = 0;
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Location = new System.Drawing.Point(724, 597);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(110, 28);
-            this.btnRemove.TabIndex = 32;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = false;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCheck.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnCheck.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnCheck.FlatAppearance.BorderSize = 0;
-            this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheck.Location = new System.Drawing.Point(15, 597);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(110, 28);
-            this.btnCheck.TabIndex = 31;
-            this.btnCheck.Text = "Check All";
-            this.btnCheck.UseVisualStyleBackColor = false;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // txtSearch
             // 
@@ -147,6 +99,96 @@ namespace Ecommerce_application
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
             this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
+            // picBoxSearch
+            // 
+            this.picBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.BackgroundImage")));
+            this.picBoxSearch.Location = new System.Drawing.Point(910, 12);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(20, 20);
+            this.picBoxSearch.TabIndex = 38;
+            this.picBoxSearch.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Location = new System.Drawing.Point(12, 76);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(916, 554);
+            this.panel1.TabIndex = 39;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.dgvMerchants);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(916, 554);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // btnValid
+            // 
+            this.btnValid.FlatAppearance.BorderSize = 0;
+            this.btnValid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValid.Location = new System.Drawing.Point(344, 42);
+            this.btnValid.Name = "btnValid";
+            this.btnValid.Size = new System.Drawing.Size(84, 32);
+            this.btnValid.TabIndex = 40;
+            this.btnValid.Text = "Valid";
+            this.btnValid.UseVisualStyleBackColor = true;
+            this.btnValid.Click += new System.EventHandler(this.btnValid_Click);
+            // 
+            // btnAll
+            // 
+            this.btnAll.FlatAppearance.BorderSize = 0;
+            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.Location = new System.Drawing.Point(424, 42);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(84, 32);
+            this.btnAll.TabIndex = 41;
+            this.btnAll.Text = "All";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
+            // btnProgress
+            // 
+            this.btnProgress.FlatAppearance.BorderSize = 0;
+            this.btnProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProgress.Location = new System.Drawing.Point(501, 42);
+            this.btnProgress.Name = "btnProgress";
+            this.btnProgress.Size = new System.Drawing.Size(84, 32);
+            this.btnProgress.TabIndex = 42;
+            this.btnProgress.Text = "InProgress";
+            this.btnProgress.UseVisualStyleBackColor = true;
+            this.btnProgress.Click += new System.EventHandler(this.btnProgress_Click);
+            // 
+            // pnlProgress
+            // 
+            this.pnlProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
+            this.pnlProgress.Location = new System.Drawing.Point(501, 72);
+            this.pnlProgress.Name = "pnlProgress";
+            this.pnlProgress.Size = new System.Drawing.Size(84, 1);
+            this.pnlProgress.TabIndex = 43;
+            // 
+            // pnlAll
+            // 
+            this.pnlAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
+            this.pnlAll.Location = new System.Drawing.Point(424, 72);
+            this.pnlAll.Name = "pnlAll";
+            this.pnlAll.Size = new System.Drawing.Size(84, 1);
+            this.pnlAll.TabIndex = 42;
+            // 
+            // pnlValid
+            // 
+            this.pnlValid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(153)))));
+            this.pnlValid.Location = new System.Drawing.Point(344, 72);
+            this.pnlValid.Name = "pnlValid";
+            this.pnlValid.Size = new System.Drawing.Size(84, 1);
+            this.pnlValid.TabIndex = 42;
+            // 
             // AdminMerchants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,19 +202,26 @@ namespace Ecommerce_application
             this.Load += new System.EventHandler(this.AdminMerchants_Load);
             this.pnlMerchant.ResumeLayout(false);
             this.pnlMerchant.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMerchants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.PictureBox picBoxSearch;
-        private System.Windows.Forms.Button btnUncheck;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.TextBox txtSearch;
         public System.Windows.Forms.Panel pnlMerchant;
         public System.Windows.Forms.DataGridView dgvMerchants;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnProgress;
+        private System.Windows.Forms.Button btnAll;
+        private System.Windows.Forms.Button btnValid;
+        private System.Windows.Forms.Panel pnlProgress;
+        private System.Windows.Forms.Panel pnlAll;
+        private System.Windows.Forms.Panel pnlValid;
     }
 }
