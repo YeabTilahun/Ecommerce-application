@@ -11,15 +11,18 @@ namespace Ecommerce_application
         public string username;
         public string Password;
         public string role;
-        public SignInUser(string uname, string pass, string role)
+        public SignInUser(string uname, string pass)
         {
             this.username = uname;
             this.Password = pass;
-            this.role = role;
+           
         }
         public void saveUser()
         {
             // object creation for the third layer
+            signInPro s = new signInPro();
+           role= s.SigninProccedure(this);
+
 
         }
     }

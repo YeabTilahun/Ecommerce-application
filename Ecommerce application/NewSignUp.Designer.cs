@@ -30,6 +30,8 @@ namespace Ecommerce_application
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,7 +42,7 @@ namespace Ecommerce_application
             this.textPhone = new System.Windows.Forms.TextBox();
             this.textUserName = new System.Windows.Forms.TextBox();
             this.textLastName = new System.Windows.Forms.TextBox();
-            this.textUserId = new System.Windows.Forms.TextBox();
+            this.textMerName = new System.Windows.Forms.TextBox();
             this.textFirstName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,12 +54,19 @@ namespace Ecommerce_application
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picBoxAddphoto = new System.Windows.Forms.PictureBox();
+            this.btnPermit = new System.Windows.Forms.Button();
+            this.picPermit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPermit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnPermit);
+            this.panel1.Controls.Add(this.picPermit);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.cmbRole);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -68,7 +77,7 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.textPhone);
             this.panel1.Controls.Add(this.textUserName);
             this.panel1.Controls.Add(this.textLastName);
-            this.panel1.Controls.Add(this.textUserId);
+            this.panel1.Controls.Add(this.textMerName);
             this.panel1.Controls.Add(this.textFirstName);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -82,9 +91,31 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.picBoxAddphoto);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(929, 450);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(312, 281);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Role";
+            // 
+            // cmbRole
+            // 
+            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Items.AddRange(new object[] {
+            "Customer",
+            "Merchant"});
+            this.cmbRole.Location = new System.Drawing.Point(429, 281);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(156, 21);
+            this.cmbRole.TabIndex = 8;
+            this.cmbRole.TextChanged += new System.EventHandler(this.cmbRole_TextChanged);
             // 
             // linkLabel1
             // 
@@ -176,12 +207,13 @@ namespace Ecommerce_application
             this.textLastName.Size = new System.Drawing.Size(210, 20);
             this.textLastName.TabIndex = 2;
             // 
-            // textUserId
+            // textMerName
             // 
-            this.textUserId.Location = new System.Drawing.Point(429, 51);
-            this.textUserId.Name = "textUserId";
-            this.textUserId.Size = new System.Drawing.Size(210, 20);
-            this.textUserId.TabIndex = 2;
+            this.textMerName.Location = new System.Drawing.Point(429, 51);
+            this.textMerName.Name = "textMerName";
+            this.textMerName.Size = new System.Drawing.Size(210, 20);
+            this.textMerName.TabIndex = 2;
+            this.textMerName.Visible = false;
             // 
             // textFirstName
             // 
@@ -262,9 +294,10 @@ namespace Ecommerce_application
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(309, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 13);
+            this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 1;
-            this.label5.Text = "ID";
+            this.label5.Text = "Merchant Name";
+            this.label5.Visible = false;
             // 
             // label1
             // 
@@ -286,18 +319,49 @@ namespace Ecommerce_application
             this.picBoxAddphoto.TabIndex = 0;
             this.picBoxAddphoto.TabStop = false;
             // 
+            // btnPermit
+            // 
+            this.btnPermit.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
+            this.btnPermit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPermit.FlatAppearance.BorderSize = 0;
+            this.btnPermit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPermit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPermit.ForeColor = System.Drawing.Color.White;
+            this.btnPermit.Location = new System.Drawing.Point(721, 261);
+            this.btnPermit.Name = "btnPermit";
+            this.btnPermit.Size = new System.Drawing.Size(160, 36);
+            this.btnPermit.TabIndex = 11;
+            this.btnPermit.Text = "Add Permit";
+            this.btnPermit.UseVisualStyleBackColor = true;
+            this.btnPermit.Visible = false;
+            this.btnPermit.Click += new System.EventHandler(this.btnPermit_Click);
+            // 
+            // picPermit
+            // 
+            this.picPermit.BackColor = System.Drawing.Color.Silver;
+            this.picPermit.InitialImage = null;
+            this.picPermit.Location = new System.Drawing.Point(681, 51);
+            this.picPermit.Name = "picPermit";
+            this.picPermit.Size = new System.Drawing.Size(236, 204);
+            this.picPermit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPermit.TabIndex = 10;
+            this.picPermit.TabStop = false;
+            this.picPermit.Visible = false;
+            // 
             // NewSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(929, 450);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NewSignUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewSignUp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPermit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,10 +385,14 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         internal System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textUserId;
+        private System.Windows.Forms.TextBox textMerName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.Button btnPermit;
+        private System.Windows.Forms.PictureBox picPermit;
     }
 }

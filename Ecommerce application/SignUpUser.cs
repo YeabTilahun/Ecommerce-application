@@ -15,8 +15,9 @@ namespace Ecommerce_application
         public string password;
         public string role;
         public string phone;
-        public DateTime bithday;
-        public SignUpUser(string fname, string lname, DateTime bday, string pnum, string email, string uname, string pass, string role)
+        public byte[] photo;
+       // public DateTime bithday;
+        public SignUpUser(string fname, string lname,  string pnum, string email, string uname, string pass, string role, byte [] phot)
         {
             this.email = email;
             this.firstName = fname;
@@ -25,7 +26,18 @@ namespace Ecommerce_application
             this.password = pass;
             this.role = role;
             this.phone = pnum;
-            this.bithday = bday;
+         //   this.bithday = bday;
+        }
+        public SignUpUser(string fname, string lname, string pnum, string email, string uname, string pass, string role, byte[] phot,byte [] pic)
+        {
+            this.email = email;
+            this.firstName = fname;
+            this.fatherName = lname;
+            this.userName = uname;
+            this.password = pass;
+            this.role = role;
+            this.phone = pnum;
+            //   this.bithday = bday;
         }
         public void signUp()
         {

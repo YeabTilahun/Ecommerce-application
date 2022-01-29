@@ -44,6 +44,9 @@ namespace Ecommerce_application
 
         private void button2_Click(object sender, EventArgs e)
         {
+            button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+
             //Application.Run(new Admin());
             NewSignUp signUp = new NewSignUp();
             signUp.Show();
@@ -78,16 +81,18 @@ namespace Ecommerce_application
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+      /*  private void button1_Click(object sender, EventArgs e)
         {
             //if it is merchant user
             Merchant m = new Merchant(textUsername.Text);
             m.Show();
             this.Hide();
-        }
+        }*/
 
-        /*private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text);
             s.saveUser();
             if (s.role == "Merchant")
@@ -102,9 +107,10 @@ namespace Ecommerce_application
                 admin.Show();
                 this.Hide();
             }
-        }*/
+        }
         private void textUsername_MouseClick(object sender, MouseEventArgs e)
             {
+
             }
         private void textUsername_MouseHover(object sender, EventArgs e)
             {                 textUsername.ForeColor = Color.LightGray;
@@ -134,11 +140,23 @@ namespace Ecommerce_application
 
         }
 
-        /*private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ForgotPassword f = new ForgotPassword();
             f.Show();
             this.Hide();
-        }*/
+        }
+
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+            btnLogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnLogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+        }
     }
 }
