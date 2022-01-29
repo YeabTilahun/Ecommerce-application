@@ -54,7 +54,6 @@ namespace Ecommerce_application
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button12 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
@@ -313,7 +312,6 @@ namespace Ecommerce_application
             this.panel3.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_133;
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.button12);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Location = new System.Drawing.Point(0, -8);
@@ -352,14 +350,6 @@ namespace Ecommerce_application
             this.button6.Text = "Buy product";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 232);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 21);
-            this.comboBox1.TabIndex = 2;
             // 
             // button12
             // 
@@ -446,7 +436,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.FlowLayoutPanel panelAdd;
         private System.Windows.Forms.Label userName;
         internal System.Windows.Forms.Label label2;

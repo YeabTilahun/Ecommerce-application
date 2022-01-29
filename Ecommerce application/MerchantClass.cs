@@ -75,5 +75,12 @@ namespace Ecommerce_application
 
             return dt;
         }
+
+        public DataTable Selected_Cat(string category)
+        {
+            MerchantDatabase homeD = new MerchantDatabase();
+            DataTable dt = homeD.Selected_Cat(category);
+            return dt;
+        }
     }
 }

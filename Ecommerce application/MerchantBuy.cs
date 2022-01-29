@@ -13,6 +13,9 @@ namespace Ecommerce_application
         public MerchantBuy(int i)
         {
             InitializeComponent();
+            GetCategory();
+            comboBox1.Items.Add ("All");
+            comboBox1.Text = "All";
             choose(i);
         }
         public MerchantBuy()
@@ -175,5 +178,61 @@ namespace Ecommerce_application
             }
         }
 
+        public void GetCategory()
+        {
+            string[] category = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetCategory", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblCategory");
+                DataTable dt = ds.Tables["tblCategory"];
+                category = new string[dt.Rows.Count];
+                DataRow row;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    row = dt.Rows[i];
+                    category[i] = row["category"].ToString();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            foreach (string cat in category)
+            {
+                comboBox1.Items.Add(cat);
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MerchantClass x = new MerchantClass();
+            DataTable dt;
+            if (comboBox1.Text.Equals("All"))
+            {
+                dt = x.Selected_Cat("");
+            }
+            else
+                dt = x.Selected_Cat(comboBox1.Text);
+
+            MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
+            panelBuy.Controls.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                a[i] = new MerchantLoadProducts();
+                a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                a[i].Name = dt.Rows[i]["name"].ToString();
+                a[i].Description = dt.Rows[i]["description"].ToString();
+                a[i].Price = dt.Rows[i]["price"].ToString();
+
+                if (panelBuy.Controls.Count < 0)
+                    panelBuy.Controls.Clear();
+                else
+                    panelBuy.Controls.Add(a[i]);
+            }
+        }
     }
 }

@@ -176,5 +176,30 @@ namespace Ecommerce_application
             return dt;
 
         }
+
+
+        //
+        public DataTable Selected_Cat(string category)
+        {
+            DataTable dt = null;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spSelected-cat-product", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@category", category);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    dt = ds.Tables["tblProduct"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
     }
 }

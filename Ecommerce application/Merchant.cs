@@ -60,8 +60,6 @@ namespace Ecommerce_application
         private void Merchant_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
-
-
             //load information about the user
             loadMyProfile();
 
@@ -359,20 +357,20 @@ namespace Ecommerce_application
 
         private void SetupDataGridView()
         {
-            this.Controls.Add(dataGridView2);
-            dataGridView2.AllowUserToAddRows = false;
+           this.Controls.Add(dataGridView2);
+           dataGridView2.AllowUserToAddRows = false;
            dataGridView2.AllowUserToDeleteRows = false;
-           dataGridView2.BackgroundColor = System.Drawing.Color.White;
-           dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-           dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-           dataGridView2.Location = new System.Drawing.Point(1104, 94);
+           dataGridView2.BackgroundColor = Color.White;
+           dataGridView2.BorderStyle = BorderStyle.Fixed3D;
+           dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+           dataGridView2.Location = new Point(1104, 94);
            dataGridView2.Name = "dataGridView2";
            dataGridView2.ReadOnly = true;
-           dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-           dataGridView2.Size = new System.Drawing.Size(213, 381);
+           dataGridView2.ScrollBars = ScrollBars.Vertical;
+           dataGridView2.Size = new Size(213, 381);
            dataGridView2.TabIndex = 20;
            dataGridView2.Visible = true;
-            dataGridView2.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(dataGridView2_RowsAdded);
+           dataGridView2.RowsAdded += new DataGridViewRowsAddedEventHandler(dataGridView2_RowsAdded);
         }
 
        
