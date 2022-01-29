@@ -22,7 +22,7 @@ namespace Ecommerce_application
             LoadCustomerOrAdmin[] a = new LoadCustomerOrAdmin[dt.Rows.Count];
             for (int i = 0; i < dt.Rows.Count; i++)
                 a[i] = new LoadCustomerOrAdmin();
-            if (this.Size == SystemInformation.WorkingArea.Size)
+            if (this.Size.Width > 900)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -114,7 +114,6 @@ namespace Ecommerce_application
         {
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetAdmin(txtSearch.Text);
-            //dgvCustomers.DataSource = dt;
             DisplayOnFlowChart(dt);
         }
     }

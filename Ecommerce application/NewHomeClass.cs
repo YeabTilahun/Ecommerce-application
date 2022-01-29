@@ -9,6 +9,8 @@ namespace Ecommerce_application
 {
     class NewHomeClass
     {
+        public string Pname = "";
+        public string category = "Bikes";
         public string id;
         public string FirstName;
         public string LastName;
@@ -22,9 +24,11 @@ namespace Ecommerce_application
         private string text3;
         private object text4;
 
-        public NewHomeClass(string id)
+        public NewHomeClass()
         {
-            this.id = id;
+            /* string id
+             this.id = id;*/
+            Pname = "";
         }
 
         public NewHomeClass(string id, string firstname, string lastname, string username, string password, string phone, string email, byte[] photo)
@@ -39,7 +43,7 @@ namespace Ecommerce_application
             this.photo = photo;
         }
 
-        public NewHomeClass(string id, string text1, string text2, string text3, object text4, byte[] photo) : this(id)
+        public NewHomeClass(string id, string text1, string text2, string text3, object text4, byte[] photo) //: this(id)
         {
             this.text1 = text1;
             this.text2 = text2;
@@ -70,6 +74,13 @@ namespace Ecommerce_application
         {
             NewHomeDatabase nhb = new NewHomeDatabase();
             DataTable dt = new DataTable();
+            return dt;
+        }
+
+        public DataTable CustomerProduct(string category)
+        {
+            NewHomeDatabase homeD = new NewHomeDatabase();
+            DataTable dt = homeD.CustomerProductCategory(category, Pname);
             return dt;
         }
     }

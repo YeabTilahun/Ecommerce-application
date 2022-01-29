@@ -56,6 +56,9 @@ namespace Ecommerce_application
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.dgvCustomers);
             this.panel1.Location = new System.Drawing.Point(12, 53);
@@ -111,8 +114,6 @@ namespace Ecommerce_application
             this.txtSearch.TabIndex = 36;
             this.txtSearch.Tag = "";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // AdminCustomers
             // 

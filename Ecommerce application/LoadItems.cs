@@ -75,7 +75,17 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*            DataTable LoadToCart(string name, float price)
+            Newcart cart = new Newcart();
+            Newcart.dataGridViewCart.Columns.Add("name", "productname");
+            Newcart.dataGridViewCart.Columns.Add("price", "price");
+            Newcart.dataGridViewCart.Rows.Add(name, price);
+            /*int[] theData = new int[50];
+
+            for (int i = 0; i < theData.Length; i++)
+            {
+                Newcart.dataGridViewCart.Rows.Add(new object[] { i + 1, theData[i] });
+            }*/
+            /*DataTable LoadToCart(string name, float price)
                         {
                             string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
                             SqlConnection con = new SqlConnection(constr);
@@ -88,11 +98,22 @@ namespace Ecommerce_application
                             DataTable dt = ds.Tables["tblProduct"];
                             return dt;
                         }*/
+            /*Newcart cart = new Newcart();
+            Newcart.dataGridViewCart.Columns.Add("name", "Product Name");
+            Newcart.dataGridViewCart.Columns.Add("Price", "Price");
+            Newcart.dataGridViewCart.Rows.Add(name, price);
 
-           
+            //calculate total
+            double sum = 0;
+            for (int i = 0; i < Newcart.dataGridViewCart.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(Newcart.dataGridViewCart.Rows[i].Cells[1].Value);
+            }
+            cart.labelTotal.Text = string.Format("${0}", sum.ToString());*/
 
         }
 
+        //Even
         public void Onclick(object sender,EventArgs e)
         {
 
@@ -101,32 +122,13 @@ namespace Ecommerce_application
         {
             labelDescription.Visible = false;
         }
+
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
             labelDescription.Visible = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void labelDescription_Click(object sender, EventArgs e)
         {
 
         }

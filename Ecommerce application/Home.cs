@@ -105,7 +105,7 @@ namespace Ecommerce_application
                         a[i].Pic = (byte[])dt.Rows[i]["photo"];
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
-                        a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
+                        a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
 
                         if (flowLayoutPanel1.Controls.Count < 0)
                             flowLayoutPanel1.Controls.Clear();
@@ -314,10 +314,61 @@ namespace Ecommerce_application
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           if(comboBox1.Text == "All")
+            NewHomeClass nhc = new NewHomeClass();
+            DataTable dt;
+            //dt = nhc.CustomerProduct();
+            //home.comboBox1.Items.Add("All");
+            //home.comboBox1.Text = "All";
+            /*foreach (string cat in category)
+            {
+                home.comboBox1.Items.Add(cat);
+            }*/
+            if (comboBox1.Text.Equals("All"))
+            {
+                dt = nhc.CustomerProduct("");
+            }
+            else
+                dt = nhc.CustomerProduct(comboBox1.Text);
+
+            LoadItems[] a = new LoadItems[dt.Rows.Count];
+            flowLayoutPanel1.Controls.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                a[i] = new LoadItems();
+                a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                a[i].Name = dt.Rows[i]["name"].ToString();
+                a[i].Description = dt.Rows[i]["description"].ToString();
+                a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
+
+                if (flowLayoutPanel1.Controls.Count < 0)
+                    flowLayoutPanel1.Controls.Clear();
+                else
+                    flowLayoutPanel1.Controls.Add(a[i]);
+            }
+            /*SqlConnection msc = new SqlConnection("Server = LAPTOP-RS59N8IM;   database = Ecommerce; integrated security=true;");
+            SqlCommand cmd = new SqlCommand("select * from product");
+            msc.Open();
+            cmd.Connection = msc;
+            SqlDataReader dr = cmd.ExecuteReader();
+            switch (comboBox1.Text)
             {
 
-            }
+                case "All":
+                    cmd.ExecuteReader();   
+                    break;
+                case "Cars":
+                    SqlCommand cm = new SqlCommand("Select * From Product");
+                    cm.ExecuteReader();
+                    break;
+                case "Bikes":
+                    SqlCommand cmm = new SqlCommand("Select * From Product");
+                    cmm.ExecuteReader();
+                    break;
+                case "Books":
+                    SqlCommand cmdd = new SqlCommand("Select * From Product");
+                    cmdd.ExecuteReader();
+                    break;
+            }*/
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)

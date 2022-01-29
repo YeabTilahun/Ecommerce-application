@@ -42,17 +42,6 @@ namespace Ecommerce_application
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            /*if (txtPass.Text.Equals(txtConfermPass.Text))
-            {
-                AdminRegisterClass admin = new AdminRegisterClass(txtAdminID.Text, txtFName.Text, txtLName.Text, cmbSex.Text, dtpBirthday.Text, txtPhoneNum.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, txtRole.Text);
-                admin.UpdateAdmin();
-            }
-            else
-                MessageBox.Show("Your Password Does Not Match!!");*/
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
