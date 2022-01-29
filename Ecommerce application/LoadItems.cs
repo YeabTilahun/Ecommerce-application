@@ -17,6 +17,7 @@ namespace Ecommerce_application
 
         public LoadItems()
         {
+            //SetupDataGridView();
             InitializeComponent();
         }
 
@@ -75,10 +76,26 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-          /*  Newcart cart = new Newcart();
-            Newcart.dataGridViewCart.Columns.Add("name", "productname");
-            Newcart.dataGridViewCart.Columns.Add("price", "price");
-            Newcart.dataGridViewCart.Rows.Add(name, price);*/
+            //Newcart cart = new Newcart();
+            Home home = new Home();
+            home.buySize();
+            Home.dataGridViewCart.Columns.Add("name", "Product Name");
+            Home.dataGridViewCart.Columns.Add("Price", "Price");
+            Home.dataGridViewCart.Rows.Add(name, price);
+
+            //calculate total
+            double sum = 0;
+            for (int i = 0; i < Home.dataGridViewCart.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(Home.dataGridViewCart.Rows[i].Cells[1].Value);
+            }
+            //home.labelTotal.Text = string.Format("${0}", sum.ToString());
+
+           
+            /* Newcart cart = new Newcart();
+              Newcart.dataGridViewCart.Columns.Add("name", "productname");
+              Newcart.dataGridViewCart.Columns.Add("price", "price");
+              Newcart.dataGridViewCart.Rows.Add(name, price);*/
 
 
             /*int[] theData = new int[50];
@@ -100,19 +117,6 @@ namespace Ecommerce_application
                             DataTable dt = ds.Tables["tblProduct"];
                             return dt;
                         }*/
-            /*Newcart cart = new Newcart();
-            Newcart.dataGridViewCart.Columns.Add("name", "Product Name");
-            Newcart.dataGridViewCart.Columns.Add("Price", "Price");
-            Newcart.dataGridViewCart.Rows.Add(name, price);
-
-            //calculate total
-            double sum = 0;
-            for (int i = 0; i < Newcart.dataGridViewCart.Rows.Count; ++i)
-            {
-                sum += Convert.ToDouble(Newcart.dataGridViewCart.Rows[i].Cells[1].Value);
-            }
-            cart.labelTotal.Text = string.Format("${0}", sum.ToString());*/
-
         }
 
         //Even

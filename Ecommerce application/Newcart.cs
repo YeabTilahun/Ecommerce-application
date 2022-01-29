@@ -16,12 +16,14 @@ namespace Ecommerce_application
     {
         public Newcart()
         {
+            //SetupDataGridView();
             InitializeComponent();
         }
 
         private void dataGridViewCart_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
+
+           /* string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
             try
             {
                 using (SqlConnection con = new SqlConnection(constr))
@@ -43,13 +45,18 @@ namespace Ecommerce_application
             catch(SqlException ex)
             {
                 MessageBox.Show("ex.Message");
-            }
+            }*/
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Login log = new Login();
             log.Show();
+        }
+
+        private void dataGridViewCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

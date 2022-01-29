@@ -15,26 +15,44 @@ namespace Ecommerce_application
 {
     public partial class Home : Form
     {
+        public static DataGridView dataGridViewCart = new DataGridView();
         //private SqlCommand cmd;
-       /* private SqlDataReader dr;
-        PictureBox pic = new PictureBox();
-        Label price = new Label();
-        Label descripton = new Label();*/
+        /* private SqlDataReader dr;
+         PictureBox pic = new PictureBox();
+         Label price = new Label();
+         Label descripton = new Label();*/
 
         public Home()
         {
-            Thread t = new Thread(new ThreadStart(Splash));
             InitializeComponent();
+           // Thread t = new Thread(new ThreadStart(Splash));
 
             //Loading data
-            string str = string.Empty;
+            /*string str = string.Empty;
             for (int i = 0; i < 1000; i++)
             {
                 str = str + i.ToString();
             }
 
-            t.Abort();
+            t.Abort();*/
         }
+
+        /*private void SetupDataGridView()
+        {
+            this.Controls.Add(dataGridView2);
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new System.Drawing.Point(1104, 94);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            dataGridView2.Size = new System.Drawing.Size(213, 381);
+            dataGridView2.TabIndex = 20;
+            dataGridView2.Visible = true;
+        }*/
 
         void Splash()
         {
@@ -93,6 +111,7 @@ namespace Ecommerce_application
                     da.Fill(ds, "tblProduct");
                     DataTable dt = ds.Tables["tblProduct"];
                     LoadItems[] a = new LoadItems[dt.Rows.Count];
+                    resize();
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         a[i] = new LoadItems();
@@ -381,5 +400,54 @@ namespace Ecommerce_application
 
         }
 
+        private void SetupDataGridView()
+        {
+            this.Controls.Add(dataGridView1);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new System.Drawing.Point(1104, 94);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            dataGridView1.Size = new System.Drawing.Size(213, 381);
+            dataGridView1.TabIndex = 20;
+            dataGridView1.Visible = true;
+        }
+
+        public void buySize()
+        {
+            labelTotal.Visible = true;
+            buttonBuy.Visible = true;
+            buttonCancel.Visible = true;
+            //btnAdd.Visible = true;
+            dataGridView1.Visible = true;
+            //total.Visible = true;
+            this.Size = new Size(1317, 677);
+            //label2.Location = new Point(934, 5);
+        }
+
+        public void resize()
+        {
+            buttonBuy.Visible = false;
+            //btnAdd.Visible = false;
+            labelTotal.Visible = false;
+            buttonCancel.Visible = false;
+            dataGridView1.Visible = false;
+            //total.Visible = false;
+            this.Size = new Size(1100, 677);
+            //label2.Location = new Point(712, 5);
+        }
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

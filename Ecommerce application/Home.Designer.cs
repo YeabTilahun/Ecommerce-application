@@ -42,8 +42,14 @@ namespace Ecommerce_application
             this.buttonLogo = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonBuy = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -219,11 +225,76 @@ namespace Ecommerce_application
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(1103, 58);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(210, 290);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // buttonBuy
+            // 
+            this.buttonBuy.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_126;
+            this.buttonBuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBuy.FlatAppearance.BorderSize = 0;
+            this.buttonBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuy.ForeColor = System.Drawing.Color.White;
+            this.buttonBuy.Location = new System.Drawing.Point(1103, 475);
+            this.buttonBuy.Name = "buttonBuy";
+            this.buttonBuy.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuy.TabIndex = 4;
+            this.buttonBuy.Text = "Buy";
+            this.buttonBuy.UseVisualStyleBackColor = true;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_126;
+            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCancel.FlatAppearance.BorderSize = 0;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel.ForeColor = System.Drawing.Color.White;
+            this.buttonCancel.Location = new System.Drawing.Point(1238, 475);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_126;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Location = new System.Drawing.Point(1103, 445);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(210, 10);
+            this.panel3.TabIndex = 5;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(1099, 374);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(52, 20);
+            this.labelTotal.TabIndex = 6;
+            this.labelTotal.Text = "Total :";
+            this.labelTotal.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 677);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1317, 677);
+            this.Controls.Add(this.labelTotal);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonBuy);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -234,7 +305,9 @@ namespace Ecommerce_application
             this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -252,5 +325,10 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button buttonLogo;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Button buttonCart;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonBuy;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Label labelTotal;
     }
 }

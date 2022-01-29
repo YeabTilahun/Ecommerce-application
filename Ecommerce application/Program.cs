@@ -16,10 +16,10 @@ namespace Ecommerce_application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Home());
+            Application.Run(new Home());
             //Application.Run(new Admin());
             //Application.Run(new SignIn());
-            Application.Run(new Merchant("yeabsira"));
+            //Application.Run(new Merchant("yeabsira"));
         }
     }
 }

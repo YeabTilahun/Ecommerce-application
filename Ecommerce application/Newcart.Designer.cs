@@ -90,6 +90,7 @@ namespace Ecommerce_application
             this.dataGridViewCart.ReadOnly = true;
             this.dataGridViewCart.Size = new System.Drawing.Size(699, 278);
             this.dataGridViewCart.TabIndex = 0;
+            this.dataGridViewCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCart_CellContentClick);
             this.dataGridViewCart.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewCart_RowHeaderMouseClick);
             // 
             // Newcart
