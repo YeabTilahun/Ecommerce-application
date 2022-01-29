@@ -16,6 +16,8 @@ namespace Ecommerce_application
     public partial class Home : Form
     {
         public static DataGridView dataGridView1 = new DataGridView();
+        //private DataGridViewRowsAddedEventHandler dataGridView1_RowsAdded;
+
         //private SqlCommand cmd;
         /* private SqlDataReader dr;
          PictureBox pic = new PictureBox();
@@ -378,6 +380,7 @@ namespace Ecommerce_application
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridView1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49; 
             dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new System.Drawing.Point(1104, 94);
@@ -387,6 +390,7 @@ namespace Ecommerce_application
             dataGridView1.Size = new System.Drawing.Size(213, 381);
             dataGridView1.TabIndex = 20;
             dataGridView1.Visible = true;
+            dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(dataGridView1_RowsAdded);
         }
 
         public void buySize()
@@ -424,7 +428,8 @@ namespace Ecommerce_application
 
         private void buttonBuy_Click(object sender, EventArgs e)
         {
-
+            SignIn sIn = new SignIn();
+            sIn.Show();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

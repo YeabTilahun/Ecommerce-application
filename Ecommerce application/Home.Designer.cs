@@ -229,7 +229,7 @@ namespace Ecommerce_application
             this.buttonBuy.FlatAppearance.BorderSize = 0;
             this.buttonBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuy.ForeColor = System.Drawing.Color.White;
-            this.buttonBuy.Location = new System.Drawing.Point(1103, 475);
+            this.buttonBuy.Location = new System.Drawing.Point(1104, 490);
             this.buttonBuy.Name = "buttonBuy";
             this.buttonBuy.Size = new System.Drawing.Size(75, 23);
             this.buttonBuy.TabIndex = 4;
@@ -244,7 +244,7 @@ namespace Ecommerce_application
             this.buttonCancel.FlatAppearance.BorderSize = 0;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(1238, 475);
+            this.buttonCancel.Location = new System.Drawing.Point(1230, 490);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 4;
