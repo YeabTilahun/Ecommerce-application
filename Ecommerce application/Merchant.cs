@@ -29,7 +29,6 @@ namespace Ecommerce_application
         }
 
         MerchantSell n = new MerchantSell();
-        MerchantCart l = new MerchantCart();
         MerchantHome k = new MerchantHome();
         
 
@@ -61,8 +60,7 @@ namespace Ecommerce_application
         private void Merchant_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
-            //Disable search box
-            textBox1.Enabled = false;
+
 
             //load information about the user
             loadMyProfile();
@@ -172,8 +170,7 @@ namespace Ecommerce_application
         private void button6_Click(object sender, EventArgs e)
         {
             buySize();
-            //Enable search box
-            textBox1.Enabled = true;
+
 
             MerchantBuy m = new MerchantBuy(1);
             panelAdd.Controls.Clear();
@@ -188,8 +185,7 @@ namespace Ecommerce_application
         private void button5_Click(object sender, EventArgs e)
         {
             resize();
-            //Disable search box
-            textBox1.Enabled = false;
+
             panelAdd.Controls.Clear();
             n.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(n.panelSell);
@@ -201,8 +197,7 @@ namespace Ecommerce_application
         private void button12_Click(object sender, EventArgs e)
         {
             resize();
-            //Disable search box
-            textBox1.Enabled = false;
+
 
             panelAdd.Controls.Clear();
             k.Dock = DockStyle.Fill;
@@ -230,20 +225,6 @@ namespace Ecommerce_application
         {
             button9.BackColor = Color.Transparent;
         }
-
-        private void button4_Click_2(object sender, EventArgs e)
-        {
-            resize();
-            //Disable search box
-            textBox1.Enabled = false;
-
-            panelAdd.Controls.Clear();
-            l.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(l.panelCart);
-            panelAdd.Show();
-            panelAdd.BringToFront();
-        }
-
         private void button7_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -292,16 +273,7 @@ namespace Ecommerce_application
             ///button11.Hide();
             button10.BringToFront();
         }
-        private void button13_Click(object sender, EventArgs e)
-        {
-            /*            Newcart nc = new Newcart();
-                        panelAdd.Controls.Clear();
-                        nc.Dock = DockStyle.Fill;
-                        panelAdd.Controls.Add(nc.panel1);
-                        panelAdd.Show();
-                        panelAdd.BringToFront();*/
-        }
-
+        
         //WHEN LOGOUT CLICKED FROM THE MENU
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -323,7 +295,7 @@ namespace Ecommerce_application
         {
             resize();
             //Disable search box
-            textBox1.Enabled = false;
+
 
             MerchantProfile1 a = new MerchantProfile1();
             panelAdd.Controls.Clear();
@@ -336,8 +308,7 @@ namespace Ecommerce_application
         private void logOutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             resize();
-            //Disable search box
-            textBox1.Enabled = false;
+
 
             //change password
 
@@ -349,73 +320,15 @@ namespace Ecommerce_application
         }
 
 
-
-        //FOR SEARCH CALLS THE PROCEDURE AND DOES THE JOB BUT THEIR IS ERORR AFTER WE SEARCH THE DGV CONTENT WILL DISAPEAR
-         void search()
-        {
-
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-            MerchantBuy ab = new MerchantBuy();
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                con.Open();
-                SqlCommand sqlCmd = new SqlCommand("Exec spSearch @search", con);
-                sqlCmd.Parameters.AddWithValue("@search", textBox1.Text);
-                SqlDataReader reader = sqlCmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                //dataGridView1.DataSource = dt;
-                MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    a[i] = new MerchantLoadProducts();
-                    /*SqlDataAdapter da1 = new SqlDataAdapter("spLoad_data", con);
-                    da1.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da1.SelectCommand.Parameters.AddWithValue("@productid", dt.Rows[i]["productid"]);
-                    DataSet ds1 = new DataSet();
-                    da1.Fill(ds1, "tblproduct");
-                    DataTable dt1 = ds1.Tables["tblproduct"];*/
-                    a[i].Pic = (byte[])dt.Rows[i]["photo"];
-                    a[i].Name = dt.Rows[i]["name"].ToString();
-                    a[i].Description = dt.Rows[i]["description"].ToString();
-                    a[i].Price = dt.Rows[i]["price"].ToString();
-
-                    if (ab.panelBuy.Controls.Count < 0)
-                        ab.panelBuy.Controls.Clear();
-                    else
-                        ab.panelBuy.Controls.Add(a[i]);
-                }
-            }
-        }
-
-        //SEARCH BOX MOUSE ENTERS HIDE TEXT "search items here"
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "Search items here")
-                textBox1.Text = "";
-            textBox1.ForeColor = Color.Black;
-        }
-
-        //WHEN SEARCH BOX TEXT CHANGED CALL SEARCH METHOD
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            search();
-        }
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "Search items here";
-                textBox1.ForeColor = Color.LightGray;
-            }
-        }
-
         //my product
         private void button3_Click(object sender, EventArgs e)
         {
             resize();
             //Disable search box
-            textBox1.Enabled = false;
+            MerchantLoadProducts a = new MerchantLoadProducts();
+            a.button1.Visible = false;
+
+  
             MerchantBuy m = new MerchantBuy(2);
             panelAdd.Controls.Clear();
             m.Dock = DockStyle.Fill;
@@ -424,6 +337,7 @@ namespace Ecommerce_application
             panelAdd.BringToFront();
         }
 
+        //WHEN REMOVE CLICKED SELECTED PRODUCT WILL BE REMOVED FROM CART
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (dataGridView2.Rows.Count != 0)
@@ -458,8 +372,19 @@ namespace Ecommerce_application
            dataGridView2.Size = new System.Drawing.Size(213, 381);
            dataGridView2.TabIndex = 20;
            dataGridView2.Visible = true;
+            dataGridView2.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(dataGridView2_RowsAdded);
         }
 
-
+       
+        //EVERYTIME NEW ROW IS ADDED TOTAL WILL BE UPDATED 
+        private void dataGridView2_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            double sum = 0;
+            for (int i = 0; i < dataGridView2.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(dataGridView2.Rows[i].Cells[1].Value);
+            }
+            total.Text = string.Format("${0}", sum.ToString());
+        }
     }
 }

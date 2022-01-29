@@ -68,7 +68,7 @@ namespace Ecommerce_application
                 textBox3.Clear();
                 comboBox1.Text = "";
                 textBox4.Clear();
-                pictureBox1.BackgroundImage = null;
+   
                 //INSTANTIATING MERCHANT WILL UPDATE THE PRODUCTS IN BUY AFTER NEW PRODUCT ADDED
                 Merchant m = new Merchant();
             }
@@ -89,13 +89,11 @@ namespace Ecommerce_application
             textBox3.Clear();
             comboBox1.Text = "";
             textBox4.Clear();
-            pictureBox1.BackgroundImage = null;
         }
 
         //CLEAR BUTTON
         private void button4_Click(object sender, EventArgs e)
         {
-            pictureBox1.BackgroundImage = null;
 
 
         }

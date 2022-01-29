@@ -64,19 +64,9 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
             Merchant.dataGridView2.Columns.Add("name", "Product Name");
             Merchant.dataGridView2.Columns.Add("Price", "Price");
             Merchant.dataGridView2.Rows.Add(name, price);
-
-            //calculate total
-            double sum = 0;
-            for (int i = 0; i < Merchant.dataGridView2.Rows.Count; ++i)
-            {
-                sum += Convert.ToDouble(Merchant.dataGridView2.Rows[i].Cells[1].Value);
-            }
-          //  Merchant.total.Text = string.Format("${0}", sum.ToString());
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)

@@ -27,12 +27,10 @@ namespace Ecommerce_application
             }
             if (i == 2)
             {
+
                 Getproduct(Merchant.name);
             }
-
-
         }
-        string name, price;
         public void PopulateItem()
         {
             string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
@@ -46,10 +44,10 @@ namespace Ecommerce_application
                     DataSet ds = new DataSet();
                     da.Fill(ds, "tblProduct");
                     DataTable dt = ds.Tables["tblProduct"];
-                    LoadItems[] a = new LoadItems[dt.Rows.Count];
+                    MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        a[i] = new LoadItems();
+                        a[i] = new MerchantLoadProducts();
                         /*SqlDataAdapter da1 = new SqlDataAdapter("spLoad_data", con);
                         da1.SelectCommand.CommandType = CommandType.StoredProcedure;
                         da1.SelectCommand.Parameters.AddWithValue("@productid", dt.Rows[i]["productid"]);
@@ -91,18 +89,18 @@ namespace Ecommerce_application
                     DataTable dt = ds.Tables["tblProduct"];
                     if (dt != null)
                     {
-                        LoadItems[] a = new LoadItems[dt.Rows.Count];
+                        MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
                       //  MessageBox.Show("yes");
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            a[i] = new LoadItems();
+                            a[i] = new MerchantLoadProducts();
                             a[i].Pic = (byte[])dt.Rows[i]["photo"];
                             a[i].Name = dt.Rows[i]["name"].ToString();
                             a[i].Description = dt.Rows[i]["description"].ToString();
-                            a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
+                            a[i].Price = dt.Rows[i]["price"].ToString();
 
 
-                           if (panelBuy.Controls.Count < 0)
+                            if (panelBuy.Controls.Count < 0)
                               panelBuy.Controls.Clear();
                            else
                                 panelBuy.Controls.Add(a[i]);
@@ -111,12 +109,7 @@ namespace Ecommerce_application
                     }
                     else
                     {
-                       /* Label show = new Label();
-                        show.Text = "You don't have any added products.";
-                        show.ForeColor = Color.DarkGray;
-                        show.Size = new Size(120, 25);
-                        panelBuy.Controls.Add(show);*/
-                        MessageBox.Show("Nope");
+                        MessageBox.Show("Sorry you don't have any product to sell!");
                     }
                 }
             }
@@ -127,14 +120,30 @@ namespace Ecommerce_application
 
         }
 
+        //when search text box entered 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             search();
         }
 
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox1.TextAlign = (HorizontalAlignment)Left;
+            textBox1.ForeColor = Color.Black;
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            textBox1.Text = "Search items here";
+            textBox1.TextAlign = HorizontalAlignment.Center;
+            textBox1.ForeColor = Color.LightGray;
+        }
+        //
+
         void search()
         {
-
+            if(!textBox1.Text.Equals("Search items here")) { 
             string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
             MerchantBuy ab = new MerchantBuy();
             using (SqlConnection con = new SqlConnection(constr))
@@ -148,18 +157,19 @@ namespace Ecommerce_application
                 //dataGridView1.DataSource = dt;
                 MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
                     panelBuy.Controls.Clear();
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    a[i] = new MerchantLoadProducts();
-                    a[i].Pic = (byte[])dt.Rows[i]["photo"];
-                    a[i].Name = dt.Rows[i]["name"].ToString();
-                    a[i].Description = dt.Rows[i]["description"].ToString();
-                    a[i].Price = dt.Rows[i]["price"].ToString();
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        a[i] = new MerchantLoadProducts();
+                        a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                        a[i].Name = dt.Rows[i]["name"].ToString();
+                        a[i].Description = dt.Rows[i]["description"].ToString();
+                        a[i].Price = dt.Rows[i]["price"].ToString();
 
-                    if (panelBuy.Controls.Count < 0)
-                        panelBuy.Controls.Clear();
-                    else
-                        panelBuy.Controls.Add(a[i]);
+                        if (panelBuy.Controls.Count < 0)
+                            panelBuy.Controls.Clear();
+                        else
+                            panelBuy.Controls.Add(a[i]);
+                    }
       
                 }
             }
