@@ -75,10 +75,12 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Newcart cart = new Newcart();
+          /*  Newcart cart = new Newcart();
             Newcart.dataGridViewCart.Columns.Add("name", "productname");
             Newcart.dataGridViewCart.Columns.Add("price", "price");
-            Newcart.dataGridViewCart.Rows.Add(name, price);
+            Newcart.dataGridViewCart.Rows.Add(name, price);*/
+
+
             /*int[] theData = new int[50];
 
             for (int i = 0; i < theData.Length; i++)
