@@ -44,7 +44,6 @@ namespace Ecommerce_application
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonBuy = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.labelTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -236,6 +235,7 @@ namespace Ecommerce_application
             this.buttonBuy.TabIndex = 4;
             this.buttonBuy.Text = "Buy";
             this.buttonBuy.UseVisualStyleBackColor = true;
+            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
             // 
             // buttonCancel
             // 
@@ -250,17 +250,7 @@ namespace Ecommerce_application
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_126;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Location = new System.Drawing.Point(1103, 459);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(210, 10);
-            this.panel3.TabIndex = 5;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelTotal
             // 
@@ -280,7 +270,6 @@ namespace Ecommerce_application
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1317, 677);
             this.Controls.Add(this.labelTotal);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonBuy);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -314,7 +303,6 @@ namespace Ecommerce_application
         public System.Windows.Forms.Button buttonCart;
         private System.Windows.Forms.Button buttonBuy;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Label labelTotal;
     }
 }

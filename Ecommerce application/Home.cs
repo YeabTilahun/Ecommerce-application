@@ -421,5 +421,39 @@ namespace Ecommerce_application
         {
 
         }
+
+        private void buttonBuy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count != 0)
+            {
+                int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                dataGridView1.Rows.RemoveAt(rowIndex);
+            }
+            else
+            {
+                MessageBox.Show("Your cart is empty!");
+            }
+            double sum = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
+            }
+            labelTotal.Text = string.Format("${0}", sum.ToString());
+        }
+
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            double sum = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
+            }
+            labelTotal.Text = string.Format("${0}", sum.ToString());
+        }
     }
 }
