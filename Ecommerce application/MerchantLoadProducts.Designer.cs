@@ -100,7 +100,7 @@
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MerchantLoadProducts";
-            this.Size = new System.Drawing.Size(299, 211);
+            this.Size = new System.Drawing.Size(297, 211);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

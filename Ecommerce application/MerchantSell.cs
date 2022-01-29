@@ -35,7 +35,7 @@ namespace Ecommerce_application
             op.Filter = "Choose photo (*.jpg; *.png; *.bmp;) | " + "*.jpg; *.jpeg; *.bmp *.JFIF; *.png;";
             if (op.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(op.FileName);
+                pictureBox1.BackgroundImage = Image.FromFile(op.FileName);
                 addPhoto.Hide();
             }
         }
@@ -54,7 +54,7 @@ namespace Ecommerce_application
             {
                 //CONVERTING THE IMAGE TO BYTE
                 MemoryStream ms = new MemoryStream();
-                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                pictureBox1.BackgroundImage.Save(ms, pictureBox1.BackgroundImage.RawFormat);
                 byte[] photo = ms.ToArray();
                 ms.SetLength(0);
 
@@ -68,7 +68,7 @@ namespace Ecommerce_application
                 textBox3.Clear();
                 comboBox1.Text = "";
                 textBox4.Clear();
-                pictureBox1.Image = null;
+                pictureBox1.BackgroundImage = null;
                 //INSTANTIATING MERCHANT WILL UPDATE THE PRODUCTS IN BUY AFTER NEW PRODUCT ADDED
                 Merchant m = new Merchant();
             }
@@ -89,13 +89,13 @@ namespace Ecommerce_application
             textBox3.Clear();
             comboBox1.Text = "";
             textBox4.Clear();
-            pictureBox1.Image = null;
+            pictureBox1.BackgroundImage = null;
         }
 
         //CLEAR BUTTON
         private void button4_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = null;
+            pictureBox1.BackgroundImage = null;
 
 
         }

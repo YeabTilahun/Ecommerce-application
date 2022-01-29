@@ -591,6 +591,8 @@
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
     <Content Include="ICON.ico" />
+    <None Include="Resources\6843036_courier_deliver_delivery_package_product_icon1.png" />
+    <None Include="Resources\6843036_courier_deliver_delivery_package_product_icon.png" />
     <None Include="Resources\Rectangle 1411.png" />
     <None Include="Resources\Asset 344.png" />
     <None Include="Resources\Group 3422.png" />

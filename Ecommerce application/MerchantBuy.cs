@@ -15,6 +15,10 @@ namespace Ecommerce_application
             InitializeComponent();
             choose(i);
         }
+        public MerchantBuy()
+        {
+
+        }
 
         public void choose(int i) {
             if (i == 1)
@@ -123,9 +127,43 @@ namespace Ecommerce_application
 
         }
 
-        private void panelBuy_Paint(object sender, PaintEventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        void search()
         {
 
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
+            MerchantBuy ab = new MerchantBuy();
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                SqlCommand sqlCmd = new SqlCommand("Exec spSearch @search", con);
+                sqlCmd.Parameters.AddWithValue("@search", textBox1.Text);
+                SqlDataReader reader = sqlCmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                //dataGridView1.DataSource = dt;
+                MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
+                    panelBuy.Controls.Clear();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i] = new MerchantLoadProducts();
+                    a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                    a[i].Name = dt.Rows[i]["name"].ToString();
+                    a[i].Description = dt.Rows[i]["description"].ToString();
+                    a[i].Price = dt.Rows[i]["price"].ToString();
+
+                    if (panelBuy.Controls.Count < 0)
+                        panelBuy.Controls.Clear();
+                    else
+                        panelBuy.Controls.Add(a[i]);
+      
+                }
+            }
         }
+
     }
 }

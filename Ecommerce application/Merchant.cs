@@ -14,6 +14,7 @@ namespace Ecommerce_application
 {
     public partial class Merchant : Form
     {
+        public static  DataGridView dataGridView2 = new DataGridView();
         public static string name;
         public Merchant(string userName)
         {
@@ -30,12 +31,15 @@ namespace Ecommerce_application
         MerchantSell n = new MerchantSell();
         MerchantCart l = new MerchantCart();
         MerchantHome k = new MerchantHome();
+        
 
         public void buySize()
         {
             label3.Visible = true;
             button13.Visible = true;
-            dataGridView1.Visible = true;
+            button8.Visible = true;
+            btnAdd.Visible = true;
+            dataGridView2.Visible = true;
             total.Visible = true;
             this.Size = new Size(1317, 677);
             label2.Location = new Point(934, 5);
@@ -43,17 +47,20 @@ namespace Ecommerce_application
 
         public void resize()
         {
+            button8.Visible = false;
+            btnAdd.Visible = false;
             label3.Visible = false;
             button13.Visible = false;
-            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
             total.Visible = false;
-            this.Size = new Size(1100,677);
+            this.Size = new Size(1100, 677);
             label2.Location = new Point(712, 5);
         }
 
         //To display home page first every time merchat account looged in
         private void Merchant_Load(object sender, EventArgs e)
         {
+            SetupDataGridView();
             //Disable search box
             textBox1.Enabled = false;
 
@@ -74,23 +81,19 @@ namespace Ecommerce_application
             button6.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button6.FlatAppearance.MouseDownBackColor = Color.Transparent;
 
-            button12.FlatAppearance.MouseOverBackColor =Color.Transparent;
-            button12.FlatAppearance.MouseDownBackColor =Color.Transparent;
+            button12.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button12.FlatAppearance.MouseDownBackColor = Color.Transparent;
 
-            button5.FlatAppearance.MouseOverBackColor =Color.Transparent;
-            button5.FlatAppearance.MouseDownBackColor =Color.Transparent;
+            button5.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button5.FlatAppearance.MouseDownBackColor = Color.Transparent;
 
-            button3.FlatAppearance.MouseOverBackColor =Color.Transparent;
-            button3.FlatAppearance.MouseDownBackColor =Color.Transparent;
+            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
 
             button13.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button13.FlatAppearance.MouseDownBackColor = Color.Transparent;
         }
 
-        public void count(int count)
-        {
-           
-        }
 
         //check if the user is allowed to sell products
         public void check()
@@ -174,8 +177,8 @@ namespace Ecommerce_application
 
             MerchantBuy m = new MerchantBuy(1);
             panelAdd.Controls.Clear();
-            m.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(m.panelBuy);
+            m.panel1.Dock = DockStyle.Fill;
+            panelAdd.Controls.Add(m.panel2);
             panelAdd.Show();
             panelAdd.BringToFront();
         }
@@ -187,7 +190,6 @@ namespace Ecommerce_application
             resize();
             //Disable search box
             textBox1.Enabled = false;
-
             panelAdd.Controls.Clear();
             n.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(n.panelSell);
@@ -292,12 +294,12 @@ namespace Ecommerce_application
         }
         private void button13_Click(object sender, EventArgs e)
         {
-/*            Newcart nc = new Newcart();
-            panelAdd.Controls.Clear();
-            nc.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(nc.panel1);
-            panelAdd.Show();
-            panelAdd.BringToFront();*/
+            /*            Newcart nc = new Newcart();
+                        panelAdd.Controls.Clear();
+                        nc.Dock = DockStyle.Fill;
+                        panelAdd.Controls.Add(nc.panel1);
+                        panelAdd.Show();
+                        panelAdd.BringToFront();*/
         }
 
         //WHEN LOGOUT CLICKED FROM THE MENU
@@ -346,13 +348,14 @@ namespace Ecommerce_application
             panelAdd.BringToFront();
         }
 
-      
+
 
         //FOR SEARCH CALLS THE PROCEDURE AND DOES THE JOB BUT THEIR IS ERORR AFTER WE SEARCH THE DGV CONTENT WILL DISAPEAR
-        void search(){
+         void search()
+        {
 
             string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-
+            MerchantBuy ab = new MerchantBuy();
             using (SqlConnection con = new SqlConnection(constr))
             {
                 con.Open();
@@ -362,7 +365,26 @@ namespace Ecommerce_application
                 DataTable dt = new DataTable();
                 dt.Load(reader);
                 //dataGridView1.DataSource = dt;
-                con.Close();
+                MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    a[i] = new MerchantLoadProducts();
+                    /*SqlDataAdapter da1 = new SqlDataAdapter("spLoad_data", con);
+                    da1.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da1.SelectCommand.Parameters.AddWithValue("@productid", dt.Rows[i]["productid"]);
+                    DataSet ds1 = new DataSet();
+                    da1.Fill(ds1, "tblproduct");
+                    DataTable dt1 = ds1.Tables["tblproduct"];*/
+                    a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                    a[i].Name = dt.Rows[i]["name"].ToString();
+                    a[i].Description = dt.Rows[i]["description"].ToString();
+                    a[i].Price = dt.Rows[i]["price"].ToString();
+
+                    if (ab.panelBuy.Controls.Count < 0)
+                        ab.panelBuy.Controls.Clear();
+                    else
+                        ab.panelBuy.Controls.Add(a[i]);
+                }
             }
         }
 
@@ -371,7 +393,7 @@ namespace Ecommerce_application
         {
             if (textBox1.Text == "Search items here")
                 textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
+            textBox1.ForeColor = Color.Black;
         }
 
         //WHEN SEARCH BOX TEXT CHANGED CALL SEARCH METHOD
@@ -401,5 +423,43 @@ namespace Ecommerce_application
             panelAdd.Show();
             panelAdd.BringToFront();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.Rows.Count != 0)
+            {
+                int rowIndex = dataGridView2.CurrentCell.RowIndex;
+                dataGridView2.Rows.RemoveAt(rowIndex);
+            }
+            else
+            {
+                MessageBox.Show("Your cart is empty!");
+            }
+            double sum = 0;
+            for (int i = 0; i < dataGridView2.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(dataGridView2.Rows[i].Cells[1].Value);
+            }
+            total.Text = string.Format("${0}", sum.ToString());
+        }
+
+        private void SetupDataGridView()
+        {
+            this.Controls.Add(dataGridView2);
+            dataGridView2.AllowUserToAddRows = false;
+           dataGridView2.AllowUserToDeleteRows = false;
+           dataGridView2.BackgroundColor = System.Drawing.Color.White;
+           dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+           dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+           dataGridView2.Location = new System.Drawing.Point(1104, 94);
+           dataGridView2.Name = "dataGridView2";
+           dataGridView2.ReadOnly = true;
+           dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+           dataGridView2.Size = new System.Drawing.Size(213, 381);
+           dataGridView2.TabIndex = 20;
+           dataGridView2.Visible = true;
+        }
+
+
     }
 }

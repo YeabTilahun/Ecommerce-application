@@ -93,6 +93,26 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6843036_courier_deliver_delivery_package_product_icon {
+            get {
+                object obj = ResourceManager.GetObject("6843036_courier_deliver_delivery_package_product_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6843036_courier_deliver_delivery_package_product_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("6843036_courier_deliver_delivery_package_product_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7023958_password_account_security_reset_safety_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("7023958_password_account_security_reset_safety_icon (1)", resourceCulture);
@@ -336,6 +356,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap Asset_1353 {
             get {
                 object obj = ResourceManager.GetObject("Asset 1353", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_1354 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 1354", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -45,8 +45,12 @@ namespace Ecommerce_application
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.panelAdd = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.total = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -56,15 +60,11 @@ namespace Ecommerce_application
             this.button12 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            total = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -85,7 +85,7 @@ namespace Ecommerce_application
             this.panel4.Controls.Add(this.button7);
             this.panel4.Location = new System.Drawing.Point(168, 1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(932, 53);
+            this.panel4.Size = new System.Drawing.Size(1149, 53);
             this.panel4.TabIndex = 18;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseMove);
@@ -106,7 +106,7 @@ namespace Ecommerce_application
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.Controls.Add(this.menuStrip1);
-            this.panel9.Location = new System.Drawing.Point(640, 0);
+            this.panel9.Location = new System.Drawing.Point(857, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(53, 45);
             this.panel9.TabIndex = 37;
@@ -179,7 +179,7 @@ namespace Ecommerce_application
             this.button11.BackColor = System.Drawing.Color.Transparent;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
-            this.button11.Location = new System.Drawing.Point(854, 0);
+            this.button11.Location = new System.Drawing.Point(1071, 0);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(39, 25);
             this.button11.TabIndex = 30;
@@ -193,7 +193,7 @@ namespace Ecommerce_application
             this.button10.BackColor = System.Drawing.Color.Transparent;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.Image = global::Ecommerce_application.Properties.Resources.Restore;
-            this.button10.Location = new System.Drawing.Point(854, 0);
+            this.button10.Location = new System.Drawing.Point(1071, 0);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(39, 25);
             this.button10.TabIndex = 29;
@@ -207,7 +207,7 @@ namespace Ecommerce_application
             this.button9.BackColor = System.Drawing.Color.Transparent;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Image = global::Ecommerce_application.Properties.Resources.close_tab3;
-            this.button9.Location = new System.Drawing.Point(893, 0);
+            this.button9.Location = new System.Drawing.Point(1110, 0);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(39, 25);
             this.button9.TabIndex = 29;
@@ -223,13 +223,74 @@ namespace Ecommerce_application
             this.button7.BackColor = System.Drawing.Color.Transparent;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = global::Ecommerce_application.Properties.Resources.minimize;
-            this.button7.Location = new System.Drawing.Point(814, 0);
+            this.button7.Location = new System.Drawing.Point(1031, 0);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(39, 25);
             this.button7.TabIndex = 28;
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // panelAdd
+            // 
+            this.panelAdd.Location = new System.Drawing.Point(169, 56);
+            this.panelAdd.Name = "panelAdd";
+            this.panelAdd.Size = new System.Drawing.Size(935, 619);
+            this.panelAdd.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1110, 515);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 18);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Total";
+            this.label3.Visible = false;
+            // 
+            // total
+            // 
+            this.total.AutoSize = true;
+            this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total.Location = new System.Drawing.Point(1255, 515);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(0, 18);
+            this.total.TabIndex = 42;
+            this.total.Visible = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(1110, 481);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(70, 25);
+            this.button8.TabIndex = 44;
+            this.button8.Text = "Buy";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Visible = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(1247, 481);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(70, 25);
+            this.btnAdd.TabIndex = 43;
+            this.btnAdd.Text = "Remove";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Visible = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // button13
             // 
@@ -249,13 +310,6 @@ namespace Ecommerce_application
             this.button13.Visible = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // panelAdd
-            // 
-            this.panelAdd.Location = new System.Drawing.Point(169, 56);
-            this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(930, 625);
-            this.panelAdd.TabIndex = 19;
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -271,7 +325,7 @@ namespace Ecommerce_application
             this.panel3.Controls.Add(this.button4);
             this.panel3.Location = new System.Drawing.Point(0, -8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(168, 689);
+            this.panel3.Size = new System.Drawing.Size(168, 594);
             this.panel3.TabIndex = 0;
             // 
             // button3
@@ -382,50 +436,15 @@ namespace Ecommerce_application
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click_2);
             // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new System.Drawing.Point(1099, 94);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            dataGridView1.Size = new System.Drawing.Size(220, 381);
-            dataGridView1.TabIndex = 20;
-            dataGridView1.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1102, 478);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 18);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Total";
-            this.label3.Visible = false;
-            // 
-            // total
-            // 
-            total.AutoSize = true;
-            total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            total.Location = new System.Drawing.Point(1247, 478);
-            total.Name = "total";
-            total.Size = new System.Drawing.Size(0, 18);
-            total.TabIndex = 42;
-            total.Visible = false;
-            // 
             // Merchant
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1100, 677);
-            this.Controls.Add(total);
+            this.ClientSize = new System.Drawing.Size(1317, 677);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.total);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button13);
-            this.Controls.Add(dataGridView1);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -443,7 +462,6 @@ namespace Ecommerce_application
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,8 +493,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.FlowLayoutPanel panelAdd;
         private System.Windows.Forms.Label userName;
         internal System.Windows.Forms.Label label2;
@@ -486,7 +502,10 @@ namespace Ecommerce_application
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
         internal System.Windows.Forms.Label label3;
-        public static System.Windows.Forms.Label total;
-        public static System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button button8;
+        public System.Windows.Forms.Label total;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
