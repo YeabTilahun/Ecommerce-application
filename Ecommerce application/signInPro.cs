@@ -8,7 +8,7 @@ using System.Data;
 using System.Windows.Forms;
 namespace Ecommerce_application
 {
-    class signInPro : SignIn
+    class signInPro
     {
         public string SigninProccedure(SignInUser u)
         {
@@ -25,14 +25,14 @@ namespace Ecommerce_application
                     DataTable dt = ds.Tables[0];
                     int flag = 0;
 
-                    
+
                     foreach (DataRow dr in dt.Rows)
                     {
                         if (u.username.CompareTo(dr["userName"]) == 0 && u.Password.CompareTo(dr["password"]) == 0)
                         {
-                            
+
                             flag = 1;
-                            
+
                             role = dr["role"].ToString();
 
                             break;

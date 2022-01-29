@@ -161,7 +161,8 @@ namespace Ecommerce_application
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(696, 2);
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(695, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 31);
@@ -224,7 +225,7 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnLogo);
-            this.panel1.Location = new System.Drawing.Point(-1, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 445);
             this.panel1.TabIndex = 47;
@@ -248,13 +249,14 @@ namespace Ecommerce_application
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(4, 209);
+            this.button3.Location = new System.Drawing.Point(12, 211);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 29);
             this.button3.TabIndex = 37;
             this.button3.Text = "Signup";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // btnLogo
             // 
@@ -269,6 +271,7 @@ namespace Ecommerce_application
             this.btnLogo.Size = new System.Drawing.Size(136, 145);
             this.btnLogo.TabIndex = 36;
             this.btnLogo.UseVisualStyleBackColor = false;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
             // linkLabel1
             // 
@@ -279,7 +282,6 @@ namespace Ecommerce_application
             this.linkLabel1.TabIndex = 48;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "forgot Password?";
-            //this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // SignIn
             // 

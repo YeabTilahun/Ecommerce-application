@@ -17,12 +17,12 @@ namespace Ecommerce_application
         {
             username = ema;
         }
-        public ChangePassword(string pass,string conf)
+        public ChangePassword(string pass, string conf)
         {
             password = pass;
             confirm = conf;
         }
-        public int  checkEmail()
+        public int checkEmail()
         {
             string constr = "Server = JONNY; database = ecommerce; integrated security = true;";
             int flag = 0;
@@ -34,25 +34,25 @@ namespace Ecommerce_application
                     SqlDataAdapter da = new SqlDataAdapter("spLogin", con);
                     da.Fill(ds, "tableall");
                     DataTable dt = ds.Tables[0];
-                   
-               
-                    
+
+
+
                     foreach (DataRow dr in dt.Rows)
                     {
                         if (username.CompareTo(dr["userName"]) == 0)
                         {
-                            
+
                             flag = 1;
-                            
+
                             break;
                         }
                     }
                     if (flag == 0)
                     {
-                        MessageBox.Show("Invalid UserName!TRY AGAIN");       
+                        MessageBox.Show("Invalid UserName!TRY AGAIN");
                     }
-                   
-                    
+
+
                 }
             }
             catch (SqlException ex)
@@ -73,7 +73,7 @@ namespace Ecommerce_application
                         con.Open();
                         SqlCommand cmd = new SqlCommand("spcheckPass", con);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@pass",password);
+                        cmd.Parameters.AddWithValue("@pass", password);
                         cmd.Parameters.AddWithValue("@username", username);
                         int rowAffected = cmd.ExecuteNonQuery();
                         con.Close();
@@ -90,6 +90,6 @@ namespace Ecommerce_application
                     MessageBox.Show(ex.Message);
                 }
             }
-        } 
+        }
     }
 }
