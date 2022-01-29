@@ -11,11 +11,9 @@ namespace Ecommerce_application
 {
     class NewHomeDatabase
     {
-        string conStr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
-
+        string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
         public void SaveUser(NewHomeClass hc)
         {
-            string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
             using (SqlConnection con = new SqlConnection(constr))
             {
                 con.Open();
@@ -33,7 +31,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(conStr))
+                using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spInsertCustomer", con);
@@ -65,7 +63,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(conStr))
+                using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spDeleteUser", con);
@@ -88,7 +86,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(conStr))
+                using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateUser", con);
@@ -114,7 +112,7 @@ namespace Ecommerce_application
 
         public DataTable getUser(string fn, string ln)
         {
-            SqlConnection con = new SqlConnection(conStr);
+            SqlConnection con = new SqlConnection(constr);
             SqlDataAdapter da = new SqlDataAdapter("spGetUser", con);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@fn", fn);
@@ -122,6 +120,30 @@ namespace Ecommerce_application
             DataSet ds = new DataSet();
             da.Fill(ds, "tblUser");
             DataTable dt = ds.Tables["tblUser"];
+            return dt;
+        }
+
+        public DataTable CustomerProductCategory(string category, string name)
+        {
+            DataTable dt = null;
+            try
+            {
+                using(SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spCustomerProduct", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@name", name);
+                    da.SelectCommand.Parameters.AddWithValue("@category", category);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    dt = ds.Tables["tblProduct"];
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return dt;
         }
     }

@@ -30,8 +30,10 @@ namespace Ecommerce_application
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.buttonAddpic = new System.Windows.Forms.Button();
             this.textpassword = new System.Windows.Forms.TextBox();
             this.textconfirmpassword = new System.Windows.Forms.TextBox();
             this.textEmail = new System.Windows.Forms.TextBox();
@@ -49,9 +51,7 @@ namespace Ecommerce_application
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonAddpic = new System.Windows.Forms.Button();
             this.picBoxAddphoto = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,16 @@ namespace Ecommerce_application
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(446, 421);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(97, 13);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "agree to our policy ";
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(659, 417);
@@ -94,6 +104,7 @@ namespace Ecommerce_application
             this.button3.TabIndex = 5;
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -104,6 +115,22 @@ namespace Ecommerce_application
             this.button2.Text = "Continue";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // buttonAddpic
+            // 
+            this.buttonAddpic.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
+            this.buttonAddpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAddpic.FlatAppearance.BorderSize = 0;
+            this.buttonAddpic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddpic.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddpic.ForeColor = System.Drawing.Color.White;
+            this.buttonAddpic.Location = new System.Drawing.Point(53, 238);
+            this.buttonAddpic.Name = "buttonAddpic";
+            this.buttonAddpic.Size = new System.Drawing.Size(160, 36);
+            this.buttonAddpic.TabIndex = 3;
+            this.buttonAddpic.Text = "Add Photo";
+            this.buttonAddpic.UseVisualStyleBackColor = true;
+            this.buttonAddpic.Click += new System.EventHandler(this.button1_Click);
             // 
             // textpassword
             // 
@@ -248,22 +275,6 @@ namespace Ecommerce_application
             this.label1.TabIndex = 1;
             this.label1.Text = "FirstName";
             // 
-            // buttonAddpic
-            // 
-            this.buttonAddpic.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
-            this.buttonAddpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAddpic.FlatAppearance.BorderSize = 0;
-            this.buttonAddpic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddpic.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddpic.ForeColor = System.Drawing.Color.White;
-            this.buttonAddpic.Location = new System.Drawing.Point(53, 238);
-            this.buttonAddpic.Name = "buttonAddpic";
-            this.buttonAddpic.Size = new System.Drawing.Size(160, 36);
-            this.buttonAddpic.TabIndex = 3;
-            this.buttonAddpic.Text = "Add Photo";
-            this.buttonAddpic.UseVisualStyleBackColor = true;
-            this.buttonAddpic.Click += new System.EventHandler(this.button1_Click);
-            // 
             // picBoxAddphoto
             // 
             this.picBoxAddphoto.BackColor = System.Drawing.Color.Silver;
@@ -274,16 +285,6 @@ namespace Ecommerce_application
             this.picBoxAddphoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxAddphoto.TabIndex = 0;
             this.picBoxAddphoto.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(446, 421);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(97, 13);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "agree to our policy ";
             // 
             // NewSignUp
             // 

@@ -184,6 +184,24 @@ namespace Ecommerce_application
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Alcohol",
+            "Bikes",
+            "Books",
+            "Cars",
+            "Cleaning supplies",
+            "Clothing",
+            "Electronics",
+            "Exercise Equipment",
+            "Furniture",
+            "Jewelry",
+            "Medicine",
+            "Musical Instruments",
+            "Other",
+            "Sporting goods",
+            "Tools and Home Care ",
+            "Toys & Games",
+            "Watches"});
             this.comboBox1.Location = new System.Drawing.Point(3, 220);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(155, 21);

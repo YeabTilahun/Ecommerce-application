@@ -75,7 +75,17 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*            DataTable LoadToCart(string name, float price)
+            Newcart cart = new Newcart();
+            Newcart.dataGridViewCart.Columns.Add("name", "productname");
+            Newcart.dataGridViewCart.Columns.Add("price", "price");
+            Newcart.dataGridViewCart.Rows.Add(name, price);
+            /*int[] theData = new int[50];
+
+            for (int i = 0; i < theData.Length; i++)
+            {
+                Newcart.dataGridViewCart.Rows.Add(new object[] { i + 1, theData[i] });
+            }*/
+            /*DataTable LoadToCart(string name, float price)
                         {
                             string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
                             SqlConnection con = new SqlConnection(constr);
@@ -88,18 +98,18 @@ namespace Ecommerce_application
                             DataTable dt = ds.Tables["tblProduct"];
                             return dt;
                         }*/
-
-            Merchant.dataGridView1.Columns.Add("name", "Product Name");
-            Merchant.dataGridView1.Columns.Add("Price", "Price");
-            Merchant.dataGridView1.Rows.Add(name, price);
+            /*Newcart cart = new Newcart();
+            Newcart.dataGridViewCart.Columns.Add("name", "Product Name");
+            Newcart.dataGridViewCart.Columns.Add("Price", "Price");
+            Newcart.dataGridViewCart.Rows.Add(name, price);
 
             //calculate total
             double sum = 0;
-            for (int i = 0; i < Merchant.dataGridView1.Rows.Count; ++i)
+            for (int i = 0; i < Newcart.dataGridViewCart.Rows.Count; ++i)
             {
-                sum += Convert.ToDouble(Merchant.dataGridView1.Rows[i].Cells[1].Value);
+                sum += Convert.ToDouble(Newcart.dataGridViewCart.Rows[i].Cells[1].Value);
             }
-            Merchant.total.Text = string.Format("${0}", sum.ToString());
+            cart.labelTotal.Text = string.Format("${0}", sum.ToString());*/
 
         }
 
