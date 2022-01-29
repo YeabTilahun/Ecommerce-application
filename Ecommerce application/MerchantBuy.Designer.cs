@@ -32,6 +32,8 @@ namespace Ecommerce_application
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MerchantBuy));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelBuy = new System.Windows.Forms.FlowLayoutPanel();
@@ -51,6 +53,8 @@ namespace Ecommerce_application
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.panelBuy);
@@ -59,9 +63,28 @@ namespace Ecommerce_application
             this.panel2.Size = new System.Drawing.Size(929, 613);
             this.panel2.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(467, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Category";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(532, 8);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(170, 21);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.pictureBox2.BackgroundImage = global::Ecommerce_application.Properties.Resources.search_button;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(726, 9);
@@ -88,7 +111,7 @@ namespace Ecommerce_application
             this.panelBuy.AutoScroll = true;
             this.panelBuy.Location = new System.Drawing.Point(-1, 35);
             this.panelBuy.Name = "panelBuy";
-            this.panelBuy.Size = new System.Drawing.Size(930, 563);
+            this.panelBuy.Size = new System.Drawing.Size(930, 581);
             this.panelBuy.TabIndex = 1;
             // 
             // MerchantBuy
@@ -118,5 +141,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.TextBox textBox1;
         internal System.Windows.Forms.FlowLayoutPanel panelBuy;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

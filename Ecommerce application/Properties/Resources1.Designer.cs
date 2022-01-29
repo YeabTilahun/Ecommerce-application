@@ -443,6 +443,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Asset_1821 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 1821", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Asset_185 {
             get {
                 object obj = ResourceManager.GetObject("Asset 185", resourceCulture);
@@ -546,6 +556,16 @@ namespace Ecommerce_application.Properties {
         internal static System.Drawing.Bitmap Asset_221 {
             get {
                 object obj = ResourceManager.GetObject("Asset 221", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asset_2211 {
+            get {
+                object obj = ResourceManager.GetObject("Asset 2211", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
