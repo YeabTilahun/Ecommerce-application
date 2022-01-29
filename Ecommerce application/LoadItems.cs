@@ -25,7 +25,7 @@ namespace Ecommerce_application
         private string price;
         private string description;
         private byte[] pic;
-        Merchant a = new Merchant();
+        Home home = new Home();
 
 
         [Category("Custom Props")]
@@ -77,18 +77,18 @@ namespace Ecommerce_application
         private void button1_Click(object sender, EventArgs e)
         {
             //Newcart cart = new Newcart();
-            Home home = new Home();
-            home.buySize();
-            Home.dataGridViewCart.Columns.Add("name", "Product Name");
-            Home.dataGridViewCart.Columns.Add("Price", "Price");
-            Home.dataGridViewCart.Rows.Add(name, price);
+            //Home home = new Home();
+            //home.buySize();
+            Home.dataGridView1.Columns.Add("name", "Product Name");
+            Home.dataGridView1.Columns.Add("Price", "Price");
+            Home.dataGridView1.Rows.Add(name, price);
 
             //calculate total
-            double sum = 0;
+            /*double sum = 0;
             for (int i = 0; i < Home.dataGridViewCart.Rows.Count; ++i)
             {
                 sum += Convert.ToDouble(Home.dataGridViewCart.Rows[i].Cells[1].Value);
-            }
+            }*/
             //home.labelTotal.Text = string.Format("${0}", sum.ToString());
 
            

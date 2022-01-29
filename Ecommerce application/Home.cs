@@ -15,7 +15,7 @@ namespace Ecommerce_application
 {
     public partial class Home : Form
     {
-        public static DataGridView dataGridViewCart = new DataGridView();
+        public static DataGridView dataGridView1 = new DataGridView();
         //private SqlCommand cmd;
         /* private SqlDataReader dr;
          PictureBox pic = new PictureBox();
@@ -72,6 +72,7 @@ namespace Ecommerce_application
             //ShowPrice();
             //ShowDescription();
             PopulateItem();
+            SetupDataGridView();
         }
 
         /*public void populateItems()
@@ -112,6 +113,7 @@ namespace Ecommerce_application
                     DataTable dt = ds.Tables["tblProduct"];
                     LoadItems[] a = new LoadItems[dt.Rows.Count];
                     resize();
+                    //buySize();
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         a[i] = new LoadItems();
@@ -282,12 +284,13 @@ namespace Ecommerce_application
         }*/
         private void button4_Click(object sender, EventArgs e)
         {
-            Newcart nc = new Newcart();
+            buySize();
+            /*Newcart nc = new Newcart();
             flowLayoutPanel1.Controls.Clear();
             nc.Dock = DockStyle.Fill;
             flowLayoutPanel1.Controls.Add(nc.panel1);
             flowLayoutPanel1.Show();
-            flowLayoutPanel1.BringToFront();
+            flowLayoutPanel1.BringToFront();*/
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -335,13 +338,6 @@ namespace Ecommerce_application
         {
             NewHomeClass nhc = new NewHomeClass();
             DataTable dt;
-            //dt = nhc.CustomerProduct();
-            //home.comboBox1.Items.Add("All");
-            //home.comboBox1.Text = "All";
-            /*foreach (string cat in category)
-            {
-                home.comboBox1.Items.Add(cat);
-            }*/
             if (comboBox1.Text.Equals("All"))
             {
                 dt = nhc.CustomerProduct("");
@@ -364,30 +360,6 @@ namespace Ecommerce_application
                 else
                     flowLayoutPanel1.Controls.Add(a[i]);
             }
-            /*SqlConnection msc = new SqlConnection("Server = LAPTOP-RS59N8IM;   database = Ecommerce; integrated security=true;");
-            SqlCommand cmd = new SqlCommand("select * from product");
-            msc.Open();
-            cmd.Connection = msc;
-            SqlDataReader dr = cmd.ExecuteReader();
-            switch (comboBox1.Text)
-            {
-
-                case "All":
-                    cmd.ExecuteReader();   
-                    break;
-                case "Cars":
-                    SqlCommand cm = new SqlCommand("Select * From Product");
-                    cm.ExecuteReader();
-                    break;
-                case "Bikes":
-                    SqlCommand cmm = new SqlCommand("Select * From Product");
-                    cmm.ExecuteReader();
-                    break;
-                case "Books":
-                    SqlCommand cmdd = new SqlCommand("Select * From Product");
-                    cmdd.ExecuteReader();
-                    break;
-            }*/
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
