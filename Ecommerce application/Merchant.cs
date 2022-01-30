@@ -14,24 +14,30 @@ namespace Ecommerce_application
 {
     public partial class Merchant : Form
     {
+        //OUR OWN PERSONAL STATIC DATAGRIDVIEW
         public static  DataGridView dataGridView2 = new DataGridView();
         public static string name;
         public Merchant(string userName)
         {
             InitializeComponent();
+
+            //TO DISPLAY USERNAME IT TAKES THE VALUE FROM SIGN IN FORM THEN ASSIGN IN TO LABEL
             Merchant.name = userName;
             label2.Text = Merchant.name;
         }
-        //To make life easier
+
+        //DECLARED TO USE MERCHANT CLASS WITH OUT ANY ARAMETER
         public Merchant()
         {
             //InitializeComponent();
         }
 
+        //INSTANTIATING OBJECTS TO USE THEM WHEN SPECIFIC TABS PRESSED
         MerchantSell n = new MerchantSell();
         MerchantHome k = new MerchantHome();
         
 
+        //WHEN BUY PRODUCT PRESSED...THIS MAKES IT STREACHED SO THAT CART IS VISIBLE
         public void buySize()
         {
             label3.Visible = true;
@@ -40,10 +46,11 @@ namespace Ecommerce_application
             btnAdd.Visible = true;
             dataGridView2.Visible = true;
             total.Visible = true;
-            this.Size = new Size(1317, 677);
+            this.Size = new Size(1325, 677);
             label2.Location = new Point(934, 5);
         }
 
+        //IF NOT BUY PRODUCT PRESSED THE FORM WILL GO BACK TO ITS NORMAL SIZE CART HIDDEN
         public void resize()
         {
             button8.Visible = false;
@@ -56,22 +63,18 @@ namespace Ecommerce_application
             label2.Location = new Point(712, 5);
         }
 
-        //To display home page first every time merchat account looged in
+
         private void Merchant_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
             //load information about the user
             loadMyProfile();
 
-            //check if the user is allowed to sell products
+            //check if the user is allowed to sell products...IF HIS /HERS PERMIT IS VALID WHEN THE PROGRAM LOADS
             check();
 
-            //Sth. wrong to display merchant home
-            panelAdd.Controls.Clear();
-            k.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(k.panelHome);
-            panelAdd.BringToFront();
-            panelAdd.Show();
+            //To display home page first every time merchat account looged in
+            button12_Click( sender, e);
 
             //TO REMOVE HOVER PROPERTY FOR SIDE AND CART BUTTONS
             button6.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -90,8 +93,26 @@ namespace Ecommerce_application
             button13.FlatAppearance.MouseDownBackColor = Color.Transparent;
         }
 
+        //INITIALIZING OUR OWN STATIC DATAGRIDVIEW 
+        private void SetupDataGridView()
+        {
+            this.Controls.Add(dataGridView2);
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.BackgroundColor = Color.White;
+            dataGridView2.BorderStyle = BorderStyle.Fixed3D;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(1104, 94);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.ScrollBars = ScrollBars.Vertical;
+            dataGridView2.Size = new Size(213, 381);
+            dataGridView2.TabIndex = 20;
+            dataGridView2.Visible = true;
+            dataGridView2.RowsAdded += new DataGridViewRowsAddedEventHandler(dataGridView2_RowsAdded);
+        }
 
-        //check if the user is allowed to sell products
+        //METHOD TO check if the user is allowed to sell products
         public void check()
         {
             string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
@@ -111,7 +132,7 @@ namespace Ecommerce_application
                             button5.Enabled = true;
                             button3.Enabled = true;
                         }
-                        else if (check == "Inactive" || check == "inactive")
+                        else if (check == "Inprogress" || check == "inprogress")
                         {
                             MessageBox.Show("Your Seller's Permit is under review so you can't add products to sell but you can buy products. Thank you for your patience!");
                         }
@@ -130,7 +151,6 @@ namespace Ecommerce_application
         }
 
         //Fetch information about merchant from database and assign it to my profile page
-
         public void loadMyProfile()
         {
             MerchantProfile1 m = new MerchantProfile1();
@@ -164,12 +184,10 @@ namespace Ecommerce_application
             }
         }
 
-        //To show Buy interface we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
+        //To show Buy interface..we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button6_Click(object sender, EventArgs e)
         {
             buySize();
-
-
             MerchantBuy m = new MerchantBuy(1);
             panelAdd.Controls.Clear();
             m.panel1.Dock = DockStyle.Fill;
@@ -183,7 +201,6 @@ namespace Ecommerce_application
         private void button5_Click(object sender, EventArgs e)
         {
             resize();
-
             panelAdd.Controls.Clear();
             n.Dock = DockStyle.Fill;
             panelAdd.Controls.Add(n.panelSell);
@@ -195,11 +212,9 @@ namespace Ecommerce_application
         private void button12_Click(object sender, EventArgs e)
         {
             resize();
-
-
             panelAdd.Controls.Clear();
             k.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(k.panelHome);
+            panelAdd.Controls.Add(k.panel1);
             panelAdd.Show();
             panelAdd.BringToFront();
         }
@@ -210,15 +225,12 @@ namespace Ecommerce_application
             button9.BackColor = Color.Brown;
         }
 
-
         private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
-            SignIn c = new SignIn();
-            c.Show();
         }
 
-        //when the mouse leaves the close button will be transparent
+        //when the mouse leaves the close window btn will be transparent
         private void button9_MouseLeave(object sender, EventArgs e)
         {
             button9.BackColor = Color.Transparent;
@@ -253,22 +265,28 @@ namespace Ecommerce_application
             }
         }
 
-        // Maximize and Restore window
+        //
+
+        public Point oldLoc;
+        public Size oldSize;
+        // Restore window
         private void button10_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
-            this.Size = new Size(1100, 677);
-            // button10.Hide();
+            this.Location = oldLoc;
+            this.Size = oldSize;
             button11.BringToFront();
         }
 
+        // Maximize window
         private void button11_Click(object sender, EventArgs e)
         {
-            int a = Screen.PrimaryScreen.WorkingArea.Width;
-            int b = Screen.PrimaryScreen.WorkingArea.Height;
-            this.Size = new Size(a, b);
-            // this.WindowState = FormWindowState.Maximized;
-            ///button11.Hide();
+            oldLoc = this.Location;
+            oldSize = this.Size;
+            int x = SystemInformation.WorkingArea.Width;
+            int y = SystemInformation.WorkingArea.Height;
+            this.Location = new Point(0, 0);
+            this.Size = new Size(x, y);
+         
             button10.BringToFront();
         }
         
@@ -281,6 +299,7 @@ namespace Ecommerce_application
                 this.Hide();
                 new SignIn().ShowDialog();
                 this.Close();
+
             }
             if (res == DialogResult.No)
             {
@@ -288,28 +307,22 @@ namespace Ecommerce_application
             }
         }
 
-        //My profile
+        //WHEN MYPROFILE CLICKED FROM THE MENU
         private void profileToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             resize();
-            //Disable search box
-
-
             MerchantProfile1 a = new MerchantProfile1();
             panelAdd.Controls.Clear();
             panelAdd.Controls.Add(a.panel1);
             panelAdd.Show();
             panelAdd.BringToFront();
-
         }
 
+
+        //WHEN CHANGEPASSWORD CLICKED FROM THE MENU
         private void logOutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             resize();
-
-
-            //change password
-
             MerchantChangePassword a = new MerchantChangePassword();
             panelAdd.Controls.Clear();
             panelAdd.Controls.Add(a.panel1);
@@ -318,15 +331,10 @@ namespace Ecommerce_application
         }
 
 
-        //my product
+        //WHEN MYPRODUCT TAB CLICKED
         private void button3_Click(object sender, EventArgs e)
         {
             resize();
-            //Disable search box
-            MerchantLoadProducts a = new MerchantLoadProducts();
-            a.button1.Visible = false;
-
-  
             MerchantBuy m = new MerchantBuy(2);
             panelAdd.Controls.Clear();
             m.Dock = DockStyle.Fill;
@@ -335,7 +343,7 @@ namespace Ecommerce_application
             panelAdd.BringToFront();
         }
 
-        //WHEN REMOVE CLICKED SELECTED PRODUCT WILL BE REMOVED FROM CART
+        //WHEN REMOVE CLICKED FROM SELECTED PRODUCTS IN DATAGIDVIEW WILL BE REMOVED FROM CART
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (dataGridView2.Rows.Count != 0)
@@ -353,24 +361,6 @@ namespace Ecommerce_application
                 sum += Convert.ToDouble(dataGridView2.Rows[i].Cells[1].Value);
             }
             total.Text = string.Format("${0}", sum.ToString());
-        }
-
-        private void SetupDataGridView()
-        {
-           this.Controls.Add(dataGridView2);
-           dataGridView2.AllowUserToAddRows = false;
-           dataGridView2.AllowUserToDeleteRows = false;
-           dataGridView2.BackgroundColor = Color.White;
-           dataGridView2.BorderStyle = BorderStyle.Fixed3D;
-           dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-           dataGridView2.Location = new Point(1104, 94);
-           dataGridView2.Name = "dataGridView2";
-           dataGridView2.ReadOnly = true;
-           dataGridView2.ScrollBars = ScrollBars.Vertical;
-           dataGridView2.Size = new Size(213, 381);
-           dataGridView2.TabIndex = 20;
-           dataGridView2.Visible = true;
-           dataGridView2.RowsAdded += new DataGridViewRowsAddedEventHandler(dataGridView2_RowsAdded);
         }
 
        

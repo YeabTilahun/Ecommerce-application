@@ -18,6 +18,7 @@ namespace Ecommerce_application
             InitializeComponent();
         }
 
+    //PROPERT FOR THE USER CONTROL
         private string name;
         private string price;
         private string description;
@@ -62,6 +63,8 @@ namespace Ecommerce_application
             }
         }
 
+
+        //WHEN ADDTOCART CLICKED IT WILL CALL THE STATIC DGV AND ADD COLUMNS AND THEN WILL ADD THED DATA
         private void button1_Click(object sender, EventArgs e)
         {
             Merchant.dataGridView2.Columns.Add("name", "Product Name");
@@ -69,6 +72,7 @@ namespace Ecommerce_application
             Merchant.dataGridView2.Rows.Add(name, price);
         }
 
+        //DESCRIPTION WILL APPEAR WHEN MOSE HOVER ON THE PICTURE BOX AND DISAPEAR WHEN MOUSE LEAVE
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             labelDescription.Visible = false;

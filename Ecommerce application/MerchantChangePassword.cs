@@ -19,7 +19,7 @@ namespace Ecommerce_application
         }
 
 
-        //Fetch old password to check
+        //Fetch old password to check from the entered password
         string oldPassword;
         string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
         public void Getproduct(String user)
@@ -47,7 +47,7 @@ namespace Ecommerce_application
 
         }
 
-        //This will uppdate the password if called
+        //This will update the password if called
         public void UpdatePassword(string pass)
         {
             try
@@ -76,6 +76,8 @@ namespace Ecommerce_application
             }
 
         }
+
+        //this will save the password if the coditions are true
         private void button4_Click(object sender, EventArgs e)
         {
             //save clicked

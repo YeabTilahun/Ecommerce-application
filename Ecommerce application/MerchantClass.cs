@@ -41,6 +41,7 @@ namespace Ecommerce_application
             this.user = user;
         }
 
+        //ADD PRODUCTS
         public void Add()
         {
             MerchantDatabase sell = new MerchantDatabase();
@@ -48,12 +49,14 @@ namespace Ecommerce_application
 
         }
 
+        //UPDATE PRODUCTS
         public void Update()
         {
             MerchantDatabase sell = new MerchantDatabase();
             sell.UpdateProduct(this);
         }
 
+        //DELETE PRODUCTS
         public void Delete(string id)
         {
             MerchantDatabase sell = new MerchantDatabase();
@@ -61,21 +64,15 @@ namespace Ecommerce_application
 
         }
 
-        //my product
+        //GET MY PRODUCT
         public void Getproduct(string id)
         {
             MerchantDatabase sell = new MerchantDatabase();
            // sell.Getproduct(user);
 
         }
-        public DataTable getUser()
-        {
-            MerchantDatabase dal = new MerchantDatabase();
-            DataTable dt = dal.getUser();
 
-            return dt;
-        }
-
+        //GET ITEMS ACCORDING TO THE SELECTED CATEGORY
         public DataTable Selected_Cat(string category)
         {
             MerchantDatabase homeD = new MerchantDatabase();
