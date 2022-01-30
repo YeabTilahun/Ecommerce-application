@@ -32,6 +32,7 @@ namespace Ecommerce_application
                     cmd.Parameters.AddWithValue("@userName", ar.userName);
                     cmd.Parameters.AddWithValue("@password", ar.password);
                     cmd.Parameters.AddWithValue("@role", ar.role);
+                    cmd.Parameters.AddWithValue("@photo", ar.photo);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
@@ -69,12 +70,13 @@ namespace Ecommerce_application
                     cmd.Parameters.AddWithValue("@userName", ar.userName);
                     cmd.Parameters.AddWithValue("@password", ar.password);
                     cmd.Parameters.AddWithValue("@role", ar.role);
+                    cmd.Parameters.AddWithValue("@photo", ar.photo);
 
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
                     {
-                        MessageBox.Show("Admin Inserted Successfully");
+                        MessageBox.Show("Admin Updated Successfully");
                     }
                     else
                     {
