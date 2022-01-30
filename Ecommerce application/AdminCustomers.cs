@@ -26,7 +26,7 @@ namespace Ecommerce_application
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    a[i].Width = flowLayoutPanel1.Width - 3;
+                    a[i].Width = flowLayoutPanel1.Width - 20;
                 }
 
             }
