@@ -36,26 +36,27 @@ namespace Ecommerce_application
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panelAdd = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.total = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -80,7 +81,7 @@ namespace Ecommerce_application
             this.panel4.Controls.Add(this.button7);
             this.panel4.Location = new System.Drawing.Point(168, 1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(932, 53);
+            this.panel4.Size = new System.Drawing.Size(1157, 53);
             this.panel4.TabIndex = 18;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseMove);
@@ -101,7 +102,7 @@ namespace Ecommerce_application
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.Controls.Add(this.menuStrip1);
-            this.panel9.Location = new System.Drawing.Point(640, 0);
+            this.panel9.Location = new System.Drawing.Point(865, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(53, 45);
             this.panel9.TabIndex = 37;
@@ -120,6 +121,45 @@ namespace Ecommerce_application
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // AccountMenuItem
+            // 
+            this.AccountMenuItem.AutoSize = false;
+            this.AccountMenuItem.BackColor = System.Drawing.Color.White;
+            this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.profileToolStripMenuItem,
+            this.logOutToolStripMenuItem,
+            this.logoutToolStripMenuItem1});
+            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_3421;
+            this.AccountMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AccountMenuItem.Name = "AccountMenuItem";
+            this.AccountMenuItem.Size = new System.Drawing.Size(40, 40);
+            this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Image = global::Ecommerce_application.Properties.Resources._370076_account_avatar_client_male_person_icon;
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.profileToolStripMenuItem.Text = "My Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click_1);
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Image = global::Ecommerce_application.Properties.Resources._7023958_password_account_security_reset_safety_icon__1_;
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.logOutToolStripMenuItem.Text = "Change Password";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click_1);
+            // 
+            // logoutToolStripMenuItem1
+            // 
+            this.logoutToolStripMenuItem1.Image = global::Ecommerce_application.Properties.Resources.logout__1_;
+            this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
+            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.logoutToolStripMenuItem1.Text = "Logout";
+            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
+            // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
@@ -128,6 +168,64 @@ namespace Ecommerce_application
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(0, 15);
             this.lblUserName.TabIndex = 38;
+            // 
+            // button11
+            // 
+            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button11.BackColor = System.Drawing.Color.Transparent;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
+            this.button11.Location = new System.Drawing.Point(1079, 0);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(39, 25);
+            this.button11.TabIndex = 30;
+            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button10
+            // 
+            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Image = global::Ecommerce_application.Properties.Resources.Restore;
+            this.button10.Location = new System.Drawing.Point(1079, 0);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(39, 25);
+            this.button10.TabIndex = 29;
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Image = global::Ecommerce_application.Properties.Resources.close_tab3;
+            this.button9.Location = new System.Drawing.Point(1118, 0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(39, 25);
+            this.button9.TabIndex = 29;
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.MouseEnter += new System.EventHandler(this.button9_MouseEnter);
+            this.button9.MouseLeave += new System.EventHandler(this.button9_MouseLeave);
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Image = global::Ecommerce_application.Properties.Resources.minimize;
+            this.button7.Location = new System.Drawing.Point(1039, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(39, 25);
+            this.button7.TabIndex = 28;
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // panelAdd
             // 
@@ -173,6 +271,7 @@ namespace Ecommerce_application
             this.button8.Text = "Buy";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Visible = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // btnAdd
             // 
@@ -208,103 +307,6 @@ namespace Ecommerce_application
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Visible = false;
             // 
-            // AccountMenuItem
-            // 
-            this.AccountMenuItem.AutoSize = false;
-            this.AccountMenuItem.BackColor = System.Drawing.Color.White;
-            this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.profileToolStripMenuItem,
-            this.logOutToolStripMenuItem,
-            this.logoutToolStripMenuItem1});
-            this.AccountMenuItem.Image = global::Ecommerce_application.Properties.Resources.Group_3421;
-            this.AccountMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.AccountMenuItem.Name = "AccountMenuItem";
-            this.AccountMenuItem.Size = new System.Drawing.Size(40, 40);
-            this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.Image = global::Ecommerce_application.Properties.Resources._370076_account_avatar_client_male_person_icon;
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.profileToolStripMenuItem.Text = "My Profile";
-            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click_1);
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Image = global::Ecommerce_application.Properties.Resources._7023958_password_account_security_reset_safety_icon__1_;
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logOutToolStripMenuItem.Text = "Change Password";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click_1);
-            // 
-            // logoutToolStripMenuItem1
-            // 
-            this.logoutToolStripMenuItem1.Image = global::Ecommerce_application.Properties.Resources.logout__1_;
-            this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.logoutToolStripMenuItem1.Text = "Logout";
-            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
-            // 
-            // button11
-            // 
-            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button11.BackColor = System.Drawing.Color.Transparent;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Image = global::Ecommerce_application.Properties.Resources.Maximize_20px;
-            this.button11.Location = new System.Drawing.Point(854, 0);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(39, 25);
-            this.button11.TabIndex = 30;
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button10
-            // 
-            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button10.BackColor = System.Drawing.Color.Transparent;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Image = global::Ecommerce_application.Properties.Resources.Restore;
-            this.button10.Location = new System.Drawing.Point(854, 0);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(39, 25);
-            this.button10.TabIndex = 29;
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button9
-            // 
-            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = global::Ecommerce_application.Properties.Resources.close_tab3;
-            this.button9.Location = new System.Drawing.Point(893, 0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(39, 25);
-            this.button9.TabIndex = 29;
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            this.button9.MouseEnter += new System.EventHandler(this.button9_MouseEnter);
-            this.button9.MouseLeave += new System.EventHandler(this.button9_MouseLeave);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::Ecommerce_application.Properties.Resources.minimize;
-            this.button7.Location = new System.Drawing.Point(814, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(39, 25);
-            this.button7.TabIndex = 28;
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -316,7 +318,7 @@ namespace Ecommerce_application
             this.panel3.Controls.Add(this.button5);
             this.panel3.Location = new System.Drawing.Point(0, -8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(168, 693);
+            this.panel3.Size = new System.Drawing.Size(168, 673);
             this.panel3.TabIndex = 0;
             // 
             // button3
@@ -389,10 +391,19 @@ namespace Ecommerce_application
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1113, 536);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(204, 139);
+            this.textBox1.TabIndex = 0;
+            // 
             // Merchant
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1100, 677);
+            this.ClientSize = new System.Drawing.Size(1325, 677);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.total);
@@ -454,5 +465,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button8;
         public System.Windows.Forms.Label total;
+        internal System.Windows.Forms.TextBox textBox1;
     }
 }

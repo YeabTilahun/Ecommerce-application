@@ -22,8 +22,8 @@ namespace Ecommerce_application
             InitializeComponent();
 
             //TO DISPLAY USERNAME IT TAKES THE VALUE FROM SIGN IN FORM THEN ASSIGN IN TO LABEL
-            Merchant.name = userName;
-            label2.Text = Merchant.name;
+            name = userName;
+            label2.Text = name;
         }
 
         //DECLARED TO USE MERCHANT CLASS WITH OUT ANY ARAMETER
@@ -360,7 +360,8 @@ namespace Ecommerce_application
             {
                 sum += Convert.ToDouble(dataGridView2.Rows[i].Cells[1].Value);
             }
-            total.Text = string.Format("${0}", sum.ToString());
+            //total.Text = string.Format("${0}", sum.ToString());
+            total.Text =sum.ToString();
         }
 
        
@@ -372,7 +373,14 @@ namespace Ecommerce_application
             {
                 sum += Convert.ToDouble(dataGridView2.Rows[i].Cells[1].Value);
             }
-            total.Text = string.Format("${0}", sum.ToString());
+            //total.Text = string.Format("${0}", sum.ToString());
+            total.Text = sum.ToString();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MerchantClass a = new MerchantClass();
+            a.transaction(total);
         }
     }
 }
