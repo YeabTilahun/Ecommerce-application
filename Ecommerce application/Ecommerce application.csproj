@@ -238,6 +238,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ChangePassword.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="EcommerceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
