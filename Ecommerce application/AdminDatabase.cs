@@ -13,7 +13,7 @@ namespace Ecommerce_application
     {
         //string constr = "Server = DESKTOP-4370VSE;   Database = Ecommerce; integrated security=true";
         Connection connect = new Connection();
-
+        
         public void SaveAdmin(AdminClass ar)
         {
             try
