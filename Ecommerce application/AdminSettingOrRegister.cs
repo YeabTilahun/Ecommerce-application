@@ -57,14 +57,20 @@ namespace Ecommerce_application
 
         private void txtFName_Leave(object sender, EventArgs e)
         {
-            if(!txtFName.Text.Equals(""))
+            txtFName.Text = txtFName.Text.Trim();
+            if (!txtFName.Text.Equals(""))
                 txtFName.Text = txtFName.Text.Substring(0, 1).ToUpper() + txtFName.Text.Substring(1).ToLower();
+            else
+                MessageBox.Show("Enter Your Fisrt Name");
         }
 
         private void txtLName_Leave(object sender, EventArgs e)
         {
+            txtLName.Text = txtLName.Text.Trim();
             if (!txtLName.Text.Equals(""))
                 txtLName.Text = txtLName.Text.Substring(0, 1).ToUpper() + txtLName.Text.Substring(1).ToLower();
+            else
+                MessageBox.Show("Enter Your Last Name");
         }
 
         private void AdminRegister_Load(object sender, EventArgs e)
@@ -74,16 +80,30 @@ namespace Ecommerce_application
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+
             MemoryStream ms = new MemoryStream();
             picAdmin.BackgroundImage.Save(ms, picAdmin.BackgroundImage.RawFormat);
             byte[] photo = ms.ToArray();
-            if (txtPass.Text.Equals(txtConfirmPass.Text))
+            if (!(txtFName.Text.Equals("") || txtLName.Text.Equals("") || cmbSex.Text.Equals("") || txtUserName.Text.Equals("") || txtEmail.Text.Equals("") || txtPhoneNum.Text.Equals("")))
             {
-                AdminClass admin = new AdminClass(txtFName.Text, txtLName.Text, cmbSex.Text, dtpBirthday.Text, txtPhoneNum.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, txtRole.Text,photo);
-                admin.Save();
+                if (txtPass.Text.Equals(""))
+                {
+                    MessageBox.Show("Enter Your Password");
+                }
+                else
+                {
+                    if (txtPass.Text.Equals(txtConfirmPass.Text))
+                    {
+                        AdminClass admin = new AdminClass(txtFName.Text, txtLName.Text, cmbSex.Text, dtpBirthday.Text, txtPhoneNum.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, txtRole.Text, photo);
+                        admin.Save();
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Your Password Does Not Match!!");
+                }
             }
             else
-                MessageBox.Show("Your Password Does Not Match!!");
+                MessageBox.Show("You Did Not Fill All the Fields!!");
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -107,16 +127,22 @@ namespace Ecommerce_application
             MemoryStream ms = new MemoryStream();
             picAdmin.BackgroundImage.Save(ms, picAdmin.BackgroundImage.RawFormat);
             byte[] photo = ms.ToArray();
-            
-            AdminClass admin = new AdminClass(lblId.Text,txtFName.Text, txtLName.Text, cmbSex.Text, dtpBirthday.Text, txtPhoneNum.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, txtRole.Text, photo);
-            admin.UpdateAdmin();
+            if(!(txtFName.Text.Equals("") || txtLName.Text.Equals("") || cmbSex.Text.Equals("") || txtUserName.Text.Equals("") || txtEmail.Text.Equals("") || txtPhoneNum.Text.Equals("")))
+            {
+                AdminClass admin = new AdminClass(lblId.Text, txtFName.Text, txtLName.Text, cmbSex.Text, dtpBirthday.Text, txtPhoneNum.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, txtRole.Text, photo);
+                admin.UpdateAdmin();
+            }
+            else
+            {
+                MessageBox.Show("You Did Not Fill All the Fields!!");
+            }
         }
 
         private void btnUpdatePass_Click(object sender, EventArgs e)
         {
             if (txtOldPass.Equals(password))
             {
-                if (txtNewPass.Equals(txtConfirmNewPass))
+                if (txtNewPass.Equals(txtConfirmNewPass) && !txtNewPass.Text.Equals(""))
                 {
                     AdminClass admin = new AdminClass(lblId.Text, txtPass.Text);
                     admin.UpdateAdmin();
@@ -128,6 +154,45 @@ namespace Ecommerce_application
             {
                 MessageBox.Show("Your Old Password does Not Match!!");
             }
+        }
+
+        private void txtUserName_Leave(object sender, EventArgs e)
+        {
+            txtUserName.Text = txtUserName.Text.Trim();
+            if (txtUserName.Text.Equals(""))
+                MessageBox.Show("Enter Your User Name");
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            txtEmail.Text = txtEmail.Text.Trim();
+            if (txtEmail.Text.Equals(""))
+                MessageBox.Show("Enter Your Email");
+        }
+
+        private void txtPhoneNum_Leave(object sender, EventArgs e)
+        {
+            txtPhoneNum.Text = txtPhoneNum.Text.Trim();
+            if (txtPhoneNum.Text.Equals(""))
+                MessageBox.Show("Enter Your Phone Number");
+        }
+
+        private void txtPass_Leave(object sender, EventArgs e)
+        {
+            if (txtPass.Text.Equals(""))
+                MessageBox.Show("Enter Your Password");
+        }
+
+        private void txtOldPass_Leave(object sender, EventArgs e)
+        {
+            if (txtOldPass.Text.Equals(""))
+                MessageBox.Show("Enter Your Old Password");
+        }
+
+        private void txtNewPass_Leave(object sender, EventArgs e)
+        {
+            if (txtNewPass.Text.Equals(""))
+                MessageBox.Show("Enter Your New Password");
         }
     }
 }

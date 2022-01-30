@@ -52,11 +52,13 @@ namespace Ecommerce_application
                     }
                     else if(cmbRole.Text == "Merchant")
                     {
-                        SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo);
+                        SignUpUser hc = new SignUpUser(textMerName.Text,textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo,permit);
                         MemoryStream stream = new MemoryStream(hc.photo);
                         Image RetImage = Image.FromStream(stream);
                         picBoxAddphoto.Image = RetImage;
-
+                        MemoryStream str = new MemoryStream(hc.permit);
+                        Image RetIma= Image.FromStream(str);
+                        picPermit.Image = RetIma;
                         hc.signUp();
 
                     }

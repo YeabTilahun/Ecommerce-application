@@ -31,20 +31,19 @@ namespace Ecommerce_application
                         cmd.Parameters.AddWithValue("@role", u.role);
                         cmd.Parameters.AddWithValue("@phone", u.phone);
                         cmd.Parameters.AddWithValue("@email", u.email);
-                        cmd.Parameters.AddWithValue("@customID", 1);
-                        cmd.Parameters.AddWithValue("@sex", "male");
-                      //  cmd.Parameters.AddWithValue("@birthday", u.birthday);
+                        cmd.Parameters.AddWithValue("@photo", u.photo);                      
                         int rowAffected = cmd.ExecuteNonQuery();
                         con.Close();
                         if (rowAffected > 0)
                             MessageBox.Show("signed up succesfully! ");
 
                     }
-                    else if (u.role == "merchant")
+                    else if (u.role == "Merchant")
                     {
                         con.Open();
                         SqlCommand cmd = new SqlCommand("spSignUpmer", con);
                         cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@@merchna", u.MerchantName);
                         cmd.Parameters.AddWithValue("@firstname", u.firstName);
                         cmd.Parameters.AddWithValue("@lastname", u.fatherName);
                         cmd.Parameters.AddWithValue("@username", u.userName);
@@ -52,7 +51,10 @@ namespace Ecommerce_application
                         cmd.Parameters.AddWithValue("@role", u.role);
                         cmd.Parameters.AddWithValue("@phone", u.phone);
                         cmd.Parameters.AddWithValue("@email", u.email);
-                        //cmd.Parameters.AddWithValue("@birthday", u.birthday);
+                        cmd.Parameters.AddWithValue("@photo", u.photo);
+                        cmd.Parameters.AddWithValue("@permit", u.permit);
+                        cmd.Parameters.AddWithValue("@status","In progress");
+                        
                         int rowAffected = cmd.ExecuteNonQuery();
                         con.Close();
                         if (rowAffected > 0)

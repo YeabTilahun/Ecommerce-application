@@ -155,8 +155,13 @@ namespace Ecommerce_application
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+         
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassword f = new ForgotPassword();
+            f.Show();
         }
     }
 }

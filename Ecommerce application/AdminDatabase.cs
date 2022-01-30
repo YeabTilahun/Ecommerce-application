@@ -11,13 +11,14 @@ namespace Ecommerce_application
 {
     class AdminDatabase
     {
-        string constr = "Server = DESKTOP-4370VSE;   Database = Ecommerce; integrated security=true";
+        //string constr = "Server = DESKTOP-4370VSE;   Database = Ecommerce; integrated security=true";
+        Connection connect = new Connection();
 
         public void SaveAdmin(AdminClass ar)
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spInsertAdmin", con);
@@ -53,7 +54,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateAdmin", con);
@@ -91,7 +92,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spChangePassword", con);
@@ -121,7 +122,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     int rowAffected = 0;
                     con.Open();
@@ -159,7 +160,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetAdmin", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", name);
@@ -180,7 +181,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetAdminProfile", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@userName", Admin.userName);
@@ -200,7 +201,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     int rowAffected = 0;
                     con.Open();
@@ -238,7 +239,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetProduct", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", name);
@@ -259,7 +260,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetLatestProduct", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", name);
@@ -279,7 +280,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     int rowAffected = 0;
                     con.Open();
@@ -317,7 +318,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetCustomer", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", name);
@@ -336,7 +337,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     int rowAffected = 0;
                     con.Open();
@@ -374,7 +375,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetMerchant", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", name);
@@ -395,7 +396,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetTransaction", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataSet ds = new DataSet();
@@ -414,7 +415,7 @@ namespace Ecommerce_application
             string[] category = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetCategory", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataSet ds = new DataSet();
@@ -440,7 +441,7 @@ namespace Ecommerce_application
             string[] category = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetLatestCategory", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataSet ds = new DataSet();
@@ -461,33 +462,12 @@ namespace Ecommerce_application
             return category;
         }
 
-        /*public DataTable GetProductByCategory(string category)
-        {
-            DataTable dt = null;
-            try
-            {
-                SqlConnection con = new SqlConnection(constr);
-                SqlDataAdapter da = new SqlDataAdapter("spGetProductByCategory", con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@category", category);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "tblProduct");
-                dt = ds.Tables["tblProduct"];
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return dt;
-
-        }*/
-
         public string[] GetMonthlySold(int month)
         {
             string[] product = new string[3];
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetMontlySold", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@month", month);
@@ -531,13 +511,13 @@ namespace Ecommerce_application
             double income = 0;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetMonthlyIncome", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblList");
                 DataTable dt = ds.Tables["tblList"];
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0 && !Convert.IsDBNull(dt.Rows[0]["total"]))
                     income = double.Parse(dt.Rows[0]["total"].ToString());
             }
             catch (Exception ex)
@@ -552,13 +532,13 @@ namespace Ecommerce_application
             double income = 0;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetYearlyIncome", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblList");
                 DataTable dt = ds.Tables["tblList"];
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0 && !Convert.IsDBNull(dt.Rows[0]["total"]))
                     income = double.Parse(dt.Rows[0]["total"].ToString());
             }
             catch (Exception ex)
@@ -570,7 +550,7 @@ namespace Ecommerce_application
 
         public string[] GetMonth()
         {
-            SqlConnection con = new SqlConnection(constr);
+            SqlConnection con = connect.CreateConnection();
             DataSet ds = new DataSet();
             DataTable dt = null;
             try
@@ -596,7 +576,7 @@ namespace Ecommerce_application
 
         public string[] GetCategoryTransaction()
         {
-            SqlConnection con = new SqlConnection(constr);
+            SqlConnection con = connect.CreateConnection();
             DataSet ds = new DataSet();
             DataTable dt = null;
             try
@@ -622,7 +602,7 @@ namespace Ecommerce_application
 
         public DataSet GetYearlyReport(string category)
         {
-            SqlConnection con = new SqlConnection(constr);
+            SqlConnection con = connect.CreateConnection();
             DataSet ds = new DataSet();
             try
             {
@@ -641,7 +621,7 @@ namespace Ecommerce_application
 
         public DataSet GetMonthlyReport(string category, int month)
         {
-            SqlConnection con = new SqlConnection(constr);
+            SqlConnection con = connect.CreateConnection();
             DataSet ds = new DataSet();
             try
             {
@@ -661,7 +641,7 @@ namespace Ecommerce_application
 
         public DataSet GetWeeklyReport(string category)
         {
-            SqlConnection con = new SqlConnection(constr);
+            SqlConnection con = connect.CreateConnection();
             DataSet ds = new DataSet();
             try
             {
@@ -680,7 +660,7 @@ namespace Ecommerce_application
 
         public DataSet GetDailyReport(string category)
         {
-            SqlConnection con = new SqlConnection(constr);
+            SqlConnection con = connect.CreateConnection();
             DataSet ds = new DataSet();
             try
             {
@@ -702,7 +682,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter("spGetProductImageAndName", con);
@@ -725,7 +705,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter("spGetProductYearlyReport", con);
@@ -748,7 +728,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter("spGetProductMonthlyReport", con);
@@ -772,7 +752,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter("spGetProductWeeklyReport", con);
@@ -795,7 +775,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter("spGetProductDailyReport", con);
@@ -818,7 +798,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter("spGetPermit", con);
@@ -841,7 +821,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetValidMerchant", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", name);
@@ -861,7 +841,7 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                SqlConnection con = new SqlConnection(constr);
+                SqlConnection con = connect.CreateConnection();
                 SqlDataAdapter da = new SqlDataAdapter("spGetProgressMerchant", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", name);
@@ -880,7 +860,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spAddToAll", con);
@@ -910,7 +890,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spDeleteMerchant", con);
@@ -938,7 +918,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateStatus", con);
