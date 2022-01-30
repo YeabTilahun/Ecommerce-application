@@ -15,15 +15,19 @@ namespace Ecommerce_application
 {
     public partial class Home : Form
     {
+        NewHomeDatabase newD = new NewHomeDatabase();
         public static DataGridView dataGridView1 = new DataGridView();
+        Connection connect = new Connection();
         string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
+        int a = Screen.PrimaryScreen.WorkingArea.Width;
+        int b = Screen.PrimaryScreen.WorkingArea.Height;
         public Home()
         {
-            Thread trd = new Thread(new ThreadStart(formRun));
+            /*Thread trd = new Thread(new ThreadStart(formRun));
             trd.Start();
             Thread.Sleep(5000);
+            trd.Abort();*/
             InitializeComponent();
-            trd.Abort();
         }
 
         private void formRun()
@@ -31,30 +35,16 @@ namespace Ecommerce_application
             Application.Run(new The_Wait_Form());
         }
 
+       // TestEntities db;
         private void Home_Load(object sender, EventArgs e)
         {
             //To get over the Hover on our Button Logo
             buttonLogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonLogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            PopulateItem();
+            DataTable dt = newD.PopulateItem();
             SetupDataGridView();
-        }
-
-        //populates the product on the home form
-        private void PopulateItem()
-        {
-            string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
-            try
-            {
-                using (SqlConnection con = new SqlConnection(constr))
-                {
-                    con.Open();
-                    SqlDataAdapter da = new SqlDataAdapter("spLoad_data", con);
-                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    DataSet ds = new DataSet();
-                    da.Fill(ds, "tblProduct");
-                    DataTable dt = ds.Tables["tblProduct"];
-                    LoadItems[] a = new LoadItems[dt.Rows.Count];
+            
+            LoadItems[] a = new LoadItems[dt.Rows.Count];
                     resize();
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
@@ -63,23 +53,57 @@ namespace Ecommerce_application
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
                         a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
-
+                a[i].button1.Click += new EventHandler(btnClick); 
                         if (flowLayoutPanel1.Controls.Count < 0)
                             flowLayoutPanel1.Controls.Clear();
                         else
                             flowLayoutPanel1.Controls.Add(a[i]);
                     }
-
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //For the dgv delete
+            // db = new TestEntities();
+            //CategoryBindingSource.DataSource = db.Categories.ToList();
         }
 
+        //populates the product on the home form
+        /* private void PopulateItem()
+         {
+             string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
+             try
+             {
+                 using (SqlConnection con = new SqlConnection(constr))
+                 {
+                     con.Open();
+                     SqlDataAdapter da = new SqlDataAdapter("spLoad_data", con);
+                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                     DataSet ds = new DataSet();
+                     da.Fill(ds, "tblProduct");
+                     DataTable dt = ds.Tables["tblProduct"];
+                     LoadItems[] a = new LoadItems[dt.Rows.Count];
+                     resize();
+                     for (int i = 0; i < dt.Rows.Count; i++)
+                     {
+                         a[i] = new LoadItems();
+                         a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                         a[i].Name = dt.Rows[i]["name"].ToString();
+                         a[i].Description = dt.Rows[i]["description"].ToString();
+                         a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
 
-       //ButtonCart
+                         if (flowLayoutPanel1.Controls.Count < 0)
+                             flowLayoutPanel1.Controls.Clear();
+                         else
+                             flowLayoutPanel1.Controls.Add(a[i]);
+                     }
+
+                 }
+             }
+             catch (SqlException ex)
+             {
+                 MessageBox.Show(ex.Message);
+             }
+         }*/
+
+
+        //ButtonCart
         private void button4_Click(object sender, EventArgs e)
         {
             buySize();
@@ -110,7 +134,7 @@ namespace Ecommerce_application
            Home h = new Home();
             flowLayoutPanel1.Controls.Clear();
             h.Dock = DockStyle.Fill;
-            PopulateItem();
+            newD.PopulateItem();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -211,6 +235,7 @@ namespace Ecommerce_application
             dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(dataGridView1_RowsAdded);
         }
 
+
         //For the visiblity of the buttons label and datagridview it self at cart
         public void buySize()
         {
@@ -218,7 +243,7 @@ namespace Ecommerce_application
             buttonBuy.Visible = true;
             buttonCancel.Visible = true;
             dataGridView1.Visible = true;
-            this.Size = new Size(1317, 677);
+            this.Size = new Size(a, b);
         }
 
         public void resize()
@@ -226,8 +251,17 @@ namespace Ecommerce_application
             buttonBuy.Visible = false;
             labelTotal.Visible = false;
             buttonCancel.Visible = false;
-            dataGridView1.Visible = false;
-            this.Size = new Size(1100, 677);
+            dataGridView1.Visible = false; 
+            this.Size = new Size(a, b);
+        }
+        private void btnClick(object sender, EventArgs e)
+        {
+            button2.BringToFront();
+            buttonBuy.Visible = true;
+            labelTotal.Visible = true;
+            buttonCancel.Visible = true;
+            dataGridView1.Visible = true;
+            this.Size = new Size(a, b);
         }
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -257,8 +291,18 @@ namespace Ecommerce_application
         {
             if (dataGridView1.Rows.Count != 0)
             {
+                int a = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
+                int[] r = new int[a];
+                for (int i = 0; i < a; i++)
+                {
+                    r[i] = dataGridView1.SelectedCells[i].RowIndex;
+                }
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                dataGridView1.Rows.RemoveAt(rowIndex);
+                for (int i = 0; i < a; i++)
+                {
+                dataGridView1.Rows.RemoveAt(r[i]);
+
+                }
             }
             else
             {
@@ -272,6 +316,7 @@ namespace Ecommerce_application
             labelTotal.Text = string.Format("${0}", sum.ToString());
         }
 
+
         //Works the total of the products added from home to cart datagridview
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -282,6 +327,7 @@ namespace Ecommerce_application
             }
             labelTotal.Text = string.Format("${0}", sum.ToString());
         }
+
 
         public bool MouseDown;
         public Point LastLocation;
@@ -315,10 +361,16 @@ namespace Ecommerce_application
 
         private void button8_Click(object sender, EventArgs e)
         {
-            resize();
-            int a = Screen.PrimaryScreen.WorkingArea.Width;
-            int b = Screen.PrimaryScreen.WorkingArea.Height;
-            this.Size = new Size(a, b);
+            this.Location = new Point(0, 0);
+            if (dataGridView1.Rows.Count > 0)
+            {
+                buySize();
+            }
+            else
+            {
+                resize();                
+                this.Size = new Size(a, b);
+            }
             //this.WindowState = FormWindowState.Maximized;
             button2.BringToFront();
             //panel;

@@ -12,9 +12,10 @@ namespace Ecommerce_application
     class NewHomeDatabase
     {
         string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
+        Connection connect = new Connection();
         public void SaveUser(NewHomeClass hc)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = connect.CreateConnection())
             {
                 con.Open();
                 string query = "INSERT INTO tblUser VALUES ('" + hc.id + "','" + hc.FirstName + "','" + hc.LastName + "','" + hc.Username + "','" + hc.Password + "','" + hc.photo + "', '"  + hc.Phone + "' , '" + hc.Email + "')";
@@ -31,7 +32,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spInsertCustomer", con);
@@ -63,7 +64,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spDeleteUser", con);
@@ -86,7 +87,7 @@ namespace Ecommerce_application
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateUser", con);
@@ -112,7 +113,7 @@ namespace Ecommerce_application
 
         public DataTable getUser(string fn, string ln)
         {
-            SqlConnection con = new SqlConnection(constr);
+            SqlConnection con = connect.CreateConnection();
             SqlDataAdapter da = new SqlDataAdapter("spGetUser", con);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@fn", fn);
@@ -128,10 +129,10 @@ namespace Ecommerce_application
             DataTable dt = null;
             try
             {
-                using(SqlConnection con = new SqlConnection(constr))
+                using(SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
-                    SqlDataAdapter da = new SqlDataAdapter("spCustomerProduct", con);
+                    SqlDataAdapter da = new SqlDataAdapter("spGetProduct", con);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.AddWithValue("@name", name);
                     da.SelectCommand.Parameters.AddWithValue("@category", category);
@@ -144,6 +145,47 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
+            return dt;
+        }
+
+        public DataTable PopulateItem()
+        {
+            DataTable dt = null;
+            //Home home = new Home();
+            //string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spLoad_data", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    dt = ds.Tables["tblProduct"];
+                   /* LoadItems[] a = new LoadItems[dt.Rows.Count];
+                    //home.resize();
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        a[i] = new LoadItems();
+                        a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                        a[i].Name = dt.Rows[i]["name"].ToString();
+                        a[i].Description = dt.Rows[i]["description"].ToString();
+                        a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
+
+                        if (home.flowLayoutPanel1.Controls.Count < 0)
+                            home.flowLayoutPanel1.Controls.Clear();
+                        else
+                            home.flowLayoutPanel1.Controls.Add(a[i]);
+                    }*/
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             return dt;
         }
     }
