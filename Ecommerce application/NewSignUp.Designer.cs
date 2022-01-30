@@ -29,7 +29,10 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewSignUp));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPermit = new System.Windows.Forms.Button();
+            this.picPermit = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbRole = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -54,15 +57,14 @@ namespace Ecommerce_application
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picBoxAddphoto = new System.Windows.Forms.PictureBox();
-            this.btnPermit = new System.Windows.Forms.Button();
-            this.picPermit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPermit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnPermit);
             this.panel1.Controls.Add(this.picPermit);
             this.panel1.Controls.Add(this.label9);
@@ -91,9 +93,38 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.picBoxAddphoto);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(929, 450);
+            this.panel1.Size = new System.Drawing.Size(927, 453);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnPermit
+            // 
+            this.btnPermit.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
+            this.btnPermit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPermit.FlatAppearance.BorderSize = 0;
+            this.btnPermit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPermit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPermit.ForeColor = System.Drawing.Color.White;
+            this.btnPermit.Location = new System.Drawing.Point(721, 261);
+            this.btnPermit.Name = "btnPermit";
+            this.btnPermit.Size = new System.Drawing.Size(160, 36);
+            this.btnPermit.TabIndex = 11;
+            this.btnPermit.Text = "Add Permit";
+            this.btnPermit.UseVisualStyleBackColor = true;
+            this.btnPermit.Visible = false;
+            this.btnPermit.Click += new System.EventHandler(this.btnPermit_Click);
+            // 
+            // picPermit
+            // 
+            this.picPermit.BackColor = System.Drawing.Color.Silver;
+            this.picPermit.InitialImage = null;
+            this.picPermit.Location = new System.Drawing.Point(681, 51);
+            this.picPermit.Name = "picPermit";
+            this.picPermit.Size = new System.Drawing.Size(236, 204);
+            this.picPermit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPermit.TabIndex = 10;
+            this.picPermit.TabStop = false;
+            this.picPermit.Visible = false;
             // 
             // label9
             // 
@@ -319,35 +350,6 @@ namespace Ecommerce_application
             this.picBoxAddphoto.TabIndex = 0;
             this.picBoxAddphoto.TabStop = false;
             // 
-            // btnPermit
-            // 
-            this.btnPermit.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
-            this.btnPermit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPermit.FlatAppearance.BorderSize = 0;
-            this.btnPermit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPermit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPermit.ForeColor = System.Drawing.Color.White;
-            this.btnPermit.Location = new System.Drawing.Point(721, 261);
-            this.btnPermit.Name = "btnPermit";
-            this.btnPermit.Size = new System.Drawing.Size(160, 36);
-            this.btnPermit.TabIndex = 11;
-            this.btnPermit.Text = "Add Permit";
-            this.btnPermit.UseVisualStyleBackColor = true;
-            this.btnPermit.Visible = false;
-            this.btnPermit.Click += new System.EventHandler(this.btnPermit_Click);
-            // 
-            // picPermit
-            // 
-            this.picPermit.BackColor = System.Drawing.Color.Silver;
-            this.picPermit.InitialImage = null;
-            this.picPermit.Location = new System.Drawing.Point(681, 51);
-            this.picPermit.Name = "picPermit";
-            this.picPermit.Size = new System.Drawing.Size(236, 204);
-            this.picPermit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPermit.TabIndex = 10;
-            this.picPermit.TabStop = false;
-            this.picPermit.Visible = false;
-            // 
             // NewSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,13 +357,14 @@ namespace Ecommerce_application
             this.ClientSize = new System.Drawing.Size(929, 450);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewSignUp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPermit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).EndInit();
             this.ResumeLayout(false);
 
         }

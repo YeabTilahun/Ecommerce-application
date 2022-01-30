@@ -11,7 +11,7 @@ namespace Ecommerce_application
     {
         public SqlConnection CreateConnection()
         {
-            string constr = "Server = DESKTOP-4370VSE;   Database = Ecommerce; integrated security=true";
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             SqlConnection con = new SqlConnection(constr);
             return con;
         }

@@ -101,12 +101,6 @@ namespace Ecommerce_application
             return dt;
         }
 
-        public void DeleteProduct(string[] id)
-        {
-            AdminDatabase adminD = new AdminDatabase();
-            adminD.DeleteProduct(id);
-        }
-
         public DataTable GetProduct(string name, string category)
         {
             AdminDatabase AdminD = new AdminDatabase();
@@ -121,23 +115,11 @@ namespace Ecommerce_application
             return dt;
         }
 
-        public void DeleteMerchants(string[] id)
-        {
-            AdminDatabase adminD = new AdminDatabase();
-            adminD.DeleteMerchant(id);
-        }
-
         public DataTable GetMerchant(string name)
         {
             AdminDatabase AdminD = new AdminDatabase();
             DataTable dt = AdminD.GetMerchant(name);
             return dt;
-        }
-
-        public void DeleteCustomers(string[] id)
-        {
-            AdminDatabase adminD = new AdminDatabase();
-            adminD.DeleteCustomer(id);
         }
 
         public DataTable GetCustomer(string name)
@@ -293,12 +275,6 @@ namespace Ecommerce_application
         {
             AdminDatabase adminD = new AdminDatabase();
             adminD.AddToAll(userName, password, role);
-        }
-
-        public void DeleteMerchant(string userName)
-        {
-            AdminDatabase adminD = new AdminDatabase();
-            adminD.DeleteMerchant(userName);
         }
 
         public void UpdateStatusActive(string userName)

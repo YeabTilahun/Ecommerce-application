@@ -13,7 +13,7 @@ namespace Ecommerce_application
     {
         //string constr = "Server = DESKTOP-4370VSE;   Database = Ecommerce; integrated security=true";
         Connection connect = new Connection();
-
+        
         public void SaveAdmin(AdminClass ar)
         {
             try
@@ -32,6 +32,7 @@ namespace Ecommerce_application
                     cmd.Parameters.AddWithValue("@userName", ar.userName);
                     cmd.Parameters.AddWithValue("@password", ar.password);
                     cmd.Parameters.AddWithValue("@role", ar.role);
+                    cmd.Parameters.AddWithValue("@photo", ar.photo);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
@@ -69,12 +70,13 @@ namespace Ecommerce_application
                     cmd.Parameters.AddWithValue("@userName", ar.userName);
                     cmd.Parameters.AddWithValue("@password", ar.password);
                     cmd.Parameters.AddWithValue("@role", ar.role);
+                    cmd.Parameters.AddWithValue("@photo", ar.photo);
 
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
                     {
-                        MessageBox.Show("Admin Inserted Successfully");
+                        MessageBox.Show("Admin Updated Successfully");
                     }
                     else
                     {

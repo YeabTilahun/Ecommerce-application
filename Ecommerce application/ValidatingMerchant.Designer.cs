@@ -29,6 +29,7 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ValidatingMerchant));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDecline = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
@@ -98,6 +99,7 @@ namespace Ecommerce_application
             this.Controls.Add(this.picPermit);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ValidatingMerchant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Validating Merchant";

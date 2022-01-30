@@ -577,7 +577,12 @@
   <data name="Asset 223" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Asset 223.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="photo_2022-01-30_13-46-42" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\photo_2022-01-30_13-46-42.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="close-tab33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-tab3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 1a3f78be40cd86aa0d268300d29ac65340cc25a8
   </data>
 </root>
