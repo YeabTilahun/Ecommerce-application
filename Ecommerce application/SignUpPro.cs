@@ -14,10 +14,11 @@ namespace Ecommerce_application
     {
         public void signUpProccedure(SignUpUser u)
         {
-            string constr = "Server = JONNY; database = ecommerce; integrated security = true;";
+            // string constr = "Server = JONNY; database = ecommerce; integrated security = true;";
+            Connection connect = new Connection();
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     if (u.role == "customer" || u.role == "Customer")
                     {
@@ -31,7 +32,7 @@ namespace Ecommerce_application
                         cmd.Parameters.AddWithValue("@role", u.role);
                         cmd.Parameters.AddWithValue("@phone", u.phone);
                         cmd.Parameters.AddWithValue("@email", u.email);
-                        cmd.Parameters.AddWithValue("@photo", u.photo);                      
+                        cmd.Parameters.AddWithValue("@photo", u.photo);
                         int rowAffected = cmd.ExecuteNonQuery();
                         con.Close();
                         if (rowAffected > 0)
@@ -53,8 +54,8 @@ namespace Ecommerce_application
                         cmd.Parameters.AddWithValue("@email", u.email);
                         cmd.Parameters.AddWithValue("@photo", u.photo);
                         cmd.Parameters.AddWithValue("@permit", u.permit);
-                        cmd.Parameters.AddWithValue("@status","In progress");
-                        
+                        cmd.Parameters.AddWithValue("@status", "In progress");
+
                         int rowAffected = cmd.ExecuteNonQuery();
                         con.Close();
                         if (rowAffected > 0)

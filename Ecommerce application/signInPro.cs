@@ -13,11 +13,11 @@ namespace Ecommerce_application
         public string SigninProccedure(SignInUser u)
         {
             string role = "No Role";
-            string constr = "Server = JONNY; database = Ecommerce; integrated security = true;";
-
+            //  string constr = "Server = JONNY; database = Ecommerce; integrated security = true;";
+            Connection connect = new Connection();
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     DataSet ds = new DataSet();
                     SqlDataAdapter da = new SqlDataAdapter("spLogin", con);

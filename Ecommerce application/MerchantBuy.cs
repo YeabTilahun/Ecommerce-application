@@ -55,12 +55,13 @@ namespace Ecommerce_application
                     MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        a[i] = new MerchantLoadProducts();
+                        a[i] = new MerchantLoadProducts(1);
                         a[i].Pic = (byte[])dt.Rows[i]["photo"];
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
                         a[i].Price = dt.Rows[i]["price"].ToString();
-           
+                        a[i].productid= dt.Rows[i]["productid"].ToString();
+
                         if (panelBuy.Controls.Count < 0)
                             panelBuy.Controls.Clear();
                         else
@@ -97,13 +98,13 @@ namespace Ecommerce_application
                       //  MessageBox.Show("yes");
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            a[i] = new MerchantLoadProducts();
+                            a[i] = new MerchantLoadProducts(0);
                             a[i].Pic = (byte[])dt.Rows[i]["photo"];
                             a[i].Name = dt.Rows[i]["name"].ToString();
                             a[i].Description = dt.Rows[i]["description"].ToString();
                             a[i].Price = dt.Rows[i]["price"].ToString();
-
-
+                            a[i].productid = dt.Rows[i]["productid"].ToString();
+                            a[i].cat = dt.Rows[i]["category"].ToString();
                             if (panelBuy.Controls.Count < 0)
                               panelBuy.Controls.Clear();
                            else
@@ -170,6 +171,8 @@ namespace Ecommerce_application
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
                         a[i].Price = dt.Rows[i]["price"].ToString();
+                        a[i].productid = dt.Rows[i]["productid"].ToString();
+                        a[i].cat = dt.Rows[i]["category"].ToString();
 
                         if (panelBuy.Controls.Count < 0)
                             panelBuy.Controls.Clear();
