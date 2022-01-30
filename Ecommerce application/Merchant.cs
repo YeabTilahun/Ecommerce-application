@@ -296,9 +296,9 @@ namespace Ecommerce_application
             DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (res == DialogResult.Yes)
             {
+                this.Hide();
+                new SignIn().ShowDialog();
                 this.Close();
-                SignIn signIn = new SignIn();
-                signIn.Show();
             }
             if (res == DialogResult.No)
             {
