@@ -139,7 +139,7 @@ namespace Ecommerce_application
             // 
             this.profileToolStripMenuItem.Image = global::Ecommerce_application.Properties.Resources._370076_account_avatar_client_male_person_icon;
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.profileToolStripMenuItem.Text = "My Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click_1);
             // 
@@ -147,7 +147,7 @@ namespace Ecommerce_application
             // 
             this.logOutToolStripMenuItem.Image = global::Ecommerce_application.Properties.Resources._7023958_password_account_security_reset_safety_icon__1_;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.logOutToolStripMenuItem.Text = "Change Password";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click_1);
             // 
@@ -155,7 +155,7 @@ namespace Ecommerce_application
             // 
             this.logoutToolStripMenuItem1.Image = global::Ecommerce_application.Properties.Resources.logout__1_;
             this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
             this.logoutToolStripMenuItem1.Text = "Logout";
             this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
@@ -324,14 +324,12 @@ namespace Ecommerce_application
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Enabled = false;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 313);
+            this.button3.Location = new System.Drawing.Point(0, 340);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 27);
+            this.button3.Size = new System.Drawing.Size(168, 35);
             this.button3.TabIndex = 5;
             this.button3.Text = "My products";
             this.button3.UseVisualStyleBackColor = false;
@@ -342,13 +340,12 @@ namespace Ecommerce_application
             this.button6.BackColor = System.Drawing.Color.Transparent;
             this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(0, 272);
+            this.button6.Location = new System.Drawing.Point(0, 299);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(165, 27);
+            this.button6.Size = new System.Drawing.Size(168, 35);
             this.button6.TabIndex = 4;
             this.button6.Text = "Buy product";
             this.button6.UseVisualStyleBackColor = false;
@@ -359,7 +356,6 @@ namespace Ecommerce_application
             this.button12.BackColor = System.Drawing.Color.Transparent;
             this.button12.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_19;
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -376,14 +372,12 @@ namespace Ecommerce_application
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Enabled = false;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(0, 232);
+            this.button5.Location = new System.Drawing.Point(0, 259);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(165, 26);
+            this.button5.Size = new System.Drawing.Size(168, 34);
             this.button5.TabIndex = 3;
             this.button5.Text = "Add product";
             this.button5.UseVisualStyleBackColor = false;

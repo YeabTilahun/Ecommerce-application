@@ -17,18 +17,17 @@ namespace Ecommerce_application
         public MerchantSell()
         {
             InitializeComponent();
-            //ADJUST THE DATETIME PCKER FOR BIRTHDAY
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             dateTimePicker1.Value = new DateTime(1753,1,1,1,1,1);
 
-            //HIDE THE EXPIREDATE DATE PICKER AND ITS LABEL WHEN LOAD
+            //
             dateTimePicker1.Hide();
             label1.Hide();
             textBox4.Location = new Point(117, 245);
             label3.Location = new Point(31, 252);
         }
 
-        //BROWSE IMAGE OF THE PRODUCT
+        //BROWSE IMAGE TO ADD IN TO PRODUCT
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -48,7 +47,7 @@ namespace Ecommerce_application
             string userName=Merchant.name;
             //TAKE THE DATE FROM THE PICKER
             string expDate = dateTimePicker1.Value.ToString("dd/MM/yyyy");
-            //FOR DATE STAMP (to identify latest products)
+            //FOR DATE STAMP
             string now = DateTime.Now.ToShortDateString();
 
             if (!textBox5.Text.Equals("")|| !comboBox1.Text.Equals(""))
@@ -92,7 +91,18 @@ namespace Ecommerce_application
             textBox4.Clear();
         }
 
-        //WHEN PRODUCTS THAT WILL EXPIRE ADDED EXPIREDATE WILL BE SHOWN OTHER WISE ITS HIDDEN
+        //CLEAR BUTTON
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                      
+        }
+
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             if (comboBox1.Text == "Cosmotics" || comboBox1.Text == "Medicine" || comboBox1.Text == "Cleaning supplies")

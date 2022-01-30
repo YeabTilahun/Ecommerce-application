@@ -15,17 +15,14 @@ namespace Ecommerce_application
             InitializeComponent();
             GetCategory();
             comboBox1.Items.Add ("All");
+            comboBox1.Text = "All";
             choose(i);
         }
-
-        //To call this class with out a parameter
         public MerchantBuy()
         {
 
         }
 
-        //if it is 1 then its buy tab from merchant form and will display products to be bought
-        //but if it is 2 then its my product tab and it will display the users product only
         public void choose(int i) {
             if (i == 1)
             {
@@ -37,8 +34,6 @@ namespace Ecommerce_application
                 Getproduct(Merchant.name);
             }
         }
-
-        //display all products in datatbase
         public void PopulateItem()
         {
             string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
@@ -56,6 +51,12 @@ namespace Ecommerce_application
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         a[i] = new MerchantLoadProducts();
+                        /*SqlDataAdapter da1 = new SqlDataAdapter("spLoad_data", con);
+                        da1.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        da1.SelectCommand.Parameters.AddWithValue("@productid", dt.Rows[i]["productid"]);
+                        DataSet ds1 = new DataSet();
+                        da1.Fill(ds1, "tblproduct");
+                        DataTable dt1 = ds1.Tables["tblproduct"];*/
                         a[i].Pic = (byte[])dt.Rows[i]["photo"];
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
@@ -74,8 +75,6 @@ namespace Ecommerce_application
                 MessageBox.Show(ex.Message);
             }
         }
-
-        //get products added by the user
         string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
         public void Getproduct(String user)
         {
@@ -124,13 +123,12 @@ namespace Ecommerce_application
 
         }
 
-        //when search text box entered it will also search the database (LIVE SEARCH)
+        //when search text box entered 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             search();
         }
 
-        //when search box entered
         private void textBox1_Enter(object sender, EventArgs e)
         {
             textBox1.Text = "";
@@ -138,15 +136,14 @@ namespace Ecommerce_application
             textBox1.ForeColor = Color.Black;
         }
 
-        //when search box leave
         private void textBox1_Leave(object sender, EventArgs e)
         {
             textBox1.Text = "Search items here";
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.ForeColor = Color.LightGray;
         }
+        //
 
-        //method that search the database 
         void search()
         {
             if(!textBox1.Text.Equals("Search items here")) { 
@@ -181,7 +178,6 @@ namespace Ecommerce_application
             }
         }
 
-        // Get the catagories that are available in the database
         public void GetCategory()
         {
             string[] category = null;
@@ -211,11 +207,10 @@ namespace Ecommerce_application
             }
         }
 
-        // When the combobox item changed products will be displayed that are in the specific category which is the selected  
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             MerchantClass x = new MerchantClass();
-            DataTable dt=null;
+            DataTable dt;
             if (comboBox1.Text.Equals("All"))
             {
                 dt = x.Selected_Cat("");

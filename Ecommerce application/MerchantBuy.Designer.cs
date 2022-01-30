@@ -79,8 +79,7 @@ namespace Ecommerce_application
             this.comboBox1.Location = new System.Drawing.Point(532, 8);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(170, 21);
-            this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 1;
+            this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // pictureBox2
@@ -100,7 +99,7 @@ namespace Ecommerce_application
             this.textBox1.Location = new System.Drawing.Point(750, 9);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(170, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 8;
             this.textBox1.Text = "Search items here";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);

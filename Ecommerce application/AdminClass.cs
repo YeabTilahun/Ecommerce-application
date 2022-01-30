@@ -169,13 +169,6 @@ namespace Ecommerce_application
             return category;
         }
 
-        /*public DataTable GetProductByCategory(string category)
-        {
-            AdminDatabase AdminD = new AdminDatabase();
-            DataTable dt = AdminD.GetProductByCategory(category);
-            return dt;
-        }*/
-
         public string[] GetMonthlySold(int month)
         {
             AdminDatabase AdminD = new AdminDatabase();

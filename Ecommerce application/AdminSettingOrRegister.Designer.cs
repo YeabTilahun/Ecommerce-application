@@ -157,6 +157,7 @@ namespace Ecommerce_application
             this.txtPass.ReadOnly = true;
             this.txtPass.Size = new System.Drawing.Size(253, 21);
             this.txtPass.TabIndex = 7;
+            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
             // txtUserName
             // 
@@ -166,6 +167,7 @@ namespace Ecommerce_application
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(253, 21);
             this.txtUserName.TabIndex = 6;
+            this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
             // txtEmail
             // 
@@ -175,6 +177,7 @@ namespace Ecommerce_application
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(253, 21);
             this.txtEmail.TabIndex = 5;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtLName
             // 
@@ -194,6 +197,7 @@ namespace Ecommerce_application
             this.txtPhoneNum.Name = "txtPhoneNum";
             this.txtPhoneNum.Size = new System.Drawing.Size(253, 21);
             this.txtPhoneNum.TabIndex = 4;
+            this.txtPhoneNum.Leave += new System.EventHandler(this.txtPhoneNum_Leave);
             // 
             // txtFName
             // 
@@ -568,6 +572,7 @@ namespace Ecommerce_application
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.Size = new System.Drawing.Size(230, 21);
             this.txtOldPass.TabIndex = 0;
+            this.txtOldPass.Leave += new System.EventHandler(this.txtOldPass_Leave);
             // 
             // panel10
             // 
@@ -601,6 +606,7 @@ namespace Ecommerce_application
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(230, 21);
             this.txtNewPass.TabIndex = 0;
+            this.txtNewPass.Leave += new System.EventHandler(this.txtNewPass_Leave);
             // 
             // panel12
             // 

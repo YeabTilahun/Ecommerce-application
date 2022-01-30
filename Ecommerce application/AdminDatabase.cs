@@ -462,27 +462,6 @@ namespace Ecommerce_application
             return category;
         }
 
-        /*public DataTable GetProductByCategory(string category)
-        {
-            DataTable dt = null;
-            try
-            {
-                SqlConnection con = connect.CreateConnection();
-                SqlDataAdapter da = new SqlDataAdapter("spGetProductByCategory", con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@category", category);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "tblProduct");
-                dt = ds.Tables["tblProduct"];
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return dt;
-
-        }*/
-
         public string[] GetMonthlySold(int month)
         {
             string[] product = new string[3];
@@ -538,7 +517,7 @@ namespace Ecommerce_application
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblList");
                 DataTable dt = ds.Tables["tblList"];
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0 && !Convert.IsDBNull(dt.Rows[0]["total"]))
                     income = double.Parse(dt.Rows[0]["total"].ToString());
             }
             catch (Exception ex)
@@ -559,7 +538,7 @@ namespace Ecommerce_application
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblList");
                 DataTable dt = ds.Tables["tblList"];
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0 && !Convert.IsDBNull(dt.Rows[0]["total"]))
                     income = double.Parse(dt.Rows[0]["total"].ToString());
             }
             catch (Exception ex)

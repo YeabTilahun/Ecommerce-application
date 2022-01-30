@@ -39,11 +39,11 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.BackColor = System.Drawing.Color.Transparent;
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.BackColor = System.Drawing.Color.Tan;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.Location = new System.Drawing.Point(5, 189);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(45, 16);
+            this.labelName.Size = new System.Drawing.Size(41, 15);
             this.labelName.TabIndex = 8;
             this.labelName.Text = "Name";
             // 
@@ -62,7 +62,7 @@
             this.labelDescription.BackColor = System.Drawing.Color.Black;
             this.labelDescription.ForeColor = System.Drawing.Color.White;
             this.labelDescription.Location = new System.Drawing.Point(5, 122);
-            this.labelDescription.MaximumSize = new System.Drawing.Size(500, 0);
+            this.labelDescription.MaximumSize = new System.Drawing.Size(1000, 0);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(63, 13);
             this.labelDescription.TabIndex = 6;

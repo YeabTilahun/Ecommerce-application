@@ -62,6 +62,9 @@ namespace Ecommerce_application
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1100, 53);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // button8
             // 
@@ -74,6 +77,7 @@ namespace Ecommerce_application
             this.button8.Size = new System.Drawing.Size(30, 23);
             this.button8.TabIndex = 0;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button6
             // 
@@ -144,6 +148,7 @@ namespace Ecommerce_application
             this.button2.Size = new System.Drawing.Size(30, 23);
             this.button2.TabIndex = 0;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

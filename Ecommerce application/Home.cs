@@ -21,14 +21,14 @@ namespace Ecommerce_application
         {
             Thread trd = new Thread(new ThreadStart(formRun));
             trd.Start();
-            Thread.Sleep(100);
+            Thread.Sleep(1500);
             InitializeComponent();
             trd.Abort();
         }
 
         private void formRun()
         {
-            Application.Run(new Home());
+            Application.Run(new The_Wait_Form());
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -241,8 +241,15 @@ namespace Ecommerce_application
 
         private void buttonBuy_Click(object sender, EventArgs e)
         {
-            SignIn sIn = new SignIn();
-            sIn.Show();
+            if (dataGridView1.Rows.Count != 0)
+            {
+                SignIn sIn = new SignIn();
+                sIn.Show();
+            }
+            else
+            {
+                MessageBox.Show("Your Cart is Empty!");
+            }
         }
 
         //Removes the selected rows in cart datagridview
@@ -274,6 +281,46 @@ namespace Ecommerce_application
                 sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
             }
             labelTotal.Text = string.Format("${0}", sum.ToString());
+        }
+
+        public bool MouseDown;
+        public Point LastLocation;
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            MouseDown = true;
+            LastLocation = e.Location;
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            MouseDown = false;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MouseDown)
+            {
+                this.Location = new Point((this.Location.X - LastLocation.X) + e.X, (this.Location.Y - LastLocation.Y) + e.Y);
+                this.Update();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.Size = new Size(1100, 677);
+            button8.BringToFront();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            resize();
+            /*int a = Screen.PrimaryScreen.WorkingArea.Width;
+            int b = Screen.PrimaryScreen.WorkingArea.Height;
+            this.Size = new Size(a, b);*/
+            this.WindowState = FormWindowState.Maximized;
+            button2.BringToFront();
         }
     }
 }

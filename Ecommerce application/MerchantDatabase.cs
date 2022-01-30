@@ -18,8 +18,6 @@ namespace Ecommerce_application
 
         }
         string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
-
-        //Add Product
         public void AddProduct(MerchantClass sell)
         {
             try
@@ -55,7 +53,6 @@ namespace Ecommerce_application
 
         }
 
-        //Delete Product
         public void Delete(String id)
         {
             try
@@ -83,7 +80,55 @@ namespace Ecommerce_application
 
         }
 
-        //Update Product
+ /*       public void Getproduct(String user)
+        {
+            MyProduct c = new MyProduct();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetProduct", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@name", user);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    DataTable dt = ds.Tables["tblProduct"];
+                    if (dt != null)
+                    {
+                        LoadItems[] a = new LoadItems[dt.Rows.Count];
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            a[i] = new LoadItems();
+                            a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                            a[i].Name = dt.Rows[i]["name"].ToString();
+                            a[i].Description = dt.Rows[i]["description"].ToString();
+                            a[i].Price = string.Format("${0}.00", dt.Rows[i]["price"].ToString());
+
+                            if (c.flowLayoutPanel1.Controls.Count < 0)
+                                c.flowLayoutPanel1.Controls.Clear();
+                            else
+                                c.flowLayoutPanel1.Controls.Add(a[i]);
+
+                        }
+                    }
+                    else
+                    {
+                        Label show = new Label();
+                        show.Text = "You don't have any added products.";
+                        show.ForeColor = Color.DarkGray;
+                        show.Size = new Size(120, 25);
+                        c.flowLayoutPanel1.Controls.Add(show);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }*/
+
         public void UpdateProduct(MerchantClass sell)
         {
             try
@@ -119,7 +164,21 @@ namespace Ecommerce_application
 
         }
 
-        //GET ITEMS ACCORDING TO THE SELECTED CATEGORY
+        public DataTable getUser()
+        {
+            SqlConnection con = new SqlConnection(constr);
+            SqlDataAdapter da = new SqlDataAdapter("select photo,name,description from product", con);
+
+
+            DataSet ds = new DataSet();
+            da.Fill(ds, "product");
+            DataTable dt = ds.Tables["product"];
+            return dt;
+
+        }
+
+
+        //
         public DataTable Selected_Cat(string category)
         {
             DataTable dt = null;
