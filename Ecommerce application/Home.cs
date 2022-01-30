@@ -21,7 +21,7 @@ namespace Ecommerce_application
         {
             Thread trd = new Thread(new ThreadStart(formRun));
             trd.Start();
-            Thread.Sleep(1500);
+            Thread.Sleep(5000);
             InitializeComponent();
             trd.Abort();
         }
@@ -316,11 +316,12 @@ namespace Ecommerce_application
         private void button8_Click(object sender, EventArgs e)
         {
             resize();
-            /*int a = Screen.PrimaryScreen.WorkingArea.Width;
+            int a = Screen.PrimaryScreen.WorkingArea.Width;
             int b = Screen.PrimaryScreen.WorkingArea.Height;
-            this.Size = new Size(a, b);*/
-            this.WindowState = FormWindowState.Maximized;
+            this.Size = new Size(a, b);
+            //this.WindowState = FormWindowState.Maximized;
             button2.BringToFront();
+            //panel;
         }
     }
 }
