@@ -17,24 +17,15 @@ namespace Ecommerce_application
             InitializeComponent();
         }
 
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //To display date and time
-        public void timer1_Tick(object sender, EventArgs e)
+        //To display date and time using timer it will count after it fetch from the system
+        private void timer1_Tick(object sender, EventArgs e)
         {
             string time = DateTime.Now.ToShortTimeString();
             label13.Text = time;
             string date = DateTime.Now.ToShortDateString();
             label12.Text = date;
         }
-      
 
-        private void panelHome_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }

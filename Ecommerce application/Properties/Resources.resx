@@ -412,6 +412,9 @@
   <data name="Asset 232" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Asset 232.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Asset 342 - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Asset 342 - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Asset 203" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Asset 203.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -502,6 +505,9 @@
   <data name="Asset 136" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Asset 136.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Asset 2211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Asset 221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="a6e049d77fe5bfc90a4999bba3b335ee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a6e049d77fe5bfc90a4999bba3b335ee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -574,7 +580,7 @@
   <data name="Asset 223" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Asset 223.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Asset 2211" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Asset 221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cart (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

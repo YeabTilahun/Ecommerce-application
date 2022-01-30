@@ -611,6 +611,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\Asset 342 - Copy.png" />
     <None Include="Resources\Asset 221.png" />
     <None Include="Resources\Asset 182.png" />
     <None Include="Resources\Rectangle 1411.png" />
