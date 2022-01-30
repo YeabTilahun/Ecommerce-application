@@ -43,8 +43,6 @@ namespace Ecommerce_application
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.btnLogo = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,7 +69,7 @@ namespace Ecommerce_application
             this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textUsername.ForeColor = System.Drawing.Color.LightGray;
-            this.textUsername.Location = new System.Drawing.Point(323, 118);
+            this.textUsername.Location = new System.Drawing.Point(295, 113);
             this.textUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textUsername.Multiline = true;
             this.textUsername.Name = "textUsername";
@@ -222,41 +220,11 @@ namespace Ecommerce_application
             // panel1
             // 
             this.panel1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_133;
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnLogo);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 445);
             this.panel1.TabIndex = 47;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.Ivory;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Font = new System.Drawing.Font("Poor Richard", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 320);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(201, 122);
-            this.richTextBox1.TabIndex = 38;
-            this.richTextBox1.Text = "ABOUT US:";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_48;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(12, 211);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(164, 29);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Signup";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // btnLogo
             // 
@@ -282,6 +250,7 @@ namespace Ecommerce_application
             this.linkLabel1.TabIndex = 48;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "forgot Password?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // SignIn
             // 
@@ -332,8 +301,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button showPassword;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogo;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
