@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -187,6 +188,120 @@ namespace Ecommerce_application
             }
 
             return dt;
+        }
+
+        private Dictionary<string, int> GetCount(string columnName)
+        {
+            string currentKey = "";
+            Dictionary<string, int> ValuesAndCounts = new Dictionary<string, int>();
+            foreach(DataGridViewRow row in Home.dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    if(row.Cells[columnName].Value != null)
+                    {
+                        currentKey = row.Cells[columnName].Value.ToString();
+                        if (ValuesAndCounts.ContainsKey(currentKey))
+                        {
+                            ValuesAndCounts[currentKey]++;
+                        }
+                        else
+                        {
+                            ValuesAndCounts.Add(currentKey, 1);
+                        }
+                    }
+
+                }
+            }
+            return ValuesAndCounts;
+        }
+
+        static string cat;
+        static string price1;
+        static string id1;
+        static string qty1;
+        
+        public void array(string id2)
+        {
+            Dictionary<string, int> coloumn_counts = GetCount("id");
+            Queue cate = new Queue();
+            Queue price = new Queue();
+            Queue id = new Queue();
+            Queue qty2 = new Queue();
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                    foreach(KeyValuePair<string, int> keyvaluePair in coloumn_counts)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("Select category, price from Product where productid = @id", con);
+                        cmd.Parameters.AddWithValue("@id", id2);
+                        SqlDataReader da = cmd.ExecuteReader();
+                        while (da.Read())
+                        {
+                            cate.Enqueue(da.GetValue(0).ToString());
+                            price.Enqueue(da.GetValue(1).ToString());
+                            id.Enqueue(Convert.ToString(id2));
+                            qty2.Enqueue(Convert.ToString(keyvaluePair.Value));
+                        }
+                        con.Close();
+                    }
+                }
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            cat = (string)cate.Dequeue();
+            price1 = (string)price.Dequeue();
+            id1 = (string)id.Dequeue();
+            qty1 = (string)qty2.Dequeue();
+        }
+
+        public void Transaction()
+        {
+
+            LoadItems l = new LoadItems();
+            NewHomeClass newHome = new NewHomeClass();
+            Dictionary<string, int> column_counts = GetCount("id");
+            string now = DateTime.Now.ToShortDateString();
+            int rowAffected = 0;
+            foreach(KeyValuePair<string, int> keyValuePair in column_counts) { }
+            try
+            {
+                using(SqlConnection con = connect.CreateConnection())
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    for(int i = 0; i < Home.dataGridView1.Rows.Count; i++)
+                    {
+                        array(Home.dataGridView1.Rows[i].Cells["id"].Value.ToString());
+                        cmd = new SqlCommand("spTransaction", con);
+                        //cmd.Parameters.AddWithValue("@user_name", Home.name);
+                        cmd.Parameters.AddWithValue("@productID", Home.dataGridView1.Rows[i].Cells["id"].Value);
+
+                        cmd.Parameters.AddWithValue("@totalPrice", price1);
+                        cmd.Parameters.AddWithValue("@category", cat);
+                        cmd.Parameters.AddWithValue("@date", now);
+                        cmd.Parameters.AddWithValue("@quantity", qty1);
+                        rowAffected = cmd.ExecuteNonQuery();
+                    }
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
+                        MessageBox.Show("Thank you for using our application!");
+                    }
+                    else
+                        MessageBox.Show("Something is wrong with our server please restart the application.");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

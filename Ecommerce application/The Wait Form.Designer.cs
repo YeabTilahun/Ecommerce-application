@@ -41,11 +41,11 @@ namespace Ecommerce_application
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Ecommerce_application.Properties.Resources.Asset_19;
-            this.pictureBox1.Location = new System.Drawing.Point(168, 12);
+            this.pictureBox1.Image = global::Ecommerce_application.Properties.Resources.photo_2022_01_30_13_46_42;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(450, 402);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(824, 461);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
