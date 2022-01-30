@@ -29,6 +29,7 @@ namespace Ecommerce_application
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminProfile));
             this.cmbSex = new System.Windows.Forms.ComboBox();
             this.lblSex = new System.Windows.Forms.Label();
             this.txtRole = new System.Windows.Forms.TextBox();
@@ -497,6 +498,7 @@ namespace Ecommerce_application
             this.Controls.Add(this.panel10);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile";
