@@ -86,6 +86,7 @@ namespace Ecommerce_application
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(296, 174);
@@ -123,8 +124,8 @@ namespace Ecommerce_application
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelPrice;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        public System.Windows.Forms.Button button1;
     }
 }
