@@ -79,5 +79,13 @@ namespace Ecommerce_application
             DataTable dt = homeD.Selected_Cat(category);
             return dt;
         }
+
+        //Add transaction when buy clicked in the cart
+        public void transaction(Label a)
+        {
+            MerchantDatabase sell = new MerchantDatabase();
+            //sell.array();
+            sell.Transaction1(a);
+        }
     }
 }

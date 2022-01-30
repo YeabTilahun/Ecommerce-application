@@ -20,6 +20,8 @@ namespace Ecommerce_application
 
     //PROPERT FOR THE USER CONTROL
         private string name;
+        private string category;
+        private string productID;
         private string price;
         private string description;
         private byte[] pic;
@@ -34,6 +36,24 @@ namespace Ecommerce_application
             {
                 name = value;
                 labelName.Text = value;
+            }
+        }
+
+        public string cat
+        {
+            get { return category; }
+            set
+            {
+                name = value;
+            }
+        }
+        public string productid
+        {
+            get { return productID; }
+            set
+            {
+                productID = value;
+               
             }
         }
 
@@ -69,7 +89,13 @@ namespace Ecommerce_application
         {
             Merchant.dataGridView2.Columns.Add("name", "Product Name");
             Merchant.dataGridView2.Columns.Add("Price", "Price");
-            Merchant.dataGridView2.Rows.Add(name, price);
+            Merchant.dataGridView2.Columns.Add("id", "Product ID");
+            Merchant.dataGridView2.Columns.Add("cat", "category");
+
+            Merchant.dataGridView2.Columns["id"].Visible = false;
+           // Merchant.dataGridView2.Columns["category"].Visible = false;
+
+            Merchant.dataGridView2.Rows.Add(name, price, productID);
         }
 
         //DESCRIPTION WILL APPEAR WHEN MOSE HOVER ON THE PICTURE BOX AND DISAPEAR WHEN MOUSE LEAVE

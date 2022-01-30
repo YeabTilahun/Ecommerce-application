@@ -60,7 +60,8 @@ namespace Ecommerce_application
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
                         a[i].Price = dt.Rows[i]["price"].ToString();
-           
+                        a[i].productid= dt.Rows[i]["productid"].ToString();
+
                         if (panelBuy.Controls.Count < 0)
                             panelBuy.Controls.Clear();
                         else
@@ -102,8 +103,8 @@ namespace Ecommerce_application
                             a[i].Name = dt.Rows[i]["name"].ToString();
                             a[i].Description = dt.Rows[i]["description"].ToString();
                             a[i].Price = dt.Rows[i]["price"].ToString();
-
-
+                            a[i].productid = dt.Rows[i]["productid"].ToString();
+                            a[i].cat = dt.Rows[i]["category"].ToString();
                             if (panelBuy.Controls.Count < 0)
                               panelBuy.Controls.Clear();
                            else
@@ -170,6 +171,8 @@ namespace Ecommerce_application
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
                         a[i].Price = dt.Rows[i]["price"].ToString();
+                        a[i].productid = dt.Rows[i]["productid"].ToString();
+                        a[i].cat = dt.Rows[i]["category"].ToString();
 
                         if (panelBuy.Controls.Count < 0)
                             panelBuy.Controls.Clear();
