@@ -54,7 +54,7 @@ namespace Ecommerce_application
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(65)))), ((int)(((byte)(59)))));
-            this.label7.Location = new System.Drawing.Point(271, 229);
+            this.label7.Location = new System.Drawing.Point(339, 227);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(233, 33);
@@ -69,7 +69,7 @@ namespace Ecommerce_application
             this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textUsername.ForeColor = System.Drawing.Color.LightGray;
-            this.textUsername.Location = new System.Drawing.Point(295, 113);
+            this.textUsername.Location = new System.Drawing.Point(365, 113);
             this.textUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textUsername.Multiline = true;
             this.textUsername.Name = "textUsername";
@@ -86,7 +86,7 @@ namespace Ecommerce_application
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(65)))), ((int)(((byte)(59)))));
-            this.label2.Location = new System.Drawing.Point(362, 375);
+            this.label2.Location = new System.Drawing.Point(426, 348);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 19);
@@ -104,7 +104,7 @@ namespace Ecommerce_application
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(309, 294);
+            this.button1.Location = new System.Drawing.Point(361, 294);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(184, 42);
@@ -120,7 +120,7 @@ namespace Ecommerce_application
             this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textPassword.ForeColor = System.Drawing.Color.LightGray;
-            this.textPassword.Location = new System.Drawing.Point(294, 159);
+            this.textPassword.Location = new System.Drawing.Point(364, 159);
             this.textPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textPassword.Multiline = true;
             this.textPassword.Name = "textPassword";
@@ -133,7 +133,7 @@ namespace Ecommerce_application
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(271, 134);
+            this.label1.Location = new System.Drawing.Point(341, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(229, 13);
             this.label1.TabIndex = 36;
@@ -143,7 +143,7 @@ namespace Ecommerce_application
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(275, 186);
+            this.label8.Location = new System.Drawing.Point(345, 186);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(229, 13);
             this.label8.TabIndex = 37;
@@ -154,13 +154,14 @@ namespace Ecommerce_application
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(695, 0);
+            this.button2.Location = new System.Drawing.Point(697, -2);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 31);
@@ -174,7 +175,7 @@ namespace Ecommerce_application
             this.showPassword.BackgroundImage = global::Ecommerce_application.Properties.Resources.eye;
             this.showPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(222)))), ((int)(((byte)(211)))));
-            this.showPassword.Location = new System.Drawing.Point(496, 166);
+            this.showPassword.Location = new System.Drawing.Point(566, 166);
             this.showPassword.Margin = new System.Windows.Forms.Padding(2);
             this.showPassword.Name = "showPassword";
             this.showPassword.Size = new System.Drawing.Size(25, 25);
@@ -187,7 +188,7 @@ namespace Ecommerce_application
             this.hidePassword.BackgroundImage = global::Ecommerce_application.Properties.Resources.invisible_eye;
             this.hidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hidePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(222)))), ((int)(((byte)(211)))));
-            this.hidePassword.Location = new System.Drawing.Point(496, 166);
+            this.hidePassword.Location = new System.Drawing.Point(566, 166);
             this.hidePassword.Margin = new System.Windows.Forms.Padding(2);
             this.hidePassword.Name = "hidePassword";
             this.hidePassword.Size = new System.Drawing.Size(25, 25);
@@ -198,7 +199,7 @@ namespace Ecommerce_application
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Ecommerce_application.Properties.Resources.password_icon;
-            this.pictureBox3.Location = new System.Drawing.Point(274, 159);
+            this.pictureBox3.Location = new System.Drawing.Point(344, 159);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(17, 25);
@@ -209,7 +210,7 @@ namespace Ecommerce_application
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Ecommerce_application.Properties.Resources.user_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(274, 112);
+            this.pictureBox2.Location = new System.Drawing.Point(344, 112);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(17, 25);
@@ -221,9 +222,9 @@ namespace Ecommerce_application
             // 
             this.panel1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_133;
             this.panel1.Controls.Add(this.btnLogo);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 445);
+            this.panel1.Size = new System.Drawing.Size(181, 452);
             this.panel1.TabIndex = 47;
             // 
             // btnLogo
@@ -234,7 +235,7 @@ namespace Ecommerce_application
             this.btnLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogo.FlatAppearance.BorderSize = 0;
             this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogo.Location = new System.Drawing.Point(32, 0);
+            this.btnLogo.Location = new System.Drawing.Point(24, 22);
             this.btnLogo.Name = "btnLogo";
             this.btnLogo.Size = new System.Drawing.Size(136, 145);
             this.btnLogo.TabIndex = 36;
@@ -244,7 +245,7 @@ namespace Ecommerce_application
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(342, 211);
+            this.linkLabel1.Location = new System.Drawing.Point(411, 211);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(89, 13);
             this.linkLabel1.TabIndex = 48;
