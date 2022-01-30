@@ -79,6 +79,7 @@ namespace Ecommerce_application
         //To Load The Selected Product On The Cart dataGridView
         private void button1_Click(object sender, EventArgs e)
         {
+            home.buySize();
             Home.dataGridView1.Columns.Add("name", "Product Name");
             Home.dataGridView1.Columns.Add("Price", "Price");
             Home.dataGridView1.Rows.Add(name, price);

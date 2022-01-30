@@ -33,8 +33,8 @@ namespace Ecommerce_application
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(The_Wait_Form));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelSlide = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,11 +57,6 @@ namespace Ecommerce_application
             this.panel1.Size = new System.Drawing.Size(363, 10);
             this.panel1.TabIndex = 1;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 5;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // panelSlide
             // 
             this.panelSlide.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
@@ -70,6 +65,11 @@ namespace Ecommerce_application
             this.panelSlide.Name = "panelSlide";
             this.panelSlide.Size = new System.Drawing.Size(105, 10);
             this.panelSlide.TabIndex = 3;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // The_Wait_Form
             // 
@@ -96,7 +96,7 @@ namespace Ecommerce_application
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panelSlide;
+        private System.Windows.Forms.Timer timer1;
     }
 }
