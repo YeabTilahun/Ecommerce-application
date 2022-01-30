@@ -155,7 +155,7 @@ namespace Ecommerce_application
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    a[i].Width = adminMerchants.flowLayoutPanel1.Width - 3;
+                    a[i].Width = adminMerchants.flowLayoutPanel1.Width - 20;
                 }
 
             }
@@ -213,7 +213,7 @@ namespace Ecommerce_application
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    a[i].Width = adminCustomers.flowLayoutPanel1.Width - 3;
+                    a[i].Width = adminCustomers.flowLayoutPanel1.Width - 20;
                 }
 
             }
@@ -292,7 +292,7 @@ namespace Ecommerce_application
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    a[i].Width = adminAdmins.flowLayoutPanel1.Width - 3;
+                    a[i].Width = adminAdmins.flowLayoutPanel1.Width - 20;
                 }
 
             }

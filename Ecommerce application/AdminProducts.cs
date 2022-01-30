@@ -27,7 +27,7 @@ namespace Ecommerce_application
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    a[i].Width = flowLayoutPanel1.Width - 3;
+                    a[i].Width = flowLayoutPanel1.Width - 20;
                     a[i].description.MaximumSize = new Size(a[i].panel6.Location.X - a[i].panel5.Location.X - 22, 0);
                 }
 
