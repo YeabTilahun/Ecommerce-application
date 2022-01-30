@@ -13,12 +13,23 @@ namespace Ecommerce_application
 {
     public partial class MerchantLoadProducts: UserControl
     {
-        public MerchantLoadProducts()
+        public MerchantLoadProducts(int a)
         {
             InitializeComponent();
+            if (a == 1)
+            {
+                button1.Visible = true;
+            }
+            if (a == 0)
+            {
+                button1.Visible = false;
+            }
         }
+     public MerchantLoadProducts()
+        {
 
-    //PROPERT FOR THE USER CONTROL
+        }
+        //PROPERT FOR THE USER CONTROL
         private string name;
         private string category;
         private string productID;
