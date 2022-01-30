@@ -13,32 +13,28 @@ namespace Ecommerce_application
 {
     public partial class The_Wait_Form : Form
     {
+        int move = 0;
         public The_Wait_Form()
         {
-            Thread t = new Thread(new ThreadStart(Splash));
             InitializeComponent();
-
-            //Loading data
-            string str = string.Empty;
-            for(int i =0; i < 100000; i++)
-            {
-                str = str + i.ToString();
-            }
-
-            t.Abort();
-        }
-
-        void Splash()
-        {
-           // SplashScreen.SplashForm form = new SplashScreen.SplashForm();
-          //  form.AppName = "";
-          //  Application.Run(form);
-          //Application.Run(Home);
         }
 
         private void The_Wait_Form_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            panelSlide.Left += 2;
+            if(panelSlide.Left > 350)
+            {
+                panelSlide.Left = 0;
+            }
+            if(panelSlide.Left < 0)
+            {
+                move = 2;
+            }
         }
     }
 }

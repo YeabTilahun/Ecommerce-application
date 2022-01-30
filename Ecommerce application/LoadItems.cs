@@ -14,10 +14,9 @@ namespace Ecommerce_application
 {
     public partial class LoadItems : UserControl
     {
-
+        //A User Control Properties That We Used To Populate the Product in HomeClass
         public LoadItems()
         {
-            //SetupDataGridView();
             InitializeComponent();
         }
 
@@ -27,7 +26,7 @@ namespace Ecommerce_application
         private byte[] pic;
         Home home = new Home();
 
-
+        //For the product's Name
         [Category("Custom Props")]
         public string Name
         {
@@ -38,6 +37,7 @@ namespace Ecommerce_application
                 }
         }
 
+        //For the product's Price
         [Category("Custom Props")]
         public string Price
         {
@@ -45,6 +45,7 @@ namespace Ecommerce_application
             set { price = value; labelPrice.Text = value; }
         }
 
+        //For the product's Description
         [Category("Custom Props")]
         public string Description
         {
@@ -52,6 +53,7 @@ namespace Ecommerce_application
             set { description = value; labelDescription.Text = value; }
         }
 
+        //For the product's Picture
         [Category("Custom Props")]
         public byte[] Pic
         {
@@ -74,52 +76,15 @@ namespace Ecommerce_application
             
         }
 
+        //To Load The Selected Product On The Cart dataGridView
         private void button1_Click(object sender, EventArgs e)
         {
-            //Newcart cart = new Newcart();
-            //Home home = new Home();
-            //home.buySize();
             Home.dataGridView1.Columns.Add("name", "Product Name");
             Home.dataGridView1.Columns.Add("Price", "Price");
             Home.dataGridView1.Rows.Add(name, price);
-
-            //calculate total
-            /*double sum = 0;
-            for (int i = 0; i < Home.dataGridViewCart.Rows.Count; ++i)
-            {
-                sum += Convert.ToDouble(Home.dataGridViewCart.Rows[i].Cells[1].Value);
-            }*/
-            //home.labelTotal.Text = string.Format("${0}", sum.ToString());
-
-           
-            /* Newcart cart = new Newcart();
-              Newcart.dataGridViewCart.Columns.Add("name", "productname");
-              Newcart.dataGridViewCart.Columns.Add("price", "price");
-              Newcart.dataGridViewCart.Rows.Add(name, price);*/
-
-
-            /*int[] theData = new int[50];
-
-            for (int i = 0; i < theData.Length; i++)
-            {
-                Newcart.dataGridViewCart.Rows.Add(new object[] { i + 1, theData[i] });
-            }*/
-            /*DataTable LoadToCart(string name, float price)
-                        {
-                            string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
-                            SqlConnection con = new SqlConnection(constr);
-                            SqlDataAdapter da = new SqlDataAdapter("spLoadToCart", con);
-                            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                            da.SelectCommand.Parameters.AddWithValue("@name", name);
-                            da.SelectCommand.Parameters.AddWithValue("@price", price);
-                            DataSet ds = new DataSet();
-                            da.Fill(ds, "tblProduct");
-                            DataTable dt = ds.Tables["tblProduct"];
-                            return dt;
-                        }*/
         }
 
-        //Even
+        
         public void Onclick(object sender,EventArgs e)
         {
 

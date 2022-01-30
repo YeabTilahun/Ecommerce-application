@@ -238,26 +238,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ChangePassword.cs" />
-    <Compile Include="CustomerBuy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerBuy.Designer.cs">
-      <DependentUpon>CustomerBuy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerCart.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerCart.Designer.cs">
-      <DependentUpon>CustomerCart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerClass.cs" />
-    <Compile Include="CustomerDatabase.cs" />
-    <Compile Include="CustomerPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerPage.Designer.cs">
-      <DependentUpon>CustomerPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="EcommerceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -452,15 +432,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminTransaction.resx">
       <DependentUpon>AdminTransaction.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerBuy.resx">
-      <DependentUpon>CustomerBuy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerCart.resx">
-      <DependentUpon>CustomerCart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerPage.resx">
-      <DependentUpon>CustomerPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgetPassWord.resx">
       <DependentUpon>ForgetPassWord.cs</DependentUpon>
