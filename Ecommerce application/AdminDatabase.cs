@@ -32,6 +32,7 @@ namespace Ecommerce_application
                     cmd.Parameters.AddWithValue("@userName", ar.userName);
                     cmd.Parameters.AddWithValue("@password", ar.password);
                     cmd.Parameters.AddWithValue("@role", ar.role);
+                    cmd.Parameters.AddWithValue("@photo", ar.photo);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
@@ -59,7 +60,7 @@ namespace Ecommerce_application
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateAdmin", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@adminID", ar.adminID);
+                    cmd.Parameters.AddWithValue("@adminID", int.Parse(ar.adminID));
                     cmd.Parameters.AddWithValue("@fname", ar.firstName);
                     cmd.Parameters.AddWithValue("@lname", ar.lastName);
                     cmd.Parameters.AddWithValue("@phone", ar.phoneNumber);
@@ -69,12 +70,13 @@ namespace Ecommerce_application
                     cmd.Parameters.AddWithValue("@userName", ar.userName);
                     cmd.Parameters.AddWithValue("@password", ar.password);
                     cmd.Parameters.AddWithValue("@role", ar.role);
+                    cmd.Parameters.AddWithValue("@photo", ar.photo);
 
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
                     {
-                        MessageBox.Show("Admin Inserted Successfully");
+                        MessageBox.Show("Admin Updated Successfully");
                     }
                     else
                     {
@@ -97,7 +99,7 @@ namespace Ecommerce_application
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spChangePassword", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@adminID", ar.adminID);
+                    cmd.Parameters.AddWithValue("@adminID", int.Parse(ar.adminID));
                     cmd.Parameters.AddWithValue("@password", ar.password);
 
                     int rowAffected = cmd.ExecuteNonQuery();
@@ -105,43 +107,6 @@ namespace Ecommerce_application
                     if (rowAffected > 0)
                     {
                         MessageBox.Show("Password Changed Successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed! Please Try Again");
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void DeleteAdmin(string[] id)
-        {
-            try
-            {
-                using (SqlConnection con = connect.CreateConnection())
-                {
-                    int rowAffected = 0;
-                    con.Open();
-                    for (int i = 0; i < id.Length; i++)
-                    {
-                        SqlCommand cmd = new SqlCommand("spDeleteAdmin", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@adminID", id[i]);
-
-                        rowAffected = cmd.ExecuteNonQuery();
-                    }
-                    con.Close();
-                    if (rowAffected > 0 && id.Length > 1)
-                    {
-                        MessageBox.Show("Admins Deleted Successfully");
-                    }
-                    else if (rowAffected > 0)
-                    {
-                        MessageBox.Show("Admin Deleted Successfully");
                     }
                     else
                     {
@@ -197,43 +162,6 @@ namespace Ecommerce_application
             return dt;
         }
 
-        public void DeleteProduct(string[] id)
-        {
-            try
-            {
-                using (SqlConnection con = connect.CreateConnection())
-                {
-                    int rowAffected = 0;
-                    con.Open();
-                    for (int i = 0; i < id.Length; i++)
-                    {
-                        SqlCommand cmd = new SqlCommand("spDeleteProduct", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@pid", id[i]);
-
-                        rowAffected = cmd.ExecuteNonQuery();
-                    }
-                    con.Close();
-                    if (rowAffected > 0 && id.Length > 1)
-                    {
-                        MessageBox.Show("Products Deleted Successfully");
-                    }
-                    else if (rowAffected > 0)
-                    {
-                        MessageBox.Show("Product Deleted Successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed! Please Try Again");
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         public DataTable GetProduct(string name, string category)
         {
             DataTable dt = null;
@@ -276,43 +204,6 @@ namespace Ecommerce_application
             return dt;
         }
 
-        public void DeleteCustomer(string[] id)
-        {
-            try
-            {
-                using (SqlConnection con = connect.CreateConnection())
-                {
-                    int rowAffected = 0;
-                    con.Open();
-                    for (int i = 0; i < id.Length; i++)
-                    {
-                        SqlCommand cmd = new SqlCommand("spDeleteCustomer", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id", id[i]);
-
-                        rowAffected = cmd.ExecuteNonQuery();
-                    }
-                    con.Close();
-                    if (rowAffected > 0 && id.Length > 1)
-                    {
-                        MessageBox.Show("Customers Deleted Successfully");
-                    }
-                    else if (rowAffected > 0)
-                    {
-                        MessageBox.Show("customer Deleted Successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed! Please Try Again");
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         public DataTable GetCustomer(string name)
         {
             DataTable dt = null;
@@ -331,43 +222,6 @@ namespace Ecommerce_application
                 MessageBox.Show(ex.Message);
             }
             return dt;
-        }
-
-        public void DeleteMerchant(string[] id)
-        {
-            try
-            {
-                using (SqlConnection con = connect.CreateConnection())
-                {
-                    int rowAffected = 0;
-                    con.Open();
-                    for (int i = 0; i < id.Length; i++)
-                    {
-                        SqlCommand cmd = new SqlCommand("spDeleteMerchant", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id", id[i]);
-
-                        rowAffected = cmd.ExecuteNonQuery();
-                    }
-                    con.Close();
-                    if (rowAffected > 0 && id.Length > 1)
-                    {
-                        MessageBox.Show("Merchants Deleted Successfully");
-                    }
-                    else if (rowAffected > 0)
-                    {
-                        MessageBox.Show("Merchant Deleted Successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed! Please Try Again");
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         public DataTable GetMerchant(string name)
@@ -873,34 +727,6 @@ namespace Ecommerce_application
                     if (rowAffected > 0)
                     {
                         MessageBox.Show("Merchant Accepted");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed! Please Try Again");
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void DeleteMerchant(string userName)
-        {
-            try
-            {
-                using (SqlConnection con = connect.CreateConnection())
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("spDeleteMerchant", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@userName", userName);
-                    int rowAffected = cmd.ExecuteNonQuery();
-                    con.Close();
-                    if (rowAffected > 0)
-                    {
-                        MessageBox.Show("Merchant Declined");
                     }
                     else
                     {

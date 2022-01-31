@@ -24,17 +24,20 @@ namespace Ecommerce_application
         private string price;
         private string description;
         private byte[] pic;
-        Home home = new Home();
+        private string category;
+        //Home home = new Home();
+        private string productID;
 
         //For the product's Name
         [Category("Custom Props")]
         public string Name
         {
             get { return name; }
-            set {
-                    name = value;
-                    labelName.Text = value;
-                }
+            set
+            {
+                name = value;
+                labelName.Text = value;
+            }
         }
 
         //For the product's Price
@@ -66,27 +69,51 @@ namespace Ecommerce_application
             }
         }
 
+        public string cat
+        {
+            get { return category; }
+            set
+            {
+                category = value;
+            }
+        }
+
+        public string productid
+        {
+            get { return productID; }
+            set
+            {
+                productID = value;
+
+            }
+        }
+
         private void labelDescription_MouseEnter(object sender, EventArgs e)
         {
-           
+
         }
 
         private void labelDescription_MouseLeave(object sender, EventArgs e)
         {
-            
+
         }
 
         //To Load The Selected Product On The Cart dataGridView
         private void button1_Click(object sender, EventArgs e)
         {
-            home.buySize();
+            //home.buySize();
             Home.dataGridView1.Columns.Add("name", "Product Name");
             Home.dataGridView1.Columns.Add("Price", "Price");
-            Home.dataGridView1.Rows.Add(name, price);
+            //Home.dataGridView1.Rows.Add(name, price);
+            Home.dataGridView1.Columns.Add("id", "Product ID");
+            Home.dataGridView1.Columns.Add("cat", "category");
+
+            Home.dataGridView1.Columns["id"].Visible = false;
+            Home.dataGridView1.Rows.Add(name, price, productID);
         }
 
-        
-        public void Onclick(object sender,EventArgs e)
+
+        public void Onclick(object sender, EventArgs e)
         {
 
         }

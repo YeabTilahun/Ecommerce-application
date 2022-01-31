@@ -131,9 +131,9 @@ namespace Ecommerce_application
 
         private void button7_Click(object sender, EventArgs e)
         {
-           Home h = new Home();
+           //Home h = new Home();
             flowLayoutPanel1.Controls.Clear();
-            h.Dock = DockStyle.Fill;
+            //h.Dock = DockStyle.Fill;
             newD.PopulateItem();
         }
 
@@ -277,8 +277,8 @@ namespace Ecommerce_application
         {
             if (dataGridView1.Rows.Count != 0)
             {
-                SignIn sIn = new SignIn();
-                sIn.Show();
+                NewHomeClass a = new NewHomeClass();
+                a.Transaction();
             }
             else
             {

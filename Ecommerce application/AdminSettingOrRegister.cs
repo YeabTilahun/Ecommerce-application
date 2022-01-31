@@ -145,7 +145,7 @@ namespace Ecommerce_application
                 if (txtNewPass.Equals(txtConfirmNewPass) && !txtNewPass.Text.Equals(""))
                 {
                     AdminClass admin = new AdminClass(lblId.Text, txtPass.Text);
-                    admin.UpdateAdmin();
+                    admin.ChangePassword();
                 }
                 else
                     MessageBox.Show("Your New Password does Not Match!!");

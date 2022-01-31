@@ -10,7 +10,6 @@ namespace Ecommerce_application
 {
     class AdminClass
     {
-        string[] id;
 
         public string adminID;
         public string firstName;
@@ -27,11 +26,6 @@ namespace Ecommerce_application
         public AdminClass()
         {
 
-        }
-
-        public AdminClass(string[] id)
-        {
-            this.id = id;
         }
 
         public AdminClass(string adminID, string firstName, string lastName, string sex, string birthday, string phoneNumber, string email, string userName, string password, string role, byte[] photo)
@@ -101,12 +95,6 @@ namespace Ecommerce_application
             return dt;
         }
 
-        public void DeleteProduct(string[] id)
-        {
-            AdminDatabase adminD = new AdminDatabase();
-            adminD.DeleteProduct(id);
-        }
-
         public DataTable GetProduct(string name, string category)
         {
             AdminDatabase AdminD = new AdminDatabase();
@@ -121,23 +109,11 @@ namespace Ecommerce_application
             return dt;
         }
 
-        public void DeleteMerchants(string[] id)
-        {
-            AdminDatabase adminD = new AdminDatabase();
-            adminD.DeleteMerchant(id);
-        }
-
         public DataTable GetMerchant(string name)
         {
             AdminDatabase AdminD = new AdminDatabase();
             DataTable dt = AdminD.GetMerchant(name);
             return dt;
-        }
-
-        public void DeleteCustomers(string[] id)
-        {
-            AdminDatabase adminD = new AdminDatabase();
-            adminD.DeleteCustomer(id);
         }
 
         public DataTable GetCustomer(string name)
@@ -293,12 +269,6 @@ namespace Ecommerce_application
         {
             AdminDatabase adminD = new AdminDatabase();
             adminD.AddToAll(userName, password, role);
-        }
-
-        public void DeleteMerchant(string userName)
-        {
-            AdminDatabase adminD = new AdminDatabase();
-            adminD.DeleteMerchant(userName);
         }
 
         public void UpdateStatusActive(string userName)
