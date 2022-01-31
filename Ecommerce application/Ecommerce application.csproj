@@ -597,6 +597,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ecommerce Icon.ico" />
+    <None Include="Resources\photo_2022-01-30_13-46-42.jpg" />
     <None Include="Resources\Asset 221.png" />
     <None Include="Resources\Asset 182.png" />
     <None Include="Resources\Rectangle 1411.png" />

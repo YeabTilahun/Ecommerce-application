@@ -1474,6 +1474,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap photo_2022_01_30_13_46_42 {
+            get {
+                object obj = ResourceManager.GetObject("photo_2022-01-30_13-46-42", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rectangle_1411 {
             get {
                 object obj = ResourceManager.GetObject("Rectangle 1411", resourceCulture);
