@@ -10,7 +10,6 @@ namespace Ecommerce_application
 {
     class AdminClass
     {
-        string[] id;
 
         public string adminID;
         public string firstName;
@@ -27,11 +26,6 @@ namespace Ecommerce_application
         public AdminClass()
         {
 
-        }
-
-        public AdminClass(string[] id)
-        {
-            this.id = id;
         }
 
         public AdminClass(string adminID, string firstName, string lastName, string sex, string birthday, string phoneNumber, string email, string userName, string password, string role, byte[] photo)
