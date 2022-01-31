@@ -41,7 +41,7 @@
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(5, 189);
+            this.labelName.Location = new System.Drawing.Point(3, 257);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(45, 16);
             this.labelName.TabIndex = 8;
@@ -50,7 +50,7 @@
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
-            this.labelPrice.Location = new System.Drawing.Point(5, 6);
+            this.labelPrice.Location = new System.Drawing.Point(5, 8);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(34, 13);
             this.labelPrice.TabIndex = 5;
@@ -59,10 +59,10 @@
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.BackColor = System.Drawing.Color.Black;
-            this.labelDescription.ForeColor = System.Drawing.Color.White;
-            this.labelDescription.Location = new System.Drawing.Point(5, 122);
-            this.labelDescription.MaximumSize = new System.Drawing.Size(500, 0);
+            this.labelDescription.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.labelDescription.ForeColor = System.Drawing.Color.Black;
+            this.labelDescription.Location = new System.Drawing.Point(34, 127);
+            this.labelDescription.MaximumSize = new System.Drawing.Size(500, 500);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(63, 13);
             this.labelDescription.TabIndex = 6;
@@ -73,7 +73,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(1, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(296, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 247);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -82,7 +82,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(222, 184);
+            this.button1.Location = new System.Drawing.Point(192, 256);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -100,7 +100,7 @@
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MerchantLoadProducts";
-            this.Size = new System.Drawing.Size(297, 211);
+            this.Size = new System.Drawing.Size(291, 282);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

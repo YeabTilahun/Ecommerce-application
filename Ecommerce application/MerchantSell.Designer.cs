@@ -95,7 +95,7 @@ namespace Ecommerce_application
             this.addPhoto.BackColor = System.Drawing.SystemColors.Control;
             this.addPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPhoto.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.addPhoto.Location = new System.Drawing.Point(661, 258);
+            this.addPhoto.Location = new System.Drawing.Point(662, 302);
             this.addPhoto.Name = "addPhoto";
             this.addPhoto.Size = new System.Drawing.Size(99, 24);
             this.addPhoto.TabIndex = 125;
@@ -109,7 +109,7 @@ namespace Ecommerce_application
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(747, 353);
+            this.button4.Location = new System.Drawing.Point(747, 384);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(96, 25);
             this.button4.TabIndex = 8;
@@ -174,7 +174,7 @@ namespace Ecommerce_application
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(577, 353);
+            this.button1.Location = new System.Drawing.Point(577, 384);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 25);
             this.button1.TabIndex = 7;
@@ -187,9 +187,9 @@ namespace Ecommerce_application
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_1353;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(577, 72);
+            this.pictureBox1.Location = new System.Drawing.Point(577, 73);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 247);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 277);
             this.pictureBox1.TabIndex = 115;
             this.pictureBox1.TabStop = false;
             // 
@@ -261,6 +261,7 @@ namespace Ecommerce_application
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(211, 21);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // textBox4

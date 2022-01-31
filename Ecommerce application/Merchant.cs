@@ -15,7 +15,7 @@ namespace Ecommerce_application
     public partial class Merchant : Form
     {
         //OUR OWN PERSONAL STATIC DATAGRIDVIEW
-        public static  DataGridView dataGridView2 = new DataGridView();
+        public static DataGridView dataGridView2 = new DataGridView();
         public static string name;
         public Merchant(string userName)
         {
@@ -35,7 +35,7 @@ namespace Ecommerce_application
         //INSTANTIATING OBJECTS TO USE THEM WHEN SPECIFIC TABS PRESSED
         MerchantSell n = new MerchantSell();
         MerchantHome k = new MerchantHome();
-        
+
 
         //WHEN BUY PRODUCT PRESSED...THIS MAKES IT STREACHED SO THAT CART IS VISIBLE
         public void buySize()
@@ -74,7 +74,7 @@ namespace Ecommerce_application
             check();
 
             //To display home page first every time merchat account looged in
-            button12_Click( sender, e);
+            button12_Click(sender, e);
 
             //TO REMOVE HOVER PROPERTY FOR SIDE AND CART BUTTONS
             button6.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -115,73 +115,16 @@ namespace Ecommerce_application
         //METHOD TO check if the user is allowed to sell products
         public void check()
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
-            try
-            {
-                using (SqlConnection con = new SqlConnection(constr))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("Select status from merchant where merchantName=@user", con);
-                    cmd.Parameters.AddWithValue("@user", Merchant.name);
-                    SqlDataReader da = cmd.ExecuteReader();
-                    while (da.Read())
-                    {
-                        string check = da.GetValue(0).ToString();
-                        if (check == "Active" || check == "active")
-                        {
-                            button5.Enabled = true;
-                            button3.Enabled = true;
-                        }
-                        else if (check == "Inprogress" || check == "inprogress")
-                        {
-                            MessageBox.Show("Your Seller's Permit is under review so you can't add products to sell but you can buy products. Thank you for your patience!");
-                        }
-
-                        else
-                        {
-                            MessageBox.Show("Your Seller's Permit is rejected");
-                        }
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            string check = null;
+            MerchantClass a = new MerchantClass();
+            check = a.check();
         }
 
         //Fetch information about merchant from database and assign it to my profile page
         public void loadMyProfile()
         {
-            MerchantProfile1 m = new MerchantProfile1();
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
-            try
-            {
-                using (SqlConnection con = new SqlConnection(constr))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("Select fname,lname,birthday,email,userName,photo from merchant where merchantName=@user", con);
-                    cmd.Parameters.AddWithValue("@user", Merchant.name);
-                    SqlDataReader da = cmd.ExecuteReader();
-                    while (da.Read())
-                    {
-                        m.fnameBox.Text = da.GetValue(0).ToString();
-                        m.lnameBox.Text = da.GetValue(1).ToString();
-                        m.birthdayBox.Value = Convert.ToDateTime(da.GetValue(2).ToString());
-                        m.emailBox.Text = da.GetValue(3).ToString();
-                        m.usernameBox.Text = da.GetValue(4).ToString();
-
-                        byte[] photo = (byte[])da.GetValue(5);
-                        MemoryStream ms = new MemoryStream(photo);
-                        m.profileImage.Image = Image.FromStream(ms);
-                    }
-                    con.Close();
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            MerchantClass a = new MerchantClass();
+            a.loadMyProfile();
         }
 
         //To show Buy interface..we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
@@ -267,9 +210,9 @@ namespace Ecommerce_application
 
         //
 
+        // Restore window
         public Point oldLoc;
         public Size oldSize;
-        // Restore window
         private void button10_Click(object sender, EventArgs e)
         {
             this.Location = oldLoc;
@@ -288,11 +231,11 @@ namespace Ecommerce_application
             this.Size = new Size(x, y);
             button10.BringToFront();
         }
-        
+
         //WHEN LOGOUT CLICKED FROM THE MENU
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Teleqwa Suq", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (res == DialogResult.Yes)
             {
                 this.Hide();
@@ -360,10 +303,10 @@ namespace Ecommerce_application
                 sum += Convert.ToDouble(dataGridView2.Rows[i].Cells[1].Value);
             }
             //total.Text = string.Format("${0}", sum.ToString());
-            total.Text =sum.ToString();
+            total.Text = sum.ToString();
         }
 
-       
+
         //EVERYTIME NEW ROW IS ADDED TOTAL WILL BE UPDATED 
         private void dataGridView2_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -379,7 +322,7 @@ namespace Ecommerce_application
         private void button8_Click(object sender, EventArgs e)
         {
             MerchantClass a = new MerchantClass();
-            a.transaction(total);
+            a.transaction();
         }
     }
 }

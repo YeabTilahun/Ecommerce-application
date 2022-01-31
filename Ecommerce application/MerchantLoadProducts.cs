@@ -27,7 +27,7 @@ namespace Ecommerce_application
         }
      public MerchantLoadProducts()
         {
-
+           
         }
         //PROPERT FOR THE USER CONTROL
         private string name;
@@ -55,7 +55,7 @@ namespace Ecommerce_application
             get { return category; }
             set
             {
-                name = value;
+                category = value;
             }
         }
         public string productid
@@ -104,7 +104,6 @@ namespace Ecommerce_application
             Merchant.dataGridView2.Columns.Add("cat", "category");
 
             Merchant.dataGridView2.Columns["id"].Visible = false;
-           // Merchant.dataGridView2.Columns["category"].Visible = false;
 
             Merchant.dataGridView2.Rows.Add(name, price, productID);
         }

@@ -28,13 +28,13 @@ namespace Ecommerce_application
 
         }
 
-        public MerchantClass(string name, string price, string quantity, string category, string desc, string date, string stamp, byte[] photo,string user)
+        public MerchantClass(string name, string price, string quantity, string category, string desc, string date, string stamp, byte[] photo, string user)
         {
             this.productName = name;
             this.price = price;
             this.quantity = quantity;
             this.category = category;
-            this.description= desc;
+            this.description = desc;
             this.exDate = date;
             this.stamp = stamp;
             this.photo = photo;
@@ -44,8 +44,8 @@ namespace Ecommerce_application
         //ADD PRODUCTS
         public void Add()
         {
-            MerchantDatabase sell = new MerchantDatabase();
-            sell.AddProduct(this);
+            MerchantDatabase md = new MerchantDatabase();
+            md.AddProduct(this);
 
         }
 
@@ -64,13 +64,6 @@ namespace Ecommerce_application
 
         }
 
-        //GET MY PRODUCT
-        public void Getproduct(string id)
-        {
-            MerchantDatabase sell = new MerchantDatabase();
-           // sell.Getproduct(user);
-
-        }
 
         //GET ITEMS ACCORDING TO THE SELECTED CATEGORY
         public DataTable Selected_Cat(string category)
@@ -81,11 +74,89 @@ namespace Ecommerce_application
         }
 
         //Add transaction when buy clicked in the cart
-        public void transaction(Label a)
+        public void transaction()
         {
             MerchantDatabase sell = new MerchantDatabase();
             //sell.array();
-            sell.Transaction1(a);
+            sell.Transaction1();
         }
+
+        //check if merchant is valid or not
+        public string check()
+        {
+            string check = null;
+
+            MerchantDatabase a = new MerchantDatabase();
+            check = a.check();
+
+            return check;
+        }
+
+
+        //Fetch information about merchant from database and assign it to my profile page
+        public void loadMyProfile()
+        {
+            MerchantDatabase a = new MerchantDatabase();
+            a.loadMyProfile();
+        }
+
+        //display all products in datatbase
+        public DataTable PopulateItem()
+        {
+            MerchantDatabase a = new MerchantDatabase();
+            DataTable dt = a.PopulateItem();
+            return dt;
+        }
+
+        //GET MY PRODUCT
+        public DataTable Getproduct(string user)
+        {
+            MerchantDatabase a = new MerchantDatabase();
+            DataTable dt = a.Getproduct(user);
+            return dt;
+        }
+
+        //method that search the database 
+        public DataTable search(string key)
+        {
+            DataTable dt = null;
+            MerchantDatabase a = new MerchantDatabase();
+            dt = a.search(key);
+            return dt;
+        }
+
+        // Get the catagories that are available in the database
+        public string[] GetCategory()
+        {
+            string[] cat = null;
+            MerchantDatabase md = new MerchantDatabase();
+            cat = md.GetCategory();
+            return cat;
+        }
+
+        //Fetch old password nd return to check from the entered password
+        public string GetOldPassword(string user)
+        {
+            string pass = null;
+            MerchantDatabase md = new MerchantDatabase();
+            pass = md.GetOldPassword(user);
+
+            return pass;
+        }
+
+        //This will update the password if called
+        public void UpdatePassword(string pass)
+        {
+            MerchantDatabase md = new MerchantDatabase();
+            md.UpdatePassword(pass);
+        }
+
+        //This will update merchant database information when called
+        public void UpdateProfile()
+        {
+            MerchantDatabase md = new MerchantDatabase();
+            md.UpdateProfile();
+        }
+
     }
 }

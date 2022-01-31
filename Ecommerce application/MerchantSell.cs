@@ -60,16 +60,22 @@ namespace Ecommerce_application
                 ms.SetLength(0);
 
                 //TRANSFERING THE DATA TO LAYER 2 (MERCHANTCLASS) FROM THE FEILDS
-                MerchantClass sell = new MerchantClass(textBox5.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text, expDate, now, photo, userName);
-                sell.Add();
+                MerchantClass mc = new MerchantClass(textBox5.Text, textBox2.Text, textBox3.Text, comboBox1.Text, textBox4.Text, expDate, now, photo, userName);
+                mc.Add();
 
                 //AFTER PRODUCT ADDED SUCESSFULLY THE FIELDS WILL BE CLEARD
                 textBox5.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
-                comboBox1.Text = "";
                 textBox4.Clear();
-   
+                pictureBox1.BackgroundImage.Dispose();
+                pictureBox1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_1353;
+
+                if (!comboBox1.Items.Contains(""))
+                {
+                    comboBox1.Items.Add("");
+                }
+                comboBox1.Text = "";
                 //INSTANTIATING MERCHANT WILL UPDATE THE PRODUCTS IN BUY AFTER NEW PRODUCT ADDED
                 Merchant m = new Merchant();
             }
@@ -110,6 +116,12 @@ namespace Ecommerce_application
                 textBox4.Location = new Point(117, 245);
                 label3.Location = new Point(31, 252);
             }
+        }
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            if (comboBox1.Items.Contains(""))
+                comboBox1.Items.Remove("");
         }
     }
 }

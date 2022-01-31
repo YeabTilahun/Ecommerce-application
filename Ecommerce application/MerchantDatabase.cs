@@ -8,6 +8,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections;
+using System.IO;
 
 namespace Ecommerce_application
 {
@@ -15,14 +16,20 @@ namespace Ecommerce_application
     {
         public void connection()
         {
-          
+
 
         }
-        string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
+        MerchantBuy mb = new MerchantBuy();
+        Merchant m = new Merchant();
+        MerchantSell ms = new MerchantSell();
+        MerchantChangePassword mcp = new MerchantChangePassword();
+        MerchantProfile1 mp = new MerchantProfile1();
+        MerchantHome mh = new MerchantHome();
 
         //Add Product
         public void AddProduct(MerchantClass sell)
         {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
             try
             {
                 using (SqlConnection con = new SqlConnection(constr))
@@ -59,6 +66,7 @@ namespace Ecommerce_application
         //Delete Product
         public void Delete(String id)
         {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             try
             {
                 using (SqlConnection con = new SqlConnection(constr))
@@ -87,6 +95,7 @@ namespace Ecommerce_application
         //Update Product
         public void UpdateProduct(MerchantClass sell)
         {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             try
             {
                 using (SqlConnection con = new SqlConnection(constr))
@@ -96,7 +105,7 @@ namespace Ecommerce_application
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@name", sell.productName);
                     cmd.Parameters.AddWithValue("@price", sell.price);
-                    cmd.Parameters.AddWithValue("@quantity",sell.quantity);
+                    cmd.Parameters.AddWithValue("@quantity", sell.quantity);
                     cmd.Parameters.AddWithValue("@category", sell.category);
                     cmd.Parameters.AddWithValue("@description", sell.description);
                     cmd.Parameters.AddWithValue("@expireDate", sell.exDate);
@@ -107,7 +116,7 @@ namespace Ecommerce_application
                     if (rowAffected > 0)
                     {
                         MessageBox.Show("Product Updated Sucessfully!");
-       
+
                     }
                     else
                         MessageBox.Show("Failed! Please try again");
@@ -123,6 +132,7 @@ namespace Ecommerce_application
         //GET ITEMS ACCORDING TO THE SELECTED CATEGORY
         public DataTable Selected_Cat(string category)
         {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             DataTable dt = null;
             try
             {
@@ -210,7 +220,7 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
-           // cat = new string[cate.Count];
+            // cat = new string[cate.Count];
 
             cat = (string)cate.Dequeue();
 
@@ -221,17 +231,16 @@ namespace Ecommerce_application
             qty = (string)Qty.Dequeue();
         }
 
-        //Add traansaction information when buy clicked
-       
-        public void Transaction1(Label tot)
-        {
+        //Add transaction information when buy clicked
 
+        public void Transaction1()
+        {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             MerchantLoadProducts a = new MerchantLoadProducts();
             MerchantClass b = new MerchantClass();
             Dictionary<string, int> column_Counts = GetCountOfValues("id");
             string now = DateTime.Now.ToShortDateString();
             int rowAffected = 0;
-            // float total = float.Parse(tot.Text, CultureInfo.InvariantCulture.NumberFormat);
             foreach (KeyValuePair<string, int> kvp in column_Counts)
             { }
             try
@@ -249,7 +258,7 @@ namespace Ecommerce_application
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@user_name", Merchant.name);
                         cmd.Parameters.AddWithValue("@productID", Merchant.dataGridView2.Rows[i].Cells["id"].Value);
-                        
+
                         cmd.Parameters.AddWithValue("@totalPrice", price1);
                         cmd.Parameters.AddWithValue("@category", cat);
                         cmd.Parameters.AddWithValue("@date", now);
@@ -271,52 +280,221 @@ namespace Ecommerce_application
                 MessageBox.Show(ex.Message);
             }
         }
-    }
-}
-/*        public void Transaction(Label tot)
+
+        //check if merchant is valid or not
+        public string check()
         {
 
-            MerchantLoadProducts a = new MerchantLoadProducts();
-            MerchantClass b = new MerchantClass();
-            Dictionary<string, int> column_Counts = GetCountOfValues("id");
-            string now = DateTime.Now.ToShortDateString();
-            // float total = float.Parse(tot.Text, CultureInfo.InvariantCulture.NumberFormat);
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            string check = null;
             try
             {
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("spTransaction", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    
-
-                    foreach (KeyValuePair<string, int> kvp in column_Counts)
+                    SqlCommand cmd = new SqlCommand("Select status from merchant where merchantName=@user", con);
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
+                    SqlDataReader da = cmd.ExecuteReader();
+                    while (da.Read())
                     {
-                    cmd.Parameters.AddWithValue("@user_name", Merchant.name);
-                    cmd.Parameters.AddWithValue("@productID", kvp.Key);
-                    cmd.Parameters.AddWithValue("@quantity", kvp.Value);
-                       // for (int i = 0; i < price1.Length; i++)
-                       // {
-                            cmd.Parameters.AddWithValue("@totalPrice", price1[1]);
-                       // }
-
-                       // for (int i = 0; i < cat.Length; i++)
-                        //{
-                        cmd.Parameters.AddWithValue("@category", cat[1]);
-                     //   }
-
-                    cmd.Parameters.AddWithValue("@date",now);
+                        check = da.GetValue(0).ToString();
                     }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return check;
+        }
 
+        //Fetch information about merchant from database and assign it to my profile page
+        public void loadMyProfile()
+        {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Select fname,lname,birthday,email,userName,photo from merchant where merchantName=@user", con);
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
+                    SqlDataReader da = cmd.ExecuteReader();
+                    while (da.Read())
+                    {
+
+                        mp.fnameBox.Text = da.GetValue(0).ToString();
+                        mp.lnameBox.Text = da.GetValue(1).ToString();
+                        mp.birthdayBox.Value = Convert.ToDateTime(da.GetValue(2).ToString());
+                        mp.emailBox.Text = da.GetValue(3).ToString();
+                        mp.usernameBox.Text = da.GetValue(4).ToString();
+
+                        byte[] photo = (byte[])da.GetValue(5);
+                        MemoryStream ms = new MemoryStream(photo);
+                        mp.profileImage.Image = Image.FromStream(ms);
+                    }
+                    con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //display all products in datatbase
+        public DataTable PopulateItem()
+        {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            DataTable dt = null;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spLoad_data", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    dt = ds.Tables["tblProduct"];
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        //get products added by the user
+        public DataTable Getproduct(String user)
+        {
+            DataTable dt = null;
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    // mb.panelBuy.Controls.Clear();
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetMyProduct", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@name", user);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProduct");
+                    dt = ds.Tables["tblProduct"];
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        //method that search the database 
+        public DataTable search(string key)
+        {
+            DataTable dt = null;
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand sqlCmd = new SqlCommand("Exec spSearch @search", con);
+                    sqlCmd.Parameters.AddWithValue("@search", key);
+                    SqlDataReader reader = sqlCmd.ExecuteReader();
+                    dt = new DataTable();
+                    dt.Load(reader);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        // Get the catagories that are available in the database
+        public string [] GetCategory()
+        {
+            string[] category = null;
+            try
+            {
+                string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+                SqlConnection con = new SqlConnection(constr);
+                SqlDataAdapter da = new SqlDataAdapter("spGetCategory", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblCategory");
+                DataTable dt = ds.Tables["tblCategory"];
+                category = new string[dt.Rows.Count];
+                DataRow row;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    row = dt.Rows[i];
+                    category[i] = row["category"].ToString();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return category;
+        }
+
+        //Fetch old password nd return to check from the entered password
+        public string GetOldPassword(string user)
+        {
+            string old_pass = null;
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetPassword", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@name", user);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblpass");
+                    DataTable dt = ds.Tables["tblpass"];
+                    old_pass = dt.Rows[0]["name"].ToString();
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return old_pass;
+        }
+
+        //This will update the password if called
+        public void UpdatePassword(string pass)
+        {
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spUpdatePassword", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pass", pass);
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
                     {
-                        MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
-                        MessageBox.Show("Thank you for using our application!");
+                        MessageBox.Show("Password reset!");
+
                     }
                     else
-                        MessageBox.Show("Something is wrong with our server please restart the application.");
+                        MessageBox.Show("Failed! Please try again");
                 }
             }
             catch (SqlException ex)
@@ -324,14 +502,49 @@ namespace Ecommerce_application
                 MessageBox.Show(ex.Message);
             }
 
-            *//*Merchant.dataGridView2.Columns.Add("name", "Product Name");
-            Merchant.dataGridView2.Columns.Add("Price", "Price");
-            for (int i = 0; i < Merchant.dataGridView2.Rows.Count; i++)
+        }
+
+        //This will update merchant database information when called
+        public void UpdateProfile()
+        {
+            try
             {
-                Merchant.dataGridView2.Rows.Add(GetCountOfValues("Product Name"), GetCountOfValues("Price"));
+                string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+                MerchantProfile1 mp = new MerchantProfile1();
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spUpdateMerchantProfile", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    MemoryStream ms = new MemoryStream();
+                    mp.profileImage.BackgroundImage.Save(ms, mp.profileImage.BackgroundImage.RawFormat);
+                    byte[] Photo = ms.ToArray();
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
+                    cmd.Parameters.AddWithValue("@fname", mp.fnameBox.Text);
+                    cmd.Parameters.AddWithValue("@lname", mp.lnameBox.Text);
+                    cmd.Parameters.AddWithValue("@birthday", mp.birthdayBox.Value);
+                    cmd.Parameters.AddWithValue("@email", mp.emailBox.Text);
+                    cmd.Parameters.AddWithValue("@username", mp.usernameBox.Text);
+                    cmd.Parameters.AddWithValue("@phone", mp.phoneBox.Text);
+                    cmd.Parameters.AddWithValue("@photo", Photo);
+                    int rowAffected = cmd.ExecuteNonQuery();
+
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Saved!");
+
+                    }
+                    else
+                        MessageBox.Show("Nothing changed!");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
-            Dictionary<string, int> column_Counts = GetCountOfValues("id");
-            foreach (KeyValuePair<string, int> kvp in column_Counts) { Merchant.textBox1.Text += string.Format("Key = {0}, Value = {1}", kvp.Key, kvp.Value); }*//*
+        }//select fname,lname,birthday,email,
 
-        }*/
+    }
+}
