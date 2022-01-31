@@ -24,9 +24,7 @@ namespace Ecommerce_application
         private string price;
         private string description;
         private byte[] pic;
-        private string category;
-        //Home home = new Home();
-        private string productID;
+        Home home = new Home();
 
         //For the product's Name
         [Category("Custom Props")]
@@ -68,25 +66,6 @@ namespace Ecommerce_application
             }
         }
 
-        public string cat
-        {
-            get { return category; }
-            set
-            {
-                category = value;
-            }
-        }
-
-        public string productid
-        {
-            get { return productID; }
-            set
-            {
-                productID = value;
-
-            }
-        }
-
         private void labelDescription_MouseEnter(object sender, EventArgs e)
         {
            
@@ -100,15 +79,10 @@ namespace Ecommerce_application
         //To Load The Selected Product On The Cart dataGridView
         private void button1_Click(object sender, EventArgs e)
         {
-            //home.buySize();
+            home.buySize();
             Home.dataGridView1.Columns.Add("name", "Product Name");
             Home.dataGridView1.Columns.Add("Price", "Price");
-            //Home.dataGridView1.Rows.Add(name, price);
-            Home.dataGridView1.Columns.Add("id", "Product ID");
-            Home.dataGridView1.Columns.Add("cat", "category");
-
-            Home.dataGridView1.Columns["id"].Visible = false;
-            Home.dataGridView1.Rows.Add(name, price, productID);
+            Home.dataGridView1.Rows.Add(name, price);
         }
 
         

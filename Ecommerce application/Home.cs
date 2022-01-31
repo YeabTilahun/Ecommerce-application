@@ -15,7 +15,6 @@ namespace Ecommerce_application
 {
     public partial class Home : Form
     {
-
         NewHomeDatabase newD = new NewHomeDatabase();
         public static DataGridView dataGridView1 = new DataGridView();
         Connection connect = new Connection();
@@ -54,8 +53,6 @@ namespace Ecommerce_application
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
                         a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
-                a[i].productid = dt.Rows[i]["productid"].ToString();
-                a[i].cat = dt.Rows[i]["category"].ToString();
                 a[i].button1.Click += new EventHandler(btnClick); 
                         if (flowLayoutPanel1.Controls.Count < 0)
                             flowLayoutPanel1.Controls.Clear();
@@ -114,17 +111,16 @@ namespace Ecommerce_application
 
         private void button5_Click(object sender, EventArgs e)
         {
-            SignIn l = new SignIn();
+            Login l = new Login();
             flowLayoutPanel1.Controls.Clear();
             l.Dock = DockStyle.Fill;
-            //flowLayoutPanel1.Controls.Add(l.panel1);
+            flowLayoutPanel1.Controls.Add(l.panel1);
             flowLayoutPanel1.Show();
             flowLayoutPanel1.BringToFront();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
             NewSignUp newsu = new NewSignUp();
             flowLayoutPanel1.Controls.Clear();
             newsu.Dock = DockStyle.Fill;
@@ -135,10 +131,10 @@ namespace Ecommerce_application
 
         private void button7_Click(object sender, EventArgs e)
         {
-            newD.PopulateItem();
-            Home h = new Home();
+           Home h = new Home();
             flowLayoutPanel1.Controls.Clear();
             h.Dock = DockStyle.Fill;
+            newD.PopulateItem();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -281,8 +277,8 @@ namespace Ecommerce_application
         {
             if (dataGridView1.Rows.Count != 0)
             {
-                NewHomeClass a = new NewHomeClass();
-                a.Transaction();
+                SignIn sIn = new SignIn();
+                sIn.Show();
             }
             else
             {

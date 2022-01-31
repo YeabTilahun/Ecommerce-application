@@ -4,7 +4,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Ecommerce_application
 {
@@ -20,9 +19,6 @@ namespace Ecommerce_application
         public string Phone;
         public string Email;
         public byte[] photo;
-        public string price;
-        public string quantity;
-        public string description;
         private string text1;
         private string text2;
         private string text3;
@@ -35,7 +31,7 @@ namespace Ecommerce_application
             Pname = "";
         }
 
-        public NewHomeClass(string id, string firstname, string lastname, string username, string password, string phone, string email, byte[] photo, string price, string productname, string quantity, string category)
+        public NewHomeClass(string id, string firstname, string lastname, string username, string password, string phone, string email, byte[] photo)
         {
             this.id = id;
             this.FirstName = firstname;
@@ -45,10 +41,6 @@ namespace Ecommerce_application
             this.Phone = phone;
             this.Email = email;
             this.photo = photo;
-            this.Pname = productname;
-            this.price = price;
-            this.quantity = quantity;
-            this.category = category;
         }
 
         public NewHomeClass(string id, string text1, string text2, string text3, object text4, byte[] photo) //: this(id)
@@ -90,12 +82,6 @@ namespace Ecommerce_application
             NewHomeDatabase homeD = new NewHomeDatabase();
             DataTable dt = homeD.CustomerProductCategory(category, Pname);
             return dt;
-        }
-
-        public void Transaction()
-        {
-            NewHomeDatabase buy = new NewHomeDatabase();
-            buy.Transaction();
         }
     }
 }
