@@ -254,7 +254,7 @@ namespace Ecommerce_application
                         MessageBox.Show("Thank you for using our application!");
                     }
                     else
-                        MessageBox.Show("Something is wrong with our server please restart the application.");
+                        MessageBox.Show("You don't have any product to buy");
                 }
             }
             catch (SqlException ex)

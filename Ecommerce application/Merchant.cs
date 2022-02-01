@@ -323,6 +323,7 @@ namespace Ecommerce_application
         {
             MerchantClass a = new MerchantClass();
             a.transaction();
+            dataGridView2.Rows.Clear();
         }
     }
 }
