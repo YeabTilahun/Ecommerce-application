@@ -17,6 +17,7 @@ namespace Ecommerce_application
     {
         NewHomeDatabase newD = new NewHomeDatabase();
         public static DataGridView dataGridView1 = new DataGridView();
+        public string name;
         Connection connect = new Connection();
         string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
         int a = Screen.PrimaryScreen.WorkingArea.Width;
@@ -111,6 +112,7 @@ namespace Ecommerce_application
 
         private void button5_Click(object sender, EventArgs e)
         {
+            resize();
             Login l = new Login();
             flowLayoutPanel1.Controls.Clear();
             l.Dock = DockStyle.Fill;
@@ -121,6 +123,7 @@ namespace Ecommerce_application
 
         private void button6_Click(object sender, EventArgs e)
         {
+            resize();
             NewSignUp newsu = new NewSignUp();
             flowLayoutPanel1.Controls.Clear();
             newsu.Dock = DockStyle.Fill;
@@ -131,10 +134,26 @@ namespace Ecommerce_application
 
         private void button7_Click(object sender, EventArgs e)
         {
-           //Home h = new Home();
+            DataTable dt = newD.PopulateItem();
+            //Home h = new Home();
             flowLayoutPanel1.Controls.Clear();
-            //h.Dock = DockStyle.Fill;
-            newD.PopulateItem();
+            //newD.PopulateItem();
+            //Dock = DockStyle.Fill;
+            LoadItems[] a = new LoadItems[dt.Rows.Count];
+            resize();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                a[i] = new LoadItems();
+                a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                a[i].Name = dt.Rows[i]["name"].ToString();
+                a[i].Description = dt.Rows[i]["description"].ToString();
+                a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
+                a[i].button1.Click += new EventHandler(btnClick);
+                if (flowLayoutPanel1.Controls.Count < 0)
+                    flowLayoutPanel1.Controls.Clear();
+                else
+                    flowLayoutPanel1.Controls.Add(a[i]);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -374,6 +393,42 @@ namespace Ecommerce_application
             //this.WindowState = FormWindowState.Maximized;
             button2.BringToFront();
             //panel;
+        }
+
+        private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resize();
+            CustomerProfile a = new CustomerProfile();
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.Controls.Add(a.panel1);
+            flowLayoutPanel1.Show();
+            flowLayoutPanel1.BringToFront();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resize();
+            MerchantChangePassword a = new MerchantChangePassword();
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.Controls.Add(a.panel1);
+            flowLayoutPanel1.Show();
+            flowLayoutPanel1.BringToFront();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Teleqwa Suq", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (res == DialogResult.Yes)
+            {
+                this.Hide();
+                new SignIn().ShowDialog();
+                this.Close();
+
+            }
+            if (res == DialogResult.No)
+            {
+
+            }
         }
     }
 }
