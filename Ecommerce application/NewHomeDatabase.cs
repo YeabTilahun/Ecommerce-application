@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -262,7 +263,7 @@ namespace Ecommerce_application
 
         public void Transaction()
         {
-
+            Home h = new Home();
             LoadItems l = new LoadItems();
             NewHomeClass newHome = new NewHomeClass();
             Dictionary<string, int> column_counts = GetCount("id");
@@ -279,7 +280,7 @@ namespace Ecommerce_application
                     {
                         array(Home.dataGridView1.Rows[i].Cells["id"].Value.ToString());
                         cmd = new SqlCommand("spTransaction", con);
-                        //cmd.Parameters.AddWithValue("@user_name", Home.name);
+                        cmd.Parameters.AddWithValue("@user_name", h.name);
                         cmd.Parameters.AddWithValue("@productID", Home.dataGridView1.Rows[i].Cells["id"].Value);
 
                         cmd.Parameters.AddWithValue("@totalPrice", price1);
@@ -302,6 +303,103 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void UpdateProfile()
+        {
+            try
+            {
+                CustomerProfile cp = new CustomerProfile();
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spUpdateMerchantProfile", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    MemoryStream ms = new MemoryStream();
+                    cp.pictureBoxProfile.BackgroundImage.Save(ms, cp.pictureBoxProfile.BackgroundImage.RawFormat);
+                    byte[] Photo = ms.ToArray();
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
+                    cmd.Parameters.AddWithValue("@fname", cp.txtCustFirstName.Text);
+                    cmd.Parameters.AddWithValue("@lname", cp.txtCustLastName.Text);
+                    //cmd.Parameters.AddWithValue("@birthday", cp.birthdayBox.Value);
+                    cmd.Parameters.AddWithValue("@username", cp.txtCustUserName.Text);
+                    cmd.Parameters.AddWithValue("@email", cp.txtCustEmail.Text);
+                    cmd.Parameters.AddWithValue("@phone", cp.txtCustPhoneNumber.Text);
+                    cmd.Parameters.AddWithValue("@photo", Photo);
+                    int rowAffected = cmd.ExecuteNonQuery();
+
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Saved!");
+
+                    }
+                    else
+                        MessageBox.Show("Nothing changed!");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public string GetOldPassword(string user)
+        {
+            string old_pass = null;
+            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetPassword", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@name", user);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblpass");
+                    DataTable dt = ds.Tables["tblpass"];
+                    old_pass = dt.Rows[0]["name"].ToString();
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return old_pass;
+        }
+
+
+        public void UpdatePassword(string pass)
+        {
+            Home h = new Home();
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spUpdatePassword", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pass", pass);
+                    cmd.Parameters.AddWithValue("@user", h.name);
+                    int rowAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Password reset!");
+
+                    }
+                    else
+                        MessageBox.Show("Failed! Please try again");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

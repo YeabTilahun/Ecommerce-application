@@ -11,8 +11,12 @@ namespace Ecommerce_application
     {
         public SqlConnection CreateConnection()
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            /*string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             SqlConnection con = new SqlConnection(constr);
+            return con;*/
+
+            string connect = "Server = LAPTOP-RS59N8IM; Database = Ecommerce; Integrated Security = true;";
+            SqlConnection con = new SqlConnection(connect);
             return con;
         }
     }

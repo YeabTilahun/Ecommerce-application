@@ -22,10 +22,11 @@ namespace Ecommerce_application
         public string price;
         public string quantity;
         public string description;
-        private string text1;
+        public string user;
+       /* private string text1;
         private string text2;
         private string text3;
-        private object text4;
+        private object text4;*/
 
         public NewHomeClass()
         {
@@ -34,7 +35,7 @@ namespace Ecommerce_application
             Pname = "";
         }
 
-        public NewHomeClass(string id, string firstname, string lastname, string username, string password, string phone, string email, byte[] photo, string price, string productname, string quantity, string category)
+        public NewHomeClass(string id, string firstname, string lastname, string username, string password, string phone, string email, byte[] photo, string price, string productname, string quantity, string category, string user)
         {
             this.id = id;
             this.FirstName = firstname;
@@ -48,16 +49,17 @@ namespace Ecommerce_application
             this.price = price;
             this.quantity = quantity;
             this.category = category;
+            this.user = user;
         }
 
-        public NewHomeClass(string id, string text1, string text2, string text3, object text4, byte[] photo) //: this(id)
+        /*public NewHomeClass(string id, string text1, string text2, string text3, object text4, byte[] photo) //: this(id)
         {
             this.text1 = text1;
             this.text2 = text2;
             this.text3 = text3;
             this.text4 = text4;
             this.photo = photo;
-        }
+        }*/
 
         public void SaveUser()
         {
@@ -95,6 +97,27 @@ namespace Ecommerce_application
         {
             NewHomeDatabase buy = new NewHomeDatabase();
             buy.Transaction();
+        }
+
+        public void UpdateProfile()
+        {
+            NewHomeDatabase nhd = new NewHomeDatabase();
+            nhd.UpdateProfile();
+        }
+
+        public string GetOldPassword(string user)
+        {
+            string pass = null;
+            NewHomeDatabase nhd = new NewHomeDatabase();
+            pass = nhd.GetOldPassword(user);
+
+            return pass;
+        }
+
+        public void UpdatePassword(string pass)
+        {
+            NewHomeDatabase nhd = new NewHomeDatabase();
+            nhd.UpdatePassword(pass);
         }
     }
 }
