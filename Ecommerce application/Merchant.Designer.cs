@@ -317,7 +317,7 @@ namespace Ecommerce_application
             this.panel3.Controls.Add(this.button5);
             this.panel3.Location = new System.Drawing.Point(0, -8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(168, 695);
+            this.panel3.Size = new System.Drawing.Size(168, 683);
             this.panel3.TabIndex = 0;
             // 
             // button3

@@ -14,25 +14,13 @@ namespace Ecommerce_application
 {
     class MerchantDatabase
     {
-        public void connection()
-        {
-
-
-        }
-        MerchantBuy mb = new MerchantBuy();
-        Merchant m = new Merchant();
-        MerchantSell ms = new MerchantSell();
-        MerchantChangePassword mcp = new MerchantChangePassword();
-        MerchantProfile1 mp = new MerchantProfile1();
-        MerchantHome mh = new MerchantHome();
-
+        Connection connect = new Connection();
         //Add Product
         public void AddProduct(MerchantClass sell)
-        {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true; ";
+        {    
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spInsertProduct", con);
@@ -66,10 +54,9 @@ namespace Ecommerce_application
         //Delete Product
         public void Delete(String id)
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spDeleteProduct", con);
@@ -95,10 +82,9 @@ namespace Ecommerce_application
         //Update Product
         public void UpdateProduct(MerchantClass sell)
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateProduct", con);
@@ -132,11 +118,10 @@ namespace Ecommerce_application
         //GET ITEMS ACCORDING TO THE SELECTED CATEGORY
         public DataTable Selected_Cat(string category)
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
-            DataTable dt = null;
+          DataTable dt = null;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter("spSelected-cat-product", con);
@@ -186,8 +171,6 @@ namespace Ecommerce_application
         static string qty;
         public void array(string id2)
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
-
             Dictionary<string, int> column_Counts = GetCountOfValues("id");
 
             Queue cate = new Queue();
@@ -196,7 +179,7 @@ namespace Ecommerce_application
             Queue Qty = new Queue();
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     foreach (KeyValuePair<string, int> kvp in column_Counts)
                     {
@@ -235,7 +218,6 @@ namespace Ecommerce_application
 
         public void Transaction1()
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             MerchantLoadProducts a = new MerchantLoadProducts();
             MerchantClass b = new MerchantClass();
             Dictionary<string, int> column_Counts = GetCountOfValues("id");
@@ -245,7 +227,7 @@ namespace Ecommerce_application
             { }
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
 
                     con.Open();
@@ -272,7 +254,7 @@ namespace Ecommerce_application
                         MessageBox.Show("Thank you for using our application!");
                     }
                     else
-                        MessageBox.Show("Something is wrong with our server please restart the application.");
+                        MessageBox.Show("You don't have any product to buy");
                 }
             }
             catch (SqlException ex)
@@ -285,11 +267,10 @@ namespace Ecommerce_application
         public string check()
         {
 
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
-            string check = null;
+        string check = null;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("Select status from merchant where merchantName=@user", con);
@@ -311,10 +292,10 @@ namespace Ecommerce_application
         //Fetch information about merchant from database and assign it to my profile page
         public void loadMyProfile()
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
-            try
+            MerchantProfile1 mp = new MerchantProfile1();
+             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("Select fname,lname,birthday,email,userName,photo from merchant where merchantName=@user", con);
@@ -345,11 +326,10 @@ namespace Ecommerce_application
         //display all products in datatbase
         public DataTable PopulateItem()
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             DataTable dt = null;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter("spLoad_data", con);
@@ -370,10 +350,9 @@ namespace Ecommerce_application
         public DataTable Getproduct(String user)
         {
             DataTable dt = null;
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     // mb.panelBuy.Controls.Clear();
                     con.Open();
@@ -396,11 +375,9 @@ namespace Ecommerce_application
         public DataTable search(string key)
         {
             DataTable dt = null;
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
-            try
+           try
             {
-
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand sqlCmd = new SqlCommand("Exec spSearch @search", con);
@@ -423,19 +400,20 @@ namespace Ecommerce_application
             string[] category = null;
             try
             {
-                string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
-                SqlConnection con = new SqlConnection(constr);
-                SqlDataAdapter da = new SqlDataAdapter("spGetCategory", con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataSet ds = new DataSet();
-                da.Fill(ds, "tblCategory");
-                DataTable dt = ds.Tables["tblCategory"];
-                category = new string[dt.Rows.Count];
-                DataRow row;
-                for (int i = 0; i < dt.Rows.Count; i++)
+               using (SqlConnection con = connect.CreateConnection())
                 {
-                    row = dt.Rows[i];
-                    category[i] = row["category"].ToString();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetCategory", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblCategory");
+                    DataTable dt = ds.Tables["tblCategory"];
+                    category = new string[dt.Rows.Count];
+                    DataRow row;
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        row = dt.Rows[i];
+                        category[i] = row["category"].ToString();
+                    }
                 }
             }
             catch (SqlException ex)
@@ -449,10 +427,9 @@ namespace Ecommerce_application
         public string GetOldPassword(string user)
         {
             string old_pass = null;
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
-            try
+           try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
 
                     con.Open();
@@ -476,10 +453,9 @@ namespace Ecommerce_application
         //This will update the password if called
         public void UpdatePassword(string pass)
         {
-            string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdatePassword", con);
@@ -509,9 +485,8 @@ namespace Ecommerce_application
         {
             try
             {
-                string constr = "Server=YEABS;   database=Ecommerce; integrated security=true;";
                 MerchantProfile1 mp = new MerchantProfile1();
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateMerchantProfile", con);
@@ -543,8 +518,6 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }//select fname,lname,birthday,email,
-
+        }
     }
 }
