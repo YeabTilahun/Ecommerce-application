@@ -1574,6 +1574,16 @@ namespace Ecommerce_application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap waitformPic {
+            get {
+                object obj = ResourceManager.GetObject("waitformPic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap white_lines {
             get {
                 object obj = ResourceManager.GetObject("white-lines", resourceCulture);

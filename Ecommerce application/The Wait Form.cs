@@ -23,10 +23,20 @@ namespace Ecommerce_application
         {
             timer1.Start();
         }
-
+        int StartPoint = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panelSlide.Left += 2;
+            MyProgress.Value = 100;
+            StartPoint = StartPoint + 1;
+            if(MyProgress.Value == 1000)
+            {
+                MyProgress.Value = 0;
+                timer1.Stop();
+                Home home = new Home();
+                this.Close();
+                home.Show();
+            }
+           /* panelSlide.Left += 2;
             if(panelSlide.Left > 350)
             {
                 panelSlide.Left = 0;
@@ -34,7 +44,7 @@ namespace Ecommerce_application
             if(panelSlide.Left < 0)
             {
                 move = 2;
-            }
+            }*/
         }
     }
 }
