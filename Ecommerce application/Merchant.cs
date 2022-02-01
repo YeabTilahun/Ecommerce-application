@@ -170,7 +170,7 @@ namespace Ecommerce_application
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         //when the mouse leaves the close window btn will be transparent

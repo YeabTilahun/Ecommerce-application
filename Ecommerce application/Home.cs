@@ -24,12 +24,13 @@ namespace Ecommerce_application
         int b = Screen.PrimaryScreen.WorkingArea.Height;
         public Home()
         {
-            /*Thread trd = new Thread(new ThreadStart(formRun));
+           /* Thread trd = new Thread(new ThreadStart(formRun));
             trd.Start();
-            Thread.Sleep(5000);
-            trd.Abort();*/
+            trd.Task.Delay();*/
             InitializeComponent();
         }
+
+
 
         private void formRun()
         {
