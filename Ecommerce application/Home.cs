@@ -26,8 +26,8 @@ namespace Ecommerce_application
         {
            /* Thread trd = new Thread(new ThreadStart(formRun));
             trd.Start();
-            trd.Task.Delay();
-            InitializeComponent();*/
+            trd.Task.Delay();*/
+            InitializeComponent();
         }
 
 

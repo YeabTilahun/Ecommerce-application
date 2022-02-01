@@ -31,35 +31,16 @@ namespace Ecommerce_application
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(The_Wait_Form));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelSlide = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MyProgress = new System.Windows.Forms.ProgressBar();
-            this.panel1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panelSlide);
-            this.panel1.Location = new System.Drawing.Point(208, 420);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(363, 10);
-            this.panel1.TabIndex = 1;
-            // 
-            // panelSlide
-            // 
-            this.panelSlide.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
-            this.panelSlide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelSlide.Location = new System.Drawing.Point(258, 0);
-            this.panelSlide.Name = "panelSlide";
-            this.panelSlide.Size = new System.Drawing.Size(105, 10);
-            this.panelSlide.TabIndex = 3;
-            // 
             // timer1
             // 
-            this.timer1.Interval = 1;
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox1
@@ -73,13 +54,27 @@ namespace Ecommerce_application
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // MyProgress
             // 
-            this.MyProgress.Location = new System.Drawing.Point(208, 437);
+            this.MyProgress.BackColor = System.Drawing.Color.White;
+            this.MyProgress.Location = new System.Drawing.Point(88, 354);
+            this.MyProgress.Maximum = 1000;
             this.MyProgress.Name = "MyProgress";
-            this.MyProgress.Size = new System.Drawing.Size(363, 12);
+            this.MyProgress.Size = new System.Drawing.Size(146, 12);
+            this.MyProgress.Step = 100;
+            this.MyProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.MyProgress.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(235, 379);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "06456135";
             // 
             // The_Wait_Form
             // 
@@ -87,8 +82,8 @@ namespace Ecommerce_application
             this.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_3851;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(824, 461);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.MyProgress);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -97,17 +92,16 @@ namespace Ecommerce_application
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.The_Wait_Form_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelSlide;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ProgressBar MyProgress;
+        private System.Windows.Forms.Label label1;
     }
 }
