@@ -99,6 +99,12 @@ namespace Ecommerce_application
             buy.Transaction();
         }
 
+        //customer buy
+        public void Transaction(string customer)
+        {
+            MerchantDatabase buy = new MerchantDatabase();
+            buy.Transaction1();
+        }
         public void UpdateProfile()
         {
             NewHomeDatabase nhd = new NewHomeDatabase();
@@ -118,6 +124,13 @@ namespace Ecommerce_application
         {
             NewHomeDatabase nhd = new NewHomeDatabase();
             nhd.UpdatePassword(pass);
+        }
+
+        //Fetch information about merchant from database and assign it to my profile page
+        public void loadMyProfile()
+        {
+            NewHomeDatabase a = new NewHomeDatabase();
+            a.loadMyProfile();
         }
     }
 }

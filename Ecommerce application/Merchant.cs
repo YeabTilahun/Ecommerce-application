@@ -108,7 +108,7 @@ namespace Ecommerce_application
             dataGridView2.ScrollBars = ScrollBars.Vertical;
             dataGridView2.Size = new Size(213, 381);
             dataGridView2.TabIndex = 20;
-            dataGridView2.Visible = true;
+            dataGridView2.Visible = false;
             dataGridView2.RowsAdded += new DataGridViewRowsAddedEventHandler(dataGridView2_RowsAdded);
         }
 

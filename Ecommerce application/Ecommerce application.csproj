@@ -154,6 +154,12 @@
     </Compile>
     <Compile Include="ChangePassword.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="CustomerLoadProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerLoadProduct.Designer.cs">
+      <DependentUpon>CustomerLoadProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeCustomerPassword.resx">
       <DependentUpon>ChangeCustomerPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerLoadProduct.resx">
+      <DependentUpon>CustomerLoadProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPage.resx">
       <DependentUpon>CustomerPage.cs</DependentUpon>

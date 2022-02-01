@@ -136,7 +136,7 @@ namespace Ecommerce_application
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        internal System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxConfirmPass;
         private System.Windows.Forms.TextBox textBoxNewPass;
         private System.Windows.Forms.TextBox textBoxOldPass;

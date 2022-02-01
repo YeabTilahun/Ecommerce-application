@@ -31,21 +31,21 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerProfile));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtCustFirstName = new System.Windows.Forms.TextBox();
-            this.txtCustLastName = new System.Windows.Forms.TextBox();
-            this.txtCustUserName = new System.Windows.Forms.TextBox();
-            this.txtCustEmail = new System.Windows.Forms.TextBox();
-            this.txtCustPhoneNumber = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonChangePicture = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCustPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtCustEmail = new System.Windows.Forms.TextBox();
+            this.txtCustUserName = new System.Windows.Forms.TextBox();
+            this.txtCustLastName = new System.Windows.Forms.TextBox();
+            this.txtCustFirstName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.SuspendLayout();
@@ -72,85 +72,17 @@ namespace Ecommerce_application
             this.panel1.Size = new System.Drawing.Size(797, 619);
             this.panel1.TabIndex = 0;
             // 
-            // txtCustFirstName
+            // linkLabel1
             // 
-            this.txtCustFirstName.Location = new System.Drawing.Point(414, 261);
-            this.txtCustFirstName.Name = "txtCustFirstName";
-            this.txtCustFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustFirstName.TabIndex = 0;
-            // 
-            // txtCustLastName
-            // 
-            this.txtCustLastName.Location = new System.Drawing.Point(414, 312);
-            this.txtCustLastName.Name = "txtCustLastName";
-            this.txtCustLastName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustLastName.TabIndex = 0;
-            // 
-            // txtCustUserName
-            // 
-            this.txtCustUserName.Location = new System.Drawing.Point(414, 366);
-            this.txtCustUserName.Name = "txtCustUserName";
-            this.txtCustUserName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustUserName.TabIndex = 0;
-            // 
-            // txtCustEmail
-            // 
-            this.txtCustEmail.Location = new System.Drawing.Point(414, 417);
-            this.txtCustEmail.Name = "txtCustEmail";
-            this.txtCustEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtCustEmail.TabIndex = 0;
-            // 
-            // txtCustPhoneNumber
-            // 
-            this.txtCustPhoneNumber.Location = new System.Drawing.Point(414, 473);
-            this.txtCustPhoneNumber.Name = "txtCustPhoneNumber";
-            this.txtCustPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtCustPhoneNumber.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 264);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "First Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(302, 315);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Last Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 369);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "User Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(302, 420);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Email";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(302, 476);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Phone Number";
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Red;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(359, 594);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(93, 13);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Change Password";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // buttonCancel
             // 
@@ -205,17 +137,85 @@ namespace Ecommerce_application
             this.pictureBoxProfile.TabIndex = 2;
             this.pictureBoxProfile.TabStop = false;
             // 
-            // linkLabel1
+            // label6
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(359, 594);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(93, 13);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Change Password";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(302, 476);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Phone Number";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(302, 420);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Email";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(302, 369);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "User Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(302, 315);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Last Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(302, 264);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "First Name";
+            // 
+            // txtCustPhoneNumber
+            // 
+            this.txtCustPhoneNumber.Location = new System.Drawing.Point(414, 473);
+            this.txtCustPhoneNumber.Name = "txtCustPhoneNumber";
+            this.txtCustPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtCustPhoneNumber.TabIndex = 0;
+            // 
+            // txtCustEmail
+            // 
+            this.txtCustEmail.Location = new System.Drawing.Point(414, 417);
+            this.txtCustEmail.Name = "txtCustEmail";
+            this.txtCustEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtCustEmail.TabIndex = 0;
+            // 
+            // txtCustUserName
+            // 
+            this.txtCustUserName.Location = new System.Drawing.Point(414, 366);
+            this.txtCustUserName.Name = "txtCustUserName";
+            this.txtCustUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustUserName.TabIndex = 0;
+            // 
+            // txtCustLastName
+            // 
+            this.txtCustLastName.Location = new System.Drawing.Point(414, 312);
+            this.txtCustLastName.Name = "txtCustLastName";
+            this.txtCustLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustLastName.TabIndex = 0;
+            // 
+            // txtCustFirstName
+            // 
+            this.txtCustFirstName.Location = new System.Drawing.Point(414, 261);
+            this.txtCustFirstName.Name = "txtCustFirstName";
+            this.txtCustFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustFirstName.TabIndex = 0;
             // 
             // CustomerProfile
             // 
@@ -243,13 +243,13 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.PictureBox pictureBoxProfile;
-        public System.Windows.Forms.TextBox txtCustPhoneNumber;
-        public System.Windows.Forms.TextBox txtCustEmail;
-        public System.Windows.Forms.TextBox txtCustUserName;
-        public System.Windows.Forms.TextBox txtCustLastName;
-        public System.Windows.Forms.TextBox txtCustFirstName;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        internal System.Windows.Forms.PictureBox pictureBoxProfile;
+        internal System.Windows.Forms.TextBox txtCustPhoneNumber;
+        internal System.Windows.Forms.TextBox txtCustEmail;
+        internal System.Windows.Forms.TextBox txtCustUserName;
+        internal System.Windows.Forms.TextBox txtCustLastName;
+        internal System.Windows.Forms.TextBox txtCustFirstName;
     }
 }

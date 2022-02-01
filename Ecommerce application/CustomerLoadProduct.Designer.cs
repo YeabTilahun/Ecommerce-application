@@ -1,7 +1,7 @@
 ﻿
 namespace Ecommerce_application
 {
-    partial class LoadItems
+    partial class CustomerLoadProduct
     {
         /// <summary> 
         /// Required designer variable.
@@ -42,18 +42,18 @@ namespace Ecommerce_application
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(2, 224);
+            this.labelName.Location = new System.Drawing.Point(5, 224);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(45, 16);
-            this.labelName.TabIndex = 13;
+            this.labelName.TabIndex = 18;
             this.labelName.Text = "Name";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(192, 242);
+            this.button1.Location = new System.Drawing.Point(195, 242);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 17;
             this.button1.Text = "Add To Cart";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -61,10 +61,10 @@ namespace Ecommerce_application
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
-            this.labelPrice.Location = new System.Drawing.Point(5, 7);
+            this.labelPrice.Location = new System.Drawing.Point(8, 7);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(34, 13);
-            this.labelPrice.TabIndex = 10;
+            this.labelPrice.TabIndex = 15;
             this.labelPrice.Text = "Price:";
             // 
             // labelDescription
@@ -72,26 +72,26 @@ namespace Ecommerce_application
             this.labelDescription.AutoSize = true;
             this.labelDescription.BackColor = System.Drawing.Color.WhiteSmoke;
             this.labelDescription.ForeColor = System.Drawing.Color.Black;
-            this.labelDescription.Location = new System.Drawing.Point(34, 126);
+            this.labelDescription.Location = new System.Drawing.Point(37, 126);
             this.labelDescription.MaximumSize = new System.Drawing.Size(500, 500);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(63, 13);
-            this.labelDescription.TabIndex = 11;
+            this.labelDescription.TabIndex = 16;
             this.labelDescription.Text = "Description:";
             this.labelDescription.Visible = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(1, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(266, 218);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
-            // LoadItems
+            // CustomerLoadProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +100,7 @@ namespace Ecommerce_application
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "LoadItems";
+            this.Name = "CustomerLoadProduct";
             this.Size = new System.Drawing.Size(278, 269);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

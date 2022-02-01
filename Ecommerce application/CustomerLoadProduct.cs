@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -12,10 +11,9 @@ using System.Windows.Forms;
 
 namespace Ecommerce_application
 {
-    public partial class LoadItems : UserControl
+    public partial class CustomerLoadProduct : UserControl
     {
-        //A User Control Properties That We Used To Populate the Product in HomeClass
-        public LoadItems()
+        public CustomerLoadProduct()
         {
             InitializeComponent();
         }
@@ -92,14 +90,15 @@ namespace Ecommerce_application
         private void button1_Click(object sender, EventArgs e)
         {
             //home.buySize();
-            Home.dataGridView1.Columns.Add("name", "Product Name");
-            Home.dataGridView1.Columns.Add("Price", "Price");
-            //Home.dataGridView1.Rows.Add(name, price);
-            Home.dataGridView1.Columns.Add("id", "Product ID");
-            Home.dataGridView1.Columns.Add("cat", "category");
+            CustomerPage.dataGridView2.Columns.Add("name", "Product Name");
+            CustomerPage.dataGridView2.Columns.Add("Price", "Price");
+            
 
-            Home.dataGridView1.Columns["id"].Visible = false;
-            Home.dataGridView1.Rows.Add(name, price, productID);
+            CustomerPage.dataGridView2.Columns.Add("id", "Product ID");
+            CustomerPage.dataGridView2.Columns.Add("cat", "category");
+
+            CustomerPage.dataGridView2.Columns["id"].Visible = false;
+            CustomerPage.dataGridView2.Rows.Add(name, price, productID);
         }
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
@@ -110,6 +109,7 @@ namespace Ecommerce_application
         {
             labelDescription.Visible = true;
         }
+
 
     }
 }
