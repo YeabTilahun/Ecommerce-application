@@ -102,6 +102,7 @@ namespace Ecommerce_application
             this.Controls.Add(this.pictureBox1);
             this.Name = "LoadItems";
             this.Size = new System.Drawing.Size(278, 269);
+            this.Load += new System.EventHandler(this.LoadItems_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

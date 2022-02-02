@@ -146,6 +146,7 @@ namespace Ecommerce_application
             Dictionary<string, int> valuesAndCounts = new Dictionary<string, int>();
             foreach (DataGridViewRow row in Merchant.dataGridView2.Rows)
             {
+                //is the last row new?
                 if (!row.IsNewRow)
                 {
                     if (row.Cells[columnName].Value != null)
@@ -244,7 +245,7 @@ namespace Ecommerce_application
 
                 }
             }
-            if(counter != 0)
+            if(counter == 0)
             {
                 try
                 {

@@ -10,25 +10,27 @@ namespace Ecommerce_application
 {
     class ChangePassword
     {
-        private string username;
+        private static string username;
         private string password;
         private string confirm;
         public ChangePassword(string ema)
         {
             username = ema;
         }
-        public ChangePassword(string pass, string conf)
+        public ChangePassword( string pass, string conf)
         {
             password = pass;
             confirm = conf;
         }
+        Connection c = new Connection();
         public int checkEmail()
         {
-            string constr = "Server = JONNY; database = ecommerce; integrated security = true;";
+            // string constr = "Server = JONNY; database = ecommerce; integrated security = true;";
+           
             int flag = 0;
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = c.CreateConnection())
                 {
                     DataSet ds = new DataSet();
                     SqlDataAdapter da = new SqlDataAdapter("spLogin", con);
@@ -65,10 +67,10 @@ namespace Ecommerce_application
         {
             if (password.CompareTo(confirm) == 0)
             {
-                string constr = "Server = JONNY; database = ecommerce; integrated security = true;";
+                //string constr = "Server = JONNY; database = ecommerce; integrated security = true;";
                 try
                 {
-                    using (SqlConnection con = new SqlConnection(constr))
+                    using (SqlConnection con = c.CreateConnection())
                     {
                         con.Open();
                         SqlCommand cmd = new SqlCommand("spcheckPass", con);

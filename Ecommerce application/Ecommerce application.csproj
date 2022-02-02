@@ -143,9 +143,6 @@
     <Compile Include="AdminTransaction.Designer.cs">
       <DependentUpon>AdminTransaction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Button_WOC.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ChangeCustomerPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,12 +180,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EcommerceDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ForgetPassWord.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ForgetPassWord.Designer.cs">
-      <DependentUpon>ForgetPassWord.cs</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.cs">
       <SubType>Form</SubType>
@@ -374,9 +365,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerProfile.resx">
       <DependentUpon>CustomerProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ForgetPassWord.resx">
-      <DependentUpon>ForgetPassWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
