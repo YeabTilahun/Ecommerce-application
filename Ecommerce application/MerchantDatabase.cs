@@ -218,49 +218,72 @@ namespace Ecommerce_application
 
         public void Transaction1()
         {
+            int counter = 0;
             MerchantLoadProducts a = new MerchantLoadProducts();
             MerchantClass b = new MerchantClass();
             Dictionary<string, int> column_Counts = GetCountOfValues("id");
             string now = DateTime.Now.ToShortDateString();
             int rowAffected = 0;
             foreach (KeyValuePair<string, int> kvp in column_Counts)
-            { }
-            try
             {
                 using (SqlConnection con = connect.CreateConnection())
                 {
 
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-
-                    for (int i = 0; i < Merchant.dataGridView2.Rows.Count; i++)
+                    SqlDataAdapter da = new SqlDataAdapter("spGetProductImageAndName", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@id", int.Parse(kvp.Key));
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblProfile");
+                    DataTable dt = ds.Tables["tblProfile"];
+                    if (int.Parse(dt.Rows[0]["quantity"].ToString()) < kvp.Value && !Convert.IsDBNull(dt.Rows[0]["quantity"]))
                     {
-                        array(Merchant.dataGridView2.Rows[i].Cells["id"].Value.ToString());
-                        cmd = new SqlCommand("spTransaction", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@user_name", Merchant.name);
-                        cmd.Parameters.AddWithValue("@productID", Merchant.dataGridView2.Rows[i].Cells["id"].Value);
+                        MessageBox.Show("There is no Efficent Quantity by {0} Product in our store", dt.Rows[0]["name"].ToString());
+                        counter++;
+                        break;
+                    }
 
-                        cmd.Parameters.AddWithValue("@totalPrice", price1);
-                        cmd.Parameters.AddWithValue("@category", cat);
-                        cmd.Parameters.AddWithValue("@date", now);
-                        cmd.Parameters.AddWithValue("@quantity", qty);
-                        rowAffected = cmd.ExecuteNonQuery();
-                    }
-                    con.Close();
-                    if (rowAffected > 0)
-                    {
-                        MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
-                        MessageBox.Show("Thank you for using our application!");
-                    }
-                    else
-                        MessageBox.Show("You don't have any product to buy");
                 }
             }
-            catch (SqlException ex)
+            if(counter != 0)
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    using (SqlConnection con = connect.CreateConnection())
+                    {
+
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand();
+
+                        for (int i = 0; i < Merchant.dataGridView2.Rows.Count; i++)
+                        {
+                            array(Merchant.dataGridView2.Rows[i].Cells["id"].Value.ToString());
+                            cmd = new SqlCommand("spTransaction", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@user_name", Merchant.name);
+                            cmd.Parameters.AddWithValue("@productID", Merchant.dataGridView2.Rows[i].Cells["id"].Value);
+
+                            cmd.Parameters.AddWithValue("@totalPrice", price1);
+                            cmd.Parameters.AddWithValue("@category", cat);
+                            cmd.Parameters.AddWithValue("@date", now);
+                            cmd.Parameters.AddWithValue("@quantity", qty);
+                            rowAffected = cmd.ExecuteNonQuery();
+                        }
+                        con.Close();
+                        if (rowAffected > 0)
+                        {
+                            MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
+                            MessageBox.Show("Thank you for using our application!");
+                        }
+                        else
+                            MessageBox.Show("You don't have any product to buy");
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+            
         }
 
         //check if merchant is valid or not

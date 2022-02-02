@@ -21,8 +21,8 @@ namespace Ecommerce_application
         {
             InitializeComponent();
         }
-        
-        public Admin(string userName, string password)
+
+        public Admin(string userName)
         {
             Admin.userName = userName;
             InitializeComponent();

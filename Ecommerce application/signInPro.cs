@@ -40,8 +40,6 @@ namespace Ecommerce_application
                     }
                     if (flag == 0)
                     {
-                        MessageBox.Show("Invalid UserName and Password ");
-
                         role = "No Role";
                     }
 

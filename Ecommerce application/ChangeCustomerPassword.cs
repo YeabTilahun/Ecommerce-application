@@ -36,5 +36,10 @@ namespace Ecommerce_application
                 MessageBox.Show("Wrong password");
             this.Close(); 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

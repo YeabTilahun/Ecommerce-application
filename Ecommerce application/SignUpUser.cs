@@ -8,7 +8,6 @@ namespace Ecommerce_application
 {
     class SignUpUser
     {
-        public string MerchantName;
         public string email;
         public string firstName;
         public string fatherName;
@@ -18,7 +17,8 @@ namespace Ecommerce_application
         public string phone;
         public byte[] photo;
         public byte[] permit;
-        public SignUpUser(string fname, string lname,  string pnum, string email, string uname, string pass, string role, byte [] phot)
+        public string birthday;
+        public SignUpUser(string fname, string lname, string uname, string pass, string pnum, string email, string role, byte[] phot,string birthday )
         {
             this.email = email;
             this.firstName = fname;
@@ -28,11 +28,10 @@ namespace Ecommerce_application
             this.role = role;
             this.phone = pnum;
             this.photo = phot;
-       
+            this.birthday = birthday;
         }
-        public SignUpUser(string mername,string fname, string lname, string pnum, string email, string uname, string pass, string role, byte[] phot,byte [] pic)
+        public SignUpUser(string fname, string lname, string uname, string pass, string pnum, string email, string role, byte[] phot,byte [] pic, string birthday)
         {
-            this.MerchantName = mername;
             this.email = email;
             this.firstName = fname;
             this.fatherName = lname;
@@ -42,12 +41,13 @@ namespace Ecommerce_application
             this.phone = pnum;
             this.photo = phot;
             this.permit = pic;
-            
+            this.birthday = birthday;
         }
         public void signUp()
         {
             SignUpPro sr = new SignUpPro();//object for the third layer
             sr.signUpProccedure(this);
+            sr.AddtoTableAll(this);
         }
     }
 }

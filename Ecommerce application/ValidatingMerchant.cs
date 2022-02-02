@@ -39,7 +39,7 @@ namespace Ecommerce_application
         private void btnAccept_Click(object sender, EventArgs e)
         {
             AdminClass ac = new AdminClass();
-            ac.AddToAll(dt.Rows[0]["userName"].ToString(), dt.Rows[0]["password"].ToString(), dt.Rows[0]["role"].ToString());
+            /*ac.AddToAll(dt.Rows[0]["userName"].ToString(), dt.Rows[0]["password"].ToString(), dt.Rows[0]["role"].ToString());*/
             ac.UpdateStatusActive(dt.Rows[0]["userName"].ToString());
             this.Close();
         }

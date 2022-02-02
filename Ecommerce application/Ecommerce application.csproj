@@ -166,6 +166,8 @@
     <Compile Include="CustomerPage.Designer.cs">
       <DependentUpon>CustomerPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPageClass.cs" />
+    <Compile Include="CustomerPageDatabase.cs" />
     <Compile Include="CustomerProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,12 +308,6 @@
     </Compile>
     <Compile Include="signInPro.cs" />
     <Compile Include="SignInUser.cs" />
-    <Compile Include="SignUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SignUp.Designer.cs">
-      <DependentUpon>SignUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,9 +435,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SignUp.resx">
-      <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="The Wait Form.resx">
       <DependentUpon>The Wait Form.cs</DependentUpon>
