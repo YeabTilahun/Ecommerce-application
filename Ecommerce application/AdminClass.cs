@@ -81,6 +81,12 @@ namespace Ecommerce_application
             adminD.ChangePassword(this);
         }
 
+        public void ChangePasswordTblAll()
+        {
+            AdminDatabase adminD = new AdminDatabase();
+            adminD.ChangePasswordTblAll(this);
+        }
+
         public DataTable GetAdmin(string name)
         {
             AdminDatabase AdminD = new AdminDatabase();

@@ -21,7 +21,14 @@ namespace Ecommerce_application
         {
             InitializeComponent();
         }
-        
+
+        public Admin(string userName)
+        {
+            Admin.userName = userName;
+            InitializeComponent();
+            btnProfile.Text = Admin.userName;
+        }
+
         public Admin(string userName, string password)
         {
             Admin.userName = userName;

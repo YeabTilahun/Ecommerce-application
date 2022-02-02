@@ -96,6 +96,7 @@ namespace Ecommerce_application
                     {
                         AdminClass admin = new AdminClass(txtFName.Text, txtLName.Text, cmbSex.Text, dtpBirthday.Text, txtPhoneNum.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, txtRole.Text, photo);
                         admin.Save();
+                        admin.AddToAll(txtUserName.Text, txtPass.Text, txtRole.Text);
                         this.Close();
                     }
                     else
@@ -146,6 +147,7 @@ namespace Ecommerce_application
                 {
                     AdminClass admin = new AdminClass(lblId.Text, txtPass.Text);
                     admin.ChangePassword();
+                    admin.ChangePasswordTblAll();
                 }
                 else
                     MessageBox.Show("Your New Password does Not Match!!");

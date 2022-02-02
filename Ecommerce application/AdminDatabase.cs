@@ -120,6 +120,36 @@ namespace Ecommerce_application
             }
         }
 
+        public void ChangePasswordTblAll(AdminClass ar)
+        {
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spChangePasswordTblAll", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@adminID", int.Parse(ar.adminID));
+                    cmd.Parameters.AddWithValue("@password", ar.password);
+
+                    int rowAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Password Changed Successfully to All");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed! Please Try Again");
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public DataTable GetAdmin(string name)
         {
             DataTable dt = null;
@@ -150,7 +180,6 @@ namespace Ecommerce_application
                 SqlDataAdapter da = new SqlDataAdapter("spGetAdminProfile", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@userName", Admin.userName);
-                da.SelectCommand.Parameters.AddWithValue("@password", Admin.password);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblProfile");
                 dt = ds.Tables["tblProfile"];
@@ -726,7 +755,7 @@ namespace Ecommerce_application
                     con.Close();
                     if (rowAffected > 0)
                     {
-                        MessageBox.Show("Merchant Accepted");
+                        //MessageBox.Show("Merchant Accepted");
                     }
                     else
                     {

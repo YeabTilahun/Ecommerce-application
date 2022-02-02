@@ -480,7 +480,8 @@ namespace Ecommerce_application
             // 
             this.lblNav.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNav.BackColor = System.Drawing.Color.Transparent;
-            this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNav.ForeColor = System.Drawing.SystemColors.Control;
             this.lblNav.Location = new System.Drawing.Point(0, 0);
             this.lblNav.Name = "lblNav";
             this.lblNav.Size = new System.Drawing.Size(120, 22);
@@ -662,7 +663,8 @@ namespace Ecommerce_application
             // 
             this.lblId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblId.BackColor = System.Drawing.Color.Transparent;
-            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.SystemColors.Control;
             this.lblId.Location = new System.Drawing.Point(318, 0);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(67, 22);

@@ -16,9 +16,13 @@ namespace Ecommerce_application
             return con;
             string connect = "Server = LAPTOP-RS59N8IM; Database = Ecommerce; Integrated Security = true;";*/
 
-            string connect = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            string connect = "Server=DESKTOP-4370VSE;   database=Ecommerce; integrated security=true;";
             SqlConnection con = new SqlConnection(connect);
             return con;
+
+            /*string connect = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            SqlConnection con = new SqlConnection(connect);
+            return con;*/
         }
     }
 }

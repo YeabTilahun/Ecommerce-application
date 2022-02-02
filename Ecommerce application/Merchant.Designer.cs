@@ -88,6 +88,7 @@ namespace Ecommerce_application
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(712, 5);
@@ -103,7 +104,7 @@ namespace Ecommerce_application
             this.panel9.Controls.Add(this.menuStrip1);
             this.panel9.Location = new System.Drawing.Point(865, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(53, 45);
+            this.panel9.Size = new System.Drawing.Size(53, 33);
             this.panel9.TabIndex = 37;
             // 
             // menuStrip1
@@ -115,7 +116,7 @@ namespace Ecommerce_application
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(53, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(53, 30);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -132,7 +133,7 @@ namespace Ecommerce_application
             this.AccountMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.AccountMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AccountMenuItem.Name = "AccountMenuItem";
-            this.AccountMenuItem.Size = new System.Drawing.Size(40, 40);
+            this.AccountMenuItem.Size = new System.Drawing.Size(30, 30);
             this.AccountMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // profileToolStripMenuItem
@@ -228,6 +229,8 @@ namespace Ecommerce_application
             // 
             // panelAdd
             // 
+            this.panelAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panelAdd.Location = new System.Drawing.Point(169, 56);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Size = new System.Drawing.Size(935, 619);
@@ -317,7 +320,7 @@ namespace Ecommerce_application
             this.panel3.Controls.Add(this.button5);
             this.panel3.Location = new System.Drawing.Point(0, -8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(168, 646);
+            this.panel3.Size = new System.Drawing.Size(168, 692);
             this.panel3.TabIndex = 0;
             // 
             // button3
