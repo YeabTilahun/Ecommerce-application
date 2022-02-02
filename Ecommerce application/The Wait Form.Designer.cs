@@ -64,17 +64,16 @@ namespace Ecommerce_application
             this.MyProgress.Name = "MyProgress";
             this.MyProgress.Size = new System.Drawing.Size(146, 12);
             this.MyProgress.Step = 100;
-            this.MyProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.MyProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.MyProgress.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(235, 379);
+            this.label1.Location = new System.Drawing.Point(240, 354);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "06456135";
             // 
             // The_Wait_Form
             // 

@@ -43,8 +43,8 @@ namespace Ecommerce_application
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogo = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnLogo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -227,6 +227,17 @@ namespace Ecommerce_application
             this.panel1.Size = new System.Drawing.Size(181, 452);
             this.panel1.TabIndex = 47;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(411, 211);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(89, 13);
+            this.linkLabel1.TabIndex = 48;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "forgot Password?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
+            // 
             // btnLogo
             // 
             this.btnLogo.BackColor = System.Drawing.Color.Transparent;
@@ -241,17 +252,6 @@ namespace Ecommerce_application
             this.btnLogo.TabIndex = 36;
             this.btnLogo.UseVisualStyleBackColor = false;
             this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(411, 211);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(89, 13);
-            this.linkLabel1.TabIndex = 48;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "forgot Password?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // SignIn
             // 
@@ -300,9 +300,9 @@ namespace Ecommerce_application
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button hidePassword;
         private System.Windows.Forms.Button showPassword;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnLogo;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btnLogo;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

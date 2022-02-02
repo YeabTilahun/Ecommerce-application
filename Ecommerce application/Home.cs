@@ -24,17 +24,7 @@ namespace Ecommerce_application
         int b = Screen.PrimaryScreen.WorkingArea.Height;
         public Home()
         {
-           /* Thread trd = new Thread(new ThreadStart(formRun));
-            trd.Start();
-            trd.Task.Delay();*/
             InitializeComponent();
-        }
-
-
-
-        private void formRun()
-        {
-            Application.Run(new The_Wait_Form());
         }
 
        // TestEntities db;
@@ -61,49 +51,7 @@ namespace Ecommerce_application
                         else
                             flowLayoutPanel1.Controls.Add(a[i]);
                     }
-            //For the dgv delete
-            // db = new TestEntities();
-            //CategoryBindingSource.DataSource = db.Categories.ToList();
         }
-
-        //populates the product on the home form
-        /* private void PopulateItem()
-         {
-             string constr = "Server = LAPTOP-RS59N8IM;   Database = Ecommerce; integrated security=true";
-             try
-             {
-                 using (SqlConnection con = new SqlConnection(constr))
-                 {
-                     con.Open();
-                     SqlDataAdapter da = new SqlDataAdapter("spLoad_data", con);
-                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                     DataSet ds = new DataSet();
-                     da.Fill(ds, "tblProduct");
-                     DataTable dt = ds.Tables["tblProduct"];
-                     LoadItems[] a = new LoadItems[dt.Rows.Count];
-                     resize();
-                     for (int i = 0; i < dt.Rows.Count; i++)
-                     {
-                         a[i] = new LoadItems();
-                         a[i].Pic = (byte[])dt.Rows[i]["photo"];
-                         a[i].Name = dt.Rows[i]["name"].ToString();
-                         a[i].Description = dt.Rows[i]["description"].ToString();
-                         a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
-
-                         if (flowLayoutPanel1.Controls.Count < 0)
-                             flowLayoutPanel1.Controls.Clear();
-                         else
-                             flowLayoutPanel1.Controls.Add(a[i]);
-                     }
-
-                 }
-             }
-             catch (SqlException ex)
-             {
-                 MessageBox.Show(ex.Message);
-             }
-         }*/
-
 
         //ButtonCart
         private void button4_Click(object sender, EventArgs e)
@@ -114,12 +62,13 @@ namespace Ecommerce_application
         private void button5_Click(object sender, EventArgs e)
         {
             resize();
-            Login l = new Login();
-            flowLayoutPanel1.Controls.Clear();
-            l.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Controls.Add(l.panel1);
+            SignIn a = new SignIn();
+            a.Show();
+            /*flowLayoutPanel1.Controls.Clear();
+            a.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Controls.Add(a.panel1);
             flowLayoutPanel1.Show();
-            flowLayoutPanel1.BringToFront();
+            flowLayoutPanel1.BringToFront();*/
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -136,9 +85,7 @@ namespace Ecommerce_application
         private void button7_Click(object sender, EventArgs e)
         {
             DataTable dt = newD.PopulateItem();
-            //Home h = new Home();
             flowLayoutPanel1.Controls.Clear();
-            //newD.PopulateItem();
             //Dock = DockStyle.Fill;
             LoadItems[] a = new LoadItems[dt.Rows.Count];
             resize();
@@ -167,7 +114,7 @@ namespace Ecommerce_application
             Application.Exit();
         }
 
-        //For tye Combobox in the Home Form
+        //For the Combobox in the Home Form
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             NewHomeClass nhc = new NewHomeClass();
@@ -297,8 +244,10 @@ namespace Ecommerce_application
         {
             if (dataGridView1.Rows.Count != 0)
             {
-                NewHomeClass a = new NewHomeClass();
-                a.Transaction();
+                SignIn a = new SignIn();
+                a.Show();
+               /* NewHomeClass a = new NewHomeClass();
+                a.Transaction();*/
             }
             else
             {
