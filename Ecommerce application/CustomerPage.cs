@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -223,15 +225,40 @@ namespace Ecommerce_application
 
         private void button8_Click(object sender, EventArgs e)
         {
-            NewHomeClass a = new NewHomeClass();
-            a.Transaction("customer");
-            dataGridView2.Rows.Clear();
+            CustomerPageClass cd = new CustomerPageClass();
+            cd.Transaction1();
+        }
+
+        //Count the frequency of each products in a DataGridView (Called )
+        public Dictionary<string, int> GetCountOfValues(string columnName)
+        {
+            string curKey = "";
+            Dictionary<string, int> valuesAndCounts = new Dictionary<string, int>();
+            foreach (DataGridViewRow row in CustomerPage.dataGridView2.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    if (row.Cells[columnName].Value != null)
+                    {
+                        curKey = row.Cells[columnName].Value.ToString();
+                        if (valuesAndCounts.ContainsKey(curKey))
+                        {
+                            valuesAndCounts[curKey]++;
+                        }
+                        else
+                        {
+                            valuesAndCounts.Add(curKey, 1);
+                        }
+                    }
+                }
+            }
+            return valuesAndCounts;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             buySize();
-            NewHomeDatabase newD = new NewHomeDatabase();
+            CustomerPageDatabase newD = new CustomerPageDatabase();
             DataTable dt = newD.PopulateItem();
             panelAdd.Controls.Clear();
             CustomerLoadProduct[] a = new CustomerLoadProduct[dt.Rows.Count];
@@ -285,6 +312,22 @@ namespace Ecommerce_application
                 sum += Convert.ToDouble(dataGridView2.Rows[i].Cells[1].Value);
             }
             total.Text = string.Format("${0}", sum.ToString());
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Teleqwa Suq", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (res == DialogResult.Yes)
+            {
+                this.Hide();
+                new SignIn().ShowDialog();
+                this.Close();
+
+            }
+            if (res == DialogResult.No)
+            {
+
+            }
         }
     }
 }

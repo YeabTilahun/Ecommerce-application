@@ -31,14 +31,6 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelTotal = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonBuy = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonLogo = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -46,11 +38,14 @@ namespace Ecommerce_application
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.myProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelTotal = new System.Windows.Forms.Label();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonBuy = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonLogo = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +60,6 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(163, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1151, 53);
@@ -73,125 +67,6 @@ namespace Ecommerce_application
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(300, 0);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(163, 58);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(935, 619);
-            this.flowLayoutPanel1.TabIndex = 2;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // labelTotal
-            // 
-            this.labelTotal.AutoSize = true;
-            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(1104, 529);
-            this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(52, 20);
-            this.labelTotal.TabIndex = 6;
-            this.labelTotal.Text = "Total :";
-            this.labelTotal.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1151, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_126;
-            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCancel.FlatAppearance.BorderSize = 0;
-            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(1230, 490);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 4;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // buttonBuy
-            // 
-            this.buttonBuy.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_126;
-            this.buttonBuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonBuy.FlatAppearance.BorderSize = 0;
-            this.buttonBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBuy.ForeColor = System.Drawing.Color.White;
-            this.buttonBuy.Location = new System.Drawing.Point(1104, 490);
-            this.buttonBuy.Name = "buttonBuy";
-            this.buttonBuy.Size = new System.Drawing.Size(75, 23);
-            this.buttonBuy.TabIndex = 4;
-            this.buttonBuy.Text = "Buy";
-            this.buttonBuy.UseVisualStyleBackColor = true;
-            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_385;
-            this.panel2.Controls.Add(this.buttonLogo);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Location = new System.Drawing.Point(-1, -1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(161, 678);
-            this.panel2.TabIndex = 1;
-            // 
-            // buttonLogo
-            // 
-            this.buttonLogo.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLogo.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_19;
-            this.buttonLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLogo.FlatAppearance.BorderSize = 0;
-            this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.buttonLogo.Location = new System.Drawing.Point(13, 12);
-            this.buttonLogo.Name = "buttonLogo";
-            this.buttonLogo.Size = new System.Drawing.Size(136, 145);
-            this.buttonLogo.TabIndex = 0;
-            this.buttonLogo.UseVisualStyleBackColor = false;
-            this.buttonLogo.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Alcohol",
-            "Bikes",
-            "Books",
-            "Cars",
-            "Cleaning supplies",
-            "Clothing",
-            "Electronics",
-            "Exercise Equipment",
-            "Furniture",
-            "Jewelry",
-            "Medicine",
-            "Musical Instruments",
-            "Other",
-            "Sporting goods",
-            "Tools and Home Care ",
-            "Toys & Games",
-            "Watches"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 220);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "All";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button8
             // 
@@ -297,30 +172,114 @@ namespace Ecommerce_application
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // toolStripMenuItem1
+            // flowLayoutPanel1
             // 
-            this.toolStripMenuItem1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_108;
-            this.toolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.myProfileToolStripMenuItem,
-            this.logoutToolStripMenuItem});
-            this.toolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(300, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(163, 58);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(935, 619);
+            this.flowLayoutPanel1.TabIndex = 2;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // myProfileToolStripMenuItem
+            // labelTotal
             // 
-            this.myProfileToolStripMenuItem.Name = "myProfileToolStripMenuItem";
-            this.myProfileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.myProfileToolStripMenuItem.Text = "My Profile";
-            this.myProfileToolStripMenuItem.Click += new System.EventHandler(this.myProfileToolStripMenuItem_Click);
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(1104, 529);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(52, 20);
+            this.labelTotal.TabIndex = 6;
+            this.labelTotal.Text = "Total :";
+            this.labelTotal.Click += new System.EventHandler(this.label1_Click);
             // 
-            // logoutToolStripMenuItem
+            // buttonCancel
             // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.buttonCancel.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_126;
+            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCancel.FlatAppearance.BorderSize = 0;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel.ForeColor = System.Drawing.Color.White;
+            this.buttonCancel.Location = new System.Drawing.Point(1230, 490);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonBuy
+            // 
+            this.buttonBuy.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_126;
+            this.buttonBuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBuy.FlatAppearance.BorderSize = 0;
+            this.buttonBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuy.ForeColor = System.Drawing.Color.White;
+            this.buttonBuy.Location = new System.Drawing.Point(1104, 490);
+            this.buttonBuy.Name = "buttonBuy";
+            this.buttonBuy.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuy.TabIndex = 4;
+            this.buttonBuy.Text = "Buy";
+            this.buttonBuy.UseVisualStyleBackColor = true;
+            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_385;
+            this.panel2.Controls.Add(this.buttonLogo);
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Location = new System.Drawing.Point(-1, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(161, 678);
+            this.panel2.TabIndex = 1;
+            // 
+            // buttonLogo
+            // 
+            this.buttonLogo.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLogo.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_19;
+            this.buttonLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLogo.FlatAppearance.BorderSize = 0;
+            this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.buttonLogo.Location = new System.Drawing.Point(13, 12);
+            this.buttonLogo.Name = "buttonLogo";
+            this.buttonLogo.Size = new System.Drawing.Size(136, 145);
+            this.buttonLogo.TabIndex = 0;
+            this.buttonLogo.UseVisualStyleBackColor = false;
+            this.buttonLogo.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Alcohol",
+            "Bikes",
+            "Books",
+            "Cars",
+            "Cleaning supplies",
+            "Clothing",
+            "Electronics",
+            "Exercise Equipment",
+            "Furniture",
+            "Jewelry",
+            "Medicine",
+            "Musical Instruments",
+            "Other",
+            "Sporting goods",
+            "Tools and Home Care ",
+            "Toys & Games",
+            "Watches"});
+            this.comboBox1.Location = new System.Drawing.Point(3, 220);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(155, 21);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.Text = "All";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Home
             // 
@@ -340,9 +299,6 @@ namespace Ecommerce_application
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -366,9 +322,5 @@ namespace Ecommerce_application
         private System.Windows.Forms.Button buttonCancel;
         public System.Windows.Forms.Label labelTotal;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem myProfileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

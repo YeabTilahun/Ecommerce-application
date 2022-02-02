@@ -33,11 +33,6 @@ namespace Ecommerce_application
             nhc.UpdateProfile();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ChangeCustomerPassword change = new ChangeCustomerPassword();
