@@ -79,7 +79,7 @@ namespace Ecommerce_application
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetProduct("","");
-            adminProducts.dgvProducts.DataSource = dt;
+            //adminProducts.dgvProducts.DataSource = dt;
             
             LoadProduct[] a = new LoadProduct[dt.Rows.Count];
             for(int i = 0; i < dt.Rows.Count; i++)
