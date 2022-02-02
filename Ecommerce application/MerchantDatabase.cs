@@ -139,47 +139,17 @@ namespace Ecommerce_application
             return dt;
         }
 
-        //Count the frequency of each products in a DataGridView
-        private Dictionary<string, int> GetCountOfValues(string columnName)
-        {
-            string curKey = "";
-            Dictionary<string, int> valuesAndCounts = new Dictionary<string, int>();
-            foreach (DataGridViewRow row in Merchant.dataGridView2.Rows)
-            {
-                //is the last row new?
-                if (!row.IsNewRow)
-                {
-                    if (row.Cells[columnName].Value != null)
-                    {
-                        curKey = row.Cells[columnName].Value.ToString();
-                        if (valuesAndCounts.ContainsKey(curKey))
-                        {
-                            valuesAndCounts[curKey]++;
-                        }
-                        else
-                        {
-                            valuesAndCounts.Add(curKey, 1);
-                        }
-                    }
-                }
-            }
-            return valuesAndCounts;
-        }
-
         static string cat;
         static string price1;
         static string id1;
         static string qty;
+        Merchant cp = new Merchant();
         public void array(string id2)
         {
-            Dictionary<string, int> column_Counts = GetCountOfValues("id");
-
-            Queue cate = new Queue();
-            Queue price = new Queue();
-            Queue id = new Queue();
-            Queue Qty = new Queue();
+            Dictionary<string, int> column_Counts = cp.GetCountOfValues("id");
             try
             {
+
                 using (SqlConnection con = connect.CreateConnection())
                 {
                     foreach (KeyValuePair<string, int> kvp in column_Counts)
@@ -190,10 +160,10 @@ namespace Ecommerce_application
                         SqlDataReader da = cmd.ExecuteReader();
                         while (da.Read())
                         {
-                            cate.Enqueue(da.GetValue(0).ToString());
-                            price.Enqueue(da.GetValue(1).ToString());
-                            id.Enqueue(Convert.ToString(id2));
-                            Qty.Enqueue(Convert.ToString(kvp.Value));
+                            cat = da.GetValue(0).ToString();
+                            price1 = da.GetValue(1).ToString();
+                            id1 = Convert.ToString(id2);
+                            qty = Convert.ToString(kvp.Value);
                         }
                         con.Close();
                     }
@@ -204,15 +174,6 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
-            // cat = new string[cate.Count];
-
-            cat = (string)cate.Dequeue();
-
-            price1 = (string)price.Dequeue();
-
-            id1 = (string)id.Dequeue();
-
-            qty = (string)Qty.Dequeue();
         }
 
         //Add transaction information when buy clicked
@@ -221,8 +182,8 @@ namespace Ecommerce_application
         {
             int counter = 0;
             MerchantLoadProducts a = new MerchantLoadProducts();
-            MerchantClass b = new MerchantClass();
-            Dictionary<string, int> column_Counts = GetCountOfValues("id");
+            Merchant b = new Merchant();
+            Dictionary<string, int> column_Counts = b.GetCountOfValues("id");
             string now = DateTime.Now.ToShortDateString();
             int rowAffected = 0;
             foreach (KeyValuePair<string, int> kvp in column_Counts)
@@ -313,7 +274,7 @@ namespace Ecommerce_application
             return check;
         }
 
-        //Fetch information about merchant from database and assign it to my profile page
+       /* //Fetch information about merchant from database and assign it to my profile page
         public void loadMyProfile()
         {
             MerchantProfile1 mp = new MerchantProfile1();
@@ -345,7 +306,7 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        }*/
 
         //display all products in datatbase
         public DataTable PopulateItem()
@@ -448,6 +409,7 @@ namespace Ecommerce_application
         }
 
         //Fetch old password nd return to check from the entered password
+        //wrong
         public string GetOldPassword(string user)
         {
             string old_pass = null;
@@ -459,11 +421,11 @@ namespace Ecommerce_application
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter("spGetPassword", con);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@name", user);
+                    da.SelectCommand.Parameters.AddWithValue("@name", "yoo");
                     DataSet ds = new DataSet();
                     da.Fill(ds, "tblpass");
                     DataTable dt = ds.Tables["tblpass"];
-                    old_pass = dt.Rows[0]["name"].ToString();
+                    old_pass = dt.Rows[0]["password"].ToString();
 
                 }
             }
@@ -485,7 +447,7 @@ namespace Ecommerce_application
                     SqlCommand cmd = new SqlCommand("spUpdatePassword", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pass", pass);
-                    cmd.Parameters.AddWithValue("@user", Merchant.name);
+                    cmd.Parameters.AddWithValue("@user", "yoo");
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
@@ -505,43 +467,63 @@ namespace Ecommerce_application
         }
 
         //This will update merchant database information when called
-        public void UpdateProfile()
+        public void UpdateProfile(MerchantClass mp)
         {
             try
             {
-                MerchantProfile1 mp = new MerchantProfile1();
                 using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("spUpdateMerchantProfile", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    MemoryStream ms = new MemoryStream();
-                    mp.profileImage.BackgroundImage.Save(ms, mp.profileImage.BackgroundImage.RawFormat);
-                    byte[] Photo = ms.ToArray();
+                    /* MemoryStream ms = new MemoryStream();
+                     mp.profileImage.BackgroundImage.Save(ms, mp.profileImage.BackgroundImage.RawFormat);
+                     byte[] Photo = ms.ToArray();*/
                     cmd.Parameters.AddWithValue("@user", Merchant.name);
-                    cmd.Parameters.AddWithValue("@fname", mp.fnameBox.Text);
-                    cmd.Parameters.AddWithValue("@lname", mp.lnameBox.Text);
-                    cmd.Parameters.AddWithValue("@birthday", mp.birthdayBox.Value);
-                    cmd.Parameters.AddWithValue("@email", mp.emailBox.Text);
-                    cmd.Parameters.AddWithValue("@username", mp.usernameBox.Text);
-                    cmd.Parameters.AddWithValue("@phone", mp.phoneBox.Text);
-                    cmd.Parameters.AddWithValue("@photo", Photo);
+                    cmd.Parameters.AddWithValue("@fname", mp.fname);
+                    cmd.Parameters.AddWithValue("@lname", mp.lname);
+                    cmd.Parameters.AddWithValue("@birthday", mp.bday);
+                    cmd.Parameters.AddWithValue("@email", mp.email);
+                    cmd.Parameters.AddWithValue("@username", mp.username);
+                    cmd.Parameters.AddWithValue("@phone", mp.phone);
+                    cmd.Parameters.AddWithValue("@photo", mp.photo2);
                     int rowAffected = cmd.ExecuteNonQuery();
 
                     con.Close();
                     if (rowAffected > 0)
                     {
-                        MessageBox.Show("Saved!");
-
+                        MessageBox.Show("Saved Sucessfully!");
+                        Merchant.name = mp.username;
                     }
                     else
-                        MessageBox.Show("Nothing changed!");
+                        MessageBox.Show("Failed Please tryagain!");
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        //Load merchant info
+        public DataTable GetProfile()
+        {
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = connect.CreateConnection();
+                SqlDataAdapter da = new SqlDataAdapter("spGetMerchantProfile", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@name", Merchant.name);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblProfile");
+                dt = ds.Tables["tblProfile"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
         }
     }
 }

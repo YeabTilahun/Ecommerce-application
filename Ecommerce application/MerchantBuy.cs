@@ -81,10 +81,10 @@ namespace Ecommerce_application
                         panelBuy.Controls.Clear();
                     else
                         panelBuy.Controls.Add(a[i]);
-            }
+                }
 
+            }
         }
-    }
 
         //when search text box entered it will also search the database (LIVE SEARCH)
         private void textBox1_TextChanged(object sender, EventArgs e)

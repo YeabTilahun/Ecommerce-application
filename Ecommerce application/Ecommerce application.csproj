@@ -235,12 +235,6 @@
     <Compile Include="MerchantBuy.Designer.cs">
       <DependentUpon>MerchantBuy.cs</DependentUpon>
     </Compile>
-    <Compile Include="MerchantChangePassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MerchantChangePassword.Designer.cs">
-      <DependentUpon>MerchantChangePassword.cs</DependentUpon>
-    </Compile>
     <Compile Include="MerchantDatabase.cs" />
     <Compile Include="MerchantHome.cs">
       <SubType>Form</SubType>
@@ -392,9 +386,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MerchantBuy.resx">
       <DependentUpon>MerchantBuy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MerchantChangePassword.resx">
-      <DependentUpon>MerchantChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MerchantHome.resx">
       <DependentUpon>MerchantHome.cs</DependentUpon>
