@@ -23,22 +23,23 @@ namespace Ecommerce_application
         {
             timer1.Start();
         }
-        int StartPoint = 0;
+        //int StartPoint = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
            // StartPoint = StartPoint + 1;
            // MyProgress.Value = 100;
-            if(MyProgress.Value < 100)
+            if(MyProgress.Value < 1000)
             {
                 MyProgress.Value += 1;
-                label1.Text = MyProgress.Value.ToString() + "%";
+                //label1.Text = MyProgress.Value.ToString() + "%";
             }
             else
             {
                 timer1.Stop();
-                Merchant m = new Merchant("Yeabsira");
+                //Merchant m = new Merchant("Yeabsira");
+                Home home = new Home();
                 this.Hide();
-                m.Show();
+                home.Show();
             }
                 /*MyProgress.Value = 0;
                 timer1.Stop();

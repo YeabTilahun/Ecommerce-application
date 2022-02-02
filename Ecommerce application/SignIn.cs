@@ -149,8 +149,8 @@ namespace Ecommerce_application
 
         private void btnLogo_Click(object sender, EventArgs e)
         {
-            btnLogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            btnLogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            //btnLogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            //btnLogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
         }
 
         private void button3_Click_1(object sender, EventArgs e)
