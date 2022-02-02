@@ -62,7 +62,7 @@ namespace Ecommerce_application
             this.panelBuy.AutoScroll = true;
             this.panelBuy.Location = new System.Drawing.Point(0, 35);
             this.panelBuy.Name = "panelBuy";
-            this.panelBuy.Size = new System.Drawing.Size(929, 578);
+            this.panelBuy.Size = new System.Drawing.Size(929, 575);
             this.panelBuy.TabIndex = 1;
             // 
             // textBox1

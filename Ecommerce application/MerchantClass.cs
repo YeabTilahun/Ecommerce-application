@@ -13,6 +13,7 @@ namespace Ecommerce_application
         //MerchantSell Layer 2
 
         //Declaring varibles to take value from the text box in MerchantSell
+        //Add product
         public string productName;
         public string price;
         public string quantity;
@@ -22,6 +23,16 @@ namespace Ecommerce_application
         public string exDate;
         public byte[] photo;
         public string user;
+
+        //update profile
+        public string fname;
+        public string lname;
+        public string bday;
+        public string email;
+        public string username;
+        public string phone;
+        public byte[] photo2;
+
         //creating multiple constractor to make life easy
         public MerchantClass()
         {
@@ -40,6 +51,16 @@ namespace Ecommerce_application
             this.photo = photo;
             this.user = user;
         }
+        public MerchantClass(string fname, string lname, string bday, string email, string user, string phone, byte[] photo)
+        {
+            this.fname = fname;
+            this.lname = lname;
+            this.bday = bday;
+            this.email = email;
+            this.username = user;
+            this.phone = phone;
+            this.photo2 = photo;
+    }
 
         //ADD PRODUCTS
         public void Add()
@@ -94,11 +115,11 @@ namespace Ecommerce_application
 
 
         //Fetch information about merchant from database and assign it to my profile page
-        public void loadMyProfile()
+       /* public void loadMyProfile()
         {
             MerchantDatabase a = new MerchantDatabase();
             a.loadMyProfile();
-        }
+        }*/
 
         //display all products in datatbase
         public DataTable PopulateItem()
@@ -155,8 +176,13 @@ namespace Ecommerce_application
         public void UpdateProfile()
         {
             MerchantDatabase md = new MerchantDatabase();
-            md.UpdateProfile();
+            md.UpdateProfile(this);
         }
-
+        public DataTable GetProfile()
+        {
+            MerchantDatabase md = new MerchantDatabase();
+            DataTable dt = md.GetProfile();
+            return dt;
+        }
     }
 }

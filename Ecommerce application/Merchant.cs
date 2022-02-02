@@ -68,7 +68,7 @@ namespace Ecommerce_application
         {
             SetupDataGridView();
             //load information about the user
-            loadMyProfile();
+           // loadMyProfile();
 
             //check if the user is allowed to sell products...IF HIS /HERS PERMIT IS VALID WHEN THE PROGRAM LOADS
             check();
@@ -121,11 +121,11 @@ namespace Ecommerce_application
         }
 
         //Fetch information about merchant from database and assign it to my profile page
-        public void loadMyProfile()
+       /* public void loadMyProfile()
         {
             MerchantClass a = new MerchantClass();
             a.loadMyProfile();
-        }
+        }*/
 
         //To show Buy interface..we created the object then we added the panel in buy form in to panel in merchant and YES the acess modifer for the panel is internal
         private void button6_Click(object sender, EventArgs e)
@@ -253,23 +253,13 @@ namespace Ecommerce_application
         private void profileToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             resize();
-            MerchantProfile1 a = new MerchantProfile1();
+            MerchantClass ac = new MerchantClass();
+            DataTable dt = ac.GetProfile();
+            MerchantProfile1 a = new MerchantProfile1(dt);
             panelAdd.Controls.Clear();
             panelAdd.Controls.Add(a.panel1);
             panelAdd.Show();
-            panelAdd.BringToFront();
-        }
-
-
-        //WHEN CHANGEPASSWORD CLICKED FROM THE MENU
-        private void logOutToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            resize();
-            MerchantChangePassword a = new MerchantChangePassword();
-            panelAdd.Controls.Clear();
-            panelAdd.Controls.Add(a.panel1);
-            panelAdd.Show();
-            panelAdd.BringToFront();
+            a.panel1.BringToFront();
         }
 
 
@@ -280,7 +270,9 @@ namespace Ecommerce_application
             MerchantBuy m = new MerchantBuy(2);
             panelAdd.Controls.Clear();
             m.Dock = DockStyle.Fill;
-            panelAdd.Controls.Add(m.panelBuy);
+            panelAdd.Controls.Add(m.panel2);
+            m.panelBuy.Dock = DockStyle.Fill;
+            m.panelBuy.BringToFront();
             panelAdd.Show();
             panelAdd.BringToFront();
         }
@@ -319,6 +311,32 @@ namespace Ecommerce_application
             total.Text = sum.ToString();
         }
 
+        //Count the frequency of each products in a DataGridView
+        public Dictionary<string, int> GetCountOfValues(string columnName)
+        {
+            string curKey = "";
+            Dictionary<string, int> valuesAndCounts = new Dictionary<string, int>();
+            foreach (DataGridViewRow row in Merchant.dataGridView2.Rows)
+            {
+                //is the last row new?
+                if (!row.IsNewRow)
+                {
+                    if (row.Cells[columnName].Value != null)
+                    {
+                        curKey = row.Cells[columnName].Value.ToString();
+                        if (valuesAndCounts.ContainsKey(curKey))
+                        {
+                            valuesAndCounts[curKey]++;
+                        }
+                        else
+                        {
+                            valuesAndCounts.Add(curKey, 1);
+                        }
+                    }
+                }
+            }
+            return valuesAndCounts;
+        }
         private void button8_Click(object sender, EventArgs e)
         {
             MerchantClass a = new MerchantClass();

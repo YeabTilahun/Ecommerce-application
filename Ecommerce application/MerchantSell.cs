@@ -128,9 +128,10 @@ namespace Ecommerce_application
                 comboBox1.Items.Remove("");
         }
 
+        //clear picture box
         private void button4_Click(object sender, EventArgs e)
         {
-
+            pictureBox1.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_1353;
         }
     }
 }
