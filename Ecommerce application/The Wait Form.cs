@@ -23,11 +23,9 @@ namespace Ecommerce_application
         {
             timer1.Start();
         }
-        //int StartPoint = 0;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-           // StartPoint = StartPoint + 1;
-           // MyProgress.Value = 100;
             if(MyProgress.Value < 1000)
             {
                 MyProgress.Value += 1;
@@ -37,7 +35,7 @@ namespace Ecommerce_application
             {
                 timer1.Stop();
                 //Merchant m = new Merchant("Yeabsira");
-                Home home = new Home();
+                Home home = new Home("Kidus");
                 this.Hide();
                 home.Show();
             }

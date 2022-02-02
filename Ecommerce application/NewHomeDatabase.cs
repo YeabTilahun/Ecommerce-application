@@ -14,7 +14,7 @@ namespace Ecommerce_application
 {
     class NewHomeDatabase
     {
-        string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
+        //string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
         Connection connect = new Connection();
         public void SaveUser(NewHomeClass hc)
         {
@@ -270,7 +270,7 @@ namespace Ecommerce_application
 
         public void Transaction()
         {
-            Home h = new Home();
+            Home h = new Home("Kidus");
             LoadItems l = new LoadItems();
             NewHomeClass newHome = new NewHomeClass();
             Dictionary<string, int> column_counts = GetCount("id");
@@ -287,7 +287,7 @@ namespace Ecommerce_application
                     {
                         array(Home.dataGridView1.Rows[i].Cells["id"].Value.ToString());
                         cmd = new SqlCommand("spTransaction", con);
-                        cmd.Parameters.AddWithValue("@user_name", h.name);
+                        cmd.Parameters.AddWithValue("@user_name", Home.name);
                         cmd.Parameters.AddWithValue("@productID", Home.dataGridView1.Rows[i].Cells["id"].Value);
 
                         cmd.Parameters.AddWithValue("@totalPrice", price1);
@@ -460,7 +460,7 @@ namespace Ecommerce_application
 
         public void UpdatePassword(string pass)
         {
-            Home h = new Home();
+            Home h = new Home("Kidus");
             try
             {
                 using (SqlConnection con = connect.CreateConnection())
@@ -469,7 +469,7 @@ namespace Ecommerce_application
                     SqlCommand cmd = new SqlCommand("spUpdatePassword", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pass", pass);
-                    cmd.Parameters.AddWithValue("@user", h.name);
+                    cmd.Parameters.AddWithValue("@user", Home.name);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
