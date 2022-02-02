@@ -60,7 +60,6 @@ namespace Ecommerce_application
                 textPassword.PasswordChar = '*';
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             SignInUser s = new SignInUser(textUsername.Text, textPassword.Text);
@@ -69,6 +68,7 @@ namespace Ecommerce_application
             {
                 label7.Visible = false;
                 Merchant m = new Merchant(textUsername.Text);
+                Merchant.dataGridView2 = Home.dataGridView1;
                 m.Show();
                 this.Hide();
             }
@@ -83,6 +83,7 @@ namespace Ecommerce_application
             {
                 label7.Visible = false;
                 CustomerPage cust = new CustomerPage(textUsername.Text);
+                CustomerPage.dataGridView2 = Home.dataGridView1;
                 cust.Show();
                 this.Hide();
             }

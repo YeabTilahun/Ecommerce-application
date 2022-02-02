@@ -85,7 +85,7 @@ namespace Ecommerce_application
                         con.Open();
                         SqlCommand cmd = new SqlCommand("spAddToAll", con);
                         cmd.CommandType = CommandType.StoredProcedure;                  
-                        cmd.Parameters.AddWithValue("@username", u.userName);
+                        cmd.Parameters.AddWithValue("@userName", u.userName);
                         cmd.Parameters.AddWithValue("@password", u.password);
                         cmd.Parameters.AddWithValue("@role", u.role);
                         int rowAffected = cmd.ExecuteNonQuery();

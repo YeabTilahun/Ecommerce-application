@@ -17,11 +17,11 @@ namespace Ecommerce_application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new The_Wait_Form());
-            //Application.Run(new Home());
+            Application.Run(new Home("Kidus"));
             //Application.Run(new CustomerPage("yeabsira"));
             //Application.Run(new Admin("kalesh"));
             //Application.Run(new SignIn());
-            Application.Run(new Merchant("yeabsira"));
+            //Application.Run(new Merchant("yeabsira"));
         }
     }
 }

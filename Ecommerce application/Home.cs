@@ -26,8 +26,12 @@ namespace Ecommerce_application
             Home.name = name;
             InitializeComponent();
         }
+        public Home()
+        {
+            InitializeComponent();
+        }
 
-       // TestEntities db;
+        // TestEntities db;
         private void Home_Load(object sender, EventArgs e)
         {
             //To get over the Hover on our Button Logo

@@ -19,9 +19,9 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Home h = new Home();
+            Home h = new Home("Kidus");
             NewHomeClass nhc = new NewHomeClass();
-            string oldPassword = nhc.GetOldPassword(h.name);
+            string oldPassword = nhc.GetOldPassword(Home.name);
             //save clicked
             if (textBoxOldPass.Text == oldPassword)
             {
