@@ -29,13 +29,6 @@ namespace Ecommerce_application
             btnProfile.Text = Admin.userName;
         }
 
-        public Admin(string userName, string password)
-        {
-            Admin.userName = userName;
-            InitializeComponent();
-            btnProfile.Text = Admin.userName;
-        }
-
         private void btnMaximized_Click(object sender, EventArgs e)
         {
             oldLoc = this.Location;
