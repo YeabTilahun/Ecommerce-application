@@ -17,13 +17,13 @@ namespace Ecommerce_application
     {
         NewHomeDatabase newD = new NewHomeDatabase();
         public static DataGridView dataGridView1 = new DataGridView();
-        public string name;
+        public static string name;
         Connection connect = new Connection();
-        //string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
         int a = Screen.PrimaryScreen.WorkingArea.Width;
         int b = Screen.PrimaryScreen.WorkingArea.Height;
-        public Home()
+        public Home(string name)
         {
+            Home.name = name;
             InitializeComponent();
         }
 
@@ -59,18 +59,15 @@ namespace Ecommerce_application
             buySize();
         }
 
+        //Button SignIn
         private void button5_Click(object sender, EventArgs e)
         {
             resize();
             SignIn a = new SignIn();
             a.Show();
-            /*flowLayoutPanel1.Controls.Clear();
-            a.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Controls.Add(a.panel1);
-            flowLayoutPanel1.Show();
-            flowLayoutPanel1.BringToFront();*/
         }
 
+        //Button SignUp
         private void button6_Click(object sender, EventArgs e)
         {
             resize();
@@ -82,6 +79,7 @@ namespace Ecommerce_application
             flowLayoutPanel1.BringToFront();
         }
 
+        //Button Logo
         private void button7_Click(object sender, EventArgs e)
         {
             DataTable dt = newD.PopulateItem();
@@ -104,11 +102,13 @@ namespace Ecommerce_application
             }
         }
 
+        //Button Minimize
         private void button3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //Button Close
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -135,7 +135,7 @@ namespace Ecommerce_application
                 a[i].Name = dt.Rows[i]["name"].ToString();
                 a[i].Description = dt.Rows[i]["description"].ToString();
                 a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
-
+                a[i].button1.Click += new EventHandler(btnClick);
                 if (flowLayoutPanel1.Controls.Count < 0)
                     flowLayoutPanel1.Controls.Clear();
                 else
@@ -143,34 +143,7 @@ namespace Ecommerce_application
             }
         }
 
-       /* public void GetCategory()
-        {
-            string[] category = null;
-            try
-            {
-                SqlConnection con = new SqlConnection(constr);
-                SqlDataAdapter da = new SqlDataAdapter("spGetCategory", con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataSet ds = new DataSet();
-                da.Fill(ds, "tblCategory");
-                DataTable dt = ds.Tables["tblCategory"];
-                category = new string[dt.Rows.Count];
-                DataRow row;
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    row = dt.Rows[i];
-                    category[i] = row["category"].ToString();
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            foreach (string cat in category)
-            {
-                comboBox1.Items.Add(cat);
-            }
-        }*/
+       
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
@@ -182,7 +155,7 @@ namespace Ecommerce_application
 
         }
 
-        //For the DataGridView in cart
+        //It Initializes the Static DataGridView in cart
         private void SetupDataGridView()
         {
             this.Controls.Add(dataGridView1);
@@ -213,6 +186,7 @@ namespace Ecommerce_application
             this.Size = new Size(a, b);
         }
 
+        //Makes the dataGridview Invisible
         public void resize()
         {
             buttonBuy.Visible = false;
@@ -221,6 +195,8 @@ namespace Ecommerce_application
             dataGridView1.Visible = false; 
             this.Size = new Size(a, b);
         }
+
+        //An Event Subscriber that s used for the visibility of cart at HomeWhile Add to cart is pressed
         private void btnClick(object sender, EventArgs e)
         {
             button2.BringToFront();
@@ -240,19 +216,20 @@ namespace Ecommerce_application
 
         }
 
+
         private void buttonBuy_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count != 0)
             {
                 SignIn a = new SignIn();
                 a.Show();
-               /* NewHomeClass a = new NewHomeClass();
-                a.Transaction();*/
             }
             else
             {
                 MessageBox.Show("Your Cart is Empty!");
             }
+
+            CustomerPage.dataGridView2.DataSource = dataGridView1;
         }
 
         //Removes the selected rows in cart datagridview
@@ -269,8 +246,7 @@ namespace Ecommerce_application
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
                 for (int i = 0; i < a; i++)
                 {
-                dataGridView1.Rows.RemoveAt(r[i]);
-
+                    dataGridView1.Rows.RemoveAt(rowIndex);
                 }
             }
             else
@@ -342,43 +318,7 @@ namespace Ecommerce_application
             }
             //this.WindowState = FormWindowState.Maximized;
             button2.BringToFront();
-            //panel;
+            
         }
-
-       /* private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            resize();
-            CustomerProfile a = new CustomerProfile();
-            flowLayoutPanel1.Controls.Clear();
-            flowLayoutPanel1.Controls.Add(a.panel1);
-            flowLayoutPanel1.Show();
-            flowLayoutPanel1.BringToFront();
-        }*/
-
-       /* private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            resize();
-            MerchantChangePassword a = new MerchantChangePassword();
-            flowLayoutPanel1.Controls.Clear();
-            flowLayoutPanel1.Controls.Add(a.panel1);
-            flowLayoutPanel1.Show();
-            flowLayoutPanel1.BringToFront();
-        }*/
-
-       /* private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Teleqwa Suq", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (res == DialogResult.Yes)
-            {
-                this.Hide();
-                new SignIn().ShowDialog();
-                this.Close();
-
-            }
-            if (res == DialogResult.No)
-            {
-
-            }
-        }*/
     }
 }
