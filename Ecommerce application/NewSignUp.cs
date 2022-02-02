@@ -17,14 +17,7 @@ namespace Ecommerce_application
         {
             InitializeComponent();
             this.Size = new Size(800, 450);
-            label5.Visible = false;
-            textMerName.Visible = false;
             //pnlPermit.Visible = false;
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -49,10 +42,13 @@ namespace Ecommerce_application
                         Image RetImage = Image.FromStream(stream);
                         picBoxAddphoto.Image = RetImage;
                         hc.signUp();
+                        this.Close();
+                        SignIn a = new SignIn();
+                        a.Show(); 
                     }
                     else if(cmbRole.Text == "Merchant")
                     {
-                        SignUpUser hc = new SignUpUser(textMerName.Text,textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo,permit);
+                        SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo,permit);
                         MemoryStream stream = new MemoryStream(hc.photo);
                         Image RetImage = Image.FromStream(stream);
                         picBoxAddphoto.Image = RetImage;
@@ -60,11 +56,13 @@ namespace Ecommerce_application
                         Image RetIma= Image.FromStream(str);
                         picPermit.Image = RetIma;
                         hc.signUp();
-
+                        this.Close();
+                        SignIn a = new SignIn();
+                        a.Show();
                     }
                 }
                 else
-                    MessageBox.Show("They are Different");
+                    MessageBox.Show("Your Password is Different");
 
             }
             catch (NullReferenceException ex)
@@ -85,27 +83,6 @@ namespace Ecommerce_application
             
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void textconfirmpassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textpassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -117,8 +94,6 @@ namespace Ecommerce_application
             {
                 this.Size = new Size(800, 450);
                 panel1.Size = new Size(800, 450);
-                label5.Visible = false;
-                textMerName.Visible = false;
                 //  pnlPermit.Visible = false;
                 btnPermit.Visible = false;
                 picPermit.Visible = false;
@@ -127,8 +102,6 @@ namespace Ecommerce_application
             {
                 this.Size = new Size(1000, 450);
                 panel1.Size = new Size(1000, 450);
-                label5.Visible = true;
-                textMerName.Visible = true;
                 //pnlPermit.Visible = true;
                 btnPermit.Visible = true;
                 picPermit.Visible = true;

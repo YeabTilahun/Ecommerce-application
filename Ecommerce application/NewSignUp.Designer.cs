@@ -45,7 +45,6 @@ namespace Ecommerce_application
             this.textPhone = new System.Windows.Forms.TextBox();
             this.textUserName = new System.Windows.Forms.TextBox();
             this.textLastName = new System.Windows.Forms.TextBox();
-            this.textMerName = new System.Windows.Forms.TextBox();
             this.textFirstName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@ namespace Ecommerce_application
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picBoxAddphoto = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -79,7 +77,6 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.textPhone);
             this.panel1.Controls.Add(this.textUserName);
             this.panel1.Controls.Add(this.textLastName);
-            this.panel1.Controls.Add(this.textMerName);
             this.panel1.Controls.Add(this.textFirstName);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -88,14 +85,12 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.picBoxAddphoto);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(927, 453);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnPermit
             // 
@@ -108,7 +103,7 @@ namespace Ecommerce_application
             this.btnPermit.Location = new System.Drawing.Point(721, 261);
             this.btnPermit.Name = "btnPermit";
             this.btnPermit.Size = new System.Drawing.Size(160, 36);
-            this.btnPermit.TabIndex = 11;
+            this.btnPermit.TabIndex = 10;
             this.btnPermit.Text = "Add Permit";
             this.btnPermit.UseVisualStyleBackColor = true;
             this.btnPermit.Visible = false;
@@ -117,6 +112,7 @@ namespace Ecommerce_application
             // picPermit
             // 
             this.picPermit.BackColor = System.Drawing.Color.Silver;
+            this.picPermit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPermit.InitialImage = null;
             this.picPermit.Location = new System.Drawing.Point(681, 51);
             this.picPermit.Name = "picPermit";
@@ -129,7 +125,7 @@ namespace Ecommerce_application
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(312, 281);
+            this.label9.Location = new System.Drawing.Point(295, 244);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 9;
@@ -142,10 +138,10 @@ namespace Ecommerce_application
             this.cmbRole.Items.AddRange(new object[] {
             "Customer",
             "Merchant"});
-            this.cmbRole.Location = new System.Drawing.Point(429, 281);
+            this.cmbRole.Location = new System.Drawing.Point(412, 244);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(156, 21);
-            this.cmbRole.TabIndex = 8;
+            this.cmbRole.TabIndex = 6;
             this.cmbRole.TextChanged += new System.EventHandler(this.cmbRole_TextChanged);
             // 
             // linkLabel1
@@ -163,7 +159,7 @@ namespace Ecommerce_application
             this.button3.Location = new System.Drawing.Point(659, 417);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
+            this.button3.TabIndex = 12;
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -173,7 +169,7 @@ namespace Ecommerce_application
             this.button2.Location = new System.Drawing.Point(565, 417);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
+            this.button2.TabIndex = 11;
             this.button2.Text = "Continue";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -189,7 +185,7 @@ namespace Ecommerce_application
             this.buttonAddpic.Location = new System.Drawing.Point(53, 238);
             this.buttonAddpic.Name = "buttonAddpic";
             this.buttonAddpic.Size = new System.Drawing.Size(160, 36);
-            this.buttonAddpic.TabIndex = 3;
+            this.buttonAddpic.TabIndex = 9;
             this.buttonAddpic.Text = "Add Photo";
             this.buttonAddpic.UseVisualStyleBackColor = true;
             this.buttonAddpic.Click += new System.EventHandler(this.button1_Click);
@@ -199,59 +195,49 @@ namespace Ecommerce_application
             this.textpassword.Location = new System.Drawing.Point(171, 370);
             this.textpassword.Name = "textpassword";
             this.textpassword.Size = new System.Drawing.Size(210, 20);
-            this.textpassword.TabIndex = 2;
-            this.textpassword.TextChanged += new System.EventHandler(this.textpassword_TextChanged);
+            this.textpassword.TabIndex = 7;
             // 
             // textconfirmpassword
             // 
             this.textconfirmpassword.Location = new System.Drawing.Point(171, 419);
             this.textconfirmpassword.Name = "textconfirmpassword";
             this.textconfirmpassword.Size = new System.Drawing.Size(210, 20);
-            this.textconfirmpassword.TabIndex = 2;
-            this.textconfirmpassword.TextChanged += new System.EventHandler(this.textconfirmpassword_TextChanged);
+            this.textconfirmpassword.TabIndex = 8;
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(429, 246);
+            this.textEmail.Location = new System.Drawing.Point(412, 209);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(210, 20);
-            this.textEmail.TabIndex = 2;
+            this.textEmail.TabIndex = 5;
             // 
             // textPhone
             // 
-            this.textPhone.Location = new System.Drawing.Point(429, 206);
+            this.textPhone.Location = new System.Drawing.Point(412, 169);
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(210, 20);
-            this.textPhone.TabIndex = 2;
+            this.textPhone.TabIndex = 4;
             // 
             // textUserName
             // 
-            this.textUserName.Location = new System.Drawing.Point(429, 171);
+            this.textUserName.Location = new System.Drawing.Point(412, 134);
             this.textUserName.Name = "textUserName";
             this.textUserName.Size = new System.Drawing.Size(210, 20);
-            this.textUserName.TabIndex = 2;
+            this.textUserName.TabIndex = 3;
             // 
             // textLastName
             // 
-            this.textLastName.Location = new System.Drawing.Point(429, 134);
+            this.textLastName.Location = new System.Drawing.Point(412, 97);
             this.textLastName.Name = "textLastName";
             this.textLastName.Size = new System.Drawing.Size(210, 20);
             this.textLastName.TabIndex = 2;
             // 
-            // textMerName
-            // 
-            this.textMerName.Location = new System.Drawing.Point(429, 51);
-            this.textMerName.Name = "textMerName";
-            this.textMerName.Size = new System.Drawing.Size(210, 20);
-            this.textMerName.TabIndex = 2;
-            this.textMerName.Visible = false;
-            // 
             // textFirstName
             // 
-            this.textFirstName.Location = new System.Drawing.Point(429, 92);
+            this.textFirstName.Location = new System.Drawing.Point(412, 55);
             this.textFirstName.Name = "textFirstName";
             this.textFirstName.Size = new System.Drawing.Size(210, 20);
-            this.textFirstName.TabIndex = 2;
+            this.textFirstName.TabIndex = 1;
             // 
             // label8
             // 
@@ -261,7 +247,6 @@ namespace Ecommerce_application
             this.label8.Size = new System.Drawing.Size(91, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "Confirm Password";
-            this.label8.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
             // 
@@ -271,7 +256,6 @@ namespace Ecommerce_application
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Password";
-            this.label7.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -282,12 +266,11 @@ namespace Ecommerce_application
             this.label6.Size = new System.Drawing.Size(243, 24);
             this.label6.TabIndex = 1;
             this.label6.Text = "Enter Your password Below";
-            this.label6.Click += new System.EventHandler(this.label5_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(309, 249);
+            this.label10.Location = new System.Drawing.Point(292, 212);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 13);
             this.label10.TabIndex = 1;
@@ -296,7 +279,7 @@ namespace Ecommerce_application
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(309, 209);
+            this.label4.Location = new System.Drawing.Point(292, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 1;
@@ -305,7 +288,7 @@ namespace Ecommerce_application
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(309, 174);
+            this.label3.Location = new System.Drawing.Point(292, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 1;
@@ -314,26 +297,16 @@ namespace Ecommerce_application
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 137);
+            this.label2.Location = new System.Drawing.Point(288, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Last Name";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(309, 54);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Merchant Name";
-            this.label5.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(309, 95);
+            this.label1.Location = new System.Drawing.Point(292, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 1;
@@ -342,6 +315,7 @@ namespace Ecommerce_application
             // picBoxAddphoto
             // 
             this.picBoxAddphoto.BackColor = System.Drawing.Color.Silver;
+            this.picBoxAddphoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBoxAddphoto.InitialImage = null;
             this.picBoxAddphoto.Location = new System.Drawing.Point(31, 54);
             this.picBoxAddphoto.Name = "picBoxAddphoto";
@@ -388,8 +362,6 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         internal System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textMerName;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.LinkLabel linkLabel1;

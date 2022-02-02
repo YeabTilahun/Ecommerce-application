@@ -43,8 +43,8 @@ namespace Ecommerce_application
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnLogo = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -76,9 +76,6 @@ namespace Ecommerce_application
             this.textUsername.Size = new System.Drawing.Size(198, 19);
             this.textUsername.TabIndex = 29;
             this.textUsername.Text = "User name";
-            this.textUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textUsername_MouseClick);
-            this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
-            this.textUsername.MouseHover += new System.EventHandler(this.textUsername_MouseHover);
             // 
             // label2
             // 
@@ -127,7 +124,6 @@ namespace Ecommerce_application
             this.textPassword.Size = new System.Drawing.Size(198, 27);
             this.textPassword.TabIndex = 30;
             this.textPassword.Text = "Password";
-            this.textPassword.Leave += new System.EventHandler(this.textPassword_Leave);
             // 
             // label1
             // 
@@ -148,7 +144,6 @@ namespace Ecommerce_application
             this.label8.Size = new System.Drawing.Size(229, 13);
             this.label8.TabIndex = 37;
             this.label8.Text = "--------------------------------------------------------------------------";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // button2
             // 
@@ -224,19 +219,8 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.btnLogo);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 452);
+            this.panel1.Size = new System.Drawing.Size(181, 453);
             this.panel1.TabIndex = 47;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(411, 211);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(89, 13);
-            this.linkLabel1.TabIndex = 48;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "forgot Password?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // btnLogo
             // 
@@ -251,7 +235,17 @@ namespace Ecommerce_application
             this.btnLogo.Size = new System.Drawing.Size(136, 145);
             this.btnLogo.TabIndex = 36;
             this.btnLogo.UseVisualStyleBackColor = false;
-            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(411, 211);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(89, 13);
+            this.linkLabel1.TabIndex = 48;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "forgot Password?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // SignIn
             // 
@@ -277,7 +271,7 @@ namespace Ecommerce_application
             this.Name = "SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.SignIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);

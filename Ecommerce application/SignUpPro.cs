@@ -44,7 +44,6 @@ namespace Ecommerce_application
                         con.Open();
                         SqlCommand cmd = new SqlCommand("spSignUpmer", con);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@@merchna", u.MerchantName);
                         cmd.Parameters.AddWithValue("@firstname", u.firstName);
                         cmd.Parameters.AddWithValue("@lastname", u.fatherName);
                         cmd.Parameters.AddWithValue("@username", u.userName);
@@ -72,5 +71,34 @@ namespace Ecommerce_application
             }
 
         }
+
+
+        public void AddtoTableAll(SignUpUser u)
+        {
+            // string constr = "Server = JONNY; database = ecommerce; integrated security = true;";
+            Connection connect = new Connection();
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("spAddToAll", con);
+                        cmd.CommandType = CommandType.StoredProcedure;                  
+                        cmd.Parameters.AddWithValue("@username", u.userName);
+                        cmd.Parameters.AddWithValue("@password", u.password);
+                        cmd.Parameters.AddWithValue("@role", u.role);
+                        int rowAffected = cmd.ExecuteNonQuery();
+                        con.Close();
+                        if (rowAffected > 0)
+                            MessageBox.Show("signed up succesfully! ");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
     }
 }
