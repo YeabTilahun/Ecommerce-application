@@ -166,6 +166,8 @@
     <Compile Include="CustomerPage.Designer.cs">
       <DependentUpon>CustomerPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPageClass.cs" />
+    <Compile Include="CustomerPageDatabase.cs" />
     <Compile Include="CustomerProfile.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -32,7 +32,6 @@ namespace Ecommerce_application
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerProfile));
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonChangePicture = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
@@ -52,8 +51,8 @@ namespace Ecommerce_application
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.buttonCancel);
             this.panel1.Controls.Add(this.buttonChangePicture);
             this.panel1.Controls.Add(this.buttonUpdate);
             this.panel1.Controls.Add(this.pictureBoxProfile);
@@ -76,28 +75,13 @@ namespace Ecommerce_application
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Red;
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(359, 594);
+            this.linkLabel1.Location = new System.Drawing.Point(302, 529);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(93, 13);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Change Password";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
-            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCancel.FlatAppearance.BorderSize = 0;
-            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(714, 584);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 3;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.button3_Click);
             // 
             // buttonChangePicture
             // 
@@ -121,7 +105,7 @@ namespace Ecommerce_application
             this.buttonUpdate.FlatAppearance.BorderSize = 0;
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.Location = new System.Drawing.Point(12, 584);
+            this.buttonUpdate.Location = new System.Drawing.Point(515, 529);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdate.TabIndex = 3;
@@ -131,6 +115,7 @@ namespace Ecommerce_application
             // 
             // pictureBoxProfile
             // 
+            this.pictureBoxProfile.BackColor = System.Drawing.Color.Silver;
             this.pictureBoxProfile.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxProfile.Name = "pictureBoxProfile";
             this.pictureBoxProfile.Size = new System.Drawing.Size(233, 201);
@@ -140,7 +125,7 @@ namespace Ecommerce_application
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(302, 476);
+            this.label6.Location = new System.Drawing.Point(302, 448);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 1;
@@ -149,7 +134,7 @@ namespace Ecommerce_application
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(302, 420);
+            this.label4.Location = new System.Drawing.Point(302, 392);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 1;
@@ -158,7 +143,7 @@ namespace Ecommerce_application
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 369);
+            this.label3.Location = new System.Drawing.Point(302, 341);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 1;
@@ -167,7 +152,7 @@ namespace Ecommerce_application
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(302, 315);
+            this.label2.Location = new System.Drawing.Point(302, 287);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -176,7 +161,7 @@ namespace Ecommerce_application
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 264);
+            this.label1.Location = new System.Drawing.Point(302, 236);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 1;
@@ -184,35 +169,35 @@ namespace Ecommerce_application
             // 
             // txtCustPhoneNumber
             // 
-            this.txtCustPhoneNumber.Location = new System.Drawing.Point(414, 473);
+            this.txtCustPhoneNumber.Location = new System.Drawing.Point(414, 445);
             this.txtCustPhoneNumber.Name = "txtCustPhoneNumber";
             this.txtCustPhoneNumber.Size = new System.Drawing.Size(100, 20);
             this.txtCustPhoneNumber.TabIndex = 0;
             // 
             // txtCustEmail
             // 
-            this.txtCustEmail.Location = new System.Drawing.Point(414, 417);
+            this.txtCustEmail.Location = new System.Drawing.Point(414, 389);
             this.txtCustEmail.Name = "txtCustEmail";
             this.txtCustEmail.Size = new System.Drawing.Size(100, 20);
             this.txtCustEmail.TabIndex = 0;
             // 
             // txtCustUserName
             // 
-            this.txtCustUserName.Location = new System.Drawing.Point(414, 366);
+            this.txtCustUserName.Location = new System.Drawing.Point(414, 338);
             this.txtCustUserName.Name = "txtCustUserName";
             this.txtCustUserName.Size = new System.Drawing.Size(100, 20);
             this.txtCustUserName.TabIndex = 0;
             // 
             // txtCustLastName
             // 
-            this.txtCustLastName.Location = new System.Drawing.Point(414, 312);
+            this.txtCustLastName.Location = new System.Drawing.Point(414, 284);
             this.txtCustLastName.Name = "txtCustLastName";
             this.txtCustLastName.Size = new System.Drawing.Size(100, 20);
             this.txtCustLastName.TabIndex = 0;
             // 
             // txtCustFirstName
             // 
-            this.txtCustFirstName.Location = new System.Drawing.Point(414, 261);
+            this.txtCustFirstName.Location = new System.Drawing.Point(414, 233);
             this.txtCustFirstName.Name = "txtCustFirstName";
             this.txtCustFirstName.Size = new System.Drawing.Size(100, 20);
             this.txtCustFirstName.TabIndex = 0;
@@ -235,7 +220,6 @@ namespace Ecommerce_application
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonChangePicture;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Label label6;
