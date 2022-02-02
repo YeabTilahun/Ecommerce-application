@@ -29,15 +29,16 @@ namespace Ecommerce_application
                 MemoryStream ms = new MemoryStream();
                 picBoxAddphoto.BackgroundImage.Save(ms, picBoxAddphoto.BackgroundImage.RawFormat);
                 byte[] photo = ms.ToArray();
-                picPermit.BackgroundImage.Save(ms, picPermit.BackgroundImage.RawFormat);
-                byte[] permit = ms.ToArray();
+                MemoryStream m = new MemoryStream();
+                picPermit.BackgroundImage.Save(m, picPermit.BackgroundImage.RawFormat);
+                byte[] permit = m.ToArray();
 
                 if (pwd == cpwd)
                 {
                     if (cmbRole.Text == "Customer")
                     {
                         //NewHomeClass hc = new NewHomeClass( textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, photo);
-                        SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo);
+                        SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo, dateTimePicker1.Text);
                         MemoryStream stream = new MemoryStream(hc.photo);
                         Image RetImage = Image.FromStream(stream);
                         picBoxAddphoto.Image = RetImage;
@@ -48,7 +49,7 @@ namespace Ecommerce_application
                     }
                     else if(cmbRole.Text == "Merchant")
                     {
-                        SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo,permit);
+                        SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo,permit, dateTimePicker1.Text);
                         MemoryStream stream = new MemoryStream(hc.photo);
                         Image RetImage = Image.FromStream(stream);
                         picBoxAddphoto.Image = RetImage;

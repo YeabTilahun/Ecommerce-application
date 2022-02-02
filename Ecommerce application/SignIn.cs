@@ -75,7 +75,7 @@ namespace Ecommerce_application
             else if (s.role == "Admin")
             {
                 label7.Visible = false;
-                Admin admin = new Admin(textUsername.Text, textPassword.Text);
+                Admin admin = new Admin(textUsername.Text);
                 admin.Show();
                 this.Hide();
             }

@@ -17,7 +17,8 @@ namespace Ecommerce_application
         public string phone;
         public byte[] photo;
         public byte[] permit;
-        public SignUpUser(string fname, string lname, string uname, string pass, string pnum, string email, string role, byte[] phot)
+        public string birthday;
+        public SignUpUser(string fname, string lname, string uname, string pass, string pnum, string email, string role, byte[] phot,string birthday )
         {
             this.email = email;
             this.firstName = fname;
@@ -27,9 +28,9 @@ namespace Ecommerce_application
             this.role = role;
             this.phone = pnum;
             this.photo = phot;
-       
+            this.birthday = birthday;
         }
-        public SignUpUser(string fname, string lname, string uname, string pass, string pnum, string email, string role, byte[] phot,byte [] pic)
+        public SignUpUser(string fname, string lname, string uname, string pass, string pnum, string email, string role, byte[] phot,byte [] pic, string birthday)
         {
             this.email = email;
             this.firstName = fname;
@@ -40,7 +41,7 @@ namespace Ecommerce_application
             this.phone = pnum;
             this.photo = phot;
             this.permit = pic;
-            
+            this.birthday = birthday;
         }
         public void signUp()
         {

@@ -33,6 +33,7 @@ namespace Ecommerce_application
                         cmd.Parameters.AddWithValue("@phone", u.phone);
                         cmd.Parameters.AddWithValue("@email", u.email);
                         cmd.Parameters.AddWithValue("@photo", u.photo);
+                        cmd.Parameters.AddWithValue("@birthday", u.birthday);
                         int rowAffected = cmd.ExecuteNonQuery();
                         con.Close();
                         if (rowAffected > 0)
@@ -54,7 +55,7 @@ namespace Ecommerce_application
                         cmd.Parameters.AddWithValue("@photo", u.photo);
                         cmd.Parameters.AddWithValue("@permit", u.permit);
                         cmd.Parameters.AddWithValue("@status", "In progress");
-
+                        cmd.Parameters.AddWithValue("@birthday", u.birthday);
                         int rowAffected = cmd.ExecuteNonQuery();
                         con.Close();
                         if (rowAffected > 0)
@@ -89,8 +90,6 @@ namespace Ecommerce_application
                         cmd.Parameters.AddWithValue("@role", u.role);
                         int rowAffected = cmd.ExecuteNonQuery();
                         con.Close();
-                        if (rowAffected > 0)
-                            MessageBox.Show("signed up succesfully! ");
                 }
             }
             catch (SqlException ex)

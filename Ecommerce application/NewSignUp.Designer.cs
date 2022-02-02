@@ -55,6 +55,8 @@ namespace Ecommerce_application
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picBoxAddphoto = new System.Windows.Forms.PictureBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPermit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).BeginInit();
@@ -63,6 +65,8 @@ namespace Ecommerce_application
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.btnPermit);
             this.panel1.Controls.Add(this.picPermit);
             this.panel1.Controls.Add(this.label9);
@@ -96,13 +100,14 @@ namespace Ecommerce_application
             // 
             this.btnPermit.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
             this.btnPermit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPermit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPermit.FlatAppearance.BorderSize = 0;
             this.btnPermit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPermit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPermit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPermit.ForeColor = System.Drawing.Color.White;
-            this.btnPermit.Location = new System.Drawing.Point(721, 261);
+            this.btnPermit.Location = new System.Drawing.Point(734, 261);
             this.btnPermit.Name = "btnPermit";
-            this.btnPermit.Size = new System.Drawing.Size(160, 36);
+            this.btnPermit.Size = new System.Drawing.Size(130, 36);
             this.btnPermit.TabIndex = 10;
             this.btnPermit.Text = "Add Permit";
             this.btnPermit.UseVisualStyleBackColor = true;
@@ -125,7 +130,7 @@ namespace Ecommerce_application
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(295, 244);
+            this.label9.Location = new System.Drawing.Point(288, 284);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 9;
@@ -138,7 +143,7 @@ namespace Ecommerce_application
             this.cmbRole.Items.AddRange(new object[] {
             "Customer",
             "Merchant"});
-            this.cmbRole.Location = new System.Drawing.Point(412, 244);
+            this.cmbRole.Location = new System.Drawing.Point(412, 284);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(156, 21);
             this.cmbRole.TabIndex = 6;
@@ -178,13 +183,14 @@ namespace Ecommerce_application
             // 
             this.buttonAddpic.BackgroundImage = global::Ecommerce_application.Properties.Resources.Asset_49;
             this.buttonAddpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAddpic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddpic.FlatAppearance.BorderSize = 0;
             this.buttonAddpic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddpic.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddpic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddpic.ForeColor = System.Drawing.Color.White;
-            this.buttonAddpic.Location = new System.Drawing.Point(53, 238);
+            this.buttonAddpic.Location = new System.Drawing.Point(72, 260);
             this.buttonAddpic.Name = "buttonAddpic";
-            this.buttonAddpic.Size = new System.Drawing.Size(160, 36);
+            this.buttonAddpic.Size = new System.Drawing.Size(130, 36);
             this.buttonAddpic.TabIndex = 9;
             this.buttonAddpic.Text = "Add Photo";
             this.buttonAddpic.UseVisualStyleBackColor = true;
@@ -317,12 +323,28 @@ namespace Ecommerce_application
             this.picBoxAddphoto.BackColor = System.Drawing.Color.Silver;
             this.picBoxAddphoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBoxAddphoto.InitialImage = null;
-            this.picBoxAddphoto.Location = new System.Drawing.Point(31, 54);
+            this.picBoxAddphoto.Location = new System.Drawing.Point(12, 51);
             this.picBoxAddphoto.Name = "picBoxAddphoto";
-            this.picBoxAddphoto.Size = new System.Drawing.Size(205, 178);
+            this.picBoxAddphoto.Size = new System.Drawing.Size(236, 204);
             this.picBoxAddphoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxAddphoto.TabIndex = 0;
             this.picBoxAddphoto.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(412, 249);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(288, 249);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "BirthDay";
             // 
             // NewSignUp
             // 
@@ -369,5 +391,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.ComboBox cmbRole;
         private System.Windows.Forms.Button btnPermit;
         private System.Windows.Forms.PictureBox picPermit;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
