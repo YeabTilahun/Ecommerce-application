@@ -111,5 +111,9 @@ namespace Ecommerce_application
             labelDescription.Visible = true;
         }
 
+        private void LoadItems_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

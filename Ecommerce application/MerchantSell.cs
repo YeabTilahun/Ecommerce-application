@@ -94,6 +94,10 @@ namespace Ecommerce_application
             textBox5.Clear();
             textBox2.Clear();
             textBox3.Clear();
+            if (!comboBox1.Items.Contains(""))
+            {
+                comboBox1.Items.Add("");
+            }
             comboBox1.Text = "";
             textBox4.Clear();
         }
@@ -122,6 +126,11 @@ namespace Ecommerce_application
         {
             if (comboBox1.Items.Contains(""))
                 comboBox1.Items.Remove("");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

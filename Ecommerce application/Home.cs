@@ -19,7 +19,7 @@ namespace Ecommerce_application
         public static DataGridView dataGridView1 = new DataGridView();
         public string name;
         Connection connect = new Connection();
-        string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
+        //string constr = "Server = LAPTOP-RS59N8IM; database = Ecommerce; integrated security = true;";
         int a = Screen.PrimaryScreen.WorkingArea.Width;
         int b = Screen.PrimaryScreen.WorkingArea.Height;
         public Home()
@@ -143,7 +143,7 @@ namespace Ecommerce_application
             }
         }
 
-        public void GetCategory()
+       /* public void GetCategory()
         {
             string[] category = null;
             try
@@ -170,7 +170,7 @@ namespace Ecommerce_application
             {
                 comboBox1.Items.Add(cat);
             }
-        }
+        }*/
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
@@ -345,7 +345,7 @@ namespace Ecommerce_application
             //panel;
         }
 
-        private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
+       /* private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             resize();
             CustomerProfile a = new CustomerProfile();
@@ -353,9 +353,9 @@ namespace Ecommerce_application
             flowLayoutPanel1.Controls.Add(a.panel1);
             flowLayoutPanel1.Show();
             flowLayoutPanel1.BringToFront();
-        }
+        }*/
 
-        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+       /* private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             resize();
             MerchantChangePassword a = new MerchantChangePassword();
@@ -363,9 +363,9 @@ namespace Ecommerce_application
             flowLayoutPanel1.Controls.Add(a.panel1);
             flowLayoutPanel1.Show();
             flowLayoutPanel1.BringToFront();
-        }
+        }*/
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+       /* private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult res = MessageBox.Show("Are you sure you want to Logout", "Teleqwa Suq", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (res == DialogResult.Yes)
@@ -379,6 +379,6 @@ namespace Ecommerce_application
             {
 
             }
-        }
+        }*/
     }
 }
