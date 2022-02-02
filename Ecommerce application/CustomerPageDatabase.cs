@@ -52,45 +52,65 @@ namespace Ecommerce_application
 
         public void Transaction1()
         {
+            int counter = 0;
             CustomerLoadProduct a = new CustomerLoadProduct();
             Dictionary<string, int> column_Counts = cp.GetCountOfValues("id");
+            DataTable dt;
             string now = DateTime.Now.ToShortDateString();
             int rowAffected = 0;
-            foreach (KeyValuePair<string, int> kvp in column_Counts)
-            { }
             try
             {
-                using (SqlConnection con = connect.CreateConnection())
+                foreach (KeyValuePair<string, int> kvp in column_Counts)
                 {
-
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-
-                    for (int i = 0; i < CustomerPage.dataGridView2.Rows.Count; i++)
+                    using (SqlConnection con = connect.CreateConnection())
                     {
-                        array(CustomerPage.dataGridView2.Rows[i].Cells["id"].Value.ToString());
-                        cmd = new SqlCommand("spTransaction", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@user_name", CustomerPage.name);
-                        cmd.Parameters.AddWithValue("@productID", CustomerPage.dataGridView2.Rows[i].Cells["id"].Value);
 
-                        cmd.Parameters.AddWithValue("@totalPrice", price1);
-                        cmd.Parameters.AddWithValue("@category", cat);
+                        SqlDataAdapter da = new SqlDataAdapter("spGetProductImageAndName", con);
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        da.SelectCommand.Parameters.AddWithValue("@id", int.Parse(kvp.Key));
+                        DataSet ds = new DataSet();
+                        da.Fill(ds, "tblProfile");
+                        dt = ds.Tables["tblProfile"];
+                        if (int.Parse(dt.Rows[0]["quantity"].ToString()) < kvp.Value && !Convert.IsDBNull(dt.Rows[0]["quantity"]))
+                        {
+                            MessageBox.Show("There is no Efficent Quantity by {0} Product in our store", dt.Rows[0]["name"].ToString());
+                            counter++;
+                            continue;
+                        }
+                    }
+                    using (SqlConnection con = connect.CreateConnection())
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("spTransaction", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@user_name", Merchant.name);
+                        cmd.Parameters.AddWithValue("@productID", kvp.Key);
+
+                        cmd.Parameters.AddWithValue("@totalPrice", (kvp.Value * double.Parse(dt.Rows[0]["price"].ToString())));
+                        cmd.Parameters.AddWithValue("@category", dt.Rows[0]["category"].ToString());
                         cmd.Parameters.AddWithValue("@date", now);
-                        cmd.Parameters.AddWithValue("@quantity", qty);
+                        cmd.Parameters.AddWithValue("@quantity", kvp.Value.ToString());
                         rowAffected = cmd.ExecuteNonQuery();
                     }
-                    con.Close();
-                    if (rowAffected > 0)
+                    using (SqlConnection con = connect.CreateConnection())
                     {
-                        MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
-                        MessageBox.Show("Thank you for using our application!");
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("spUpdateQuanity", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@productId", int.Parse(kvp.Key));
+                        cmd.Parameters.AddWithValue("@qty", (double.Parse(dt.Rows[0]["quantity"].ToString()) - kvp.Value).ToString());
+                        rowAffected = cmd.ExecuteNonQuery();
                     }
-                    else
-                        MessageBox.Show("You don't have any product to buy");
                 }
+                if (rowAffected > 0)
+                {
+                    MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
+                    MessageBox.Show("Thank you for using our application!");
+                }
+                else
+                    MessageBox.Show("You don't have any product to buy");
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
