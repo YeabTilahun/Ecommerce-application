@@ -56,6 +56,7 @@ namespace Ecommerce_application
         {
             AdminDatabase check = new AdminDatabase();
             string[] user = check.GetAllUserName();
+            return user;
         }
     }
 }
