@@ -69,6 +69,7 @@ namespace Ecommerce_application
             resize();
             SignIn a = new SignIn();
             a.Show();
+            this.Close();
         }
 
         //Button SignUp
