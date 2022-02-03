@@ -24,14 +24,18 @@ namespace Ecommerce_application
         {
             try
             {
+                byte[] permit = null;
                 string pwd = textpassword.Text;
                 string cpwd = textconfirmpassword.Text;
                 MemoryStream ms = new MemoryStream();
                 picBoxAddphoto.BackgroundImage.Save(ms, picBoxAddphoto.BackgroundImage.RawFormat);
                 byte[] photo = ms.ToArray();
-                MemoryStream m = new MemoryStream();
-                picPermit.BackgroundImage.Save(m, picPermit.BackgroundImage.RawFormat);
-                byte[] permit = m.ToArray();
+                if (cmbRole.Text == "Merchant")
+                {
+                    MemoryStream m = new MemoryStream();
+                    picPermit.BackgroundImage.Save(m, picPermit.BackgroundImage.RawFormat);
+                    permit = m.ToArray();
+                }
 
                 if (pwd == cpwd)
                 {

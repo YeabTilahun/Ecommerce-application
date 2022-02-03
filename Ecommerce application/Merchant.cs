@@ -118,6 +118,17 @@ namespace Ecommerce_application
             string check = null;
             MerchantClass a = new MerchantClass();
             check = a.check();
+            if (check == "In progress" || check == "in progress")
+            {
+                button5.Visible = false;
+                button3.Visible = false;
+            }
+            else if(check == "Active" || check == "active")
+            {
+                button5.Visible = true;
+                button3.Visible = true;
+            }
+            MessageBox.Show(check);
         }
 
         //Fetch information about merchant from database and assign it to my profile page
