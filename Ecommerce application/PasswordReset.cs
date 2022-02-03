@@ -21,7 +21,7 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChangePassword o = new ChangePassword(textBox1.Text, textBox2.Text);
+            ChangePassword o = new ChangePassword(textBox1.Text, textBox2.Text,role);
             o.checkPassword();
             SignIn s = new SignIn();
             s.Show();
