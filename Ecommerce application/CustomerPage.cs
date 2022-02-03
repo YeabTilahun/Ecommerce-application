@@ -60,6 +60,8 @@ namespace Ecommerce_application
             SetupDataGridView();
             //load information about the user
             loadMyProfile();
+            DataGridViewRowsAddedEventArgs a= null;
+            dataGridView2_RowsAdded(sender, a);
 
             //load and display when app run
             button6_Click(sender, e);
@@ -328,6 +330,11 @@ namespace Ecommerce_application
             {
 
             }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -83,7 +83,7 @@ namespace Ecommerce_application
                         con.Open();
                         SqlCommand cmd = new SqlCommand("spTransaction", con);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@user_name", Merchant.name);
+                        cmd.Parameters.AddWithValue("@user_name", CustomerPage.name);
                         cmd.Parameters.AddWithValue("@productID", kvp.Key);
 
                         cmd.Parameters.AddWithValue("@totalPrice", (kvp.Value * double.Parse(dt.Rows[0]["price"].ToString())));

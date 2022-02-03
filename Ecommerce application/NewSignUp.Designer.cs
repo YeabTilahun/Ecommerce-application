@@ -31,6 +31,8 @@ namespace Ecommerce_application
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewSignUp));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnPermit = new System.Windows.Forms.Button();
             this.picPermit = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,8 +57,6 @@ namespace Ecommerce_application
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picBoxAddphoto = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPermit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAddphoto)).BeginInit();
@@ -95,6 +95,22 @@ namespace Ecommerce_application
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(927, 453);
             this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(288, 249);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "BirthDay";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(412, 249);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 13;
             // 
             // btnPermit
             // 
@@ -321,6 +337,7 @@ namespace Ecommerce_application
             // picBoxAddphoto
             // 
             this.picBoxAddphoto.BackColor = System.Drawing.Color.Silver;
+            this.picBoxAddphoto.BackgroundImage = global::Ecommerce_application.Properties.Resources.Group_3423;
             this.picBoxAddphoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBoxAddphoto.InitialImage = null;
             this.picBoxAddphoto.Location = new System.Drawing.Point(12, 51);
@@ -329,22 +346,6 @@ namespace Ecommerce_application
             this.picBoxAddphoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxAddphoto.TabIndex = 0;
             this.picBoxAddphoto.TabStop = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(412, 249);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(288, 249);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "BirthDay";
             // 
             // NewSignUp
             // 
