@@ -148,7 +148,7 @@ namespace Ecommerce_application
             try
             {
                 SqlConnection con = connect.CreateConnection();
-                SqlDataAdapter da = new SqlDataAdapter("spGetMerchantProfile", con);
+                SqlDataAdapter da = new SqlDataAdapter("spGetCustomerProfile", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@name", CustomerPage.name);
                 DataSet ds = new DataSet();
@@ -162,6 +162,7 @@ namespace Ecommerce_application
             return dt;
         }
 
+        string uname = null;
         public void UpdateProfile(CustomerPageClass mp)
         {
             try
@@ -169,7 +170,7 @@ namespace Ecommerce_application
                 using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("spUpdateMerchantProfile", con);
+                    SqlCommand cmd = new SqlCommand("spUpdateCustomerProfile", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     /* MemoryStream ms = new MemoryStream();
                      mp.profileImage.BackgroundImage.Save(ms, mp.profileImage.BackgroundImage.RawFormat);
@@ -189,6 +190,8 @@ namespace Ecommerce_application
                     {
                         MessageBox.Show("Saved Sucessfully!");
                         CustomerPage.name = mp.username;
+                        uname = mp.username;
+
                     }
                     else
                         MessageBox.Show("Failed Please tryagain!");
@@ -226,6 +229,7 @@ namespace Ecommerce_application
             return old_pass;
         }
 
+        string pass1 = null;
         public void UpdatePassword(string pass)
         {
             try
@@ -242,6 +246,7 @@ namespace Ecommerce_application
                     if (rowAffected > 0)
                     {
                         MessageBox.Show("Password reset!");
+                        pass1 = pass;
 
                     }
                     else
