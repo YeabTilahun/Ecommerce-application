@@ -12,9 +12,11 @@ namespace Ecommerce_application
 {
     public partial class PasswordReset : Form
     {
-        public PasswordReset()
+        private string role;
+        public PasswordReset(string role)
         {
             InitializeComponent();
+            this.role = role;
         }
 
         private void button1_Click(object sender, EventArgs e)

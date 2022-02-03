@@ -19,14 +19,21 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChangePassword r = new ChangePassword(textBox2.Text);
-            int x=r.checkEmail();
-            if (x == 1)
+            ChangePassword r = new ChangePassword(txtuser.Text);
+            string role=r.checkEmail();
+            if (role!="")
             {
-                Verfication v = new Verfication();
+                Verfication v = new Verfication(role);
                 v.Show();
                 this.Hide();
             }
+           
+        }
+
+        private void txtuser_Click(object sender, EventArgs e)
+        {
+
+            txtuser.Text = "";
         }
     }
 }

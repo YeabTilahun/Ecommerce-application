@@ -23,10 +23,10 @@ namespace Ecommerce_application
             confirm = conf;
         }
         Connection c = new Connection();
-        public int checkEmail()
+        public string checkEmail()
         {
             // string constr = "Server = JONNY; database = ecommerce; integrated security = true;";
-           
+            string role="";
             int flag = 0;
             try
             {
@@ -44,12 +44,12 @@ namespace Ecommerce_application
                         if (username.CompareTo(dr["userName"]) == 0)
                         {
 
-                            flag = 1;
-
+                            role =Convert.ToString( dr["role"]);
+                            flag =1;
                             break;
                         }
                     }
-                    if (flag == 0)
+                    if (flag==0)
                     {
                         MessageBox.Show("Invalid UserName!TRY AGAIN");
                     }
@@ -61,7 +61,7 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
-            return flag;
+            return role;
         }
         public void checkPassword()
         {

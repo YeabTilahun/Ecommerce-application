@@ -96,5 +96,14 @@ namespace Ecommerce_application
             f.Show();
         }
 
+        private void textUsername_Click(object sender, EventArgs e)
+        {
+            textUsername.Text = "";
+        }
+
+        private void textPassword_Click(object sender, EventArgs e)
+        {
+            textPassword.Text = "";
+        }
     }
 }
