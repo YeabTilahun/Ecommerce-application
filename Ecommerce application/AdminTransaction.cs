@@ -69,6 +69,7 @@ namespace Ecommerce_application
             {
                 case "Yearly":
                     cmbMonth.Visible = false;
+                    lblMonth.Visible = false;
                     chart1.DataSource = ac.GetYearlyReport(category);
                     DisplayProducts(ac.GetProductYearlyReport(category));
                     chart1.Series["Series1"].XValueMember = "month";
@@ -79,10 +80,12 @@ namespace Ecommerce_application
                     break;
                 case "Monthly":
                     cmbMonth.Visible = true;
+                    lblMonth.Visible = true;
                     cmbMonth_SelectedIndexChanged(sender, e);
                     break;
                 case "Weekly":
                     cmbMonth.Visible = false;
+                    lblMonth.Visible = false;
                     chart1.DataSource = ac.GetWeeklyReport(category);
                     DisplayProducts(ac.GetProductWeeklyReport(category));
                     chart1.Series["Series1"].XValueMember = "day";
@@ -93,6 +96,7 @@ namespace Ecommerce_application
                     break;
                 case "Daily":
                     cmbMonth.Visible = false;
+                    lblMonth.Visible = false;
                     chart1.DataSource = ac.GetDailyReport(category);
                     DisplayProducts(ac.GetProductDailyReport(category));
                     chart1.Series["Series1"].XValueMember = "category";
@@ -116,6 +120,7 @@ namespace Ecommerce_application
                 category = cmbCategory.Text;
             switch (cmbMonth.Text)
             {
+                
                 case "":
                     chart1.DataSource = ac.GetMonthlyReport(category, 1);
                     DisplayProducts(ac.GetProductMonthlyReport(category, 1));
@@ -124,7 +129,7 @@ namespace Ecommerce_application
                     chart1.DataSource = ac.GetMonthlyReport(category, 1);
                     DisplayProducts(ac.GetProductMonthlyReport(category, 1));
                     break;
-                case "Feburary":
+                case "February":
                     chart1.DataSource = ac.GetMonthlyReport(category, 2);
                     DisplayProducts(ac.GetProductMonthlyReport(category, 2));
                     break;
@@ -168,12 +173,24 @@ namespace Ecommerce_application
                     chart1.DataSource = ac.GetMonthlyReport(category, 12);
                     DisplayProducts(ac.GetProductMonthlyReport(category, 12));
                     break;
+                default:
+                    chart1.DataSource = ac.GetMonthlyReport(category, 1);
+                    DisplayProducts(ac.GetProductMonthlyReport(category, 1));
+                    break;
             }
-            chart1.Series["Series1"].XValueMember = "day";
-            chart1.Series["Series1"].YValueMembers = "total";
-            chart1.ChartAreas["ChartArea1"].AxisX.Title = "Day";
-            chart1.ChartAreas["ChartArea1"].AxisY.Title = "Total";
-            chart1.DataBind();
+            try
+            {
+                //chart1.DataSource = ac.GetMonthlyReport(category, 2);
+                chart1.Series["Series1"].XValueMember = "day";
+                chart1.Series["Series1"].YValueMembers = "total";
+                chart1.ChartAreas["ChartArea1"].AxisX.Title = "Day";
+                chart1.ChartAreas["ChartArea1"].AxisY.Title = "Total";
+                chart1.DataBind();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)

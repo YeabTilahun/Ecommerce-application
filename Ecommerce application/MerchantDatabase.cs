@@ -181,71 +181,67 @@ namespace Ecommerce_application
         public void Transaction1()
         {
             int counter = 0;
-            MerchantLoadProducts a = new MerchantLoadProducts();
-            Merchant b = new Merchant();
-            Dictionary<string, int> column_Counts = b.GetCountOfValues("id");
+            CustomerLoadProduct a = new CustomerLoadProduct();
+            Dictionary<string, int> column_Counts = cp.GetCountOfValues("id");
+            DataTable dt;
             string now = DateTime.Now.ToShortDateString();
             int rowAffected = 0;
-            foreach (KeyValuePair<string, int> kvp in column_Counts)
+            try
             {
-                using (SqlConnection con = connect.CreateConnection())
-                {
-
-                    SqlDataAdapter da = new SqlDataAdapter("spGetProductImageAndName", con);
-                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@id", int.Parse(kvp.Key));
-                    DataSet ds = new DataSet();
-                    da.Fill(ds, "tblProfile");
-                    DataTable dt = ds.Tables["tblProfile"];
-                    if (int.Parse(dt.Rows[0]["quantity"].ToString()) < kvp.Value && !Convert.IsDBNull(dt.Rows[0]["quantity"]))
-                    {
-                        MessageBox.Show("There is no Efficent Quantity by {0} Product in our store", dt.Rows[0]["name"].ToString());
-                        counter++;
-                        break;
-                    }
-
-                }
-            }
-            if(counter == 0)
-            {
-                try
+                foreach (KeyValuePair<string, int> kvp in column_Counts)
                 {
                     using (SqlConnection con = connect.CreateConnection())
                     {
 
+                        SqlDataAdapter da = new SqlDataAdapter("spGetProductImageAndName", con);
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        da.SelectCommand.Parameters.AddWithValue("@id", int.Parse(kvp.Key));
+                        DataSet ds = new DataSet();
+                        da.Fill(ds, "tblProfile");
+                        dt = ds.Tables["tblProfile"];
+                        if (int.Parse(dt.Rows[0]["quantity"].ToString()) < kvp.Value && !Convert.IsDBNull(dt.Rows[0]["quantity"]))
+                        {
+                            MessageBox.Show("There is no Efficent Quantity by {0} Product in our store", dt.Rows[0]["name"].ToString());
+                            counter++;
+                            continue;
+                        }
+                    }
+                    using (SqlConnection con = connect.CreateConnection())
+                    {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand();
+                        SqlCommand cmd = new SqlCommand("spTransaction", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@user_name", Merchant.name);
+                        cmd.Parameters.AddWithValue("@productID", kvp.Key);
 
-                        for (int i = 0; i < Merchant.dataGridView2.Rows.Count; i++)
-                        {
-                            array(Merchant.dataGridView2.Rows[i].Cells["id"].Value.ToString());
-                            cmd = new SqlCommand("spTransaction", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@user_name", Merchant.name);
-                            cmd.Parameters.AddWithValue("@productID", Merchant.dataGridView2.Rows[i].Cells["id"].Value);
-
-                            cmd.Parameters.AddWithValue("@totalPrice", price1);
-                            cmd.Parameters.AddWithValue("@category", cat);
-                            cmd.Parameters.AddWithValue("@date", now);
-                            cmd.Parameters.AddWithValue("@quantity", qty);
-                            rowAffected = cmd.ExecuteNonQuery();
-                        }
-                        con.Close();
-                        if (rowAffected > 0)
-                        {
-                            MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
-                            MessageBox.Show("Thank you for using our application!");
-                        }
-                        else
-                            MessageBox.Show("You don't have any product to buy");
+                        cmd.Parameters.AddWithValue("@totalPrice", (kvp.Value * double.Parse(dt.Rows[0]["price"].ToString())));
+                        cmd.Parameters.AddWithValue("@category", dt.Rows[0]["category"].ToString());
+                        cmd.Parameters.AddWithValue("@date", now);
+                        cmd.Parameters.AddWithValue("@quantity", kvp.Value.ToString());
+                        rowAffected = cmd.ExecuteNonQuery();
+                    }
+                    using (SqlConnection con = connect.CreateConnection())
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("spUpdateQuanity", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@productId", int.Parse(kvp.Key));
+                        cmd.Parameters.AddWithValue("@qty", (double.Parse(dt.Rows[0]["quantity"].ToString()) - kvp.Value).ToString());
+                        rowAffected = cmd.ExecuteNonQuery();
                     }
                 }
-                catch (SqlException ex)
+                if (rowAffected > 0)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
+                    MessageBox.Show("Thank you for using our application!");
                 }
+                else
+                    MessageBox.Show("You don't have any product to buy");
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //check if merchant is valid or not
@@ -258,7 +254,7 @@ namespace Ecommerce_application
                 using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("Select status from merchant where merchantName=@user", con);
+                    SqlCommand cmd = new SqlCommand("Select status from merchant where username=@user", con);
                     cmd.Parameters.AddWithValue("@user", Merchant.name);
                     SqlDataReader da = cmd.ExecuteReader();
                     while (da.Read())
@@ -415,7 +411,7 @@ namespace Ecommerce_application
             string old_pass = null;
            try
             {
-                using (SqlConnection con = connect.CreateConnection())
+/*                using (SqlConnection con = connect.CreateConnection())
                 {
 
                     con.Open();
@@ -427,7 +423,7 @@ namespace Ecommerce_application
                     DataTable dt = ds.Tables["tblpass"];
                     old_pass = dt.Rows[0]["password"].ToString();
 
-                }
+                }*/
             }
             catch (SqlException ex)
             {
@@ -436,6 +432,8 @@ namespace Ecommerce_application
             return old_pass;
         }
 
+        //string for update pass in table all
+        string pass1 = null;
         //This will update the password if called
         public void UpdatePassword(string pass)
         {
@@ -447,12 +445,13 @@ namespace Ecommerce_application
                     SqlCommand cmd = new SqlCommand("spUpdatePassword", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pass", pass);
-                    cmd.Parameters.AddWithValue("@user", "yoo");
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
                     {
                         MessageBox.Show("Password reset!");
+                        pass1 = pass;
 
                     }
                     else
@@ -466,6 +465,9 @@ namespace Ecommerce_application
 
         }
 
+        //to update table all
+        string uname = null;
+        string olduser = Merchant.name;
         //This will update merchant database information when called
         public void UpdateProfile(MerchantClass mp)
         {
@@ -492,8 +494,11 @@ namespace Ecommerce_application
                     con.Close();
                     if (rowAffected > 0)
                     {
-                        MessageBox.Show("Saved Sucessfully!");
+                        UpdateTblAll();
+                        MessageBox.Show("Saved Sucessfully! Please restart application");
                         Merchant.name = mp.username;
+                        uname = mp.username;
+                       
                     }
                     else
                         MessageBox.Show("Failed Please tryagain!");
@@ -504,6 +509,37 @@ namespace Ecommerce_application
                 MessageBox.Show(ex.Message);
             }
         }
+        public void UpdateTblAll()
+        {
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spChangePasswordTblAll", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@olduser", olduser);
+                    cmd.Parameters.AddWithValue("@username", uname);
+                    cmd.Parameters.AddWithValue("@password", pass1);
+
+                    int rowAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Password and user Changed Successfully to All");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed! Please Try Again");
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         //Load merchant info
         public DataTable GetProfile()

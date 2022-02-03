@@ -44,6 +44,9 @@ namespace Ecommerce_application
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.pnlTransaction.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -53,6 +56,9 @@ namespace Ecommerce_application
             // pnlTransaction
             // 
             this.pnlTransaction.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlTransaction.Controls.Add(this.lblMonth);
+            this.pnlTransaction.Controls.Add(this.lblTime);
+            this.pnlTransaction.Controls.Add(this.lblCategory);
             this.pnlTransaction.Controls.Add(this.panel2);
             this.pnlTransaction.Controls.Add(this.cmbMonth);
             this.pnlTransaction.Controls.Add(this.cmbTime);
@@ -207,6 +213,40 @@ namespace Ecommerce_application
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
+            // lblCategory
+            // 
+            this.lblCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Location = new System.Drawing.Point(52, 30);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(68, 18);
+            this.lblCategory.TabIndex = 6;
+            this.lblCategory.Text = "Category";
+            // 
+            // lblTime
+            // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(210, 30);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(72, 18);
+            this.lblTime.TabIndex = 7;
+            this.lblTime.Text = "Time Line";
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.Location = new System.Drawing.Point(373, 30);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(50, 18);
+            this.lblMonth.TabIndex = 8;
+            this.lblMonth.Text = "Month";
+            this.lblMonth.Visible = false;
+            // 
             // AdminTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +258,7 @@ namespace Ecommerce_application
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminTransaction";
             this.pnlTransaction.ResumeLayout(false);
+            this.pnlTransaction.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -229,15 +270,18 @@ namespace Ecommerce_application
         #endregion
         public System.Windows.Forms.Panel pnlTransaction;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.ComboBox cmbMonth;
         private System.Windows.Forms.ComboBox cmbTime;
-        private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblCategory;
+        public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        public System.Windows.Forms.ComboBox cmbCategory;
     }
 }
