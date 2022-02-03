@@ -323,5 +323,15 @@ namespace Ecommerce_application
             //this.WindowState = FormWindowState.Maximized;
             button2.BringToFront(); 
         }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Brown;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Transparent;
+        }
     }
 }
