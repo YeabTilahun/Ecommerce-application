@@ -86,6 +86,8 @@ namespace Ecommerce_application
             oldTextbox.Visible = true;
             NewTextbox.Visible = true;
             ConfirmPassword.Visible = true;
+
+            button1.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
