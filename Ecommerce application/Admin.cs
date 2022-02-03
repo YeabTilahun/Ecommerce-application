@@ -259,6 +259,16 @@ namespace Ecommerce_application
 
             AdminClass ac = new AdminClass();
             DataTable dt = ac.GetTransaction();
+
+
+            adminTransaction.chart1.DataSource = ac.GetDailyReport("");
+            adminTransaction.DisplayProducts(ac.GetProductDailyReport(""));
+            adminTransaction.chart1.Series["Series1"].XValueMember = "category";
+            adminTransaction.chart1.Series["Series1"].YValueMembers = "total";
+            adminTransaction.chart1.ChartAreas["ChartArea1"].AxisX.Title = "Category";
+            adminTransaction.chart1.ChartAreas["ChartArea1"].AxisY.Title = "Total";
+            adminTransaction.chart1.DataBind();
+            adminTransaction.cmbCategory.Text = "All";
         }
 
         private void btnAdmins_Click(object sender, EventArgs e)

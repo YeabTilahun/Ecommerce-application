@@ -288,5 +288,13 @@ namespace Ecommerce_application
             AdminDatabase adminD = new AdminDatabase();
             adminD.UpdateStatus(userName, "Rejected");
         }
+
+        public string[] GetAllUserName()
+        {
+            AdminDatabase AdminD = new AdminDatabase();
+            string[] userNames;
+            userNames = AdminD.GetAllUserName();
+            return userNames;
+        }
     }
 }

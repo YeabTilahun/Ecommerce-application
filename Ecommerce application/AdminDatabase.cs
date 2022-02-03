@@ -784,7 +784,7 @@ namespace Ecommerce_application
                     con.Close();
                     if (rowAffected > 0)
                     {
-                        if(status.Equals("Active"))
+                        if (status.Equals("Active"))
                             MessageBox.Show("Merchant status has been Active");
                         else
                             MessageBox.Show("Merchant status has been Rejected");
@@ -799,6 +799,34 @@ namespace Ecommerce_application
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public string[] GetAllUserName()
+        {
+            string[] userNames = null;
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                    SqlDataAdapter da = new SqlDataAdapter("spLogIn", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblUserName");
+                    DataTable dt = ds.Tables["tblUserName"];
+                    userNames = new string[dt.Rows.Count];
+                    DataRow row;
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        row = dt.Rows[i];
+                        userNames[i] = row["userName"].ToString();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return userNames;
         }
     }
 }

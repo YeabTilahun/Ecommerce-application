@@ -181,71 +181,67 @@ namespace Ecommerce_application
         public void Transaction1()
         {
             int counter = 0;
-            MerchantLoadProducts a = new MerchantLoadProducts();
-            Merchant b = new Merchant();
-            Dictionary<string, int> column_Counts = b.GetCountOfValues("id");
+            CustomerLoadProduct a = new CustomerLoadProduct();
+            Dictionary<string, int> column_Counts = cp.GetCountOfValues("id");
+            DataTable dt;
             string now = DateTime.Now.ToShortDateString();
             int rowAffected = 0;
-            foreach (KeyValuePair<string, int> kvp in column_Counts)
+            try
             {
-                using (SqlConnection con = connect.CreateConnection())
-                {
-
-                    SqlDataAdapter da = new SqlDataAdapter("spGetProductImageAndName", con);
-                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@id", int.Parse(kvp.Key));
-                    DataSet ds = new DataSet();
-                    da.Fill(ds, "tblProfile");
-                    DataTable dt = ds.Tables["tblProfile"];
-                    if (int.Parse(dt.Rows[0]["quantity"].ToString()) < kvp.Value && !Convert.IsDBNull(dt.Rows[0]["quantity"]))
-                    {
-                        MessageBox.Show("There is no Efficent Quantity by {0} Product in our store", dt.Rows[0]["name"].ToString());
-                        counter++;
-                        break;
-                    }
-
-                }
-            }
-            if(counter == 0)
-            {
-                try
+                foreach (KeyValuePair<string, int> kvp in column_Counts)
                 {
                     using (SqlConnection con = connect.CreateConnection())
                     {
 
+                        SqlDataAdapter da = new SqlDataAdapter("spGetProductImageAndName", con);
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        da.SelectCommand.Parameters.AddWithValue("@id", int.Parse(kvp.Key));
+                        DataSet ds = new DataSet();
+                        da.Fill(ds, "tblProfile");
+                        dt = ds.Tables["tblProfile"];
+                        if (int.Parse(dt.Rows[0]["quantity"].ToString()) < kvp.Value && !Convert.IsDBNull(dt.Rows[0]["quantity"]))
+                        {
+                            MessageBox.Show("There is no Efficent Quantity by {0} Product in our store", dt.Rows[0]["name"].ToString());
+                            counter++;
+                            continue;
+                        }
+                    }
+                    using (SqlConnection con = connect.CreateConnection())
+                    {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand();
+                        SqlCommand cmd = new SqlCommand("spTransaction", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@user_name", Merchant.name);
+                        cmd.Parameters.AddWithValue("@productID", kvp.Key);
 
-                        for (int i = 0; i < Merchant.dataGridView2.Rows.Count; i++)
-                        {
-                            array(Merchant.dataGridView2.Rows[i].Cells["id"].Value.ToString());
-                            cmd = new SqlCommand("spTransaction", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@user_name", Merchant.name);
-                            cmd.Parameters.AddWithValue("@productID", Merchant.dataGridView2.Rows[i].Cells["id"].Value);
-
-                            cmd.Parameters.AddWithValue("@totalPrice", price1);
-                            cmd.Parameters.AddWithValue("@category", cat);
-                            cmd.Parameters.AddWithValue("@date", now);
-                            cmd.Parameters.AddWithValue("@quantity", qty);
-                            rowAffected = cmd.ExecuteNonQuery();
-                        }
-                        con.Close();
-                        if (rowAffected > 0)
-                        {
-                            MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
-                            MessageBox.Show("Thank you for using our application!");
-                        }
-                        else
-                            MessageBox.Show("You don't have any product to buy");
+                        cmd.Parameters.AddWithValue("@totalPrice", (kvp.Value * double.Parse(dt.Rows[0]["price"].ToString())));
+                        cmd.Parameters.AddWithValue("@category", dt.Rows[0]["category"].ToString());
+                        cmd.Parameters.AddWithValue("@date", now);
+                        cmd.Parameters.AddWithValue("@quantity", kvp.Value.ToString());
+                        rowAffected = cmd.ExecuteNonQuery();
+                    }
+                    using (SqlConnection con = connect.CreateConnection())
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("spUpdateQuanity", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@productId", int.Parse(kvp.Key));
+                        cmd.Parameters.AddWithValue("@qty", (double.Parse(dt.Rows[0]["quantity"].ToString()) - kvp.Value).ToString());
+                        rowAffected = cmd.ExecuteNonQuery();
                     }
                 }
-                catch (SqlException ex)
+                if (rowAffected > 0)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Our partner Addis Delivery will contact you in a moment through your mobile number.");
+                    MessageBox.Show("Thank you for using our application!");
                 }
+                else
+                    MessageBox.Show("You don't have any product to buy");
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //check if merchant is valid or not

@@ -19,11 +19,11 @@ namespace Ecommerce_application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Home h = new Home();
+           /* Home h = new Home();
             NewHomeClass nhc = new NewHomeClass();
-            string oldPassword = nhc.GetOldPassword(h.name);
+            string oldPassword = nhc.GetOldPassword(h.name);*/
             //save clicked
-            if (textBoxOldPass.Text == oldPassword)
+            /*if (textBoxOldPass.Text == oldPassword)
             {
                 if (textBoxNewPass.Text == textBoxConfirmPass.Text)
                 {
@@ -34,7 +34,7 @@ namespace Ecommerce_application
             }
             else
                 MessageBox.Show("Wrong password");
-            this.Close(); 
+            this.Close(); */
         }
 
         private void button2_Click(object sender, EventArgs e)
