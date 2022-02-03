@@ -26,10 +26,10 @@ namespace Ecommerce_application
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(MyProgress.Value < 1000)
+            if(MyProgress.Value < 100)
             {
                 MyProgress.Value += 1;
-                //label1.Text = MyProgress.Value.ToString() + "%";
+                label1.Text = MyProgress.Value.ToString() + "%";
             }
             else
             {
@@ -66,6 +66,11 @@ namespace Ecommerce_application
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MyProgress_Click(object sender, EventArgs e)
         {
 
         }

@@ -60,8 +60,6 @@ namespace Ecommerce_application
             txtFName.Text = txtFName.Text.Trim();
             if (!txtFName.Text.Equals(""))
                 txtFName.Text = txtFName.Text.Substring(0, 1).ToUpper() + txtFName.Text.Substring(1).ToLower();
-            else
-                MessageBox.Show("Enter Your Fisrt Name");
         }
 
         private void txtLName_Leave(object sender, EventArgs e)
@@ -69,8 +67,6 @@ namespace Ecommerce_application
             txtLName.Text = txtLName.Text.Trim();
             if (!txtLName.Text.Equals(""))
                 txtLName.Text = txtLName.Text.Substring(0, 1).ToUpper() + txtLName.Text.Substring(1).ToLower();
-            else
-                MessageBox.Show("Enter Your Last Name");
         }
 
         private void AdminRegister_Load(object sender, EventArgs e)
@@ -80,6 +76,8 @@ namespace Ecommerce_application
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            AdminClass ac = new AdminClass();
+            string[] userNames = ac.GetAllUserName();
 
             MemoryStream ms = new MemoryStream();
             picAdmin.BackgroundImage.Save(ms, picAdmin.BackgroundImage.RawFormat);
@@ -94,10 +92,17 @@ namespace Ecommerce_application
                 {
                     if (txtPass.Text.Equals(txtConfirmPass.Text))
                     {
-                        AdminClass admin = new AdminClass(txtFName.Text, txtLName.Text, cmbSex.Text, dtpBirthday.Text, txtPhoneNum.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, txtRole.Text, photo);
-                        admin.Save();
-                        admin.AddToAll(txtUserName.Text, txtPass.Text, txtRole.Text);
-                        this.Close();
+                        if (userNames.Contains(txtUserName.Text))
+                        {
+                            MessageBox.Show("Your User Name Has Already Been Taken!!");
+                        }
+                        else
+                        {
+                            AdminClass admin = new AdminClass(txtFName.Text, txtLName.Text, cmbSex.Text, dtpBirthday.Text, txtPhoneNum.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, txtRole.Text, photo);
+                            admin.Save();
+                            admin.AddToAll(txtUserName.Text, txtPass.Text, txtRole.Text);
+                            this.Close();
+                        }
                     }
                     else
                         MessageBox.Show("Your Password Does Not Match!!");
@@ -161,40 +166,31 @@ namespace Ecommerce_application
         private void txtUserName_Leave(object sender, EventArgs e)
         {
             txtUserName.Text = txtUserName.Text.Trim();
-            if (txtUserName.Text.Equals(""))
-                MessageBox.Show("Enter Your User Name");
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             txtEmail.Text = txtEmail.Text.Trim();
-            if (txtEmail.Text.Equals(""))
-                MessageBox.Show("Enter Your Email");
         }
 
         private void txtPhoneNum_Leave(object sender, EventArgs e)
         {
             txtPhoneNum.Text = txtPhoneNum.Text.Trim();
-            if (txtPhoneNum.Text.Equals(""))
-                MessageBox.Show("Enter Your Phone Number");
         }
 
         private void txtPass_Leave(object sender, EventArgs e)
         {
-            if (txtPass.Text.Equals(""))
-                MessageBox.Show("Enter Your Password");
+            
         }
 
         private void txtOldPass_Leave(object sender, EventArgs e)
         {
-            if (txtOldPass.Text.Equals(""))
-                MessageBox.Show("Enter Your Old Password");
+            
         }
 
         private void txtNewPass_Leave(object sender, EventArgs e)
         {
-            if (txtNewPass.Text.Equals(""))
-                MessageBox.Show("Enter Your New Password");
+
         }
     }
 }

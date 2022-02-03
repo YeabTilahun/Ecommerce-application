@@ -138,7 +138,7 @@ namespace Ecommerce_application
             // 
             this.profileToolStripMenuItem.Image = global::Ecommerce_application.Properties.Resources._370076_account_avatar_client_male_person_icon;
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.profileToolStripMenuItem.Text = "My Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click_1);
             // 
@@ -146,7 +146,7 @@ namespace Ecommerce_application
             // 
             this.logoutToolStripMenuItem1.Image = global::Ecommerce_application.Properties.Resources.logout__1_;
             this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.logoutToolStripMenuItem1.Text = "Logout";
             this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
@@ -329,6 +329,7 @@ namespace Ecommerce_application
             this.button3.TabIndex = 5;
             this.button3.Text = "My products";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button6
@@ -380,6 +381,7 @@ namespace Ecommerce_application
             this.button5.TabIndex = 3;
             this.button5.Text = "Add product";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Merchant

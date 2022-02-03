@@ -281,8 +281,8 @@ namespace Ecommerce_application
 
         public void loadMyProfile()
         {
-            NewHomeClass a = new NewHomeClass();
-            a.loadMyProfile();
+            CustomerPageClass a = new CustomerPageClass();
+            a.GetProfile();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
