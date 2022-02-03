@@ -24,6 +24,7 @@ namespace Ecommerce_application
         {
             try
             {
+                SignUpUser h = new SignUpUser();
                 byte[] permit = null;
                 string pwd = textpassword.Text;
                 string cpwd = textconfirmpassword.Text;
@@ -36,45 +37,51 @@ namespace Ecommerce_application
                     picPermit.BackgroundImage.Save(m, picPermit.BackgroundImage.RawFormat);
                     permit = m.ToArray();
                 }
-
-                if (pwd == cpwd)
+                string[] user = h.GetUser();
+                if (user.Contains(textUserName.Text))
                 {
-                    if (cmbRole.Text == "Customer")
-                    {
-                        //NewHomeClass hc = new NewHomeClass( textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, photo);
-                        SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo, dateTimePicker1.Text);
-                        MemoryStream stream = new MemoryStream(hc.photo);
-                        Image RetImage = Image.FromStream(stream);
-                        picBoxAddphoto.Image = RetImage;
-                        hc.signUp();
-                        this.Close();
-                        SignIn a = new SignIn();
-                        a.Show(); 
-                    }
-                    else if(cmbRole.Text == "Merchant")
-                    {
-                        SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo,permit, dateTimePicker1.Text);
-                        MemoryStream stream = new MemoryStream(hc.photo);
-                        Image RetImage = Image.FromStream(stream);
-                        picBoxAddphoto.Image = RetImage;
-                        MemoryStream str = new MemoryStream(hc.permit);
-                        Image RetIma= Image.FromStream(str);
-                        picPermit.Image = RetIma;
-                        hc.signUp();
-                        this.Close();
-                        SignIn a = new SignIn();
-                        a.Show();
-                    }
+                    MessageBox.Show("USER-NAME ALREADY EXISTS!");
                 }
                 else
-                    MessageBox.Show("Your Password is Different");
-
+                {
+                    if (pwd == cpwd)
+                    {
+                        if (cmbRole.Text == "Customer")
+                        {
+                            //NewHomeClass hc = new NewHomeClass( textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, photo);
+                            SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo, dateTimePicker1.Text);
+                            MemoryStream stream = new MemoryStream(hc.photo);
+                            Image RetImage = Image.FromStream(stream);
+                            picBoxAddphoto.Image = RetImage;
+                            hc.signUp();
+                            this.Close();
+                            SignIn a = new SignIn();
+                            a.Show();
+                        }
+                        else if (cmbRole.Text == "Merchant")
+                        {
+                            SignUpUser hc = new SignUpUser(textFirstName.Text, textLastName.Text, textUserName.Text, textpassword.Text, textPhone.Text, textEmail.Text, cmbRole.Text, photo, permit, dateTimePicker1.Text);
+                            MemoryStream stream = new MemoryStream(hc.photo);
+                            Image RetImage = Image.FromStream(stream);
+                            picBoxAddphoto.Image = RetImage;
+                            MemoryStream str = new MemoryStream(hc.permit);
+                            Image RetIma = Image.FromStream(str);
+                            picPermit.Image = RetIma;
+                            hc.signUp();
+                            this.Close();
+                            SignIn a = new SignIn();
+                            a.Show();
+                        }
+                    }
+                    else
+                        MessageBox.Show("Your Password is Different");
+                }
             }
             catch (NullReferenceException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
+        
         }
         private void button1_Click(object sender, EventArgs e)
         {

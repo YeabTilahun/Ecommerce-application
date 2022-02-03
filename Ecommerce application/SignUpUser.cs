@@ -18,6 +18,7 @@ namespace Ecommerce_application
         public byte[] photo;
         public byte[] permit;
         public string birthday;
+        public SignUpUser() { }
         public SignUpUser(string fname, string lname, string uname, string pass, string pnum, string email, string role, byte[] phot,string birthday )
         {
             this.email = email;
@@ -46,8 +47,15 @@ namespace Ecommerce_application
         public void signUp()
         {
             SignUpPro sr = new SignUpPro();//object for the third layer
+           
             sr.signUpProccedure(this);
             sr.AddtoTableAll(this);
+            
+        }
+        public string [] GetUser()
+        {
+            AdminDatabase check = new AdminDatabase();
+            string[] user = check.GetAllUserName();
         }
     }
 }
