@@ -82,6 +82,7 @@ namespace Ecommerce_application
             else if (s.role == "Customer")
             {
                 label7.Visible = false;
+                Home m = new Home();
                 CustomerPage cust = new CustomerPage(textUsername.Text);
                 CustomerPage.dataGridView2 = Home.dataGridView1;
                 cust.Show();
