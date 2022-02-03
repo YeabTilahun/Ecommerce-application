@@ -60,12 +60,12 @@ namespace Ecommerce_application
             // 
             this.MyProgress.BackColor = System.Drawing.Color.White;
             this.MyProgress.Location = new System.Drawing.Point(88, 354);
-            this.MyProgress.Maximum = 1000;
             this.MyProgress.Name = "MyProgress";
             this.MyProgress.Size = new System.Drawing.Size(146, 12);
             this.MyProgress.Step = 100;
             this.MyProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.MyProgress.TabIndex = 2;
+            this.MyProgress.Click += new System.EventHandler(this.MyProgress_Click);
             // 
             // label1
             // 

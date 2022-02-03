@@ -141,5 +141,119 @@ namespace Ecommerce_application
 
             return dt;
         }
+
+        public DataTable GetProfile()
+        {
+            DataTable dt = null;
+            try
+            {
+                SqlConnection con = connect.CreateConnection();
+                SqlDataAdapter da = new SqlDataAdapter("spGetMerchantProfile", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@name", CustomerPage.name);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblProfile");
+                dt = ds.Tables["tblProfile"];
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        public void UpdateProfile(CustomerPageClass mp)
+        {
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spUpdateMerchantProfile", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    /* MemoryStream ms = new MemoryStream();
+                     mp.profileImage.BackgroundImage.Save(ms, mp.profileImage.BackgroundImage.RawFormat);
+                     byte[] Photo = ms.ToArray();*/
+                    cmd.Parameters.AddWithValue("@user", CustomerPage.name);
+                    cmd.Parameters.AddWithValue("@fname", mp.fname);
+                    cmd.Parameters.AddWithValue("@lname", mp.lname);
+                    cmd.Parameters.AddWithValue("@birthday", mp.bday);
+                    cmd.Parameters.AddWithValue("@email", mp.email);
+                    cmd.Parameters.AddWithValue("@username", mp.username);
+                    cmd.Parameters.AddWithValue("@phone", mp.phone);
+                    cmd.Parameters.AddWithValue("@photo", mp.photo2);
+                    int rowAffected = cmd.ExecuteNonQuery();
+
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Saved Sucessfully!");
+                        CustomerPage.name = mp.username;
+                    }
+                    else
+                        MessageBox.Show("Failed Please tryagain!");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public string GetOldPassword(string user)
+        {
+            string old_pass = null;
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("spGetPassword", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@name", "Kidus");
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblpass");
+                    DataTable dt = ds.Tables["tblpass"];
+                    old_pass = dt.Rows[0]["password"].ToString();
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return old_pass;
+        }
+
+        public void UpdatePassword(string pass)
+        {
+            try
+            {
+                using (SqlConnection con = connect.CreateConnection())
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("spUpdatePassword", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pass", pass);
+                    cmd.Parameters.AddWithValue("@user", "Kidus");
+                    int rowAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Password reset!");
+
+                    }
+                    else
+                        MessageBox.Show("Failed! Please try again");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
     }
 }

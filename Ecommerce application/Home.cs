@@ -151,7 +151,7 @@ namespace Ecommerce_application
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -321,8 +321,7 @@ namespace Ecommerce_application
                 this.Size = new Size(a, b);
             }
             //this.WindowState = FormWindowState.Maximized;
-            button2.BringToFront();
-            
+            button2.BringToFront(); 
         }
     }
 }

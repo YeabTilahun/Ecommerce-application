@@ -105,7 +105,7 @@ namespace Ecommerce_application
             MerchantDatabase buy = new MerchantDatabase();
             buy.Transaction1();
         }
-        public void UpdateProfile()
+        /*public void UpdateProfile()
         {
             NewHomeDatabase nhd = new NewHomeDatabase();
             nhd.UpdateProfile();
@@ -131,6 +131,6 @@ namespace Ecommerce_application
         {
             NewHomeDatabase a = new NewHomeDatabase();
             a.loadMyProfile();
-        }
+        }*/
     }
 }
