@@ -79,7 +79,7 @@ namespace Ecommerce_application
                         {
                             SqlCommand cmd = new SqlCommand("spchangePassC", con);
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@pass", password);
+                            cmd.Parameters.AddWithValue("@password", password);
                             cmd.Parameters.AddWithValue("@username", username);
                             int rowAffected = cmd.ExecuteNonQuery();
                             con.Close();
@@ -94,7 +94,7 @@ namespace Ecommerce_application
                         {
                             SqlCommand cmd = new SqlCommand("spchangePassM", con);
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@pass", password);
+                            cmd.Parameters.AddWithValue("@password", password);
                             cmd.Parameters.AddWithValue("@username", username);
                             int rowAffected = cmd.ExecuteNonQuery();
                             con.Close();
@@ -109,10 +109,10 @@ namespace Ecommerce_application
                         {
                             SqlCommand cmd = new SqlCommand("spchangePassA", con);
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@pass", password);
+                            cmd.Parameters.AddWithValue("@password", password);
                             cmd.Parameters.AddWithValue("@username", username);
                             int rowAffected = cmd.ExecuteNonQuery();
-                            con.Close();
+                          //  con.Close();
                             if (rowAffected > 0)
                             {
                                 MessageBox.Show("New password added sucessfully");

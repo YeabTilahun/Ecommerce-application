@@ -68,7 +68,7 @@ namespace Ecommerce_application
             this.textUsername.BackColor = System.Drawing.SystemColors.Control;
             this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textUsername.ForeColor = System.Drawing.Color.LightGray;
+            this.textUsername.ForeColor = System.Drawing.Color.Black;
             this.textUsername.Location = new System.Drawing.Point(365, 113);
             this.textUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textUsername.Multiline = true;
@@ -117,7 +117,7 @@ namespace Ecommerce_application
             this.textPassword.BackColor = System.Drawing.SystemColors.Control;
             this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textPassword.ForeColor = System.Drawing.Color.LightGray;
+            this.textPassword.ForeColor = System.Drawing.Color.Black;
             this.textPassword.Location = new System.Drawing.Point(364, 159);
             this.textPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textPassword.Multiline = true;
