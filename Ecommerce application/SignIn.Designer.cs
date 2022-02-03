@@ -76,6 +76,7 @@ namespace Ecommerce_application
             this.textUsername.Size = new System.Drawing.Size(198, 19);
             this.textUsername.TabIndex = 29;
             this.textUsername.Text = "User name";
+            this.textUsername.Click += new System.EventHandler(this.textUsername_Click);
             // 
             // label2
             // 
@@ -121,9 +122,11 @@ namespace Ecommerce_application
             this.textPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textPassword.Multiline = true;
             this.textPassword.Name = "textPassword";
+            this.textPassword.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(198, 27);
             this.textPassword.TabIndex = 30;
             this.textPassword.Text = "Password";
+            this.textPassword.Click += new System.EventHandler(this.textPassword_Click);
             // 
             // label1
             // 

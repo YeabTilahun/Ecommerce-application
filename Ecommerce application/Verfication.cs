@@ -12,9 +12,11 @@ namespace Ecommerce_application
 {
     public partial class Verfication : Form
     {
-        public Verfication()
+         private string role;
+        public Verfication(string role)
         {
             InitializeComponent();
+            this.role = role;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,10 +33,12 @@ namespace Ecommerce_application
         {
             if (textBox1.Text.CompareTo("1234") == 0)
             {
-                PasswordReset pe = new PasswordReset();
+                PasswordReset pe = new PasswordReset(role);
                 pe.Show();
                 this.Hide();
             }
+            else
+                MessageBox.Show("Incorrect code!");
         }
 
         private void button2_Click(object sender, EventArgs e)

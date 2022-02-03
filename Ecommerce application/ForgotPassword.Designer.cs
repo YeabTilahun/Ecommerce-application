@@ -33,7 +33,7 @@ namespace Ecommerce_application
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtuser = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,15 +73,16 @@ namespace Ecommerce_application
             this.label2.TabIndex = 3;
             this.label2.Text = "Forgot Password";
             // 
-            // textBox2
+            // txtuser
             // 
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(242, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 20);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Tag = "";
-            this.textBox2.Text = "Enter your User name here";
+            this.txtuser.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtuser.Location = new System.Drawing.Point(242, 78);
+            this.txtuser.Name = "txtuser";
+            this.txtuser.Size = new System.Drawing.Size(164, 20);
+            this.txtuser.TabIndex = 4;
+            this.txtuser.Tag = "";
+            this.txtuser.Text = "Enter your User name here";
+            this.txtuser.Click += new System.EventHandler(this.txtuser_Click);
             // 
             // label3
             // 
@@ -111,7 +112,7 @@ namespace Ecommerce_application
             this.ClientSize = new System.Drawing.Size(441, 147);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtuser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -129,7 +130,7 @@ namespace Ecommerce_application
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtuser;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
