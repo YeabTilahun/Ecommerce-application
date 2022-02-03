@@ -258,7 +258,7 @@ namespace Ecommerce_application
                 using (SqlConnection con = connect.CreateConnection())
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("Select status from merchant where merchantName=@user", con);
+                    SqlCommand cmd = new SqlCommand("Select status from merchant where username=@user", con);
                     cmd.Parameters.AddWithValue("@user", Merchant.name);
                     SqlDataReader da = cmd.ExecuteReader();
                     while (da.Read())
@@ -415,7 +415,7 @@ namespace Ecommerce_application
             string old_pass = null;
            try
             {
-                using (SqlConnection con = connect.CreateConnection())
+/*                using (SqlConnection con = connect.CreateConnection())
                 {
 
                     con.Open();
@@ -427,7 +427,7 @@ namespace Ecommerce_application
                     DataTable dt = ds.Tables["tblpass"];
                     old_pass = dt.Rows[0]["password"].ToString();
 
-                }
+                }*/
             }
             catch (SqlException ex)
             {
@@ -447,7 +447,7 @@ namespace Ecommerce_application
                     SqlCommand cmd = new SqlCommand("spUpdatePassword", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pass", pass);
-                    cmd.Parameters.AddWithValue("@user", "yoo");
+                    cmd.Parameters.AddWithValue("@user", Merchant.name);
                     int rowAffected = cmd.ExecuteNonQuery();
                     con.Close();
                     if (rowAffected > 0)
@@ -492,7 +492,7 @@ namespace Ecommerce_application
                     con.Close();
                     if (rowAffected > 0)
                     {
-                        MessageBox.Show("Saved Sucessfully!");
+                        MessageBox.Show("Saved Sucessfully! Please restart application");
                         Merchant.name = mp.username;
                     }
                     else
