@@ -68,7 +68,11 @@ namespace Ecommerce_application
         {
             SetupDataGridView();
             //load information about the user
-           // loadMyProfile();
+            // loadMyProfile();
+
+            //calcualte total when their is data from home 
+            DataGridViewRowsAddedEventArgs a = null;
+            dataGridView2_RowsAdded(sender,a);
 
             //check if the user is allowed to sell products...IF HIS /HERS PERMIT IS VALID WHEN THE PROGRAM LOADS
             check();
@@ -353,6 +357,7 @@ namespace Ecommerce_application
             MerchantClass a = new MerchantClass();
             a.transaction();
             dataGridView2.Rows.Clear();
+            total.Text = "";
         }
     }
 }

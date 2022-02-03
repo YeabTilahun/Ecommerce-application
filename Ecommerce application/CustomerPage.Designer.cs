@@ -305,6 +305,7 @@ namespace Ecommerce_application
             this.button12.Size = new System.Drawing.Size(159, 172);
             this.button12.TabIndex = 28;
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button8
             // 
