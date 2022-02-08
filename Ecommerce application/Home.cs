@@ -19,8 +19,8 @@ namespace Ecommerce_application
         public static DataGridView dataGridView1 = new DataGridView();
         public static string name;
         Connection connect = new Connection();
-        int a = Screen.PrimaryScreen.WorkingArea.Width;
-        int b = Screen.PrimaryScreen.WorkingArea.Height;
+/*        int a = Screen.PrimaryScreen.WorkingArea.Width;
+        int b = Screen.PrimaryScreen.WorkingArea.Height;*/
         public Home(string name)
         {
             Home.name = name;
@@ -49,7 +49,7 @@ namespace Ecommerce_application
                         a[i].Name = dt.Rows[i]["name"].ToString();
                         a[i].Description = dt.Rows[i]["description"].ToString();
                         a[i].Price = string.Format(dt.Rows[i]["price"].ToString());
-                a[i].button1.Click += new EventHandler(btnClick); 
+                        a[i].button1.Click += new EventHandler(btnClick); 
                         if (flowLayoutPanel1.Controls.Count < 0)
                             flowLayoutPanel1.Controls.Clear();
                         else
@@ -147,19 +147,6 @@ namespace Ecommerce_application
                     flowLayoutPanel1.Controls.Add(a[i]);
             }
         }
-
-       
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         //It Initializes the Static DataGridView in cart
         private void SetupDataGridView()
         {
@@ -188,7 +175,7 @@ namespace Ecommerce_application
             buttonBuy.Visible = true;
             buttonCancel.Visible = true;
             dataGridView1.Visible = true;
-            this.Size = new Size(a, b);
+/*            this.Size = new Size(a, b);*/
         }
 
         //Makes the dataGridview Invisible
@@ -198,7 +185,7 @@ namespace Ecommerce_application
             labelTotal.Visible = false;
             buttonCancel.Visible = false;
             dataGridView1.Visible = false; 
-            this.Size = new Size(a, b);
+/*            this.Size = new Size(a, b);*/
         }
 
         //An Event Subscriber that s used for the visibility of cart at HomeWhile Add to cart is pressed
@@ -209,13 +196,8 @@ namespace Ecommerce_application
             labelTotal.Visible = true;
             buttonCancel.Visible = true;
             dataGridView1.Visible = true;
-            this.Size = new Size(a, b);
+/*            this.Size = new Size(a, b);*/
         }
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -319,7 +301,7 @@ namespace Ecommerce_application
             else
             {
                 resize();                
-                this.Size = new Size(a, b);
+/*                this.Size = new Size(a, b);*/
             }
             //this.WindowState = FormWindowState.Maximized;
             button2.BringToFront(); 

@@ -23,9 +23,9 @@ namespace Ecommerce_application
             //Kalesh pc by teamviewer
             //string connect = "Server=7.134.137.169;   database=Ecommerce; uid=sa; pwd=P@$$w0rd;";
             //Kalesh PC
-            string connect = "Server=192.168.0.6;   database=Ecommerce; uid=sa; pwd=P@$$w0rd;";
+            //string connect = "Server=192.168.0.6;   database=Ecommerce; uid=sa; pwd=P@$$w0rd;";
             //string connect = "Server=DESKTOP-4370VSE;   database=Ecommerce; integrated security=true;";
-            //string connect = "Server=YEABS;   database=Ecommerce; integrated security=true;";
+            string connect = "Server=YEABS;   database=Ecommerce; integrated security=true;";
             SqlConnection con = new SqlConnection(connect);
             return con;
         }

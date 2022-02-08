@@ -233,9 +233,9 @@ namespace Ecommerce_application
             this.btnLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogo.FlatAppearance.BorderSize = 0;
             this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogo.Location = new System.Drawing.Point(24, 22);
+            this.btnLogo.Location = new System.Drawing.Point(4, 4);
             this.btnLogo.Name = "btnLogo";
-            this.btnLogo.Size = new System.Drawing.Size(136, 145);
+            this.btnLogo.Size = new System.Drawing.Size(174, 158);
             this.btnLogo.TabIndex = 36;
             this.btnLogo.UseVisualStyleBackColor = false;
             // 
