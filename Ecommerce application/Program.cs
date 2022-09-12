@@ -20,8 +20,8 @@ namespace Ecommerce_application
             //Application.Run(new Home("Kidus"));
             //Application.Run(new CustomerPage("yeabsira"));
            // Application.Run(new Admin("kalesh"));
-            //Application.Run(new SignIn());
-            Application.Run(new Merchant("yessssssssssss"));
+            Application.Run(new SignIn());
+            //Application.Run(new Merchant("Yeab"));
         }
     }
 }
