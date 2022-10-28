@@ -1,11 +1,10 @@
-# Ecommerce-application
+# Ecommerce-application(C#)
 
---## This is a C# project application that allows us to purchase and sell products. 
 
-### Software required to use this application
+## Software required to use this application
       <li>Microsoft SQL</li>
       <li>Visual Studio</li>
-### Notice
+## Notice
       # 1. It is necessary to add the database provided in the repository to Microsoft SQL to use this app.
 
       # 2. Then download the project and open it in Visual Studio.
