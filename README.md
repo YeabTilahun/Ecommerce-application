@@ -13,3 +13,4 @@
       3. Open the "connection.cs" file and replace the SQL server name with yours.
 
       4. Run the application.
+[^1]: My reference.
