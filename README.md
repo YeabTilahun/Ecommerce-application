@@ -2,8 +2,8 @@
 
 
 ## Software required to use this application
-      * Microsoft SQL
-      * Visual Studio
+      -Microsoft SQL
+      -Visual Studio
 ## Notice
       # 1. It is necessary to add the database provided in the repository to Microsoft SQL to use this app.
 
