@@ -27,10 +27,9 @@ namespace Ecommerce_application
                 txtCustFirstName.Text = dt.Rows[0]["fname"].ToString();
                 txtCustLastName.Text = dt.Rows[0]["lname"].ToString();
                 txtCustUserName.Text = dt.Rows[0]["userName"].ToString();
-                //birthdayBox.Text = dt.Rows[0]["birthday"].ToString();
                 txtCustEmail.Text = dt.Rows[0]["email"].ToString();
                 txtCustPhoneNumber.Text = dt.Rows[0]["phone"].ToString();
-                //old_pass = dt.Rows[0]["password"].ToString();
+                oldPass = dt.Rows[0]["password"].ToString();
             }
             catch (NullReferenceException e)
             {

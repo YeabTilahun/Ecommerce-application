@@ -68,14 +68,14 @@ namespace Ecommerce_application
             this.panel1.Controls.Add(this.txtCustFirstName);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(797, 619);
+            this.panel1.Size = new System.Drawing.Size(799, 554);
             this.panel1.TabIndex = 0;
             // 
             // linkLabel1
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Red;
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(302, 529);
+            this.linkLabel1.Location = new System.Drawing.Point(45, 315);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(93, 13);
             this.linkLabel1.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace Ecommerce_application
             this.buttonChangePicture.FlatAppearance.BorderSize = 0;
             this.buttonChangePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonChangePicture.ForeColor = System.Drawing.Color.White;
-            this.buttonChangePicture.Location = new System.Drawing.Point(262, 181);
+            this.buttonChangePicture.Location = new System.Drawing.Point(598, 305);
             this.buttonChangePicture.Name = "buttonChangePicture";
             this.buttonChangePicture.Size = new System.Drawing.Size(100, 23);
             this.buttonChangePicture.TabIndex = 3;
@@ -105,7 +105,7 @@ namespace Ecommerce_application
             this.buttonUpdate.FlatAppearance.BorderSize = 0;
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.Location = new System.Drawing.Point(515, 529);
+            this.buttonUpdate.Location = new System.Drawing.Point(48, 459);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdate.TabIndex = 3;
@@ -116,16 +116,16 @@ namespace Ecommerce_application
             // pictureBoxProfile
             // 
             this.pictureBoxProfile.BackColor = System.Drawing.Color.Silver;
-            this.pictureBoxProfile.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxProfile.Location = new System.Drawing.Point(506, 52);
             this.pictureBoxProfile.Name = "pictureBoxProfile";
-            this.pictureBoxProfile.Size = new System.Drawing.Size(233, 201);
+            this.pictureBoxProfile.Size = new System.Drawing.Size(270, 232);
             this.pictureBoxProfile.TabIndex = 2;
             this.pictureBoxProfile.TabStop = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(302, 448);
+            this.label6.Location = new System.Drawing.Point(45, 267);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 1;
@@ -134,7 +134,7 @@ namespace Ecommerce_application
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(302, 392);
+            this.label4.Location = new System.Drawing.Point(45, 211);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 1;
@@ -143,7 +143,7 @@ namespace Ecommerce_application
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 341);
+            this.label3.Location = new System.Drawing.Point(45, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 1;
@@ -152,7 +152,7 @@ namespace Ecommerce_application
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(302, 287);
+            this.label2.Location = new System.Drawing.Point(45, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -161,7 +161,7 @@ namespace Ecommerce_application
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 236);
+            this.label1.Location = new System.Drawing.Point(45, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 1;
@@ -169,44 +169,44 @@ namespace Ecommerce_application
             // 
             // txtCustPhoneNumber
             // 
-            this.txtCustPhoneNumber.Location = new System.Drawing.Point(414, 445);
+            this.txtCustPhoneNumber.Location = new System.Drawing.Point(157, 264);
             this.txtCustPhoneNumber.Name = "txtCustPhoneNumber";
-            this.txtCustPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtCustPhoneNumber.Size = new System.Drawing.Size(194, 20);
             this.txtCustPhoneNumber.TabIndex = 0;
             // 
             // txtCustEmail
             // 
-            this.txtCustEmail.Location = new System.Drawing.Point(414, 389);
+            this.txtCustEmail.Location = new System.Drawing.Point(157, 208);
             this.txtCustEmail.Name = "txtCustEmail";
-            this.txtCustEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtCustEmail.Size = new System.Drawing.Size(194, 20);
             this.txtCustEmail.TabIndex = 0;
             // 
             // txtCustUserName
             // 
-            this.txtCustUserName.Location = new System.Drawing.Point(414, 338);
+            this.txtCustUserName.Location = new System.Drawing.Point(157, 157);
             this.txtCustUserName.Name = "txtCustUserName";
-            this.txtCustUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustUserName.Size = new System.Drawing.Size(194, 20);
             this.txtCustUserName.TabIndex = 0;
             // 
             // txtCustLastName
             // 
-            this.txtCustLastName.Location = new System.Drawing.Point(414, 284);
+            this.txtCustLastName.Location = new System.Drawing.Point(157, 103);
             this.txtCustLastName.Name = "txtCustLastName";
-            this.txtCustLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustLastName.Size = new System.Drawing.Size(194, 20);
             this.txtCustLastName.TabIndex = 0;
             // 
             // txtCustFirstName
             // 
-            this.txtCustFirstName.Location = new System.Drawing.Point(414, 233);
+            this.txtCustFirstName.Location = new System.Drawing.Point(157, 52);
             this.txtCustFirstName.Name = "txtCustFirstName";
-            this.txtCustFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustFirstName.Size = new System.Drawing.Size(194, 20);
             this.txtCustFirstName.TabIndex = 0;
             // 
             // CustomerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 619);
+            this.ClientSize = new System.Drawing.Size(799, 553);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

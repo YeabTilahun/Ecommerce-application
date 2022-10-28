@@ -20,7 +20,7 @@ namespace Ecommerce_application
         public Merchant(string userName)
         {
             InitializeComponent();
-
+            SetupDataGridView();
             //TO DISPLAY USERNAME IT TAKES THE VALUE FROM SIGN IN FORM THEN ASSIGN IN TO LABEL
             name = userName;
             label2.Text = name;

@@ -111,15 +111,17 @@ namespace Ecommerce_application
         //method that search the database 
         void search()
         {
-            if(!textBox1.Text.Equals("Search items here")) {
+            if(!textBox1.Text.Equals("Search items here")&&!textBox1.Text.Equals("")&&!textBox1.Text.Equals(" ")) {
                 MerchantClass mc = new MerchantClass();
                 DataTable dt = mc.search(textBox1.Text);
                 MerchantLoadProducts[] a = new MerchantLoadProducts[dt.Rows.Count];
-                panelBuy.Controls.Clear();
+               panelBuy.Controls.Clear();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                    a[i] = new MerchantLoadProducts(1);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    a[i] = new MerchantLoadProducts(1);
-                    a[i].Pic = (byte[])dt.Rows[i]["photo"];
+                    if (!Convert.IsDBNull(dt.Rows[i]["photo"]))
+                        a[i].Pic = (byte[])dt.Rows[i]["photo"];
                     a[i].Name = dt.Rows[i]["name"].ToString();
                     a[i].Description = dt.Rows[i]["description"].ToString();
                     a[i].Price = dt.Rows[i]["price"].ToString();
@@ -174,6 +176,11 @@ namespace Ecommerce_application
                 else
                     panelBuy.Controls.Add(a[i]);
             }
+        }
+
+        private void panelBuy_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

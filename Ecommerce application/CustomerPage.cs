@@ -20,7 +20,7 @@ namespace Ecommerce_application
         public CustomerPage(string userName)
         {
             InitializeComponent();
-
+            SetupDataGridView();
             //TO DISPLAY USERNAME IT TAKES THE VALUE FROM SIGN IN FORM THEN ASSIGN IN TO LABEL
             name = userName;
             label2.Text = name;
@@ -104,7 +104,7 @@ namespace Ecommerce_application
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         //when the mouse leaves the close window btn will be transparent
@@ -167,11 +167,13 @@ namespace Ecommerce_application
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             resize();
-            CustomerProfile a = new CustomerProfile();
+            CustomerPageClass a = new CustomerPageClass();
+            DataTable dt = a.GetProfile();
+            CustomerProfile ab = new CustomerProfile(dt);
             panelAdd.Controls.Clear();
-            panelAdd.Controls.Add(a.panel1);
+            panelAdd.Controls.Add(ab.panel1);
             panelAdd.Show();
-            panelAdd.BringToFront();
+            ab.panel1.BringToFront();
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
