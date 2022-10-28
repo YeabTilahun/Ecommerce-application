@@ -1,6 +1,6 @@
 # Ecommerce-application
 
-## This is a C# project application that allows us to purchase and sell products. 
+--## This is a C# project application that allows us to purchase and sell products. 
 
 ### Software required to use this application
       <li>Microsoft SQL</li>
